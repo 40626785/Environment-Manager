@@ -34,3 +34,7 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Produced Binaries
+EnvironmentManager/bin
+EnvironmentManager/obj
