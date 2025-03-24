@@ -5,6 +5,7 @@ erDiagram
     SENSOR ||--o{ SENSOR_SETTING : configures
     SENSOR ||--o{ CALIBRATION_RECORD : maintains
     SENSOR ||--o{ MAINTENANCE_RECORD : requires
+    SENSOR ||--o{ SENSOR_STATUS_LOG : updates
     LOCATION ||--o{ SENSOR : hosts
     
     LOCATION {
@@ -37,6 +38,10 @@ erDiagram
         string firmware_version
         string data_source
         string sensor_url
+        datetime last_heartbeat
+        string connectivity_status "Online/Offline/Degraded"
+        float battery_level_percentage
+        int signal_strength_dbm
     }
     
     SENSOR_READING {
@@ -94,5 +99,17 @@ erDiagram
         string notes
         boolean is_complete
         string parts_replaced
+        string diagnostic_results
+        string root_cause
+        float downtime_hours
+    }
+    
+    SENSOR_STATUS_LOG {
+        int log_id PK
+        int sensor_id FK
+        datetime timestamp
+        string status "Online/Offline/Maintenance/Error"
+        string status_code
+        string message
     }
 ```
