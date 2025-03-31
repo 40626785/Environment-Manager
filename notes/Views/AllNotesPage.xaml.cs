@@ -1,9 +1,12 @@
+using notes.ViewModels;
+
 namespace notes.Views;
-    
+
 public partial class AllNotesPage : ContentPage
 {
-    public AllNotesPage()
+    public AllNotesPage(AllNotesViewModel viewModel)
     {
+        this.BindingContext = viewModel;
         InitializeComponent();
     }
 
@@ -11,5 +14,5 @@ public partial class AllNotesPage : ContentPage
     {
         notesCollection.SelectedItem = null;
     }
-    
+
 }
