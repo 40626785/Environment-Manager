@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:notes.ViewModels"
+             x:Class="notes.Views.HomePage"
+             x:DataType="viewmodel:HomeViewModel"
+             Title="Home">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" 
+                            Padding="30,0" 
+                            VerticalOptions="Center">
+
+            <Label 
+                Text="Welcome to Notes"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Select an option below to get started"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <VerticalStackLayout Spacing="15">
+                <Button 
+                    Text="My Notes"
+                    SemanticProperties.Hint="Navigates to the notes page"
+                    Command="{Binding NavigateToNotesCommand}"
+                    HorizontalOptions="Center" />
+
+                <Button 
+                    Text="All Notes"
+                    SemanticProperties.Hint="Navigates to the all notes page"
+                    Command="{Binding NavigateToAllNotesCommand}"
+                    HorizontalOptions="Center" />
+
+                <Button 
+                    Text="About"
+                    SemanticProperties.Hint="Navigates to the about page"
+                    Command="{Binding NavigateToAboutCommand}"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage> 
