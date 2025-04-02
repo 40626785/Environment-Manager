@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:EnvironmentManager.ViewModels"
+             x:Class="EnvironmentManager.Views.MaintenancePage"
+             Title="{Binding Path=Id, StringFormat='ENV-{0}'}">
+        <VerticalStackLayout Spacing="10" Margin="5">
+                <Label Text="Due Date:" HorizontalOptions="Center"/>
+                <DatePicker MinimumDate="{Binding CurrentDate}" Date="{Binding DueDate}" HorizontalOptions="Center"/>
+                <Label x:Name="priorityLabel" Text="{Binding Path=Priority, StringFormat='Priority: {0}'}" HorizontalOptions="Center"/>
+                <Slider Minimum="1" Maximum="4" ValueChanged="sliderChanged" Value="{Binding Priority}"/>
+                <Label Text="Description:" HorizontalOptions="Center"/>
+                <Editor x:Name="TextEditor"
+                        Placeholder="Description"
+                        Text="{Binding Description}"
+                        HeightRequest="100"/>
+                <Grid ColumnDefinitions="*,*"
+                      ColumnSpacing="4">
+                        <Button Text="Save"
+                                Command="{Binding SaveCommand}"/>
+
+                        <Button Grid.Column="1"
+                                Text="Delete"
+                                Command="{Binding DeleteCommand}"/>
+
+                </Grid>
+        </VerticalStackLayout>
+</ContentPage>
