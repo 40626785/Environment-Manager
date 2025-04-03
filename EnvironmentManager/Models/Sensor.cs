@@ -10,11 +10,11 @@ namespace EnvironmentManager.Models
         [Key]
         public int SensorId { get; set; }
 
-        // Foreign Keys - Assuming Location and Account models will be created later
-        // public int LocationId { get; set; }
-        // public virtual Location Location { get; set; } // Navigation property
-        // public int AccountId { get; set; } // Assuming an Account model exists or will be created
-        // public virtual Account Account { get; set; } // Navigation property
+        [Required]
+        public int LocationId { get; set; }
+
+        [ForeignKey("LocationId")]
+        public virtual Location Location { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -29,11 +29,11 @@ namespace EnvironmentManager.Models
         [StringLength(50)]
         public string SensorType { get; set; } // e.g., Temperature, Humidity, CO2
 
+        [Required]
         public DateTime InstallationDate { get; set; }
 
+        [Required]
         public bool IsActive { get; set; }
-
-        public DateTime? LastCalibration { get; set; } // Nullable DateTime
 
         [StringLength(50)]
         public string FirmwareVersion { get; set; }
@@ -45,14 +45,10 @@ namespace EnvironmentManager.Models
         [StringLength(255)]
         public string SensorUrl { get; set; } // URL for accessing sensor data/interface
 
-        public DateTime? LastHeartbeat { get; set; } // Nullable DateTime
-
         [StringLength(50)]
         public string ConnectivityStatus { get; set; } // e.g., "Online", "Offline", "Degraded"
 
         public float? BatteryLevelPercentage { get; set; } // Nullable float
-
-        public int? SignalStrengthDbm { get; set; } // Nullable int
 
         // Navigation properties for related entities
         public virtual ICollection<SensorReading> Readings { get; set; }

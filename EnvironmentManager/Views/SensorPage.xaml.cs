@@ -10,6 +10,15 @@ public partial class SensorPage : ContentPage
 		BindingContext = viewModel; // Set the BindingContext to the injected ViewModel
 	}
 
+	protected override void OnAppearing()
+	{
+		base.OnAppearing();
+		if (BindingContext is SensorViewModel vm)
+		{
+			vm.LoadSensorsCommand?.Execute(null);
+		}
+	}
+
     // Optional: Add any view-specific logic here if needed,
     // but most logic should reside in the ViewModel.
     // For example, handling Appearing/Disappearing events to load/unload data.

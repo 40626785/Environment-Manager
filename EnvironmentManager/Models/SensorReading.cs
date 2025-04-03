@@ -16,27 +16,29 @@ namespace EnvironmentManager.Models
         public virtual Sensor Sensor { get; set; }
 
         [Required]
+        public int ParameterId { get; set; }
+
+        [ForeignKey("ParameterId")]
+        public virtual EnvironmentalParameter EnvironmentalParameter { get; set; }
+
+        [Required]
         public DateTime Timestamp { get; set; }
 
         [Required]
-        public string ParameterName { get; set; } // e.g., "Temperature", "Humidity"
-
-        [Required]
-        public double Value { get; set; }
+        public float Value { get; set; }
 
         [Required]
         [StringLength(20)]
-        public string Unit { get; set; } // e.g., "°C", "%RH"
+        public string MeasurementUnit { get; set; }
 
-        public string? Status { get; set; } // e.g., "Normal", "Warning", "Error"
-
-        public string? Notes { get; set; }
+        [Required]
+        public bool IsValid { get; set; }
 
         public SensorReading()
         {
-            ParameterName = string.Empty;
-            Unit = string.Empty;
+            MeasurementUnit = string.Empty;
             Timestamp = DateTime.UtcNow;
+            IsValid = true;
         }
     }
 } 

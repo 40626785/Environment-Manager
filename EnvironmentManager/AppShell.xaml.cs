@@ -14,5 +14,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("maintenance", typeof(AllMaintenancePage));
         Routing.RegisterRoute("sensors", typeof(SensorPage));
         Routing.RegisterRoute("about", typeof(AboutPage));
+        Routing.RegisterRoute("EditSensor", typeof(EditSensorPage));
+        Routing.RegisterRoute("AddSensor", typeof(AddSensorPage));
 	}
 }

@@ -4,13 +4,16 @@ using EnvironmentManager.Models;
 namespace EnvironmentManager.Data;
 public class MaintenanceDbContext : DbContext
 {
-
     public MaintenanceDbContext()
     { }
+    
     public MaintenanceDbContext(DbContextOptions<MaintenanceDbContext> options) : base(options)
     { }
 
     public DbSet<Maintenance> Maintenance { get; set; }
-    public DbSet<Sensor> Sensors { get; set; } // Added for Sensor entity
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+    }
 }

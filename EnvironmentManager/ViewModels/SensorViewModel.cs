@@ -6,12 +6,14 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Diagnostics;
 
 namespace EnvironmentManager.ViewModels
 {
     public partial class SensorViewModel : ObservableObject
     {
-        private readonly MaintenanceDbContext _context;
+        private readonly SensorDbContext _context;
+        private bool _isLoading;
 
         [ObservableProperty]
         private ObservableCollection<Sensor> _sensors;
@@ -20,33 +22,31 @@ namespace EnvironmentManager.ViewModels
         private Sensor? _selectedSensor;
 
         [ObservableProperty]
-        private string _sensorName;
+        private int _sensorId;
+
         [ObservableProperty]
-        private string _model;
+        private int _locationId;
+
         [ObservableProperty]
-        private string _manufacturer;
+        private string _sensorName = string.Empty;
+
         [ObservableProperty]
-        private string _sensorType;
+        private string _model = string.Empty;
+
+        [ObservableProperty]
+        private string _manufacturer = string.Empty;
+
+        [ObservableProperty]
+        private string _sensorType = string.Empty;
+
         [ObservableProperty]
         private DateTime _installationDate = DateTime.Now;
+
         [ObservableProperty]
         private bool _isActive = true;
+
         [ObservableProperty]
-        private DateTime? _lastCalibration;
-        [ObservableProperty]
-        private string _firmwareVersion;
-        [ObservableProperty]
-        private string _dataSource;
-        [ObservableProperty]
-        private string _sensorUrl;
-        [ObservableProperty]
-        private DateTime? _lastHeartbeat;
-        [ObservableProperty]
-        private string _connectivityStatus;
-        [ObservableProperty]
-        private float? _batteryLevelPercentage;
-        [ObservableProperty]
-        private int? _signalStrengthDbm;
+        private string _dataSource = string.Empty;
 
         [ObservableProperty]
         private bool _isEditing = false;
@@ -54,7 +54,7 @@ namespace EnvironmentManager.ViewModels
         [ObservableProperty]
         private string _pageTitle = "Add New Sensor";
 
-        public SensorViewModel(MaintenanceDbContext context)
+        public SensorViewModel(SensorDbContext context)
         {
             _context = context;
             _sensors = new ObservableCollection<Sensor>();
@@ -75,12 +75,68 @@ namespace EnvironmentManager.ViewModels
         [RelayCommand]
         private async Task LoadSensorsAsync()
         {
-            Sensors.Clear();
-            var sensorsList = await _context.Sensors.OrderBy(s => s.SensorName).ToListAsync();
-            foreach (var sensor in sensorsList)
+            if (_isLoading)
             {
-                Sensors.Add(sensor);
+                Debug.WriteLine("Load operation already in progress, skipping...");
+                return;
             }
+
+            try
+            {
+                _isLoading = true;
+                Debug.WriteLine("Starting to load sensors...");
+                Sensors.Clear();
+                
+                // Check if context is available
+                if (_context == null)
+                {
+                    Debug.WriteLine("Error: Database context is null");
+                    await Shell.Current.DisplayAlert("Error", "Database context is not initialized", "OK");
+                    return;
+                }
+
+                Debug.WriteLine("Attempting to query sensors from database...");
+                var sensorsList = await _context.Sensors
+                    .AsNoTracking()  // Add this to prevent tracking
+                    .OrderBy(s => s.SensorName)
+                    .ToListAsync();
+                
+                Debug.WriteLine($"Found {sensorsList.Count} sensors");
+                foreach (var sensor in sensorsList)
+                {
+                    Sensors.Add(sensor);
+                }
+                Debug.WriteLine("Successfully loaded sensors");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error loading sensors: {ex.Message}");
+                Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+                await Shell.Current.DisplayAlert("Error", $"Failed to load sensors: {ex.Message}", "OK");
+            }
+            finally
+            {
+                _isLoading = false;
+            }
+        }
+
+        [RelayCommand]
+        private async Task NavigateToAddAsync()
+        {
+            await Shell.Current.GoToAsync("AddSensor");
+        }
+
+        [RelayCommand]
+        private async Task NavigateToEditAsync(Sensor sensor)
+        {
+            if (sensor == null) return;
+            
+            var parameters = new Dictionary<string, object>
+            {
+                { "id", sensor.SensorId }
+            };
+            
+            await Shell.Current.GoToAsync("EditSensor", parameters);
         }
 
         [RelayCommand]
@@ -89,20 +145,15 @@ namespace EnvironmentManager.ViewModels
             SelectedSensor = null;
             IsEditing = false;
 
+            SensorId = 0;
+            LocationId = 0;
             SensorName = string.Empty;
             Model = string.Empty;
             Manufacturer = string.Empty;
             SensorType = string.Empty;
             InstallationDate = DateTime.Now;
             IsActive = true;
-            LastCalibration = null;
-            FirmwareVersion = string.Empty;
             DataSource = string.Empty;
-            SensorUrl = string.Empty;
-            LastHeartbeat = null;
-            ConnectivityStatus = string.Empty;
-            BatteryLevelPercentage = null;
-            SignalStrengthDbm = null;
         }
 
         [RelayCommand]
@@ -113,20 +164,15 @@ namespace EnvironmentManager.ViewModels
             SelectedSensor = sensor;
             IsEditing = true;
 
+            SensorId = sensor.SensorId;
+            LocationId = sensor.LocationId;
             SensorName = sensor.SensorName;
             Model = sensor.Model;
             Manufacturer = sensor.Manufacturer;
             SensorType = sensor.SensorType;
             InstallationDate = sensor.InstallationDate;
             IsActive = sensor.IsActive;
-            LastCalibration = sensor.LastCalibration;
-            FirmwareVersion = sensor.FirmwareVersion;
             DataSource = sensor.DataSource;
-            SensorUrl = sensor.SensorUrl;
-            LastHeartbeat = sensor.LastHeartbeat;
-            ConnectivityStatus = sensor.ConnectivityStatus;
-            BatteryLevelPercentage = sensor.BatteryLevelPercentage;
-            SignalStrengthDbm = sensor.SignalStrengthDbm;
         }
 
         [RelayCommand]
@@ -138,35 +184,34 @@ namespace EnvironmentManager.ViewModels
                 return;
             }
 
-            Sensor sensorToSave;
-
-            if (IsEditing && SelectedSensor != null)
-            {
-                sensorToSave = SelectedSensor;
-            }
-            else
-            {
-                sensorToSave = new Sensor();
-                _context.Sensors.Add(sensorToSave);
-            }
-
-            sensorToSave.SensorName = SensorName;
-            sensorToSave.Model = Model;
-            sensorToSave.Manufacturer = Manufacturer;
-            sensorToSave.SensorType = SensorType;
-            sensorToSave.InstallationDate = InstallationDate;
-            sensorToSave.IsActive = IsActive;
-            sensorToSave.LastCalibration = LastCalibration;
-            sensorToSave.FirmwareVersion = FirmwareVersion;
-            sensorToSave.DataSource = DataSource;
-            sensorToSave.SensorUrl = SensorUrl;
-            sensorToSave.LastHeartbeat = LastHeartbeat;
-            sensorToSave.ConnectivityStatus = ConnectivityStatus;
-            sensorToSave.BatteryLevelPercentage = BatteryLevelPercentage;
-            sensorToSave.SignalStrengthDbm = SignalStrengthDbm;
-
             try
             {
+                Sensor sensorToSave;
+
+                if (IsEditing && SelectedSensor != null)
+                {
+                    sensorToSave = await _context.Sensors.FindAsync(SelectedSensor.SensorId);
+                    if (sensorToSave == null)
+                    {
+                        await Shell.Current.DisplayAlert("Error", "Sensor not found.", "OK");
+                        return;
+                    }
+                }
+                else
+                {
+                    sensorToSave = new Sensor();
+                    _context.Sensors.Add(sensorToSave);
+                }
+
+                sensorToSave.LocationId = LocationId;
+                sensorToSave.SensorName = SensorName;
+                sensorToSave.Model = Model;
+                sensorToSave.Manufacturer = Manufacturer;
+                sensorToSave.SensorType = SensorType;
+                sensorToSave.InstallationDate = InstallationDate;
+                sensorToSave.IsActive = IsActive;
+                sensorToSave.DataSource = DataSource;
+
                 await _context.SaveChangesAsync();
                 PrepareNewSensor();
                 await LoadSensorsAsync();
@@ -175,10 +220,6 @@ namespace EnvironmentManager.ViewModels
             catch (Exception ex)
             {
                 await Shell.Current.DisplayAlert("Error", $"Failed to save sensor: {ex.Message}", "OK");
-                if (!IsEditing)
-                {
-                    _context.Entry(sensorToSave).State = EntityState.Detached;
-                }
             }
         }
 
@@ -192,10 +233,17 @@ namespace EnvironmentManager.ViewModels
 
             try
             {
-                _context.Sensors.Remove(sensor);
+                var sensorToDelete = await _context.Sensors.FindAsync(sensor.SensorId);
+                if (sensorToDelete == null)
+                {
+                    await Shell.Current.DisplayAlert("Error", "Sensor not found.", "OK");
+                    return;
+                }
+
+                _context.Sensors.Remove(sensorToDelete);
                 await _context.SaveChangesAsync();
 
-                if (SelectedSensor == sensor)
+                if (SelectedSensor?.SensorId == sensor.SensorId)
                 {
                     PrepareNewSensor();
                 }
@@ -205,7 +253,6 @@ namespace EnvironmentManager.ViewModels
             catch (Exception ex)
             {
                 await Shell.Current.DisplayAlert("Error", $"Failed to delete sensor: {ex.Message}", "OK");
-                _context.Entry(sensor).State = EntityState.Unchanged;
             }
         }
     }

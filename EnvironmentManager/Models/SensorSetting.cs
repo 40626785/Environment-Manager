@@ -20,25 +20,21 @@ namespace EnvironmentManager.Models
         public string SettingName { get; set; }
 
         [Required]
-        public string Value { get; set; }
+        public string SettingValue { get; set; }
 
+        [Required]
         [StringLength(50)]
-        public string? DataType { get; set; } // e.g., "string", "number", "boolean"
+        public string DataType { get; set; }
 
-        public string? Description { get; set; }
-
-        public bool IsActive { get; set; }
-
-        public DateTime LastModified { get; set; }
-
-        public string? ModifiedBy { get; set; }
+        [Required]
+        public DateTime LastUpdated { get; set; }
 
         public SensorSetting()
         {
             SettingName = string.Empty;
-            Value = string.Empty;
-            IsActive = true;
-            LastModified = DateTime.UtcNow;
+            SettingValue = string.Empty;
+            DataType = string.Empty;
+            LastUpdated = DateTime.UtcNow;
         }
     }
 } 
