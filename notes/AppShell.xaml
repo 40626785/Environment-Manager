@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="notes.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:notes.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.BackgroundColor="#6b46c1"
+    Shell.ForegroundColor="White"
+    Shell.TitleColor="White">
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" BackgroundColor="#6b46c1" Padding="20">
+            <Label Text="Environmental Monitor"
+                   FontSize="24"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="HomePage" />
+
+    <ShellContent
+        Title="Sensors"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="SensorsPage" />
+
+    <ShellContent
+        Title="Alerts"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="AlertsPage" />
+
+    <ShellContent
+        Title="Reports"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="ReportsPage" />
+
+    <ShellContent
+        Title="Settings"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="SettingsPage" />
+
+    <Shell.FlyoutFooter>
+        <Grid Padding="20" ColumnDefinitions="Auto,*" BackgroundColor="#f8f9fa">
+            <Frame HeightRequest="40" 
+                   WidthRequest="40"
+                   CornerRadius="20"
+                   Padding="0"
+                   BackgroundColor="#212529">
+                <Label Text="ES" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                       TextColor="White"/>
+            </Frame>
+            <VerticalStackLayout Grid.Column="1" 
+                               Spacing="2" 
+                               VerticalOptions="Center"
+                               Margin="10,0,0,0">
+                <Label Text="Environmental Scientist" 
+                       FontAttributes="Bold"
+                       FontSize="14"/>
+                <Label Text="John Doe" 
+                       TextColor="Gray"
+                       FontSize="12"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>
