@@ -18,6 +18,11 @@
         Route="maintenance" />
 
     <ShellContent
+        Title="Sensors"
+        ContentTemplate="{DataTemplate views:SensorPage}"
+        Route="SensorPage" />
+
+    <ShellContent
         Title="About"
         ContentTemplate="{DataTemplate views:AboutPage}"
         Route="about" />

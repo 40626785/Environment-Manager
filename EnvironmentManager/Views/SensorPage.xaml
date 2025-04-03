@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:EnvironmentManager.ViewModels"
+             xmlns:models="clr-namespace:EnvironmentManager.Models"
+             x:Class="EnvironmentManager.Views.SensorPage"
+             x:DataType="viewModels:SensorViewModel"
+             Title="Manage Sensors">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Add/Edit Form Section -->
+            <Frame Padding="15" CornerRadius="10" BorderColor="LightGray">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="{Binding PageTitle}" FontSize="Large" FontAttributes="Bold"/> <!-- Changed binding to PageTitle -->
+
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="5" ColumnSpacing="10">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Name:" VerticalOptions="Center"/>
+                        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding SensorName}" Placeholder="e.g., Living Room Temp"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Model:" VerticalOptions="Center"/>
+                        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Model}" Placeholder="e.g., DHT22"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Manufacturer:" VerticalOptions="Center"/>
+                        <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Manufacturer}" Placeholder="e.g., Adafruit"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Type:" VerticalOptions="Center"/>
+                        <Entry Grid.Row="3" Grid.Column="1" Text="{Binding SensorType}" Placeholder="e.g., Temperature/Humidity"/>
+
+                        <Label Grid.Row="4" Grid.Column="0" Text="Install Date:" VerticalOptions="Center"/>
+                        <DatePicker Grid.Row="4" Grid.Column="1" Date="{Binding InstallationDate}"/>
+
+                        <Label Grid.Row="5" Grid.Column="0" Text="Active:" VerticalOptions="Center"/>
+                        <Switch Grid.Row="5" Grid.Column="1" IsToggled="{Binding IsActive}"/>
+
+                        <Label Grid.Row="6" Grid.Column="0" Text="Last Calib.:" VerticalOptions="Center"/>
+                        <DatePicker Grid.Row="6" Grid.Column="1" Date="{Binding LastCalibration}" Format="yyyy-MM-dd"/>
+
+                        <Label Grid.Row="7" Grid.Column="0" Text="Firmware:" VerticalOptions="Center"/>
+                        <Entry Grid.Row="7" Grid.Column="1" Text="{Binding FirmwareVersion}" Placeholder="e.g., 1.2.0"/>
+
+                        <Label Grid.Row="8" Grid.Column="0" Text="Data Source:" VerticalOptions="Center"/>
+                        <Entry Grid.Row="8" Grid.Column="1" Text="{Binding DataSource}" Placeholder="e.g., API Endpoint"/>
+
+                        <Label Grid.Row="9" Grid.Column="0" Text="Sensor URL:" VerticalOptions="Center"/>
+                        <Entry Grid.Row="9" Grid.Column="1" Text="{Binding SensorUrl}" Keyboard="Url"/>
+
+                        <Label Grid.Row="10" Grid.Column="0" Text="Last Heartbeat:" VerticalOptions="Center"/>
+                        <DatePicker Grid.Row="10" Grid.Column="1" Date="{Binding LastHeartbeat}" Format="yyyy-MM-dd HH:mm"/>
+
+                        <Label Grid.Row="11" Grid.Column="0" Text="Connectivity:" VerticalOptions="Center"/>
+                        <Entry Grid.Row="11" Grid.Column="1" Text="{Binding ConnectivityStatus}" Placeholder="e.g., Online"/>
+
+                        <Label Grid.Row="12" Grid.Column="0" Text="Battery (%):" VerticalOptions="Center"/>
+                        <Entry Grid.Row="12" Grid.Column="1" Text="{Binding BatteryLevelPercentage}" Keyboard="Numeric"/>
+
+                        <Label Grid.Row="13" Grid.Column="0" Text="Signal (dBm):" VerticalOptions="Center"/>
+                        <Entry Grid.Row="13" Grid.Column="1" Text="{Binding SignalStrengthDbm}" Keyboard="Numeric"/>
+                    </Grid>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Button Text="Save Sensor" Command="{Binding SaveSensorCommand}" IsEnabled="{Binding SensorName, Converter={StaticResource StringNotNullOrEmptyConverter}}"/>
+                        <Button Text="Clear / New" Command="{Binding PrepareNewSensorCommand}" BackgroundColor="Gray"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Sensor List Section -->
+            <Label Text="Existing Sensors" FontSize="Medium" FontAttributes="Bold"/>
+            <Frame Padding="0" CornerRadius="10" BorderColor="LightGray" HasShadow="False">
+                 <CollectionView ItemsSource="{Binding Sensors}" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Sensor">
+                            <Grid Padding="10" ColumnDefinitions="*,Auto,Auto">
+                                <VerticalStackLayout Grid.Column="0">
+                                    <Label Text="{Binding SensorName}" FontAttributes="Bold"/>
+                                    <Label Text="{Binding SensorType}" FontSize="Small"/>
+                                    <Label Text="{Binding ConnectivityStatus, StringFormat='Status: {0}'}" FontSize="Small"/>
+                                </VerticalStackLayout>
+                                <Button Grid.Column="1" Text="Edit" Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:SensorViewModel}}, Path=SelectSensorForEditCommand}" CommandParameter="{Binding .}" WidthRequest="70" Margin="5,0"/>
+                                <Button Grid.Column="2" Text="Delete" Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:SensorViewModel}}, Path=DeleteSensorCommand}" CommandParameter="{Binding .}" BackgroundColor="Red" TextColor="White" WidthRequest="70"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                     <CollectionView.EmptyView>
+                         <Label Text="No sensors found. Add one above." HorizontalOptions="Center" VerticalOptions="Center" Padding="20"/>
+                     </CollectionView.EmptyView>
+                 </CollectionView>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+    <ContentPage.Resources>
+        <!-- Add a simple converter for enabling the Save button -->
+        <ResourceDictionary>
+            <local:StringNotNullOrEmptyConverter x:Key="StringNotNullOrEmptyConverter" xmlns:local="clr-namespace:EnvironmentManager.Converters"/>
+             <!-- Define Converters namespace if not already defined -->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+</ContentPage>

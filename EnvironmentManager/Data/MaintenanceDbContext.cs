@@ -11,5 +11,6 @@ public class MaintenanceDbContext : DbContext
     { }
 
     public DbSet<Maintenance> Maintenance { get; set; }
+    public DbSet<Sensor> Sensors { get; set; } // Added for Sensor entity
 
 }

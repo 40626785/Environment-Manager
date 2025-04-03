@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+﻿﻿using Microsoft.Extensions.Logging;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using EnvironmentManager.Data;
@@ -52,12 +52,14 @@ public static class MauiProgram
 		builder.Services.AddSingleton<AllMaintenanceViewModel>();
 		builder.Services.AddTransient<MaintenanceViewModel>();
 		builder.Services.AddTransient<AboutViewModel>();
+        builder.Services.AddTransient<SensorViewModel>(); // Register SensorViewModel
 
 		// Register Pages
 		builder.Services.AddSingleton<HomePage>();
 		builder.Services.AddSingleton<AllMaintenancePage>();
 		builder.Services.AddTransient<MaintenancePage>();
 		builder.Services.AddTransient<AboutPage>();
+        builder.Services.AddTransient<SensorPage>(); // Register SensorPage
 
 #if DEBUG
 		builder.Logging.AddDebug();
