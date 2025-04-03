@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace EnvironmentManager.ViewModels;
 
-internal class AboutViewModel
+public class AboutViewModel
 {
     public string Title => AppInfo.Name;
     public string Version => AppInfo.VersionString;

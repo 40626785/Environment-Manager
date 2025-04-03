@@ -4,9 +4,24 @@ namespace EnvironmentManager.Views;
 
 public partial class AboutPage : ContentPage
 {
-	public AboutPage()
+	public AboutPage(AboutViewModel viewModel)
 	{
-		this.BindingContext = new AboutViewModel();
 		InitializeComponent();
+		BindingContext = viewModel;
+	}
+
+	private async void OnMaintenanceClicked(object sender, TappedEventArgs e)
+	{
+		await Shell.Current.GoToAsync("//maintenance");
+	}
+
+	private async void OnAboutClicked(object sender, TappedEventArgs e)
+	{
+		await Shell.Current.GoToAsync("//about");
+	}
+
+	private async void OnDashboardClicked(object sender, TappedEventArgs e)
+	{
+		await Shell.Current.GoToAsync("//dashboard");
 	}
 }

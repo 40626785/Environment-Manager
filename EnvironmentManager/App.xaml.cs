@@ -1,5 +1,7 @@
-﻿namespace EnvironmentManager;
+﻿using Microsoft.Maui.Controls;
 using System.Diagnostics;
+
+namespace EnvironmentManager;
 
 public partial class App : Application
 {
@@ -7,11 +9,9 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		Routing.RegisterRoute(nameof(Views.NotePage), typeof(Views.NotePage));
+		Routing.RegisterRoute(nameof(Views.MaintenancePage), typeof(Views.MaintenancePage));
 
-        Routing.RegisterRoute(nameof(Views.MaintenancePage), typeof(Views.MaintenancePage));
-
-        Trace.Listeners.Add(new DefaultTraceListener());
+		Trace.Listeners.Add(new DefaultTraceListener());
 
 		MainPage = new AppShell();
 	}

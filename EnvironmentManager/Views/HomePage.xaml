@@ -1,40 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="notes.Views.HomePage"
+             x:Class="EnvironmentManager.Views.HomePage"
              Title="Dashboard Overview"
              Shell.NavBarIsVisible="False"
              BackgroundColor="White">
 
-    <Grid RowDefinitions="Auto,*">
+    <Grid RowDefinitions="Auto,Auto,*">
         <!-- Custom Navigation Bar -->
         <Grid Grid.Row="0" 
               BackgroundColor="#6b46c1" 
               Padding="15,40,15,15"
-              ColumnDefinitions="Auto,*,Auto">
-            
-            <!-- Menu Button -->
-            <Button Grid.Column="0"
-                    Text="☰"
-                    FontSize="24"
-                    BackgroundColor="Transparent"
-                    TextColor="White"
-                    Padding="0"
-                    WidthRequest="40"
-                    HeightRequest="40"
-                    Clicked="OnMenuClicked"/>
+              ColumnDefinitions="*,Auto">
             
             <!-- Title -->
-            <Label Grid.Column="1"
+            <Label Grid.Column="0"
                    Text="Dashboard Overview"
                    TextColor="White"
                    FontSize="20"
                    FontAttributes="Bold"
-                   HorizontalOptions="Center"
+                   Margin="10,0,0,0"
                    VerticalOptions="Center"/>
             
             <!-- Notification Button -->
-            <Button Grid.Column="2"
+            <Button Grid.Column="1"
                     Text="🔔"
                     FontSize="18"
                     BackgroundColor="Transparent"
@@ -45,8 +34,47 @@
                     CornerRadius="20"/>
         </Grid>
 
+        <!-- Navigation Menu -->
+        <Grid Grid.Row="1" BackgroundColor="#f5f5f5" Padding="20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Dashboard" 
+                   Grid.Column="0"
+                   TextColor="#6750A4"
+                   FontSize="16"
+                   HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnDashboardClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label Text="Maintenance" 
+                   Grid.Column="1"
+                   TextColor="#666666"
+                   FontSize="16"
+                   HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnMaintenanceClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label Text="About" 
+                   Grid.Column="2"
+                   TextColor="#666666"
+                   FontSize="16"
+                   HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnAboutClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+
         <!-- Main Content -->
-        <ScrollView Grid.Row="1">
+        <ScrollView Grid.Row="2">
             <Grid Padding="15" RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -105,25 +133,29 @@
                     <Frame Grid.Column="1" Grid.Row="1" Padding="15" BorderColor="Transparent" HasShadow="True">
                         <VerticalStackLayout Spacing="5">
                             <Label Text="Sensor Status" FontSize="14"/>
-                            <Grid ColumnDefinitions="*,Auto" RowSpacing="5">
-                                <Label Text="Online" Grid.Column="0" FontSize="12"/>
-                                <Label Text="42" Grid.Column="1" FontSize="12"/>
-                                
-                                <Label Text="Warning" Grid.Row="1" Grid.Column="0" FontSize="12"/>
-                                <Label Text="7" Grid.Row="1" Grid.Column="1" FontSize="12"/>
-                                
-                                <Label Text="Offline" Grid.Row="2" Grid.Column="0" FontSize="12"/>
-                                <Label Text="3" Grid.Row="2" Grid.Column="1" FontSize="12"/>
+                            <Label Text="42" FontSize="32" FontAttributes="Bold"/>
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
+                                <ProgressBar Grid.Column="0"
+                                           Progress="0.85" 
+                                           BackgroundColor="#f0f0f0"
+                                           ProgressColor="#28a745"
+                                           VerticalOptions="Center"/>
+                                <Label Grid.Column="1" 
+                                      Text="42 Online"
+                                      TextColor="#28a745" 
+                                      FontSize="14"
+                                      VerticalOptions="Center"/>
                             </Grid>
-                            <ProgressBar Progress="0.85" 
-                                       BackgroundColor="#f0f0f0"
-                                       ProgressColor="#28a745"/>
+                            <Grid ColumnDefinitions="*,Auto" Margin="0,8,0,0">
+                                <Label Text="Warning" Grid.Column="0" FontSize="12" TextColor="#ffc107"/>
+                                <Label Text="7" Grid.Column="1" FontSize="12"/>
+                            </Grid>
                         </VerticalStackLayout>
                     </Frame>
                 </Grid>
 
                 <!-- Active Alerts -->
-                <VerticalStackLayout Grid.Row="1" Spacing="10">
+                <VerticalStackLayout Grid.Row="2" Spacing="10">
                     <Label Text="Active Alerts" 
                            FontSize="18" 
                            FontAttributes="Bold"/>

@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using EnvironmentManager.ViewModels;
 using EnvironmentManager.Views;
 
-
 namespace EnvironmentManager;
 
 public static class MauiProgram
@@ -31,21 +30,34 @@ public static class MauiProgram
 
 		builder.Configuration.AddConfiguration(config);
 
-		var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
-		builder.Services.AddDbContext<NotesDbContext>(options => options.UseSqlServer(connectionString));
-        builder.Services.AddDbContext<MaintenanceDbContext>(options => options.UseSqlServer(connectionString));
+		builder.Services.AddDbContext<MaintenanceDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Console.WriteLine($"Attempting to connect to database with connection string: {connectionString}");
+				options.UseSqlServer(connectionString);
+				Console.WriteLine("Database context configured successfully");
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error configuring database context: {ex.Message}");
+				Console.WriteLine($"Stack trace: {ex.StackTrace}");
+				throw;
+			}
+		});
 
-		builder.Services.AddSingleton<AllNotesViewModel>();
-		builder.Services.AddTransient<NoteViewModel>();
-        builder.Services.AddSingleton<AllMaintenanceViewModel>();
-        builder.Services.AddTransient<MaintenanceViewModel>();
+		// Register ViewModels
+		builder.Services.AddSingleton<HomeViewModel>();
+		builder.Services.AddSingleton<AllMaintenanceViewModel>();
+		builder.Services.AddTransient<MaintenanceViewModel>();
+		builder.Services.AddTransient<AboutViewModel>();
 
-		builder.Services.AddSingleton<AllNotesPage>();
-		builder.Services.AddTransient<NotePage>();
-        builder.Services.AddSingleton<AllMaintenancePage>();
-        builder.Services.AddTransient<MaintenancePage>();
-
-
+		// Register Pages
+		builder.Services.AddSingleton<HomePage>();
+		builder.Services.AddSingleton<AllMaintenancePage>();
+		builder.Services.AddTransient<MaintenancePage>();
+		builder.Services.AddTransient<AboutPage>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
