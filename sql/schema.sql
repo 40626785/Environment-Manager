@@ -1,0 +1,7 @@
+CREATE TABLE maintenance (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    DueDate DATETIME2 DEFAULT SYSDATETIME(),
+    Overdue BIT DEFAULT 0,
+    Priority INT NOT NULL,
+    Description NVARCHAR(MAX) NOT NULL
+);
