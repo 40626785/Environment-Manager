@@ -1,4 +1,5 @@
 using EnvironmentManager.ViewModels;
+using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager.Views;
 
@@ -10,18 +11,23 @@ public partial class AboutPage : ContentPage
 		BindingContext = viewModel;
 	}
 
-	private async void OnMaintenanceClicked(object sender, TappedEventArgs e)
+	private async void OnHomeClicked(object sender, EventArgs e)
+	{
+		await Shell.Current.GoToAsync("//home");
+	}
+
+	private async void OnMaintenanceClicked(object sender, EventArgs e)
 	{
 		await Shell.Current.GoToAsync("//maintenance");
 	}
 
-	private async void OnAboutClicked(object sender, TappedEventArgs e)
+	private async void OnSensorsClicked(object sender, EventArgs e)
 	{
-		await Shell.Current.GoToAsync("//about");
+		await Shell.Current.GoToAsync("//sensors");
 	}
 
-	private async void OnDashboardClicked(object sender, TappedEventArgs e)
+	private async void OnAboutClicked(object sender, EventArgs e)
 	{
-		await Shell.Current.GoToAsync("//dashboard");
+		await Shell.Current.GoToAsync("//about");
 	}
 }

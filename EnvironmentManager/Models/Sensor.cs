@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -53,21 +54,27 @@ namespace EnvironmentManager.Models
 
         public int? SignalStrengthDbm { get; set; } // Nullable int
 
-        // Navigation properties for related entities (based on ERD)
-        // public virtual ICollection<SensorReading> SensorReadings { get; set; }
-        // public virtual ICollection<SensorSetting> SensorSettings { get; set; }
-        // public virtual ICollection<CalibrationRecord> CalibrationRecords { get; set; }
-        // public virtual ICollection<MaintenanceRecord> MaintenanceRecords { get; set; } // Note: MaintenanceRecord model already exists partially
-        // public virtual ICollection<SensorStatusLog> SensorStatusLogs { get; set; }
+        // Navigation properties for related entities
+        public virtual ICollection<SensorReading> Readings { get; set; }
+        public virtual ICollection<SensorSetting> Settings { get; set; }
 
         public Sensor()
         {
-            // Initialize collections if needed
-            // SensorReadings = new HashSet<SensorReading>();
-            // SensorSettings = new HashSet<SensorSetting>();
-            // CalibrationRecords = new HashSet<CalibrationRecord>();
-            // MaintenanceRecords = new HashSet<MaintenanceRecord>();
-            // SensorStatusLogs = new HashSet<SensorStatusLog>();
+            // Initialize default values if needed
+            SensorName = string.Empty;
+            Model = string.Empty;
+            Manufacturer = string.Empty;
+            SensorType = string.Empty;
+            FirmwareVersion = string.Empty;
+            DataSource = string.Empty;
+            SensorUrl = string.Empty;
+            ConnectivityStatus = string.Empty;
+            InstallationDate = DateTime.Now;
+            IsActive = true;
+
+            // Initialize collections
+            Readings = new List<SensorReading>();
+            Settings = new List<SensorSetting>();
         }
     }
 }

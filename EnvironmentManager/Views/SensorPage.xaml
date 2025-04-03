@@ -13,7 +13,7 @@
             <!-- Add/Edit Form Section -->
             <Frame Padding="15" CornerRadius="10" BorderColor="LightGray">
                 <VerticalStackLayout Spacing="10">
-                    <Label Text="{Binding PageTitle}" FontSize="Large" FontAttributes="Bold"/> <!-- Changed binding to PageTitle -->
+                    <Label Text="{Binding PageTitle}" FontSize="Large" FontAttributes="Bold"/>
 
                     <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="5" ColumnSpacing="10">
                         <Label Grid.Row="0" Grid.Column="0" Text="Name:" VerticalOptions="Center"/>
@@ -93,10 +93,8 @@
     </ScrollView>
 
     <ContentPage.Resources>
-        <!-- Add a simple converter for enabling the Save button -->
         <ResourceDictionary>
             <local:StringNotNullOrEmptyConverter x:Key="StringNotNullOrEmptyConverter" xmlns:local="clr-namespace:EnvironmentManager.Converters"/>
-             <!-- Define Converters namespace if not already defined -->
         </ResourceDictionary>
     </ContentPage.Resources>
 

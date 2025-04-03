@@ -9,6 +9,14 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="Shell">
+                <Setter Property="ForegroundColor" Value="#6750A4" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TitleColor" Value="#6750A4" />
+                <Setter Property="DisabledColor" Value="#666666" />
+                <Setter Property="UnselectedColor" Value="#666666" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
