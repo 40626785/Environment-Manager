@@ -14,4 +14,5 @@ VALUES
     -- Weather Stations
     ('City Weather Station', 51.5033, -0.1195, 45.0, 'Urban Weather', 'Central', 'Greater London', 'City of London', 'United Kingdom', 0, 'Europe/London', 'GMT'),
     ('Airport Weather Monitor', 51.4700, -0.4543, 25.0, 'Airport', 'West', 'Greater London', 'Hounslow', 'United Kingdom', 0, 'Europe/London', 'GMT'),
-    ('Park Meteorological Station', 51.5073, -0.1657, 35.0, 'Park', 'West', 'Greater London', 'Westminster', 'United Kingdom', 0, 'Europe/London', 'GMT'); 
+    ('Park Meteorological Station', 51.5073, -0.1657, 35.0, 'Park', 'West', 'Greater London', 'Westminster', 'United Kingdom', 0, 'Europe/London', 'GMT');
+

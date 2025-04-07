@@ -71,6 +71,9 @@ namespace EnvironmentManager.ViewModels
         [ObservableProperty]
         private string _batteryLevelText = string.Empty;
 
+        [ObservableProperty]
+        private string _dataSource = string.Empty;
+
         private Dictionary<string, string> _validationErrors = new();
 
         public bool LocationErrorVisible => SelectedLocation == null && _validationErrors.ContainsKey("Location");
