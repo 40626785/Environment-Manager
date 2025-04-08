@@ -72,6 +72,8 @@ namespace EnvironmentManager.ViewModels
         private string _batteryLevelText = string.Empty;
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(DataSourceErrorVisible))]
+        [NotifyPropertyChangedFor(nameof(DataSourceErrorMessage))]
         private string _dataSource = string.Empty;
 
         private Dictionary<string, string> _validationErrors = new();
@@ -84,6 +86,7 @@ namespace EnvironmentManager.ViewModels
         public bool FirmwareErrorVisible => _validationErrors.ContainsKey("FirmwareVersion");
         public bool UrlErrorVisible => _validationErrors.ContainsKey("SensorUrl");
         public bool BatteryErrorVisible => _validationErrors.ContainsKey("BatteryLevel");
+        public bool DataSourceErrorVisible => _validationErrors.ContainsKey("DataSource");
 
         public string NameErrorMessage => _validationErrors.GetValueOrDefault("SensorName", string.Empty);
         public string ModelErrorMessage => _validationErrors.GetValueOrDefault("Model", string.Empty);
@@ -92,6 +95,7 @@ namespace EnvironmentManager.ViewModels
         public string FirmwareErrorMessage => _validationErrors.GetValueOrDefault("FirmwareVersion", string.Empty);
         public string UrlErrorMessage => _validationErrors.GetValueOrDefault("SensorUrl", string.Empty);
         public string BatteryErrorMessage => _validationErrors.GetValueOrDefault("BatteryLevel", string.Empty);
+        public string DataSourceErrorMessage => _validationErrors.GetValueOrDefault("DataSource", string.Empty);
 
         public EditSensorViewModel(SensorDbContext context)
         {
@@ -124,6 +128,9 @@ namespace EnvironmentManager.ViewModels
                         break;
                     case nameof(SensorUrl):
                         ValidateSensorUrl();
+                        break;
+                    case nameof(DataSource):
+                        ValidateDataSource();
                         break;
                 }
             };
@@ -208,6 +215,7 @@ namespace EnvironmentManager.ViewModels
                     IsOnline = sensor.ConnectivityStatus == "Online";
                     BatteryLevelText = sensor.BatteryLevelPercentage.ToString();
                     BatteryLevelPercentage = sensor.BatteryLevelPercentage;
+                    DataSource = sensor.DataSource;
 
                     SelectedLocation = Locations.FirstOrDefault(l => l.LocationId == sensor.LocationId);
                 }
@@ -296,6 +304,7 @@ namespace EnvironmentManager.ViewModels
                 sensor.SensorUrl = SensorUrl;
                 sensor.ConnectivityStatus = IsOnline ? "Online" : "Offline";
                 sensor.BatteryLevelPercentage = BatteryLevelPercentage;
+                sensor.DataSource = DataSource;
 
                 await _context.SaveChangesAsync();
                 await Shell.Current.DisplayAlert("Success", "Sensor updated successfully.", "OK");
@@ -346,17 +355,10 @@ namespace EnvironmentManager.ViewModels
         private void ValidateSensorName()
         {
             _validationErrors.Remove("SensorName");
-            if (string.IsNullOrWhiteSpace(SensorName))
+            var (isValid, errorMessage) = ValidationService.ValidateTextField("Sensor Name", SensorName);
+            if (!isValid)
             {
-                _validationErrors["SensorName"] = "Sensor name is required";
-            }
-            else if (SensorName.Length > 100)
-            {
-                _validationErrors["SensorName"] = "Sensor name must be 100 characters or less";
-            }
-            else if (System.Text.RegularExpressions.Regex.IsMatch(SensorName, @"^\d+$"))
-            {
-                _validationErrors["SensorName"] = "Sensor name cannot contain only numbers";
+                _validationErrors["SensorName"] = errorMessage;
             }
             OnPropertyChanged(nameof(NameErrorVisible));
             OnPropertyChanged(nameof(NameErrorMessage));
@@ -365,17 +367,10 @@ namespace EnvironmentManager.ViewModels
         private void ValidateModel()
         {
             _validationErrors.Remove("Model");
-            if (string.IsNullOrWhiteSpace(Model))
+            var (isValid, errorMessage) = ValidationService.ValidateTextField("Model", Model);
+            if (!isValid)
             {
-                _validationErrors["Model"] = "Model is required";
-            }
-            else if (Model.Length > 100)
-            {
-                _validationErrors["Model"] = "Model must be 100 characters or less";
-            }
-            else if (System.Text.RegularExpressions.Regex.IsMatch(Model, @"^\d+$"))
-            {
-                _validationErrors["Model"] = "Model cannot contain only numbers";
+                _validationErrors["Model"] = errorMessage;
             }
             OnPropertyChanged(nameof(ModelErrorVisible));
             OnPropertyChanged(nameof(ModelErrorMessage));
@@ -384,17 +379,10 @@ namespace EnvironmentManager.ViewModels
         private void ValidateManufacturer()
         {
             _validationErrors.Remove("Manufacturer");
-            if (string.IsNullOrWhiteSpace(Manufacturer))
+            var (isValid, errorMessage) = ValidationService.ValidateTextField("Manufacturer", Manufacturer);
+            if (!isValid)
             {
-                _validationErrors["Manufacturer"] = "Manufacturer is required";
-            }
-            else if (Manufacturer.Length > 100)
-            {
-                _validationErrors["Manufacturer"] = "Manufacturer must be 100 characters or less";
-            }
-            else if (System.Text.RegularExpressions.Regex.IsMatch(Manufacturer, @"^\d+$"))
-            {
-                _validationErrors["Manufacturer"] = "Manufacturer cannot contain only numbers";
+                _validationErrors["Manufacturer"] = errorMessage;
             }
             OnPropertyChanged(nameof(ManufacturerErrorVisible));
             OnPropertyChanged(nameof(ManufacturerErrorMessage));
@@ -403,13 +391,10 @@ namespace EnvironmentManager.ViewModels
         private void ValidateSensorType()
         {
             _validationErrors.Remove("SensorType");
-            if (string.IsNullOrWhiteSpace(SensorType))
+            var (isValid, errorMessage) = ValidationService.ValidateTextField("Sensor Type", SensorType);
+            if (!isValid)
             {
-                _validationErrors["SensorType"] = "Sensor type is required";
-            }
-            else if (SensorType.Length > 50)
-            {
-                _validationErrors["SensorType"] = "Sensor type must be 50 characters or less";
+                _validationErrors["SensorType"] = errorMessage;
             }
             OnPropertyChanged(nameof(TypeErrorVisible));
             OnPropertyChanged(nameof(TypeErrorMessage));
@@ -451,6 +436,18 @@ namespace EnvironmentManager.ViewModels
             }
             OnPropertyChanged(nameof(UrlErrorVisible));
             OnPropertyChanged(nameof(UrlErrorMessage));
+        }
+
+        private void ValidateDataSource()
+        {
+            _validationErrors.Remove("DataSource");
+            var (isValid, errorMessage) = ValidationService.ValidateTextField("Data Source", DataSource);
+            if (!isValid)
+            {
+                _validationErrors["DataSource"] = errorMessage;
+            }
+            OnPropertyChanged(nameof(DataSourceErrorVisible));
+            OnPropertyChanged(nameof(DataSourceErrorMessage));
         }
     }
 }
