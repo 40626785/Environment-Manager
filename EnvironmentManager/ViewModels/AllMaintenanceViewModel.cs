@@ -1,16 +1,13 @@
 using CommunityToolkit.Mvvm.Input;
 using EnvironmentManager.Data;
-using EnvironmentManager.Views;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using System.Diagnostics;
-using System.ComponentModel;
 
 namespace EnvironmentManager.ViewModels;
 
 public class AllMaintenanceViewModel : IQueryAttributable
 {
-    public ObservableCollection<ViewModels.MaintenanceViewModel> AllMaintenance { get; }
+    public ObservableCollection<MaintenanceViewModel> AllMaintenance { get; }
     public ICommand RefreshCommand { get; }
 
     public ICommand EditCommand { get; }
@@ -28,6 +25,7 @@ public class AllMaintenanceViewModel : IQueryAttributable
         NewTicketCommand = new AsyncRelayCommand(NewTicket);
     }
     
+    //Calls isOverdue function in each maintenance object and reloads the instance to update the table.
     private void checkOverdue()
     {
         foreach (MaintenanceViewModel maintenance in AllMaintenance) 
@@ -37,6 +35,7 @@ public class AllMaintenanceViewModel : IQueryAttributable
         }
     }
 
+    //Navigate to maintenance view supplying Maintenance ID to edit an existing entry
     private async Task EditMaintenance(MaintenanceViewModel viewModel)
     {
         if (viewModel != null)
@@ -45,6 +44,7 @@ public class AllMaintenanceViewModel : IQueryAttributable
         }
     }
 
+    //Navigate to maintenance view to create new ticket
     private async Task NewTicket()
     {
         await Shell.Current.GoToAsync(nameof(Views.MaintenancePage));
@@ -79,10 +79,11 @@ public class AllMaintenanceViewModel : IQueryAttributable
         }
     }
 
+    //Repopulates ObservableCollection in Ascending order of Priority
     private void sortCollection() 
     {
         ObservableCollection<MaintenanceViewModel> sorted  = new ObservableCollection<MaintenanceViewModel>(AllMaintenance.OrderByDescending(i => i.Priority));
-        foreach (MaintenanceViewModel viewModel in sorted)
+        foreach (MaintenanceViewModel viewModel in sorted) //adds each item back into collection, reverses order of sorted list, resulting in ascending order
         {
             AllMaintenance.Remove(viewModel);
             AllMaintenance.Insert(0, viewModel);

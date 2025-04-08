@@ -10,6 +10,7 @@ public partial class MaintenancePage : ContentPage
 		InitializeComponent();
 	}
 
+    //Displays value of slider in TextBox as rounded integer
     public void sliderChanged(object sender, ValueChangedEventArgs args) {
         double value = args.NewValue;
         int convertedValue = Convert.ToInt32(value);

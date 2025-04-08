@@ -14,7 +14,7 @@ public class Maintenance
     [Required]
     public DateTime DueDate { get; set; }
     [Required]
-    public Boolean Overdue { get; set; }
+    public bool Overdue { get; set; }
     [Required]
     public int Priority { get; set; }
     [Required]

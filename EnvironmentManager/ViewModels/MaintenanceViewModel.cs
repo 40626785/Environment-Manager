@@ -1,17 +1,14 @@
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
-using System.Windows.Input;
 using EnvironmentManager.Data;
 using EnvironmentManager.Models;
-using System.Diagnostics;
-using Microsoft.EntityFrameworkCore.Internal;
 
 
 namespace EnvironmentManager.ViewModels;
 
 public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
 {
-    private Models.Maintenance _maintenance;
+    private Maintenance _maintenance;
 
     public DateTime DueDate
     {
@@ -28,7 +25,7 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
 
     public int Id => _maintenance.Id;
 
-    public Boolean Overdue 
+    public bool Overdue 
     {
         get => _maintenance.Overdue;
         set
@@ -84,12 +81,10 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         _maintenance = maintenance;
         _context = maintenanceDbContext;
         CurrentDate = DateTime.Now;
-        isOverdue();
     }
     [RelayCommand]
     private async Task Save()
     {
-        Trace.WriteLine($"blah blah blah {DueDate}");
         _context.Maintenance.Update(_maintenance);
         _context.SaveChanges();
         await Shell.Current.GoToAsync($"..?saved={_maintenance.Id}");
@@ -112,19 +107,21 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         }
     }
 
+    //Checks if DueDate is before current date and updates boolean property accordingly
     public void isOverdue() {
         Reload();
         _maintenance.Overdue = DueDate.Date < DateTime.Now.Date;
-        _context.Maintenance.Update(_maintenance);
         _context.SaveChanges();
     }
 
+    //Refreshes instance with DB Context
     public void Reload()
     {
         _context.Entry(_maintenance).Reload();
         RefreshProperties();
     }
 
+    //Triggers property changes events to update table displaying the ObservableCollection
     private void RefreshProperties()
     {
         OnPropertyChanged(nameof(Id));
