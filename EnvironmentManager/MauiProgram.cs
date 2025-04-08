@@ -32,20 +32,13 @@ public static class MauiProgram
 		builder.Configuration.AddConfiguration(config);
 
 		var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
-		builder.Services.AddDbContext<NotesDbContext>(options => options.UseSqlServer(connectionString));
         builder.Services.AddDbContext<MaintenanceDbContext>(options => options.UseSqlServer(connectionString));
 
-		builder.Services.AddSingleton<AllNotesViewModel>();
-		builder.Services.AddTransient<NoteViewModel>();
         builder.Services.AddSingleton<AllMaintenanceViewModel>();
         builder.Services.AddTransient<MaintenanceViewModel>();
 
-		builder.Services.AddSingleton<AllNotesPage>();
-		builder.Services.AddTransient<NotePage>();
         builder.Services.AddSingleton<AllMaintenancePage>();
         builder.Services.AddTransient<MaintenancePage>();
-
-
 
 #if DEBUG
 		builder.Logging.AddDebug();

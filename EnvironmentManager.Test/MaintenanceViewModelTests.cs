@@ -22,7 +22,7 @@ public class MaintenanceViewModelTests
         MaintenanceViewModel viewModel = new MaintenanceViewModel(contextMock.Object,maintenance);
         
         // Action
-        viewModel.isOverdue();
+        viewModel.IsOverdue();
 
         //Assert
         contextMock.Verify(mock => mock.SaveChanges(), Times.Once());
@@ -44,7 +44,7 @@ public class MaintenanceViewModelTests
         MaintenanceViewModel viewModel = new MaintenanceViewModel(contextMock.Object,maintenance);
         
         // Action
-        viewModel.isOverdue();
+        viewModel.IsOverdue();
 
         //Assert
         contextMock.Verify(mock => mock.SaveChanges(), Times.Once());

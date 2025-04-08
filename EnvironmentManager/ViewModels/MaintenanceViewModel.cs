@@ -108,7 +108,7 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
     }
 
     //Checks if DueDate is before current date and updates boolean property accordingly
-    public void isOverdue() {
+    public void IsOverdue() {
         Reload();
         _maintenance.Overdue = DueDate.Date < DateTime.Now.Date;
         _context.SaveChanges();

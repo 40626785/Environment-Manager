@@ -8,7 +8,7 @@
                 <Label Text="Due Date:" HorizontalOptions="Center"/>
                 <DatePicker MinimumDate="{Binding CurrentDate}" Date="{Binding DueDate}" HorizontalOptions="Center"/>
                 <Label x:Name="priorityLabel" Text="{Binding Path=Priority, StringFormat='Priority: {0}'}" HorizontalOptions="Center"/>
-                <Slider Minimum="1" Maximum="4" ValueChanged="sliderChanged" Value="{Binding Priority}"/>
+                <Slider Minimum="1" Maximum="4" ValueChanged="SliderChanged" Value="{Binding Priority}"/>
                 <Label Text="Description:" HorizontalOptions="Center"/>
                 <Editor x:Name="TextEditor"
                         Placeholder="Description"

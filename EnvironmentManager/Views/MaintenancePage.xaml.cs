@@ -11,7 +11,7 @@ public partial class MaintenancePage : ContentPage
 	}
 
     //Displays value of slider in TextBox as rounded integer
-    public void sliderChanged(object sender, ValueChangedEventArgs args) {
+    public void SliderChanged(object sender, ValueChangedEventArgs args) {
         double value = args.NewValue;
         int convertedValue = Convert.ToInt32(value);
         priorityLabel.Text = $"Priority: {convertedValue}";

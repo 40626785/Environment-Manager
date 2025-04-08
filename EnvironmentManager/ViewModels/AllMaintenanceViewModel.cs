@@ -19,18 +19,18 @@ public class AllMaintenanceViewModel : IQueryAttributable
     {
         _context = maintenanceDbContext;
         AllMaintenance = new ObservableCollection<MaintenanceViewModel>(_context.Maintenance.ToList().Select(n => new MaintenanceViewModel(_context, n)));
-        sortCollection();
-        RefreshCommand = new Command(checkOverdue);
+        SortCollection();
+        RefreshCommand = new Command(CheckOverdue);
         EditCommand = new AsyncRelayCommand<MaintenanceViewModel>(EditMaintenance);
         NewTicketCommand = new AsyncRelayCommand(NewTicket);
     }
     
-    //Calls isOverdue function in each maintenance object and reloads the instance to update the table.
-    private void checkOverdue()
+    //Calls IsOverdue function in each maintenance object and reloads the instance to update the table.
+    private void CheckOverdue()
     {
         foreach (MaintenanceViewModel maintenance in AllMaintenance) 
         {
-            maintenance.isOverdue();
+            maintenance.IsOverdue();
             maintenance.Reload();
         }
     }
@@ -74,13 +74,13 @@ public class AllMaintenanceViewModel : IQueryAttributable
             else {
                 AllMaintenance.Insert(0, new MaintenanceViewModel(_context, _context.Maintenance.Single(n => n.Id == int.Parse(savedId))));    
             }
-            sortCollection();
-            checkOverdue();
+            SortCollection();
+            CheckOverdue();
         }
     }
 
     //Repopulates ObservableCollection in Ascending order of Priority
-    private void sortCollection() 
+    private void SortCollection() 
     {
         ObservableCollection<MaintenanceViewModel> sorted  = new ObservableCollection<MaintenanceViewModel>(AllMaintenance.OrderByDescending(i => i.Priority));
         foreach (MaintenanceViewModel viewModel in sorted) //adds each item back into collection, reverses order of sorted list, resulting in ascending order
