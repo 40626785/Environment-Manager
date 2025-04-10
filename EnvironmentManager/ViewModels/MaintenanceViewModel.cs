@@ -44,7 +44,8 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         }
     }
 
-    public int Priority {
+    public int Priority 
+    {
         get => _maintenance.Priority;
         set
         {
@@ -69,7 +70,8 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         }
     }
 
-    public string DisplayError   {
+    public string DisplayError 
+    {
         get => _displayError;
         set
         {
@@ -119,7 +121,8 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
     [RelayCommand]
     private async Task Delete()
     {
-        try{
+        try
+        {
             _context.Remove(_maintenance);
             _context.SaveChanges();
             await Shell.Current.GoToAsync($"..?deleted={_maintenance.Id}");
@@ -141,7 +144,8 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
     }
 
     //Checks if DueDate is before current date and updates boolean property accordingly
-    public void IsOverdue() {
+    public void IsOverdue() 
+    {
         Reload();
         _maintenance.Overdue = DueDate.Date < DateTime.Now.Date;
         _context.SaveChanges();

@@ -19,7 +19,8 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
     private MaintenanceDbContext _context;
 
     private string _displayError;
-    public string DisplayError   {
+    public string DisplayError
+    {
         get => _displayError;
         set
         {
@@ -110,7 +111,8 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
             {
                 matchedEntry.Reload();
             }
-            else {
+            else 
+            {
                 AllMaintenance.Insert(0, new MaintenanceViewModel(_context, _context.Maintenance.Single(n => n.Id == int.Parse(savedId))));    
             }
             SortCollection();
