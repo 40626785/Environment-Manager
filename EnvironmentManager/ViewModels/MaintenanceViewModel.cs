@@ -2,13 +2,19 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using EnvironmentManager.Data;
 using EnvironmentManager.Models;
+using System.Diagnostics;
+using EnvironmentManager.Interfaces;
 
 
 namespace EnvironmentManager.ViewModels;
 
-public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
+public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable, IErrorHandling
 {
     private Maintenance _maintenance;
+
+    private MaintenanceDbContext _context;
+
+    private string _displayError;
 
     public DateTime DueDate
     {
@@ -63,42 +69,65 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         }
     }
 
+    public string DisplayError   {
+        get => _displayError;
+        set
+        {
+            if (value != _displayError)
+            {
+                _displayError = value;
+                OnPropertyChanged();
+            }
+        }
+    } 
+
     public DateTime CurrentDate;
 
-
-    private MaintenanceDbContext _context;
-
-    
     public MaintenanceViewModel(MaintenanceDbContext maintenanceDbContext)
     {
         _context = maintenanceDbContext;
         CurrentDate = DateTime.Now;
         _maintenance = new Maintenance();
         _maintenance.DueDate = CurrentDate;
+        _displayError = "";
     }
     public MaintenanceViewModel(MaintenanceDbContext maintenanceDbContext, Maintenance maintenance)
     {
         _maintenance = maintenance;
         _context = maintenanceDbContext;
         CurrentDate = DateTime.Now;
+        _displayError = "";
     }
 
     //Adds new or updated maintenance ticket to db context
     [RelayCommand]
     private async Task Save()
     {
-        _context.Maintenance.Update(_maintenance);
-        _context.SaveChanges();
-        await Shell.Current.GoToAsync($"..?saved={_maintenance.Id}");
+        try 
+        {
+            _context.Maintenance.Update(_maintenance);
+            _context.SaveChanges();
+            await Shell.Current.GoToAsync($"..?saved={_maintenance.Id}");
+        }
+        catch(Exception e)
+        {
+            HandleError(e, "Cannot save ticket, have all fields been populated?");
+        }
     }
 
     //Removes maintenance ticket from db context
     [RelayCommand]
     private async Task Delete()
     {
-        _context.Remove(_maintenance);
-        _context.SaveChanges();
-        await Shell.Current.GoToAsync($"..?deleted={_maintenance.Id}");
+        try{
+            _context.Remove(_maintenance);
+            _context.SaveChanges();
+            await Shell.Current.GoToAsync($"..?deleted={_maintenance.Id}");
+        }
+        catch(Exception e)
+        {
+            HandleError(e,"Cannot delete ticket");
+        }  
     }
 
     //Handles query strings provided when navigating to Maintenance page
@@ -123,6 +152,13 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
     {
         _context.Entry(_maintenance).Reload();
         RefreshProperties();
+    }
+
+    //Write exception to Trace and set display property to show supplied message in application
+    public void HandleError(Exception e, string message)
+    {
+        Trace.WriteLine(e.Message);
+        DisplayError = message;
     }
 
     //Triggers property changes events to update table displaying the ObservableCollection

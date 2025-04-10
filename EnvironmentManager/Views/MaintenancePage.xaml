@@ -24,5 +24,6 @@
                                 Command="{Binding DeleteCommand}"/>
 
                 </Grid>
+                <Label Text="{Binding DisplayError}" TextColor="Red" IsVisible="{Binding DisplayError, Converter={StaticResource StringNotEmptyConverter}}"/>
         </VerticalStackLayout>
 </ContentPage>

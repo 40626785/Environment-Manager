@@ -56,5 +56,6 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         <Button Text="Add Ticket" Command="{Binding NewTicketCommand}"/>
+        <Label Text="{Binding DisplayError}" TextColor="Red" IsVisible="{Binding DisplayError, Converter={StaticResource StringNotEmptyConverter}}"/>
     </VerticalStackLayout>
 </ContentPage>

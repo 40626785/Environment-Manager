@@ -1,20 +1,36 @@
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
 using EnvironmentManager.Data;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using System.Diagnostics;
+using EnvironmentManager.Interfaces;
 
 namespace EnvironmentManager.ViewModels;
 
-public class AllMaintenanceViewModel : IQueryAttributable
+public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IErrorHandling
 {
     public ObservableCollection<MaintenanceViewModel> AllMaintenance { get; }
+
     public ICommand RefreshCommand { get; }
-
     public ICommand EditCommand { get; }
-
     public ICommand NewTicketCommand { get; }
 
     private MaintenanceDbContext _context;
+
+    private string _displayError;
+    public string DisplayError   {
+        get => _displayError;
+        set
+        {
+            if (value != _displayError)
+            {
+                _displayError = value;
+                OnPropertyChanged();
+            }
+        }
+    } 
+
     public AllMaintenanceViewModel(MaintenanceDbContext maintenanceDbContext)
     {
         _context = maintenanceDbContext;
@@ -23,6 +39,14 @@ public class AllMaintenanceViewModel : IQueryAttributable
         RefreshCommand = new Command(CheckOverdue);
         EditCommand = new AsyncRelayCommand<MaintenanceViewModel>(EditMaintenance);
         NewTicketCommand = new AsyncRelayCommand(NewTicket);
+        _displayError = "";
+    }
+
+    //Write exception to Trace and set display property to show supplied message in application
+    public void HandleError(Exception e, string message)
+    {
+        Trace.WriteLine(e.Message);
+        DisplayError = message;
     }
     
     //Calls IsOverdue function in each maintenance object and reloads the instance to update the table.
@@ -38,16 +62,30 @@ public class AllMaintenanceViewModel : IQueryAttributable
     //Navigate to maintenance view supplying Maintenance ID to edit an existing entry
     private async Task EditMaintenance(MaintenanceViewModel viewModel)
     {
-        if (viewModel != null)
+        try
         {
-            await Shell.Current.GoToAsync($"{nameof(Views.MaintenancePage)}?edit={viewModel.Id}");
+            if (viewModel != null)
+            {
+                await Shell.Current.GoToAsync($"{nameof(Views.MaintenancePage)}?edit={viewModel.Id}");
+            }
+        }
+        catch(Exception e)
+        {
+            HandleError(e,"Failed to edit ticket");
         }
     }
 
     //Navigate to maintenance view to create new ticket
     private async Task NewTicket()
     {
-        await Shell.Current.GoToAsync(nameof(Views.MaintenancePage));
+        try
+        {
+            await Shell.Current.GoToAsync(nameof(Views.MaintenancePage));
+        }
+        catch(Exception e)
+        {
+            HandleError(e,"Cannot create new ticket");
+        }
     }
 
     //Handles query strings provided when routing to AllMaintenance page.
