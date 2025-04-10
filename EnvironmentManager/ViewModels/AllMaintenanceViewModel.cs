@@ -50,6 +50,7 @@ public class AllMaintenanceViewModel : IQueryAttributable
         await Shell.Current.GoToAsync(nameof(Views.MaintenancePage));
     }
 
+    //Handles query strings provided when routing to AllMaintenance page.
     void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
     {
         if (query.ContainsKey("deleted"))

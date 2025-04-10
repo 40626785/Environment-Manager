@@ -82,6 +82,8 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         _context = maintenanceDbContext;
         CurrentDate = DateTime.Now;
     }
+
+    //Adds new or updated maintenance ticket to db context
     [RelayCommand]
     private async Task Save()
     {
@@ -90,6 +92,7 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         await Shell.Current.GoToAsync($"..?saved={_maintenance.Id}");
     }
 
+    //Removes maintenance ticket from db context
     [RelayCommand]
     private async Task Delete()
     {
@@ -98,6 +101,7 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         await Shell.Current.GoToAsync($"..?deleted={_maintenance.Id}");
     }
 
+    //Handles query strings provided when navigating to Maintenance page
     void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
     {
         if (query.ContainsKey("edit"))
