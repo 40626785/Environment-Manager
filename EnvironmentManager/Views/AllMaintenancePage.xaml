@@ -1,0 +1,61 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EnvironmentManager.Views"
+             xmlns:viewModels="clr-namespace:EnvironmentManager.ViewModels"
+             x:Class="EnvironmentManager.Views.AllMaintenancePage"
+             Title="Maintenance Tickets">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh"
+                     Command="{Binding RefreshCommand}"
+                     IconImageSource="refresh.png"/>
+    </ContentPage.ToolbarItems>
+    <VerticalStackLayout Spacing="10"
+                             Margin="5">
+        <CollectionView x:Name="maintenanceCollection"
+                        ItemsSource="{Binding AllMaintenance}"
+                        Margin="20">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{FontImage Glyph='!', Color=Red, Size=15}"
+                            Grid.Column="0" 
+                            IsVisible="{Binding Overdue}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                        <Label Text="{Binding Path=Id, StringFormat='ENV-{0}'}"
+                            Grid.Column="1" 
+                            HorizontalTextAlignment="Center"
+                            FontSize="15"
+                            VerticalOptions="Center"/> 
+                        <Label Text="{Binding Priority}"
+                            Grid.Column="2" 
+                            HorizontalTextAlignment="Center"
+                            FontSize="15"
+                            VerticalOptions="Center"/> 
+                        <Label Text="{Binding Path=DueDate, StringFormat='{0:yyyy-MM-dd}'}"
+                            Grid.Column="3"
+                            HorizontalTextAlignment="Center"
+                            FontSize="15"
+                            VerticalOptions="Center"/>
+                        <Button Grid.Column="4"
+                                Text="Edit/View Detail"
+                                FontSize="10"
+                                VerticalOptions="Center"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:AllMaintenancePage}}, Path=BindingContext.EditCommand}"
+                                CommandParameter="{Binding .}"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Add Ticket" Command="{Binding NewTicketCommand}"/>
+        <Label Text="{Binding DisplayError}" TextColor="Red" IsVisible="{Binding DisplayError, Converter={StaticResource StringNotEmptyConverter}}"/>
+    </VerticalStackLayout>
+</ContentPage>

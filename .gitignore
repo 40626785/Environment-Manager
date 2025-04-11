@@ -38,3 +38,10 @@ google-services.json
 # Produced Binaries
 EnvironmentManager/bin
 EnvironmentManager/obj
+
+# Test Binaries
+EnvironmentManager.Test/obj
+EnvironmentManager.Test/bin
+
+# Mac .DS_Store
+.DS_Store
