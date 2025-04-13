@@ -10,7 +10,7 @@ public partial class App : Application
 		InitializeComponent();
 
 		// Register routes for navigation
-		Routing.RegisterRoute(nameof(Views.MaintenancePage), typeof(Views.MaintenancePage));
+		Routing.RegisterRoute(nameof(Views.MaintenancePage), typeof(Views.MaintenancePage)); //register route for MaintenancePage as its not contained in AppShell
 		Routing.RegisterRoute(nameof(Views.HomePage), typeof(Views.HomePage));
 		Routing.RegisterRoute(nameof(Views.AllMaintenancePage), typeof(Views.AllMaintenancePage));
 		Routing.RegisterRoute(nameof(Views.SensorPage), typeof(Views.SensorPage));

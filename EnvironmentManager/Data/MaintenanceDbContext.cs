@@ -10,7 +10,7 @@ public class MaintenanceDbContext : DbContext
     public MaintenanceDbContext(DbContextOptions<MaintenanceDbContext> options) : base(options)
     { }
 
-    public DbSet<Maintenance> Maintenance { get; set; }
+    public virtual DbSet<Maintenance> Maintenance { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

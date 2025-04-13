@@ -6,6 +6,13 @@
              Title="Maintenance"
              Shell.NavBarIsVisible="False"
              BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh"
+                     Command="{Binding RefreshCommand}"
+                     IconImageSource="refresh.png"/>
+    </ContentPage.ToolbarItems>
+
     <Grid RowDefinitions="Auto,*">
         <!-- Header -->
         <Grid Grid.Row="0" BackgroundColor="#6750A4" Padding="20,40,20,20">
@@ -68,6 +75,10 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
                 <Button Text="Add Ticket" Command="{Binding NewTicketCommand}" Margin="20,0"/>
+                <Label Text="{Binding DisplayError}" 
+                       TextColor="Red" 
+                       IsVisible="{Binding DisplayError, Converter={StaticResource StringNotEmptyConverter}}"
+                       Margin="20,0"/>
             </VerticalStackLayout>
         </Grid>
     </Grid>
