@@ -1,4 +1,4 @@
-﻿﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using EnvironmentManager.Data;
@@ -75,6 +75,45 @@ public static class MauiProgram
 				{
 					try
 					{
+						// Check database tables
+						Debug.WriteLine("Checking database tables...");
+						var tables = new[] { "Locations", "Sensors", "SensorReadings", "SensorSettings", "EnvironmentalParameters" };
+						foreach (var table in tables)
+						{
+							try
+							{
+								var checkCmd = tempContext.Database.GetDbConnection().CreateCommand();
+								checkCmd.CommandText = $"SELECT COUNT(*) FROM {table}";
+								tempContext.Database.OpenConnection();
+								var count = Convert.ToInt32(checkCmd.ExecuteScalar());
+								Debug.WriteLine($"Table {table} has {count} records");
+
+								// Check for triggers on this table
+								checkCmd = tempContext.Database.GetDbConnection().CreateCommand();
+								checkCmd.CommandText = $@"
+									SELECT tr.name AS TriggerName, 
+										   OBJECT_DEFINITION(tr.object_id) AS TriggerDefinition
+									FROM sys.triggers tr
+									JOIN sys.tables t ON tr.parent_id = t.object_id
+									WHERE t.name = '{table}'";
+								
+								using (var reader = checkCmd.ExecuteReader())
+								{
+									while (reader.Read())
+									{
+										var triggerName = reader.GetString(0);
+										var triggerDef = reader.GetString(1);
+										Debug.WriteLine($"Found trigger '{triggerName}' on table {table}:");
+										Debug.WriteLine(triggerDef);
+									}
+								}
+							}
+							catch (Exception ex)
+							{
+								Debug.WriteLine($"Error checking table {table}: {ex.Message}");
+							}
+						}
+
 						// Check if Locations table exists and has data
 						var cmd = tempContext.Database.GetDbConnection().CreateCommand();
 						cmd.CommandText = "SELECT COUNT(*) FROM Locations";
@@ -121,12 +160,46 @@ public static class MauiProgram
 								{
 									if (!string.IsNullOrWhiteSpace(command))
 									{
+										Debug.WriteLine($"Executing SQL command:");
+										Debug.WriteLine(command.Trim());
 										using var splitCmd = tempContext.Database.GetDbConnection().CreateCommand();
 										splitCmd.CommandText = command;
 										splitCmd.ExecuteNonQuery();
 									}
 								}
 								Debug.WriteLine("Test data loaded successfully");
+
+								// Check what was loaded
+								Debug.WriteLine("Checking loaded data:");
+								
+								// Check locations
+								cmd.CommandText = @"
+									SELECT SiteName, SiteType, Zone 
+									FROM Locations 
+									ORDER BY SiteType, SiteName";
+								using (var reader = cmd.ExecuteReader())
+								{
+									while (reader.Read())
+									{
+										Debug.WriteLine($"Location: {reader.GetString(0)}, Type: {reader.GetString(1)}, Zone: {reader.GetString(2)}");
+									}
+								}
+
+								// Check if any sensors were automatically created
+								cmd = tempContext.Database.GetDbConnection().CreateCommand();
+								cmd.CommandText = @"
+									SELECT s.SensorName, s.SensorType, l.SiteName, l.SiteType
+									FROM Sensors s
+									JOIN Locations l ON s.LocationId = l.LocationId
+									ORDER BY s.SensorId";
+								using (var reader = cmd.ExecuteReader())
+								{
+									while (reader.Read())
+									{
+										Debug.WriteLine($"Sensor: {reader.GetString(0)}, Type: {reader.GetString(1)}, " +
+													  $"Location: {reader.GetString(2)}, LocationType: {reader.GetString(3)}");
+									}
+								}
 
 								// Verify data was loaded
 								cmd.CommandText = "SELECT COUNT(*) FROM Locations";

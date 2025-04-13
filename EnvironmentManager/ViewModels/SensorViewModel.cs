@@ -97,13 +97,23 @@ namespace EnvironmentManager.ViewModels
 
                 Debug.WriteLine("Attempting to query sensors from database...");
                 var sensorsList = await _context.Sensors
-                    .AsNoTracking()  // Add this to prevent tracking
+                    .Include(s => s.Location)  // Include location data
+                    .AsNoTracking()
                     .OrderBy(s => s.SensorName)
                     .ToListAsync();
                 
                 Debug.WriteLine($"Found {sensorsList.Count} sensors");
                 foreach (var sensor in sensorsList)
                 {
+                    Debug.WriteLine($"Sensor Details:");
+                    Debug.WriteLine($"  ID: {sensor.SensorId}");
+                    Debug.WriteLine($"  Name: {sensor.SensorName}");
+                    Debug.WriteLine($"  Type: {sensor.SensorType}");
+                    Debug.WriteLine($"  Location ID: {sensor.LocationId}");
+                    Debug.WriteLine($"  Location Name: {sensor.Location?.SiteName}");
+                    Debug.WriteLine($"  Location Type: {sensor.Location?.SiteType}");
+                    Debug.WriteLine($"  Installation Date: {sensor.InstallationDate}");
+                    Debug.WriteLine($"  Status: {sensor.ConnectivityStatus}");
                     Sensors.Add(sensor);
                 }
                 Debug.WriteLine("Successfully loaded sensors");
