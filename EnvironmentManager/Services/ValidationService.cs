@@ -12,7 +12,10 @@ namespace EnvironmentManager.Services
         private static readonly Regex UrlPattern = new Regex(@"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-zA-Z0-9]+([\-\.]{1}[a-zA-Z0-9]+)*\.[a-zA-Z]{2,5}(:[0-9]{1,5})?(\/.*)?$");
         
         // Regular expression for version numbers
-        private static readonly Regex VersionPattern = new Regex(@"^v?\d+(\.\d+)*[a-zA-Z]?$");
+        private static readonly Regex VersionPattern = new Regex(@"^[vV]?\d+(\.\d+)*[a-zA-Z]?$");
+
+        // Regular expression for sensor types (Air, Water, Weather)
+        private static readonly Regex SensorTypePattern = new Regex(@"^(?i)(air|water|weather)$");
 
         public static (bool IsValid, string ErrorMessage) ValidateTextField(string fieldName, string value)
         {
@@ -92,6 +95,24 @@ namespace EnvironmentManager.Services
             return (true, string.Empty);
         }
 
+        public static (bool IsValid, string ErrorMessage) ValidateSensorType(string sensorType)
+        {
+            if (string.IsNullOrWhiteSpace(sensorType))
+            {
+                Debug.WriteLine("Sensor type validation passed: Empty type is allowed");
+                return (true, string.Empty); // Sensor type is optional
+            }
+
+            if (!SensorTypePattern.IsMatch(sensorType))
+            {
+                Debug.WriteLine($"Sensor type validation failed: Invalid type '{sensorType}'");
+                return (false, "Sensor type must be Air, Water, or Weather (case insensitive)");
+            }
+
+            Debug.WriteLine($"Sensor type validation passed: '{sensorType}'");
+            return (true, string.Empty);
+        }
+
         public static (bool IsValid, Dictionary<string, string> Errors) ValidateSensor(
             string sensorName,
             string model,
@@ -137,7 +158,7 @@ namespace EnvironmentManager.Services
 
             if (!string.IsNullOrWhiteSpace(sensorType))
             {
-                var (isTypeValid, typeError) = ValidateTextField("Sensor Type", sensorType);
+                var (isTypeValid, typeError) = ValidateSensorType(sensorType);
                 if (!isTypeValid)
                 {
                     errors["SensorType"] = typeError;

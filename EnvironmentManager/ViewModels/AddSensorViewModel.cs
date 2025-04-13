@@ -40,6 +40,11 @@ namespace EnvironmentManager.ViewModels
         [NotifyPropertyChangedFor(nameof(TypeErrorMessage))]
         private string _sensorType = string.Empty;
 
+        partial void OnSensorTypeChanged(string value)
+        {
+            ValidateSensorType();
+        }
+
         [ObservableProperty]
         private DateTime _installationDate = DateTime.Now;
 
@@ -217,10 +222,13 @@ namespace EnvironmentManager.ViewModels
         private void ValidateSensorType()
         {
             _validationErrors.Remove("SensorType");
-            var (isValid, errorMessage) = ValidationService.ValidateTextField("Sensor Type", SensorType);
-            if (!isValid)
+            if (!string.IsNullOrWhiteSpace(SensorType))
             {
-                _validationErrors["SensorType"] = errorMessage;
+                var (isValid, errorMessage) = ValidationService.ValidateSensorType(SensorType);
+                if (!isValid)
+                {
+                    _validationErrors["SensorType"] = errorMessage;
+                }
             }
             OnPropertyChanged(nameof(TypeErrorVisible));
             OnPropertyChanged(nameof(TypeErrorMessage));
@@ -289,31 +297,25 @@ namespace EnvironmentManager.ViewModels
         {
             _validationErrors.Clear();
 
+            // Validate all fields individually to ensure error messages are displayed
+            ValidateSensorName();
+            ValidateModel();
+            ValidateManufacturer();
+            ValidateSensorType();
+            ValidateFirmwareVersion();
+            ValidateSensorUrl();
+            ValidateBatteryLevel();
+            ValidateDataSource();
+
             if (SelectedLocation == null)
             {
                 _validationErrors["Location"] = "Please select a location";
+                OnPropertyChanged(nameof(LocationErrorVisible));
+                OnPropertyChanged(nameof(LocationErrorMessage));
             }
 
-            var (isValid, errors) = ValidationService.ValidateSensor(
-                SensorName,
-                Model,
-                Manufacturer,
-                SensorType,
-                FirmwareVersion,
-                SensorUrl,
-                BatteryLevelPercentage,
-                DataSource
-            );
-
-            if (!isValid)
-            {
-                foreach (var error in errors)
-                {
-                    _validationErrors[error.Key] = error.Value;
-                }
-            }
-
-            return isValid && SelectedLocation != null;
+            // Return true only if there are no validation errors
+            return _validationErrors.Count == 0;
         }
 
         [RelayCommand]

@@ -393,10 +393,13 @@ namespace EnvironmentManager.ViewModels
         private void ValidateSensorType()
         {
             _validationErrors.Remove("SensorType");
-            var (isValid, errorMessage) = ValidationService.ValidateTextField("Sensor Type", SensorType);
-            if (!isValid)
+            if (!string.IsNullOrWhiteSpace(SensorType))
             {
-                _validationErrors["SensorType"] = errorMessage;
+                var (isValid, errorMessage) = ValidationService.ValidateSensorType(SensorType);
+                if (!isValid)
+                {
+                    _validationErrors["SensorType"] = errorMessage;
+                }
             }
             OnPropertyChanged(nameof(TypeErrorVisible));
             OnPropertyChanged(nameof(TypeErrorMessage));
@@ -450,6 +453,11 @@ namespace EnvironmentManager.ViewModels
             }
             OnPropertyChanged(nameof(DataSourceErrorVisible));
             OnPropertyChanged(nameof(DataSourceErrorMessage));
+        }
+
+        partial void OnSensorTypeChanged(string value)
+        {
+            ValidateSensorType();
         }
     }
 }

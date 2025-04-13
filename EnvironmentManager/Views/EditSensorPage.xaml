@@ -81,7 +81,7 @@
                            VerticalOptions="Center"/>
                     <Entry Grid.Row="9" Grid.Column="1" 
                            Text="{Binding SensorType}" 
-                           Placeholder="Temperature/Humidity"/>
+                           Placeholder="Air, Water, or Weather"/>
                     <Label Grid.Row="10" Grid.Column="1"
                            Text="{Binding TypeErrorMessage}"
                            TextColor="Red"
