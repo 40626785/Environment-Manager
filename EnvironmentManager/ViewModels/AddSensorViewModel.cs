@@ -86,6 +86,7 @@ namespace EnvironmentManager.ViewModels
         public bool BatteryErrorVisible => _validationErrors.ContainsKey("BatteryLevel");
         public bool DataSourceErrorVisible => _validationErrors.ContainsKey("DataSource");
 
+        public string LocationErrorMessage => _validationErrors.GetValueOrDefault("Location", string.Empty);
         public string NameErrorMessage => _validationErrors.GetValueOrDefault("SensorName", string.Empty);
         public string ModelErrorMessage => _validationErrors.GetValueOrDefault("Model", string.Empty);
         public string ManufacturerErrorMessage => _validationErrors.GetValueOrDefault("Manufacturer", string.Empty);
@@ -300,7 +301,8 @@ namespace EnvironmentManager.ViewModels
                 SensorType,
                 FirmwareVersion,
                 SensorUrl,
-                BatteryLevelPercentage
+                BatteryLevelPercentage,
+                DataSource
             );
 
             if (!isValid)
@@ -311,31 +313,7 @@ namespace EnvironmentManager.ViewModels
                 }
             }
 
-            // Validate battery level again to ensure it's valid
-            if (!string.IsNullOrWhiteSpace(BatteryLevelText))
-            {
-                ValidateBatteryLevel();
-            }
-
-            // Notify UI of validation changes
-            OnPropertyChanged(nameof(LocationErrorVisible));
-            OnPropertyChanged(nameof(NameErrorVisible));
-            OnPropertyChanged(nameof(ModelErrorVisible));
-            OnPropertyChanged(nameof(ManufacturerErrorVisible));
-            OnPropertyChanged(nameof(TypeErrorVisible));
-            OnPropertyChanged(nameof(FirmwareErrorVisible));
-            OnPropertyChanged(nameof(UrlErrorVisible));
-            OnPropertyChanged(nameof(BatteryErrorVisible));
-
-            OnPropertyChanged(nameof(NameErrorMessage));
-            OnPropertyChanged(nameof(ModelErrorMessage));
-            OnPropertyChanged(nameof(ManufacturerErrorMessage));
-            OnPropertyChanged(nameof(TypeErrorMessage));
-            OnPropertyChanged(nameof(FirmwareErrorMessage));
-            OnPropertyChanged(nameof(UrlErrorMessage));
-            OnPropertyChanged(nameof(BatteryErrorMessage));
-
-            return !_validationErrors.Any();
+            return isValid && SelectedLocation != null;
         }
 
         [RelayCommand]

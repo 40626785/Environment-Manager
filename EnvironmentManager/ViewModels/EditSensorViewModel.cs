@@ -88,6 +88,7 @@ namespace EnvironmentManager.ViewModels
         public bool BatteryErrorVisible => _validationErrors.ContainsKey("BatteryLevel");
         public bool DataSourceErrorVisible => _validationErrors.ContainsKey("DataSource");
 
+        public string LocationErrorMessage => _validationErrors.GetValueOrDefault("Location", string.Empty);
         public string NameErrorMessage => _validationErrors.GetValueOrDefault("SensorName", string.Empty);
         public string ModelErrorMessage => _validationErrors.GetValueOrDefault("Model", string.Empty);
         public string ManufacturerErrorMessage => _validationErrors.GetValueOrDefault("Manufacturer", string.Empty);
@@ -242,7 +243,8 @@ namespace EnvironmentManager.ViewModels
                 SensorType,
                 FirmwareVersion,
                 SensorUrl,
-                BatteryLevelPercentage
+                BatteryLevelPercentage,
+                DataSource
             );
 
             if (!isValid)
@@ -271,7 +273,7 @@ namespace EnvironmentManager.ViewModels
             OnPropertyChanged(nameof(UrlErrorMessage));
             OnPropertyChanged(nameof(BatteryErrorMessage));
 
-            return !_validationErrors.Any();
+            return isValid && SelectedLocation != null;
         }
 
         [RelayCommand]

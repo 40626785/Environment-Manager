@@ -99,7 +99,8 @@ namespace EnvironmentManager.Services
             string sensorType,
             string firmwareVersion,
             string sensorUrl,
-            float? batteryLevel)
+            float? batteryLevel,
+            string dataSource)
         {
             Debug.WriteLine("Starting sensor validation...");
             var errors = new Dictionary<string, string>();
@@ -140,6 +141,16 @@ namespace EnvironmentManager.Services
                 if (!isTypeValid)
                 {
                     errors["SensorType"] = typeError;
+                    isValid = false;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(dataSource))
+            {
+                var (isDataSourceValid, dataSourceError) = ValidateTextField("Data Source", dataSource);
+                if (!isDataSourceValid)
+                {
+                    errors["DataSource"] = dataSourceError;
                     isValid = false;
                 }
             }
