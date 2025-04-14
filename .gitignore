@@ -40,8 +40,11 @@ EnvironmentManager/bin
 EnvironmentManager/obj
 
 # Test Binaries
+Sensors.Tests/bin/
+Sensors.Tests/obj/
 EnvironmentManager.Test/obj
 EnvironmentManager.Test/bin
+[Tt]est[Rr]esult*/
 
 # Mac .DS_Store
 .DS_Store

@@ -7,14 +7,30 @@
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-        <ShellContent
-            Title="About"
-            ContentTemplate="{DataTemplate views:AboutPage}"
-            Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}"/>
-        <ShellContent
-            Title="Maintenance"
-            ContentTemplate="{DataTemplate views:AllMaintenancePage}"
-            Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}"/>
+        <Tab Title="HOME">
+            <ShellContent
+                ContentTemplate="{DataTemplate views:HomePage}"
+                Route="home"
+                Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
+        </Tab>
+        <Tab Title="MAINTENANCE">
+            <ShellContent
+                ContentTemplate="{DataTemplate views:AllMaintenancePage}"
+                Route="maintenance"
+                Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
+        </Tab>
+        <Tab Title="SENSORS">
+            <ShellContent
+                ContentTemplate="{DataTemplate views:SensorPage}"
+                Route="sensors"
+                Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
+        </Tab>
+        <Tab Title="ABOUT">
+            <ShellContent
+                ContentTemplate="{DataTemplate views:AboutPage}"
+                Route="about"
+                Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
+        </Tab>
     </TabBar>
 
 </Shell>

@@ -1,27 +1,68 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:EnvironmentManager.ViewModels"
-             x:Class="EnvironmentManager.Views.AboutPage">
+             x:Class="EnvironmentManager.Views.AboutPage"
+             Title="About"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header -->
+        <Grid Grid.Row="0" BackgroundColor="#6750A4" Padding="20,40,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-    <VerticalStackLayout Spacing="10"
-                         Margin="10">
-        <HorizontalStackLayout Spacing="10">
-            <Image Source="dotnet\_bot.png"
-                   SemanticProperties.Description="The dot net bot waving hello!"
-                   HeightRequest="64"/>
-            <Label FontSize="22"
-                   FontAttributes="Bold"
-                   Text="{Binding Title}"
-                   VerticalOptions="End"/>
-            <Label FontSize="22"
-                   Text="{Binding Version}"
-                   VerticalOptions="End"/>
-        </HorizontalStackLayout>
+            <Label Grid.Row="0"
+                   Text="About"
+                   TextColor="White"
+                   FontSize="24"
+                   FontAttributes="Bold"/>
+        </Grid>
 
-        <Label Text="{Binding Message}"/>
-        <Button Text="Learn more..."
-                Command="{Binding ShowMoreInfoCommand}"/>
-    </VerticalStackLayout>
+        <!-- Main Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20" Padding="20">
+                <Label Text="Environment Manager"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
 
+                <Label Text="Version 1.0.0"
+                       TextColor="Gray"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="A comprehensive environmental monitoring and maintenance management system."
+                       TextColor="#666666"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"/>
+
+                <Frame BorderColor="#f0f0f0" Padding="15" HasShadow="False">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Features"
+                               FontSize="18"
+                               FontAttributes="Bold"/>
+
+                        <Label Text="• Real-time environmental monitoring" TextColor="#666666"/>
+                        <Label Text="• Maintenance scheduling and tracking" TextColor="#666666"/>
+                        <Label Text="• Sensor management and configuration" TextColor="#666666"/>
+                        <Label Text="• Alert system for environmental issues" TextColor="#666666"/>
+                        <Label Text="• Comprehensive reporting" TextColor="#666666"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame BorderColor="#f0f0f0" Padding="15" HasShadow="False">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Contact"
+                               FontSize="18"
+                               FontAttributes="Bold"/>
+
+                        <Label Text="Email: support@environmentmanager.com" TextColor="#666666"/>
+                        <Label Text="Phone: +1 (555) 123-4567" TextColor="#666666"/>
+                        <Label Text="Website: www.environmentmanager.com" TextColor="#666666"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

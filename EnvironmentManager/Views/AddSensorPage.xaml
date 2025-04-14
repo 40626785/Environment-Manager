@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:EnvironmentManager.ViewModels"
+             x:Class="EnvironmentManager.Views.AddSensorPage"
+             x:DataType="viewModels:AddSensorViewModel"
+             Title="Add New Sensor">
+
+    <ScrollView>
+        <Grid RowDefinitions="*,Auto" Padding="20">
+            <!-- Form Section -->
+            <Frame Grid.Row="0" 
+                   Padding="15" 
+                   CornerRadius="10" 
+                   BorderColor="LightGray">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+                      ColumnDefinitions="Auto,*" 
+                      RowSpacing="15" 
+                      ColumnSpacing="10">
+                    
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="Location:" 
+                           VerticalOptions="Center"/>
+                    <Picker Grid.Row="0" Grid.Column="1"
+                            ItemsSource="{Binding Locations}"
+                            SelectedItem="{Binding SelectedLocation}"
+                            ItemDisplayBinding="{Binding SiteName}"
+                            Title="Select a location"
+                            BackgroundColor="Transparent"/>
+                    <Label Grid.Row="1" Grid.Column="1"
+                           Text="{Binding LocationErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding LocationErrorVisible}"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" 
+                           Text="Sensor Name:" 
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="2" Grid.Column="1" 
+                           Text="{Binding SensorName}" 
+                           Placeholder="Living Room Temp"/>
+                    <Label Grid.Row="3" Grid.Column="1"
+                           Text="{Binding NameErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding NameErrorVisible}"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" 
+                           Text="Model:" 
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="4" Grid.Column="1" 
+                           Text="{Binding Model}" 
+                           Placeholder="DHT22"/>
+                    <Label Grid.Row="5" Grid.Column="1"
+                           Text="{Binding ModelErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding ModelErrorVisible}"/>
+
+                    <Label Grid.Row="6" Grid.Column="0" 
+                           Text="Manufacturer:" 
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="6" Grid.Column="1" 
+                           Text="{Binding Manufacturer}" 
+                           Placeholder="Adafruit"/>
+                    <Label Grid.Row="7" Grid.Column="1"
+                           Text="{Binding ManufacturerErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding ManufacturerErrorVisible}"/>
+
+                    <Label Grid.Row="8" Grid.Column="0" 
+                           Text="Sensor Type:" 
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="8" Grid.Column="1" 
+                           Text="{Binding SensorType}" 
+                           Placeholder="Air, Water, or Weather"/>
+                    <Label Grid.Row="9" Grid.Column="1"
+                           Text="{Binding TypeErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding TypeErrorVisible}"/>
+
+                    <Label Grid.Row="10" Grid.Column="0" 
+                           Text="Installation Date:" 
+                           VerticalOptions="Center"/>
+                    <DatePicker Grid.Row="10" Grid.Column="1" 
+                               Date="{Binding InstallationDate}"
+                               Format="dd/MM/yyyy"/>
+
+                    <Label Grid.Row="11" Grid.Column="0" 
+                           Text="Firmware Version:" 
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="11" Grid.Column="1" 
+                           Text="{Binding FirmwareVersion}" 
+                           Placeholder="v1.2.3"/>
+                    <Label Grid.Row="12" Grid.Column="1"
+                           Text="{Binding FirmwareErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding FirmwareErrorVisible}"/>
+
+                    <Label Grid.Row="13" Grid.Column="0" 
+                           Text="Sensor URL:" 
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="13" Grid.Column="1" 
+                           Text="{Binding SensorUrl}" 
+                           Placeholder="http://sensor.local"/>
+                    <Label Grid.Row="14" Grid.Column="1"
+                           Text="{Binding UrlErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding UrlErrorVisible}"/>
+
+                    <Label Grid.Row="15" Grid.Column="0" 
+                           Text="Connectivity Status:" 
+                           VerticalOptions="Center"/>
+                    <Switch Grid.Row="15" Grid.Column="1" 
+                           IsToggled="{Binding IsOnline}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="16" Grid.Column="0" 
+                           Text="Battery Level (%):" 
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="16" Grid.Column="1" 
+                           Text="{Binding BatteryLevelText}" 
+                           Keyboard="Numeric"
+                           Placeholder="85"/>
+                    <Label Grid.Row="17" Grid.Column="1"
+                           Text="{Binding BatteryErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding BatteryErrorVisible}"/>
+
+                    <Label Grid.Row="18" Grid.Column="0" 
+                           Text="Active:" 
+                           VerticalOptions="Center"/>
+                    <Switch Grid.Row="18" Grid.Column="1" 
+                           IsToggled="{Binding IsActive}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="19" Grid.Column="0" 
+                           Text="Data Source:" 
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Row="19" Grid.Column="1" 
+                           Text="{Binding DataSource}" 
+                           Placeholder="API Endpoint"/>
+                    <Label Grid.Row="20" Grid.Column="1"
+                           Text="{Binding DataSourceErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding DataSourceErrorVisible}"/>
+                </Grid>
+            </Frame>
+
+            <!-- Button Section -->
+            <Grid Grid.Row="1" 
+                  ColumnDefinitions="*,*" 
+                  ColumnSpacing="20" 
+                  Margin="0,20,0,0">
+                <Button Grid.Column="0" 
+                        Text="Cancel" 
+                        Command="{Binding CancelCommand}"
+                        BackgroundColor="Gray"/>
+                <Button Grid.Column="1" 
+                        Text="Save" 
+                        Command="{Binding SaveCommand}"
+                        IsEnabled="{Binding SensorName, Converter={StaticResource StringNotNullOrEmptyConverter}}"
+                        BackgroundColor="#007AFF"/>
+            </Grid>
+        </Grid>
+    </ScrollView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:StringNotNullOrEmptyConverter x:Key="StringNotNullOrEmptyConverter" 
+                                               xmlns:local="clr-namespace:EnvironmentManager.Converters"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+</ContentPage> 

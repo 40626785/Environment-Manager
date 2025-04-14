@@ -2,6 +2,7 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:EnvironmentManager"
+             xmlns:converters="clr-namespace:EnvironmentManager.Converters"
              x:Class="EnvironmentManager.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -9,6 +10,16 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="Shell">
+                <Setter Property="ForegroundColor" Value="#6750A4" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TitleColor" Value="#6750A4" />
+                <Setter Property="DisabledColor" Value="#666666" />
+                <Setter Property="UnselectedColor" Value="#666666" />
+            </Style>
+
+            <converters:StringNotEmptyConverter x:Key="StringNotEmptyConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
