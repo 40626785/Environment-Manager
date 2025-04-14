@@ -24,4 +24,12 @@
     <ProjectReference Include="../EnvironmentManager/EnvironmentManager.csproj" />
   </ItemGroup>
 
+  <!-- Exclude MAUI resources from test project to avoid conflicts -->
+  <ItemGroup>
+    <MauiAsset Remove="**\*.svg" />
+    <MauiIcon Remove="**\*.svg" />
+    <MauiSplashScreen Remove="**\*.svg" />
+    <MauiImage Remove="**\*.svg" />
+  </ItemGroup>
+
 </Project>

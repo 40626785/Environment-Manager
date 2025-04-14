@@ -11,11 +11,11 @@ namespace EnvironmentManager.Data
         public SensorDbContext(DbContextOptions<SensorDbContext> options) : base(options)
         { }
 
-        public DbSet<Sensor> Sensors { get; set; }
-        public DbSet<Models.Location> Locations { get; set; }
-        public DbSet<SensorReading> SensorReadings { get; set; }
-        public DbSet<EnvironmentalParameter> EnvironmentalParameters { get; set; }
-        public DbSet<SensorSetting> SensorSettings { get; set; }
+        public virtual DbSet<Sensor> Sensors { get; set; }
+        // Location entities are now managed by LocationDbContext to follow SRP
+        public virtual DbSet<SensorReading> SensorReadings { get; set; }
+        public virtual DbSet<SensorSetting> SensorSettings { get; set; }
+        // EnvironmentalParameters are now managed by EnvironmentalParameterDbContext to follow SRP
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,11 +47,7 @@ namespace EnvironmentManager.Data
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity<EnvironmentalParameter>(entity =>
-            {
-                entity.ToTable("EnvironmentalParameters");
-                entity.HasKey(e => e.ParameterId);
-            });
+            // EnvironmentalParameter configuration moved to EnvironmentalParameterDbContext
 
             modelBuilder.Entity<SensorSetting>(entity =>
             {

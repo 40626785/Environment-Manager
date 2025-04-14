@@ -11,7 +11,8 @@ namespace EnvironmentManager.ViewModels
     [QueryProperty(nameof(SensorId), "id")]
     public partial class EditSensorViewModel : ObservableObject
     {
-        private readonly SensorDbContext _context;
+        private readonly SensorDbContext _sensorContext;
+        private readonly LocationDbContext _locationContext;
 
         [ObservableProperty]
         private int _sensorId;
@@ -64,6 +65,9 @@ namespace EnvironmentManager.ViewModels
         private bool _isOnline = false;
         
         [ObservableProperty]
+        private string _connectivityStatus = string.Empty;
+        
+        [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(BatteryErrorVisible))]
         [NotifyPropertyChangedFor(nameof(BatteryErrorMessage))]
         private float? _batteryLevelPercentage;
@@ -98,12 +102,15 @@ namespace EnvironmentManager.ViewModels
         public string BatteryErrorMessage => _validationErrors.GetValueOrDefault("BatteryLevel", string.Empty);
         public string DataSourceErrorMessage => _validationErrors.GetValueOrDefault("DataSource", string.Empty);
 
-        public EditSensorViewModel(SensorDbContext context)
+        public EditSensorViewModel(SensorDbContext sensorContext, LocationDbContext locationContext)
         {
-            _context = context;
+            _sensorContext = sensorContext;
+            _locationContext = locationContext;
             _locations = new ObservableCollection<EnvironmentManager.Models.Location>();
-            LoadLocations();
+            _validationErrors = new Dictionary<string, string>();
             
+            LoadLocations();
+
             // Set up handlers for property changes
             PropertyChanged += (sender, args) => 
             {
@@ -172,7 +179,17 @@ namespace EnvironmentManager.ViewModels
         {
             try
             {
-                var locationsList = await _context.Locations
+                // Check if context is available
+                if (_locationContext == null)
+                {
+                    if (Shell.Current != null)
+                    {
+                        await Shell.Current.DisplayAlert("Error", "Database context is not initialized", "OK");
+                    }
+                    return;
+                }
+
+                var locationsList = await _locationContext.Locations
                     .AsNoTracking()
                     .OrderBy(l => l.SiteName)
                     .ToListAsync();
@@ -185,7 +202,10 @@ namespace EnvironmentManager.ViewModels
             }
             catch (Exception ex)
             {
-                await Shell.Current.DisplayAlert("Error", $"Failed to load locations: {ex.Message}", "OK");
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Failed to load locations: {ex.Message}", "OK");
+                }
             }
         }
 
@@ -198,7 +218,17 @@ namespace EnvironmentManager.ViewModels
         {
             try
             {
-                var sensor = await _context.Sensors
+                // Check if context is available
+                if (_sensorContext == null)
+                {
+                    if (Shell.Current != null)
+                    {
+                        await Shell.Current.DisplayAlert("Error", "Database context is not initialized", "OK");
+                    }
+                    return;
+                }
+
+                var sensor = await _sensorContext.Sensors
                     .Include(s => s.Location)
                     .AsNoTracking()
                     .FirstOrDefaultAsync(s => s.SensorId == sensorId);
@@ -211,19 +241,22 @@ namespace EnvironmentManager.ViewModels
                     SensorType = sensor.SensorType;
                     InstallationDate = sensor.InstallationDate;
                     IsActive = sensor.IsActive;
-                    FirmwareVersion = sensor.FirmwareVersion;
-                    SensorUrl = sensor.SensorUrl;
+                    FirmwareVersion = sensor.FirmwareVersion ?? string.Empty;
+                    SensorUrl = sensor.SensorUrl ?? string.Empty;
                     IsOnline = sensor.ConnectivityStatus == "Online";
-                    BatteryLevelText = sensor.BatteryLevelPercentage.ToString();
+                    BatteryLevelText = sensor.BatteryLevelPercentage?.ToString() ?? string.Empty;
                     BatteryLevelPercentage = sensor.BatteryLevelPercentage;
-                    DataSource = sensor.DataSource;
+                    DataSource = sensor.DataSource ?? string.Empty;
 
                     SelectedLocation = Locations.FirstOrDefault(l => l.LocationId == sensor.LocationId);
                 }
             }
             catch (Exception ex)
             {
-                await Shell.Current.DisplayAlert("Error", $"Failed to load sensor: {ex.Message}", "OK");
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Failed to load sensor: {ex.Message}", "OK");
+                }
             }
         }
 
@@ -281,15 +314,31 @@ namespace EnvironmentManager.ViewModels
         {
             if (!ValidateForm())
             {
-                await Shell.Current.DisplayAlert("Validation Error", 
-                    "Please correct the errors before saving.", "OK");
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Validation Error", 
+                        "Please correct the errors before saving.", "OK");
+                }
                 return;
             }
 
-            var sensor = await _context.Sensors.FindAsync(SensorId);
+            // Check if context is available
+            if (_sensorContext == null)
+            {
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Error", "Database context is not initialized", "OK");
+                }
+                return;
+            }
+
+            var sensor = await _sensorContext.Sensors.FindAsync(SensorId);
             if (sensor == null)
             {
-                await Shell.Current.DisplayAlert("Error", "Sensor not found.", "OK");
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Error", "Sensor not found.", "OK");
+                }
                 return;
             }
 
@@ -308,13 +357,20 @@ namespace EnvironmentManager.ViewModels
                 sensor.BatteryLevelPercentage = BatteryLevelPercentage;
                 sensor.DataSource = DataSource;
 
-                await _context.SaveChangesAsync();
-                await Shell.Current.DisplayAlert("Success", "Sensor updated successfully.", "OK");
-                await Shell.Current.GoToAsync("..");
+                await _sensorContext.SaveChangesAsync();
+                
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Success", "Sensor updated successfully.", "OK");
+                    await Shell.Current.GoToAsync("..");
+                }
             }
             catch (Exception ex)
             {
-                await Shell.Current.DisplayAlert("Error", $"Failed to update sensor: {ex.Message}", "OK");
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Failed to update sensor: {ex.Message}", "OK");
+                }
             }
         }
 
@@ -328,7 +384,7 @@ namespace EnvironmentManager.ViewModels
 
             if (!confirm) return;
 
-            var sensor = await _context.Sensors.FindAsync(SensorId);
+            var sensor = await _sensorContext.Sensors.FindAsync(SensorId);
             if (sensor == null)
             {
                 await Shell.Current.DisplayAlert("Error", "Sensor not found.", "OK");
@@ -337,8 +393,8 @@ namespace EnvironmentManager.ViewModels
 
             try
             {
-                _context.Sensors.Remove(sensor);
-                await _context.SaveChangesAsync();
+                _sensorContext.Sensors.Remove(sensor);
+                await _sensorContext.SaveChangesAsync();
                 await Shell.Current.DisplayAlert("Success", "Sensor deleted successfully.", "OK");
                 await Shell.Current.GoToAsync("..");
             }

@@ -12,8 +12,5 @@ public class MaintenanceDbContext : DbContext
 
     public virtual DbSet<Maintenance> Maintenance { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
-    }
+
 }

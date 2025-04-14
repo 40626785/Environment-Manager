@@ -49,6 +49,21 @@ namespace EnvironmentManager.ViewModels
         private string _dataSource = string.Empty;
 
         [ObservableProperty]
+        private string _firmwareVersion = string.Empty;
+
+        [ObservableProperty]
+        private string _sensorUrl = string.Empty;
+
+        [ObservableProperty]
+        private string _connectivityStatus = string.Empty;
+
+        [ObservableProperty]
+        private float? _batteryLevelPercentage;
+
+        [ObservableProperty]
+        private string _batteryLevelText = string.Empty;
+
+        [ObservableProperty]
         private bool _isEditing = false;
 
         [ObservableProperty]
@@ -75,12 +90,7 @@ namespace EnvironmentManager.ViewModels
         [RelayCommand]
         private async Task LoadSensorsAsync()
         {
-            if (_isLoading)
-            {
-                Debug.WriteLine("Load operation already in progress, skipping...");
-                return;
-            }
-
+            if (_isLoading) return;
             try
             {
                 _isLoading = true;
@@ -90,39 +100,30 @@ namespace EnvironmentManager.ViewModels
                 // Check if context is available
                 if (_context == null)
                 {
-                    Debug.WriteLine("Error: Database context is null");
-                    await Shell.Current.DisplayAlert("Error", "Database context is not initialized", "OK");
+                    if (Shell.Current != null)
+                    {
+                        await Shell.Current.DisplayAlert("Error", "Database context is not initialized", "OK");
+                    }
                     return;
                 }
 
-                Debug.WriteLine("Attempting to query sensors from database...");
                 var sensorsList = await _context.Sensors
                     .Include(s => s.Location)  // Include location data
                     .AsNoTracking()
                     .OrderBy(s => s.SensorName)
                     .ToListAsync();
                 
-                Debug.WriteLine($"Found {sensorsList.Count} sensors");
                 foreach (var sensor in sensorsList)
                 {
-                    Debug.WriteLine($"Sensor Details:");
-                    Debug.WriteLine($"  ID: {sensor.SensorId}");
-                    Debug.WriteLine($"  Name: {sensor.SensorName}");
-                    Debug.WriteLine($"  Type: {sensor.SensorType}");
-                    Debug.WriteLine($"  Location ID: {sensor.LocationId}");
-                    Debug.WriteLine($"  Location Name: {sensor.Location?.SiteName}");
-                    Debug.WriteLine($"  Location Type: {sensor.Location?.SiteType}");
-                    Debug.WriteLine($"  Installation Date: {sensor.InstallationDate}");
-                    Debug.WriteLine($"  Status: {sensor.ConnectivityStatus}");
                     Sensors.Add(sensor);
                 }
-                Debug.WriteLine("Successfully loaded sensors");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Error loading sensors: {ex.Message}");
-                Debug.WriteLine($"Stack trace: {ex.StackTrace}");
-                await Shell.Current.DisplayAlert("Error", $"Failed to load sensors: {ex.Message}", "OK");
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Failed to load sensors: {ex.Message}", "OK");
+                }
             }
             finally
             {
@@ -133,7 +134,7 @@ namespace EnvironmentManager.ViewModels
         [RelayCommand]
         private async Task NavigateToAddAsync()
         {
-            await Shell.Current.GoToAsync("AddSensor");
+            await Shell.Current.GoToAsync(nameof(Views.AddSensorPage));
         }
 
         [RelayCommand]
@@ -146,7 +147,7 @@ namespace EnvironmentManager.ViewModels
                 { "id", sensor.SensorId }
             };
             
-            await Shell.Current.GoToAsync("EditSensor", parameters);
+            await Shell.Current.GoToAsync(nameof(Views.EditSensorPage), parameters);
         }
 
         [RelayCommand]
@@ -164,6 +165,11 @@ namespace EnvironmentManager.ViewModels
             InstallationDate = DateTime.Now;
             IsActive = true;
             DataSource = string.Empty;
+            FirmwareVersion = string.Empty;
+            SensorUrl = string.Empty;
+            ConnectivityStatus = string.Empty;
+            BatteryLevelPercentage = null;
+            BatteryLevelText = string.Empty;
         }
 
         [RelayCommand]
@@ -183,6 +189,11 @@ namespace EnvironmentManager.ViewModels
             InstallationDate = sensor.InstallationDate;
             IsActive = sensor.IsActive;
             DataSource = sensor.DataSource;
+            FirmwareVersion = sensor.FirmwareVersion;
+            SensorUrl = sensor.SensorUrl;
+            ConnectivityStatus = sensor.ConnectivityStatus;
+            BatteryLevelPercentage = sensor.BatteryLevelPercentage;
+            BatteryLevelText = sensor.BatteryLevelPercentage?.ToString() ?? string.Empty;
         }
 
         [RelayCommand]
@@ -221,6 +232,10 @@ namespace EnvironmentManager.ViewModels
                 sensorToSave.InstallationDate = InstallationDate;
                 sensorToSave.IsActive = IsActive;
                 sensorToSave.DataSource = DataSource;
+                sensorToSave.FirmwareVersion = FirmwareVersion;
+                sensorToSave.SensorUrl = SensorUrl;
+                sensorToSave.ConnectivityStatus = ConnectivityStatus;
+                sensorToSave.BatteryLevelPercentage = BatteryLevelPercentage;
 
                 await _context.SaveChangesAsync();
                 PrepareNewSensor();
@@ -238,15 +253,33 @@ namespace EnvironmentManager.ViewModels
         {
             if (sensor == null) return;
 
-            bool confirm = await Shell.Current.DisplayAlert("Confirm Delete", $"Are you sure you want to delete sensor '{sensor.SensorName}'?", "Yes", "No");
+            // For unit testing, skip the confirmation dialog
+            bool confirm = true;
+            if (Shell.Current != null)
+            {
+                confirm = await Shell.Current.DisplayAlert("Confirm Delete", $"Are you sure you want to delete sensor '{sensor.SensorName}'?", "Yes", "No");
+            }
             if (!confirm) return;
 
             try
             {
+                // Check if context is available
+                if (_context == null)
+                {
+                    if (Shell.Current != null)
+                    {
+                        await Shell.Current.DisplayAlert("Error", "Database context is not initialized", "OK");
+                    }
+                    return;
+                }
+
                 var sensorToDelete = await _context.Sensors.FindAsync(sensor.SensorId);
                 if (sensorToDelete == null)
                 {
-                    await Shell.Current.DisplayAlert("Error", "Sensor not found.", "OK");
+                    if (Shell.Current != null)
+                    {
+                        await Shell.Current.DisplayAlert("Error", "Sensor not found.", "OK");
+                    }
                     return;
                 }
 
@@ -258,7 +291,11 @@ namespace EnvironmentManager.ViewModels
                     PrepareNewSensor();
                 }
                 await LoadSensorsAsync();
-                await Shell.Current.DisplayAlert("Success", "Sensor deleted successfully.", "OK");
+                
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Success", "Sensor deleted successfully.", "OK");
+                }
             }
             catch (Exception ex)
             {

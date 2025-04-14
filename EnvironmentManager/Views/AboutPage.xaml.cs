@@ -5,6 +5,13 @@ namespace EnvironmentManager.Views;
 
 public partial class AboutPage : ContentPage
 {
+	// Default constructor required for Shell navigation
+	public AboutPage()
+	{
+		InitializeComponent();
+		// Will be resolved through dependency injection when properly navigated to
+	}
+
 	public AboutPage(AboutViewModel viewModel)
 	{
 		InitializeComponent();

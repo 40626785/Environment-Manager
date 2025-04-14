@@ -16,8 +16,17 @@ namespace EnvironmentManager.Converters
         // Update signature to match IValueConverter with nullable types
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            // Not needed for one-way binding
-            throw new NotImplementedException();
+                // Convert back from boolean to string
+            // When converting from a boolean back to a string:
+            // - If true, we return a non-empty placeholder string
+            // - If false, we return an empty string
+            if (value is bool boolValue)
+            {
+                return boolValue ? "Value" : string.Empty;
+            }
+            
+            // Default case - return empty string
+            return string.Empty;
         }
     }
 }

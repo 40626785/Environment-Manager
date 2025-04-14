@@ -18,7 +18,19 @@ namespace EnvironmentManager.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            // Convert back from color to boolean
+            if (value is Color color)
+            {
+                // Check if the color is closer to the active color (#22C55E) than the inactive color (#EF4444)
+                // This is a simple implementation - in a real app you might want more sophisticated color comparison
+                if (color.ToHex().Equals("#22C55E", StringComparison.OrdinalIgnoreCase))
+                    return true;
+                if (color.ToHex().Equals("#EF4444", StringComparison.OrdinalIgnoreCase))
+                    return false;
+            }
+            
+            // Default fallback
+            return false;
         }
     }
 } 

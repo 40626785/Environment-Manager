@@ -5,12 +5,14 @@ using EnvironmentManager.Data;
 using EnvironmentManager.Services;
 using System.Collections.ObjectModel;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace EnvironmentManager.ViewModels
 {
     public partial class AddSensorViewModel : ObservableObject
     {
-        private readonly SensorDbContext _context;
+        private readonly SensorDbContext _sensorContext;
+        private readonly LocationDbContext _locationContext;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(LocationErrorVisible))]
@@ -101,9 +103,10 @@ namespace EnvironmentManager.ViewModels
         public string BatteryErrorMessage => _validationErrors.GetValueOrDefault("BatteryLevel", string.Empty);
         public string DataSourceErrorMessage => _validationErrors.GetValueOrDefault("DataSource", string.Empty);
 
-        public AddSensorViewModel(SensorDbContext context)
+        public AddSensorViewModel(SensorDbContext sensorContext, LocationDbContext locationContext)
         {
-            _context = context;
+            _sensorContext = sensorContext;
+            _locationContext = locationContext;
             _locations = new ObservableCollection<EnvironmentManager.Models.Location>();
             LoadLocations();
             
@@ -186,10 +189,17 @@ namespace EnvironmentManager.ViewModels
         private void ValidateSensorName()
         {
             _validationErrors.Remove("SensorName");
-            var (isValid, errorMessage) = ValidationService.ValidateTextField("Sensor Name", SensorName);
-            if (!isValid)
+            if (string.IsNullOrWhiteSpace(SensorName))
             {
-                _validationErrors["SensorName"] = errorMessage;
+                _validationErrors["SensorName"] = "Sensor name is required";
+            }
+            else
+            {
+                var (isValid, errorMessage) = ValidationService.ValidateTextField("Sensor Name", SensorName);
+                if (!isValid && !string.IsNullOrWhiteSpace(SensorName))
+                {
+                    _validationErrors["SensorName"] = errorMessage;
+                }
             }
             OnPropertyChanged(nameof(NameErrorVisible));
             OnPropertyChanged(nameof(NameErrorMessage));
@@ -198,10 +208,17 @@ namespace EnvironmentManager.ViewModels
         private void ValidateModel()
         {
             _validationErrors.Remove("Model");
-            var (isValid, errorMessage) = ValidationService.ValidateTextField("Model", Model);
-            if (!isValid)
+            if (string.IsNullOrWhiteSpace(Model))
             {
-                _validationErrors["Model"] = errorMessage;
+                _validationErrors["Model"] = "Model is required";
+            }
+            else
+            {
+                var (isValid, errorMessage) = ValidationService.ValidateTextField("Model", Model);
+                if (!isValid && !string.IsNullOrWhiteSpace(Model))
+                {
+                    _validationErrors["Model"] = errorMessage;
+                }
             }
             OnPropertyChanged(nameof(ModelErrorVisible));
             OnPropertyChanged(nameof(ModelErrorMessage));
@@ -276,7 +293,17 @@ namespace EnvironmentManager.ViewModels
         {
             try
             {
-                var locationsList = await _context.Locations
+                if (_locationContext == null || Locations == null)
+                {
+                    // Initialize Locations if it's null
+                    if (Locations == null)
+                    {
+                        Locations = new ObservableCollection<EnvironmentManager.Models.Location>();
+                    }
+                    return;
+                }
+
+                var locationsList = await _locationContext.Locations
                     .AsNoTracking()
                     .OrderBy(l => l.SiteName)
                     .ToListAsync();
@@ -289,7 +316,12 @@ namespace EnvironmentManager.ViewModels
             }
             catch (Exception ex)
             {
-                await Shell.Current.DisplayAlert("Error", $"Failed to load locations: {ex.Message}", "OK");
+                // Handle exception without using Shell in unit tests
+                Debug.WriteLine($"Failed to load locations: {ex.Message}");
+                if (Shell.Current != null)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Failed to load locations: {ex.Message}", "OK");
+                }
             }
         }
 
@@ -332,7 +364,7 @@ namespace EnvironmentManager.ViewModels
             {
                 var sensor = new Sensor
                 {
-                    LocationId = SelectedLocation?.LocationId ?? 0,
+                    LocationId = SelectedLocation.LocationId,
                     SensorName = SensorName,
                     Model = Model,
                     Manufacturer = Manufacturer,
@@ -346,8 +378,8 @@ namespace EnvironmentManager.ViewModels
                     DataSource = DataSource
                 };
 
-                _context.Sensors.Add(sensor);
-                await _context.SaveChangesAsync();
+                _sensorContext.Sensors.Add(sensor);
+                await _sensorContext.SaveChangesAsync();
                 await Shell.Current.DisplayAlert("Success", "Sensor added successfully.", "OK");
                 await Shell.Current.GoToAsync("..");
             }
