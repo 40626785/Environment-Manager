@@ -1,0 +1,1308 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Models.Sensor
+  commentId: T:EnvironmentManager.Models.Sensor
+  id: Sensor
+  parent: EnvironmentManager.Models
+  children:
+  - EnvironmentManager.Models.Sensor.#ctor
+  - EnvironmentManager.Models.Sensor.BatteryLevelPercentage
+  - EnvironmentManager.Models.Sensor.ConnectivityStatus
+  - EnvironmentManager.Models.Sensor.DataSource
+  - EnvironmentManager.Models.Sensor.FirmwareVersion
+  - EnvironmentManager.Models.Sensor.InstallationDate
+  - EnvironmentManager.Models.Sensor.IsActive
+  - EnvironmentManager.Models.Sensor.Location
+  - EnvironmentManager.Models.Sensor.LocationId
+  - EnvironmentManager.Models.Sensor.Manufacturer
+  - EnvironmentManager.Models.Sensor.Model
+  - EnvironmentManager.Models.Sensor.Readings
+  - EnvironmentManager.Models.Sensor.SensorId
+  - EnvironmentManager.Models.Sensor.SensorName
+  - EnvironmentManager.Models.Sensor.SensorType
+  - EnvironmentManager.Models.Sensor.SensorUrl
+  - EnvironmentManager.Models.Sensor.Settings
+  langs:
+  - csharp
+  - vb
+  name: Sensor
+  nameWithType: Sensor
+  fullName: EnvironmentManager.Models.Sensor
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: Sensor
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 7
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public class Sensor
+    content.vb: Public Class Sensor
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.Models.Sensor.SensorId
+  commentId: P:EnvironmentManager.Models.Sensor.SensorId
+  id: SensorId
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: SensorId
+  nameWithType: Sensor.SensorId
+  fullName: EnvironmentManager.Models.Sensor.SensorId
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SensorId
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 9
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Key]
+
+      public int SensorId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Key>
+
+      Public Property SensorId As Integer
+  overload: EnvironmentManager.Models.Sensor.SensorId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Models.Sensor.LocationId
+  commentId: P:EnvironmentManager.Models.Sensor.LocationId
+  id: LocationId
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: LocationId
+  nameWithType: Sensor.LocationId
+  fullName: EnvironmentManager.Models.Sensor.LocationId
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LocationId
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public int LocationId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Required>
+
+      Public Property LocationId As Integer
+  overload: EnvironmentManager.Models.Sensor.LocationId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Models.Sensor.Location
+  commentId: P:EnvironmentManager.Models.Sensor.Location
+  id: Location
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: Location
+  nameWithType: Sensor.Location
+  fullName: EnvironmentManager.Models.Sensor.Location
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: Location
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 15
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [ForeignKey("LocationId")]
+
+      public virtual Location Location { get; set; }
+    parameters: []
+    return:
+      type: EnvironmentManager.Models.Location
+    content.vb: >-
+      <ForeignKey("LocationId")>
+
+      Public Overridable Property Location As Location
+  overload: EnvironmentManager.Models.Sensor.Location*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: LocationId
+- uid: EnvironmentManager.Models.Sensor.SensorName
+  commentId: P:EnvironmentManager.Models.Sensor.SensorName
+  id: SensorName
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: SensorName
+  nameWithType: Sensor.SensorName
+  fullName: EnvironmentManager.Models.Sensor.SensorName
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SensorName
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 18
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Required]
+
+      [StringLength(100)]
+
+      public string SensorName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      <StringLength(100)>
+
+      Public Property SensorName As String
+  overload: EnvironmentManager.Models.Sensor.SensorName*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 100
+- uid: EnvironmentManager.Models.Sensor.Model
+  commentId: P:EnvironmentManager.Models.Sensor.Model
+  id: Model
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: Model
+  nameWithType: Sensor.Model
+  fullName: EnvironmentManager.Models.Sensor.Model
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: Model
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 22
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [StringLength(100)]
+
+      public string Model { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <StringLength(100)>
+
+      Public Property Model As String
+  overload: EnvironmentManager.Models.Sensor.Model*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 100
+- uid: EnvironmentManager.Models.Sensor.Manufacturer
+  commentId: P:EnvironmentManager.Models.Sensor.Manufacturer
+  id: Manufacturer
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: Manufacturer
+  nameWithType: Sensor.Manufacturer
+  fullName: EnvironmentManager.Models.Sensor.Manufacturer
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: Manufacturer
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 25
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [StringLength(100)]
+
+      public string Manufacturer { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <StringLength(100)>
+
+      Public Property Manufacturer As String
+  overload: EnvironmentManager.Models.Sensor.Manufacturer*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 100
+- uid: EnvironmentManager.Models.Sensor.SensorType
+  commentId: P:EnvironmentManager.Models.Sensor.SensorType
+  id: SensorType
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: SensorType
+  nameWithType: Sensor.SensorType
+  fullName: EnvironmentManager.Models.Sensor.SensorType
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SensorType
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 28
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [StringLength(50)]
+
+      public string SensorType { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <StringLength(50)>
+
+      Public Property SensorType As String
+  overload: EnvironmentManager.Models.Sensor.SensorType*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 50
+- uid: EnvironmentManager.Models.Sensor.InstallationDate
+  commentId: P:EnvironmentManager.Models.Sensor.InstallationDate
+  id: InstallationDate
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: InstallationDate
+  nameWithType: Sensor.InstallationDate
+  fullName: EnvironmentManager.Models.Sensor.InstallationDate
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: InstallationDate
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 31
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public DateTime InstallationDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: >-
+      <Required>
+
+      Public Property InstallationDate As Date
+  overload: EnvironmentManager.Models.Sensor.InstallationDate*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Models.Sensor.IsActive
+  commentId: P:EnvironmentManager.Models.Sensor.IsActive
+  id: IsActive
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: Sensor.IsActive
+  fullName: EnvironmentManager.Models.Sensor.IsActive
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: IsActive
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 34
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public bool IsActive { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <Required>
+
+      Public Property IsActive As Boolean
+  overload: EnvironmentManager.Models.Sensor.IsActive*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Models.Sensor.FirmwareVersion
+  commentId: P:EnvironmentManager.Models.Sensor.FirmwareVersion
+  id: FirmwareVersion
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: FirmwareVersion
+  nameWithType: Sensor.FirmwareVersion
+  fullName: EnvironmentManager.Models.Sensor.FirmwareVersion
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: FirmwareVersion
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 37
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [StringLength(50)]
+
+      public string FirmwareVersion { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <StringLength(50)>
+
+      Public Property FirmwareVersion As String
+  overload: EnvironmentManager.Models.Sensor.FirmwareVersion*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 50
+- uid: EnvironmentManager.Models.Sensor.DataSource
+  commentId: P:EnvironmentManager.Models.Sensor.DataSource
+  id: DataSource
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: DataSource
+  nameWithType: Sensor.DataSource
+  fullName: EnvironmentManager.Models.Sensor.DataSource
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: DataSource
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 40
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [StringLength(200)]
+
+      public string DataSource { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <StringLength(200)>
+
+      Public Property DataSource As String
+  overload: EnvironmentManager.Models.Sensor.DataSource*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 200
+- uid: EnvironmentManager.Models.Sensor.SensorUrl
+  commentId: P:EnvironmentManager.Models.Sensor.SensorUrl
+  id: SensorUrl
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: SensorUrl
+  nameWithType: Sensor.SensorUrl
+  fullName: EnvironmentManager.Models.Sensor.SensorUrl
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SensorUrl
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 43
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Url]
+
+      [StringLength(255)]
+
+      public string SensorUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Url>
+
+      <StringLength(255)>
+
+      Public Property SensorUrl As String
+  overload: EnvironmentManager.Models.Sensor.SensorUrl*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.UrlAttribute
+    ctor: System.ComponentModel.DataAnnotations.UrlAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 255
+- uid: EnvironmentManager.Models.Sensor.ConnectivityStatus
+  commentId: P:EnvironmentManager.Models.Sensor.ConnectivityStatus
+  id: ConnectivityStatus
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: ConnectivityStatus
+  nameWithType: Sensor.ConnectivityStatus
+  fullName: EnvironmentManager.Models.Sensor.ConnectivityStatus
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ConnectivityStatus
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 47
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [StringLength(50)]
+
+      public string ConnectivityStatus { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <StringLength(50)>
+
+      Public Property ConnectivityStatus As String
+  overload: EnvironmentManager.Models.Sensor.ConnectivityStatus*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 50
+- uid: EnvironmentManager.Models.Sensor.BatteryLevelPercentage
+  commentId: P:EnvironmentManager.Models.Sensor.BatteryLevelPercentage
+  id: BatteryLevelPercentage
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: BatteryLevelPercentage
+  nameWithType: Sensor.BatteryLevelPercentage
+  fullName: EnvironmentManager.Models.Sensor.BatteryLevelPercentage
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: BatteryLevelPercentage
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 50
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public float? BatteryLevelPercentage { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property BatteryLevelPercentage As Single?
+  overload: EnvironmentManager.Models.Sensor.BatteryLevelPercentage*
+- uid: EnvironmentManager.Models.Sensor.Readings
+  commentId: P:EnvironmentManager.Models.Sensor.Readings
+  id: Readings
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: Readings
+  nameWithType: Sensor.Readings
+  fullName: EnvironmentManager.Models.Sensor.Readings
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: Readings
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 53
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public virtual ICollection<SensorReading> Readings { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{EnvironmentManager.Models.SensorReading}
+    content.vb: Public Overridable Property Readings As ICollection(Of SensorReading)
+  overload: EnvironmentManager.Models.Sensor.Readings*
+- uid: EnvironmentManager.Models.Sensor.Settings
+  commentId: P:EnvironmentManager.Models.Sensor.Settings
+  id: Settings
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: Settings
+  nameWithType: Sensor.Settings
+  fullName: EnvironmentManager.Models.Sensor.Settings
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: Settings
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 54
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public virtual ICollection<SensorSetting> Settings { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{EnvironmentManager.Models.SensorSetting}
+    content.vb: Public Overridable Property Settings As ICollection(Of SensorSetting)
+  overload: EnvironmentManager.Models.Sensor.Settings*
+- uid: EnvironmentManager.Models.Sensor.#ctor
+  commentId: M:EnvironmentManager.Models.Sensor.#ctor
+  id: '#ctor'
+  parent: EnvironmentManager.Models.Sensor
+  langs:
+  - csharp
+  - vb
+  name: Sensor()
+  nameWithType: Sensor.Sensor()
+  fullName: EnvironmentManager.Models.Sensor.Sensor()
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/Models/Sensor.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: .ctor
+    path: EnvironmentManager/Models/Sensor.cs
+    startLine: 56
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public Sensor()
+    content.vb: Public Sub New()
+  overload: EnvironmentManager.Models.Sensor.#ctor*
+  nameWithType.vb: Sensor.New()
+  fullName.vb: EnvironmentManager.Models.Sensor.New()
+  name.vb: New()
+references:
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Models.Sensor.SensorId*
+  commentId: Overload:EnvironmentManager.Models.Sensor.SensorId
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_SensorId
+  name: SensorId
+  nameWithType: Sensor.SensorId
+  fullName: EnvironmentManager.Models.Sensor.SensorId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: EnvironmentManager.Models.Sensor.LocationId*
+  commentId: Overload:EnvironmentManager.Models.Sensor.LocationId
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_LocationId
+  name: LocationId
+  nameWithType: Sensor.LocationId
+  fullName: EnvironmentManager.Models.Sensor.LocationId
+- uid: EnvironmentManager.Models.Sensor.Location*
+  commentId: Overload:EnvironmentManager.Models.Sensor.Location
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_Location
+  name: Location
+  nameWithType: Sensor.Location
+  fullName: EnvironmentManager.Models.Sensor.Location
+- uid: EnvironmentManager.Models.Location
+  commentId: T:EnvironmentManager.Models.Location
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.Location.html
+  name: Location
+  nameWithType: Location
+  fullName: EnvironmentManager.Models.Location
+- uid: EnvironmentManager.Models.Sensor.SensorName*
+  commentId: Overload:EnvironmentManager.Models.Sensor.SensorName
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_SensorName
+  name: SensorName
+  nameWithType: Sensor.SensorName
+  fullName: EnvironmentManager.Models.Sensor.SensorName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.Models.Sensor.Model*
+  commentId: Overload:EnvironmentManager.Models.Sensor.Model
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_Model
+  name: Model
+  nameWithType: Sensor.Model
+  fullName: EnvironmentManager.Models.Sensor.Model
+- uid: EnvironmentManager.Models.Sensor.Manufacturer*
+  commentId: Overload:EnvironmentManager.Models.Sensor.Manufacturer
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_Manufacturer
+  name: Manufacturer
+  nameWithType: Sensor.Manufacturer
+  fullName: EnvironmentManager.Models.Sensor.Manufacturer
+- uid: EnvironmentManager.Models.Sensor.SensorType*
+  commentId: Overload:EnvironmentManager.Models.Sensor.SensorType
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_SensorType
+  name: SensorType
+  nameWithType: Sensor.SensorType
+  fullName: EnvironmentManager.Models.Sensor.SensorType
+- uid: EnvironmentManager.Models.Sensor.InstallationDate*
+  commentId: Overload:EnvironmentManager.Models.Sensor.InstallationDate
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_InstallationDate
+  name: InstallationDate
+  nameWithType: Sensor.InstallationDate
+  fullName: EnvironmentManager.Models.Sensor.InstallationDate
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: EnvironmentManager.Models.Sensor.IsActive*
+  commentId: Overload:EnvironmentManager.Models.Sensor.IsActive
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_IsActive
+  name: IsActive
+  nameWithType: Sensor.IsActive
+  fullName: EnvironmentManager.Models.Sensor.IsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: EnvironmentManager.Models.Sensor.FirmwareVersion*
+  commentId: Overload:EnvironmentManager.Models.Sensor.FirmwareVersion
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_FirmwareVersion
+  name: FirmwareVersion
+  nameWithType: Sensor.FirmwareVersion
+  fullName: EnvironmentManager.Models.Sensor.FirmwareVersion
+- uid: EnvironmentManager.Models.Sensor.DataSource*
+  commentId: Overload:EnvironmentManager.Models.Sensor.DataSource
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_DataSource
+  name: DataSource
+  nameWithType: Sensor.DataSource
+  fullName: EnvironmentManager.Models.Sensor.DataSource
+- uid: EnvironmentManager.Models.Sensor.SensorUrl*
+  commentId: Overload:EnvironmentManager.Models.Sensor.SensorUrl
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_SensorUrl
+  name: SensorUrl
+  nameWithType: Sensor.SensorUrl
+  fullName: EnvironmentManager.Models.Sensor.SensorUrl
+- uid: EnvironmentManager.Models.Sensor.ConnectivityStatus*
+  commentId: Overload:EnvironmentManager.Models.Sensor.ConnectivityStatus
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_ConnectivityStatus
+  name: ConnectivityStatus
+  nameWithType: Sensor.ConnectivityStatus
+  fullName: EnvironmentManager.Models.Sensor.ConnectivityStatus
+- uid: EnvironmentManager.Models.Sensor.BatteryLevelPercentage*
+  commentId: Overload:EnvironmentManager.Models.Sensor.BatteryLevelPercentage
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_BatteryLevelPercentage
+  name: BatteryLevelPercentage
+  nameWithType: Sensor.BatteryLevelPercentage
+  fullName: EnvironmentManager.Models.Sensor.BatteryLevelPercentage
+- uid: System.Nullable{System.Single}
+  commentId: T:System.Nullable{System.Single}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float?
+  nameWithType: float?
+  fullName: float?
+  nameWithType.vb: Single?
+  fullName.vb: Single?
+  name.vb: Single?
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EnvironmentManager.Models.Sensor.Readings*
+  commentId: Overload:EnvironmentManager.Models.Sensor.Readings
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_Readings
+  name: Readings
+  nameWithType: Sensor.Readings
+  fullName: EnvironmentManager.Models.Sensor.Readings
+- uid: System.Collections.Generic.ICollection{EnvironmentManager.Models.SensorReading}
+  commentId: T:System.Collections.Generic.ICollection{EnvironmentManager.Models.SensorReading}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<SensorReading>
+  nameWithType: ICollection<SensorReading>
+  fullName: System.Collections.Generic.ICollection<EnvironmentManager.Models.SensorReading>
+  nameWithType.vb: ICollection(Of SensorReading)
+  fullName.vb: System.Collections.Generic.ICollection(Of EnvironmentManager.Models.SensorReading)
+  name.vb: ICollection(Of SensorReading)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: EnvironmentManager.Models.SensorReading
+    name: SensorReading
+    href: EnvironmentManager.Models.SensorReading.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.SensorReading
+    name: SensorReading
+    href: EnvironmentManager.Models.SensorReading.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: EnvironmentManager.Models.Sensor.Settings*
+  commentId: Overload:EnvironmentManager.Models.Sensor.Settings
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor_Settings
+  name: Settings
+  nameWithType: Sensor.Settings
+  fullName: EnvironmentManager.Models.Sensor.Settings
+- uid: System.Collections.Generic.ICollection{EnvironmentManager.Models.SensorSetting}
+  commentId: T:System.Collections.Generic.ICollection{EnvironmentManager.Models.SensorSetting}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<SensorSetting>
+  nameWithType: ICollection<SensorSetting>
+  fullName: System.Collections.Generic.ICollection<EnvironmentManager.Models.SensorSetting>
+  nameWithType.vb: ICollection(Of SensorSetting)
+  fullName.vb: System.Collections.Generic.ICollection(Of EnvironmentManager.Models.SensorSetting)
+  name.vb: ICollection(Of SensorSetting)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: EnvironmentManager.Models.SensorSetting
+    name: SensorSetting
+    href: EnvironmentManager.Models.SensorSetting.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.SensorSetting
+    name: SensorSetting
+    href: EnvironmentManager.Models.SensorSetting.html
+  - name: )
+- uid: EnvironmentManager.Models.Sensor.#ctor*
+  commentId: Overload:EnvironmentManager.Models.Sensor.#ctor
+  href: EnvironmentManager.Models.Sensor.html#EnvironmentManager_Models_Sensor__ctor
+  name: Sensor
+  nameWithType: Sensor.Sensor
+  fullName: EnvironmentManager.Models.Sensor.Sensor
+  nameWithType.vb: Sensor.New
+  fullName.vb: EnvironmentManager.Models.Sensor.New
+  name.vb: New

@@ -1,0 +1,476 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Test.SensorViewModelTests
+  commentId: T:EnvironmentManager.Test.SensorViewModelTests
+  id: SensorViewModelTests
+  parent: EnvironmentManager.Test
+  children:
+  - EnvironmentManager.Test.SensorViewModelTests.DeleteSensor_RemovesFromDatabase
+  - EnvironmentManager.Test.SensorViewModelTests.LoadSensors_PopulatesCollection
+  - EnvironmentManager.Test.SensorViewModelTests.SelectSensor_UpdatesProperties
+  langs:
+  - csharp
+  - vb
+  name: SensorViewModelTests
+  nameWithType: SensorViewModelTests
+  fullName: EnvironmentManager.Test.SensorViewModelTests
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager.Test/SensorViewModelTests.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SensorViewModelTests
+    path: EnvironmentManager.Test/SensorViewModelTests.cs
+    startLine: 9
+  assemblies:
+  - EnvironmentManager.Test
+  namespace: EnvironmentManager.Test
+  syntax:
+    content: public class SensorViewModelTests
+    content.vb: Public Class SensorViewModelTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.Test.SensorViewModelTests.LoadSensors_PopulatesCollection
+  commentId: M:EnvironmentManager.Test.SensorViewModelTests.LoadSensors_PopulatesCollection
+  id: LoadSensors_PopulatesCollection
+  parent: EnvironmentManager.Test.SensorViewModelTests
+  langs:
+  - csharp
+  - vb
+  name: LoadSensors_PopulatesCollection()
+  nameWithType: SensorViewModelTests.LoadSensors_PopulatesCollection()
+  fullName: EnvironmentManager.Test.SensorViewModelTests.LoadSensors_PopulatesCollection()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager.Test/SensorViewModelTests.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LoadSensors_PopulatesCollection
+    path: EnvironmentManager.Test/SensorViewModelTests.cs
+    startLine: 11
+  assemblies:
+  - EnvironmentManager.Test
+  namespace: EnvironmentManager.Test
+  syntax:
+    content: >-
+      [Fact]
+
+      public Task LoadSensors_PopulatesCollection()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function LoadSensors_PopulatesCollection() As Task
+  overload: EnvironmentManager.Test.SensorViewModelTests.LoadSensors_PopulatesCollection*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Test.SensorViewModelTests.DeleteSensor_RemovesFromDatabase
+  commentId: M:EnvironmentManager.Test.SensorViewModelTests.DeleteSensor_RemovesFromDatabase
+  id: DeleteSensor_RemovesFromDatabase
+  parent: EnvironmentManager.Test.SensorViewModelTests
+  langs:
+  - csharp
+  - vb
+  name: DeleteSensor_RemovesFromDatabase()
+  nameWithType: SensorViewModelTests.DeleteSensor_RemovesFromDatabase()
+  fullName: EnvironmentManager.Test.SensorViewModelTests.DeleteSensor_RemovesFromDatabase()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager.Test/SensorViewModelTests.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: DeleteSensor_RemovesFromDatabase
+    path: EnvironmentManager.Test/SensorViewModelTests.cs
+    startLine: 38
+  assemblies:
+  - EnvironmentManager.Test
+  namespace: EnvironmentManager.Test
+  syntax:
+    content: >-
+      [Fact]
+
+      public Task DeleteSensor_RemovesFromDatabase()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function DeleteSensor_RemovesFromDatabase() As Task
+  overload: EnvironmentManager.Test.SensorViewModelTests.DeleteSensor_RemovesFromDatabase*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Test.SensorViewModelTests.SelectSensor_UpdatesProperties
+  commentId: M:EnvironmentManager.Test.SensorViewModelTests.SelectSensor_UpdatesProperties
+  id: SelectSensor_UpdatesProperties
+  parent: EnvironmentManager.Test.SensorViewModelTests
+  langs:
+  - csharp
+  - vb
+  name: SelectSensor_UpdatesProperties()
+  nameWithType: SensorViewModelTests.SelectSensor_UpdatesProperties()
+  fullName: EnvironmentManager.Test.SensorViewModelTests.SelectSensor_UpdatesProperties()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager.Test/SensorViewModelTests.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SelectSensor_UpdatesProperties
+    path: EnvironmentManager.Test/SensorViewModelTests.cs
+    startLine: 57
+  assemblies:
+  - EnvironmentManager.Test
+  namespace: EnvironmentManager.Test
+  syntax:
+    content: >-
+      [Fact]
+
+      public void SelectSensor_UpdatesProperties()
+    content.vb: >-
+      <Fact>
+
+      Public Sub SelectSensor_UpdatesProperties()
+  overload: EnvironmentManager.Test.SensorViewModelTests.SelectSensor_UpdatesProperties*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+references:
+- uid: EnvironmentManager.Test
+  commentId: N:EnvironmentManager.Test
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Test
+  nameWithType: EnvironmentManager.Test
+  fullName: EnvironmentManager.Test
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Test
+    name: Test
+    href: EnvironmentManager.Test.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Test
+    name: Test
+    href: EnvironmentManager.Test.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Test.SensorViewModelTests.LoadSensors_PopulatesCollection*
+  commentId: Overload:EnvironmentManager.Test.SensorViewModelTests.LoadSensors_PopulatesCollection
+  href: EnvironmentManager.Test.SensorViewModelTests.html#EnvironmentManager_Test_SensorViewModelTests_LoadSensors_PopulatesCollection
+  name: LoadSensors_PopulatesCollection
+  nameWithType: SensorViewModelTests.LoadSensors_PopulatesCollection
+  fullName: EnvironmentManager.Test.SensorViewModelTests.LoadSensors_PopulatesCollection
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: EnvironmentManager.Test.SensorViewModelTests.DeleteSensor_RemovesFromDatabase*
+  commentId: Overload:EnvironmentManager.Test.SensorViewModelTests.DeleteSensor_RemovesFromDatabase
+  href: EnvironmentManager.Test.SensorViewModelTests.html#EnvironmentManager_Test_SensorViewModelTests_DeleteSensor_RemovesFromDatabase
+  name: DeleteSensor_RemovesFromDatabase
+  nameWithType: SensorViewModelTests.DeleteSensor_RemovesFromDatabase
+  fullName: EnvironmentManager.Test.SensorViewModelTests.DeleteSensor_RemovesFromDatabase
+- uid: EnvironmentManager.Test.SensorViewModelTests.SelectSensor_UpdatesProperties*
+  commentId: Overload:EnvironmentManager.Test.SensorViewModelTests.SelectSensor_UpdatesProperties
+  href: EnvironmentManager.Test.SensorViewModelTests.html#EnvironmentManager_Test_SensorViewModelTests_SelectSensor_UpdatesProperties
+  name: SelectSensor_UpdatesProperties
+  nameWithType: SensorViewModelTests.SelectSensor_UpdatesProperties
+  fullName: EnvironmentManager.Test.SensorViewModelTests.SelectSensor_UpdatesProperties
