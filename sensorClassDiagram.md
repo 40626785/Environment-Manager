@@ -1,26 +1,15 @@
 ```mermaid
 classDiagram
-    Sensor "1" <|-- "*" SensorReading
-    Sensor "1" <|-- "*" SensorSetting
-    Location "1" <|-- "*" Sensor
-    EnvironmentalParameter "1" <|-- "*" SensorReading
+    %% Model relationships
+    Sensor "1" -- "*" SensorReading : has
+    Sensor "1" -- "*" SensorSetting : has
+    Location "1" -- "*" Sensor : contains
+    EnvironmentalParameter "1" -- "*" SensorReading : measured by
+    SensorViewModel -- Sensor : manages
+    AddSensorViewModel -- Location : uses
+    EditSensorViewModel -- Sensor : edits
 
     class Sensor {
-        -int sensorId
-        -int locationId
-        -string sensorName
-        -string model
-        -string manufacturer
-        -string sensorType
-        -DateTime installationDate
-        -bool isActive
-        -string firmwareVersion
-        -string dataSource
-        -string sensorUrl
-        -string connectivityStatus
-        -float? batteryLevelPercentage
-        -List<SensorReading> readings
-        -List<SensorSetting> settings
         +int SensorId
         +int LocationId
         +string SensorName
@@ -34,20 +23,48 @@ classDiagram
         +string SensorUrl
         +string ConnectivityStatus
         +float? BatteryLevelPercentage
-        +ICollection<SensorReading> Readings
-        +ICollection<SensorSetting> Settings
         +Location Location
-        +Sensor()
+        +ICollection~SensorReading~ Readings
+        +ICollection~SensorSetting~ Settings
+    }
+
+    class SensorViewModel {
+        -SensorDbContext _context
+        -bool _isLoading
+        +ObservableCollection~Sensor~ Sensors
+        +Sensor? SelectedSensor
+        +bool IsEditing
+        +string PageTitle
+        +LoadSensorsCommand()
+        +NavigateToAddCommand()
+        +NavigateToEditCommand(Sensor)
+        +PrepareNewSensorCommand()
+        +SelectSensorForEditCommand(Sensor)
+        +SaveSensorCommand()
+    }
+
+    class AddSensorViewModel {
+        -SensorDbContext _sensorContext
+        -LocationDbContext _locationContext
+        +ObservableCollection~Location~ Locations
+        +Location SelectedLocation
+        +string SensorName
+        +string Model
+        +string Manufacturer
+        +string SensorType
+        +DateTime InstallationDate
+        +bool IsActive
+        +string FirmwareVersion
+        +string SensorUrl
+        +bool IsOnline
+        +float? BatteryLevelPercentage
+        +string DataSource
+        +ValidateDataSource()
+        +ValidateBatteryLevel()
+        +ValidateSensorName()
     }
 
     class SensorReading {
-        -int readingId
-        -int sensorId
-        -int parameterId
-        -DateTime timestamp
-        -float value
-        -string measurementUnit
-        -bool isValid
         +int ReadingId
         +int SensorId
         +int ParameterId
@@ -57,16 +74,9 @@ classDiagram
         +bool IsValid
         +Sensor Sensor
         +EnvironmentalParameter EnvironmentalParameter
-        +SensorReading()
     }
 
     class SensorSetting {
-        -int settingId
-        -int sensorId
-        -string settingName
-        -string settingValue
-        -string dataType
-        -DateTime lastUpdated
         +int SettingId
         +int SensorId
         +string SettingName
@@ -74,7 +84,6 @@ classDiagram
         +string DataType
         +DateTime LastUpdated
         +Sensor Sensor
-        +SensorSetting()
     }
 
     class Location {
@@ -83,4 +92,5 @@ classDiagram
 
     class EnvironmentalParameter {
         <<external>>
-    }````
+    }
+````
