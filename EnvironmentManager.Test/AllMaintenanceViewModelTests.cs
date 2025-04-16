@@ -6,6 +6,7 @@ using System.Text;
 using EnvironmentManager.Data;
 using EnvironmentManager.Models;
 using EnvironmentManager.ViewModels;
+using EnvironmentManager.Interfaces;
 using Moq;
     
 public class AllMaintenanceViewModelTests
@@ -14,9 +15,10 @@ public class AllMaintenanceViewModelTests
     public void SortCollection_OnInstantiation_SortList()
     {
         //Arrange
-        var contextMock = createContext();
+        var mockDataStore = new Mock<IMaintenanceDataStore>();
+        mockDataStore.Setup(x => x.RetrieveAll()).Returns(testData());
         //Action
-        AllMaintenanceViewModel allMaintenance = new AllMaintenanceViewModel(contextMock.Object); //SortCollection function invoked as part of constructor
+        AllMaintenanceViewModel allMaintenance = new AllMaintenanceViewModel(mockDataStore.Object); //SortCollection function invoked as part of constructor
         ObservableCollection<MaintenanceViewModel> producedCollection = allMaintenance.AllMaintenance; //Get sorted collection
         //Assert
         for(var i = 1; i < producedCollection.Count; i++){
@@ -28,8 +30,9 @@ public class AllMaintenanceViewModelTests
     public void HandleError_Store()
     {
         // Arrange
-        var contextMock = createContext();
-        AllMaintenanceViewModel allMaintenance = new AllMaintenanceViewModel(contextMock.Object);
+        var mockDataStore = new Mock<IMaintenanceDataStore>();
+        mockDataStore.Setup(x => x.RetrieveAll()).Returns(testData());
+        AllMaintenanceViewModel allMaintenance = new AllMaintenanceViewModel(mockDataStore.Object);
         
         // Action
         string exceptionMessage = "test exception";
@@ -50,8 +53,9 @@ public class AllMaintenanceViewModelTests
     public void HandleError_Trace()
     {
         // Arrange
-        var contextMock = createContext();
-        AllMaintenanceViewModel allMaintenance = new AllMaintenanceViewModel(contextMock.Object);
+        var mockDataStore = new Mock<IMaintenanceDataStore>();
+        mockDataStore.Setup(x => x.RetrieveAll()).Returns(testData());
+        AllMaintenanceViewModel allMaintenance = new AllMaintenanceViewModel(mockDataStore.Object);
         StringBuilder builder = new StringBuilder();
         StringWriter writer = new StringWriter(builder);
         TextWriterTraceListener listener = new TextWriterTraceListener(writer);
@@ -73,8 +77,7 @@ public class AllMaintenanceViewModelTests
         Assert.Equal(exceptionMessage, traceContents);
     }
 
-    private Mock<MaintenanceDbContext> createContext() {
-        var contextMock = new Mock<MaintenanceDbContext>();
+    private List<Maintenance> testData() {
         Random rand = new Random();
         List<Maintenance> testList = new List<Maintenance>();
         for(var i = 0; i <= 5; i++) //creates dummy data with random priority to ensure jumbled order
@@ -83,11 +86,7 @@ public class AllMaintenanceViewModelTests
             maintenance.Id = i;
             maintenance.Priority = rand.Next(1,4);
             testList.Add(maintenance);
-            var entityEntryMock = TestUtils.MockEntry(maintenance);
-            contextMock.Setup(context => context.Entry(maintenance)).Returns(entityEntryMock.Object); 
         }
-        var dbSet = TestUtils.MockDbSet(testList);
-        contextMock.Setup(c => c.Maintenance).Returns(dbSet.Object);
-        return contextMock;
+        return testList;
     }
 }

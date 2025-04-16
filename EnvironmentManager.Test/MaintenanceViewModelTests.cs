@@ -3,6 +3,7 @@ namespace EnvironmentManager.Test;
 using System.Diagnostics;
 using System.Text;
 using EnvironmentManager.Data;
+using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
 using EnvironmentManager.ViewModels;
 using Moq;
@@ -13,21 +14,17 @@ public class MaintenanceViewModelTests
     public void IsOverdue_Overdue_SetTrue()
     {
         // Arrange
-        var contextMock = new Mock<MaintenanceDbContext>();
+        var mockDataStore = new Mock<IMaintenanceDataStore>();
         Maintenance maintenance = new Maintenance();
         maintenance.Overdue = false;
         maintenance.DueDate = DateTime.Now.AddDays(-1);
-        var entityEntryMock = TestUtils.MockEntry(maintenance);
-        bool reloadCalled = false;
-        entityEntryMock.Setup(e => e.Reload()).Callback(() => reloadCalled = true);
-        contextMock.Setup(context => context.Entry(It.IsAny<Maintenance>())).Returns(entityEntryMock.Object); 
-        MaintenanceViewModel viewModel = new MaintenanceViewModel(contextMock.Object,maintenance);
+        MaintenanceViewModel viewModel = new MaintenanceViewModel(mockDataStore.Object,maintenance);
         
         // Action
         viewModel.IsOverdue();
 
         //Assert
-        contextMock.Verify(mock => mock.SaveChanges(), Times.Once());
+        mockDataStore.Verify(mock => mock.Save(), Times.Once());
         Assert.True(maintenance.Overdue);
     }
 
@@ -35,21 +32,17 @@ public class MaintenanceViewModelTests
     public void IsOverdue_NotDue_SetFalse()
     {
         // Arrange
-        var contextMock = new Mock<MaintenanceDbContext>();
+        var mockDataStore = new Mock<IMaintenanceDataStore>();
         Maintenance maintenance = new Maintenance();
         maintenance.Overdue = false;
         maintenance.DueDate = DateTime.Now;
-        var entityEntryMock = TestUtils.MockEntry(maintenance);
-        bool reloadCalled = false;
-        entityEntryMock.Setup(e => e.Reload()).Callback(() => reloadCalled = true);
-        contextMock.Setup(context => context.Entry(It.IsAny<Maintenance>())).Returns(entityEntryMock.Object); 
-        MaintenanceViewModel viewModel = new MaintenanceViewModel(contextMock.Object,maintenance);
+        MaintenanceViewModel viewModel = new MaintenanceViewModel(mockDataStore.Object,maintenance);
         
         // Action
         viewModel.IsOverdue();
 
         //Assert
-        contextMock.Verify(mock => mock.SaveChanges(), Times.Once());
+        mockDataStore.Verify(mock => mock.Save(), Times.Once());
         Assert.False(maintenance.Overdue);
     }
 
@@ -57,8 +50,8 @@ public class MaintenanceViewModelTests
     public void HandleError_Store()
     {
         // Arrange
-        var contextMock = new Mock<MaintenanceDbContext>();
-        MaintenanceViewModel maintenance = new MaintenanceViewModel(contextMock.Object);
+        var mockDataStore = new Mock<IMaintenanceDataStore>();
+        MaintenanceViewModel maintenance = new MaintenanceViewModel(mockDataStore.Object);
         
         // Action
         string exceptionMessage = "test exception";
@@ -79,8 +72,8 @@ public class MaintenanceViewModelTests
     public void HandleError_Trace()
     {
         // Arrange
-        var contextMock = new Mock<MaintenanceDbContext>();
-        MaintenanceViewModel maintenance = new MaintenanceViewModel(contextMock.Object);
+        var mockDataStore = new Mock<IMaintenanceDataStore>();
+        MaintenanceViewModel maintenance = new MaintenanceViewModel(mockDataStore.Object);
         StringBuilder builder = new StringBuilder();
         StringWriter writer = new StringWriter(builder);
         TextWriterTraceListener listener = new TextWriterTraceListener(writer);

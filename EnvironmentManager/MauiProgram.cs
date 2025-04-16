@@ -7,6 +7,7 @@ using EnvironmentManager.ViewModels;
 using EnvironmentManager.Views;
 using System.Diagnostics;
 using EnvironmentManager.Services;
+using EnvironmentManager.Interfaces;
 
 namespace EnvironmentManager;
 
@@ -37,6 +38,9 @@ public static class MauiProgram
 
 		// Register pages
 		RegisterPages(builder);
+
+        // Bind specific implementation to DBContext abstraction
+        builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
 
 		// Register App and AppShell
 		builder.Services.AddSingleton<App>();

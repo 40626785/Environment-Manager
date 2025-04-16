@@ -16,7 +16,7 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
     public ICommand EditCommand { get; }
     public ICommand NewTicketCommand { get; }
 
-    private MaintenanceDbContext _context;
+    private IMaintenanceDataStore _context;
 
     private string _displayError;
     public string DisplayError
@@ -32,10 +32,10 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
         }
     } 
 
-    public AllMaintenanceViewModel(MaintenanceDbContext maintenanceDbContext)
+    public AllMaintenanceViewModel(IMaintenanceDataStore maintenanceDbContext)
     {
         _context = maintenanceDbContext;
-        AllMaintenance = new ObservableCollection<MaintenanceViewModel>(_context.Maintenance.ToList().Select(n => new MaintenanceViewModel(_context, n)));
+        AllMaintenance = new ObservableCollection<MaintenanceViewModel>(_context.RetrieveAll().Select(n => new MaintenanceViewModel(_context, n)));
         SortCollection();
         RefreshCommand = new Command(CheckOverdue);
         EditCommand = new AsyncRelayCommand<MaintenanceViewModel>(EditMaintenance);
@@ -113,7 +113,7 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
             }
             else 
             {
-                AllMaintenance.Insert(0, new MaintenanceViewModel(_context, _context.Maintenance.Single(n => n.Id == int.Parse(savedId))));    
+                AllMaintenance.Insert(0, new MaintenanceViewModel(_context, _context.QueryById(int.Parse(savedId))));    
             }
             SortCollection();
             CheckOverdue();

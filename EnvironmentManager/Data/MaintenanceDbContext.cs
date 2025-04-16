@@ -11,6 +11,4 @@ public class MaintenanceDbContext : DbContext
     { }
 
     public virtual DbSet<Maintenance> Maintenance { get; set; }
-
-
 }
