@@ -12,7 +12,7 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
 {
     private Maintenance _maintenance;
 
-    private MaintenanceDbContext _context;
+    private IMaintenanceDataStore _context;
 
     private string _displayError;
 
@@ -85,7 +85,7 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
 
     public DateTime CurrentDate;
 
-    public MaintenanceViewModel(MaintenanceDbContext maintenanceDbContext)
+    public MaintenanceViewModel(IMaintenanceDataStore maintenanceDbContext)
     {
         _context = maintenanceDbContext;
         CurrentDate = DateTime.Now;
@@ -93,7 +93,7 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         _maintenance.DueDate = CurrentDate;
         _displayError = "";
     }
-    public MaintenanceViewModel(MaintenanceDbContext maintenanceDbContext, Maintenance maintenance)
+    public MaintenanceViewModel(IMaintenanceDataStore maintenanceDbContext, Maintenance maintenance)
     {
         _maintenance = maintenance;
         _context = maintenanceDbContext;
@@ -107,8 +107,8 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
     {
         try 
         {
-            _context.Maintenance.Update(_maintenance);
-            _context.SaveChanges();
+            _context.Update(_maintenance);
+            _context.Save();
             await Shell.Current.GoToAsync($"..?saved={_maintenance.Id}");
         }
         catch(Exception e)
@@ -123,8 +123,8 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
     {
         try
         {
-            _context.Remove(_maintenance);
-            _context.SaveChanges();
+            _context.Delete(_maintenance);
+            _context.Save();
             await Shell.Current.GoToAsync($"..?deleted={_maintenance.Id}");
         }
         catch(Exception e)
@@ -138,7 +138,7 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
     {
         if (query.ContainsKey("edit"))
         {
-            _maintenance = _context.Maintenance.Single(n => n.Id == int.Parse(query["edit"].ToString()));
+            _maintenance = _context.QueryById(int.Parse(query["edit"].ToString()));
             RefreshProperties();
         }
     }
@@ -148,13 +148,13 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
     {
         Reload();
         _maintenance.Overdue = DueDate.Date < DateTime.Now.Date;
-        _context.SaveChanges();
+        _context.Save();
     }
 
     //Refreshes instance with DB Context
     public void Reload()
     {
-        _context.Entry(_maintenance).Reload();
+        _context.Reload(_maintenance);
         RefreshProperties();
     }
 
