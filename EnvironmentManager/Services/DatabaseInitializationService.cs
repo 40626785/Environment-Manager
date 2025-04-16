@@ -9,18 +9,15 @@ namespace EnvironmentManager.Services
         private readonly SensorDbContext _sensorContext;
         private readonly LocationDbContext _locationContext;
         private readonly MaintenanceDbContext _maintenanceContext;
-        private readonly EnvironmentalParameterDbContext _environmentalParameterContext;
 
         public DatabaseInitializationService(
             SensorDbContext sensorContext,
             LocationDbContext locationContext,
-            MaintenanceDbContext maintenanceContext,
-            EnvironmentalParameterDbContext environmentalParameterContext)
+            MaintenanceDbContext maintenanceContext)
         {
             _sensorContext = sensorContext;
             _locationContext = locationContext;
             _maintenanceContext = maintenanceContext;
-            _environmentalParameterContext = environmentalParameterContext;
         }
 
         /// <summary>
@@ -36,10 +33,9 @@ namespace EnvironmentManager.Services
                 var sensorConnected = await _sensorContext.Database.CanConnectAsync();
                 var locationConnected = await _locationContext.Database.CanConnectAsync();
                 var maintenanceConnected = await _maintenanceContext.Database.CanConnectAsync();
-                var environmentalConnected = await _environmentalParameterContext.Database.CanConnectAsync();
                 
                 Debug.WriteLine($"Database connections: Sensor={sensorConnected}, Location={locationConnected}, " +
-                               $"Maintenance={maintenanceConnected}, Environmental={environmentalConnected}");
+                               $"Maintenance={maintenanceConnected}");
             }
             catch (Exception ex)
             {

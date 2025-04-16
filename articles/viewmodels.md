@@ -18,8 +18,6 @@ public partial class AddSensorViewModel : ObservableObject
     
     [ObservableProperty]
     private Location _selectedLocation;
-    
-    // Other sensor-related properties
 }
 ```
 

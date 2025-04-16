@@ -12,10 +12,6 @@ namespace EnvironmentManager.Data
         { }
 
         public virtual DbSet<Sensor> Sensors { get; set; }
-        // Location entities are now managed by LocationDbContext to follow SRP
-        public virtual DbSet<SensorReading> SensorReadings { get; set; }
-        public virtual DbSet<SensorSetting> SensorSettings { get; set; }
-        // EnvironmentalParameters are now managed by EnvironmentalParameterDbContext to follow SRP
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -37,27 +33,11 @@ namespace EnvironmentManager.Data
                 entity.HasKey(e => e.LocationId);
             });
 
-            modelBuilder.Entity<SensorReading>(entity =>
-            {
-                entity.ToTable("SensorReadings");
-                entity.HasKey(e => e.ReadingId);
-                entity.HasOne(e => e.Sensor)
-                      .WithMany(e => e.Readings)
-                      .HasForeignKey(e => e.SensorId)
-                      .OnDelete(DeleteBehavior.Cascade);
-            });
 
-            // EnvironmentalParameter configuration moved to EnvironmentalParameterDbContext
 
-            modelBuilder.Entity<SensorSetting>(entity =>
-            {
-                entity.ToTable("SensorSettings");
-                entity.HasKey(e => e.SettingId);
-                entity.HasOne(e => e.Sensor)
-                      .WithMany(e => e.Settings)
-                      .HasForeignKey(e => e.SensorId)
-                      .OnDelete(DeleteBehavior.Cascade);
-            });
+
+
+
         }
     }
 } 

@@ -1,17 +1,35 @@
 ```mermaid
 classDiagram
-    %% Model relationships
-    Sensor "1" -- "*" SensorReading : has
-    Sensor "1" -- "*" SensorSetting : has
-    Location "1" -- "*" Sensor : contains
-    EnvironmentalParameter "1" -- "*" SensorReading : measured by
+    Location "1" -- "0..*" Sensor : contains
+    SensorDbContext -- Sensor : manages
+    SensorDbContext -- Location : references
     SensorViewModel -- Sensor : manages
-    AddSensorViewModel -- Location : uses
-    EditSensorViewModel -- Sensor : edits
-
+    AddSensorViewModel -- Sensor : creates
+    AddSensorViewModel -- Location : references
+    EditSensorViewModel -- Sensor : updates
+    
+    class Location {
+        +int LocationId
+        +string SiteName
+        +double Latitude
+        +double Longitude
+        +double Elevation
+        +string SiteType
+        +string Zone
+        +string Agglomeration
+        +string LocalAuthority
+        +string Country
+        +int UtcOffsetSeconds
+        +string Timezone
+        +string TimezoneAbbreviation
+        +ICollection~Sensor~ Sensors
+        +Location()
+    }
+    
     class Sensor {
         +int SensorId
         +int LocationId
+        +Location Location
         +string SensorName
         +string Model
         +string Manufacturer
@@ -23,29 +41,52 @@ classDiagram
         +string SensorUrl
         +string ConnectivityStatus
         +float? BatteryLevelPercentage
-        +Location Location
-        +ICollection~SensorReading~ Readings
-        +ICollection~SensorSetting~ Settings
+        +Sensor()
     }
-
+    
+    class SensorDbContext {
+        +DbSet~Sensor~ Sensors
+        +SensorDbContext()
+        +SensorDbContext(DbContextOptions~SensorDbContext~ options)
+        #void OnModelCreating(ModelBuilder modelBuilder)
+    }
+    
     class SensorViewModel {
         -SensorDbContext _context
         -bool _isLoading
         +ObservableCollection~Sensor~ Sensors
         +Sensor? SelectedSensor
+        +int SensorId
+        +int LocationId
+        +string SensorName
+        +string Model
+        +string Manufacturer
+        +string SensorType
+        +DateTime InstallationDate
+        +bool IsActive
+        +string DataSource
+        +string FirmwareVersion
+        +string SensorUrl
+        +string ConnectivityStatus
+        +float? BatteryLevelPercentage
+        +string BatteryLevelText
         +bool IsEditing
         +string PageTitle
-        +LoadSensorsCommand()
-        +NavigateToAddCommand()
-        +NavigateToEditCommand(Sensor)
-        +PrepareNewSensorCommand()
-        +SelectSensorForEditCommand(Sensor)
-        +SaveSensorCommand()
+        +SensorViewModel(SensorDbContext context)
+        -void UpdatePageTitle()
+        +Task LoadSensorsAsync()
+        +Task NavigateToAddAsync()
+        +Task NavigateToEditAsync(Sensor sensor)
+        +void PrepareNewSensor()
+        +void SelectSensorForEdit(Sensor? sensor)
+        +Task SaveSensorAsync()
+        +Task DeleteSensorAsync(Sensor? sensor)
     }
-
+    
     class AddSensorViewModel {
         -SensorDbContext _sensorContext
         -LocationDbContext _locationContext
+        -Dictionary~string,string~ _validationErrors
         +ObservableCollection~Location~ Locations
         +Location SelectedLocation
         +string SensorName
@@ -58,39 +99,47 @@ classDiagram
         +string SensorUrl
         +bool IsOnline
         +float? BatteryLevelPercentage
+        +string BatteryLevelText
         +string DataSource
-        +ValidateDataSource()
-        +ValidateBatteryLevel()
-        +ValidateSensorName()
+        +AddSensorViewModel(SensorDbContext sensorContext, LocationDbContext locationContext)
+        -void ValidateDataSource()
+        -void ValidateBatteryLevel()
+        -void ValidateSensorName()
+        -void ValidateModel()
+        -void ValidateManufacturer()
+        -void ValidateSensorType()
+        -void ValidateFirmwareVersion()
+        -void ValidateSensorUrl()
+        -void LoadLocations()
+        -bool ValidateForm()
+        +Task SaveAsync()
+        +Task CancelAsync()
     }
-
-    class SensorReading {
-        +int ReadingId
+    
+    class EditSensorViewModel {
+        -SensorDbContext _sensorContext
+        -LocationDbContext _locationContext
+        -Dictionary~string,string~ _validationErrors
+        +ObservableCollection~Location~ Locations
+        +Location SelectedLocation
         +int SensorId
-        +int ParameterId
-        +DateTime Timestamp
-        +float Value
-        +string MeasurementUnit
-        +bool IsValid
-        +Sensor Sensor
-        +EnvironmentalParameter EnvironmentalParameter
+        +string SensorName
+        +string Model
+        +string Manufacturer
+        +string SensorType
+        +DateTime InstallationDate
+        +bool IsActive
+        +string FirmwareVersion
+        +string SensorUrl
+        +bool IsOnline
+        +float? BatteryLevelPercentage
+        +string BatteryLevelText
+        +string DataSource
+        +EditSensorViewModel(SensorDbContext sensorContext, LocationDbContext locationContext)
+        +Task LoadSensorAsync(int id)
+        -void LoadLocations()
+        -bool ValidateForm()
+        +Task SaveAsync()
+        +Task CancelAsync()
     }
-
-    class SensorSetting {
-        +int SettingId
-        +int SensorId
-        +string SettingName
-        +string SettingValue
-        +string DataType
-        +DateTime LastUpdated
-        +Sensor Sensor
-    }
-
-    class Location {
-        <<external>>
-    }
-
-    class EnvironmentalParameter {
-        <<external>>
-    }
-````
+```

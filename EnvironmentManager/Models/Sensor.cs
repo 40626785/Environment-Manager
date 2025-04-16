@@ -51,8 +51,6 @@ namespace EnvironmentManager.Models
         public float? BatteryLevelPercentage { get; set; } // Nullable float
 
         // Navigation properties for related entities
-        public virtual ICollection<SensorReading> Readings { get; set; }
-        public virtual ICollection<SensorSetting> Settings { get; set; }
 
         public Sensor()
         {
@@ -69,8 +67,6 @@ namespace EnvironmentManager.Models
             IsActive = true;
 
             // Initialize collections
-            Readings = new List<SensorReading>();
-            Settings = new List<SensorSetting>();
         }
     }
 }
