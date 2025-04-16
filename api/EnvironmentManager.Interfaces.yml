@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  id: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IErrorHandling
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Interfaces.IErrorHandling
+  commentId: T:EnvironmentManager.Interfaces.IErrorHandling
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IErrorHandling.html
+  name: IErrorHandling
+  nameWithType: IErrorHandling
+  fullName: EnvironmentManager.Interfaces.IErrorHandling
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html

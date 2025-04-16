@@ -1,0 +1,2666 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  commentId: T:EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  id: AllMaintenanceViewModel
+  parent: EnvironmentManager.ViewModels
+  children:
+  - EnvironmentManager.ViewModels.AllMaintenanceViewModel.#ctor(EnvironmentManager.Data.MaintenanceDbContext)
+  - EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenance
+  - EnvironmentManager.ViewModels.AllMaintenanceViewModel.DisplayError
+  - EnvironmentManager.ViewModels.AllMaintenanceViewModel.EditCommand
+  - EnvironmentManager.ViewModels.AllMaintenanceViewModel.HandleError(System.Exception,System.String)
+  - EnvironmentManager.ViewModels.AllMaintenanceViewModel.NewTicketCommand
+  - EnvironmentManager.ViewModels.AllMaintenanceViewModel.RefreshCommand
+  langs:
+  - csharp
+  - vb
+  name: AllMaintenanceViewModel
+  nameWithType: AllMaintenanceViewModel
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: AllMaintenanceViewModel
+    path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+    startLine: 10
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: 'public class AllMaintenanceViewModel : ObservableObject, INotifyPropertyChanged, INotifyPropertyChanging, IQueryAttributable, IErrorHandling'
+    content.vb: Public Class AllMaintenanceViewModel Inherits ObservableObject Implements INotifyPropertyChanged, INotifyPropertyChanging, IQueryAttributable, IErrorHandling
+  inheritance:
+  - System.Object
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  - System.ComponentModel.INotifyPropertyChanging
+  - Microsoft.Maui.Controls.IQueryAttributable
+  - EnvironmentManager.Interfaces.IErrorHandling
+  inheritedMembers:
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.ComponentModel.PropertyChangingEventArgs)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1({T}@,{T},System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1({T}@,{T},System.Collections.Generic.IEqualityComparer{{T}},System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1({T},{T},System.Action{{T}},System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1({T},{T},System.Collections.Generic.IEqualityComparer{{T}},System.Action{{T}},System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2({T},{T},{TModel},System.Action{{TModel},{T}},System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2({T},{T},System.Collections.Generic.IEqualityComparer{{T}},{TModel},System.Action{{TModel},{T}},System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.Action{System.Threading.Tasks.Task},System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{{T}}@,System.Threading.Tasks.Task{{T}},System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{{T}}@,System.Threading.Tasks.Task{{T}},System.Action{System.Threading.Tasks.Task{{T}}},System.String)
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.PropertyChanged
+  - CommunityToolkit.Mvvm.ComponentModel.ObservableObject.PropertyChanging
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenance
+  commentId: P:EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenance
+  id: AllMaintenance
+  parent: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  langs:
+  - csharp
+  - vb
+  name: AllMaintenance
+  nameWithType: AllMaintenanceViewModel.AllMaintenance
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenance
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: AllMaintenance
+    path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ObservableCollection<MaintenanceViewModel> AllMaintenance { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.ViewModels.MaintenanceViewModel}
+    content.vb: Public ReadOnly Property AllMaintenance As ObservableCollection(Of MaintenanceViewModel)
+  overload: EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenance*
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.RefreshCommand
+  commentId: P:EnvironmentManager.ViewModels.AllMaintenanceViewModel.RefreshCommand
+  id: RefreshCommand
+  parent: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  langs:
+  - csharp
+  - vb
+  name: RefreshCommand
+  nameWithType: AllMaintenanceViewModel.RefreshCommand
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.RefreshCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: RefreshCommand
+    path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+    startLine: 14
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand RefreshCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property RefreshCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AllMaintenanceViewModel.RefreshCommand*
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.EditCommand
+  commentId: P:EnvironmentManager.ViewModels.AllMaintenanceViewModel.EditCommand
+  id: EditCommand
+  parent: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  langs:
+  - csharp
+  - vb
+  name: EditCommand
+  nameWithType: AllMaintenanceViewModel.EditCommand
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.EditCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: EditCommand
+    path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+    startLine: 15
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand EditCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property EditCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AllMaintenanceViewModel.EditCommand*
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.NewTicketCommand
+  commentId: P:EnvironmentManager.ViewModels.AllMaintenanceViewModel.NewTicketCommand
+  id: NewTicketCommand
+  parent: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  langs:
+  - csharp
+  - vb
+  name: NewTicketCommand
+  nameWithType: AllMaintenanceViewModel.NewTicketCommand
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.NewTicketCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: NewTicketCommand
+    path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+    startLine: 16
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand NewTicketCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NewTicketCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AllMaintenanceViewModel.NewTicketCommand*
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.DisplayError
+  commentId: P:EnvironmentManager.ViewModels.AllMaintenanceViewModel.DisplayError
+  id: DisplayError
+  parent: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  langs:
+  - csharp
+  - vb
+  name: DisplayError
+  nameWithType: AllMaintenanceViewModel.DisplayError
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.DisplayError
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: DisplayError
+    path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+    startLine: 21
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  example: []
+  syntax:
+    content: public string DisplayError { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DisplayError As String
+  overload: EnvironmentManager.ViewModels.AllMaintenanceViewModel.DisplayError*
+  implements:
+  - EnvironmentManager.Interfaces.IErrorHandling.DisplayError
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.#ctor(EnvironmentManager.Data.MaintenanceDbContext)
+  commentId: M:EnvironmentManager.ViewModels.AllMaintenanceViewModel.#ctor(EnvironmentManager.Data.MaintenanceDbContext)
+  id: '#ctor(EnvironmentManager.Data.MaintenanceDbContext)'
+  parent: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  langs:
+  - csharp
+  - vb
+  name: AllMaintenanceViewModel(MaintenanceDbContext)
+  nameWithType: AllMaintenanceViewModel.AllMaintenanceViewModel(MaintenanceDbContext)
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenanceViewModel(EnvironmentManager.Data.MaintenanceDbContext)
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: .ctor
+    path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+    startLine: 34
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public AllMaintenanceViewModel(MaintenanceDbContext maintenanceDbContext)
+    parameters:
+    - id: maintenanceDbContext
+      type: EnvironmentManager.Data.MaintenanceDbContext
+    content.vb: Public Sub New(maintenanceDbContext As MaintenanceDbContext)
+  overload: EnvironmentManager.ViewModels.AllMaintenanceViewModel.#ctor*
+  nameWithType.vb: AllMaintenanceViewModel.New(MaintenanceDbContext)
+  fullName.vb: EnvironmentManager.ViewModels.AllMaintenanceViewModel.New(EnvironmentManager.Data.MaintenanceDbContext)
+  name.vb: New(MaintenanceDbContext)
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.HandleError(System.Exception,System.String)
+  commentId: M:EnvironmentManager.ViewModels.AllMaintenanceViewModel.HandleError(System.Exception,System.String)
+  id: HandleError(System.Exception,System.String)
+  parent: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  langs:
+  - csharp
+  - vb
+  name: HandleError(Exception, string)
+  nameWithType: AllMaintenanceViewModel.HandleError(Exception, string)
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.HandleError(System.Exception, string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+      branch: html-generation-for-sensor
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: HandleError
+    path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
+    startLine: 46
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  example: []
+  syntax:
+    content: public void HandleError(Exception e, string message)
+    parameters:
+    - id: e
+      type: System.Exception
+    - id: message
+      type: System.String
+    content.vb: Public Sub HandleError(e As Exception, message As String)
+  overload: EnvironmentManager.ViewModels.AllMaintenanceViewModel.HandleError*
+  implements:
+  - EnvironmentManager.Interfaces.IErrorHandling.HandleError(System.Exception,System.String)
+  nameWithType.vb: AllMaintenanceViewModel.HandleError(Exception, String)
+  fullName.vb: EnvironmentManager.ViewModels.AllMaintenanceViewModel.HandleError(System.Exception, String)
+  name.vb: HandleError(Exception, String)
+references:
+- uid: EnvironmentManager.ViewModels
+  commentId: N:EnvironmentManager.ViewModels
+  href: EnvironmentManager.html
+  name: EnvironmentManager.ViewModels
+  nameWithType: EnvironmentManager.ViewModels
+  fullName: EnvironmentManager.ViewModels
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  commentId: T:CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  parent: CommunityToolkit.Mvvm.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject
+  name: ObservableObject
+  nameWithType: ObservableObject
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: System.ComponentModel.INotifyPropertyChanging
+  commentId: T:System.ComponentModel.INotifyPropertyChanging
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanging
+  name: INotifyPropertyChanging
+  nameWithType: INotifyPropertyChanging
+  fullName: System.ComponentModel.INotifyPropertyChanging
+- uid: Microsoft.Maui.Controls.IQueryAttributable
+  commentId: T:Microsoft.Maui.Controls.IQueryAttributable
+  parent: Microsoft.Maui.Controls
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.iqueryattributable
+  name: IQueryAttributable
+  nameWithType: IQueryAttributable
+  fullName: Microsoft.Maui.Controls.IQueryAttributable
+- uid: EnvironmentManager.Interfaces.IErrorHandling
+  commentId: T:EnvironmentManager.Interfaces.IErrorHandling
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IErrorHandling.html
+  name: IErrorHandling
+  nameWithType: IErrorHandling
+  fullName: EnvironmentManager.Interfaces.IErrorHandling
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanged#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanged(system-componentmodel-propertychangedeventargs)
+  name: OnPropertyChanged(PropertyChangedEventArgs)
+  nameWithType: ObservableObject.OnPropertyChanged(PropertyChangedEventArgs)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+    name: OnPropertyChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanged#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanged(system-componentmodel-propertychangedeventargs)
+  - name: (
+  - uid: System.ComponentModel.PropertyChangedEventArgs
+    name: PropertyChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangedeventargs
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)
+    name: OnPropertyChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanged#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanged(system-componentmodel-propertychangedeventargs)
+  - name: (
+  - uid: System.ComponentModel.PropertyChangedEventArgs
+    name: PropertyChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangedeventargs
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.ComponentModel.PropertyChangingEventArgs)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.ComponentModel.PropertyChangingEventArgs)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanging#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanging(system-componentmodel-propertychangingeventargs)
+  name: OnPropertyChanging(PropertyChangingEventArgs)
+  nameWithType: ObservableObject.OnPropertyChanging(PropertyChangingEventArgs)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.ComponentModel.PropertyChangingEventArgs)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.ComponentModel.PropertyChangingEventArgs)
+    name: OnPropertyChanging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanging#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanging(system-componentmodel-propertychangingeventargs)
+  - name: (
+  - uid: System.ComponentModel.PropertyChangingEventArgs
+    name: PropertyChangingEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangingeventargs
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.ComponentModel.PropertyChangingEventArgs)
+    name: OnPropertyChanging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanging#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanging(system-componentmodel-propertychangingeventargs)
+  - name: (
+  - uid: System.ComponentModel.PropertyChangingEventArgs
+    name: PropertyChangingEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangingeventargs
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanged#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanged(system-string)
+  name: OnPropertyChanged(string)
+  nameWithType: ObservableObject.OnPropertyChanged(string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(string)
+  nameWithType.vb: ObservableObject.OnPropertyChanged(String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanged#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanged(system-string)
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanged#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanged(system-string)
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanging#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanging(system-string)
+  name: OnPropertyChanging(string)
+  nameWithType: ObservableObject.OnPropertyChanging(string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(string)
+  nameWithType.vb: ObservableObject.OnPropertyChanging(String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(String)
+  name.vb: OnPropertyChanging(String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.String)
+    name: OnPropertyChanging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanging#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanging(system-string)
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.OnPropertyChanging(System.String)
+    name: OnPropertyChanging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.onpropertychanging#communitytoolkit-mvvm-componentmodel-observableobject-onpropertychanging(system-string)
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1({T}@,{T},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  definition: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.String)
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-string)
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: ObservableObject.SetProperty<T>(ref T, T, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of T)(T, T, String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1({T}@,{T},System.Collections.Generic.IEqualityComparer{{T}},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.Collections.Generic.IEqualityComparer{``0},System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  definition: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.Collections.Generic.IEqualityComparer{``0},System.String)
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-collections-generic-iequalitycomparer((-0))-system-string)
+  name: SetProperty<T>(ref T, T, IEqualityComparer<T>, string)
+  nameWithType: ObservableObject.SetProperty<T>(ref T, T, IEqualityComparer<T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<T>(ref T, T, System.Collections.Generic.IEqualityComparer<T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of T)(T, T, IEqualityComparer(Of T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of T)(T, T, System.Collections.Generic.IEqualityComparer(Of T), String)
+  name.vb: SetProperty(Of T)(T, T, IEqualityComparer(Of T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.Collections.Generic.IEqualityComparer{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-collections-generic-iequalitycomparer((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.Collections.Generic.IEqualityComparer{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-collections-generic-iequalitycomparer((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1({T},{T},System.Action{{T}},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Action{``0},System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  definition: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Action{``0},System.String)
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-action((-0))-system-string)
+  name: SetProperty<T>(T, T, Action<T>, string)
+  nameWithType: ObservableObject.SetProperty<T>(T, T, Action<T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<T>(T, T, System.Action<T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of T)(T, T, Action(Of T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of T)(T, T, System.Action(Of T), String)
+  name.vb: SetProperty(Of T)(T, T, Action(Of T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Action{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-action((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Action{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-action((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1({T},{T},System.Collections.Generic.IEqualityComparer{{T}},System.Action{{T}},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0},System.Action{``0},System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  definition: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0},System.Action{``0},System.String)
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-collections-generic-iequalitycomparer((-0))-system-action((-0))-system-string)
+  name: SetProperty<T>(T, T, IEqualityComparer<T>, Action<T>, string)
+  nameWithType: ObservableObject.SetProperty<T>(T, T, IEqualityComparer<T>, Action<T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<T>(T, T, System.Collections.Generic.IEqualityComparer<T>, System.Action<T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of T)(T, T, IEqualityComparer(Of T), Action(Of T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of T)(T, T, System.Collections.Generic.IEqualityComparer(Of T), System.Action(Of T), String)
+  name.vb: SetProperty(Of T)(T, T, IEqualityComparer(Of T), Action(Of T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0},System.Action{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-collections-generic-iequalitycomparer((-0))-system-action((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0},System.Action{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-collections-generic-iequalitycomparer((-0))-system-action((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2({T},{T},{TModel},System.Action{{TModel},{T}},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,``0,System.Action{``0,``1},System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  definition: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,``0,System.Action{``0,``1},System.String)
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-0-system-action((-0-1))-system-string)
+  name: SetProperty<TModel, T>(T, T, TModel, Action<TModel, T>, string)
+  nameWithType: ObservableObject.SetProperty<TModel, T>(T, T, TModel, Action<TModel, T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<TModel, T>(T, T, TModel, System.Action<TModel, T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of TModel, T)(T, T, TModel, Action(Of TModel, T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of TModel, T)(T, T, TModel, System.Action(Of TModel, T), String)
+  name.vb: SetProperty(Of TModel, T)(T, T, TModel, Action(Of TModel, T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,``0,System.Action{``0,``1},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-0-system-action((-0-1))-system-string)
+  - name: <
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,``0,System.Action{``0,``1},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-0-system-action((-0-1))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2({T},{T},System.Collections.Generic.IEqualityComparer{{T}},{TModel},System.Action{{TModel},{T}},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,System.Collections.Generic.IEqualityComparer{``1},``0,System.Action{``0,``1},System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  definition: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,System.Collections.Generic.IEqualityComparer{``1},``0,System.Action{``0,``1},System.String)
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-system-collections-generic-iequalitycomparer((-1))-0-system-action((-0-1))-system-string)
+  name: SetProperty<TModel, T>(T, T, IEqualityComparer<T>, TModel, Action<TModel, T>, string)
+  nameWithType: ObservableObject.SetProperty<TModel, T>(T, T, IEqualityComparer<T>, TModel, Action<TModel, T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<TModel, T>(T, T, System.Collections.Generic.IEqualityComparer<T>, TModel, System.Action<TModel, T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of TModel, T)(T, T, IEqualityComparer(Of T), TModel, Action(Of TModel, T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of TModel, T)(T, T, System.Collections.Generic.IEqualityComparer(Of T), TModel, System.Action(Of TModel, T), String)
+  name.vb: SetProperty(Of TModel, T)(T, T, IEqualityComparer(Of T), TModel, Action(Of TModel, T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,System.Collections.Generic.IEqualityComparer{``1},``0,System.Action{``0,``1},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-system-collections-generic-iequalitycomparer((-1))-0-system-action((-0-1))-system-string)
+  - name: <
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,System.Collections.Generic.IEqualityComparer{``1},``0,System.Action{``0,``1},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-system-collections-generic-iequalitycomparer((-1))-0-system-action((-0-1))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier@-system-threading-tasks-task-system-string)
+  name: SetPropertyAndNotifyOnCompletion(ref TaskNotifier, Task, string)
+  nameWithType: ObservableObject.SetPropertyAndNotifyOnCompletion(ref ObservableObject.TaskNotifier, Task, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(ref CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier, System.Threading.Tasks.Task, string)
+  nameWithType.vb: ObservableObject.SetPropertyAndNotifyOnCompletion(ObservableObject.TaskNotifier, Task, String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier, System.Threading.Tasks.Task, String)
+  name.vb: SetPropertyAndNotifyOnCompletion(TaskNotifier, Task, String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier@-system-threading-tasks-task-system-string)
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier@-system-threading-tasks-task-system-string)
+  - name: (
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.Action{System.Threading.Tasks.Task},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.Action{System.Threading.Tasks.Task},System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier@-system-threading-tasks-task-system-action((system-threading-tasks-task))-system-string)
+  name: SetPropertyAndNotifyOnCompletion(ref TaskNotifier, Task, Action<Task>, string)
+  nameWithType: ObservableObject.SetPropertyAndNotifyOnCompletion(ref ObservableObject.TaskNotifier, Task, Action<Task>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(ref CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier, System.Threading.Tasks.Task, System.Action<System.Threading.Tasks.Task>, string)
+  nameWithType.vb: ObservableObject.SetPropertyAndNotifyOnCompletion(ObservableObject.TaskNotifier, Task, Action(Of Task), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier, System.Threading.Tasks.Task, System.Action(Of System.Threading.Tasks.Task), String)
+  name.vb: SetPropertyAndNotifyOnCompletion(TaskNotifier, Task, Action(Of Task), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.Action{System.Threading.Tasks.Task},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier@-system-threading-tasks-task-system-action((system-threading-tasks-task))-system-string)
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier@,System.Threading.Tasks.Task,System.Action{System.Threading.Tasks.Task},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier@-system-threading-tasks-task-system-action((system-threading-tasks-task))-system-string)
+  - name: (
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{{T}}@,System.Threading.Tasks.Task{{T}},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  definition: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.String)
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-string)
+  name: SetPropertyAndNotifyOnCompletion<T>(ref TaskNotifier<T>, Task<T>, string)
+  nameWithType: ObservableObject.SetPropertyAndNotifyOnCompletion<T>(ref ObservableObject.TaskNotifier<T>, Task<T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion<T>(ref CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier<T>, System.Threading.Tasks.Task<T>, string)
+  nameWithType.vb: ObservableObject.SetPropertyAndNotifyOnCompletion(Of T)(ObservableObject.TaskNotifier(Of T), Task(Of T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(Of T)(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier(Of T), System.Threading.Tasks.Task(Of T), String)
+  name.vb: SetPropertyAndNotifyOnCompletion(Of T)(TaskNotifier(Of T), Task(Of T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier`1
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier`1
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{{T}}@,System.Threading.Tasks.Task{{T}},System.Action{System.Threading.Tasks.Task{{T}}},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.Action{System.Threading.Tasks.Task{``0}},System.String)
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  definition: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.Action{System.Threading.Tasks.Task{``0}},System.String)
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-action((system-threading-tasks-task((-0))))-system-string)
+  name: SetPropertyAndNotifyOnCompletion<T>(ref TaskNotifier<T>, Task<T>, Action<Task<T>>, string)
+  nameWithType: ObservableObject.SetPropertyAndNotifyOnCompletion<T>(ref ObservableObject.TaskNotifier<T>, Task<T>, Action<Task<T>>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion<T>(ref CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier<T>, System.Threading.Tasks.Task<T>, System.Action<System.Threading.Tasks.Task<T>>, string)
+  nameWithType.vb: ObservableObject.SetPropertyAndNotifyOnCompletion(Of T)(ObservableObject.TaskNotifier(Of T), Task(Of T), Action(Of Task(Of T)), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(Of T)(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier(Of T), System.Threading.Tasks.Task(Of T), System.Action(Of System.Threading.Tasks.Task(Of T)), String)
+  name.vb: SetPropertyAndNotifyOnCompletion(Of T)(TaskNotifier(Of T), Task(Of T), Action(Of Task(Of T)), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.Action{System.Threading.Tasks.Task{``0}},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-action((system-threading-tasks-task((-0))))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier`1
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.Action{System.Threading.Tasks.Task{``0}},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-action((system-threading-tasks-task((-0))))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier`1
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.PropertyChanged
+  commentId: E:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.PropertyChanged
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.propertychanged
+  name: PropertyChanged
+  nameWithType: ObservableObject.PropertyChanged
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.PropertyChanged
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.PropertyChanging
+  commentId: E:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.PropertyChanging
+  parent: CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.propertychanging
+  name: PropertyChanging
+  nameWithType: ObservableObject.PropertyChanging
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.PropertyChanging
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CommunityToolkit.Mvvm.ComponentModel
+  commentId: N:CommunityToolkit.Mvvm.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit
+  name: CommunityToolkit.Mvvm.ComponentModel
+  nameWithType: CommunityToolkit.Mvvm.ComponentModel
+  fullName: CommunityToolkit.Mvvm.ComponentModel
+  spec.csharp:
+  - uid: CommunityToolkit
+    name: CommunityToolkit
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
+  - name: .
+  - uid: CommunityToolkit.Mvvm
+    name: Mvvm
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
+  - name: .
+  - uid: CommunityToolkit.Mvvm.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel
+  spec.vb:
+  - uid: CommunityToolkit
+    name: CommunityToolkit
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
+  - name: .
+  - uid: CommunityToolkit.Mvvm
+    name: Mvvm
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
+  - name: .
+  - uid: CommunityToolkit.Mvvm.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: Microsoft.Maui.Controls
+  commentId: N:Microsoft.Maui.Controls
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Maui.Controls
+  nameWithType: Microsoft.Maui.Controls
+  fullName: Microsoft.Maui.Controls
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Maui
+    name: Maui
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.maui
+  - name: .
+  - uid: Microsoft.Maui.Controls
+    name: Controls
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.maui.controls
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Maui
+    name: Maui
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.maui
+  - name: .
+  - uid: Microsoft.Maui.Controls
+    name: Controls
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.maui.controls
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-string)
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: ObservableObject.SetProperty<T>(ref T, T, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of T)(T, T, String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.Collections.Generic.IEqualityComparer{``0},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.Collections.Generic.IEqualityComparer{``0},System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-collections-generic-iequalitycomparer((-0))-system-string)
+  name: SetProperty<T>(ref T, T, IEqualityComparer<T>, string)
+  nameWithType: ObservableObject.SetProperty<T>(ref T, T, IEqualityComparer<T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<T>(ref T, T, System.Collections.Generic.IEqualityComparer<T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of T)(T, T, IEqualityComparer(Of T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of T)(T, T, System.Collections.Generic.IEqualityComparer(Of T), String)
+  name.vb: SetProperty(Of T)(T, T, IEqualityComparer(Of T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.Collections.Generic.IEqualityComparer{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-collections-generic-iequalitycomparer((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0@,``0,System.Collections.Generic.IEqualityComparer{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-collections-generic-iequalitycomparer((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Action{``0},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Action{``0},System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-action((-0))-system-string)
+  name: SetProperty<T>(T, T, Action<T>, string)
+  nameWithType: ObservableObject.SetProperty<T>(T, T, Action<T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<T>(T, T, System.Action<T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of T)(T, T, Action(Of T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of T)(T, T, System.Action(Of T), String)
+  name.vb: SetProperty(Of T)(T, T, Action(Of T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Action{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-action((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Action{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-action((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0},System.Action{``0},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0},System.Action{``0},System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-collections-generic-iequalitycomparer((-0))-system-action((-0))-system-string)
+  name: SetProperty<T>(T, T, IEqualityComparer<T>, Action<T>, string)
+  nameWithType: ObservableObject.SetProperty<T>(T, T, IEqualityComparer<T>, Action<T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<T>(T, T, System.Collections.Generic.IEqualityComparer<T>, System.Action<T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of T)(T, T, IEqualityComparer(Of T), Action(Of T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of T)(T, T, System.Collections.Generic.IEqualityComparer(Of T), System.Action(Of T), String)
+  name.vb: SetProperty(Of T)(T, T, IEqualityComparer(Of T), Action(Of T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0},System.Action{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-collections-generic-iequalitycomparer((-0))-system-action((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0},System.Action{``0},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-collections-generic-iequalitycomparer((-0))-system-action((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,``0,System.Action{``0,``1},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,``0,System.Action{``0,``1},System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-0-system-action((-0-1))-system-string)
+  name: SetProperty<TModel, T>(T, T, TModel, Action<TModel, T>, string)
+  nameWithType: ObservableObject.SetProperty<TModel, T>(T, T, TModel, Action<TModel, T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<TModel, T>(T, T, TModel, System.Action<TModel, T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of TModel, T)(T, T, TModel, Action(Of TModel, T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of TModel, T)(T, T, TModel, System.Action(Of TModel, T), String)
+  name.vb: SetProperty(Of TModel, T)(T, T, TModel, Action(Of TModel, T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,``0,System.Action{``0,``1},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-0-system-action((-0-1))-system-string)
+  - name: <
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,``0,System.Action{``0,``1},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-0-system-action((-0-1))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,System.Collections.Generic.IEqualityComparer{``1},``0,System.Action{``0,``1},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,System.Collections.Generic.IEqualityComparer{``1},``0,System.Action{``0,``1},System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-system-collections-generic-iequalitycomparer((-1))-0-system-action((-0-1))-system-string)
+  name: SetProperty<TModel, T>(T, T, IEqualityComparer<T>, TModel, Action<TModel, T>, string)
+  nameWithType: ObservableObject.SetProperty<TModel, T>(T, T, IEqualityComparer<T>, TModel, Action<TModel, T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty<TModel, T>(T, T, System.Collections.Generic.IEqualityComparer<T>, TModel, System.Action<TModel, T>, string)
+  nameWithType.vb: ObservableObject.SetProperty(Of TModel, T)(T, T, IEqualityComparer(Of T), TModel, Action(Of TModel, T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty(Of TModel, T)(T, T, System.Collections.Generic.IEqualityComparer(Of T), TModel, System.Action(Of TModel, T), String)
+  name.vb: SetProperty(Of TModel, T)(T, T, IEqualityComparer(Of T), TModel, Action(Of TModel, T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,System.Collections.Generic.IEqualityComparer{``1},``0,System.Action{``0,``1},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-system-collections-generic-iequalitycomparer((-1))-0-system-action((-0-1))-system-string)
+  - name: <
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetProperty``2(``1,``1,System.Collections.Generic.IEqualityComparer{``1},``0,System.Action{``0,``1},System.String)
+    name: SetProperty
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setproperty#communitytoolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-system-collections-generic-iequalitycomparer((-1))-0-system-action((-0-1))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-string)
+  name: SetPropertyAndNotifyOnCompletion<T>(ref TaskNotifier<T>, Task<T>, string)
+  nameWithType: ObservableObject.SetPropertyAndNotifyOnCompletion<T>(ref ObservableObject.TaskNotifier<T>, Task<T>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion<T>(ref CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier<T>, System.Threading.Tasks.Task<T>, string)
+  nameWithType.vb: ObservableObject.SetPropertyAndNotifyOnCompletion(Of T)(ObservableObject.TaskNotifier(Of T), Task(Of T), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(Of T)(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier(Of T), System.Threading.Tasks.Task(Of T), String)
+  name.vb: SetPropertyAndNotifyOnCompletion(Of T)(TaskNotifier(Of T), Task(Of T), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier`1
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier`1
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.Action{System.Threading.Tasks.Task{``0}},System.String)
+  commentId: M:CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.Action{System.Threading.Tasks.Task{``0}},System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-action((system-threading-tasks-task((-0))))-system-string)
+  name: SetPropertyAndNotifyOnCompletion<T>(ref TaskNotifier<T>, Task<T>, Action<Task<T>>, string)
+  nameWithType: ObservableObject.SetPropertyAndNotifyOnCompletion<T>(ref ObservableObject.TaskNotifier<T>, Task<T>, Action<Task<T>>, string)
+  fullName: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion<T>(ref CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier<T>, System.Threading.Tasks.Task<T>, System.Action<System.Threading.Tasks.Task<T>>, string)
+  nameWithType.vb: ObservableObject.SetPropertyAndNotifyOnCompletion(Of T)(ObservableObject.TaskNotifier(Of T), Task(Of T), Action(Of Task(Of T)), String)
+  fullName.vb: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion(Of T)(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier(Of T), System.Threading.Tasks.Task(Of T), System.Action(Of System.Threading.Tasks.Task(Of T)), String)
+  name.vb: SetPropertyAndNotifyOnCompletion(Of T)(TaskNotifier(Of T), Task(Of T), Action(Of Task(Of T)), String)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.Action{System.Threading.Tasks.Task{``0}},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-action((system-threading-tasks-task((-0))))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier`1
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.SetPropertyAndNotifyOnCompletion``1(CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier{``0}@,System.Threading.Tasks.Task{``0},System.Action{System.Threading.Tasks.Task{``0}},System.String)
+    name: SetPropertyAndNotifyOnCompletion
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#communitytoolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(communitytoolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-action((system-threading-tasks-task((-0))))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: CommunityToolkit.Mvvm.ComponentModel.ObservableObject.TaskNotifier`1
+    name: TaskNotifier
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.componentmodel.observableobject.tasknotifier-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenance*
+  commentId: Overload:EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenance
+  href: EnvironmentManager.ViewModels.AllMaintenanceViewModel.html#EnvironmentManager_ViewModels_AllMaintenanceViewModel_AllMaintenance
+  name: AllMaintenance
+  nameWithType: AllMaintenanceViewModel.AllMaintenance
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenance
+- uid: System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.ViewModels.MaintenanceViewModel}
+  commentId: T:System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.ViewModels.MaintenanceViewModel}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ObservableCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<MaintenanceViewModel>
+  nameWithType: ObservableCollection<MaintenanceViewModel>
+  fullName: System.Collections.ObjectModel.ObservableCollection<EnvironmentManager.ViewModels.MaintenanceViewModel>
+  nameWithType.vb: ObservableCollection(Of MaintenanceViewModel)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of EnvironmentManager.ViewModels.MaintenanceViewModel)
+  name.vb: ObservableCollection(Of MaintenanceViewModel)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - uid: EnvironmentManager.ViewModels.MaintenanceViewModel
+    name: MaintenanceViewModel
+    href: EnvironmentManager.ViewModels.MaintenanceViewModel.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.ViewModels.MaintenanceViewModel
+    name: MaintenanceViewModel
+    href: EnvironmentManager.ViewModels.MaintenanceViewModel.html
+  - name: )
+- uid: System.Collections.ObjectModel.ObservableCollection`1
+  commentId: T:System.Collections.ObjectModel.ObservableCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<T>
+  nameWithType: ObservableCollection<T>
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>
+  nameWithType.vb: ObservableCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of T)
+  name.vb: ObservableCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.RefreshCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AllMaintenanceViewModel.RefreshCommand
+  href: EnvironmentManager.ViewModels.AllMaintenanceViewModel.html#EnvironmentManager_ViewModels_AllMaintenanceViewModel_RefreshCommand
+  name: RefreshCommand
+  nameWithType: AllMaintenanceViewModel.RefreshCommand
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.RefreshCommand
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.EditCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AllMaintenanceViewModel.EditCommand
+  href: EnvironmentManager.ViewModels.AllMaintenanceViewModel.html#EnvironmentManager_ViewModels_AllMaintenanceViewModel_EditCommand
+  name: EditCommand
+  nameWithType: AllMaintenanceViewModel.EditCommand
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.EditCommand
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.NewTicketCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AllMaintenanceViewModel.NewTicketCommand
+  href: EnvironmentManager.ViewModels.AllMaintenanceViewModel.html#EnvironmentManager_ViewModels_AllMaintenanceViewModel_NewTicketCommand
+  name: NewTicketCommand
+  nameWithType: AllMaintenanceViewModel.NewTicketCommand
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.NewTicketCommand
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.DisplayError*
+  commentId: Overload:EnvironmentManager.ViewModels.AllMaintenanceViewModel.DisplayError
+  href: EnvironmentManager.ViewModels.AllMaintenanceViewModel.html#EnvironmentManager_ViewModels_AllMaintenanceViewModel_DisplayError
+  name: DisplayError
+  nameWithType: AllMaintenanceViewModel.DisplayError
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.DisplayError
+- uid: EnvironmentManager.Interfaces.IErrorHandling.DisplayError
+  commentId: P:EnvironmentManager.Interfaces.IErrorHandling.DisplayError
+  parent: EnvironmentManager.Interfaces.IErrorHandling
+  href: EnvironmentManager.Interfaces.IErrorHandling.html#EnvironmentManager_Interfaces_IErrorHandling_DisplayError
+  name: DisplayError
+  nameWithType: IErrorHandling.DisplayError
+  fullName: EnvironmentManager.Interfaces.IErrorHandling.DisplayError
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.#ctor*
+  commentId: Overload:EnvironmentManager.ViewModels.AllMaintenanceViewModel.#ctor
+  href: EnvironmentManager.ViewModels.AllMaintenanceViewModel.html#EnvironmentManager_ViewModels_AllMaintenanceViewModel__ctor_EnvironmentManager_Data_MaintenanceDbContext_
+  name: AllMaintenanceViewModel
+  nameWithType: AllMaintenanceViewModel.AllMaintenanceViewModel
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.AllMaintenanceViewModel
+  nameWithType.vb: AllMaintenanceViewModel.New
+  fullName.vb: EnvironmentManager.ViewModels.AllMaintenanceViewModel.New
+  name.vb: New
+- uid: EnvironmentManager.Data.MaintenanceDbContext
+  commentId: T:EnvironmentManager.Data.MaintenanceDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.MaintenanceDbContext.html
+  name: MaintenanceDbContext
+  nameWithType: MaintenanceDbContext
+  fullName: EnvironmentManager.Data.MaintenanceDbContext
+- uid: EnvironmentManager.Data
+  commentId: N:EnvironmentManager.Data
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Data
+  nameWithType: EnvironmentManager.Data
+  fullName: EnvironmentManager.Data
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel.HandleError*
+  commentId: Overload:EnvironmentManager.ViewModels.AllMaintenanceViewModel.HandleError
+  href: EnvironmentManager.ViewModels.AllMaintenanceViewModel.html#EnvironmentManager_ViewModels_AllMaintenanceViewModel_HandleError_System_Exception_System_String_
+  name: HandleError
+  nameWithType: AllMaintenanceViewModel.HandleError
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel.HandleError
+- uid: EnvironmentManager.Interfaces.IErrorHandling.HandleError(System.Exception,System.String)
+  commentId: M:EnvironmentManager.Interfaces.IErrorHandling.HandleError(System.Exception,System.String)
+  parent: EnvironmentManager.Interfaces.IErrorHandling
+  isExternal: true
+  href: EnvironmentManager.Interfaces.IErrorHandling.html#EnvironmentManager_Interfaces_IErrorHandling_HandleError_System_Exception_System_String_
+  name: HandleError(Exception, string)
+  nameWithType: IErrorHandling.HandleError(Exception, string)
+  fullName: EnvironmentManager.Interfaces.IErrorHandling.HandleError(System.Exception, string)
+  nameWithType.vb: IErrorHandling.HandleError(Exception, String)
+  fullName.vb: EnvironmentManager.Interfaces.IErrorHandling.HandleError(System.Exception, String)
+  name.vb: HandleError(Exception, String)
+  spec.csharp:
+  - uid: EnvironmentManager.Interfaces.IErrorHandling.HandleError(System.Exception,System.String)
+    name: HandleError
+    href: EnvironmentManager.Interfaces.IErrorHandling.html#EnvironmentManager_Interfaces_IErrorHandling_HandleError_System_Exception_System_String_
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.Interfaces.IErrorHandling.HandleError(System.Exception,System.String)
+    name: HandleError
+    href: EnvironmentManager.Interfaces.IErrorHandling.html#EnvironmentManager_Interfaces_IErrorHandling_HandleError_System_Exception_System_String_
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception

@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Views
+  commentId: N:EnvironmentManager.Views
+  id: EnvironmentManager.Views
+  children:
+  - EnvironmentManager.Views.AboutPage
+  - EnvironmentManager.Views.AddSensorPage
+  - EnvironmentManager.Views.AllMaintenancePage
+  - EnvironmentManager.Views.EditSensorPage
+  - EnvironmentManager.Views.HomePage
+  - EnvironmentManager.Views.MaintenancePage
+  - EnvironmentManager.Views.SensorPage
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Views
+  nameWithType: EnvironmentManager.Views
+  fullName: EnvironmentManager.Views
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Views.AboutPage
+  commentId: T:EnvironmentManager.Views.AboutPage
+  href: EnvironmentManager.Views.AboutPage.html
+  name: AboutPage
+  nameWithType: AboutPage
+  fullName: EnvironmentManager.Views.AboutPage
+- uid: EnvironmentManager.Views.AddSensorPage
+  commentId: T:EnvironmentManager.Views.AddSensorPage
+  href: EnvironmentManager.Views.AddSensorPage.html
+  name: AddSensorPage
+  nameWithType: AddSensorPage
+  fullName: EnvironmentManager.Views.AddSensorPage
+- uid: EnvironmentManager.Views.AllMaintenancePage
+  commentId: T:EnvironmentManager.Views.AllMaintenancePage
+  href: EnvironmentManager.Views.AllMaintenancePage.html
+  name: AllMaintenancePage
+  nameWithType: AllMaintenancePage
+  fullName: EnvironmentManager.Views.AllMaintenancePage
+- uid: EnvironmentManager.Views.EditSensorPage
+  commentId: T:EnvironmentManager.Views.EditSensorPage
+  href: EnvironmentManager.Views.EditSensorPage.html
+  name: EditSensorPage
+  nameWithType: EditSensorPage
+  fullName: EnvironmentManager.Views.EditSensorPage
+- uid: EnvironmentManager.Views.HomePage
+  commentId: T:EnvironmentManager.Views.HomePage
+  href: EnvironmentManager.Views.HomePage.html
+  name: HomePage
+  nameWithType: HomePage
+  fullName: EnvironmentManager.Views.HomePage
+- uid: EnvironmentManager.Views.MaintenancePage
+  commentId: T:EnvironmentManager.Views.MaintenancePage
+  href: EnvironmentManager.Views.MaintenancePage.html
+  name: MaintenancePage
+  nameWithType: MaintenancePage
+  fullName: EnvironmentManager.Views.MaintenancePage
+- uid: EnvironmentManager.Views.SensorPage
+  commentId: T:EnvironmentManager.Views.SensorPage
+  href: EnvironmentManager.Views.SensorPage.html
+  name: SensorPage
+  nameWithType: SensorPage
+  fullName: EnvironmentManager.Views.SensorPage
