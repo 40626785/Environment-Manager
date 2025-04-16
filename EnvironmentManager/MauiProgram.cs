@@ -130,23 +130,6 @@ public static class MauiProgram
 			}
 		});
 
-		// Configure EnvironmentalParameterDbContext
-		builder.Services.AddDbContext<EnvironmentalParameterDbContext>(options =>
-		{
-			try
-			{
-				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
-				Debug.WriteLine($"Configuring environmental parameter database");
-				options.UseSqlServer(connectionString);
-				options.EnableSensitiveDataLogging();
-				options.EnableDetailedErrors();
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine($"Error configuring environmental parameter database: {ex.Message}");
-				throw;
-			}
-		});
 	}
 
 	private static void RegisterServices(MauiAppBuilder builder)

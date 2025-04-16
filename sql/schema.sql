@@ -29,44 +29,12 @@ CREATE TABLE Sensors (
     DataSource NVARCHAR(200),
     SensorUrl NVARCHAR(255),
     ConnectivityStatus NVARCHAR(50) DEFAULT 'Offline',
-    BatteryLevelPercentage REAL
+    BatteryLevelPercentage REAL,
+    CONSTRAINT FK_Sensors_Locations FOREIGN KEY (LocationId) REFERENCES Locations(LocationId)
 );
 
--- Create EnvironmentalParameters table
-CREATE TABLE EnvironmentalParameters (
-    ParameterId INT IDENTITY(1,1) PRIMARY KEY,
-    Category NVARCHAR(50) NOT NULL,
-    Name NVARCHAR(100) NOT NULL,
-    Symbol NVARCHAR(20) NOT NULL,
-    Unit NVARCHAR(20) NOT NULL,
-    UnitDescription NVARCHAR(200) NOT NULL,
-    MeasurementFrequency NVARCHAR(50) NOT NULL,
-    SafeLevel FLOAT NOT NULL,
-    ReferenceUrl NVARCHAR(255)
-);
-
--- Create SensorReadings table
-CREATE TABLE SensorReadings (
-    ReadingId INT IDENTITY(1,1) PRIMARY KEY,
-    SensorId INT NOT NULL,
-    ParameterId INT NOT NULL,
-    Timestamp DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
-    Value FLOAT NOT NULL,
-    MeasurementUnit NVARCHAR(20) NOT NULL,
-    IsValid BIT NOT NULL DEFAULT 1
-);
-
--- Create SensorSettings table
-CREATE TABLE SensorSettings (
-    SettingId INT IDENTITY(1,1) PRIMARY KEY,
-    SensorId INT NOT NULL,
-    SettingName NVARCHAR(100) NOT NULL,
-    SettingValue NVARCHAR(MAX) NOT NULL,
-    DataType NVARCHAR(50) NOT NULL,
-    LastUpdated DATETIME2 NOT NULL DEFAULT SYSDATETIME()
-);
-
-CREATE TABLE maintenance (
+-- Create Maintenance table
+CREATE TABLE Maintenance (
     id INT IDENTITY(1,1) PRIMARY KEY,
     DueDate DATETIME2 DEFAULT SYSDATETIME(),
     Overdue BIT DEFAULT 0,
