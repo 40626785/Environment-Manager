@@ -1,0 +1,83 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:EnvironmentManager.ViewModels"
+             xmlns:models="clr-namespace:EnvironmentManager.Models"
+             x:Class="EnvironmentManager.Views.HistoricalDataViewerPage"
+             x:DataType="viewmodels:HistoricalDataViewerViewModel"
+             Title="Historical Data"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10"
+                Spacing="10">
+
+            <!-- Air Quality -->
+            <CollectionView ItemsSource="{Binding AirQualityData}"
+                    IsVisible="{Binding AirQualityData.Count, Converter={StaticResource CountToBoolConverter}}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ArchiveAirQuality">
+                        <Frame BorderColor="#E0E0E0"
+                                CornerRadius="12"
+                                Padding="12"
+                                Margin="0,6">
+                            <VerticalStackLayout Spacing="6">
+                                <Label Text="{Binding Date, StringFormat='Date: {0:yyyy-MM-dd}'}"
+                                        FontAttributes="Bold"/>
+                                <Label Text="{Binding Nitrogen_dioxide, StringFormat='NO₂: {0}'}"/>
+                                <Label Text="{Binding Sulphur_dioxide, StringFormat='SO₂: {0}'}"/>
+                                <Label Text="{Binding PM2_5_particulate_matter, StringFormat='PM2.5: {0}'}"/>
+                                <Label Text="{Binding PM10_particulate_matter, StringFormat='PM10: {0}'}"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Water Quality -->
+            <CollectionView ItemsSource="{Binding WaterQualityData}"
+                    IsVisible="{Binding WaterQualityData.Count, Converter={StaticResource CountToBoolConverter}}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ArchiveWaterQuality">
+                        <Frame BorderColor="#E0E0E0"
+                                CornerRadius="12"
+                                Padding="12"
+                                Margin="0,6">
+                            <VerticalStackLayout Spacing="6">
+                                <Label Text="{Binding Date, StringFormat='Date: {0:yyyy-MM-dd}'}"
+                                        FontAttributes="Bold"/>
+                                <Label Text="{Binding Nitrate_mg_l_1, StringFormat='Nitrate: {0}'}"/>
+                                <Label Text="{Binding Nitrite_less_thank_mg_l_1, StringFormat='Nitrite: {0}'}"/>
+                                <Label Text="{Binding Phosphate_mg_l_1, StringFormat='Phosphate: {0}'}"/>
+                                <Label Text="{Binding EC_cfu_100ml, StringFormat='EC (cfu/100ml): {0}'}"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Weather Data -->
+            <CollectionView ItemsSource="{Binding WeatherData}"
+                    IsVisible="{Binding WeatherData.Count, Converter={StaticResource CountToBoolConverter}}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ArchiveWeatherData">
+                        <Frame BorderColor="#E0E0E0"
+                                CornerRadius="12"
+                                Padding="12"
+                                Margin="0,6">
+                            <VerticalStackLayout Spacing="6">
+                                <Label Text="{Binding Date_Time, StringFormat='Date/Time: {0:yyyy-MM-dd HH:mm}'}"
+                                        FontAttributes="Bold"/>
+                                <Label Text="{Binding Temperature_2m, StringFormat='Temp (°C): {0:F1}'}"/>
+                                <Label Text="{Binding Relative_humidity_2m, StringFormat='Humidity (%): {0:F0}'}"/>
+                                <Label Text="{Binding Wind_speed_10m, StringFormat='Wind Speed (m/s): {0:F1}'}"/>
+                                <Label Text="{Binding Wind_direction_10m, StringFormat='Wind Dir (°): {0:F0}'}"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
