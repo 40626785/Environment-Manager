@@ -1,8 +1,6 @@
 - name: Introduction
   href: intro.md
-- name: Database Design
-  href: database-design.md
-- name: Services
-  href: services.md
-- name: ViewModels
-  href: viewmodels.md
+- name: Features
+  items:
+    - name: Sensor Management
+      href: sensors.md
