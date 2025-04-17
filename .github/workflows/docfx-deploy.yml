@@ -18,13 +18,33 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '7.0.x'
+          
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.1
 
       - name: Install DocFX
-        run: dotnet tool install -g docfx
+        run: |
+          dotnet tool install -g docfx
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: List Files
+        run: find . -type f -name "*.csproj" | sort
+
+      - name: Build DocFX Metadata
+        run: docfx metadata docfx.json
+        continue-on-error: true
 
       - name: Build DocFX Documentation
-        run: docfx docfx.json
+        run: |
+          docfx build docfx.json
+          touch _site/.nojekyll
 
+      - name: Debug Output
+        if: always()
+        run: |
+          echo "DocFX Output Directory Contents:"
+          ls -la _site || echo "_site directory not found"
+          
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
