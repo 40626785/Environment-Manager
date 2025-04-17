@@ -25,26 +25,24 @@ public partial class HistoricalDataViewerPage : ContentPage
 		set
 		{
 			_tableName = Uri.UnescapeDataString(value);
-			System.Diagnostics.Debug.WriteLine($"Table name received: {_tableName}");
+			Debug.WriteLine($"Table name received: {_tableName}");
 
 			var normalized = _tableName.ToLowerInvariant();
 
 			if (normalized == "archive_air_quality")
 			{
-				Task.Run(async () => await _viewModel.LoadAirQualityDataAsync());
+				Task.Run(async () => await _viewModel.LoadAirQualityDataAsync(false));
 			}
-			if (normalized == "archive_water_quality")
+			else if (normalized == "archive_water_quality")
 			{
-				Debug.WriteLine("Calling LoadWaterQualityDataAsync()");
-				Task.Run(async () => await _viewModel.LoadWaterQualityDataAsync());
+				Task.Run(async () => await _viewModel.LoadWaterQualityDataAsync(false));
 			}
 			else if (normalized == "archive_weather_data")
 			{
-
-				Task.Run(async () => await _viewModel.LoadWeatherDataAsync());
+				Task.Run(async () => await _viewModel.LoadWeatherDataAsync(false));
 			}
-
 
 		}
 	}
+
 }

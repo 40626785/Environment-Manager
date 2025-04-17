@@ -8,21 +8,47 @@
              BackgroundColor="White">
 
     <ScrollView>
+
         <VerticalStackLayout Padding="10"
-                Spacing="10">
+                             Spacing="10">
+            <Label Text="Filter by Year and Month"
+                   FontAttributes="Bold"/>
+
+            <HorizontalStackLayout Spacing="10">
+                <VerticalStackLayout>
+                    <Label Text="Year"
+                           FontSize="12"/>
+                    <Picker ItemsSource="{Binding AvailableYears}"
+                            SelectedItem="{Binding SelectedYear}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label Text="Month"
+                           FontSize="12"/>
+                    <Picker ItemsSource="{Binding AvailableMonths}"
+                            SelectedItem="{Binding SelectedMonth}"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <Button Text="Apply Filter"
+                    Command="{Binding ApplyAirQualityFilterCommand}"
+                    BackgroundColor="#0EA5E9"
+                    TextColor="White"
+                    CornerRadius="8"/>
+
 
             <!-- Air Quality -->
             <CollectionView ItemsSource="{Binding AirQualityData}"
-                    IsVisible="{Binding AirQualityData.Count, Converter={StaticResource CountToBoolConverter}}">
+                            IsVisible="{Binding AirQualityData.Count, Converter={StaticResource CountToBoolConverter}}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:ArchiveAirQuality">
                         <Frame BorderColor="#E0E0E0"
-                                CornerRadius="12"
-                                Padding="12"
-                                Margin="0,6">
+                               CornerRadius="12"
+                               Padding="12"
+                               Margin="0,6">
                             <VerticalStackLayout Spacing="6">
                                 <Label Text="{Binding Date, StringFormat='Date: {0:yyyy-MM-dd}'}"
-                                        FontAttributes="Bold"/>
+                                       FontAttributes="Bold"/>
                                 <Label Text="{Binding Nitrogen_dioxide, StringFormat='NO₂: {0}'}"/>
                                 <Label Text="{Binding Sulphur_dioxide, StringFormat='SO₂: {0}'}"/>
                                 <Label Text="{Binding PM2_5_particulate_matter, StringFormat='PM2.5: {0}'}"/>
@@ -35,16 +61,16 @@
 
             <!-- Water Quality -->
             <CollectionView ItemsSource="{Binding WaterQualityData}"
-                    IsVisible="{Binding WaterQualityData.Count, Converter={StaticResource CountToBoolConverter}}">
+                            IsVisible="{Binding WaterQualityData.Count, Converter={StaticResource CountToBoolConverter}}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:ArchiveWaterQuality">
                         <Frame BorderColor="#E0E0E0"
-                                CornerRadius="12"
-                                Padding="12"
-                                Margin="0,6">
+                               CornerRadius="12"
+                               Padding="12"
+                               Margin="0,6">
                             <VerticalStackLayout Spacing="6">
                                 <Label Text="{Binding Date, StringFormat='Date: {0:yyyy-MM-dd}'}"
-                                        FontAttributes="Bold"/>
+                                       FontAttributes="Bold"/>
                                 <Label Text="{Binding Nitrate_mg_l_1, StringFormat='Nitrate: {0}'}"/>
                                 <Label Text="{Binding Nitrite_less_thank_mg_l_1, StringFormat='Nitrite: {0}'}"/>
                                 <Label Text="{Binding Phosphate_mg_l_1, StringFormat='Phosphate: {0}'}"/>
@@ -57,16 +83,16 @@
 
             <!-- Weather Data -->
             <CollectionView ItemsSource="{Binding WeatherData}"
-                    IsVisible="{Binding WeatherData.Count, Converter={StaticResource CountToBoolConverter}}">
+                            IsVisible="{Binding WeatherData.Count, Converter={StaticResource CountToBoolConverter}}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:ArchiveWeatherData">
                         <Frame BorderColor="#E0E0E0"
-                                CornerRadius="12"
-                                Padding="12"
-                                Margin="0,6">
+                               CornerRadius="12"
+                               Padding="12"
+                               Margin="0,6">
                             <VerticalStackLayout Spacing="6">
                                 <Label Text="{Binding Date_Time, StringFormat='Date/Time: {0:yyyy-MM-dd HH:mm}'}"
-                                        FontAttributes="Bold"/>
+                                       FontAttributes="Bold"/>
                                 <Label Text="{Binding Temperature_2m, StringFormat='Temp (°C): {0:F1}'}"/>
                                 <Label Text="{Binding Relative_humidity_2m, StringFormat='Humidity (%): {0:F0}'}"/>
                                 <Label Text="{Binding Wind_speed_10m, StringFormat='Wind Speed (m/s): {0:F1}'}"/>
