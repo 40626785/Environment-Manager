@@ -1,99 +1,55 @@
 # Introduction to Environment Manager
 
-The Environment Manager is a .NET MAUI application designed for comprehensive environment and sensor management. This article provides an overview of the system architecture and key components.
+Welcome to the Environment Manager documentation. This application is a .NET MAUI-based system designed to provide comprehensive environmental monitoring and sensor management capabilities for facilities management professionals.
 
-## Architecture Overview
+## Purpose
 
-### Database Contexts
+The Environment Manager application addresses the growing need for efficient monitoring and management of environmental conditions across multiple facilities. It enables users to:
 
-The application uses a multi-context database architecture for better separation of concerns:
+- Deploy and manage sensor networks across various locations
+- Monitor environmental parameters in real-time
+- Schedule and track maintenance activities
+- Generate reports and insights from environmental data
 
-1. **MaintenanceDbContext**
-   - Handles maintenance records
-   - Tracks maintenance schedules and priorities
-   - Manages overdue status
+## Key Capabilities
 
-2. **LocationDbContext**
-   - Manages site locations
-   - Stores geographical data
-   - Handles timezone information
+### Sensor Management
 
-3. **SensorDbContext**
-   - Manages sensor information
-   - Tracks sensor status and configurations
-   - Handles sensor readings
+The application provides robust tools for managing environmental sensors, including:
 
-4. **EnvironmentalParameterDbContext**
-   - Manages environmental parameter definitions
-   - Stores measurement units and safe levels
-   - Tracks parameter categories
+- Sensor registration and configuration
+- Location tracking and mapping
+- Calibration scheduling and history
+- Status monitoring and alerts
 
-### Key Services
+### Environmental Monitoring
 
-#### DatabaseInitializationService
+Users can monitor various environmental parameters such as:
 
-The `DatabaseInitializationService` is responsible for:
-- Verifying database connections
-- Loading test data in development environments
-- Managing database initialization
-- Handling connection errors gracefully
+- Temperature and humidity
+- Air quality metrics
+- Light levels
+- Noise levels
+- Custom parameters as needed
 
-```csharp
-public interface IDatabaseInitializationService
-{
-    Task VerifyDatabaseConnectionsAsync();
-    Task LoadTestDataIfNeededAsync();
-}
-```
+### Maintenance Planning
 
-### ViewModels
+The system includes comprehensive maintenance management features:
 
-The application follows the MVVM pattern with several key ViewModels:
+- Scheduled maintenance tracking
+- Priority-based task organization
+- Maintenance history and reporting
+- Resource allocation and planning
 
-1. **AddSensorViewModel**
-   - Handles sensor creation
-   - Validates sensor input
-   - Manages location selection
+## User Experience
 
-2. **EditSensorViewModel**
-   - Handles sensor updates
-   - Validates modifications
-   - Manages sensor state
+The Environment Manager application is designed with a focus on usability and efficiency:
 
-3. **MaintenanceViewModel**
-   - Manages maintenance tasks
-   - Handles priority tracking
-   - Updates maintenance status
+- Intuitive MAUI-based user interface
+- Responsive design for various device types
+- Customizable dashboards and reports
+- Role-based access control
 
-4. **AllMaintenanceViewModel**
-   - Displays maintenance overview
-   - Sorts by priority
-   - Manages maintenance collection
+## Getting Started
 
-## Development Guidelines
-
-1. **Database Operations**
-   - Use appropriate DbContext for each operation
-   - Implement proper error handling
-   - Follow async/await patterns
-
-2. **Testing**
-   - Unit tests for ViewModels
-   - Integration tests for database operations
-   - Mock dependencies appropriately
-
-3. **Error Handling**
-   - Implement IErrorHandling interface
-   - Use appropriate error messages
-   - Log errors for debugging
-
-## Configuration
-
-The application uses appsettings.json for configuration:
-```json
-{
-    "ConnectionStrings": {
-        "DevelopmentConnection": "Server=localhost;Database=environmentdb;User Id=environmentapp;Password=<password>;TrustServerCertificate=True;Encrypt=True;"
-    }
-}
-```
+To get started with the Environment Manager, explore the Features section for detailed information on specific capabilities and how to use them effectively.
