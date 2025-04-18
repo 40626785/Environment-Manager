@@ -31,12 +31,19 @@
       "_disableAffix": false,
       "_disableNavbar": false,
       "_disableFooter": false,
-      "_enableNewTab": true,
       "_appFaviconPath": "images/favicon.ico",
-      "_appLogoPath": "images/logo.png"
+      "_appLogoPath": "images/logo.png",
+      "_noindex": false,
+      "_layout": "conceptual"
+    },
+    "fileMetadata": {
+      "_layout": {
+        "index.md": "conceptual",
+        "articles/*.md": "conceptual"
+      }
     },
     "template": [
-      "default"
+      "statictoc"
     ],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
