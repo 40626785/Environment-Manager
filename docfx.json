@@ -3,14 +3,10 @@
     "content": [
       {
         "files": [
-          "toc.yml",
-          "*.md",
           "articles/**.md",
-          "articles/**/toc.yml"
-        ],
-        "exclude": [
-          "obj/**",
-          "_site/**"
+          "articles/toc.yml",
+          "toc.yml",
+          "*.md"
         ]
       }
     ],
@@ -29,15 +25,10 @@
       "_gitContribute": {
         "repo": "https://github.com/40626785/Environment-Manager",
         "branch": "main"
-      },
-      "_disableNavbar": false,
-      "_disableBreadcrumb": false,
-      "_disableToc": false,
-      "_disableAffix": false,
-      "_disableContribution": false
+      }
     },
     "template": [
-      "statictoc"
+      "default"
     ],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
