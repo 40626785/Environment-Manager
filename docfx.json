@@ -25,7 +25,7 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "statictoc"
+      "default"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
