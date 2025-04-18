@@ -29,26 +29,10 @@ jobs:
       - name: Install DocFX
         run: dotnet tool install -g docfx
 
-      - name: Setup DocFX Templates
+      - name: Create directories
         run: |
-          mkdir -p templates
-          git clone --depth 1 https://github.com/dotnet/docfx.git docfx-source
-          cp -r docfx-source/templates/default templates/custom
-          cp -r docfx-source/templates/docfx.vendor.minified templates/
-          rm -rf docfx-source
+          mkdir -p articles
           mkdir -p images
-          # Create a simple logo
-          echo '<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#2c5aa0"/><text x="10" y="60" font-family="Arial" font-size="24" fill="white">EM</text></svg>' > images/logo.svg
-          # Use convert from ImageMagick to create a PNG from SVG
-          convert images/logo.svg images/logo.png || echo "SVG conversion failed, using placeholder"
-          # Create a placeholder if conversion failed
-          if [ ! -f images/logo.png ]; then
-            echo "Creating placeholder logo.png"
-            convert -size 100x100 xc:blue -fill white -gravity center -pointsize 24 -annotate 0 "EM" images/logo.png || echo "Failed to create logo.png"
-          fi
-
-      - name: Create articles directory if it doesn't exist
-        run: mkdir -p articles
 
       - name: Build Documentation
         run: docfx docfx.json
