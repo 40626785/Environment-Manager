@@ -2,6 +2,7 @@
   href: index.md
   homepage: index.md
 - name: Articles
-  href: articles/
+  href: articles/toc.yml
 - name: GitHub
   href: https://github.com/40626785/Environment-Manager
+  target: _blank
