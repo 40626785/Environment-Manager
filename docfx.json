@@ -25,10 +25,12 @@
       "_gitContribute": {
         "repo": "https://github.com/40626785/Environment-Manager",
         "branch": "main"
-      }
+      },
+      "_appLogoPath": "images/logo.png"
     },
     "template": [
-      "default"
+      "templates/docfx.vendor.minified",
+      "templates/custom"
     ],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
