@@ -29,55 +29,8 @@ jobs:
       - name: Install DocFX
         run: dotnet tool install -g docfx
 
-      - name: Create temporary docfx.json
-        run: |
-          cat > docfx.temp.json << 'EOF'
-          {
-            "metadata": [],
-            "build": {
-              "content": [
-                {
-                  "files": [
-                    "articles/**.md",
-                    "articles/**/toc.yml",
-                    "toc.yml",
-                    "*.md"
-                  ]
-                }
-              ],
-              "resource": [
-                {
-                  "files": [
-                    "images/**"
-                  ]
-                }
-              ],
-              "dest": "_site",
-              "globalMetadata": {
-                "_appTitle": "Environment Manager",
-                "_enableSearch": true,
-                "_enableNewTab": true,
-                "_gitContribute": {
-                  "repo": "https://github.com/40626785/Environment-Manager",
-                  "branch": "main"
-                }
-              },
-              "template": [
-                "default",
-                "modern"
-              ],
-              "postProcessors": [],
-              "markdownEngineName": "markdig",
-              "noLangKeyword": false,
-              "keepFileLink": false,
-              "cleanupCacheHistory": false,
-              "disableGitFeatures": false
-            }
-          }
-          EOF
-
       - name: Build Documentation
-        run: docfx docfx.temp.json
+        run: docfx docfx.json
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

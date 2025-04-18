@@ -1,7 +1,30 @@
 {
-  "metadata": [],
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "EnvironmentManager/**/*.cs"
+          ],
+          "exclude": [
+            "**/bin/**",
+            "**/obj/**"
+          ]
+        }
+      ],
+      "dest": "api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
   "build": {
     "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
       {
         "files": [
           "articles/**.md",
@@ -34,15 +57,19 @@
       "_appTitle": "Environment Manager",
       "_enableSearch": true,
       "_enableNewTab": true,
+      "_appFooter": "Environment Manager Documentation",
       "_gitContribute": {
         "repo": "https://github.com/40626785/Environment-Manager",
         "branch": "main"
-      }
+      },
+      "_appLogoPath": "images/logo.svg",
+      "_appFaviconPath": "images/favicon.ico",
+      "_disableContribution": false,
+      "_gitUrlPattern": "github"
     },
     "fileMetadataFiles": [],
     "template": [
-      "default",
-      "modern"
+      "default"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
