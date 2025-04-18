@@ -1,20 +1,4 @@
 {
-  "metadata": [
-    {
-      "src": [
-        {
-          "files": [
-            "EnvironmentManager/**.csproj",
-            "EnvironmentManager.Test/**.csproj"
-          ],
-          "src": "."
-        }
-      ],
-      "dest": "api",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
-    }
-  ],
   "build": {
     "content": [
       {
