@@ -25,7 +25,15 @@
       "_gitContribute": {
         "repo": "https://github.com/40626785/Environment-Manager",
         "branch": "main"
-      }
+      },
+      "_disableSideFilter": false,
+      "_disableToc": false,
+      "_disableAffix": false,
+      "_disableNavbar": false,
+      "_disableFooter": false,
+      "_enableNewTab": true,
+      "_appFaviconPath": "images/favicon.ico",
+      "_appLogoPath": "images/logo.png"
     },
     "template": [
       "default"

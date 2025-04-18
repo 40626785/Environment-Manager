@@ -29,10 +29,14 @@ jobs:
       - name: Install DocFX
         run: dotnet tool install -g docfx
 
-      - name: Create directories
+      - name: Create directories and assets
         run: |
           mkdir -p articles
           mkdir -p images
+          # Create a simple 1x1 pixel favicon
+          echo "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" | base64 -d > images/favicon.ico
+          # Create a simple blue square logo
+          echo "iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAjDMO5fNCCDkC5z0HTVrisFCBABASIgQAQEiIAAAQJEQIAICBABASIgQIAAERAgAgJEQIAICBAgQAQEiIAAERAgAgIECBABASIgQAQEiIAAAQJEQIAICBABASIgQIAAERAgAgJEQIAICBAgQAQEiIAAERAgAgIECBABASIgQAQEiIAAAQJEQIAICBABASIgQL4F9dQUWgFs/g4AAAAASUVORK5CYII=" | base64 -d > images/logo.png
 
       - name: Build Documentation
         run: docfx docfx.json
