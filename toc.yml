@@ -1,6 +1,9 @@
 - name: Home
   href: index.md
-- name: Sensor Management
-  href: articles/sensors.md
+  homepage: index.md
+- name: Articles
+  href: articles/
+- name: API Documentation
+  href: api/
 - name: GitHub
   href: https://github.com/40626785/Environment-Manager
