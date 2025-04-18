@@ -3,10 +3,9 @@
     "content": [
       {
         "files": [
-          "articles/**.md",
-          "articles/toc.yml",
           "toc.yml",
-          "*.md"
+          "*.md",
+          "articles/**.md"
         ]
       }
     ],
@@ -20,30 +19,10 @@
     "dest": "_site",
     "globalMetadata": {
       "_appTitle": "Environment Manager",
-      "_enableSearch": true,
-      "_enableNewTab": true,
-      "_gitContribute": {
-        "repo": "https://github.com/40626785/Environment-Manager",
-        "branch": "main"
-      },
-      "_disableSideFilter": false,
-      "_disableToc": false,
-      "_disableAffix": false,
-      "_disableNavbar": false,
-      "_disableFooter": false,
-      "_appFaviconPath": "images/favicon.ico",
-      "_appLogoPath": "images/logo.png",
-      "_noindex": false,
-      "_layout": "conceptual"
-    },
-    "fileMetadata": {
-      "_layout": {
-        "index.md": "conceptual",
-        "articles/*.md": "conceptual"
-      }
+      "_enableSearch": true
     },
     "template": [
-      "statictoc"
+      "default"
     ],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
