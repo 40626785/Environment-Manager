@@ -1,22 +1,4 @@
 {
-  "metadata": [
-    {
-      "src": [
-        {
-          "files": [
-            "EnvironmentManager/**/*.cs"
-          ],
-          "exclude": [
-            "**/bin/**",
-            "**/obj/**"
-          ]
-        }
-      ],
-      "dest": "api",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
-    }
-  ],
   "build": {
     "content": [
       {
