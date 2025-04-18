@@ -33,6 +33,7 @@ jobs:
         run: |
           cat > docfx.temp.json << 'EOF'
           {
+            "metadata": [],
             "build": {
               "content": [
                 {
@@ -52,10 +53,18 @@ jobs:
                 }
               ],
               "dest": "_site",
-              "globalMetadataFiles": [],
-              "fileMetadataFiles": [],
+              "globalMetadata": {
+                "_appTitle": "Environment Manager",
+                "_enableSearch": true,
+                "_enableNewTab": true,
+                "_gitContribute": {
+                  "repo": "https://github.com/40626785/Environment-Manager",
+                  "branch": "main"
+                }
+              },
               "template": [
-                "default"
+                "default",
+                "modern"
               ],
               "postProcessors": [],
               "markdownEngineName": "markdig",
