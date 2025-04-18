@@ -27,10 +27,15 @@
       "_gitContribute": {
         "repo": "https://github.com/40626785/Environment-Manager",
         "branch": "main"
-      }
+      },
+      "_disableNavbar": false,
+      "_disableBreadcrumb": false,
+      "_disableToc": false,
+      "_disableAffix": false,
+      "_disableContribution": false
     },
     "template": [
-      "default"
+      "statictoc"
     ],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
