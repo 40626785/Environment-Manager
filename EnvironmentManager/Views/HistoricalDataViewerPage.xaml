@@ -29,6 +29,13 @@
                             SelectedItem="{Binding SelectedMonth}"/>
                 </VerticalStackLayout>
             </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10"
+                    Margin="0,10">
+                <DatePicker Date="{Binding StartDate}"
+                        Format="yyyy-MM-dd"/>
+                <DatePicker Date="{Binding EndDate}"
+                        Format="yyyy-MM-dd"/>
+            </HorizontalStackLayout>
 
             <Button Text="Apply Filter"
                     Command="{Binding ApplyAirQualityFilterCommand}"
@@ -46,6 +53,7 @@
                                CornerRadius="12"
                                Padding="12"
                                Margin="0,6">
+
                             <VerticalStackLayout Spacing="6">
                                 <Label Text="{Binding Date, StringFormat='Date: {0:yyyy-MM-dd}'}"
                                        FontAttributes="Bold"/>

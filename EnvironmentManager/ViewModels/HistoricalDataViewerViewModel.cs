@@ -35,6 +35,19 @@ namespace EnvironmentManager.ViewModels
             get => selectedMonth;
             set => SetProperty(ref selectedMonth, value);
         }
+        private DateTime? startDate = null;
+        public DateTime? StartDate
+        {
+            get => startDate;
+            set => SetProperty(ref startDate, value);
+        }
+
+        private DateTime? endDate = null;
+        public DateTime? EndDate
+        {
+            get => endDate;
+            set => SetProperty(ref endDate, value);
+        }
 
         private int appliedYear;
         public int AppliedYear
@@ -87,7 +100,14 @@ namespace EnvironmentManager.ViewModels
                         int month = AvailableMonths.IndexOf(AppliedMonth); // Jan = 1
                         query = query.Where(d => d.Date.Value.Month == month);
                     }
+
+                    if (StartDate.HasValue)
+                        query = query.Where(d => d.Date.Value >= StartDate.Value);
+
+                    if (EndDate.HasValue)
+                        query = query.Where(d => d.Date.Value <= EndDate.Value);
                 }
+
 
                 var data = await query
                     .OrderByDescending(d => d.Date)
