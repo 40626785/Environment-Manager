@@ -29,14 +29,8 @@ jobs:
       - name: Install DocFX
         run: dotnet tool install -g docfx
 
-      - name: Create .nojekyll file
-        run: touch .nojekyll
-
       - name: Build Documentation
         run: docfx docfx.json
-
-      - name: Copy .nojekyll to _site
-        run: cp .nojekyll _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
