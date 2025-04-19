@@ -30,4 +30,10 @@ public partial class HomePage : ContentPage
     {
         await Shell.Current.GoToAsync("//about");
     }
+
+    private async void OnViewHistoricalDataClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(HistoricalData));
+    }
+
 }

@@ -5,9 +5,9 @@ namespace EnvironmentManager;
 
 public partial class AppShell : Shell
 {
-	public AppShell()
-	{
-		InitializeComponent();
+    public AppShell()
+    {
+        InitializeComponent();
 
         // Register routes for navigation
         Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
@@ -16,5 +16,9 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
         Routing.RegisterRoute(nameof(EditSensorPage), typeof(EditSensorPage));
         Routing.RegisterRoute(nameof(AddSensorPage), typeof(AddSensorPage));
-	}
+        Routing.RegisterRoute(nameof(HistoricalData), typeof(HistoricalData));
+        Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
+
+
+    }
 }

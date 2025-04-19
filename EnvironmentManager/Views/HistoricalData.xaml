@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:EnvironmentManager.ViewModels"
+             x:Class="EnvironmentManager.Views.HistoricalData"
+             Title="Historacal Data"
+             BackgroundColor="White">
+
+
+
+    <VerticalStackLayout Padding="20"
+                         Spacing="15"
+                         VerticalOptions="Center">
+        <Label Text="Select a Data Table:"
+               FontSize="20"
+               HorizontalOptions="Center"/>
+
+        <Button Text="Air Quality"
+                Command="{Binding SelectTableCommand}"
+                CommandParameter="Archive_Air_Quality"
+                BackgroundColor="#6750A4"
+                TextColor="White"/>
+
+        <Button Text="Water Quality"
+                Command="{Binding SelectTableCommand}"
+                CommandParameter="Archive_Water_Quality"
+                BackgroundColor="#6750A4"
+                TextColor="White"/>
+
+        <Button Text="Weather Data"
+                Command="{Binding SelectTableCommand}"
+                CommandParameter="archive_weather_data"
+                BackgroundColor="#6750A4"
+                TextColor="White"/>
+    </VerticalStackLayout>
+</ContentPage>
