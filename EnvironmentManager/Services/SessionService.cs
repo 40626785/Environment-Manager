@@ -14,7 +14,6 @@ public class SessionService : ISessionService
     private ILoginNavService _loginNavService;
     private IRunOnMainThread _mainThread;
     private ILocalStorageService _storageService;
-
     private Timer _timer;
 
     public User? AuthenticatedUser => _authenticatedUser;
