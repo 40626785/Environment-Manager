@@ -1,7 +1,7 @@
 //Represents possible application roles, represented as integers in the database.
 public enum Roles 
 {
-    Admininstrator,
+    Administrator,
     EnvironmentalScientist,
     OperationsManager
 }

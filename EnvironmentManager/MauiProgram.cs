@@ -160,6 +160,7 @@ public static class MauiProgram
         builder.Services.AddScoped<ILoginNavService, LoginNavService>();
         builder.Services.AddSingleton<ISessionService, SessionService>();
         builder.Services.AddSingleton<IRunOnMainThread, RunOnMainThread>();
+        builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
 	}
 
 	private static void RegisterViewModels(MauiAppBuilder builder)

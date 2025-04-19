@@ -14,7 +14,7 @@ public class LoginNavService : ILoginNavService
     
     public void RouteOnLogin()
     {
-        App.Current.MainPage = new AppShell(); //changes mainpage to application content
+        App.Current.MainPage = _serviceProvider.GetRequiredService<AppShell>(); //changes mainpage to application content
     }
 
     public void RouteOnLogout()
