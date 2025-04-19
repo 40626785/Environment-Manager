@@ -1,5 +1,7 @@
+using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using EnvironmentManager.Interfaces;
 
 namespace EnvironmentManager.ViewModels;
 
@@ -9,6 +11,8 @@ namespace EnvironmentManager.ViewModels;
 /// </summary>
 public partial class HomeViewModel : ObservableObject
 {
+    private ILoginNavService _loginNavService;
+
     // Basic properties for demo data display
     [ObservableProperty]
     private string _airQualityValue = "72";
@@ -34,10 +38,17 @@ public partial class HomeViewModel : ObservableObject
     [ObservableProperty]
     private string _sensorWarningCount = "7";
 
-    public HomeViewModel()
+    public ICommand Logout { get; }
+
+    public HomeViewModel(ILoginNavService loginNavService)
     {
-        // Simple constructor with no dependencies
-        // When the real implementation is needed, this can be expanded
+        _loginNavService = loginNavService;
+        Logout = new Command(NavigateLogout);
+    }
+
+    private void NavigateLogout()
+    {
+        _loginNavService.RouteOnLogout();
     }
 
     [RelayCommand]

@@ -41,3 +41,10 @@ CREATE TABLE Maintenance (
     Priority INT NOT NULL,
     Description NVARCHAR(MAX) NOT NULL
 );
+
+-- Create User table
+CREATE TABLE Users (
+    Username VARCHAR(20) PRIMARY KEY,
+    Password VARCHAR(20) NOT NULL,
+    Role INT NOT NULL 
+)

@@ -8,7 +8,6 @@ using EnvironmentManager.Views;
 using System.Diagnostics;
 using EnvironmentManager.Services;
 using EnvironmentManager.Interfaces;
-
 namespace EnvironmentManager;
 
 public static class MauiProgram
@@ -41,6 +40,7 @@ public static class MauiProgram
 
         // Bind specific implementation to DBContext abstraction
         builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
+        builder.Services.AddSingleton<IUserDataStore, UserDataStore>();
 
 		// Register App and AppShell
 		builder.Services.AddSingleton<App>();
@@ -98,6 +98,22 @@ public static class MauiProgram
 			}
 		});
 
+        // Configure UserDbContext
+		builder.Services.AddDbContext<UserDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Debug.WriteLine($"Configuring maintenance database");
+				options.UseSqlServer(connectionString);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring maintenance database context: {ex.Message}");
+				throw;
+			}
+		});
+
 		// Configure LocationDbContext
 		builder.Services.AddDbContext<LocationDbContext>(options =>
 		{
@@ -140,8 +156,10 @@ public static class MauiProgram
 	{
 		// Register DatabaseInitializationService
 		builder.Services.AddScoped<IDatabaseInitializationService, DatabaseInitializationService>();
-		
-		// Add other services here
+        builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+        builder.Services.AddScoped<ILoginNavService, LoginNavService>();
+        builder.Services.AddSingleton<ISessionService, SessionService>();
+        builder.Services.AddSingleton<IRunOnMainThread, RunOnMainThread>();
 	}
 
 	private static void RegisterViewModels(MauiAppBuilder builder)
@@ -152,6 +170,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<SensorViewModel>();
 		builder.Services.AddTransient<AddSensorViewModel>();
 		builder.Services.AddTransient<EditSensorViewModel>();
+        builder.Services.AddTransient<LoginViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -162,5 +181,6 @@ public static class MauiProgram
 		builder.Services.AddTransient<SensorPage>();
 		builder.Services.AddTransient<AddSensorPage>();
 		builder.Services.AddTransient<EditSensorPage>();
+        builder.Services.AddTransient<LoginPage>();
 	}
 }
