@@ -21,22 +21,24 @@ public partial class App : Application
 		Routing.RegisterRoute(nameof(Views.AddSensorPage), typeof(Views.AddSensorPage));
 		Routing.RegisterRoute(nameof(Views.EditSensorPage), typeof(Views.EditSensorPage));
 		Routing.RegisterRoute(nameof(Views.AboutPage), typeof(Views.AboutPage));
+		Routing.RegisterRoute(nameof(Views.DatabaseAdminPage), typeof(Views.DatabaseAdminPage));
+
 
 		Trace.Listeners.Add(new DefaultTraceListener());
 
 		MainPage = new AppShell();
-		
+
 		// Initialize database asynchronously without blocking the UI
 		InitializeDatabaseAsync();
 	}
-	
+
 	private async void InitializeDatabaseAsync()
 	{
 		try
 		{
 			// Just verify connections - don't perform extensive testing
 			await _dbInitService.VerifyDatabaseConnectionsAsync();
-			
+
 			// Load test data if needed - only in development
 #if DEBUG
 			await _dbInitService.LoadTestDataIfNeededAsync();

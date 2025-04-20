@@ -39,8 +39,8 @@ public static class MauiProgram
 		// Register pages
 		RegisterPages(builder);
 
-        // Bind specific implementation to DBContext abstraction
-        builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
+		// Bind specific implementation to DBContext abstraction
+		builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
 
 		// Register App and AppShell
 		builder.Services.AddSingleton<App>();
@@ -97,6 +97,22 @@ public static class MauiProgram
 				throw;
 			}
 		});
+		// Configure DatabaseAdminDbContext
+		builder.Services.AddDbContext<DatabaseAdminDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("MySQLConnection");
+				Debug.WriteLine("Configuring database admin context");
+				options.UseSqlServer(connectionString);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring database admin context: {ex.Message}");
+				throw;
+			}
+		});
+
 
 		// Configure LocationDbContext
 		builder.Services.AddDbContext<LocationDbContext>(options =>
@@ -135,13 +151,19 @@ public static class MauiProgram
 		});
 
 	}
+	// Register your DatabaseAdminDbContext using connection string from appsettings.json
+
 
 	private static void RegisterServices(MauiAppBuilder builder)
 	{
 		// Register DatabaseInitializationService
 		builder.Services.AddScoped<IDatabaseInitializationService, DatabaseInitializationService>();
-		
+
 		// Add other services here
+		builder.Services.AddScoped<IDatabaseAdminDataStore, DatabaseAdminDbContext>();
+		builder.Services.AddSingleton<DatabaseAdminViewModel>();
+		builder.Services.AddTransient<DatabaseAdminPage>();
+
 	}
 
 	private static void RegisterViewModels(MauiAppBuilder builder)
@@ -152,6 +174,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<SensorViewModel>();
 		builder.Services.AddTransient<AddSensorViewModel>();
 		builder.Services.AddTransient<EditSensorViewModel>();
+		builder.Services.AddTransient<DatabaseAdminViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -162,5 +185,6 @@ public static class MauiProgram
 		builder.Services.AddTransient<SensorPage>();
 		builder.Services.AddTransient<AddSensorPage>();
 		builder.Services.AddTransient<EditSensorPage>();
+		builder.Services.AddTransient<DatabaseAdminPage>();
 	}
 }
