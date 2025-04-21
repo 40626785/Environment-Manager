@@ -1,0 +1,145 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.IUserDataStore
+  commentId: T:EnvironmentManager.Interfaces.IUserDataStore
+  id: IUserDataStore
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IUserDataStore.GetUser(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IUserDataStore
+  nameWithType: IUserDataStore
+  fullName: EnvironmentManager.Interfaces.IUserDataStore
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserDataStore.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: IUserDataStore
+    path: EnvironmentManager/Interfaces/IUserDataStore.cs
+    startLine: 10
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: >-
+    Enables Dependency Inversion Principle, allowing ViewModels to retrieve a user without depending on concrete DbContext implementation
+
+
+    Implementation of Interface decided in MauiProgram.cs
+  example: []
+  syntax:
+    content: public interface IUserDataStore
+    content.vb: Public Interface IUserDataStore
+- uid: EnvironmentManager.Interfaces.IUserDataStore.GetUser(System.String)
+  commentId: M:EnvironmentManager.Interfaces.IUserDataStore.GetUser(System.String)
+  id: GetUser(System.String)
+  parent: EnvironmentManager.Interfaces.IUserDataStore
+  langs:
+  - csharp
+  - vb
+  name: GetUser(string)
+  nameWithType: IUserDataStore.GetUser(string)
+  fullName: EnvironmentManager.Interfaces.IUserDataStore.GetUser(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserDataStore.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: GetUser
+    path: EnvironmentManager/Interfaces/IUserDataStore.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: User GetUser(string username)
+    parameters:
+    - id: username
+      type: System.String
+    return:
+      type: EnvironmentManager.Models.User
+    content.vb: Function GetUser(username As String) As User
+  overload: EnvironmentManager.Interfaces.IUserDataStore.GetUser*
+  nameWithType.vb: IUserDataStore.GetUser(String)
+  fullName.vb: EnvironmentManager.Interfaces.IUserDataStore.GetUser(String)
+  name.vb: GetUser(String)
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.IUserDataStore.GetUser*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserDataStore.GetUser
+  href: EnvironmentManager.Interfaces.IUserDataStore.html#EnvironmentManager_Interfaces_IUserDataStore_GetUser_System_String_
+  name: GetUser
+  nameWithType: IUserDataStore.GetUser
+  fullName: EnvironmentManager.Interfaces.IUserDataStore.GetUser
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.Models.User
+  commentId: T:EnvironmentManager.Models.User
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: EnvironmentManager.Models.User
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html

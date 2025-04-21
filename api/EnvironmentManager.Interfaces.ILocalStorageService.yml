@@ -1,0 +1,157 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.ILocalStorageService
+  commentId: T:EnvironmentManager.Interfaces.ILocalStorageService
+  id: ILocalStorageService
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.ILocalStorageService.GetStringValue(System.String)
+  - EnvironmentManager.Interfaces.ILocalStorageService.SetStringValue(System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: ILocalStorageService
+  nameWithType: ILocalStorageService
+  fullName: EnvironmentManager.Interfaces.ILocalStorageService
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ILocalStorageService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ILocalStorageService
+    path: EnvironmentManager/Interfaces/ILocalStorageService.cs
+    startLine: 6
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: >-
+    Enables Dependency Inversion Principle, allowing management of local storage without directly depending on concrete implementation
+
+
+    Implementation of Interface decided in MauiProgram.cs
+  example: []
+  syntax:
+    content: public interface ILocalStorageService
+    content.vb: Public Interface ILocalStorageService
+- uid: EnvironmentManager.Interfaces.ILocalStorageService.SetStringValue(System.String,System.String)
+  commentId: M:EnvironmentManager.Interfaces.ILocalStorageService.SetStringValue(System.String,System.String)
+  id: SetStringValue(System.String,System.String)
+  parent: EnvironmentManager.Interfaces.ILocalStorageService
+  langs:
+  - csharp
+  - vb
+  name: SetStringValue(string, string)
+  nameWithType: ILocalStorageService.SetStringValue(string, string)
+  fullName: EnvironmentManager.Interfaces.ILocalStorageService.SetStringValue(string, string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ILocalStorageService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: SetStringValue
+    path: EnvironmentManager/Interfaces/ILocalStorageService.cs
+    startLine: 8
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void SetStringValue(string key, string value)
+    parameters:
+    - id: key
+      type: System.String
+    - id: value
+      type: System.String
+    content.vb: Sub SetStringValue(key As String, value As String)
+  overload: EnvironmentManager.Interfaces.ILocalStorageService.SetStringValue*
+  nameWithType.vb: ILocalStorageService.SetStringValue(String, String)
+  fullName.vb: EnvironmentManager.Interfaces.ILocalStorageService.SetStringValue(String, String)
+  name.vb: SetStringValue(String, String)
+- uid: EnvironmentManager.Interfaces.ILocalStorageService.GetStringValue(System.String)
+  commentId: M:EnvironmentManager.Interfaces.ILocalStorageService.GetStringValue(System.String)
+  id: GetStringValue(System.String)
+  parent: EnvironmentManager.Interfaces.ILocalStorageService
+  langs:
+  - csharp
+  - vb
+  name: GetStringValue(string)
+  nameWithType: ILocalStorageService.GetStringValue(string)
+  fullName: EnvironmentManager.Interfaces.ILocalStorageService.GetStringValue(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ILocalStorageService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: GetStringValue
+    path: EnvironmentManager/Interfaces/ILocalStorageService.cs
+    startLine: 10
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: string GetStringValue(string key)
+    parameters:
+    - id: key
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Function GetStringValue(key As String) As String
+  overload: EnvironmentManager.Interfaces.ILocalStorageService.GetStringValue*
+  nameWithType.vb: ILocalStorageService.GetStringValue(String)
+  fullName.vb: EnvironmentManager.Interfaces.ILocalStorageService.GetStringValue(String)
+  name.vb: GetStringValue(String)
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.ILocalStorageService.SetStringValue*
+  commentId: Overload:EnvironmentManager.Interfaces.ILocalStorageService.SetStringValue
+  href: EnvironmentManager.Interfaces.ILocalStorageService.html#EnvironmentManager_Interfaces_ILocalStorageService_SetStringValue_System_String_System_String_
+  name: SetStringValue
+  nameWithType: ILocalStorageService.SetStringValue
+  fullName: EnvironmentManager.Interfaces.ILocalStorageService.SetStringValue
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Interfaces.ILocalStorageService.GetStringValue*
+  commentId: Overload:EnvironmentManager.Interfaces.ILocalStorageService.GetStringValue
+  href: EnvironmentManager.Interfaces.ILocalStorageService.html#EnvironmentManager_Interfaces_ILocalStorageService_GetStringValue_System_String_
+  name: GetStringValue
+  nameWithType: ILocalStorageService.GetStringValue
+  fullName: EnvironmentManager.Interfaces.ILocalStorageService.GetStringValue

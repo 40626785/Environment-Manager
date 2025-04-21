@@ -1,0 +1,781 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Services.ValidationService
+  commentId: T:EnvironmentManager.Services.ValidationService
+  id: ValidationService
+  parent: EnvironmentManager.Services
+  children:
+  - EnvironmentManager.Services.ValidationService.ValidateBatteryLevel(System.Nullable{System.Single})
+  - EnvironmentManager.Services.ValidationService.ValidateSensor(System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Single},System.String)
+  - EnvironmentManager.Services.ValidationService.ValidateSensorType(System.String)
+  - EnvironmentManager.Services.ValidationService.ValidateTextField(System.String,System.String)
+  - EnvironmentManager.Services.ValidationService.ValidateUrl(System.String)
+  - EnvironmentManager.Services.ValidationService.ValidateVersion(System.String)
+  langs:
+  - csharp
+  - vb
+  name: ValidationService
+  nameWithType: ValidationService
+  fullName: EnvironmentManager.Services.ValidationService
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/Services/ValidationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ValidationService
+    path: EnvironmentManager/Services/ValidationService.cs
+    startLine: 5
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  syntax:
+    content: public class ValidationService
+    content.vb: Public Class ValidationService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.Services.ValidationService.ValidateTextField(System.String,System.String)
+  commentId: M:EnvironmentManager.Services.ValidationService.ValidateTextField(System.String,System.String)
+  id: ValidateTextField(System.String,System.String)
+  parent: EnvironmentManager.Services.ValidationService
+  langs:
+  - csharp
+  - vb
+  name: ValidateTextField(string, string)
+  nameWithType: ValidationService.ValidateTextField(string, string)
+  fullName: EnvironmentManager.Services.ValidationService.ValidateTextField(string, string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Services/ValidationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ValidateTextField
+    path: EnvironmentManager/Services/ValidationService.cs
+    startLine: 19
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  syntax:
+    content: public static (bool IsValid, string ErrorMessage) ValidateTextField(string fieldName, string value)
+    parameters:
+    - id: fieldName
+      type: System.String
+    - id: value
+      type: System.String
+    return:
+      type: System.ValueTuple{System.Boolean,System.String}
+    content.vb: Public Shared Function ValidateTextField(fieldName As String, value As String) As (IsValid As Boolean, ErrorMessage As String)
+  overload: EnvironmentManager.Services.ValidationService.ValidateTextField*
+  nameWithType.vb: ValidationService.ValidateTextField(String, String)
+  fullName.vb: EnvironmentManager.Services.ValidationService.ValidateTextField(String, String)
+  name.vb: ValidateTextField(String, String)
+- uid: EnvironmentManager.Services.ValidationService.ValidateUrl(System.String)
+  commentId: M:EnvironmentManager.Services.ValidationService.ValidateUrl(System.String)
+  id: ValidateUrl(System.String)
+  parent: EnvironmentManager.Services.ValidationService
+  langs:
+  - csharp
+  - vb
+  name: ValidateUrl(string)
+  nameWithType: ValidationService.ValidateUrl(string)
+  fullName: EnvironmentManager.Services.ValidationService.ValidateUrl(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Services/ValidationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ValidateUrl
+    path: EnvironmentManager/Services/ValidationService.cs
+    startLine: 43
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  syntax:
+    content: public static (bool IsValid, string ErrorMessage) ValidateUrl(string url)
+    parameters:
+    - id: url
+      type: System.String
+    return:
+      type: System.ValueTuple{System.Boolean,System.String}
+    content.vb: Public Shared Function ValidateUrl(url As String) As (IsValid As Boolean, ErrorMessage As String)
+  overload: EnvironmentManager.Services.ValidationService.ValidateUrl*
+  nameWithType.vb: ValidationService.ValidateUrl(String)
+  fullName.vb: EnvironmentManager.Services.ValidationService.ValidateUrl(String)
+  name.vb: ValidateUrl(String)
+- uid: EnvironmentManager.Services.ValidationService.ValidateVersion(System.String)
+  commentId: M:EnvironmentManager.Services.ValidationService.ValidateVersion(System.String)
+  id: ValidateVersion(System.String)
+  parent: EnvironmentManager.Services.ValidationService
+  langs:
+  - csharp
+  - vb
+  name: ValidateVersion(string)
+  nameWithType: ValidationService.ValidateVersion(string)
+  fullName: EnvironmentManager.Services.ValidationService.ValidateVersion(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Services/ValidationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ValidateVersion
+    path: EnvironmentManager/Services/ValidationService.cs
+    startLine: 61
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  syntax:
+    content: public static (bool IsValid, string ErrorMessage) ValidateVersion(string version)
+    parameters:
+    - id: version
+      type: System.String
+    return:
+      type: System.ValueTuple{System.Boolean,System.String}
+    content.vb: Public Shared Function ValidateVersion(version As String) As (IsValid As Boolean, ErrorMessage As String)
+  overload: EnvironmentManager.Services.ValidationService.ValidateVersion*
+  nameWithType.vb: ValidationService.ValidateVersion(String)
+  fullName.vb: EnvironmentManager.Services.ValidationService.ValidateVersion(String)
+  name.vb: ValidateVersion(String)
+- uid: EnvironmentManager.Services.ValidationService.ValidateBatteryLevel(System.Nullable{System.Single})
+  commentId: M:EnvironmentManager.Services.ValidationService.ValidateBatteryLevel(System.Nullable{System.Single})
+  id: ValidateBatteryLevel(System.Nullable{System.Single})
+  parent: EnvironmentManager.Services.ValidationService
+  langs:
+  - csharp
+  - vb
+  name: ValidateBatteryLevel(float?)
+  nameWithType: ValidationService.ValidateBatteryLevel(float?)
+  fullName: EnvironmentManager.Services.ValidationService.ValidateBatteryLevel(float?)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Services/ValidationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ValidateBatteryLevel
+    path: EnvironmentManager/Services/ValidationService.cs
+    startLine: 79
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  syntax:
+    content: public static (bool IsValid, string ErrorMessage) ValidateBatteryLevel(float? batteryLevel)
+    parameters:
+    - id: batteryLevel
+      type: System.Nullable{System.Single}
+    return:
+      type: System.ValueTuple{System.Boolean,System.String}
+    content.vb: Public Shared Function ValidateBatteryLevel(batteryLevel As Single?) As (IsValid As Boolean, ErrorMessage As String)
+  overload: EnvironmentManager.Services.ValidationService.ValidateBatteryLevel*
+  nameWithType.vb: ValidationService.ValidateBatteryLevel(Single?)
+  fullName.vb: EnvironmentManager.Services.ValidationService.ValidateBatteryLevel(Single?)
+  name.vb: ValidateBatteryLevel(Single?)
+- uid: EnvironmentManager.Services.ValidationService.ValidateSensorType(System.String)
+  commentId: M:EnvironmentManager.Services.ValidationService.ValidateSensorType(System.String)
+  id: ValidateSensorType(System.String)
+  parent: EnvironmentManager.Services.ValidationService
+  langs:
+  - csharp
+  - vb
+  name: ValidateSensorType(string)
+  nameWithType: ValidationService.ValidateSensorType(string)
+  fullName: EnvironmentManager.Services.ValidationService.ValidateSensorType(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Services/ValidationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ValidateSensorType
+    path: EnvironmentManager/Services/ValidationService.cs
+    startLine: 97
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  syntax:
+    content: public static (bool IsValid, string ErrorMessage) ValidateSensorType(string sensorType)
+    parameters:
+    - id: sensorType
+      type: System.String
+    return:
+      type: System.ValueTuple{System.Boolean,System.String}
+    content.vb: Public Shared Function ValidateSensorType(sensorType As String) As (IsValid As Boolean, ErrorMessage As String)
+  overload: EnvironmentManager.Services.ValidationService.ValidateSensorType*
+  nameWithType.vb: ValidationService.ValidateSensorType(String)
+  fullName.vb: EnvironmentManager.Services.ValidationService.ValidateSensorType(String)
+  name.vb: ValidateSensorType(String)
+- uid: EnvironmentManager.Services.ValidationService.ValidateSensor(System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Single},System.String)
+  commentId: M:EnvironmentManager.Services.ValidationService.ValidateSensor(System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Single},System.String)
+  id: ValidateSensor(System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Single},System.String)
+  parent: EnvironmentManager.Services.ValidationService
+  langs:
+  - csharp
+  - vb
+  name: ValidateSensor(string, string, string, string, string, string, float?, string)
+  nameWithType: ValidationService.ValidateSensor(string, string, string, string, string, string, float?, string)
+  fullName: EnvironmentManager.Services.ValidationService.ValidateSensor(string, string, string, string, string, string, float?, string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Services/ValidationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ValidateSensor
+    path: EnvironmentManager/Services/ValidationService.cs
+    startLine: 115
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  syntax:
+    content: public static (bool IsValid, Dictionary<string, string> Errors) ValidateSensor(string sensorName, string model, string manufacturer, string sensorType, string firmwareVersion, string sensorUrl, float? batteryLevel, string dataSource)
+    parameters:
+    - id: sensorName
+      type: System.String
+    - id: model
+      type: System.String
+    - id: manufacturer
+      type: System.String
+    - id: sensorType
+      type: System.String
+    - id: firmwareVersion
+      type: System.String
+    - id: sensorUrl
+      type: System.String
+    - id: batteryLevel
+      type: System.Nullable{System.Single}
+    - id: dataSource
+      type: System.String
+    return:
+      type: System.ValueTuple{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String}}
+    content.vb: Public Shared Function ValidateSensor(sensorName As String, model As String, manufacturer As String, sensorType As String, firmwareVersion As String, sensorUrl As String, batteryLevel As Single?, dataSource As String) As (IsValid As Boolean, Errors As Dictionary(Of String, String))
+  overload: EnvironmentManager.Services.ValidationService.ValidateSensor*
+  nameWithType.vb: ValidationService.ValidateSensor(String, String, String, String, String, String, Single?, String)
+  fullName.vb: EnvironmentManager.Services.ValidationService.ValidateSensor(String, String, String, String, String, String, Single?, String)
+  name.vb: ValidateSensor(String, String, String, String, String, String, Single?, String)
+references:
+- uid: EnvironmentManager.Services
+  commentId: N:EnvironmentManager.Services
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Services
+  nameWithType: EnvironmentManager.Services
+  fullName: EnvironmentManager.Services
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Services.ValidationService.ValidateTextField*
+  commentId: Overload:EnvironmentManager.Services.ValidationService.ValidateTextField
+  href: EnvironmentManager.Services.ValidationService.html#EnvironmentManager_Services_ValidationService_ValidateTextField_System_String_System_String_
+  name: ValidateTextField
+  nameWithType: ValidationService.ValidateTextField
+  fullName: EnvironmentManager.Services.ValidationService.ValidateTextField
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.ValueTuple{System.Boolean,System.String}
+  commentId: T:System.ValueTuple{System.Boolean,System.String}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: (bool IsValid, string ErrorMessage)
+  nameWithType: (bool IsValid, string ErrorMessage)
+  fullName: (bool IsValid, string ErrorMessage)
+  nameWithType.vb: (IsValid As Boolean, ErrorMessage As String)
+  fullName.vb: (IsValid As Boolean, ErrorMessage As String)
+  name.vb: (IsValid As Boolean, ErrorMessage As String)
+  spec.csharp:
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.String}.IsValid
+    name: IsValid
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.string-.isvalid
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.String}.ErrorMessage
+    name: ErrorMessage
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.string-.errormessage
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Boolean,System.String}.IsValid
+    name: IsValid
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.string-.isvalid
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.String}.ErrorMessage
+    name: ErrorMessage
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.string-.errormessage
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: EnvironmentManager.Services.ValidationService.ValidateUrl*
+  commentId: Overload:EnvironmentManager.Services.ValidationService.ValidateUrl
+  href: EnvironmentManager.Services.ValidationService.html#EnvironmentManager_Services_ValidationService_ValidateUrl_System_String_
+  name: ValidateUrl
+  nameWithType: ValidationService.ValidateUrl
+  fullName: EnvironmentManager.Services.ValidationService.ValidateUrl
+- uid: EnvironmentManager.Services.ValidationService.ValidateVersion*
+  commentId: Overload:EnvironmentManager.Services.ValidationService.ValidateVersion
+  href: EnvironmentManager.Services.ValidationService.html#EnvironmentManager_Services_ValidationService_ValidateVersion_System_String_
+  name: ValidateVersion
+  nameWithType: ValidationService.ValidateVersion
+  fullName: EnvironmentManager.Services.ValidationService.ValidateVersion
+- uid: EnvironmentManager.Services.ValidationService.ValidateBatteryLevel*
+  commentId: Overload:EnvironmentManager.Services.ValidationService.ValidateBatteryLevel
+  href: EnvironmentManager.Services.ValidationService.html#EnvironmentManager_Services_ValidationService_ValidateBatteryLevel_System_Nullable_System_Single__
+  name: ValidateBatteryLevel
+  nameWithType: ValidationService.ValidateBatteryLevel
+  fullName: EnvironmentManager.Services.ValidationService.ValidateBatteryLevel
+- uid: System.Nullable{System.Single}
+  commentId: T:System.Nullable{System.Single}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float?
+  nameWithType: float?
+  fullName: float?
+  nameWithType.vb: Single?
+  fullName.vb: Single?
+  name.vb: Single?
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EnvironmentManager.Services.ValidationService.ValidateSensorType*
+  commentId: Overload:EnvironmentManager.Services.ValidationService.ValidateSensorType
+  href: EnvironmentManager.Services.ValidationService.html#EnvironmentManager_Services_ValidationService_ValidateSensorType_System_String_
+  name: ValidateSensorType
+  nameWithType: ValidationService.ValidateSensorType
+  fullName: EnvironmentManager.Services.ValidationService.ValidateSensorType
+- uid: EnvironmentManager.Services.ValidationService.ValidateSensor*
+  commentId: Overload:EnvironmentManager.Services.ValidationService.ValidateSensor
+  href: EnvironmentManager.Services.ValidationService.html#EnvironmentManager_Services_ValidationService_ValidateSensor_System_String_System_String_System_String_System_String_System_String_System_String_System_Nullable_System_Single__System_String_
+  name: ValidateSensor
+  nameWithType: ValidationService.ValidateSensor
+  fullName: EnvironmentManager.Services.ValidationService.ValidateSensor
+- uid: System.ValueTuple{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String}}
+  commentId: T:System.ValueTuple{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String}}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: (bool IsValid, Dictionary<string, string> Errors)
+  nameWithType: (bool IsValid, Dictionary<string, string> Errors)
+  fullName: (bool IsValid, System.Collections.Generic.Dictionary<string, string> Errors)
+  nameWithType.vb: (IsValid As Boolean, Errors As Dictionary(Of String, String))
+  fullName.vb: (IsValid As Boolean, Errors As System.Collections.Generic.Dictionary(Of String, String))
+  name.vb: (IsValid As Boolean, Errors As Dictionary(Of String, String))
+  spec.csharp:
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String}}.IsValid
+    name: IsValid
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.collections.generic.dictionary-system.string,system.string--.isvalid
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String}}.Errors
+    name: Errors
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.collections.generic.dictionary-system.string,system.string--.errors
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String}}.IsValid
+    name: IsValid
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.collections.generic.dictionary-system.string,system.string--.isvalid
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String}}.Errors
+    name: Errors
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.collections.generic.dictionary-system.string,system.string--.errors
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )

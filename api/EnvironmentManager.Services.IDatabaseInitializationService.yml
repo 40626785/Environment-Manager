@@ -1,0 +1,170 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Services.IDatabaseInitializationService
+  commentId: T:EnvironmentManager.Services.IDatabaseInitializationService
+  id: IDatabaseInitializationService
+  parent: EnvironmentManager.Services
+  children:
+  - EnvironmentManager.Services.IDatabaseInitializationService.LoadTestDataIfNeededAsync
+  - EnvironmentManager.Services.IDatabaseInitializationService.VerifyDatabaseConnectionsAsync
+  langs:
+  - csharp
+  - vb
+  name: IDatabaseInitializationService
+  nameWithType: IDatabaseInitializationService
+  fullName: EnvironmentManager.Services.IDatabaseInitializationService
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Services/IDatabaseInitializationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: IDatabaseInitializationService
+    path: EnvironmentManager/Services/IDatabaseInitializationService.cs
+    startLine: 2
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  syntax:
+    content: public interface IDatabaseInitializationService
+    content.vb: Public Interface IDatabaseInitializationService
+- uid: EnvironmentManager.Services.IDatabaseInitializationService.VerifyDatabaseConnectionsAsync
+  commentId: M:EnvironmentManager.Services.IDatabaseInitializationService.VerifyDatabaseConnectionsAsync
+  id: VerifyDatabaseConnectionsAsync
+  parent: EnvironmentManager.Services.IDatabaseInitializationService
+  langs:
+  - csharp
+  - vb
+  name: VerifyDatabaseConnectionsAsync()
+  nameWithType: IDatabaseInitializationService.VerifyDatabaseConnectionsAsync()
+  fullName: EnvironmentManager.Services.IDatabaseInitializationService.VerifyDatabaseConnectionsAsync()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Services/IDatabaseInitializationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: VerifyDatabaseConnectionsAsync
+    path: EnvironmentManager/Services/IDatabaseInitializationService.cs
+    startLine: 7
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  summary: Verifies database connections without performing extensive testing
+  example: []
+  syntax:
+    content: Task VerifyDatabaseConnectionsAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function VerifyDatabaseConnectionsAsync() As Task
+  overload: EnvironmentManager.Services.IDatabaseInitializationService.VerifyDatabaseConnectionsAsync*
+- uid: EnvironmentManager.Services.IDatabaseInitializationService.LoadTestDataIfNeededAsync
+  commentId: M:EnvironmentManager.Services.IDatabaseInitializationService.LoadTestDataIfNeededAsync
+  id: LoadTestDataIfNeededAsync
+  parent: EnvironmentManager.Services.IDatabaseInitializationService
+  langs:
+  - csharp
+  - vb
+  name: LoadTestDataIfNeededAsync()
+  nameWithType: IDatabaseInitializationService.LoadTestDataIfNeededAsync()
+  fullName: EnvironmentManager.Services.IDatabaseInitializationService.LoadTestDataIfNeededAsync()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Services/IDatabaseInitializationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: LoadTestDataIfNeededAsync
+    path: EnvironmentManager/Services/IDatabaseInitializationService.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  summary: Loads test data if needed - should only be called in development environments
+  example: []
+  syntax:
+    content: Task LoadTestDataIfNeededAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LoadTestDataIfNeededAsync() As Task
+  overload: EnvironmentManager.Services.IDatabaseInitializationService.LoadTestDataIfNeededAsync*
+references:
+- uid: EnvironmentManager.Services
+  commentId: N:EnvironmentManager.Services
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Services
+  nameWithType: EnvironmentManager.Services
+  fullName: EnvironmentManager.Services
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html
+- uid: EnvironmentManager.Services.IDatabaseInitializationService.VerifyDatabaseConnectionsAsync*
+  commentId: Overload:EnvironmentManager.Services.IDatabaseInitializationService.VerifyDatabaseConnectionsAsync
+  href: EnvironmentManager.Services.IDatabaseInitializationService.html#EnvironmentManager_Services_IDatabaseInitializationService_VerifyDatabaseConnectionsAsync
+  name: VerifyDatabaseConnectionsAsync
+  nameWithType: IDatabaseInitializationService.VerifyDatabaseConnectionsAsync
+  fullName: EnvironmentManager.Services.IDatabaseInitializationService.VerifyDatabaseConnectionsAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: EnvironmentManager.Services.IDatabaseInitializationService.LoadTestDataIfNeededAsync*
+  commentId: Overload:EnvironmentManager.Services.IDatabaseInitializationService.LoadTestDataIfNeededAsync
+  href: EnvironmentManager.Services.IDatabaseInitializationService.html#EnvironmentManager_Services_IDatabaseInitializationService_LoadTestDataIfNeededAsync
+  name: LoadTestDataIfNeededAsync
+  nameWithType: IDatabaseInitializationService.LoadTestDataIfNeededAsync
+  fullName: EnvironmentManager.Services.IDatabaseInitializationService.LoadTestDataIfNeededAsync

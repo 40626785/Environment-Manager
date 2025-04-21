@@ -1,0 +1,44 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Converters
+  commentId: N:EnvironmentManager.Converters
+  id: EnvironmentManager.Converters
+  children:
+  - EnvironmentManager.Converters.BoolToColorConverter
+  - EnvironmentManager.Converters.CountToBoolConverter
+  - EnvironmentManager.Converters.StringNotEmptyConverter
+  - EnvironmentManager.Converters.StringNotNullOrEmptyConverter
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Converters
+  nameWithType: EnvironmentManager.Converters
+  fullName: EnvironmentManager.Converters
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Converters.BoolToColorConverter
+  commentId: T:EnvironmentManager.Converters.BoolToColorConverter
+  href: EnvironmentManager.Converters.BoolToColorConverter.html
+  name: BoolToColorConverter
+  nameWithType: BoolToColorConverter
+  fullName: EnvironmentManager.Converters.BoolToColorConverter
+- uid: EnvironmentManager.Converters.CountToBoolConverter
+  commentId: T:EnvironmentManager.Converters.CountToBoolConverter
+  href: EnvironmentManager.Converters.CountToBoolConverter.html
+  name: CountToBoolConverter
+  nameWithType: CountToBoolConverter
+  fullName: EnvironmentManager.Converters.CountToBoolConverter
+- uid: EnvironmentManager.Converters.StringNotEmptyConverter
+  commentId: T:EnvironmentManager.Converters.StringNotEmptyConverter
+  href: EnvironmentManager.Converters.StringNotEmptyConverter.html
+  name: StringNotEmptyConverter
+  nameWithType: StringNotEmptyConverter
+  fullName: EnvironmentManager.Converters.StringNotEmptyConverter
+- uid: EnvironmentManager.Converters.StringNotNullOrEmptyConverter
+  commentId: T:EnvironmentManager.Converters.StringNotNullOrEmptyConverter
+  href: EnvironmentManager.Converters.StringNotNullOrEmptyConverter.html
+  name: StringNotNullOrEmptyConverter
+  nameWithType: StringNotNullOrEmptyConverter
+  fullName: EnvironmentManager.Converters.StringNotNullOrEmptyConverter

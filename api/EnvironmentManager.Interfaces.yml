@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  id: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IAuthenticationService
+  - EnvironmentManager.Interfaces.IErrorHandling
+  - EnvironmentManager.Interfaces.ILocalStorageService
+  - EnvironmentManager.Interfaces.ILoginNavService
+  - EnvironmentManager.Interfaces.IMaintenanceDataStore
+  - EnvironmentManager.Interfaces.IRunOnMainThread
+  - EnvironmentManager.Interfaces.ISessionService
+  - EnvironmentManager.Interfaces.IUserDataStore
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Interfaces.IAuthenticationService
+  commentId: T:EnvironmentManager.Interfaces.IAuthenticationService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IAuthenticationService.html
+  name: IAuthenticationService
+  nameWithType: IAuthenticationService
+  fullName: EnvironmentManager.Interfaces.IAuthenticationService
+- uid: EnvironmentManager.Interfaces.IErrorHandling
+  commentId: T:EnvironmentManager.Interfaces.IErrorHandling
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IErrorHandling.html
+  name: IErrorHandling
+  nameWithType: IErrorHandling
+  fullName: EnvironmentManager.Interfaces.IErrorHandling
+- uid: EnvironmentManager.Interfaces.ILocalStorageService
+  commentId: T:EnvironmentManager.Interfaces.ILocalStorageService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ILocalStorageService.html
+  name: ILocalStorageService
+  nameWithType: ILocalStorageService
+  fullName: EnvironmentManager.Interfaces.ILocalStorageService
+- uid: EnvironmentManager.Interfaces.ILoginNavService
+  commentId: T:EnvironmentManager.Interfaces.ILoginNavService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ILoginNavService.html
+  name: ILoginNavService
+  nameWithType: ILoginNavService
+  fullName: EnvironmentManager.Interfaces.ILoginNavService
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  commentId: T:EnvironmentManager.Interfaces.IMaintenanceDataStore
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IMaintenanceDataStore.html
+  name: IMaintenanceDataStore
+  nameWithType: IMaintenanceDataStore
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore
+- uid: EnvironmentManager.Interfaces.IRunOnMainThread
+  commentId: T:EnvironmentManager.Interfaces.IRunOnMainThread
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IRunOnMainThread.html
+  name: IRunOnMainThread
+  nameWithType: IRunOnMainThread
+  fullName: EnvironmentManager.Interfaces.IRunOnMainThread
+- uid: EnvironmentManager.Interfaces.ISessionService
+  commentId: T:EnvironmentManager.Interfaces.ISessionService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ISessionService.html
+  name: ISessionService
+  nameWithType: ISessionService
+  fullName: EnvironmentManager.Interfaces.ISessionService
+- uid: EnvironmentManager.Interfaces.IUserDataStore
+  commentId: T:EnvironmentManager.Interfaces.IUserDataStore
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IUserDataStore.html
+  name: IUserDataStore
+  nameWithType: IUserDataStore
+  fullName: EnvironmentManager.Interfaces.IUserDataStore
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html

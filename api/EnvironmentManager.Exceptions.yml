@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Exceptions
+  commentId: N:EnvironmentManager.Exceptions
+  id: EnvironmentManager.Exceptions
+  children:
+  - EnvironmentManager.Exceptions.LoginException
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Exceptions
+  nameWithType: EnvironmentManager.Exceptions
+  fullName: EnvironmentManager.Exceptions
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Exceptions.LoginException
+  commentId: T:EnvironmentManager.Exceptions.LoginException
+  href: EnvironmentManager.Exceptions.LoginException.html
+  name: LoginException
+  nameWithType: LoginException
+  fullName: EnvironmentManager.Exceptions.LoginException

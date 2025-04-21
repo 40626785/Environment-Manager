@@ -1,0 +1,123 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.ILoginNavService
+  commentId: T:EnvironmentManager.Interfaces.ILoginNavService
+  id: ILoginNavService
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogin
+  - EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogout
+  langs:
+  - csharp
+  - vb
+  name: ILoginNavService
+  nameWithType: ILoginNavService
+  fullName: EnvironmentManager.Interfaces.ILoginNavService
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ILoginNavService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ILoginNavService
+    path: EnvironmentManager/Interfaces/ILoginNavService.cs
+    startLine: 10
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: >-
+    Enables Dependency Inversion Principle, allowing management of login/logout navigation without directly depending on concrete implementation
+
+
+    Implementation of Interface decided in MauiProgram.cs
+  example: []
+  syntax:
+    content: public interface ILoginNavService
+    content.vb: Public Interface ILoginNavService
+- uid: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogin
+  commentId: M:EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogin
+  id: RouteOnLogin
+  parent: EnvironmentManager.Interfaces.ILoginNavService
+  langs:
+  - csharp
+  - vb
+  name: RouteOnLogin()
+  nameWithType: ILoginNavService.RouteOnLogin()
+  fullName: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogin()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ILoginNavService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: RouteOnLogin
+    path: EnvironmentManager/Interfaces/ILoginNavService.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void RouteOnLogin()
+    content.vb: Sub RouteOnLogin()
+  overload: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogin*
+- uid: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogout
+  commentId: M:EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogout
+  id: RouteOnLogout
+  parent: EnvironmentManager.Interfaces.ILoginNavService
+  langs:
+  - csharp
+  - vb
+  name: RouteOnLogout()
+  nameWithType: ILoginNavService.RouteOnLogout()
+  fullName: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogout()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ILoginNavService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: RouteOnLogout
+    path: EnvironmentManager/Interfaces/ILoginNavService.cs
+    startLine: 13
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void RouteOnLogout()
+    content.vb: Sub RouteOnLogout()
+  overload: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogout*
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogin*
+  commentId: Overload:EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogin
+  href: EnvironmentManager.Interfaces.ILoginNavService.html#EnvironmentManager_Interfaces_ILoginNavService_RouteOnLogin
+  name: RouteOnLogin
+  nameWithType: ILoginNavService.RouteOnLogin
+  fullName: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogin
+- uid: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogout*
+  commentId: Overload:EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogout
+  href: EnvironmentManager.Interfaces.ILoginNavService.html#EnvironmentManager_Interfaces_ILoginNavService_RouteOnLogout
+  name: RouteOnLogout
+  nameWithType: ILoginNavService.RouteOnLogout
+  fullName: EnvironmentManager.Interfaces.ILoginNavService.RouteOnLogout

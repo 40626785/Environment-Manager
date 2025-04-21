@@ -1,0 +1,226 @@
+### YamlMime:TableOfContent
+items:
+- uid: EnvironmentManager
+  name: EnvironmentManager
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.App
+    name: App
+    type: Class
+  - uid: EnvironmentManager.AppShell
+    name: AppShell
+    type: Class
+  - uid: EnvironmentManager.MauiProgram
+    name: MauiProgram
+    type: Class
+- uid: EnvironmentManager.Converters
+  name: EnvironmentManager.Converters
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Converters.BoolToColorConverter
+    name: BoolToColorConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.CountToBoolConverter
+    name: CountToBoolConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.StringNotEmptyConverter
+    name: StringNotEmptyConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.StringNotNullOrEmptyConverter
+    name: StringNotNullOrEmptyConverter
+    type: Class
+- uid: EnvironmentManager.Data
+  name: EnvironmentManager.Data
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Data.HistoricalDataDbContext
+    name: HistoricalDataDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.LocationDbContext
+    name: LocationDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.MaintenanceDataStore
+    name: MaintenanceDataStore
+    type: Class
+  - uid: EnvironmentManager.Data.MaintenanceDbContext
+    name: MaintenanceDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.SensorDbContext
+    name: SensorDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.UserDataStore
+    name: UserDataStore
+    type: Class
+  - uid: EnvironmentManager.Data.UserDbContext
+    name: UserDbContext
+    type: Class
+- uid: EnvironmentManager.Exceptions
+  name: EnvironmentManager.Exceptions
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Exceptions.LoginException
+    name: LoginException
+    type: Class
+- uid: EnvironmentManager.Helpers
+  name: EnvironmentManager.Helpers
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Helpers.Ioc
+    name: Ioc
+    type: Class
+- uid: EnvironmentManager.Interfaces
+  name: EnvironmentManager.Interfaces
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Interfaces.IAuthenticationService
+    name: IAuthenticationService
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IErrorHandling
+    name: IErrorHandling
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.ILocalStorageService
+    name: ILocalStorageService
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.ILoginNavService
+    name: ILoginNavService
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IMaintenanceDataStore
+    name: IMaintenanceDataStore
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IRunOnMainThread
+    name: IRunOnMainThread
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.ISessionService
+    name: ISessionService
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IUserDataStore
+    name: IUserDataStore
+    type: Interface
+- uid: EnvironmentManager.Models
+  name: EnvironmentManager.Models
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Models.ArchiveAirQuality
+    name: ArchiveAirQuality
+    type: Class
+  - uid: EnvironmentManager.Models.ArchiveWaterQuality
+    name: ArchiveWaterQuality
+    type: Class
+  - uid: EnvironmentManager.Models.ArchiveWeatherData
+    name: ArchiveWeatherData
+    type: Class
+  - uid: EnvironmentManager.Models.HistoricalDataRow
+    name: HistoricalDataRow
+    type: Class
+  - uid: EnvironmentManager.Models.Location
+    name: Location
+    type: Class
+  - uid: EnvironmentManager.Models.Maintenance
+    name: Maintenance
+    type: Class
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    type: Class
+  - uid: EnvironmentManager.Models.User
+    name: User
+    type: Class
+- uid: EnvironmentManager.Services
+  name: EnvironmentManager.Services
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Services.AuthenticationService
+    name: AuthenticationService
+    type: Class
+  - uid: EnvironmentManager.Services.DatabaseInitializationService
+    name: DatabaseInitializationService
+    type: Class
+  - uid: EnvironmentManager.Services.IDatabaseInitializationService
+    name: IDatabaseInitializationService
+    type: Interface
+  - uid: EnvironmentManager.Services.LocalStorageService
+    name: LocalStorageService
+    type: Class
+  - uid: EnvironmentManager.Services.LoginNavService
+    name: LoginNavService
+    type: Class
+  - uid: EnvironmentManager.Services.RunOnMainThread
+    name: RunOnMainThread
+    type: Class
+  - uid: EnvironmentManager.Services.SessionService
+    name: SessionService
+    type: Class
+  - uid: EnvironmentManager.Services.ValidationService
+    name: ValidationService
+    type: Class
+- uid: EnvironmentManager.ViewModels
+  name: EnvironmentManager.ViewModels
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.ViewModels.AboutViewModel
+    name: AboutViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.AddSensorViewModel
+    name: AddSensorViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+    name: AllMaintenanceViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.BaseViewModel
+    name: BaseViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.EditSensorViewModel
+    name: EditSensorViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
+    name: HistoricalDataSelectionViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.HistoricalDataViewerViewModel
+    name: HistoricalDataViewerViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.HomeViewModel
+    name: HomeViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.LoginViewModel
+    name: LoginViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.MaintenanceViewModel
+    name: MaintenanceViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.SensorViewModel
+    name: SensorViewModel
+    type: Class
+- uid: EnvironmentManager.Views
+  name: EnvironmentManager.Views
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Views.AboutPage
+    name: AboutPage
+    type: Class
+  - uid: EnvironmentManager.Views.AddSensorPage
+    name: AddSensorPage
+    type: Class
+  - uid: EnvironmentManager.Views.AllMaintenancePage
+    name: AllMaintenancePage
+    type: Class
+  - uid: EnvironmentManager.Views.EditSensorPage
+    name: EditSensorPage
+    type: Class
+  - uid: EnvironmentManager.Views.HistoricalData
+    name: HistoricalData
+    type: Class
+  - uid: EnvironmentManager.Views.HistoricalDataViewerPage
+    name: HistoricalDataViewerPage
+    type: Class
+  - uid: EnvironmentManager.Views.HomePage
+    name: HomePage
+    type: Class
+  - uid: EnvironmentManager.Views.LoginPage
+    name: LoginPage
+    type: Class
+  - uid: EnvironmentManager.Views.MaintenancePage
+    name: MaintenancePage
+    type: Class
+  - uid: EnvironmentManager.Views.SensorPage
+    name: SensorPage
+    type: Class
+memberLayout: SamePage
