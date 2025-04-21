@@ -3,7 +3,7 @@ using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager;
 
-public partial class AppShell : Shell
+public partial class AppShell : Shell {
   private IServiceProvider _serviceProvider;
 	public AppShell(IServiceProvider serviceProvider)
 	{
