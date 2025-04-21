@@ -13,6 +13,12 @@
                 Route="home"
                 Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
         </Tab>
+        <Tab Title="MONITOR">
+            <ShellContent
+                ContentTemplate="{DataTemplate views:SensorMonitoringPage}"
+                Route="sensormonitoring"
+                Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
+        </Tab>
         <Tab Title="ABOUT">
             <ShellContent
                 ContentTemplate="{DataTemplate views:AboutPage}"

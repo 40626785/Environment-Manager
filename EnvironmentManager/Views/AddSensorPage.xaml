@@ -166,7 +166,7 @@
                         BackgroundColor="Gray"/>
                 <Button Grid.Column="1" 
                         Text="Save" 
-                        Command="{Binding SaveCommand}"
+                        Command="{Binding SaveSensorCommand}"
                         IsEnabled="{Binding SensorName, Converter={StaticResource StringNotNullOrEmptyConverter}}"
                         BackgroundColor="#007AFF"/>
             </Grid>

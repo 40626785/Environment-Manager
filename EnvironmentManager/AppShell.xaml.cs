@@ -19,6 +19,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
         Routing.RegisterRoute(nameof(EditSensorPage), typeof(EditSensorPage));
         Routing.RegisterRoute(nameof(AddSensorPage), typeof(AddSensorPage));
+        Routing.RegisterRoute(nameof(SensorMonitoringPage), typeof(SensorMonitoringPage));
 	}
 
     private void RoleBasedNavigation()
