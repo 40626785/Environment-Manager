@@ -24,12 +24,17 @@
     <ProjectReference Include="../EnvironmentManager/EnvironmentManager.csproj" />
   </ItemGroup>
 
-  <!-- Exclude MAUI resources from test project to avoid conflicts -->
+  <!-- Exclude all MAUI resources from test project -->
   <ItemGroup>
-    <MauiAsset Remove="**\*.svg" />
-    <MauiIcon Remove="**\*.svg" />
-    <MauiSplashScreen Remove="**\*.svg" />
-    <MauiImage Remove="**\*.svg" />
+    <MauiAsset Remove="**\*" />
+    <MauiIcon Remove="**\*" />
+    <MauiSplashScreen Remove="**\*" />
+    <MauiImage Remove="**\*" />
+  </ItemGroup>
+
+  <!-- Remove any app icon includes that might be causing conflicts -->
+  <ItemGroup>
+    <MauiIcon Remove="Resources\AppIcon\appicon.svg" />
   </ItemGroup>
 
 </Project>
