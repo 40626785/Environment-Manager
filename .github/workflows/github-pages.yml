@@ -32,6 +32,9 @@ jobs:
       - name: Clean previous build
         run: rm -rf _site
 
+      - name: Install MAUI Workloads
+        run: dotnet workload install maui
+        
       - name: Run docfx metadata for API docs
         run: docfx metadata
 
