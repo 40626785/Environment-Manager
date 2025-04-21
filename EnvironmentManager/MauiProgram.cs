@@ -38,18 +38,18 @@ public static class MauiProgram
 		// Register pages
 		RegisterPages(builder);
 
-	    	// Bind specific implementation to DBContext abstraction
-	    	builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
+        // Bind specific implementation to DBContext abstraction
+        builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
         // Bind specific implementation to DBContext abstraction
         builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
         builder.Services.AddSingleton<IUserDataStore, UserDataStore>();
 
 		// Register App and AppShell
 		builder.Services.AddSingleton<App>(sp =>
-{
-	var dbInitService = sp.GetRequiredService<IDatabaseInitializationService>();
-	return new App(sp, dbInitService); // 👈 this now matches your 2-parameter constructor
-});
+        {
+            var dbInitService = sp.GetRequiredService<IDatabaseInitializationService>();
+            return new App(dbInitService, sp); // 👈 this now matches your 2-parameter constructor
+        });
 
 		builder.Services.AddSingleton<AppShell>();
 
