@@ -6,6 +6,11 @@ using Microsoft.Identity.Client.Extensions.Msal;
 using System.Diagnostics;
 using System.Timers;
 
+/// <summary>
+/// Creates and manages a new login session. 
+/// 
+/// Contains facts about sessions and triggers auto-logout on ttl elapsed
+/// </summary>
 public class SessionService : ISessionService
 {
     private int _ttl = 3600; //duration of a login session
@@ -25,7 +30,11 @@ public class SessionService : ISessionService
         _mainThread = mainThread;
         _storageService = storageService;
     }
-    
+
+    /// <summary>
+    /// Sets facts about session, stores assumed role in local storage and starts session ttl timer.
+    /// </summary>
+    /// <param name="user">User associated with successful login</param>
     public void NewSession(User user){
         _authenticatedUser = user;
         _expiry = DateTime.Now.AddSeconds(_ttl);
@@ -33,6 +42,9 @@ public class SessionService : ISessionService
         StartTimer();
     }
 
+    /// <summary>
+    /// Starts timer that will invoke a method to log a user out following timer completion.
+    /// </summary>
     private void StartTimer() 
     {
         _timer?.Stop(); //clear any old timer created from previous session
@@ -44,6 +56,11 @@ public class SessionService : ISessionService
         _timer.Start();
     }
 
+    /// <summary>
+    /// Reroute user to login page
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void LogoutOnExpire(object sender, ElapsedEventArgs e)
     {
         _mainThread.RunMainThread(() =>
@@ -51,7 +68,9 @@ public class SessionService : ISessionService
         );
     }
 
-    //adds role to local storage to enable role based access control
+    /// <summary>
+    /// Store user role in local storage to enable Role Based Access Control
+    /// </summary>
     private void StoreRole() 
     {
         _storageService.SetStringValue("role", _authenticatedUser.Role.ToString());

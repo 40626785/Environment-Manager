@@ -1,6 +1,10 @@
 namespace EnvironmentManager.Exceptions;
 
-//Custom exception for unsuccessful login
+/// <summary>
+/// Custom Exception for use in failed user authentication. 
+/// 
+/// Can be thrown with default message or provided a message in exception params.
+/// </summary>
 public class LoginException : Exception
 {
     public LoginException() : base("Invalid Username or Password") {}

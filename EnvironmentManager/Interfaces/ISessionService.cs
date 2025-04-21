@@ -2,8 +2,11 @@ using System;
 using EnvironmentManager.Models;
 
 namespace EnvironmentManager.Interfaces;
-
-//Enables Dependency Inversion Principle, allowing management of sessions without directly depending on session class
+/// <summary>
+/// Enables Dependency Inversion Principle, allowing management of sessions without directly depending on session class
+/// 
+/// Implementation of Interface decided in MauiProgram.cs
+/// </summary>
 public interface ISessionService
 {
    User? AuthenticatedUser { get; }
