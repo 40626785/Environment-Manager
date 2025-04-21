@@ -22,6 +22,9 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
 	}
 
+    /// <summary>
+    /// Conditionally creates tabs to access protected views based on roles
+    /// </summary>
     private void RoleBasedNavigation()
     {
         TabBar tabBar = ShellTabBar;

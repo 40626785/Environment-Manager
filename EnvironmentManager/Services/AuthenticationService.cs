@@ -5,6 +5,13 @@ using System.Diagnostics;
 
 namespace EnvironmentManager.Services
 {
+    /// <summary>
+    /// Compares provided credentials against those stored in the database.
+    ///
+    /// Upon successful login, invokes a new login session.
+    /// 
+    /// Implements IAuthenticationService to enable Dependency Injection 
+    /// </summary>
     public class AuthenticationService : IAuthenticationService
     {
         private IUserDataStore _context;
@@ -20,7 +27,12 @@ namespace EnvironmentManager.Services
             _context = context;
             _session = session;
         }
-        
+        /// <summary>
+        /// Retrieves user (if exists) from database and compares provided password with actual password
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <exception cref="LoginException"></exception>
         public void Authenticate(string username, string password){
             User user = _context.GetUser(username); //attempts to retrieve user
             try
@@ -44,6 +56,9 @@ namespace EnvironmentManager.Services
             }
         }
         
+        /// <summary>
+        /// Establishes new login session
+        /// </summary>
         private void ConfigureSession() 
         {
             _session.NewSession(AuthenticatedUser);

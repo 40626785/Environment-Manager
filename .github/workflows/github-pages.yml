@@ -32,6 +32,9 @@ jobs:
       - name: Clean previous build
         run: rm -rf _site
 
+      - name: Run docfx metadata for API docs
+        run: docfx metadata
+
       - name: Build Documentation
         run: docfx docfx.json
 

@@ -4,7 +4,11 @@ using EnvironmentManager.Services;
 
 namespace EnvironmentManager.Interfaces;
 
-//Enables Dependency Inversion Principle, allowing management of authentication without directly depending on session class
+/// <summary>
+/// Enables Dependency Inversion Principle, allowing management of authentication without directly depending on session class
+/// 
+/// Implementation of Interface decided in MauiProgram.cs
+/// </summary>
 public interface IAuthenticationService
 {
     bool Authenticated { get; }
