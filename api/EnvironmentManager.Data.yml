@@ -1,0 +1,92 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Data
+  commentId: N:EnvironmentManager.Data
+  id: EnvironmentManager.Data
+  children:
+  - EnvironmentManager.Data.HistoricalDataDbContext
+  - EnvironmentManager.Data.LocationDbContext
+  - EnvironmentManager.Data.MaintenanceDataStore
+  - EnvironmentManager.Data.MaintenanceDbContext
+  - EnvironmentManager.Data.SensorDbContext
+  - EnvironmentManager.Data.UserDataStore
+  - EnvironmentManager.Data.UserDbContext
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Data
+  nameWithType: EnvironmentManager.Data
+  fullName: EnvironmentManager.Data
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Data.HistoricalDataDbContext
+  commentId: T:EnvironmentManager.Data.HistoricalDataDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.HistoricalDataDbContext.html
+  name: HistoricalDataDbContext
+  nameWithType: HistoricalDataDbContext
+  fullName: EnvironmentManager.Data.HistoricalDataDbContext
+- uid: EnvironmentManager.Data.LocationDbContext
+  commentId: T:EnvironmentManager.Data.LocationDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.LocationDbContext.html
+  name: LocationDbContext
+  nameWithType: LocationDbContext
+  fullName: EnvironmentManager.Data.LocationDbContext
+- uid: EnvironmentManager.Data.MaintenanceDataStore
+  commentId: T:EnvironmentManager.Data.MaintenanceDataStore
+  href: EnvironmentManager.Data.MaintenanceDataStore.html
+  name: MaintenanceDataStore
+  nameWithType: MaintenanceDataStore
+  fullName: EnvironmentManager.Data.MaintenanceDataStore
+- uid: EnvironmentManager.Data.MaintenanceDbContext
+  commentId: T:EnvironmentManager.Data.MaintenanceDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.MaintenanceDbContext.html
+  name: MaintenanceDbContext
+  nameWithType: MaintenanceDbContext
+  fullName: EnvironmentManager.Data.MaintenanceDbContext
+- uid: EnvironmentManager.Data.SensorDbContext
+  commentId: T:EnvironmentManager.Data.SensorDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.SensorDbContext.html
+  name: SensorDbContext
+  nameWithType: SensorDbContext
+  fullName: EnvironmentManager.Data.SensorDbContext
+- uid: EnvironmentManager.Data.UserDataStore
+  commentId: T:EnvironmentManager.Data.UserDataStore
+  href: EnvironmentManager.Data.UserDataStore.html
+  name: UserDataStore
+  nameWithType: UserDataStore
+  fullName: EnvironmentManager.Data.UserDataStore
+- uid: EnvironmentManager.Data.UserDbContext
+  commentId: T:EnvironmentManager.Data.UserDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.UserDbContext.html
+  name: UserDbContext
+  nameWithType: UserDbContext
+  fullName: EnvironmentManager.Data.UserDbContext
+- uid: EnvironmentManager.Data
+  commentId: N:EnvironmentManager.Data
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Data
+  nameWithType: EnvironmentManager.Data
+  fullName: EnvironmentManager.Data
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html

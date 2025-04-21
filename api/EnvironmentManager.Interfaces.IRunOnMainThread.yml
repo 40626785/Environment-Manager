@@ -1,0 +1,108 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.IRunOnMainThread
+  commentId: T:EnvironmentManager.Interfaces.IRunOnMainThread
+  id: IRunOnMainThread
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IRunOnMainThread.RunMainThread(System.Action)
+  langs:
+  - csharp
+  - vb
+  name: IRunOnMainThread
+  nameWithType: IRunOnMainThread
+  fullName: EnvironmentManager.Interfaces.IRunOnMainThread
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IRunOnMainThread.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: IRunOnMainThread
+    path: EnvironmentManager/Interfaces/IRunOnMainThread.cs
+    startLine: 10
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: >-
+    Enables Dependency Inversion Principle, allowing running on main thread without directly depending on concrete implementation
+
+
+    Implementation of Interface decided in MauiProgram.cs
+  example: []
+  syntax:
+    content: public interface IRunOnMainThread
+    content.vb: Public Interface IRunOnMainThread
+- uid: EnvironmentManager.Interfaces.IRunOnMainThread.RunMainThread(System.Action)
+  commentId: M:EnvironmentManager.Interfaces.IRunOnMainThread.RunMainThread(System.Action)
+  id: RunMainThread(System.Action)
+  parent: EnvironmentManager.Interfaces.IRunOnMainThread
+  langs:
+  - csharp
+  - vb
+  name: RunMainThread(Action)
+  nameWithType: IRunOnMainThread.RunMainThread(Action)
+  fullName: EnvironmentManager.Interfaces.IRunOnMainThread.RunMainThread(System.Action)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IRunOnMainThread.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: RunMainThread
+    path: EnvironmentManager/Interfaces/IRunOnMainThread.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void RunMainThread(Action action)
+    parameters:
+    - id: action
+      type: System.Action
+    content.vb: Sub RunMainThread(action As Action)
+  overload: EnvironmentManager.Interfaces.IRunOnMainThread.RunMainThread*
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.IRunOnMainThread.RunMainThread*
+  commentId: Overload:EnvironmentManager.Interfaces.IRunOnMainThread.RunMainThread
+  href: EnvironmentManager.Interfaces.IRunOnMainThread.html#EnvironmentManager_Interfaces_IRunOnMainThread_RunMainThread_System_Action_
+  name: RunMainThread
+  nameWithType: IRunOnMainThread.RunMainThread
+  fullName: EnvironmentManager.Interfaces.IRunOnMainThread.RunMainThread
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

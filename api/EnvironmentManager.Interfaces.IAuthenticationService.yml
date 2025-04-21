@@ -1,0 +1,228 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.IAuthenticationService
+  commentId: T:EnvironmentManager.Interfaces.IAuthenticationService
+  id: IAuthenticationService
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IAuthenticationService.Authenticate(System.String,System.String)
+  - EnvironmentManager.Interfaces.IAuthenticationService.Authenticated
+  - EnvironmentManager.Interfaces.IAuthenticationService.AuthenticatedUser
+  langs:
+  - csharp
+  - vb
+  name: IAuthenticationService
+  nameWithType: IAuthenticationService
+  fullName: EnvironmentManager.Interfaces.IAuthenticationService
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IAuthenticationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: IAuthenticationService
+    path: EnvironmentManager/Interfaces/IAuthenticationService.cs
+    startLine: 11
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: >-
+    Enables Dependency Inversion Principle, allowing management of authentication without directly depending on session class
+
+
+    Implementation of Interface decided in MauiProgram.cs
+  example: []
+  syntax:
+    content: public interface IAuthenticationService
+    content.vb: Public Interface IAuthenticationService
+- uid: EnvironmentManager.Interfaces.IAuthenticationService.Authenticated
+  commentId: P:EnvironmentManager.Interfaces.IAuthenticationService.Authenticated
+  id: Authenticated
+  parent: EnvironmentManager.Interfaces.IAuthenticationService
+  langs:
+  - csharp
+  - vb
+  name: Authenticated
+  nameWithType: IAuthenticationService.Authenticated
+  fullName: EnvironmentManager.Interfaces.IAuthenticationService.Authenticated
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IAuthenticationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Authenticated
+    path: EnvironmentManager/Interfaces/IAuthenticationService.cs
+    startLine: 13
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: bool Authenticated { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property Authenticated As Boolean
+  overload: EnvironmentManager.Interfaces.IAuthenticationService.Authenticated*
+- uid: EnvironmentManager.Interfaces.IAuthenticationService.AuthenticatedUser
+  commentId: P:EnvironmentManager.Interfaces.IAuthenticationService.AuthenticatedUser
+  id: AuthenticatedUser
+  parent: EnvironmentManager.Interfaces.IAuthenticationService
+  langs:
+  - csharp
+  - vb
+  name: AuthenticatedUser
+  nameWithType: IAuthenticationService.AuthenticatedUser
+  fullName: EnvironmentManager.Interfaces.IAuthenticationService.AuthenticatedUser
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IAuthenticationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: AuthenticatedUser
+    path: EnvironmentManager/Interfaces/IAuthenticationService.cs
+    startLine: 14
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: User AuthenticatedUser { get; }
+    parameters: []
+    return:
+      type: EnvironmentManager.Models.User
+    content.vb: ReadOnly Property AuthenticatedUser As User
+  overload: EnvironmentManager.Interfaces.IAuthenticationService.AuthenticatedUser*
+- uid: EnvironmentManager.Interfaces.IAuthenticationService.Authenticate(System.String,System.String)
+  commentId: M:EnvironmentManager.Interfaces.IAuthenticationService.Authenticate(System.String,System.String)
+  id: Authenticate(System.String,System.String)
+  parent: EnvironmentManager.Interfaces.IAuthenticationService
+  langs:
+  - csharp
+  - vb
+  name: Authenticate(string, string)
+  nameWithType: IAuthenticationService.Authenticate(string, string)
+  fullName: EnvironmentManager.Interfaces.IAuthenticationService.Authenticate(string, string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IAuthenticationService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Authenticate
+    path: EnvironmentManager/Interfaces/IAuthenticationService.cs
+    startLine: 16
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void Authenticate(string username, string password)
+    parameters:
+    - id: username
+      type: System.String
+    - id: password
+      type: System.String
+    content.vb: Sub Authenticate(username As String, password As String)
+  overload: EnvironmentManager.Interfaces.IAuthenticationService.Authenticate*
+  nameWithType.vb: IAuthenticationService.Authenticate(String, String)
+  fullName.vb: EnvironmentManager.Interfaces.IAuthenticationService.Authenticate(String, String)
+  name.vb: Authenticate(String, String)
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.IAuthenticationService.Authenticated*
+  commentId: Overload:EnvironmentManager.Interfaces.IAuthenticationService.Authenticated
+  href: EnvironmentManager.Interfaces.IAuthenticationService.html#EnvironmentManager_Interfaces_IAuthenticationService_Authenticated
+  name: Authenticated
+  nameWithType: IAuthenticationService.Authenticated
+  fullName: EnvironmentManager.Interfaces.IAuthenticationService.Authenticated
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Interfaces.IAuthenticationService.AuthenticatedUser*
+  commentId: Overload:EnvironmentManager.Interfaces.IAuthenticationService.AuthenticatedUser
+  href: EnvironmentManager.Interfaces.IAuthenticationService.html#EnvironmentManager_Interfaces_IAuthenticationService_AuthenticatedUser
+  name: AuthenticatedUser
+  nameWithType: IAuthenticationService.AuthenticatedUser
+  fullName: EnvironmentManager.Interfaces.IAuthenticationService.AuthenticatedUser
+- uid: EnvironmentManager.Models.User
+  commentId: T:EnvironmentManager.Models.User
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: EnvironmentManager.Models.User
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: EnvironmentManager.Interfaces.IAuthenticationService.Authenticate*
+  commentId: Overload:EnvironmentManager.Interfaces.IAuthenticationService.Authenticate
+  href: EnvironmentManager.Interfaces.IAuthenticationService.html#EnvironmentManager_Interfaces_IAuthenticationService_Authenticate_System_String_System_String_
+  name: Authenticate
+  nameWithType: IAuthenticationService.Authenticate
+  fullName: EnvironmentManager.Interfaces.IAuthenticationService.Authenticate
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

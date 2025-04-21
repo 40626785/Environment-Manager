@@ -1,0 +1,640 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Services.SessionService
+  commentId: T:EnvironmentManager.Services.SessionService
+  id: SessionService
+  parent: EnvironmentManager.Services
+  children:
+  - EnvironmentManager.Services.SessionService.#ctor(EnvironmentManager.Interfaces.ILoginNavService,EnvironmentManager.Interfaces.IRunOnMainThread,EnvironmentManager.Interfaces.ILocalStorageService)
+  - EnvironmentManager.Services.SessionService.AuthenticatedUser
+  - EnvironmentManager.Services.SessionService.Expiry
+  - EnvironmentManager.Services.SessionService.NewSession(EnvironmentManager.Models.User)
+  langs:
+  - csharp
+  - vb
+  name: SessionService
+  nameWithType: SessionService
+  fullName: EnvironmentManager.Services.SessionService
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/Services/SessionService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: SessionService
+    path: EnvironmentManager/Services/SessionService.cs
+    startLine: 13
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  summary: >-
+    Creates and manages a new login session. 
+
+
+    Contains facts about sessions and triggers auto-logout on ttl elapsed
+  example: []
+  syntax:
+    content: 'public class SessionService : ISessionService'
+    content.vb: Public Class SessionService Implements ISessionService
+  inheritance:
+  - System.Object
+  implements:
+  - EnvironmentManager.Interfaces.ISessionService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.Services.SessionService.AuthenticatedUser
+  commentId: P:EnvironmentManager.Services.SessionService.AuthenticatedUser
+  id: AuthenticatedUser
+  parent: EnvironmentManager.Services.SessionService
+  langs:
+  - csharp
+  - vb
+  name: AuthenticatedUser
+  nameWithType: SessionService.AuthenticatedUser
+  fullName: EnvironmentManager.Services.SessionService.AuthenticatedUser
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Services/SessionService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: AuthenticatedUser
+    path: EnvironmentManager/Services/SessionService.cs
+    startLine: 23
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  example: []
+  syntax:
+    content: public User? AuthenticatedUser { get; }
+    parameters: []
+    return:
+      type: EnvironmentManager.Models.User
+    content.vb: Public ReadOnly Property AuthenticatedUser As User
+  overload: EnvironmentManager.Services.SessionService.AuthenticatedUser*
+  implements:
+  - EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+- uid: EnvironmentManager.Services.SessionService.Expiry
+  commentId: P:EnvironmentManager.Services.SessionService.Expiry
+  id: Expiry
+  parent: EnvironmentManager.Services.SessionService
+  langs:
+  - csharp
+  - vb
+  name: Expiry
+  nameWithType: SessionService.Expiry
+  fullName: EnvironmentManager.Services.SessionService.Expiry
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Services/SessionService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Expiry
+    path: EnvironmentManager/Services/SessionService.cs
+    startLine: 24
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  example: []
+  syntax:
+    content: public DateTime? Expiry { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public ReadOnly Property Expiry As Date?
+  overload: EnvironmentManager.Services.SessionService.Expiry*
+  implements:
+  - EnvironmentManager.Interfaces.ISessionService.Expiry
+- uid: EnvironmentManager.Services.SessionService.#ctor(EnvironmentManager.Interfaces.ILoginNavService,EnvironmentManager.Interfaces.IRunOnMainThread,EnvironmentManager.Interfaces.ILocalStorageService)
+  commentId: M:EnvironmentManager.Services.SessionService.#ctor(EnvironmentManager.Interfaces.ILoginNavService,EnvironmentManager.Interfaces.IRunOnMainThread,EnvironmentManager.Interfaces.ILocalStorageService)
+  id: '#ctor(EnvironmentManager.Interfaces.ILoginNavService,EnvironmentManager.Interfaces.IRunOnMainThread,EnvironmentManager.Interfaces.ILocalStorageService)'
+  parent: EnvironmentManager.Services.SessionService
+  langs:
+  - csharp
+  - vb
+  name: SessionService(ILoginNavService, IRunOnMainThread, ILocalStorageService)
+  nameWithType: SessionService.SessionService(ILoginNavService, IRunOnMainThread, ILocalStorageService)
+  fullName: EnvironmentManager.Services.SessionService.SessionService(EnvironmentManager.Interfaces.ILoginNavService, EnvironmentManager.Interfaces.IRunOnMainThread, EnvironmentManager.Interfaces.ILocalStorageService)
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/Services/SessionService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: .ctor
+    path: EnvironmentManager/Services/SessionService.cs
+    startLine: 26
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  syntax:
+    content: public SessionService(ILoginNavService loginNavService, IRunOnMainThread mainThread, ILocalStorageService storageService)
+    parameters:
+    - id: loginNavService
+      type: EnvironmentManager.Interfaces.ILoginNavService
+    - id: mainThread
+      type: EnvironmentManager.Interfaces.IRunOnMainThread
+    - id: storageService
+      type: EnvironmentManager.Interfaces.ILocalStorageService
+    content.vb: Public Sub New(loginNavService As ILoginNavService, mainThread As IRunOnMainThread, storageService As ILocalStorageService)
+  overload: EnvironmentManager.Services.SessionService.#ctor*
+  nameWithType.vb: SessionService.New(ILoginNavService, IRunOnMainThread, ILocalStorageService)
+  fullName.vb: EnvironmentManager.Services.SessionService.New(EnvironmentManager.Interfaces.ILoginNavService, EnvironmentManager.Interfaces.IRunOnMainThread, EnvironmentManager.Interfaces.ILocalStorageService)
+  name.vb: New(ILoginNavService, IRunOnMainThread, ILocalStorageService)
+- uid: EnvironmentManager.Services.SessionService.NewSession(EnvironmentManager.Models.User)
+  commentId: M:EnvironmentManager.Services.SessionService.NewSession(EnvironmentManager.Models.User)
+  id: NewSession(EnvironmentManager.Models.User)
+  parent: EnvironmentManager.Services.SessionService
+  langs:
+  - csharp
+  - vb
+  name: NewSession(User)
+  nameWithType: SessionService.NewSession(User)
+  fullName: EnvironmentManager.Services.SessionService.NewSession(EnvironmentManager.Models.User)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Services/SessionService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: NewSession
+    path: EnvironmentManager/Services/SessionService.cs
+    startLine: 37
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Services
+  summary: Sets facts about session, stores assumed role in local storage and starts session ttl timer.
+  example: []
+  syntax:
+    content: public void NewSession(User user)
+    parameters:
+    - id: user
+      type: EnvironmentManager.Models.User
+      description: User associated with successful login
+    content.vb: Public Sub NewSession(user As User)
+  overload: EnvironmentManager.Services.SessionService.NewSession*
+  implements:
+  - EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+references:
+- uid: EnvironmentManager.Services
+  commentId: N:EnvironmentManager.Services
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Services
+  nameWithType: EnvironmentManager.Services
+  fullName: EnvironmentManager.Services
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: EnvironmentManager.Interfaces.ISessionService
+  commentId: T:EnvironmentManager.Interfaces.ISessionService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ISessionService.html
+  name: ISessionService
+  nameWithType: ISessionService
+  fullName: EnvironmentManager.Interfaces.ISessionService
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Services.SessionService.AuthenticatedUser*
+  commentId: Overload:EnvironmentManager.Services.SessionService.AuthenticatedUser
+  href: EnvironmentManager.Services.SessionService.html#EnvironmentManager_Services_SessionService_AuthenticatedUser
+  name: AuthenticatedUser
+  nameWithType: SessionService.AuthenticatedUser
+  fullName: EnvironmentManager.Services.SessionService.AuthenticatedUser
+- uid: EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+  commentId: P:EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+  parent: EnvironmentManager.Interfaces.ISessionService
+  href: EnvironmentManager.Interfaces.ISessionService.html#EnvironmentManager_Interfaces_ISessionService_AuthenticatedUser
+  name: AuthenticatedUser
+  nameWithType: ISessionService.AuthenticatedUser
+  fullName: EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+- uid: EnvironmentManager.Models.User
+  commentId: T:EnvironmentManager.Models.User
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: EnvironmentManager.Models.User
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: EnvironmentManager.Services.SessionService.Expiry*
+  commentId: Overload:EnvironmentManager.Services.SessionService.Expiry
+  href: EnvironmentManager.Services.SessionService.html#EnvironmentManager_Services_SessionService_Expiry
+  name: Expiry
+  nameWithType: SessionService.Expiry
+  fullName: EnvironmentManager.Services.SessionService.Expiry
+- uid: EnvironmentManager.Interfaces.ISessionService.Expiry
+  commentId: P:EnvironmentManager.Interfaces.ISessionService.Expiry
+  parent: EnvironmentManager.Interfaces.ISessionService
+  href: EnvironmentManager.Interfaces.ISessionService.html#EnvironmentManager_Interfaces_ISessionService_Expiry
+  name: Expiry
+  nameWithType: ISessionService.Expiry
+  fullName: EnvironmentManager.Interfaces.ISessionService.Expiry
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EnvironmentManager.Services.SessionService.#ctor*
+  commentId: Overload:EnvironmentManager.Services.SessionService.#ctor
+  href: EnvironmentManager.Services.SessionService.html#EnvironmentManager_Services_SessionService__ctor_EnvironmentManager_Interfaces_ILoginNavService_EnvironmentManager_Interfaces_IRunOnMainThread_EnvironmentManager_Interfaces_ILocalStorageService_
+  name: SessionService
+  nameWithType: SessionService.SessionService
+  fullName: EnvironmentManager.Services.SessionService.SessionService
+  nameWithType.vb: SessionService.New
+  fullName.vb: EnvironmentManager.Services.SessionService.New
+  name.vb: New
+- uid: EnvironmentManager.Interfaces.ILoginNavService
+  commentId: T:EnvironmentManager.Interfaces.ILoginNavService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ILoginNavService.html
+  name: ILoginNavService
+  nameWithType: ILoginNavService
+  fullName: EnvironmentManager.Interfaces.ILoginNavService
+- uid: EnvironmentManager.Interfaces.IRunOnMainThread
+  commentId: T:EnvironmentManager.Interfaces.IRunOnMainThread
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IRunOnMainThread.html
+  name: IRunOnMainThread
+  nameWithType: IRunOnMainThread
+  fullName: EnvironmentManager.Interfaces.IRunOnMainThread
+- uid: EnvironmentManager.Interfaces.ILocalStorageService
+  commentId: T:EnvironmentManager.Interfaces.ILocalStorageService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ILocalStorageService.html
+  name: ILocalStorageService
+  nameWithType: ILocalStorageService
+  fullName: EnvironmentManager.Interfaces.ILocalStorageService
+- uid: EnvironmentManager.Services.SessionService.NewSession*
+  commentId: Overload:EnvironmentManager.Services.SessionService.NewSession
+  href: EnvironmentManager.Services.SessionService.html#EnvironmentManager_Services_SessionService_NewSession_EnvironmentManager_Models_User_
+  name: NewSession
+  nameWithType: SessionService.NewSession
+  fullName: EnvironmentManager.Services.SessionService.NewSession
+- uid: EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+  commentId: M:EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+  parent: EnvironmentManager.Interfaces.ISessionService
+  href: EnvironmentManager.Interfaces.ISessionService.html#EnvironmentManager_Interfaces_ISessionService_NewSession_EnvironmentManager_Models_User_
+  name: NewSession(User)
+  nameWithType: ISessionService.NewSession(User)
+  fullName: EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+  spec.csharp:
+  - uid: EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+    name: NewSession
+    href: EnvironmentManager.Interfaces.ISessionService.html#EnvironmentManager_Interfaces_ISessionService_NewSession_EnvironmentManager_Models_User_
+  - name: (
+  - uid: EnvironmentManager.Models.User
+    name: User
+    href: EnvironmentManager.Models.User.html
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+    name: NewSession
+    href: EnvironmentManager.Interfaces.ISessionService.html#EnvironmentManager_Interfaces_ISessionService_NewSession_EnvironmentManager_Models_User_
+  - name: (
+  - uid: EnvironmentManager.Models.User
+    name: User
+    href: EnvironmentManager.Models.User.html
+  - name: )

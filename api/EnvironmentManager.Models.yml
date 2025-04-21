@@ -1,0 +1,98 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  id: EnvironmentManager.Models
+  children:
+  - EnvironmentManager.Models.ArchiveAirQuality
+  - EnvironmentManager.Models.ArchiveWaterQuality
+  - EnvironmentManager.Models.ArchiveWeatherData
+  - EnvironmentManager.Models.HistoricalDataRow
+  - EnvironmentManager.Models.Location
+  - EnvironmentManager.Models.Maintenance
+  - EnvironmentManager.Models.Sensor
+  - EnvironmentManager.Models.User
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Models.ArchiveAirQuality
+  commentId: T:EnvironmentManager.Models.ArchiveAirQuality
+  href: EnvironmentManager.Models.ArchiveAirQuality.html
+  name: ArchiveAirQuality
+  nameWithType: ArchiveAirQuality
+  fullName: EnvironmentManager.Models.ArchiveAirQuality
+- uid: EnvironmentManager.Models.ArchiveWaterQuality
+  commentId: T:EnvironmentManager.Models.ArchiveWaterQuality
+  href: EnvironmentManager.Models.ArchiveWaterQuality.html
+  name: ArchiveWaterQuality
+  nameWithType: ArchiveWaterQuality
+  fullName: EnvironmentManager.Models.ArchiveWaterQuality
+- uid: EnvironmentManager.Models.ArchiveWeatherData
+  commentId: T:EnvironmentManager.Models.ArchiveWeatherData
+  href: EnvironmentManager.Models.ArchiveWeatherData.html
+  name: ArchiveWeatherData
+  nameWithType: ArchiveWeatherData
+  fullName: EnvironmentManager.Models.ArchiveWeatherData
+- uid: EnvironmentManager.Models.HistoricalDataRow
+  commentId: T:EnvironmentManager.Models.HistoricalDataRow
+  href: EnvironmentManager.Models.HistoricalDataRow.html
+  name: HistoricalDataRow
+  nameWithType: HistoricalDataRow
+  fullName: EnvironmentManager.Models.HistoricalDataRow
+- uid: EnvironmentManager.Models.Location
+  commentId: T:EnvironmentManager.Models.Location
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.Location.html
+  name: Location
+  nameWithType: Location
+  fullName: EnvironmentManager.Models.Location
+- uid: EnvironmentManager.Models.Maintenance
+  commentId: T:EnvironmentManager.Models.Maintenance
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.Maintenance.html
+  name: Maintenance
+  nameWithType: Maintenance
+  fullName: EnvironmentManager.Models.Maintenance
+- uid: EnvironmentManager.Models.Sensor
+  commentId: T:EnvironmentManager.Models.Sensor
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.Sensor.html
+  name: Sensor
+  nameWithType: Sensor
+  fullName: EnvironmentManager.Models.Sensor
+- uid: EnvironmentManager.Models.User
+  commentId: T:EnvironmentManager.Models.User
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: EnvironmentManager.Models.User
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
