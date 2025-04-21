@@ -94,7 +94,7 @@ public class EditSensorViewModelTests
         viewModel.SensorId = 1;
 
         // Act
-        await viewModel.SaveCommand.ExecuteAsync(null);
+        await viewModel.SaveSensorCommand.ExecuteAsync(null);
 
         // Assert
         Assert.Equal("Updated Name", sensor.SensorName);
