@@ -4,43 +4,12 @@
              x:Class="EnvironmentManager.Views.DatabaseAdminPage"
              Title="DatabaseAdminPage">
         <VerticalStackLayout Padding="20">
-                <Label Text="Select Table:"/>
-                <Picker ItemsSource="{Binding TableNames}"
-                        SelectedItem="{Binding SelectedTable}"
-                        Title="Choose a table"/>
+                <Picker Title="Choose table"
+                        ItemsSource="{Binding TableOptions}"
+                        SelectedItem="{Binding SelectedTable}"/>
 
-                <Label Text="Filter by Date:"/>
-                <DatePicker Date="{Binding FilterDate}"/>
+                <Button Text="Manage Table"
+                        Command="{Binding NavigateToTableCommand}"/>
 
-                <Label Text="ID Range:"/>
-                <HorizontalStackLayout>
-                        <Entry Placeholder="Start ID"
-                               Keyboard="Numeric"
-                               Text="{Binding StartId}"/>
-                        <Entry Placeholder="End ID"
-                               Keyboard="Numeric"
-                               Text="{Binding EndId}"/>
-                </HorizontalStackLayout>
-                <Button Text="Clear Data by Date"
-                        BackgroundColor="#6750A4"
-                        TextColor="White"
-                        CornerRadius="8"
-                        Padding="10"
-                        Command="{Binding ClearDataByDateCommand}"
-                        Margin="0,10,0,20"/>
-                <Button Text="Clear Data by ID Range"
-                        BackgroundColor="#6750A4"
-                        TextColor="White"
-                        CornerRadius="8"
-                        Padding="10"
-                        Command="{Binding ClearDataByIdRangeCommand}"
-                        Margin="0,10,0,20"/>
-                <Button Text="View Data"
-                        BackgroundColor="#6750A4"
-                        TextColor="White"
-                        CornerRadius="8"
-                        Padding="10"
-                        Command="{Binding ViewDataCommand}"
-                        Margin="0,10,0,20"/>
         </VerticalStackLayout>
 </ContentPage>

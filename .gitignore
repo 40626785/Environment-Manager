@@ -49,3 +49,4 @@ EnvironmentManager.Test/bin
 # Mac .DS_Store
 .DS_Store
 _site/
+EnvironmentManager/appsettings.json

@@ -97,12 +97,12 @@ public static class MauiProgram
 				throw;
 			}
 		});
-		// Configure DatabaseAdminDbContext
+		// Register DatabaseAdminDbContext 
 		builder.Services.AddDbContext<DatabaseAdminDbContext>(options =>
 		{
 			try
 			{
-				var connectionString = builder.Configuration.GetConnectionString("MySQLConnection");
+				var connectionString = builder.Configuration.GetConnectionString("SQLConnection");
 				Debug.WriteLine("Configuring database admin context");
 				options.UseSqlServer(connectionString);
 			}
@@ -151,7 +151,7 @@ public static class MauiProgram
 		});
 
 	}
-	// Register your DatabaseAdminDbContext using connection string from appsettings.json
+
 
 
 	private static void RegisterServices(MauiAppBuilder builder)
@@ -160,9 +160,9 @@ public static class MauiProgram
 		builder.Services.AddScoped<IDatabaseInitializationService, DatabaseInitializationService>();
 
 		// Add other services here
+
+		builder.Services.AddSingleton<TableMetadataService>();
 		builder.Services.AddScoped<IDatabaseAdminDataStore, DatabaseAdminDbContext>();
-		builder.Services.AddSingleton<DatabaseAdminViewModel>();
-		builder.Services.AddTransient<DatabaseAdminPage>();
 
 	}
 
@@ -175,6 +175,9 @@ public static class MauiProgram
 		builder.Services.AddTransient<AddSensorViewModel>();
 		builder.Services.AddTransient<EditSensorViewModel>();
 		builder.Services.AddTransient<DatabaseAdminViewModel>();
+		builder.Services.AddTransient<AirQualityAdminViewModel>();
+		builder.Services.AddTransient<ErrorTableAdminViewModel>();
+
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -186,5 +189,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<AddSensorPage>();
 		builder.Services.AddTransient<EditSensorPage>();
 		builder.Services.AddTransient<DatabaseAdminPage>();
+		builder.Services.AddTransient<DatabaseAdminPage>();
+		builder.Services.AddTransient<TableAdminPage>();
 	}
 }

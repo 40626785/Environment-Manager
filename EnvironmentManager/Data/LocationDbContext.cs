@@ -7,7 +7,7 @@ namespace EnvironmentManager.Data
     {
         public LocationDbContext()
         { }
-        
+
         public LocationDbContext(DbContextOptions<LocationDbContext> options) : base(options)
         { }
 
