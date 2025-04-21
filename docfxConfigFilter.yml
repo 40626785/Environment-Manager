@@ -1,5 +1,0 @@
-apiRules:
-  - exclude:
-      uidRegex: ^EnvironmentManager\.Platforms
-  - exclude:
-      uidRegex: ^Microsoft\.Maui
