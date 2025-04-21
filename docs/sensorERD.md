@@ -1,6 +1,8 @@
 ```mermaid
 erDiagram
     LOCATION ||--o{ SENSOR : hosts
+    SENSOR ||--o{ SENSOR_STATUS : generates
+    SENSOR ||--o{ MAINTENANCE : requires
     
     LOCATION {
         int LocationId PK
@@ -32,5 +34,27 @@ erDiagram
         string SensorUrl
         string ConnectivityStatus
         float BatteryLevelPercentage
+    }
+
+    SENSOR_STATUS {
+        int StatusId PK
+        int SensorId FK
+        string ConnectivityStatus
+        datetime StatusTimestamp
+        float BatteryLevelPercentage
+        int ErrorCount
+        int WarningCount
+    }
+
+    MAINTENANCE {
+        int MaintenanceId PK
+        int SensorId FK
+        string Description
+        datetime ScheduledDate
+        datetime CompletedDate
+        string Priority
+        string Status
+        string TechnicianName
+        string MaintenanceType
     }
 ```
