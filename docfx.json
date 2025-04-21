@@ -9,6 +9,7 @@
         ],
         "dest": "api",
         "genereateToc": true,
+        "filter": "docfxConfigFilter.yml",
         "properties": {
             "TargetFramework": "net8.0"
         }
