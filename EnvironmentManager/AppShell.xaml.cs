@@ -5,9 +5,12 @@ namespace EnvironmentManager;
 
 public partial class AppShell : Shell
 {
-	public AppShell()
+    private IServiceProvider _serviceProvider;
+	public AppShell(IServiceProvider serviceProvider)
 	{
-		InitializeComponent();
+		_serviceProvider = serviceProvider;
+        InitializeComponent();
+        RoleBasedNavigation();
 
         // Register routes for navigation
         Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
@@ -17,4 +20,38 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(EditSensorPage), typeof(EditSensorPage));
         Routing.RegisterRoute(nameof(AddSensorPage), typeof(AddSensorPage));
 	}
+
+    private void RoleBasedNavigation()
+    {
+        TabBar tabBar = ShellTabBar;
+        string role = Preferences.Get("role","");
+        switch(role){
+            case "OperationsManager":
+                var maintenance = new Tab
+                {
+                    Title = "MAINTENANCE"
+                };
+
+                maintenance.Items.Add(new ShellContent
+                {
+                    Title = "MAINTENANCE",
+                    Content = _serviceProvider.GetRequiredService<AllMaintenancePage>()
+                });
+                tabBar.Items.Add(maintenance);
+                break;
+            case "EnvironmentalScientist":
+                var sensors = new Tab
+                {
+                    Title = "SENSORS"
+                };
+
+                sensors.Items.Add(new ShellContent
+                {
+                    Title = "SENSORS",
+                    Content = _serviceProvider.GetRequiredService<SensorPage>()
+                });
+                tabBar.Items.Add(sensors);
+                break;
+        }
+    }
 }
