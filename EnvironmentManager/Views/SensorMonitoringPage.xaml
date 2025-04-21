@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:EnvironmentManager.ViewModels"
+             xmlns:models="clr-namespace:EnvironmentManager.Models"
+             x:Class="EnvironmentManager.Views.SensorMonitoringPage"
+             Title="Sensor Monitoring Dashboard">
+
+    <!-- The BindingContext will be set in the code-behind -->
+
+    <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshNowCommand}">
+        <ScrollView>
+            <Grid RowDefinitions="Auto, Auto, *" RowSpacing="10" Padding="10">
+                <!-- Header with counters -->
+                <Frame Grid.Row="0" BorderColor="LightGray" CornerRadius="10" Padding="10" Margin="0,5">
+                    <Grid ColumnDefinitions="*, *, *, *" ColumnSpacing="5">
+                        <!-- Total Sensors -->
+                        <Frame BackgroundColor="#f0f0f0" CornerRadius="8" Padding="10" Grid.Column="0">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="{Binding TotalSensors}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+                                <Label Text="Total Sensors" FontSize="14" HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Frame>
+                        
+                        <!-- Online Sensors -->
+                        <Frame BackgroundColor="#e6ffe6" CornerRadius="8" Padding="10" Grid.Column="1">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="{Binding OnlineSensors}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Green" />
+                                <Label Text="Online" FontSize="14" HorizontalOptions="Center" TextColor="DarkGreen" />
+                            </VerticalStackLayout>
+                        </Frame>
+                        
+                        <!-- Offline Sensors -->
+                        <Frame BackgroundColor="#ffebeb" CornerRadius="8" Padding="10" Grid.Column="2">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="{Binding OfflineSensors}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Red" />
+                                <Label Text="Offline" FontSize="14" HorizontalOptions="Center" TextColor="DarkRed" />
+                            </VerticalStackLayout>
+                        </Frame>
+                        
+                        <!-- Degraded Sensors -->
+                        <Frame BackgroundColor="#fff8e6" CornerRadius="8" Padding="10" Grid.Column="3">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="{Binding DegradedSensors}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Orange" />
+                                <Label Text="Degraded" FontSize="14" HorizontalOptions="Center" TextColor="DarkOrange" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </Grid>
+                </Frame>
+                
+                <!-- Controls bar -->
+                <Frame Grid.Row="1" BorderColor="LightGray" CornerRadius="10" Padding="10" Margin="0,5">
+                    <Grid ColumnDefinitions="Auto, *, Auto, Auto" ColumnSpacing="10">
+                        <Label Text="Last refreshed: " VerticalOptions="Center" Grid.Column="0" />
+                        <Label Text="{Binding LastRefreshTime, StringFormat='{0:HH:mm:ss}'}" VerticalOptions="Center" Grid.Column="1" />
+                        
+                        <CheckBox IsChecked="{Binding AutoRefreshEnabled}" Grid.Column="2" 
+                                  VerticalOptions="Center" />
+                        <Label Text="Auto-refresh" VerticalOptions="Center" Grid.Column="3" />
+                    </Grid>
+                </Frame>
+                
+                <!-- Sensor status list -->
+                <Frame Grid.Row="2" BorderColor="LightGray" CornerRadius="10" Padding="10" Margin="0,5">
+                    <CollectionView ItemsSource="{Binding SensorStatuses}" 
+                                  SelectionMode="Single"
+                                  SelectionChangedCommand="{Binding ViewSensorDetailsCommand}"
+                                  SelectionChangedCommandParameter="{Binding SelectedSensorStatus}">
+                        <CollectionView.EmptyView>
+                            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label Text="No sensor status data available" FontSize="16" HorizontalOptions="Center" />
+                                <Label Text="Make sure sensors are connected to the system" FontSize="14" HorizontalOptions="Center" TextColor="Gray" />
+                            </VerticalStackLayout>
+                        </CollectionView.EmptyView>
+                        
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:SensorStatus">
+                                <Frame Margin="5" Padding="10" BorderColor="LightGray" CornerRadius="5">
+                                    <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="Auto, Auto, Auto">
+                                        <!-- Status indicator -->
+                                        <Ellipse Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" 
+                                               WidthRequest="16" HeightRequest="16" Margin="0,0,10,0"
+                                               VerticalOptions="Center">
+                                            <Ellipse.Fill>
+                                                <Binding Path="ConnectivityStatus" Converter="{StaticResource StatusToColorConverter}" />
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        
+                                        <!-- Sensor name and type -->
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Sensor.SensorName}" FontSize="16" FontAttributes="Bold" />
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Sensor.SensorType}" FontSize="14" TextColor="Gray" />
+                                        
+                                        <!-- Status details -->
+                                        <Grid Grid.Row="2" Grid.Column="1" ColumnDefinitions="Auto, *, Auto, *">
+                                            <Label Grid.Column="0" Text="Status: " FontSize="12" />
+                                            <Label Grid.Column="1" Text="{Binding ConnectivityStatus}" FontSize="12" FontAttributes="Bold" />
+                                            
+                                            <Label Grid.Column="2" Text="Battery: " FontSize="12" Margin="10,0,0,0" />
+                                            <Label Grid.Column="3" Text="{Binding BatteryLevelPercentage, StringFormat='{0:F1}%'}" FontSize="12" />
+                                        </Grid>
+                                        
+                                        <!-- Last Updated -->
+                                        <Label Grid.Row="0" Grid.Column="2" Text="{Binding StatusTimestamp, StringFormat='{0:HH:mm:ss}'}" 
+                                              FontSize="12" HorizontalOptions="End" TextColor="Gray" />
+                                        
+                                        <!-- Details about sensor health -->
+                                        <StackLayout Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Orientation="Vertical" HorizontalOptions="End">
+                                            <Label Text="{Binding ErrorCount, StringFormat='Errors: {0}'}" FontSize="12" TextColor="Red" 
+                                                  IsVisible="{Binding ErrorCount, Converter={StaticResource NotZeroConverter}}" />
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </RefreshView>
+</ContentPage> 

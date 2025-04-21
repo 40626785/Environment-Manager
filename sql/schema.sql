@@ -41,3 +41,15 @@ CREATE TABLE Maintenance (
     Priority INT NOT NULL,
     Description NVARCHAR(MAX) NOT NULL
 );
+
+-- Create SensorStatus table for real-time monitoring
+CREATE TABLE SensorStatus (
+    StatusId INT IDENTITY(1,1) PRIMARY KEY,
+    SensorId INT NOT NULL,
+    ConnectivityStatus NVARCHAR(50) NOT NULL DEFAULT 'Offline', -- Online, Offline, Degraded, Maintenance
+    StatusTimestamp DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+    BatteryLevelPercentage REAL,
+    ErrorCount INT DEFAULT 0,
+    WarningCount INT DEFAULT 0,
+    CONSTRAINT FK_SensorStatus_Sensors FOREIGN KEY (SensorId) REFERENCES Sensors(SensorId)
+);
