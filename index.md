@@ -1,38 +1,39 @@
 # Environment Manager Documentation
 
-Welcome to the Environment Manager documentation. This application is a .NET MAUI-based system for managing environmental sensors and monitoring data.
+Welcome to the Environment Manager documentation. This application is a .NET MAUI-based system for comprehensive environment and sensor management across multiple facilities.
 
-## Overview
+## Application Overview
 
-The Environment Manager is a comprehensive solution for:
-- Managing environmental sensors and their locations
-- Monitoring sensor readings and environmental parameters
-- Tracking maintenance schedules
-- Managing multiple database contexts for different aspects of the system
+The Environment Manager provides an integrated platform for environmental monitoring, with capabilities for:
+- Sensor network management and configuration
+- Environmental parameter tracking and analysis
+- Maintenance scheduling and prioritization
+- Location-based monitoring and reporting
 
-## Key Features
+## Architecture Highlights
 
-1. Multi-Context Database Architecture
-   - MaintenanceDbContext
-   - LocationDbContext
-   - SensorDbContext
-   - EnvironmentalParameterDbContext
+The application employs a multi-context database architecture that separates concerns into distinct functional areas, improving maintainability and scalability. This architecture allows for independent development and testing of different system components.
 
-2. Sensor Management
-   - Add, edit, and delete sensors
-   - Track sensor locations
-   - Monitor sensor status and readings
+## Development Approach
 
-3. Maintenance Tracking
-   - Schedule maintenance tasks
-   - Track maintenance status
-   - Priority-based maintenance organization
+Our team follows these key development principles:
 
-4. Environmental Parameter Monitoring
-   - Track various environmental parameters
-   - Monitor safe levels
-   - Record measurement frequencies
+### Architectural Patterns
+- **MVVM Pattern**: Clear separation between UI and business logic
+- **Repository Pattern**: Abstraction of data access logic
+- **Dependency Injection**: Services and contexts are injected for better testability
 
-## Getting Started
+### Coding Standards
+- **SOLID Principles**: Single responsibility, open-closed, Liskov substitution, interface segregation, and dependency inversion
+- **Asynchronous Programming**: Consistent use of async/await patterns for database and network operations
+- **Comprehensive Testing**: Unit tests for all business logic components
+- **Clean Code Practices**: Meaningful naming, appropriate comments, and consistent formatting
 
-See the [Articles](articles/intro.md) section for detailed documentation on using and developing with the Environment Manager.
+### Documentation
+- **XML Documentation**: All public APIs are documented
+- **UML Diagrams**: Class diagrams and ERDs for major components
+- **Feature-Based Documentation**: Detailed documentation for each implemented feature
+
+## Feature Documentation
+
+For detailed information on specific features, please explore the Features section in the navigation menu.

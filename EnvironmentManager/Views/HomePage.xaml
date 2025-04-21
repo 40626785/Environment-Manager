@@ -5,6 +5,7 @@
              Title="Home"
              Shell.NavBarIsVisible="False"
              BackgroundColor="White">
+
     <Grid RowDefinitions="Auto,*">
         <!-- Header -->
         <Grid Grid.Row="0"
@@ -20,6 +21,8 @@
                    TextColor="White"
                    FontSize="24"
                    FontAttributes="Bold"/>
+
+            <Button Text="Logout" BackgroundColor="Black" Command="{Binding Logout}" />
         </Grid>
 
         <!-- Main Content -->

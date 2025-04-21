@@ -6,7 +6,7 @@
     xmlns:views="clr-namespace:EnvironmentManager.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <TabBar>
+    <TabBar x:Name="ShellTabBar">
         <Tab Title="HOME">
             <ShellContent
                 ContentTemplate="{DataTemplate views:HomePage}"

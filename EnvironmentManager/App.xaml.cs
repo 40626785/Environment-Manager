@@ -2,6 +2,7 @@ using Microsoft.Maui.Controls;
 using System;
 using System.Diagnostics;
 using EnvironmentManager.Services;
+using EnvironmentManager.Views;
 
 namespace EnvironmentManager;
 
@@ -11,7 +12,8 @@ public partial class App : Application
 
 	private readonly IDatabaseInitializationService _dbInitService;
 
-	public App(IServiceProvider serviceProvider, IDatabaseInitializationService dbInitService)
+
+	public App(IDatabaseInitializationService dbInitService, IServiceProvider serviceProvider)
 	{
 		InitializeComponent();
 
@@ -30,7 +32,8 @@ public partial class App : Application
 
 		Trace.Listeners.Add(new DefaultTraceListener());
 
-		MainPage = new AppShell();
+
+		MainPage = serviceProvider.GetRequiredService<LoginPage>(); //MainPage is login on startup, with app access only granted on successful login
 
 		// Initialize database asynchronously without blocking the UI
 		InitializeDatabaseAsync();
