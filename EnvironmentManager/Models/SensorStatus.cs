@@ -17,7 +17,7 @@ namespace EnvironmentManager.Models
 
         [Required]
         [StringLength(50)]
-        public string ConnectivityStatus { get; set; } // Online, Offline, Degraded, Maintenance
+        public string ConnectivityStatus { get; set; }
 
         [Required]
         public DateTime StatusTimestamp { get; set; }
