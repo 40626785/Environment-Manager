@@ -172,6 +172,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<AddSensorViewModel>();
 		builder.Services.AddTransient<EditSensorViewModel>();
         builder.Services.AddTransient<LoginViewModel>();
+		builder.Services.AddTransient<SensorMonitoringViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -183,5 +184,6 @@ public static class MauiProgram
 		builder.Services.AddTransient<AddSensorPage>();
 		builder.Services.AddTransient<EditSensorPage>();
         builder.Services.AddTransient<LoginPage>();
+		builder.Services.AddTransient<SensorMonitoringPage>();
 	}
 }
