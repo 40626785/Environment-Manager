@@ -6,6 +6,9 @@ using EnvironmentManager.Exceptions;
 
 namespace EnvironmentManager.ViewModels;
 
+/// <summary>
+/// Code-behind the login page
+/// </summary>
 public class LoginViewModel : ObservableObject, IErrorHandling
 {
     private IAuthenticationService _authentication;  
@@ -59,6 +62,13 @@ public class LoginViewModel : ObservableObject, IErrorHandling
         Login = new Command(Authenticate);
     }
 
+    /// <summary>
+    /// Pass user-provided credentials to authentication function.
+    /// 
+    /// Upon success, calls function to route to main app content.
+    /// 
+    /// Handles failed authentication.
+    /// </summary>
     public void Authenticate()
     {
         try
@@ -79,6 +89,11 @@ public class LoginViewModel : ObservableObject, IErrorHandling
         } 
     }
 
+    /// <summary>
+    /// Write exception to Trace and set display property to show supplied message in application
+    /// </summary>
+    /// <param name="e"></param>
+    /// <param name="message"></param>
     public void HandleError(Exception e, string message)
     {
         Trace.WriteLine(e.Message);

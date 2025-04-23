@@ -1,0 +1,419 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  commentId: T:EnvironmentManager.Interfaces.IMaintenanceDataStore
+  id: IMaintenanceDataStore
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IMaintenanceDataStore.Delete(EnvironmentManager.Models.Maintenance)
+  - EnvironmentManager.Interfaces.IMaintenanceDataStore.QueryById(System.Int32)
+  - EnvironmentManager.Interfaces.IMaintenanceDataStore.Reload(EnvironmentManager.Models.Maintenance)
+  - EnvironmentManager.Interfaces.IMaintenanceDataStore.RetrieveAll
+  - EnvironmentManager.Interfaces.IMaintenanceDataStore.Save
+  - EnvironmentManager.Interfaces.IMaintenanceDataStore.Update(EnvironmentManager.Models.Maintenance)
+  langs:
+  - csharp
+  - vb
+  name: IMaintenanceDataStore
+  nameWithType: IMaintenanceDataStore
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: IMaintenanceDataStore
+    path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+    startLine: 9
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: >-
+    Enables Dependency Inversion Principle, allowing ViewModels to depend on Interface rather than a concrete context class
+
+
+    Implementation decided in MauiProgram.cs
+  example: []
+  syntax:
+    content: public interface IMaintenanceDataStore
+    content.vb: Public Interface IMaintenanceDataStore
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.RetrieveAll
+  commentId: M:EnvironmentManager.Interfaces.IMaintenanceDataStore.RetrieveAll
+  id: RetrieveAll
+  parent: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  langs:
+  - csharp
+  - vb
+  name: RetrieveAll()
+  nameWithType: IMaintenanceDataStore.RetrieveAll()
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.RetrieveAll()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: RetrieveAll
+    path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+    startLine: 11
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: IEnumerable<Maintenance> RetrieveAll()
+    return:
+      type: System.Collections.Generic.IEnumerable{EnvironmentManager.Models.Maintenance}
+    content.vb: Function RetrieveAll() As IEnumerable(Of Maintenance)
+  overload: EnvironmentManager.Interfaces.IMaintenanceDataStore.RetrieveAll*
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.QueryById(System.Int32)
+  commentId: M:EnvironmentManager.Interfaces.IMaintenanceDataStore.QueryById(System.Int32)
+  id: QueryById(System.Int32)
+  parent: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  langs:
+  - csharp
+  - vb
+  name: QueryById(int)
+  nameWithType: IMaintenanceDataStore.QueryById(int)
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.QueryById(int)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: QueryById
+    path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: Maintenance QueryById(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: EnvironmentManager.Models.Maintenance
+    content.vb: Function QueryById(id As Integer) As Maintenance
+  overload: EnvironmentManager.Interfaces.IMaintenanceDataStore.QueryById*
+  nameWithType.vb: IMaintenanceDataStore.QueryById(Integer)
+  fullName.vb: EnvironmentManager.Interfaces.IMaintenanceDataStore.QueryById(Integer)
+  name.vb: QueryById(Integer)
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.Update(EnvironmentManager.Models.Maintenance)
+  commentId: M:EnvironmentManager.Interfaces.IMaintenanceDataStore.Update(EnvironmentManager.Models.Maintenance)
+  id: Update(EnvironmentManager.Models.Maintenance)
+  parent: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  langs:
+  - csharp
+  - vb
+  name: Update(Maintenance)
+  nameWithType: IMaintenanceDataStore.Update(Maintenance)
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.Update(EnvironmentManager.Models.Maintenance)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Update
+    path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+    startLine: 13
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void Update(Maintenance maintenance)
+    parameters:
+    - id: maintenance
+      type: EnvironmentManager.Models.Maintenance
+    content.vb: Sub Update(maintenance As Maintenance)
+  overload: EnvironmentManager.Interfaces.IMaintenanceDataStore.Update*
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.Delete(EnvironmentManager.Models.Maintenance)
+  commentId: M:EnvironmentManager.Interfaces.IMaintenanceDataStore.Delete(EnvironmentManager.Models.Maintenance)
+  id: Delete(EnvironmentManager.Models.Maintenance)
+  parent: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  langs:
+  - csharp
+  - vb
+  name: Delete(Maintenance)
+  nameWithType: IMaintenanceDataStore.Delete(Maintenance)
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.Delete(EnvironmentManager.Models.Maintenance)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Delete
+    path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+    startLine: 14
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void Delete(Maintenance maintenance)
+    parameters:
+    - id: maintenance
+      type: EnvironmentManager.Models.Maintenance
+    content.vb: Sub Delete(maintenance As Maintenance)
+  overload: EnvironmentManager.Interfaces.IMaintenanceDataStore.Delete*
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.Reload(EnvironmentManager.Models.Maintenance)
+  commentId: M:EnvironmentManager.Interfaces.IMaintenanceDataStore.Reload(EnvironmentManager.Models.Maintenance)
+  id: Reload(EnvironmentManager.Models.Maintenance)
+  parent: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  langs:
+  - csharp
+  - vb
+  name: Reload(Maintenance)
+  nameWithType: IMaintenanceDataStore.Reload(Maintenance)
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.Reload(EnvironmentManager.Models.Maintenance)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Reload
+    path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+    startLine: 15
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void Reload(Maintenance maintenance)
+    parameters:
+    - id: maintenance
+      type: EnvironmentManager.Models.Maintenance
+    content.vb: Sub Reload(maintenance As Maintenance)
+  overload: EnvironmentManager.Interfaces.IMaintenanceDataStore.Reload*
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.Save
+  commentId: M:EnvironmentManager.Interfaces.IMaintenanceDataStore.Save
+  id: Save
+  parent: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  langs:
+  - csharp
+  - vb
+  name: Save()
+  nameWithType: IMaintenanceDataStore.Save()
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.Save()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Save
+    path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
+    startLine: 16
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void Save()
+    content.vb: Sub Save()
+  overload: EnvironmentManager.Interfaces.IMaintenanceDataStore.Save*
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.RetrieveAll*
+  commentId: Overload:EnvironmentManager.Interfaces.IMaintenanceDataStore.RetrieveAll
+  href: EnvironmentManager.Interfaces.IMaintenanceDataStore.html#EnvironmentManager_Interfaces_IMaintenanceDataStore_RetrieveAll
+  name: RetrieveAll
+  nameWithType: IMaintenanceDataStore.RetrieveAll
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.RetrieveAll
+- uid: System.Collections.Generic.IEnumerable{EnvironmentManager.Models.Maintenance}
+  commentId: T:System.Collections.Generic.IEnumerable{EnvironmentManager.Models.Maintenance}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Maintenance>
+  nameWithType: IEnumerable<Maintenance>
+  fullName: System.Collections.Generic.IEnumerable<EnvironmentManager.Models.Maintenance>
+  nameWithType.vb: IEnumerable(Of Maintenance)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of EnvironmentManager.Models.Maintenance)
+  name.vb: IEnumerable(Of Maintenance)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: EnvironmentManager.Models.Maintenance
+    name: Maintenance
+    href: EnvironmentManager.Models.Maintenance.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.Maintenance
+    name: Maintenance
+    href: EnvironmentManager.Models.Maintenance.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.QueryById*
+  commentId: Overload:EnvironmentManager.Interfaces.IMaintenanceDataStore.QueryById
+  href: EnvironmentManager.Interfaces.IMaintenanceDataStore.html#EnvironmentManager_Interfaces_IMaintenanceDataStore_QueryById_System_Int32_
+  name: QueryById
+  nameWithType: IMaintenanceDataStore.QueryById
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.QueryById
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: EnvironmentManager.Models.Maintenance
+  commentId: T:EnvironmentManager.Models.Maintenance
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.Maintenance.html
+  name: Maintenance
+  nameWithType: Maintenance
+  fullName: EnvironmentManager.Models.Maintenance
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.Update*
+  commentId: Overload:EnvironmentManager.Interfaces.IMaintenanceDataStore.Update
+  href: EnvironmentManager.Interfaces.IMaintenanceDataStore.html#EnvironmentManager_Interfaces_IMaintenanceDataStore_Update_EnvironmentManager_Models_Maintenance_
+  name: Update
+  nameWithType: IMaintenanceDataStore.Update
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.Update
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.Delete*
+  commentId: Overload:EnvironmentManager.Interfaces.IMaintenanceDataStore.Delete
+  href: EnvironmentManager.Interfaces.IMaintenanceDataStore.html#EnvironmentManager_Interfaces_IMaintenanceDataStore_Delete_EnvironmentManager_Models_Maintenance_
+  name: Delete
+  nameWithType: IMaintenanceDataStore.Delete
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.Delete
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.Reload*
+  commentId: Overload:EnvironmentManager.Interfaces.IMaintenanceDataStore.Reload
+  href: EnvironmentManager.Interfaces.IMaintenanceDataStore.html#EnvironmentManager_Interfaces_IMaintenanceDataStore_Reload_EnvironmentManager_Models_Maintenance_
+  name: Reload
+  nameWithType: IMaintenanceDataStore.Reload
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.Reload
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore.Save*
+  commentId: Overload:EnvironmentManager.Interfaces.IMaintenanceDataStore.Save
+  href: EnvironmentManager.Interfaces.IMaintenanceDataStore.html#EnvironmentManager_Interfaces_IMaintenanceDataStore_Save
+  name: Save
+  nameWithType: IMaintenanceDataStore.Save
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore.Save

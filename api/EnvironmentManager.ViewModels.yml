@@ -1,0 +1,125 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.ViewModels
+  commentId: N:EnvironmentManager.ViewModels
+  id: EnvironmentManager.ViewModels
+  children:
+  - EnvironmentManager.ViewModels.AboutViewModel
+  - EnvironmentManager.ViewModels.AddSensorViewModel
+  - EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  - EnvironmentManager.ViewModels.BaseViewModel
+  - EnvironmentManager.ViewModels.EditSensorViewModel
+  - EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
+  - EnvironmentManager.ViewModels.HistoricalDataViewerViewModel
+  - EnvironmentManager.ViewModels.HomeViewModel
+  - EnvironmentManager.ViewModels.LoginViewModel
+  - EnvironmentManager.ViewModels.MaintenanceViewModel
+  - EnvironmentManager.ViewModels.SensorViewModel
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.ViewModels
+  nameWithType: EnvironmentManager.ViewModels
+  fullName: EnvironmentManager.ViewModels
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.ViewModels.AboutViewModel
+  commentId: T:EnvironmentManager.ViewModels.AboutViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.AboutViewModel.html
+  name: AboutViewModel
+  nameWithType: AboutViewModel
+  fullName: EnvironmentManager.ViewModels.AboutViewModel
+- uid: EnvironmentManager.ViewModels.AddSensorViewModel
+  commentId: T:EnvironmentManager.ViewModels.AddSensorViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.AddSensorViewModel.html
+  name: AddSensorViewModel
+  nameWithType: AddSensorViewModel
+  fullName: EnvironmentManager.ViewModels.AddSensorViewModel
+- uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  commentId: T:EnvironmentManager.ViewModels.AllMaintenanceViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.AllMaintenanceViewModel.html
+  name: AllMaintenanceViewModel
+  nameWithType: AllMaintenanceViewModel
+  fullName: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+- uid: EnvironmentManager.ViewModels.BaseViewModel
+  commentId: T:EnvironmentManager.ViewModels.BaseViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: EnvironmentManager.ViewModels.BaseViewModel
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel
+  commentId: T:EnvironmentManager.ViewModels.EditSensorViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.EditSensorViewModel.html
+  name: EditSensorViewModel
+  nameWithType: EditSensorViewModel
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel
+- uid: EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
+  commentId: T:EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel.html
+  name: HistoricalDataSelectionViewModel
+  nameWithType: HistoricalDataSelectionViewModel
+  fullName: EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
+- uid: EnvironmentManager.ViewModels.HistoricalDataViewerViewModel
+  commentId: T:EnvironmentManager.ViewModels.HistoricalDataViewerViewModel
+  href: EnvironmentManager.ViewModels.HistoricalDataViewerViewModel.html
+  name: HistoricalDataViewerViewModel
+  nameWithType: HistoricalDataViewerViewModel
+  fullName: EnvironmentManager.ViewModels.HistoricalDataViewerViewModel
+- uid: EnvironmentManager.ViewModels.HomeViewModel
+  commentId: T:EnvironmentManager.ViewModels.HomeViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.HomeViewModel.html
+  name: HomeViewModel
+  nameWithType: HomeViewModel
+  fullName: EnvironmentManager.ViewModels.HomeViewModel
+- uid: EnvironmentManager.ViewModels.LoginViewModel
+  commentId: T:EnvironmentManager.ViewModels.LoginViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.LoginViewModel.html
+  name: LoginViewModel
+  nameWithType: LoginViewModel
+  fullName: EnvironmentManager.ViewModels.LoginViewModel
+- uid: EnvironmentManager.ViewModels.MaintenanceViewModel
+  commentId: T:EnvironmentManager.ViewModels.MaintenanceViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.MaintenanceViewModel.html
+  name: MaintenanceViewModel
+  nameWithType: MaintenanceViewModel
+  fullName: EnvironmentManager.ViewModels.MaintenanceViewModel
+- uid: EnvironmentManager.ViewModels.SensorViewModel
+  commentId: T:EnvironmentManager.ViewModels.SensorViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.SensorViewModel.html
+  name: SensorViewModel
+  nameWithType: SensorViewModel
+  fullName: EnvironmentManager.ViewModels.SensorViewModel
+- uid: EnvironmentManager.ViewModels
+  commentId: N:EnvironmentManager.ViewModels
+  href: EnvironmentManager.html
+  name: EnvironmentManager.ViewModels
+  nameWithType: EnvironmentManager.ViewModels
+  fullName: EnvironmentManager.ViewModels
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html

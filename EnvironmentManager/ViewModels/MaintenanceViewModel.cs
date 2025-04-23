@@ -8,6 +8,9 @@ using EnvironmentManager.Interfaces;
 
 namespace EnvironmentManager.ViewModels;
 
+/// <summary>
+/// Code behind the MaintenancePage
+/// </summary>
 public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable, IErrorHandling
 {
     private Maintenance _maintenance;
@@ -101,7 +104,9 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         _displayError = "";
     }
 
-    //Adds new or updated maintenance ticket to db context
+    /// <summary>
+    /// Adds new or updated maintenance ticket to db context
+    /// </summary>
     [RelayCommand]
     private async Task Save()
     {
@@ -117,7 +122,9 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         }
     }
 
-    //Removes maintenance ticket from db context
+    /// <summary>
+    /// Removes maintenance ticket from db context
+    /// </summary>
     [RelayCommand]
     private async Task Delete()
     {
@@ -133,7 +140,10 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         }  
     }
 
-    //Handles query strings provided when navigating to Maintenance page
+    /// <summary>
+    /// Handles query strings provided when navigating to Maintenance page
+    /// </summary>
+    /// <param name="query"></param>
     void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
     {
         if (query.ContainsKey("edit"))
@@ -143,7 +153,9 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         }
     }
 
-    //Checks if DueDate is before current date and updates boolean property accordingly
+    /// <summary>
+    /// Checks if DueDate is before current date and updates boolean property accordingly
+    /// </summary>
     public void IsOverdue() 
     {
         Reload();
@@ -151,21 +163,29 @@ public partial class MaintenanceViewModel : ObservableObject, IQueryAttributable
         _context.Save();
     }
 
-    //Refreshes instance with DB Context
+    /// <summary>
+    /// Refreshes instance with DB Context
+    /// </summary>
     public void Reload()
     {
         _context.Reload(_maintenance);
         RefreshProperties();
     }
 
-    //Write exception to Trace and set display property to show supplied message in application
+    /// <summary>
+    /// Write exception to Trace and set display property to show supplied message in application
+    /// </summary>
+    /// <param name="e"></param>
+    /// <param name="message"></param>
     public void HandleError(Exception e, string message)
     {
         Trace.WriteLine(e.Message);
         DisplayError = message;
     }
 
-    //Triggers property changes events to update table displaying the ObservableCollection
+    /// <summary>
+    /// Triggers property changes events to update table displaying the ObservableCollection
+    /// </summary>
     private void RefreshProperties()
     {
         OnPropertyChanged(nameof(Id));

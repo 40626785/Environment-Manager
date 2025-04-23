@@ -3,7 +3,11 @@ using EnvironmentManager.Models;
 
 namespace EnvironmentManager.Interfaces;
 
-//Allows changing MainPage without handling within ViewModel and breaking MVVM structure
+/// <summary>
+/// Enables Dependency Inversion Principle, allowing management of login/logout navigation without directly depending on concrete implementation
+/// 
+/// Implementation of Interface decided in MauiProgram.cs
+/// </summary>
 public interface ILoginNavService
 {
     void RouteOnLogin();

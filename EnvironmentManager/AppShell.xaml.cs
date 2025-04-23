@@ -3,9 +3,8 @@ using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager;
 
-public partial class AppShell : Shell
-{
-    private IServiceProvider _serviceProvider;
+public partial class AppShell : Shell {
+  private IServiceProvider _serviceProvider;
 	public AppShell(IServiceProvider serviceProvider)
 	{
 		_serviceProvider = serviceProvider;
@@ -20,8 +19,13 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(EditSensorPage), typeof(EditSensorPage));
         Routing.RegisterRoute(nameof(AddSensorPage), typeof(AddSensorPage));
         Routing.RegisterRoute(nameof(SensorMonitoringPage), typeof(SensorMonitoringPage));
+        Routing.RegisterRoute(nameof(HistoricalData), typeof(HistoricalData));
+        Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
 	}
 
+    /// <summary>
+    /// Conditionally creates tabs to access protected views based on roles
+    /// </summary>
     private void RoleBasedNavigation()
     {
         TabBar tabBar = ShellTabBar;

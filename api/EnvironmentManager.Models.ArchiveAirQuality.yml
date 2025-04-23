@@ -1,0 +1,693 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Models.ArchiveAirQuality
+  commentId: T:EnvironmentManager.Models.ArchiveAirQuality
+  id: ArchiveAirQuality
+  parent: EnvironmentManager.Models
+  children:
+  - EnvironmentManager.Models.ArchiveAirQuality.Date
+  - EnvironmentManager.Models.ArchiveAirQuality.Id
+  - EnvironmentManager.Models.ArchiveAirQuality.Nitrogen_dioxide
+  - EnvironmentManager.Models.ArchiveAirQuality.PM10_particulate_matter
+  - EnvironmentManager.Models.ArchiveAirQuality.PM2_5_particulate_matter
+  - EnvironmentManager.Models.ArchiveAirQuality.Sulphur_dioxide
+  - EnvironmentManager.Models.ArchiveAirQuality.Time
+  langs:
+  - csharp
+  - vb
+  name: ArchiveAirQuality
+  nameWithType: ArchiveAirQuality
+  fullName: EnvironmentManager.Models.ArchiveAirQuality
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/Models/ArchiveAirQuality.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ArchiveAirQuality
+    path: EnvironmentManager/Models/ArchiveAirQuality.cs
+    startLine: 6
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public class ArchiveAirQuality
+    content.vb: Public Class ArchiveAirQuality
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Id
+  commentId: P:EnvironmentManager.Models.ArchiveAirQuality.Id
+  id: Id
+  parent: EnvironmentManager.Models.ArchiveAirQuality
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ArchiveAirQuality.Id
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Id
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/ArchiveAirQuality.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Id
+    path: EnvironmentManager/Models/ArchiveAirQuality.cs
+    startLine: 8
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Key]
+
+      public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Key>
+
+      Public Property Id As Integer
+  overload: EnvironmentManager.Models.ArchiveAirQuality.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Date
+  commentId: P:EnvironmentManager.Models.ArchiveAirQuality.Date
+  id: Date
+  parent: EnvironmentManager.Models.ArchiveAirQuality
+  langs:
+  - csharp
+  - vb
+  name: Date
+  nameWithType: ArchiveAirQuality.Date
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Date
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/ArchiveAirQuality.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Date
+    path: EnvironmentManager/Models/ArchiveAirQuality.cs
+    startLine: 11
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Column(TypeName = "date")]
+
+      public DateTime? Date { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: >-
+      <Column(TypeName:="date")>
+
+      Public Property [Date] As Date?
+  overload: EnvironmentManager.Models.ArchiveAirQuality.Date*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: TypeName
+      type: System.String
+      value: date
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Time
+  commentId: P:EnvironmentManager.Models.ArchiveAirQuality.Time
+  id: Time
+  parent: EnvironmentManager.Models.ArchiveAirQuality
+  langs:
+  - csharp
+  - vb
+  name: Time
+  nameWithType: ArchiveAirQuality.Time
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Time
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/ArchiveAirQuality.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Time
+    path: EnvironmentManager/Models/ArchiveAirQuality.cs
+    startLine: 14
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Column(TypeName = "time")]
+
+      public TimeSpan? Time { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.TimeSpan}
+    content.vb: >-
+      <Column(TypeName:="time")>
+
+      Public Property Time As TimeSpan?
+  overload: EnvironmentManager.Models.ArchiveAirQuality.Time*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: TypeName
+      type: System.String
+      value: time
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Nitrogen_dioxide
+  commentId: P:EnvironmentManager.Models.ArchiveAirQuality.Nitrogen_dioxide
+  id: Nitrogen_dioxide
+  parent: EnvironmentManager.Models.ArchiveAirQuality
+  langs:
+  - csharp
+  - vb
+  name: Nitrogen_dioxide
+  nameWithType: ArchiveAirQuality.Nitrogen_dioxide
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Nitrogen_dioxide
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/ArchiveAirQuality.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Nitrogen_dioxide
+    path: EnvironmentManager/Models/ArchiveAirQuality.cs
+    startLine: 17
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public double? Nitrogen_dioxide { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public Property Nitrogen_dioxide As Double?
+  overload: EnvironmentManager.Models.ArchiveAirQuality.Nitrogen_dioxide*
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Sulphur_dioxide
+  commentId: P:EnvironmentManager.Models.ArchiveAirQuality.Sulphur_dioxide
+  id: Sulphur_dioxide
+  parent: EnvironmentManager.Models.ArchiveAirQuality
+  langs:
+  - csharp
+  - vb
+  name: Sulphur_dioxide
+  nameWithType: ArchiveAirQuality.Sulphur_dioxide
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Sulphur_dioxide
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/ArchiveAirQuality.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Sulphur_dioxide
+    path: EnvironmentManager/Models/ArchiveAirQuality.cs
+    startLine: 19
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public double? Sulphur_dioxide { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public Property Sulphur_dioxide As Double?
+  overload: EnvironmentManager.Models.ArchiveAirQuality.Sulphur_dioxide*
+- uid: EnvironmentManager.Models.ArchiveAirQuality.PM2_5_particulate_matter
+  commentId: P:EnvironmentManager.Models.ArchiveAirQuality.PM2_5_particulate_matter
+  id: PM2_5_particulate_matter
+  parent: EnvironmentManager.Models.ArchiveAirQuality
+  langs:
+  - csharp
+  - vb
+  name: PM2_5_particulate_matter
+  nameWithType: ArchiveAirQuality.PM2_5_particulate_matter
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.PM2_5_particulate_matter
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/ArchiveAirQuality.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: PM2_5_particulate_matter
+    path: EnvironmentManager/Models/ArchiveAirQuality.cs
+    startLine: 21
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public double? PM2_5_particulate_matter { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public Property PM2_5_particulate_matter As Double?
+  overload: EnvironmentManager.Models.ArchiveAirQuality.PM2_5_particulate_matter*
+- uid: EnvironmentManager.Models.ArchiveAirQuality.PM10_particulate_matter
+  commentId: P:EnvironmentManager.Models.ArchiveAirQuality.PM10_particulate_matter
+  id: PM10_particulate_matter
+  parent: EnvironmentManager.Models.ArchiveAirQuality
+  langs:
+  - csharp
+  - vb
+  name: PM10_particulate_matter
+  nameWithType: ArchiveAirQuality.PM10_particulate_matter
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.PM10_particulate_matter
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/ArchiveAirQuality.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: PM10_particulate_matter
+    path: EnvironmentManager/Models/ArchiveAirQuality.cs
+    startLine: 23
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public double? PM10_particulate_matter { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public Property PM10_particulate_matter As Double?
+  overload: EnvironmentManager.Models.ArchiveAirQuality.PM10_particulate_matter*
+references:
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Id*
+  commentId: Overload:EnvironmentManager.Models.ArchiveAirQuality.Id
+  href: EnvironmentManager.Models.ArchiveAirQuality.html#EnvironmentManager_Models_ArchiveAirQuality_Id
+  name: Id
+  nameWithType: ArchiveAirQuality.Id
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Date*
+  commentId: Overload:EnvironmentManager.Models.ArchiveAirQuality.Date
+  href: EnvironmentManager.Models.ArchiveAirQuality.html#EnvironmentManager_Models_ArchiveAirQuality_Date
+  name: Date
+  nameWithType: ArchiveAirQuality.Date
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Date
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Time*
+  commentId: Overload:EnvironmentManager.Models.ArchiveAirQuality.Time
+  href: EnvironmentManager.Models.ArchiveAirQuality.html#EnvironmentManager_Models_ArchiveAirQuality_Time
+  name: Time
+  nameWithType: ArchiveAirQuality.Time
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Time
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan?
+  nameWithType: TimeSpan?
+  fullName: System.TimeSpan?
+  spec.csharp:
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '?'
+  spec.vb:
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '?'
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Nitrogen_dioxide*
+  commentId: Overload:EnvironmentManager.Models.ArchiveAirQuality.Nitrogen_dioxide
+  href: EnvironmentManager.Models.ArchiveAirQuality.html#EnvironmentManager_Models_ArchiveAirQuality_Nitrogen_dioxide
+  name: Nitrogen_dioxide
+  nameWithType: ArchiveAirQuality.Nitrogen_dioxide
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Nitrogen_dioxide
+- uid: System.Nullable{System.Double}
+  commentId: T:System.Nullable{System.Double}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double?
+  nameWithType: double?
+  fullName: double?
+  nameWithType.vb: Double?
+  fullName.vb: Double?
+  name.vb: Double?
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+- uid: EnvironmentManager.Models.ArchiveAirQuality.Sulphur_dioxide*
+  commentId: Overload:EnvironmentManager.Models.ArchiveAirQuality.Sulphur_dioxide
+  href: EnvironmentManager.Models.ArchiveAirQuality.html#EnvironmentManager_Models_ArchiveAirQuality_Sulphur_dioxide
+  name: Sulphur_dioxide
+  nameWithType: ArchiveAirQuality.Sulphur_dioxide
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.Sulphur_dioxide
+- uid: EnvironmentManager.Models.ArchiveAirQuality.PM2_5_particulate_matter*
+  commentId: Overload:EnvironmentManager.Models.ArchiveAirQuality.PM2_5_particulate_matter
+  href: EnvironmentManager.Models.ArchiveAirQuality.html#EnvironmentManager_Models_ArchiveAirQuality_PM2_5_particulate_matter
+  name: PM2_5_particulate_matter
+  nameWithType: ArchiveAirQuality.PM2_5_particulate_matter
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.PM2_5_particulate_matter
+- uid: EnvironmentManager.Models.ArchiveAirQuality.PM10_particulate_matter*
+  commentId: Overload:EnvironmentManager.Models.ArchiveAirQuality.PM10_particulate_matter
+  href: EnvironmentManager.Models.ArchiveAirQuality.html#EnvironmentManager_Models_ArchiveAirQuality_PM10_particulate_matter
+  name: PM10_particulate_matter
+  nameWithType: ArchiveAirQuality.PM10_particulate_matter
+  fullName: EnvironmentManager.Models.ArchiveAirQuality.PM10_particulate_matter

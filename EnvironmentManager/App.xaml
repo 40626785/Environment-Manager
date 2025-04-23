@@ -7,22 +7,28 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <Style TargetType="Shell">
-                <Setter Property="ForegroundColor" Value="#6750A4" />
-                <Setter Property="BackgroundColor" Value="White" />
-                <Setter Property="TitleColor" Value="#6750A4" />
-                <Setter Property="DisabledColor" Value="#666666" />
-                <Setter Property="UnselectedColor" Value="#666666" />
+                <Setter Property="ForegroundColor"
+                        Value="#6750A4"/>
+                <Setter Property="BackgroundColor"
+                        Value="White"/>
+                <Setter Property="TitleColor"
+                        Value="#6750A4"/>
+                <Setter Property="DisabledColor"
+                        Value="#666666"/>
+                <Setter Property="UnselectedColor"
+                        Value="#666666"/>
             </Style>
 
             <converters:StringNotEmptyConverter x:Key="StringNotEmptyConverter" />
             <converters:StatusToColorConverter x:Key="StatusToColorConverter" />
             <converters:NotNullConverter x:Key="NotNullConverter" />
             <converters:NotZeroConverter x:Key="NotZeroConverter" />
+            <converters:CountToBoolConverter x:Key="CountToBoolConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

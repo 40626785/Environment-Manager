@@ -1,0 +1,95 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Services
+  commentId: N:EnvironmentManager.Services
+  id: EnvironmentManager.Services
+  children:
+  - EnvironmentManager.Services.AuthenticationService
+  - EnvironmentManager.Services.DatabaseInitializationService
+  - EnvironmentManager.Services.IDatabaseInitializationService
+  - EnvironmentManager.Services.LocalStorageService
+  - EnvironmentManager.Services.LoginNavService
+  - EnvironmentManager.Services.RunOnMainThread
+  - EnvironmentManager.Services.SessionService
+  - EnvironmentManager.Services.ValidationService
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Services
+  nameWithType: EnvironmentManager.Services
+  fullName: EnvironmentManager.Services
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Services.AuthenticationService
+  commentId: T:EnvironmentManager.Services.AuthenticationService
+  href: EnvironmentManager.Services.AuthenticationService.html
+  name: AuthenticationService
+  nameWithType: AuthenticationService
+  fullName: EnvironmentManager.Services.AuthenticationService
+- uid: EnvironmentManager.Services.DatabaseInitializationService
+  commentId: T:EnvironmentManager.Services.DatabaseInitializationService
+  href: EnvironmentManager.Services.DatabaseInitializationService.html
+  name: DatabaseInitializationService
+  nameWithType: DatabaseInitializationService
+  fullName: EnvironmentManager.Services.DatabaseInitializationService
+- uid: EnvironmentManager.Services.IDatabaseInitializationService
+  commentId: T:EnvironmentManager.Services.IDatabaseInitializationService
+  parent: EnvironmentManager.Services
+  href: EnvironmentManager.Services.IDatabaseInitializationService.html
+  name: IDatabaseInitializationService
+  nameWithType: IDatabaseInitializationService
+  fullName: EnvironmentManager.Services.IDatabaseInitializationService
+- uid: EnvironmentManager.Services.LocalStorageService
+  commentId: T:EnvironmentManager.Services.LocalStorageService
+  href: EnvironmentManager.Services.LocalStorageService.html
+  name: LocalStorageService
+  nameWithType: LocalStorageService
+  fullName: EnvironmentManager.Services.LocalStorageService
+- uid: EnvironmentManager.Services.LoginNavService
+  commentId: T:EnvironmentManager.Services.LoginNavService
+  href: EnvironmentManager.Services.LoginNavService.html
+  name: LoginNavService
+  nameWithType: LoginNavService
+  fullName: EnvironmentManager.Services.LoginNavService
+- uid: EnvironmentManager.Services.RunOnMainThread
+  commentId: T:EnvironmentManager.Services.RunOnMainThread
+  href: EnvironmentManager.Services.RunOnMainThread.html
+  name: RunOnMainThread
+  nameWithType: RunOnMainThread
+  fullName: EnvironmentManager.Services.RunOnMainThread
+- uid: EnvironmentManager.Services.SessionService
+  commentId: T:EnvironmentManager.Services.SessionService
+  href: EnvironmentManager.Services.SessionService.html
+  name: SessionService
+  nameWithType: SessionService
+  fullName: EnvironmentManager.Services.SessionService
+- uid: EnvironmentManager.Services.ValidationService
+  commentId: T:EnvironmentManager.Services.ValidationService
+  href: EnvironmentManager.Services.ValidationService.html
+  name: ValidationService
+  nameWithType: ValidationService
+  fullName: EnvironmentManager.Services.ValidationService
+- uid: EnvironmentManager.Services
+  commentId: N:EnvironmentManager.Services
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Services
+  nameWithType: EnvironmentManager.Services
+  fullName: EnvironmentManager.Services
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html

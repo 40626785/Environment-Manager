@@ -1,0 +1,252 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.ISessionService
+  commentId: T:EnvironmentManager.Interfaces.ISessionService
+  id: ISessionService
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+  - EnvironmentManager.Interfaces.ISessionService.Expiry
+  - EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+  langs:
+  - csharp
+  - vb
+  name: ISessionService
+  nameWithType: ISessionService
+  fullName: EnvironmentManager.Interfaces.ISessionService
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ISessionService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: ISessionService
+    path: EnvironmentManager/Interfaces/ISessionService.cs
+    startLine: 9
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: >-
+    Enables Dependency Inversion Principle, allowing management of sessions without directly depending on session class
+
+
+    Implementation of Interface decided in MauiProgram.cs
+  example: []
+  syntax:
+    content: public interface ISessionService
+    content.vb: Public Interface ISessionService
+- uid: EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+  commentId: P:EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+  id: AuthenticatedUser
+  parent: EnvironmentManager.Interfaces.ISessionService
+  langs:
+  - csharp
+  - vb
+  name: AuthenticatedUser
+  nameWithType: ISessionService.AuthenticatedUser
+  fullName: EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ISessionService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: AuthenticatedUser
+    path: EnvironmentManager/Interfaces/ISessionService.cs
+    startLine: 11
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: User? AuthenticatedUser { get; }
+    parameters: []
+    return:
+      type: EnvironmentManager.Models.User
+    content.vb: ReadOnly Property AuthenticatedUser As User
+  overload: EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser*
+- uid: EnvironmentManager.Interfaces.ISessionService.Expiry
+  commentId: P:EnvironmentManager.Interfaces.ISessionService.Expiry
+  id: Expiry
+  parent: EnvironmentManager.Interfaces.ISessionService
+  langs:
+  - csharp
+  - vb
+  name: Expiry
+  nameWithType: ISessionService.Expiry
+  fullName: EnvironmentManager.Interfaces.ISessionService.Expiry
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ISessionService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: Expiry
+    path: EnvironmentManager/Interfaces/ISessionService.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: DateTime? Expiry { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: ReadOnly Property Expiry As Date?
+  overload: EnvironmentManager.Interfaces.ISessionService.Expiry*
+- uid: EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+  commentId: M:EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+  id: NewSession(EnvironmentManager.Models.User)
+  parent: EnvironmentManager.Interfaces.ISessionService
+  langs:
+  - csharp
+  - vb
+  name: NewSession(User)
+  nameWithType: ISessionService.NewSession(User)
+  fullName: EnvironmentManager.Interfaces.ISessionService.NewSession(EnvironmentManager.Models.User)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ISessionService.cs
+      branch: main
+      repo: https://github.com/40626785/SEGroup.git
+    id: NewSession
+    path: EnvironmentManager/Interfaces/ISessionService.cs
+    startLine: 14
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: void NewSession(User user)
+    parameters:
+    - id: user
+      type: EnvironmentManager.Models.User
+    content.vb: Sub NewSession(user As User)
+  overload: EnvironmentManager.Interfaces.ISessionService.NewSession*
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser*
+  commentId: Overload:EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+  href: EnvironmentManager.Interfaces.ISessionService.html#EnvironmentManager_Interfaces_ISessionService_AuthenticatedUser
+  name: AuthenticatedUser
+  nameWithType: ISessionService.AuthenticatedUser
+  fullName: EnvironmentManager.Interfaces.ISessionService.AuthenticatedUser
+- uid: EnvironmentManager.Models.User
+  commentId: T:EnvironmentManager.Models.User
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: EnvironmentManager.Models.User
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: EnvironmentManager.Interfaces.ISessionService.Expiry*
+  commentId: Overload:EnvironmentManager.Interfaces.ISessionService.Expiry
+  href: EnvironmentManager.Interfaces.ISessionService.html#EnvironmentManager_Interfaces_ISessionService_Expiry
+  name: Expiry
+  nameWithType: ISessionService.Expiry
+  fullName: EnvironmentManager.Interfaces.ISessionService.Expiry
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Interfaces.ISessionService.NewSession*
+  commentId: Overload:EnvironmentManager.Interfaces.ISessionService.NewSession
+  href: EnvironmentManager.Interfaces.ISessionService.html#EnvironmentManager_Interfaces_ISessionService_NewSession_EnvironmentManager_Models_User_
+  name: NewSession
+  nameWithType: ISessionService.NewSession
+  fullName: EnvironmentManager.Interfaces.ISessionService.NewSession

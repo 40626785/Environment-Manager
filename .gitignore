@@ -48,4 +48,6 @@ EnvironmentManager.Test/bin
 
 # Mac .DS_Store
 .DS_Store
+
+# Docfx Folders
 _site/

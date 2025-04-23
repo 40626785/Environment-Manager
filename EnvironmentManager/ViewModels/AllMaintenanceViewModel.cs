@@ -8,6 +8,9 @@ using EnvironmentManager.Interfaces;
 
 namespace EnvironmentManager.ViewModels;
 
+/// <summary>
+/// Code-behind AllMaintenancePage
+/// </summary>
 public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IErrorHandling
 {
     public ObservableCollection<MaintenanceViewModel> AllMaintenance { get; }
@@ -43,14 +46,20 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
         _displayError = "";
     }
 
-    //Write exception to Trace and set display property to show supplied message in application
+    /// <summary>
+    /// Write exception to Trace and set display property to show supplied message in application
+    /// </summary>
+    /// <param name="e"></param>
+    /// <param name="message"></param>
     public void HandleError(Exception e, string message)
     {
         Trace.WriteLine(e.Message);
         DisplayError = message;
     }
     
-    //Calls IsOverdue function in each maintenance object and reloads the instance to update the table.
+    /// <summary>
+    /// Calls IsOverdue function in each maintenance object and reloads the instance to update the table.
+    /// </summary>
     private void CheckOverdue()
     {
         foreach (MaintenanceViewModel maintenance in AllMaintenance) 
@@ -60,7 +69,11 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
         }
     }
 
-    //Navigate to maintenance view supplying Maintenance ID to edit an existing entry
+    /// <summary>
+    /// Navigate to maintenance view supplying Maintenance ID to edit an existing entry
+    /// </summary>
+    /// <param name="viewModel"></param>
+    /// <returns></returns>
     private async Task EditMaintenance(MaintenanceViewModel viewModel)
     {
         try
@@ -76,7 +89,9 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
         }
     }
 
-    //Navigate to maintenance view to create new ticket
+    /// <summary>
+    /// Navigate to maintenance view to create new ticket
+    /// </summary>
     private async Task NewTicket()
     {
         try
@@ -89,7 +104,10 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
         }
     }
 
-    //Handles query strings provided when routing to AllMaintenance page.
+    /// <summary>
+    /// Handles query strings provided when routing to AllMaintenance page.
+    /// </summary>
+    /// <param name="query"></param>
     void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
     {
         if (query.ContainsKey("deleted"))
@@ -120,7 +138,9 @@ public class AllMaintenanceViewModel : ObservableObject, IQueryAttributable, IEr
         }
     }
 
-    //Repopulates ObservableCollection in Ascending order of Priority
+    /// <summary>
+    /// Repopulates ObservableCollection in Ascending order of Priority
+    /// </summary>
     private void SortCollection() 
     {
         ObservableCollection<MaintenanceViewModel> sorted  = new ObservableCollection<MaintenanceViewModel>(AllMaintenance.OrderByDescending(i => i.Priority));

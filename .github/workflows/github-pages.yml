@@ -33,7 +33,7 @@ jobs:
         run: rm -rf _site
 
       - name: Build Documentation
-        run: docfx docfx.json
+        run: docfx build docfx.json
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

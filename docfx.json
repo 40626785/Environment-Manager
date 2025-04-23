@@ -1,16 +1,31 @@
 {
-  "build": {
+    "metadata": [
+    {
+        "src": [
+        {
+            "files": ["EnvironmentManager/EnvironmentManager.csproj"],
+            "exclude": ["bin/**", "obj/**"]
+        }
+        ],
+        "dest": "api",
+        "properties": {
+            "TargetFramework": "net8.0"
+        }
+    }
+    ],
+    "build": {
     "content": [
       {
         "files": [
           "toc.yml",
           "*.md",
-          "articles/**.md"
+          "articles/**.md",
+          "api/**.yml",
+          "api/index.md"
         ],
         "exclude": [
           "obj/**",
-          "_site/**",
-          "api/**"
+          "_site/**"
         ]
       }
     ],
