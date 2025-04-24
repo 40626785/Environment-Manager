@@ -24,7 +24,10 @@
                         Value="#666666"/>
             </Style>
 
-            <converters:StringNotEmptyConverter x:Key="StringNotEmptyConverter"/>
+            <converters:StringNotEmptyConverter x:Key="StringNotEmptyConverter" />
+            <converters:StatusToColorConverter x:Key="StatusToColorConverter" />
+            <converters:NotNullConverter x:Key="NotNullConverter" />
+            <converters:NotZeroConverter x:Key="NotZeroConverter" />
             <converters:CountToBoolConverter x:Key="CountToBoolConverter"/>
         </ResourceDictionary>
     </Application.Resources>

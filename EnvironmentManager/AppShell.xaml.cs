@@ -18,6 +18,7 @@ public partial class AppShell : Shell {
         Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
         Routing.RegisterRoute(nameof(EditSensorPage), typeof(EditSensorPage));
         Routing.RegisterRoute(nameof(AddSensorPage), typeof(AddSensorPage));
+        Routing.RegisterRoute(nameof(SensorMonitoringPage), typeof(SensorMonitoringPage));
         Routing.RegisterRoute(nameof(HistoricalData), typeof(HistoricalData));
         Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
 	}
@@ -31,24 +32,35 @@ public partial class AppShell : Shell {
         string role = Preferences.Get("role","");
         switch(role){
             case "OperationsManager":
+                // Add Maintenance tab
                 var maintenance = new Tab
                 {
                     Title = "MAINTENANCE"
                 };
-
                 maintenance.Items.Add(new ShellContent
                 {
                     Title = "MAINTENANCE",
                     Content = _serviceProvider.GetRequiredService<AllMaintenancePage>()
                 });
                 tabBar.Items.Add(maintenance);
+
+                // Add Monitor tab
+                var monitor = new Tab
+                {
+                    Title = "MONITOR"
+                };
+                monitor.Items.Add(new ShellContent
+                {
+                    Title = "MONITOR",
+                    Content = _serviceProvider.GetRequiredService<SensorMonitoringPage>()
+                });
+                tabBar.Items.Add(monitor);
                 break;
             case "EnvironmentalScientist":
                 var sensors = new Tab
                 {
                     Title = "SENSORS"
                 };
-
                 sensors.Items.Add(new ShellContent
                 {
                     Title = "SENSORS",

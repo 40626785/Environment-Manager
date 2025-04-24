@@ -70,18 +70,9 @@
                                    CornerRadius="8"
                                    BorderColor="#E5E7EB"
                                    HasShadow="False">
-                                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
-                                    <!-- Status Indicator -->
-                                    <Frame Grid.Column="0"
-                                           WidthRequest="12"
-                                           HeightRequest="12"
-                                           CornerRadius="6"
-                                           Padding="0"
-                                           HasShadow="False"
-                                           BackgroundColor="{Binding IsActive, Converter={StaticResource BoolToColorConverter}}"/>
-                                    
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="15">
                                     <!-- Sensor Details -->
-                                    <VerticalStackLayout Grid.Column="1" Spacing="4">
+                                    <VerticalStackLayout Grid.Column="0" Spacing="4">
                                         <Label Text="{Binding SensorName}" 
                                                FontAttributes="Bold" 
                                                FontSize="16"
@@ -105,17 +96,17 @@
                                             </Border>
                                             <Border Margin="8,0,0,0"
                                                     Padding="6,2"
-                                                    BackgroundColor="#F3F4F6"
+                                                    BackgroundColor="{Binding ConnectivityStatus, Converter={StaticResource StatusToColorConverter}, ConverterParameter=Background}"
                                                     StrokeShape="RoundRectangle 12">
                                                 <Label Text="{Binding ConnectivityStatus}"
-                                                       TextColor="#6B7280"
+                                                       TextColor="White"
                                                        FontSize="12"/>
                                             </Border>
                                         </FlexLayout>
                                     </VerticalStackLayout>
 
                                     <!-- Edit Button -->
-                                    <Button Grid.Column="2" 
+                                    <Button Grid.Column="1" 
                                             Text="Edit" 
                                             Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:SensorViewModel}}, Path=NavigateToEditCommand}" 
                                             CommandParameter="{Binding .}"
@@ -159,7 +150,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
+            <converters:StatusToColorConverter x:Key="StatusToColorConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 

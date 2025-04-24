@@ -351,7 +351,7 @@ namespace EnvironmentManager.ViewModels
         }
 
         [RelayCommand]
-        private async Task SaveAsync()
+        private async Task SaveSensorAsync()
         {
             if (!ValidateForm())
             {
@@ -380,6 +380,21 @@ namespace EnvironmentManager.ViewModels
 
                 _sensorContext.Sensors.Add(sensor);
                 await _sensorContext.SaveChangesAsync();
+                
+                // Create an initial SensorStatus record for the new sensor
+                var initialStatus = new SensorStatus
+                {
+                    SensorId = sensor.SensorId,
+                    ConnectivityStatus = IsOnline ? "Online" : "Offline",
+                    StatusTimestamp = DateTime.Now,
+                    BatteryLevelPercentage = BatteryLevelPercentage,
+                    ErrorCount = 0,
+                    WarningCount = 0
+                };
+                
+                _sensorContext.SensorStatuses.Add(initialStatus);
+                await _sensorContext.SaveChangesAsync();
+                
                 await Shell.Current.DisplayAlert("Success", "Sensor added successfully.", "OK");
                 await Shell.Current.GoToAsync("..");
             }
