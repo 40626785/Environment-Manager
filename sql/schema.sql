@@ -56,7 +56,7 @@ CREATE TABLE SensorStatus (
 
 -- Create Roles table to define system roles
 CREATE TABLE Roles (
-    RoleId INT IDENTITY(1,1) PRIMARY KEY,
+    RoleId INT PRIMARY KEY,
     RoleName NVARCHAR(50) NOT NULL UNIQUE,
     Description NVARCHAR(200),
     CreatedDate DATETIME2 NOT NULL DEFAULT SYSDATETIME(),

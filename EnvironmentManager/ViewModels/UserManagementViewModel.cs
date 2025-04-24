@@ -1,3 +1,7 @@
+using EnvironmentManager.Models;
+using EnvironmentManager.Interfaces;
+using EnvironmentManager.Views;
+using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -5,11 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
-using EnvironmentManager.Interfaces;
-using EnvironmentManager.Models;
 using EnvironmentManager.Services;
-using EnvironmentManager.Views;
-using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager.ViewModels;
 
@@ -122,7 +122,6 @@ public class UserManagementViewModel : BaseViewModel, IErrorHandling
         try
         {
             var currentUser = _sessionService.AuthenticatedUser;
-            Debug.WriteLine($"Checking admin permissions for user: {currentUser?.Username}, Role: {currentUser?.Role}");
             
             // Check for Administrator role in any format (enum value or string representations)
             bool isAdmin = false;
@@ -137,22 +136,12 @@ public class UserManagementViewModel : BaseViewModel, IErrorHandling
                 {
                     isAdmin = (int)currentUser.Role == 0;
                 }
-                
-                Debug.WriteLine($"Admin check: Role enum value={currentUser.Role}, integer value={(int)currentUser.Role}, isAdmin={isAdmin}");
-                
-                // Log the authUser and all details about it
-                Debug.WriteLine($"AuthUser: {currentUser.Username}");
-                Debug.WriteLine($"AuthUser Role: {currentUser.Role}");
-                Debug.WriteLine($"AuthUser Role (int): {(int)currentUser.Role}");
-                Debug.WriteLine($"Is Administrator directly: {currentUser.Role == Roles.Administrator}");
             }
             
             IsAdministrator = isAdmin;
-            Debug.WriteLine($"IsAdministrator set to: {IsAdministrator}");
         }
         catch (Exception ex)
         {
-            Debug.WriteLine($"Error checking admin permissions: {ex.Message}");
             HandleError(ex, "Error checking user permissions");
         }
     }
@@ -228,9 +217,6 @@ public class UserManagementViewModel : BaseViewModel, IErrorHandling
     
     private async void ExecuteAddUser()
     {
-        // Remove the admin check to allow anyone to add users
-        Debug.WriteLine("ExecuteAddUser: Adding a new user");
-        
         // Create a view model for adding a new user
         var viewModel = new EditUserViewModel(_userStore, _mainThread, () => 
         {
@@ -246,11 +232,8 @@ public class UserManagementViewModel : BaseViewModel, IErrorHandling
     
     private async void ExecuteEditUser(User user)
     {
-        // Remove the admin check to allow anyone to edit users
         if (user == null)
             return;
-        
-        Debug.WriteLine($"ExecuteEditUser: Editing user {user.Username} with role {user.Role}");
         
         // Create a view model for editing the user
         var viewModel = new EditUserViewModel(_userStore, _mainThread, user, () => 
@@ -267,11 +250,8 @@ public class UserManagementViewModel : BaseViewModel, IErrorHandling
     
     private async void ExecuteDeleteUser(User user)
     {
-        // Remove the admin check to allow anyone to delete users
         if (user == null)
             return;
-        
-        Debug.WriteLine($"ExecuteDeleteUser: Deleting user {user.Username} with role {user.Role}");
         
         bool confirm = await Application.Current.MainPage.DisplayAlert(
             "Confirm Delete", 
@@ -307,7 +287,6 @@ public class UserManagementViewModel : BaseViewModel, IErrorHandling
     {
         // This method is triggered when a user is selected in the collection view
         // The SelectedUser property is already updated by the binding
-        Debug.WriteLine($"User selected: {SelectedUser?.Username}");
     }
     
     public void HandleError(Exception e, string message)
