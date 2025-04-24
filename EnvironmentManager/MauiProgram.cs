@@ -5,9 +5,12 @@ using EnvironmentManager.Data;
 using Microsoft.EntityFrameworkCore;
 using EnvironmentManager.ViewModels;
 using EnvironmentManager.Views;
+using EnvironmentManager.Models;
 using System.Diagnostics;
 using EnvironmentManager.Services;
 using EnvironmentManager.Interfaces;
+using SkiaSharp.Views.Maui.Controls.Hosting;
+using EnvironmentManager.Rules;
 namespace EnvironmentManager;
 
 public static class MauiProgram
@@ -17,6 +20,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+            .UseSkiaSharp(true)
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -43,6 +47,7 @@ public static class MauiProgram
         // Bind specific implementation to DBContext abstraction
         builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
         builder.Services.AddSingleton<IUserDataStore, UserDataStore>();
+        builder.Services.AddSingleton<ISensorDataStore, SensorDataStore>();
 
 		// Register App and AppShell
 		builder.Services.AddSingleton<App>(sp =>
@@ -188,6 +193,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<ISessionService, SessionService>();
         builder.Services.AddSingleton<IRunOnMainThread, RunOnMainThread>();
         builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
+        builder.Services.AddSingleton<ISensorThresholdService, SensorThresholdService>();
+        builder.Services.AddSingleton<IThresholdRules<Sensor>, ActiveOnlineThreshold>();
+        builder.Services.AddSingleton<IThresholdRules<Sensor>, BatteryPercentageThreshold>();
 	}
 
 	private static void RegisterViewModels(MauiAppBuilder builder)
@@ -200,7 +208,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditSensorViewModel>();
 		builder.Services.AddTransient<HistoricalDataSelectionViewModel>();
 		builder.Services.AddTransient<HistoricalDataViewerViewModel>();
-    builder.Services.AddTransient<LoginViewModel>();
+        builder.Services.AddTransient<LoginViewModel>();
+        builder.Services.AddTransient<ThresholdMapViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -213,6 +222,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditSensorPage>();
 		builder.Services.AddTransient<HistoricalData>();
 		builder.Services.AddTransient<HistoricalDataViewerPage>();
-    builder.Services.AddTransient<LoginPage>();
+        builder.Services.AddTransient<LoginPage>();
+        builder.Services.AddTransient<ThresholdMapPage>();
 	}
 }

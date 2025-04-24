@@ -35,7 +35,8 @@ public class SessionService : ISessionService
     /// Sets facts about session, stores assumed role in local storage and starts session ttl timer.
     /// </summary>
     /// <param name="user">User associated with successful login</param>
-    public void NewSession(User user){
+    public void NewSession(User user)
+    {
         _authenticatedUser = user;
         _expiry = DateTime.Now.AddSeconds(_ttl);
         StoreRole();

@@ -20,6 +20,7 @@ public partial class AppShell : Shell {
         Routing.RegisterRoute(nameof(AddSensorPage), typeof(AddSensorPage));
         Routing.RegisterRoute(nameof(HistoricalData), typeof(HistoricalData));
         Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
+        Routing.RegisterRoute(nameof(ThresholdMapPage), typeof(ThresholdMapPage));
 	}
 
     /// <summary>
@@ -48,13 +49,22 @@ public partial class AppShell : Shell {
                 {
                     Title = "SENSORS"
                 };
-
+                var threshold = new Tab
+                {
+                    Title = "THRESHOLD"
+                };
                 sensors.Items.Add(new ShellContent
                 {
                     Title = "SENSORS",
                     Content = _serviceProvider.GetRequiredService<SensorPage>()
                 });
+                threshold.Items.Add(new ShellContent
+                {
+                    Title = "THRESHOLD",
+                    Content = _serviceProvider.GetRequiredService<ThresholdMapPage>()
+                });
                 tabBar.Items.Add(sensors);
+                tabBar.Items.Add(threshold);
                 break;
         }
     }
