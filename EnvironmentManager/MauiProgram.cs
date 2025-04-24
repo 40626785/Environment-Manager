@@ -188,6 +188,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<ISessionService, SessionService>();
         builder.Services.AddSingleton<IRunOnMainThread, RunOnMainThread>();
         builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
+		builder.Services.AddSingleton<IAnomalyDetectionService, AnomalyDetectionService>();
 	}
 
 	private static void RegisterViewModels(MauiAppBuilder builder)
@@ -200,7 +201,9 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditSensorViewModel>();
 		builder.Services.AddTransient<HistoricalDataSelectionViewModel>();
 		builder.Services.AddTransient<HistoricalDataViewerViewModel>();
-    builder.Services.AddTransient<LoginViewModel>();
+   		builder.Services.AddTransient<LoginViewModel>();
+		builder.Services.AddTransient<AnomalyDetectionViewModel>();
+    	builder.Services.AddTransient<SensorAnomaliesViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -213,6 +216,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditSensorPage>();
 		builder.Services.AddTransient<HistoricalData>();
 		builder.Services.AddTransient<HistoricalDataViewerPage>();
-    builder.Services.AddTransient<LoginPage>();
+    	builder.Services.AddTransient<LoginPage>();
+		builder.Services.AddTransient<AnomalyPage>();
+    	builder.Services.AddTransient<SensorAnomaliesPage>();
 	}
 }

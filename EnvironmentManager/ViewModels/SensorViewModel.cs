@@ -96,7 +96,7 @@ namespace EnvironmentManager.ViewModels
                 _isLoading = true;
                 Debug.WriteLine("Starting to load sensors...");
                 Sensors.Clear();
-                
+
                 // Check if context is available
                 if (_context == null)
                 {
@@ -112,7 +112,7 @@ namespace EnvironmentManager.ViewModels
                     .AsNoTracking()
                     .OrderBy(s => s.SensorName)
                     .ToListAsync();
-                
+
                 foreach (var sensor in sensorsList)
                 {
                     Sensors.Add(sensor);
@@ -141,12 +141,12 @@ namespace EnvironmentManager.ViewModels
         private async Task NavigateToEditAsync(Sensor sensor)
         {
             if (sensor == null) return;
-            
+
             var parameters = new Dictionary<string, object>
             {
                 { "id", sensor.SensorId }
             };
-            
+
             await Shell.Current.GoToAsync(nameof(Views.EditSensorPage), parameters);
         }
 
@@ -239,6 +239,7 @@ namespace EnvironmentManager.ViewModels
 
                 await _context.SaveChangesAsync();
                 PrepareNewSensor();
+                MessagingCenter.Send(this, "SensorUpdated", sensorToSave);
                 await LoadSensorsAsync();
                 await Shell.Current.DisplayAlert("Success", "Sensor saved successfully.", "OK");
             }
@@ -291,7 +292,7 @@ namespace EnvironmentManager.ViewModels
                     PrepareNewSensor();
                 }
                 await LoadSensorsAsync();
-                
+
                 if (Shell.Current != null)
                 {
                     await Shell.Current.DisplayAlert("Success", "Sensor deleted successfully.", "OK");
@@ -301,6 +302,21 @@ namespace EnvironmentManager.ViewModels
             {
                 await Shell.Current.DisplayAlert("Error", $"Failed to delete sensor: {ex.Message}", "OK");
             }
+        }
+
+        [RelayCommand]
+        private async Task NavigateToAlertsAsync(Sensor sensor)
+        {
+            var parameter = new Dictionary<string, object>
+            {
+                { "sensorId", sensor.SensorId },
+                { "sensorName", sensor.SensorName }
+            };
+
+            if (sensor == null) return;
+
+             await Shell.Current.GoToAsync(nameof(Views.SensorAnomaliesPage), parameter);
+
         }
     }
 }

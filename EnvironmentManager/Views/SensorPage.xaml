@@ -70,7 +70,8 @@
                                    CornerRadius="8"
                                    BorderColor="#E5E7EB"
                                    HasShadow="False">
-                                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                                <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="15">
+
                                     <!-- Status Indicator -->
                                     <Frame Grid.Column="0"
                                            WidthRequest="12"
@@ -125,6 +126,19 @@
                                             Padding="15,8"
                                             BackgroundColor="#F3F4F6"
                                             TextColor="#1F2937"/>
+
+                                    <!-- Alerts Button -->
+                                    <Button Grid.Column="3" 
+                                            Text="Alerts" 
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:SensorViewModel}}, Path=NavigateToAlertsCommand}"
+                                            CommandParameter="{Binding .}"
+                                            FontAttributes="Bold"
+                                            FontSize="14"
+                                            CornerRadius="6"
+                                            Padding="10"
+                                            BackgroundColor="#F87171"
+                                            TextColor="#92400E"/>
+
                                 </Grid>
                             </Frame>
                         </DataTemplate>

@@ -407,7 +407,7 @@ namespace EnvironmentManager.ViewModels
         [RelayCommand]
         private async Task CancelAsync()
         {
-            await Shell.Current.GoToAsync("..");
+           await Shell.Current.GoToAsync("..");
         }
 
         private void ValidateSensorName()

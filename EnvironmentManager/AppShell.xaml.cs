@@ -20,6 +20,9 @@ public partial class AppShell : Shell {
         Routing.RegisterRoute(nameof(AddSensorPage), typeof(AddSensorPage));
         Routing.RegisterRoute(nameof(HistoricalData), typeof(HistoricalData));
         Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
+        Routing.RegisterRoute(nameof(Views.AnomalyPage), typeof(Views.AnomalyPage));
+        Routing.RegisterRoute(nameof(Views.SensorAnomaliesPage), typeof(Views.SensorAnomaliesPage));
+
 	}
 
     /// <summary>
@@ -43,6 +46,7 @@ public partial class AppShell : Shell {
                 });
                 tabBar.Items.Add(maintenance);
                 break;
+
             case "EnvironmentalScientist":
                 var sensors = new Tab
                 {
@@ -55,6 +59,18 @@ public partial class AppShell : Shell {
                     Content = _serviceProvider.GetRequiredService<SensorPage>()
                 });
                 tabBar.Items.Add(sensors);
+                
+                var alerts = new Tab
+                {
+                    Title = "ALERTS"
+                };
+
+                alerts.Items.Add(new ShellContent
+                {
+                    Title = "ALERTS",
+                    Content = _serviceProvider.GetRequiredService<AnomalyPage>()
+                });
+                tabBar.Items.Add(alerts);
                 break;
         }
     }
