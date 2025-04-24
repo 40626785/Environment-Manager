@@ -22,6 +22,9 @@ public partial class App : Application
 		Routing.RegisterRoute(nameof(Views.EditSensorPage), typeof(Views.EditSensorPage));
 		Routing.RegisterRoute(nameof(Views.AboutPage), typeof(Views.AboutPage));
 		Routing.RegisterRoute(nameof(Views.DatabaseAdminPage), typeof(Views.DatabaseAdminPage));
+		Routing.RegisterRoute(nameof(Views.AirQualityPage), typeof(Views.AirQualityPage));
+
+
 
 
 		Trace.Listeners.Add(new DefaultTraceListener());

@@ -102,7 +102,8 @@ public static class MauiProgram
 		{
 			try
 			{
-				var connectionString = builder.Configuration.GetConnectionString("SQLConnection");
+				Debug.WriteLine($"inside DatabaseAdminDbContext");
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
 				Debug.WriteLine("Configuring database admin context");
 				options.UseSqlServer(connectionString);
 			}
@@ -128,6 +129,20 @@ public static class MauiProgram
 			catch (Exception ex)
 			{
 				Debug.WriteLine($"Error configuring location database context: {ex.Message}");
+				throw;
+			}
+		});
+		//configure air db
+		builder.Services.AddDbContext<ArchiveAirQualityDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				options.UseSqlServer(connectionString);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring Archive Air database context: {ex.Message}");
 				throw;
 			}
 		});
@@ -162,7 +177,7 @@ public static class MauiProgram
 		// Add other services here
 
 		builder.Services.AddSingleton<TableMetadataService>();
-		builder.Services.AddScoped<IDatabaseAdminDataStore, DatabaseAdminDbContext>();
+
 
 	}
 
@@ -177,6 +192,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<DatabaseAdminViewModel>();
 		builder.Services.AddTransient<AirQualityAdminViewModel>();
 		builder.Services.AddTransient<ErrorTableAdminViewModel>();
+		builder.Services.AddSingleton<AirQualityAdminViewModel>();
+		builder.Services.AddTransient<ArchiveAirQualityViewModel>();
 
 	}
 
@@ -190,6 +207,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditSensorPage>();
 		builder.Services.AddTransient<DatabaseAdminPage>();
 		builder.Services.AddTransient<DatabaseAdminPage>();
-		builder.Services.AddTransient<TableAdminPage>();
+		builder.Services.AddTransient<AirQualityPage>();
+		builder.Services.AddTransient<ArchiveAirQualityPage>();
 	}
 }

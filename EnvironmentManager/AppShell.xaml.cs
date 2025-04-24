@@ -1,4 +1,4 @@
-﻿using EnvironmentManager.Views; // Add this using statement
+﻿using EnvironmentManager.Views;
 using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager;
@@ -17,7 +17,9 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(EditSensorPage), typeof(EditSensorPage));
         Routing.RegisterRoute(nameof(AddSensorPage), typeof(AddSensorPage));
         Routing.RegisterRoute(nameof(DatabaseAdminPage), typeof(DatabaseAdminPage));
-        Routing.RegisterRoute(nameof(TableAdminPage), typeof(TableAdminPage));
+        Routing.RegisterRoute(nameof(AirQualityPage), typeof(AirQualityPage));
+        Routing.RegisterRoute(nameof(ArchiveAirQualityPage), typeof(ArchiveAirQualityPage));
+        Routing.RegisterRoute(nameof(ArchiveWaterQualityPage), typeof(ArchiveWaterQualityPage));
 
     }
 }

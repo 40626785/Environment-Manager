@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvironmentManager.Views.ArchiveAirQualityPage"
+             Title="Archive Air Quality">
+    <VerticalStackLayout Padding="20">
+        <Label Text="Archive Air Quality Table Admin Page!"
+               FontSize="20"
+               HorizontalOptions="Center"/>
+
+
+        <Button Text="Load Data"
+                Command="{Binding LoadDataCommand}"/>
+
+        <Button Text="Delete Records for Date"
+                Command="{Binding DeleteByDateCommand}"/>
+
+        <CollectionView ItemsSource="{Binding TableData}"
+                        VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="5">
+                        <Label Text="{Binding Id}"/>
+                        <Label Text="{Binding Date}"/>
+                        <Label Text="{Binding Time}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

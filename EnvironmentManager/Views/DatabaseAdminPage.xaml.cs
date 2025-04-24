@@ -1,4 +1,6 @@
 using EnvironmentManager.ViewModels;
+using Microsoft.EntityFrameworkCore;
+using EnvironmentManager.Data;
 
 namespace EnvironmentManager.Views;
 
@@ -10,4 +12,5 @@ public partial class DatabaseAdminPage : ContentPage
 		BindingContext = viewModel;
 	}
 }
+
 

@@ -1,42 +1,81 @@
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using EnvironmentManager.Data;
+using EnvironmentManager.Views;
 
-namespace EnvironmentManager.ViewModels;
-
-public partial class DatabaseAdminViewModel : ObservableObject
+namespace EnvironmentManager.ViewModels
 {
-    public ObservableCollection<string> TableOptions { get; } = new()
+    public class DatabaseAdminViewModel : BaseViewModel
     {
-        "Air_Quality",
-        "ErrorTable"
-    };
+        private readonly DatabaseAdminDbContext _dbContext;
 
-    [ObservableProperty]
-    private string selectedTable;
+        public ObservableCollection<string> TableOptions { get; } = new();
+        public string SelectedTable { get; set; }
 
-    public IRelayCommand NavigateToTableCommand { get; }
+        public ICommand NavigateToTableCommand { get; }
 
-    public DatabaseAdminViewModel()
-    {
-        NavigateToTableCommand = new RelayCommand(GoToSelectedTable);
-    }
-
-    private async void GoToSelectedTable()
-    {
-        try
+        public DatabaseAdminViewModel(DatabaseAdminDbContext dbContext)
         {
-            if (!string.IsNullOrWhiteSpace(SelectedTable))
+            _dbContext = dbContext;
+            NavigateToTableCommand = new Command(async () => await NavigateToTableAsync());
+
+            LoadTables();
+        }
+
+        private void LoadTables()
+        {
+            try
             {
-                Debug.WriteLine($"Navigating to: TableAdminPage?table={SelectedTable}");
-                await Shell.Current.GoToAsync($"TableAdminPage?table={SelectedTable}");
+                var tables = _dbContext.GetAllTableNames();
+
+                TableOptions.Clear();
+                foreach (var table in tables)
+                {
+                    TableOptions.Add(table);
+                }
+
+                if (TableOptions.Count == 0)
+                {
+                    Application.Current.MainPage.DisplayAlert("Info", "No tables found in the database.", "OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                Application.Current.MainPage.DisplayAlert("Error", $"Failed to load tables: {ex.Message}", "OK");
             }
         }
-        catch (Exception ex)
+
+        private async Task NavigateToTableAsync()
         {
-            Debug.WriteLine($"Navigation failed: {ex.Message}");
+            try
+            {
+                if (string.IsNullOrEmpty(SelectedTable))
+                {
+                    await Application.Current.MainPage.DisplayAlert("Warning", "Please select a table first.", "OK");
+                    return;
+                }
+
+                string route = SelectedTable switch
+                {
+                    "Archive_Air_Quality" => nameof(ArchiveAirQualityPage),
+                    "Archive_Water_Quality" => nameof(ArchiveWaterQualityPage),
+                    _ => null
+                };
+
+                if (route != null)
+                {
+                    await Shell.Current.GoToAsync(route);
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", $"No page defined for table: {SelectedTable}", "OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Navigation Error", $"Failed to navigate: {ex.Message}", "OK");
+            }
         }
     }
-
 }
