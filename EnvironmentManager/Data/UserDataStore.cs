@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using EnvironmentManager.Models;
 using EnvironmentManager.Interfaces;
+using System.Diagnostics;
 
 namespace EnvironmentManager.Data;
 /// <summary>
@@ -24,6 +25,14 @@ public class UserDataStore : DbContext, IUserDataStore
     /// <returns>Matching user or null</returns>
     public User GetUser(string username)
     {
-        return _context.User.SingleOrDefault(n => n.Username == username);
+        var user = _context.User.SingleOrDefault(n => n.Username == username);
+        
+        if (user != null)
+        {
+            // Log the retrieved user's role from the database
+            Debug.WriteLine($"Retrieved user {username} from database with role: {user.Role} (enum value: {(int)user.Role})");
+        }
+        
+        return user;
     }
 }

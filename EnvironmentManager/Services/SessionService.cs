@@ -3,6 +3,7 @@ namespace EnvironmentManager.Services;
 using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
 using Microsoft.Identity.Client.Extensions.Msal;
+using System;
 using System.Diagnostics;
 using System.Timers;
 
@@ -73,6 +74,17 @@ public class SessionService : ISessionService
     /// </summary>
     private void StoreRole() 
     {
-        _storageService.SetStringValue("role", _authenticatedUser.Role.ToString());
+        string roleName = Enum.GetName(typeof(Roles), _authenticatedUser.Role);
+        int roleValue = (int)_authenticatedUser.Role;
+        
+        Debug.WriteLine($"Storing role in preferences: {roleName} (enum value: {roleValue})");
+        
+        // Store both the role name and its numeric value to ensure compatibility
+        _storageService.SetStringValue("role", roleName);
+        _storageService.SetStringValue("roleValue", roleValue.ToString());
+        
+        // Log the stored values for debugging
+        Debug.WriteLine($"Stored role name: {roleName}");
+        Debug.WriteLine($"Stored role value: {roleValue}");
     }
 }

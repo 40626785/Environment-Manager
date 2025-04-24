@@ -54,9 +54,19 @@ CREATE TABLE SensorStatus (
     CONSTRAINT FK_SensorStatus_Sensors FOREIGN KEY (SensorId) REFERENCES Sensors(SensorId)
 );
 
+-- Create Roles table to define system roles
+CREATE TABLE Roles (
+    RoleId INT IDENTITY(1,1) PRIMARY KEY,
+    RoleName NVARCHAR(50) NOT NULL UNIQUE,
+    Description NVARCHAR(200),
+    CreatedDate DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+    LastModifiedDate DATETIME2 NOT NULL DEFAULT SYSDATETIME()
+);
+
 -- Create User table
 CREATE TABLE Users (
     Username VARCHAR(20) PRIMARY KEY,
     Password VARCHAR(20) NOT NULL,
-    Role INT NOT NULL 
+    Role INT NOT NULL,
+    CONSTRAINT FK_Users_Roles FOREIGN KEY (Role) REFERENCES Roles(RoleId)
 );

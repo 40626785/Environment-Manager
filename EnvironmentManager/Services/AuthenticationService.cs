@@ -41,6 +41,10 @@ namespace EnvironmentManager.Services
                 {
                     _authenticated = true;
                     _authenticatedUser = user;
+                    
+                    // Log the role that was loaded from the database
+                    Debug.WriteLine($"User {username} authenticated with role: {user.Role} (enum value: {(int)user.Role})");
+                    
                     ConfigureSession();
                 }
                 else

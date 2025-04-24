@@ -175,6 +175,24 @@ public static class MauiProgram
 			}
 		});
 
+		// Configure UserManagementDbContext
+		builder.Services.AddDbContext<UserManagementDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Debug.WriteLine($"Configuring user management database");
+				options.UseSqlServer(connectionString);
+				options.EnableSensitiveDataLogging();
+				options.EnableDetailedErrors();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring user management database context: {ex.Message}");
+				throw;
+			}
+		});
+
 	}
 
 	private static void RegisterServices(MauiAppBuilder builder)
@@ -188,6 +206,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<ISessionService, SessionService>();
         builder.Services.AddSingleton<IRunOnMainThread, RunOnMainThread>();
         builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
+
+		// Register UserManagementDataStore
+		builder.Services.AddScoped<IUserManagementDataStore, UserManagementDataStore>();
 	}
 
 	private static void RegisterViewModels(MauiAppBuilder builder)
@@ -202,6 +223,9 @@ public static class MauiProgram
 		builder.Services.AddTransient<SensorMonitoringViewModel>();
 		builder.Services.AddTransient<HistoricalDataSelectionViewModel>();
 		builder.Services.AddTransient<HistoricalDataViewerViewModel>();
+
+		// Register UserManagementViewModel
+		builder.Services.AddSingleton<UserManagementViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -216,5 +240,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<SensorMonitoringPage>();
 		builder.Services.AddTransient<HistoricalData>();
 		builder.Services.AddTransient<HistoricalDataViewerPage>();
+
+		// Register UserManagementPage
+		builder.Services.AddSingleton<UserManagementPage>();
 	}
 }

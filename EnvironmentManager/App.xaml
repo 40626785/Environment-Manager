@@ -29,6 +29,9 @@
             <converters:NotNullConverter x:Key="NotNullConverter" />
             <converters:NotZeroConverter x:Key="NotZeroConverter" />
             <converters:CountToBoolConverter x:Key="CountToBoolConverter"/>
+            <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <converters:RoleConverter x:Key="RoleConverter" />
+            <converters:RoleToColorConverter x:Key="RoleToColorConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
