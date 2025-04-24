@@ -10,6 +10,7 @@ items:
   - EnvironmentManager.Services.LocalStorageService
   - EnvironmentManager.Services.LoginNavService
   - EnvironmentManager.Services.RunOnMainThread
+  - EnvironmentManager.Services.SensorThresholdService
   - EnvironmentManager.Services.SessionService
   - EnvironmentManager.Services.ValidationService
   langs:
@@ -59,6 +60,12 @@ references:
   name: RunOnMainThread
   nameWithType: RunOnMainThread
   fullName: EnvironmentManager.Services.RunOnMainThread
+- uid: EnvironmentManager.Services.SensorThresholdService
+  commentId: T:EnvironmentManager.Services.SensorThresholdService
+  href: EnvironmentManager.Services.SensorThresholdService.html
+  name: SensorThresholdService
+  nameWithType: SensorThresholdService
+  fullName: EnvironmentManager.Services.SensorThresholdService
 - uid: EnvironmentManager.Services.SessionService
   commentId: T:EnvironmentManager.Services.SessionService
   href: EnvironmentManager.Services.SessionService.html

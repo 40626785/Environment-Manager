@@ -13,7 +13,9 @@ items:
   - EnvironmentManager.Views.HomePage
   - EnvironmentManager.Views.LoginPage
   - EnvironmentManager.Views.MaintenancePage
+  - EnvironmentManager.Views.SensorMonitoringPage
   - EnvironmentManager.Views.SensorPage
+  - EnvironmentManager.Views.ThresholdMapPage
   langs:
   - csharp
   - vb
@@ -78,9 +80,21 @@ references:
   name: MaintenancePage
   nameWithType: MaintenancePage
   fullName: EnvironmentManager.Views.MaintenancePage
+- uid: EnvironmentManager.Views.SensorMonitoringPage
+  commentId: T:EnvironmentManager.Views.SensorMonitoringPage
+  href: EnvironmentManager.Views.SensorMonitoringPage.html
+  name: SensorMonitoringPage
+  nameWithType: SensorMonitoringPage
+  fullName: EnvironmentManager.Views.SensorMonitoringPage
 - uid: EnvironmentManager.Views.SensorPage
   commentId: T:EnvironmentManager.Views.SensorPage
   href: EnvironmentManager.Views.SensorPage.html
   name: SensorPage
   nameWithType: SensorPage
   fullName: EnvironmentManager.Views.SensorPage
+- uid: EnvironmentManager.Views.ThresholdMapPage
+  commentId: T:EnvironmentManager.Views.ThresholdMapPage
+  href: EnvironmentManager.Views.ThresholdMapPage.html
+  name: ThresholdMapPage
+  nameWithType: ThresholdMapPage
+  fullName: EnvironmentManager.Views.ThresholdMapPage

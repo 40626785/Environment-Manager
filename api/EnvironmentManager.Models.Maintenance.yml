@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Maintenance.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Maintenance
     path: EnvironmentManager/Models/Maintenance.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Maintenance.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Id
     path: EnvironmentManager/Models/Maintenance.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Maintenance.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: DueDate
     path: EnvironmentManager/Models/Maintenance.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Maintenance.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Overdue
     path: EnvironmentManager/Models/Maintenance.cs
@@ -178,7 +178,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Maintenance.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Priority
     path: EnvironmentManager/Models/Maintenance.cs
@@ -217,7 +217,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Maintenance.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Description
     path: EnvironmentManager/Models/Maintenance.cs

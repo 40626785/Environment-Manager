@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: AuthenticationService
     path: EnvironmentManager/Services/AuthenticationService.cs
@@ -65,7 +65,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Authenticated
     path: EnvironmentManager/Services/AuthenticationService.cs
@@ -97,7 +97,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: AuthenticatedUser
     path: EnvironmentManager/Services/AuthenticationService.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Services/AuthenticationService.cs
@@ -163,7 +163,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Authenticate
     path: EnvironmentManager/Services/AuthenticationService.cs

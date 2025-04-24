@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/MaintenanceDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: MaintenanceDataStore
     path: EnvironmentManager/Data/MaintenanceDataStore.cs
@@ -120,7 +120,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/MaintenanceDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/MaintenanceDataStore.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/MaintenanceDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Delete
     path: EnvironmentManager/Data/MaintenanceDataStore.cs
@@ -186,7 +186,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/MaintenanceDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: QueryById
     path: EnvironmentManager/Data/MaintenanceDataStore.cs
@@ -226,7 +226,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/MaintenanceDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Reload
     path: EnvironmentManager/Data/MaintenanceDataStore.cs
@@ -260,7 +260,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/MaintenanceDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: RetrieveAll
     path: EnvironmentManager/Data/MaintenanceDataStore.cs
@@ -293,7 +293,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/MaintenanceDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Save
     path: EnvironmentManager/Data/MaintenanceDataStore.cs
@@ -323,7 +323,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/MaintenanceDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Update
     path: EnvironmentManager/Data/MaintenanceDataStore.cs

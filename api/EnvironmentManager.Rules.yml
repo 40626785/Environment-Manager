@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Rules
+  commentId: N:EnvironmentManager.Rules
+  id: EnvironmentManager.Rules
+  children:
+  - EnvironmentManager.Rules.ActiveOnlineThreshold
+  - EnvironmentManager.Rules.BatteryPercentageThreshold
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Rules
+  nameWithType: EnvironmentManager.Rules
+  fullName: EnvironmentManager.Rules
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Rules.ActiveOnlineThreshold
+  commentId: T:EnvironmentManager.Rules.ActiveOnlineThreshold
+  href: EnvironmentManager.Rules.ActiveOnlineThreshold.html
+  name: ActiveOnlineThreshold
+  nameWithType: ActiveOnlineThreshold
+  fullName: EnvironmentManager.Rules.ActiveOnlineThreshold
+- uid: EnvironmentManager.Rules.BatteryPercentageThreshold
+  commentId: T:EnvironmentManager.Rules.BatteryPercentageThreshold
+  href: EnvironmentManager.Rules.BatteryPercentageThreshold.html
+  name: BatteryPercentageThreshold
+  nameWithType: BatteryPercentageThreshold
+  fullName: EnvironmentManager.Rules.BatteryPercentageThreshold

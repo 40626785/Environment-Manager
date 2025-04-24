@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/User.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: User
     path: EnvironmentManager/Models/User.cs
@@ -69,7 +69,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/User.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Username
     path: EnvironmentManager/Models/User.cs
@@ -108,7 +108,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/User.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Password
     path: EnvironmentManager/Models/User.cs
@@ -147,7 +147,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/User.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Role
     path: EnvironmentManager/Models/User.cs

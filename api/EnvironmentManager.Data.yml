@@ -8,6 +8,7 @@ items:
   - EnvironmentManager.Data.LocationDbContext
   - EnvironmentManager.Data.MaintenanceDataStore
   - EnvironmentManager.Data.MaintenanceDbContext
+  - EnvironmentManager.Data.SensorDataStore
   - EnvironmentManager.Data.SensorDbContext
   - EnvironmentManager.Data.UserDataStore
   - EnvironmentManager.Data.UserDbContext
@@ -48,6 +49,12 @@ references:
   name: MaintenanceDbContext
   nameWithType: MaintenanceDbContext
   fullName: EnvironmentManager.Data.MaintenanceDbContext
+- uid: EnvironmentManager.Data.SensorDataStore
+  commentId: T:EnvironmentManager.Data.SensorDataStore
+  href: EnvironmentManager.Data.SensorDataStore.html
+  name: SensorDataStore
+  nameWithType: SensorDataStore
+  fullName: EnvironmentManager.Data.SensorDataStore
 - uid: EnvironmentManager.Data.SensorDbContext
   commentId: T:EnvironmentManager.Data.SensorDbContext
   parent: EnvironmentManager.Data

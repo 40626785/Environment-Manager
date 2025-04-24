@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/UserDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: UserDataStore
     path: EnvironmentManager/Data/UserDataStore.cs
@@ -115,7 +115,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/UserDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/UserDataStore.cs
@@ -147,7 +147,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/UserDataStore.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: GetUser
     path: EnvironmentManager/Data/UserDataStore.cs

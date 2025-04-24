@@ -30,7 +30,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Location
     path: EnvironmentManager/Models/Location.cs
@@ -65,7 +65,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: LocationId
     path: EnvironmentManager/Models/Location.cs
@@ -104,7 +104,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: SiteName
     path: EnvironmentManager/Models/Location.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Latitude
     path: EnvironmentManager/Models/Location.cs
@@ -191,7 +191,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Longitude
     path: EnvironmentManager/Models/Location.cs
@@ -230,7 +230,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Elevation
     path: EnvironmentManager/Models/Location.cs
@@ -269,7 +269,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: SiteType
     path: EnvironmentManager/Models/Location.cs
@@ -317,7 +317,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Zone
     path: EnvironmentManager/Models/Location.cs
@@ -365,7 +365,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Agglomeration
     path: EnvironmentManager/Models/Location.cs
@@ -413,7 +413,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: LocalAuthority
     path: EnvironmentManager/Models/Location.cs
@@ -461,7 +461,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Country
     path: EnvironmentManager/Models/Location.cs
@@ -509,7 +509,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: UtcOffsetSeconds
     path: EnvironmentManager/Models/Location.cs
@@ -548,7 +548,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Timezone
     path: EnvironmentManager/Models/Location.cs
@@ -596,7 +596,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: TimezoneAbbreviation
     path: EnvironmentManager/Models/Location.cs
@@ -644,7 +644,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Sensors
     path: EnvironmentManager/Models/Location.cs
@@ -673,7 +673,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Location.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Models/Location.cs

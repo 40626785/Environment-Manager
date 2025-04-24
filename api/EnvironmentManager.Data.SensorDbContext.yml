@@ -8,6 +8,7 @@ items:
   - EnvironmentManager.Data.SensorDbContext.#ctor
   - EnvironmentManager.Data.SensorDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{EnvironmentManager.Data.SensorDbContext})
   - EnvironmentManager.Data.SensorDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+  - EnvironmentManager.Data.SensorDbContext.SensorStatuses
   - EnvironmentManager.Data.SensorDbContext.Sensors
   langs:
   - csharp
@@ -19,7 +20,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: SensorDbContext
     path: EnvironmentManager/Data/SensorDbContext.cs
@@ -109,7 +110,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/SensorDbContext.cs
@@ -138,7 +139,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/SensorDbContext.cs
@@ -170,7 +171,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Sensors
     path: EnvironmentManager/Data/SensorDbContext.cs
@@ -185,6 +186,35 @@ items:
       type: Microsoft.EntityFrameworkCore.DbSet{EnvironmentManager.Models.Sensor}
     content.vb: Public Overridable Property Sensors As DbSet(Of Sensor)
   overload: EnvironmentManager.Data.SensorDbContext.Sensors*
+- uid: EnvironmentManager.Data.SensorDbContext.SensorStatuses
+  commentId: P:EnvironmentManager.Data.SensorDbContext.SensorStatuses
+  id: SensorStatuses
+  parent: EnvironmentManager.Data.SensorDbContext
+  langs:
+  - csharp
+  - vb
+  name: SensorStatuses
+  nameWithType: SensorDbContext.SensorStatuses
+  fullName: EnvironmentManager.Data.SensorDbContext.SensorStatuses
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Data/SensorDbContext.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: SensorStatuses
+    path: EnvironmentManager/Data/SensorDbContext.cs
+    startLine: 14
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Data
+  syntax:
+    content: public virtual DbSet<SensorStatus> SensorStatuses { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{EnvironmentManager.Models.SensorStatus}
+    content.vb: Public Overridable Property SensorStatuses As DbSet(Of SensorStatus)
+  overload: EnvironmentManager.Data.SensorDbContext.SensorStatuses*
 - uid: EnvironmentManager.Data.SensorDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
   commentId: M:EnvironmentManager.Data.SensorDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
   id: OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
@@ -199,11 +229,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: OnModelCreating
     path: EnvironmentManager/Data/SensorDbContext.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Data
@@ -2793,6 +2823,45 @@ references:
   - name: Of
   - name: " "
   - name: TEntity
+  - name: )
+- uid: EnvironmentManager.Data.SensorDbContext.SensorStatuses*
+  commentId: Overload:EnvironmentManager.Data.SensorDbContext.SensorStatuses
+  href: EnvironmentManager.Data.SensorDbContext.html#EnvironmentManager_Data_SensorDbContext_SensorStatuses
+  name: SensorStatuses
+  nameWithType: SensorDbContext.SensorStatuses
+  fullName: EnvironmentManager.Data.SensorDbContext.SensorStatuses
+- uid: Microsoft.EntityFrameworkCore.DbSet{EnvironmentManager.Models.SensorStatus}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{EnvironmentManager.Models.SensorStatus}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<SensorStatus>
+  nameWithType: DbSet<SensorStatus>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<EnvironmentManager.Models.SensorStatus>
+  nameWithType.vb: DbSet(Of SensorStatus)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of EnvironmentManager.Models.SensorStatus)
+  name.vb: DbSet(Of SensorStatus)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: EnvironmentManager.Models.SensorStatus
+    name: SensorStatus
+    href: EnvironmentManager.Models.SensorStatus.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.SensorStatus
+    name: SensorStatus
+    href: EnvironmentManager.Models.SensorStatus.html
   - name: )
 - uid: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder.UseModel(Microsoft.EntityFrameworkCore.Metadata.IModel)
   commentId: M:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder.UseModel(Microsoft.EntityFrameworkCore.Metadata.IModel)

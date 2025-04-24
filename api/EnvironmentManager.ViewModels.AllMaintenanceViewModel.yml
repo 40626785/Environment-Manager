@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: AllMaintenanceViewModel
     path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: AllMaintenance
     path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: RefreshCommand
     path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: EditCommand
     path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
@@ -168,7 +168,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: NewTicketCommand
     path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
@@ -197,7 +197,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: DisplayError
     path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
@@ -229,7 +229,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
@@ -261,7 +261,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: HandleError
     path: EnvironmentManager/ViewModels/AllMaintenanceViewModel.cs

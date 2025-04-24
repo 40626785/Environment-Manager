@@ -33,7 +33,7 @@ items:
   - EnvironmentManager.ViewModels.EditSensorViewModel.ModelErrorVisible
   - EnvironmentManager.ViewModels.EditSensorViewModel.NameErrorMessage
   - EnvironmentManager.ViewModels.EditSensorViewModel.NameErrorVisible
-  - EnvironmentManager.ViewModels.EditSensorViewModel.SaveCommand
+  - EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorCommand
   - EnvironmentManager.ViewModels.EditSensorViewModel.SelectedLocation
   - EnvironmentManager.ViewModels.EditSensorViewModel.SensorId
   - EnvironmentManager.ViewModels.EditSensorViewModel.SensorName
@@ -52,7 +52,7 @@ items:
   type: Class
   source:
     id: EditSensorViewModel
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.g.cs
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync.g.cs
     startLine: 6
   assemblies:
   - EnvironmentManager
@@ -120,7 +120,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: LocationErrorVisible
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: NameErrorVisible
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -178,7 +178,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ModelErrorVisible
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -207,7 +207,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ManufacturerErrorVisible
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -236,7 +236,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: TypeErrorVisible
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -265,7 +265,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: FirmwareErrorVisible
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -294,7 +294,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: UrlErrorVisible
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -323,7 +323,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: BatteryErrorVisible
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -352,7 +352,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: DataSourceErrorVisible
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -381,7 +381,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: LocationErrorMessage
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -410,7 +410,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: NameErrorMessage
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -439,7 +439,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ModelErrorMessage
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -468,7 +468,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ManufacturerErrorMessage
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -497,7 +497,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: TypeErrorMessage
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -526,7 +526,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: FirmwareErrorMessage
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -555,7 +555,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: UrlErrorMessage
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -584,7 +584,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: BatteryErrorMessage
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -613,7 +613,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: DataSourceErrorMessage
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -642,7 +642,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/EditSensorViewModel.cs
@@ -662,33 +662,33 @@ items:
   nameWithType.vb: EditSensorViewModel.New(SensorDbContext, LocationDbContext)
   fullName.vb: EnvironmentManager.ViewModels.EditSensorViewModel.New(EnvironmentManager.Data.SensorDbContext, EnvironmentManager.Data.LocationDbContext)
   name.vb: New(SensorDbContext, LocationDbContext)
-- uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveCommand
-  commentId: P:EnvironmentManager.ViewModels.EditSensorViewModel.SaveCommand
-  id: SaveCommand
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorCommand
+  commentId: P:EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorCommand
+  id: SaveSensorCommand
   parent: EnvironmentManager.ViewModels.EditSensorViewModel
   langs:
   - csharp
   - vb
-  name: SaveCommand
-  nameWithType: EditSensorViewModel.SaveCommand
-  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.SaveCommand
+  name: SaveSensorCommand
+  nameWithType: EditSensorViewModel.SaveSensorCommand
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorCommand
   type: Property
   source:
-    id: SaveCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.SaveAsync.g.cs
+    id: SaveSensorCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorAsync.g.cs
     startLine: 12
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.EditSensorViewModel.SaveAsync" data-throw-if-not-resolved="false"></xref>.
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorAsync" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public IAsyncRelayCommand SaveCommand { get; }
+    content: public IAsyncRelayCommand SaveSensorCommand { get; }
     parameters: []
     return:
       type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-    content.vb: Public ReadOnly Property SaveCommand As IAsyncRelayCommand
-  overload: EnvironmentManager.ViewModels.EditSensorViewModel.SaveCommand*
+    content.vb: Public ReadOnly Property SaveSensorCommand As IAsyncRelayCommand
+  overload: EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorCommand*
 - uid: EnvironmentManager.ViewModels.EditSensorViewModel.DeleteCommand
   commentId: P:EnvironmentManager.ViewModels.EditSensorViewModel.DeleteCommand
   id: DeleteCommand
@@ -716,33 +716,6 @@ items:
       type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
     content.vb: Public ReadOnly Property DeleteCommand As IAsyncRelayCommand
   overload: EnvironmentManager.ViewModels.EditSensorViewModel.DeleteCommand*
-- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
-  commentId: P:EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
-  id: CancelCommand
-  parent: EnvironmentManager.ViewModels.EditSensorViewModel
-  langs:
-  - csharp
-  - vb
-  name: CancelCommand
-  nameWithType: EditSensorViewModel.CancelCommand
-  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
-  type: Property
-  source:
-    id: CancelCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IAsyncRelayCommand CancelCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-    content.vb: Public ReadOnly Property CancelCommand As IAsyncRelayCommand
-  overload: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand*
 - uid: EnvironmentManager.ViewModels.EditSensorViewModel.SensorId
   commentId: P:EnvironmentManager.ViewModels.EditSensorViewModel.SensorId
   id: SensorId
@@ -1159,6 +1132,33 @@ items:
       type: System.String
     content.vb: Public Property DataSource As String
   overload: EnvironmentManager.ViewModels.EditSensorViewModel.DataSource*
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
+  commentId: P:EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
+  id: CancelCommand
+  parent: EnvironmentManager.ViewModels.EditSensorViewModel
+  langs:
+  - csharp
+  - vb
+  name: CancelCommand
+  nameWithType: EditSensorViewModel.CancelCommand
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
+  type: Property
+  source:
+    id: CancelCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IAsyncRelayCommand CancelCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+    content.vb: Public ReadOnly Property CancelCommand As IAsyncRelayCommand
+  overload: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand*
 references:
 - uid: EnvironmentManager.ViewModels
   commentId: N:EnvironmentManager.ViewModels
@@ -3364,27 +3364,27 @@ references:
   name: IAsyncRelayCommand
   nameWithType: IAsyncRelayCommand
   fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-- uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveAsync
-  commentId: M:EnvironmentManager.ViewModels.EditSensorViewModel.SaveAsync
-  name: SaveAsync()
-  nameWithType: EditSensorViewModel.SaveAsync()
-  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.SaveAsync()
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorAsync
+  commentId: M:EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorAsync
+  name: SaveSensorAsync()
+  nameWithType: EditSensorViewModel.SaveSensorAsync()
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorAsync()
   spec.csharp:
-  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveAsync
-    name: SaveAsync
+  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorAsync
+    name: SaveSensorAsync
   - name: (
   - name: )
   spec.vb:
-  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveAsync
-    name: SaveAsync
+  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorAsync
+    name: SaveSensorAsync
   - name: (
   - name: )
-- uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.EditSensorViewModel.SaveCommand
-  href: EnvironmentManager.ViewModels.EditSensorViewModel.html#EnvironmentManager_ViewModels_EditSensorViewModel_SaveCommand
-  name: SaveCommand
-  nameWithType: EditSensorViewModel.SaveCommand
-  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.SaveCommand
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorCommand
+  href: EnvironmentManager.ViewModels.EditSensorViewModel.html#EnvironmentManager_ViewModels_EditSensorViewModel_SaveSensorCommand
+  name: SaveSensorCommand
+  nameWithType: EditSensorViewModel.SaveSensorCommand
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.SaveSensorCommand
 - uid: CommunityToolkit.Mvvm.Input
   commentId: N:CommunityToolkit.Mvvm.Input
   isExternal: true
@@ -3443,27 +3443,6 @@ references:
   name: DeleteCommand
   nameWithType: EditSensorViewModel.DeleteCommand
   fullName: EnvironmentManager.ViewModels.EditSensorViewModel.DeleteCommand
-- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
-  commentId: M:EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
-  name: CancelAsync()
-  nameWithType: EditSensorViewModel.CancelAsync()
-  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
-    name: CancelAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
-    name: CancelAsync
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
-  href: EnvironmentManager.ViewModels.EditSensorViewModel.html#EnvironmentManager_ViewModels_EditSensorViewModel_CancelCommand
-  name: CancelCommand
-  nameWithType: EditSensorViewModel.CancelCommand
-  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
 - uid: EnvironmentManager.ViewModels.EditSensorViewModel.SensorId*
   commentId: Overload:EnvironmentManager.ViewModels.EditSensorViewModel.SensorId
   href: EnvironmentManager.ViewModels.EditSensorViewModel.html#EnvironmentManager_ViewModels_EditSensorViewModel_SensorId
@@ -3760,3 +3739,24 @@ references:
   name: DataSource
   nameWithType: EditSensorViewModel.DataSource
   fullName: EnvironmentManager.ViewModels.EditSensorViewModel.DataSource
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
+  commentId: M:EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
+  name: CancelAsync()
+  nameWithType: EditSensorViewModel.CancelAsync()
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
+    name: CancelAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
+    name: CancelAsync
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
+  href: EnvironmentManager.ViewModels.EditSensorViewModel.html#EnvironmentManager_ViewModels_EditSensorViewModel_CancelCommand
+  name: CancelCommand
+  nameWithType: EditSensorViewModel.CancelCommand
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand

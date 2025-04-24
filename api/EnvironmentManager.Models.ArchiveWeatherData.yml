@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWeatherData.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ArchiveWeatherData
     path: EnvironmentManager/Models/ArchiveWeatherData.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWeatherData.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Date_Time
     path: EnvironmentManager/Models/ArchiveWeatherData.cs
@@ -105,7 +105,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWeatherData.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Temperature_2m
     path: EnvironmentManager/Models/ArchiveWeatherData.cs
@@ -134,7 +134,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWeatherData.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Relative_humidity_2m
     path: EnvironmentManager/Models/ArchiveWeatherData.cs
@@ -163,7 +163,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWeatherData.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Wind_speed_10m
     path: EnvironmentManager/Models/ArchiveWeatherData.cs
@@ -192,7 +192,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWeatherData.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Wind_direction_10m
     path: EnvironmentManager/Models/ArchiveWeatherData.cs
