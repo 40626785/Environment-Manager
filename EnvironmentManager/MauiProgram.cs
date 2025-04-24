@@ -193,22 +193,62 @@ public static class MauiProgram
 			}
 		});
 
+		// Configure UserLogDbContext
+		builder.Services.AddDbContext<UserLogDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Debug.WriteLine($"Configuring user log database");
+				options.UseSqlServer(connectionString);
+				options.EnableSensitiveDataLogging();
+				options.EnableDetailedErrors();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring user log database context: {ex.Message}");
+				throw;
+			}
+		});
 	}
 
 	private static void RegisterServices(MauiAppBuilder builder)
 	{
 		// Register DatabaseInitializationService
-		builder.Services.AddScoped<IDatabaseInitializationService, DatabaseInitializationService>();
-    
+		builder.Services.AddScoped<IDatabaseInitializationService>(sp => {
+			var sensorContext = sp.GetRequiredService<SensorDbContext>();
+			var locationContext = sp.GetRequiredService<LocationDbContext>();
+			var maintenanceContext = sp.GetRequiredService<MaintenanceDbContext>();
+			var userManagementContext = sp.GetRequiredService<UserManagementDbContext>();
+			var userLogContext = sp.GetRequiredService<UserLogDbContext>();
+			
+			return new DatabaseInitializationService(
+				sensorContext,
+				locationContext,
+				maintenanceContext,
+				userManagementContext,
+				userLogContext);
+		});
+
 		// Add other services here
-        builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
-        builder.Services.AddScoped<ILoginNavService, LoginNavService>();
-        builder.Services.AddSingleton<ISessionService, SessionService>();
-        builder.Services.AddSingleton<IRunOnMainThread, RunOnMainThread>();
-        builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
+		builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+		builder.Services.AddScoped<ILoginNavService, LoginNavService>();
+		builder.Services.AddSingleton<ISessionService, SessionService>();
+		builder.Services.AddSingleton<IRunOnMainThread, RunOnMainThread>();
+		builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
 
 		// Register UserManagementDataStore
 		builder.Services.AddScoped<IUserManagementDataStore, UserManagementDataStore>();
+
+		// Register other services
+		builder.Services.AddSingleton<ValidationService>();
+		builder.Services.AddSingleton<SessionService>();
+		builder.Services.AddSingleton<AuthenticationService>();
+		builder.Services.AddSingleton<LocalStorageService>();
+		builder.Services.AddSingleton<LoginNavService>();
+
+		// Register UserLogService
+		builder.Services.AddSingleton<IUserLogService, UserLogService>();
 	}
 
 	private static void RegisterViewModels(MauiAppBuilder builder)

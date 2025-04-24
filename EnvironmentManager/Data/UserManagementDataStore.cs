@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
+using EnvironmentManager.Services;
 using System.Diagnostics;
 
 namespace EnvironmentManager.Data;
@@ -11,10 +12,12 @@ namespace EnvironmentManager.Data;
 public class UserManagementDataStore : IUserManagementDataStore
 {
     private readonly UserManagementDbContext _context;
+    private readonly IUserLogService _logService;
     
-    public UserManagementDataStore(UserManagementDbContext context)
+    public UserManagementDataStore(UserManagementDbContext context, IUserLogService logService)
     {
         _context = context;
+        _logService = logService;
     }
     
     /// <summary>
@@ -73,6 +76,10 @@ public class UserManagementDataStore : IUserManagementDataStore
     {
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
+        
+        // Log the user creation
+        await _logService.LogUserCreatedAsync(user);
+        
         return user;
     }
     
@@ -80,43 +87,68 @@ public class UserManagementDataStore : IUserManagementDataStore
     {
         try
         {
-            Debug.WriteLine($"UpdateUser: Starting update for user {user.Username}");
-            Debug.WriteLine($"UpdateUser: Role before update is {user.Role} (enum value: {(int)user.Role})");
+            Debug.WriteLine($"UpdateUser: STARTING UPDATE FOR USER {user.Username}");
+            Debug.WriteLine($"UpdateUser: New user role is {user.Role} (enum value: {(int)user.Role})");
             
             // Check if user exists in the database before updating
-            var existingUser = _context.Users.FirstOrDefault(u => u.Username == user.Username);
+            var existingUser = _context.Users.AsNoTracking().FirstOrDefault(u => u.Username == user.Username);
             if (existingUser == null)
             {
                 Debug.WriteLine($"UpdateUser ERROR: User {user.Username} not found in the database");
                 throw new Exception($"User {user.Username} not found in the database");
             }
             
-            Debug.WriteLine($"UpdateUser: Existing user found with role {existingUser.Role} (enum value: {(int)existingUser.Role})");
+            Debug.WriteLine($"UpdateUser: Found existing user with role {existingUser.Role} (enum value: {(int)existingUser.Role})");
             
-            // Get the correct role ID for the database (from the DatabaseRoleId property)
+            // Create a complete detached copy of the existing user before making any changes
+            var oldUser = new User
+            {
+                Username = existingUser.Username,
+                Password = existingUser.Password, 
+                Role = existingUser.Role  // This will set the internal _role field
+            };
+            
+            Debug.WriteLine($"UpdateUser: Created deep copy of old user with role {oldUser.Role} (enum value: {(int)oldUser.Role})");
+            
+            // Get the correct role ID for the database
             var roleId = user.DatabaseRoleId;
             Debug.WriteLine($"UpdateUser: Using enum role {user.Role} (enum value: {(int)user.Role}) as database role ID {roleId}");
             
-            // Apply properties to existing user
-            existingUser.Role = user.Role;
-            if (!string.IsNullOrEmpty(user.Password))
+            // Apply properties to existing entity (tracked by EF)
+            var entityToUpdate = _context.Users.Find(existingUser.Username);
+            if (entityToUpdate == null)
             {
-                existingUser.Password = user.Password;
+                Debug.WriteLine($"UpdateUser ERROR: Could not find user {user.Username} for tracked update");
+                throw new Exception($"Could not find user {user.Username} for tracked update");
             }
             
-            Debug.WriteLine($"UpdateUser: User updated in memory with role {existingUser.Role} (enum value: {(int)existingUser.Role})");
+            Debug.WriteLine($"UpdateUser: Found tracked entity with role {entityToUpdate.Role} (enum value: {(int)entityToUpdate.Role})");
             
-            // Use raw SQL to update the user
-            _context.Database.ExecuteSqlRaw(
-                "UPDATE Users SET Role = {0}, Password = {1} WHERE Username = {2}",
-                roleId, // Use the database role ID from DatabaseRoleId property
-                existingUser.Password,
-                existingUser.Username
-            );
+            // Store original values for logging
+            Debug.WriteLine($"UpdateUser: Before changes - role: {entityToUpdate.Role} (enum value: {(int)entityToUpdate.Role})");
             
-            Debug.WriteLine($"UpdateUser: Executed SQL update with role ID {roleId}");
+            // Apply changes to tracked entity
+            entityToUpdate.Role = user.Role;
+            if (!string.IsNullOrEmpty(user.Password))
+            {
+                entityToUpdate.Password = user.Password;
+            }
             
-            return existingUser;
+            Debug.WriteLine($"UpdateUser: After changes - role: {entityToUpdate.Role} (enum value: {(int)entityToUpdate.Role})");
+            
+            // Save changes through EF Core 
+            await _context.SaveChangesAsync();
+            Debug.WriteLine($"UpdateUser: Changes saved to database");
+            
+            // Log the user update 
+            Debug.WriteLine($"UpdateUser: About to call log service...");
+            Debug.WriteLine($"UpdateUser: Old user: {oldUser.Username}, Role: {oldUser.Role} ({(int)oldUser.Role})");
+            Debug.WriteLine($"UpdateUser: Updated user: {entityToUpdate.Username}, Role: {entityToUpdate.Role} ({(int)entityToUpdate.Role})");
+            
+            await _logService.LogUserUpdatedAsync(oldUser, entityToUpdate);
+            Debug.WriteLine($"UpdateUser: Logging completed");
+            
+            return entityToUpdate;
         }
         catch (Exception ex)
         {
@@ -125,6 +157,7 @@ public class UserManagementDataStore : IUserManagementDataStore
             if (ex.InnerException != null)
             {
                 Debug.WriteLine($"UpdateUser INNER ERROR: {ex.InnerException.Message}");
+                Debug.WriteLine($"UpdateUser INNER STACK: {ex.InnerException.StackTrace}");
             }
             throw;
         }
@@ -132,6 +165,9 @@ public class UserManagementDataStore : IUserManagementDataStore
     
     public async Task<bool> DeleteUser(User user)
     {
+        // Log the user deletion before removing
+        await _logService.LogUserDeletedAsync(user);
+        
         _context.Users.Remove(user);
         var result = await _context.SaveChangesAsync();
         return result > 0;
