@@ -108,7 +108,7 @@
         <!-- User Detail Section (when user is selected) -->
         <Frame Grid.Row="2" IsVisible="{Binding IsUserSelected}" BackgroundColor="#e3f2fd" 
                BorderColor="Transparent" CornerRadius="10" Padding="20" HasShadow="True">
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*">
                 <Label Grid.Row="0" Grid.ColumnSpan="2" Text="User Details" FontSize="22" FontAttributes="Bold" TextColor="#0d47a1" Margin="0,0,0,15" />
                 
                 <Label Grid.Row="1" Grid.Column="0" Text="Username:" FontAttributes="Bold" TextColor="#333" Margin="0,0,10,8" />
@@ -116,26 +116,6 @@
                 
                 <Label Grid.Row="2" Grid.Column="0" Text="Role:" FontAttributes="Bold" TextColor="#333" Margin="0,0,10,20" />
                 <Label Grid.Row="2" Grid.Column="1" Text="{Binding SelectedUser.Role, Converter={StaticResource RoleConverter}}" TextColor="#333" />
-                
-                <HorizontalStackLayout Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="End" Spacing="15">
-                    <Button Text="Edit" 
-                            Command="{Binding EditUserCommand}" 
-                            CommandParameter="{Binding SelectedUser}"
-                            BackgroundColor="#2196F3"
-                            TextColor="White"
-                            CornerRadius="8"
-                            HeightRequest="45"
-                            WidthRequest="110" />
-                    
-                    <Button Text="Delete" 
-                            Command="{Binding DeleteUserCommand}" 
-                            CommandParameter="{Binding SelectedUser}"
-                            BackgroundColor="#F44336"
-                            TextColor="White"
-                            CornerRadius="8"
-                            HeightRequest="45"
-                            WidthRequest="110" />
-                </HorizontalStackLayout>
             </Grid>
         </Frame>
     </Grid>
