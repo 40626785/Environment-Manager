@@ -1,4 +1,4 @@
-```mermaid
+````mermaid
 classDiagram
     UserManagementDbContext -- User : manages
     UserManagementDbContext -- Role : references
