@@ -2,8 +2,6 @@ namespace EnvironmentManager.Services;
 
 using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
-using Microsoft.Identity.Client.Extensions.Msal;
-using System.Diagnostics;
 using System.Timers;
 
 /// <summary>

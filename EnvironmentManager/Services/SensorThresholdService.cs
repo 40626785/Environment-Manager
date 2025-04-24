@@ -30,7 +30,10 @@ public class SensorThresholdService : ISensorThresholdService
         foreach (Sensor sensor in sensors)
         {
             List<IThresholdRules<Sensor>> rules = _thresholdRules.Where(rule => rule.IsBreachedBy(sensor)).ToList();
-            breached.Add(new SensorThresholdBreach(sensor, sensor.Location, rules));
+            if(rules.Count > 0)
+            {
+                breached.Add(new SensorThresholdBreach(sensor, sensor.Location, rules));
+            }
         }
         return breached;
     }
