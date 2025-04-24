@@ -30,10 +30,4 @@ public class SensorDataStore : DbContext, ISensorDataStore
                     .ToList();
         return sensorsList;
     }
-}
-
-
-
-
-
-                
+}    
