@@ -173,4 +173,4 @@ classDiagram
         <<interface>>
         +User AuthenticatedUser
     }
-} 
+}
