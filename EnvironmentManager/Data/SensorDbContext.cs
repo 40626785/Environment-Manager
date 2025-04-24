@@ -12,6 +12,7 @@ namespace EnvironmentManager.Data
         { }
 
         public virtual DbSet<Sensor> Sensors { get; set; }
+        public virtual DbSet<SensorStatus> SensorStatuses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,11 +34,15 @@ namespace EnvironmentManager.Data
                 entity.HasKey(e => e.LocationId);
             });
 
-
-
-
-
-
+            modelBuilder.Entity<SensorStatus>(entity =>
+            {
+                entity.ToTable("SensorStatus");
+                entity.HasKey(e => e.StatusId);
+                entity.HasOne(e => e.Sensor)
+                      .WithMany()
+                      .HasForeignKey(e => e.SensorId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
         }
     }
 } 

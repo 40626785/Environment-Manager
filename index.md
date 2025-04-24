@@ -36,4 +36,4 @@ Our team follows these key development principles:
 
 ## Feature Documentation
 
-For detailed information on specific features, please explore the Features section in the navigation menu.
+For detailed information on specific features, please explore the Features section in the navigation menu. 
