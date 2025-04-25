@@ -5,6 +5,7 @@ items:
   id: BatteryPercentageThreshold
   parent: EnvironmentManager.Rules
   children:
+  - EnvironmentManager.Rules.BatteryPercentageThreshold.#ctor(System.Int32)
   - EnvironmentManager.Rules.BatteryPercentageThreshold.IsBreachedBy(EnvironmentManager.Models.Sensor)
   - EnvironmentManager.Rules.BatteryPercentageThreshold.ThresholdDetail
   langs:
@@ -42,6 +43,38 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: EnvironmentManager.Rules.BatteryPercentageThreshold.#ctor(System.Int32)
+  commentId: M:EnvironmentManager.Rules.BatteryPercentageThreshold.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: EnvironmentManager.Rules.BatteryPercentageThreshold
+  langs:
+  - csharp
+  - vb
+  name: BatteryPercentageThreshold(int)
+  nameWithType: BatteryPercentageThreshold.BatteryPercentageThreshold(int)
+  fullName: EnvironmentManager.Rules.BatteryPercentageThreshold.BatteryPercentageThreshold(int)
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: .ctor
+    path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Rules
+  syntax:
+    content: public BatteryPercentageThreshold(int threshold)
+    parameters:
+    - id: threshold
+      type: System.Int32
+    content.vb: Public Sub New(threshold As Integer)
+  overload: EnvironmentManager.Rules.BatteryPercentageThreshold.#ctor*
+  nameWithType.vb: BatteryPercentageThreshold.New(Integer)
+  fullName.vb: EnvironmentManager.Rules.BatteryPercentageThreshold.New(Integer)
+  name.vb: New(Integer)
 - uid: EnvironmentManager.Rules.BatteryPercentageThreshold.IsBreachedBy(EnvironmentManager.Models.Sensor)
   commentId: M:EnvironmentManager.Rules.BatteryPercentageThreshold.IsBreachedBy(EnvironmentManager.Models.Sensor)
   id: IsBreachedBy(EnvironmentManager.Models.Sensor)
@@ -60,7 +93,7 @@ items:
       repo: https://github.com/40626785/SEGroup.git
     id: IsBreachedBy
     path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
-    startLine: 17
+    startLine: 22
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Rules
@@ -97,7 +130,7 @@ items:
       repo: https://github.com/40626785/SEGroup.git
     id: ThresholdDetail
     path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Rules
@@ -450,6 +483,26 @@ references:
   - uid: EnvironmentManager.Interfaces
     name: Interfaces
     href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Rules.BatteryPercentageThreshold.#ctor*
+  commentId: Overload:EnvironmentManager.Rules.BatteryPercentageThreshold.#ctor
+  href: EnvironmentManager.Rules.BatteryPercentageThreshold.html#EnvironmentManager_Rules_BatteryPercentageThreshold__ctor_System_Int32_
+  name: BatteryPercentageThreshold
+  nameWithType: BatteryPercentageThreshold.BatteryPercentageThreshold
+  fullName: EnvironmentManager.Rules.BatteryPercentageThreshold.BatteryPercentageThreshold
+  nameWithType.vb: BatteryPercentageThreshold.New
+  fullName.vb: EnvironmentManager.Rules.BatteryPercentageThreshold.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: EnvironmentManager.Rules.BatteryPercentageThreshold.IsBreachedBy*
   commentId: Overload:EnvironmentManager.Rules.BatteryPercentageThreshold.IsBreachedBy
   href: EnvironmentManager.Rules.BatteryPercentageThreshold.html#EnvironmentManager_Rules_BatteryPercentageThreshold_IsBreachedBy_EnvironmentManager_Models_Sensor_

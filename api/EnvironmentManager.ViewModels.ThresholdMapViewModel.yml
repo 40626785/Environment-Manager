@@ -25,7 +25,7 @@ items:
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.ViewModels
-  summary: Code-behind the login page
+  summary: Code-behind the Threshold Map
   example: []
   syntax:
     content: public class ThresholdMapViewModel

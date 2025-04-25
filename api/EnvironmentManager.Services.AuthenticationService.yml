@@ -23,7 +23,7 @@ items:
       repo: https://github.com/40626785/SEGroup.git
     id: AuthenticationService
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -69,7 +69,7 @@ items:
       repo: https://github.com/40626785/SEGroup.git
     id: Authenticated
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 21
+    startLine: 20
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -101,7 +101,7 @@ items:
       repo: https://github.com/40626785/SEGroup.git
     id: AuthenticatedUser
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -133,7 +133,7 @@ items:
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -167,7 +167,7 @@ items:
       repo: https://github.com/40626785/SEGroup.git
     id: Authenticate
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 35
+    startLine: 34
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services

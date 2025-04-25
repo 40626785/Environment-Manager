@@ -204,6 +204,7 @@
   "EnvironmentManager.Rules.ActiveOnlineThreshold.IsBreachedBy(EnvironmentManager.Models.Sensor)": "EnvironmentManager.Rules.ActiveOnlineThreshold.yml",
   "EnvironmentManager.Rules.ActiveOnlineThreshold.ThresholdDetail": "EnvironmentManager.Rules.ActiveOnlineThreshold.yml",
   "EnvironmentManager.Rules.BatteryPercentageThreshold": "EnvironmentManager.Rules.BatteryPercentageThreshold.yml",
+  "EnvironmentManager.Rules.BatteryPercentageThreshold.#ctor(System.Int32)": "EnvironmentManager.Rules.BatteryPercentageThreshold.yml",
   "EnvironmentManager.Rules.BatteryPercentageThreshold.IsBreachedBy(EnvironmentManager.Models.Sensor)": "EnvironmentManager.Rules.BatteryPercentageThreshold.yml",
   "EnvironmentManager.Rules.BatteryPercentageThreshold.ThresholdDetail": "EnvironmentManager.Rules.BatteryPercentageThreshold.yml",
   "EnvironmentManager.Services": "EnvironmentManager.Services.yml",

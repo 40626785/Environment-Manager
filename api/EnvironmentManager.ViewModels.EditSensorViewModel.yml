@@ -52,7 +52,7 @@ items:
   type: Class
   source:
     id: EditSensorViewModel
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync.g.cs
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.g.cs
     startLine: 6
   assemblies:
   - EnvironmentManager
@@ -716,6 +716,33 @@ items:
       type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
     content.vb: Public ReadOnly Property DeleteCommand As IAsyncRelayCommand
   overload: EnvironmentManager.ViewModels.EditSensorViewModel.DeleteCommand*
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
+  commentId: P:EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
+  id: CancelCommand
+  parent: EnvironmentManager.ViewModels.EditSensorViewModel
+  langs:
+  - csharp
+  - vb
+  name: CancelCommand
+  nameWithType: EditSensorViewModel.CancelCommand
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
+  type: Property
+  source:
+    id: CancelCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IAsyncRelayCommand CancelCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+    content.vb: Public ReadOnly Property CancelCommand As IAsyncRelayCommand
+  overload: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand*
 - uid: EnvironmentManager.ViewModels.EditSensorViewModel.SensorId
   commentId: P:EnvironmentManager.ViewModels.EditSensorViewModel.SensorId
   id: SensorId
@@ -1132,33 +1159,6 @@ items:
       type: System.String
     content.vb: Public Property DataSource As String
   overload: EnvironmentManager.ViewModels.EditSensorViewModel.DataSource*
-- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
-  commentId: P:EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
-  id: CancelCommand
-  parent: EnvironmentManager.ViewModels.EditSensorViewModel
-  langs:
-  - csharp
-  - vb
-  name: CancelCommand
-  nameWithType: EditSensorViewModel.CancelCommand
-  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
-  type: Property
-  source:
-    id: CancelCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IAsyncRelayCommand CancelCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-    content.vb: Public ReadOnly Property CancelCommand As IAsyncRelayCommand
-  overload: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand*
 references:
 - uid: EnvironmentManager.ViewModels
   commentId: N:EnvironmentManager.ViewModels
@@ -3443,6 +3443,27 @@ references:
   name: DeleteCommand
   nameWithType: EditSensorViewModel.DeleteCommand
   fullName: EnvironmentManager.ViewModels.EditSensorViewModel.DeleteCommand
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
+  commentId: M:EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
+  name: CancelAsync()
+  nameWithType: EditSensorViewModel.CancelAsync()
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
+    name: CancelAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
+    name: CancelAsync
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
+  href: EnvironmentManager.ViewModels.EditSensorViewModel.html#EnvironmentManager_ViewModels_EditSensorViewModel_CancelCommand
+  name: CancelCommand
+  nameWithType: EditSensorViewModel.CancelCommand
+  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
 - uid: EnvironmentManager.ViewModels.EditSensorViewModel.SensorId*
   commentId: Overload:EnvironmentManager.ViewModels.EditSensorViewModel.SensorId
   href: EnvironmentManager.ViewModels.EditSensorViewModel.html#EnvironmentManager_ViewModels_EditSensorViewModel_SensorId
@@ -3739,24 +3760,3 @@ references:
   name: DataSource
   nameWithType: EditSensorViewModel.DataSource
   fullName: EnvironmentManager.ViewModels.EditSensorViewModel.DataSource
-- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
-  commentId: M:EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
-  name: CancelAsync()
-  nameWithType: EditSensorViewModel.CancelAsync()
-  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
-    name: CancelAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelAsync
-    name: CancelAsync
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
-  href: EnvironmentManager.ViewModels.EditSensorViewModel.html#EnvironmentManager_ViewModels_EditSensorViewModel_CancelCommand
-  name: CancelCommand
-  nameWithType: EditSensorViewModel.CancelCommand
-  fullName: EnvironmentManager.ViewModels.EditSensorViewModel.CancelCommand
