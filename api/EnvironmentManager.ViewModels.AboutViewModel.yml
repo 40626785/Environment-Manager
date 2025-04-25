@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AboutViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: AboutViewModel
     path: EnvironmentManager/ViewModels/AboutViewModel.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AboutViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Title
     path: EnvironmentManager/ViewModels/AboutViewModel.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AboutViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Version
     path: EnvironmentManager/ViewModels/AboutViewModel.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AboutViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: MoreInfoUrl
     path: EnvironmentManager/ViewModels/AboutViewModel.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AboutViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Message
     path: EnvironmentManager/ViewModels/AboutViewModel.cs
@@ -172,7 +172,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AboutViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ShowMoreInfoCommand
     path: EnvironmentManager/ViewModels/AboutViewModel.cs
@@ -201,7 +201,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AboutViewModel.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/AboutViewModel.cs

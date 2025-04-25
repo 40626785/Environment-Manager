@@ -17,11 +17,17 @@ items:
   name: EnvironmentManager.Converters
   type: Namespace
   items:
-  - uid: EnvironmentManager.Converters.BoolToColorConverter
-    name: BoolToColorConverter
-    type: Class
   - uid: EnvironmentManager.Converters.CountToBoolConverter
     name: CountToBoolConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.NotNullConverter
+    name: NotNullConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.NotZeroConverter
+    name: NotZeroConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.StatusToColorConverter
+    name: StatusToColorConverter
     type: Class
   - uid: EnvironmentManager.Converters.StringNotEmptyConverter
     name: StringNotEmptyConverter
@@ -44,6 +50,9 @@ items:
     type: Class
   - uid: EnvironmentManager.Data.MaintenanceDbContext
     name: MaintenanceDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.SensorDataStore
+    name: SensorDataStore
     type: Class
   - uid: EnvironmentManager.Data.SensorDbContext
     name: SensorDbContext
@@ -90,8 +99,17 @@ items:
   - uid: EnvironmentManager.Interfaces.IRunOnMainThread
     name: IRunOnMainThread
     type: Interface
+  - uid: EnvironmentManager.Interfaces.ISensorDataStore
+    name: ISensorDataStore
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.ISensorThresholdService
+    name: ISensorThresholdService
+    type: Interface
   - uid: EnvironmentManager.Interfaces.ISessionService
     name: ISessionService
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IThresholdRules`1
+    name: IThresholdRules<T>
     type: Interface
   - uid: EnvironmentManager.Interfaces.IUserDataStore
     name: IUserDataStore
@@ -118,11 +136,30 @@ items:
   - uid: EnvironmentManager.Models.Maintenance
     name: Maintenance
     type: Class
+  - uid: EnvironmentManager.Models.MapPinViewModel
+    name: MapPinViewModel
+    type: Class
   - uid: EnvironmentManager.Models.Sensor
     name: Sensor
     type: Class
+  - uid: EnvironmentManager.Models.SensorStatus
+    name: SensorStatus
+    type: Class
+  - uid: EnvironmentManager.Models.SensorThresholdBreach
+    name: SensorThresholdBreach
+    type: Class
   - uid: EnvironmentManager.Models.User
     name: User
+    type: Class
+- uid: EnvironmentManager.Rules
+  name: EnvironmentManager.Rules
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Rules.ActiveOnlineThreshold
+    name: ActiveOnlineThreshold
+    type: Class
+  - uid: EnvironmentManager.Rules.BatteryPercentageThreshold
+    name: BatteryPercentageThreshold
     type: Class
 - uid: EnvironmentManager.Services
   name: EnvironmentManager.Services
@@ -145,6 +182,9 @@ items:
     type: Class
   - uid: EnvironmentManager.Services.RunOnMainThread
     name: RunOnMainThread
+    type: Class
+  - uid: EnvironmentManager.Services.SensorThresholdService
+    name: SensorThresholdService
     type: Class
   - uid: EnvironmentManager.Services.SessionService
     name: SessionService
@@ -186,8 +226,14 @@ items:
   - uid: EnvironmentManager.ViewModels.MaintenanceViewModel
     name: MaintenanceViewModel
     type: Class
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel
+    name: SensorMonitoringViewModel
+    type: Class
   - uid: EnvironmentManager.ViewModels.SensorViewModel
     name: SensorViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.ThresholdMapViewModel
+    name: ThresholdMapViewModel
     type: Class
 - uid: EnvironmentManager.Views
   name: EnvironmentManager.Views
@@ -220,7 +266,13 @@ items:
   - uid: EnvironmentManager.Views.MaintenancePage
     name: MaintenancePage
     type: Class
+  - uid: EnvironmentManager.Views.SensorMonitoringPage
+    name: SensorMonitoringPage
+    type: Class
   - uid: EnvironmentManager.Views.SensorPage
     name: SensorPage
+    type: Class
+  - uid: EnvironmentManager.Views.ThresholdMapPage
+    name: ThresholdMapPage
     type: Class
 memberLayout: SamePage

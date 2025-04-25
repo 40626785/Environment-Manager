@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/ValidationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ValidationService
     path: EnvironmentManager/Services/ValidationService.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/ValidationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ValidateTextField
     path: EnvironmentManager/Services/ValidationService.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/ValidationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ValidateUrl
     path: EnvironmentManager/Services/ValidationService.cs
@@ -126,7 +126,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/ValidationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ValidateVersion
     path: EnvironmentManager/Services/ValidationService.cs
@@ -160,7 +160,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/ValidationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ValidateBatteryLevel
     path: EnvironmentManager/Services/ValidationService.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/ValidationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ValidateSensorType
     path: EnvironmentManager/Services/ValidationService.cs
@@ -228,7 +228,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/ValidationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ValidateSensor
     path: EnvironmentManager/Services/ValidationService.cs

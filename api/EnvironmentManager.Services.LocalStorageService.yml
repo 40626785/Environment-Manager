@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/LocalStorageService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: LocalStorageService
     path: EnvironmentManager/Services/LocalStorageService.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/LocalStorageService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: SetStringValue
     path: EnvironmentManager/Services/LocalStorageService.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/LocalStorageService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: GetStringValue
     path: EnvironmentManager/Services/LocalStorageService.cs

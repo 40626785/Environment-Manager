@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/IDatabaseInitializationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: IDatabaseInitializationService
     path: EnvironmentManager/Services/IDatabaseInitializationService.cs
@@ -42,7 +42,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/IDatabaseInitializationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: VerifyDatabaseConnectionsAsync
     path: EnvironmentManager/Services/IDatabaseInitializationService.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/IDatabaseInitializationService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: LoadTestDataIfNeededAsync
     path: EnvironmentManager/Services/IDatabaseInitializationService.cs

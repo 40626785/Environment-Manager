@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Converters/StringNotNullOrEmptyConverter.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: StringNotNullOrEmptyConverter
     path: EnvironmentManager/Converters/StringNotNullOrEmptyConverter.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Converters/StringNotNullOrEmptyConverter.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Convert
     path: EnvironmentManager/Converters/StringNotNullOrEmptyConverter.cs
@@ -97,7 +97,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Converters/StringNotNullOrEmptyConverter.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: ConvertBack
     path: EnvironmentManager/Converters/StringNotNullOrEmptyConverter.cs

@@ -1,7 +1,6 @@
 using EnvironmentManager.Models;
 using EnvironmentManager.Interfaces;
 using EnvironmentManager.Exceptions;
-using System.Diagnostics;
 
 namespace EnvironmentManager.Services
 {

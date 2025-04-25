@@ -1,0 +1,800 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Models.SensorStatus
+  commentId: T:EnvironmentManager.Models.SensorStatus
+  id: SensorStatus
+  parent: EnvironmentManager.Models
+  children:
+  - EnvironmentManager.Models.SensorStatus.#ctor
+  - EnvironmentManager.Models.SensorStatus.BatteryLevelPercentage
+  - EnvironmentManager.Models.SensorStatus.ConnectivityStatus
+  - EnvironmentManager.Models.SensorStatus.ErrorCount
+  - EnvironmentManager.Models.SensorStatus.Sensor
+  - EnvironmentManager.Models.SensorStatus.SensorId
+  - EnvironmentManager.Models.SensorStatus.StatusId
+  - EnvironmentManager.Models.SensorStatus.StatusTimestamp
+  - EnvironmentManager.Models.SensorStatus.WarningCount
+  langs:
+  - csharp
+  - vb
+  name: SensorStatus
+  nameWithType: SensorStatus
+  fullName: EnvironmentManager.Models.SensorStatus
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: SensorStatus
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 6
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public class SensorStatus
+    content.vb: Public Class SensorStatus
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.Models.SensorStatus.StatusId
+  commentId: P:EnvironmentManager.Models.SensorStatus.StatusId
+  id: StatusId
+  parent: EnvironmentManager.Models.SensorStatus
+  langs:
+  - csharp
+  - vb
+  name: StatusId
+  nameWithType: SensorStatus.StatusId
+  fullName: EnvironmentManager.Models.SensorStatus.StatusId
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: StatusId
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 8
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Key]
+
+      public int StatusId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Key>
+
+      Public Property StatusId As Integer
+  overload: EnvironmentManager.Models.SensorStatus.StatusId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Models.SensorStatus.SensorId
+  commentId: P:EnvironmentManager.Models.SensorStatus.SensorId
+  id: SensorId
+  parent: EnvironmentManager.Models.SensorStatus
+  langs:
+  - csharp
+  - vb
+  name: SensorId
+  nameWithType: SensorStatus.SensorId
+  fullName: EnvironmentManager.Models.SensorStatus.SensorId
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: SensorId
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 11
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public int SensorId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Required>
+
+      Public Property SensorId As Integer
+  overload: EnvironmentManager.Models.SensorStatus.SensorId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Models.SensorStatus.Sensor
+  commentId: P:EnvironmentManager.Models.SensorStatus.Sensor
+  id: Sensor
+  parent: EnvironmentManager.Models.SensorStatus
+  langs:
+  - csharp
+  - vb
+  name: Sensor
+  nameWithType: SensorStatus.Sensor
+  fullName: EnvironmentManager.Models.SensorStatus.Sensor
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: Sensor
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 14
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [ForeignKey("SensorId")]
+
+      public virtual Sensor Sensor { get; set; }
+    parameters: []
+    return:
+      type: EnvironmentManager.Models.Sensor
+    content.vb: >-
+      <ForeignKey("SensorId")>
+
+      Public Overridable Property Sensor As Sensor
+  overload: EnvironmentManager.Models.SensorStatus.Sensor*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: SensorId
+- uid: EnvironmentManager.Models.SensorStatus.ConnectivityStatus
+  commentId: P:EnvironmentManager.Models.SensorStatus.ConnectivityStatus
+  id: ConnectivityStatus
+  parent: EnvironmentManager.Models.SensorStatus
+  langs:
+  - csharp
+  - vb
+  name: ConnectivityStatus
+  nameWithType: SensorStatus.ConnectivityStatus
+  fullName: EnvironmentManager.Models.SensorStatus.ConnectivityStatus
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: ConnectivityStatus
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 17
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Required]
+
+      [StringLength(50)]
+
+      public string ConnectivityStatus { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      <StringLength(50)>
+
+      Public Property ConnectivityStatus As String
+  overload: EnvironmentManager.Models.SensorStatus.ConnectivityStatus*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.StringLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 50
+- uid: EnvironmentManager.Models.SensorStatus.StatusTimestamp
+  commentId: P:EnvironmentManager.Models.SensorStatus.StatusTimestamp
+  id: StatusTimestamp
+  parent: EnvironmentManager.Models.SensorStatus
+  langs:
+  - csharp
+  - vb
+  name: StatusTimestamp
+  nameWithType: SensorStatus.StatusTimestamp
+  fullName: EnvironmentManager.Models.SensorStatus.StatusTimestamp
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: StatusTimestamp
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 21
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public DateTime StatusTimestamp { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: >-
+      <Required>
+
+      Public Property StatusTimestamp As Date
+  overload: EnvironmentManager.Models.SensorStatus.StatusTimestamp*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: EnvironmentManager.Models.SensorStatus.BatteryLevelPercentage
+  commentId: P:EnvironmentManager.Models.SensorStatus.BatteryLevelPercentage
+  id: BatteryLevelPercentage
+  parent: EnvironmentManager.Models.SensorStatus
+  langs:
+  - csharp
+  - vb
+  name: BatteryLevelPercentage
+  nameWithType: SensorStatus.BatteryLevelPercentage
+  fullName: EnvironmentManager.Models.SensorStatus.BatteryLevelPercentage
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: BatteryLevelPercentage
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 24
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public float? BatteryLevelPercentage { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property BatteryLevelPercentage As Single?
+  overload: EnvironmentManager.Models.SensorStatus.BatteryLevelPercentage*
+- uid: EnvironmentManager.Models.SensorStatus.ErrorCount
+  commentId: P:EnvironmentManager.Models.SensorStatus.ErrorCount
+  id: ErrorCount
+  parent: EnvironmentManager.Models.SensorStatus
+  langs:
+  - csharp
+  - vb
+  name: ErrorCount
+  nameWithType: SensorStatus.ErrorCount
+  fullName: EnvironmentManager.Models.SensorStatus.ErrorCount
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: ErrorCount
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 26
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public int? ErrorCount { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property ErrorCount As Integer?
+  overload: EnvironmentManager.Models.SensorStatus.ErrorCount*
+- uid: EnvironmentManager.Models.SensorStatus.WarningCount
+  commentId: P:EnvironmentManager.Models.SensorStatus.WarningCount
+  id: WarningCount
+  parent: EnvironmentManager.Models.SensorStatus
+  langs:
+  - csharp
+  - vb
+  name: WarningCount
+  nameWithType: SensorStatus.WarningCount
+  fullName: EnvironmentManager.Models.SensorStatus.WarningCount
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: WarningCount
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 28
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public int? WarningCount { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property WarningCount As Integer?
+  overload: EnvironmentManager.Models.SensorStatus.WarningCount*
+- uid: EnvironmentManager.Models.SensorStatus.#ctor
+  commentId: M:EnvironmentManager.Models.SensorStatus.#ctor
+  id: '#ctor'
+  parent: EnvironmentManager.Models.SensorStatus
+  langs:
+  - csharp
+  - vb
+  name: SensorStatus()
+  nameWithType: SensorStatus.SensorStatus()
+  fullName: EnvironmentManager.Models.SensorStatus.SensorStatus()
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/Models/SensorStatus.cs
+      branch: feat/5-threshold-map
+      repo: https://github.com/40626785/SEGroup.git
+    id: .ctor
+    path: EnvironmentManager/Models/SensorStatus.cs
+    startLine: 30
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: public SensorStatus()
+    content.vb: Public Sub New()
+  overload: EnvironmentManager.Models.SensorStatus.#ctor*
+  nameWithType.vb: SensorStatus.New()
+  fullName.vb: EnvironmentManager.Models.SensorStatus.New()
+  name.vb: New()
+references:
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Models.SensorStatus.StatusId*
+  commentId: Overload:EnvironmentManager.Models.SensorStatus.StatusId
+  href: EnvironmentManager.Models.SensorStatus.html#EnvironmentManager_Models_SensorStatus_StatusId
+  name: StatusId
+  nameWithType: SensorStatus.StatusId
+  fullName: EnvironmentManager.Models.SensorStatus.StatusId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: EnvironmentManager.Models.SensorStatus.SensorId*
+  commentId: Overload:EnvironmentManager.Models.SensorStatus.SensorId
+  href: EnvironmentManager.Models.SensorStatus.html#EnvironmentManager_Models_SensorStatus_SensorId
+  name: SensorId
+  nameWithType: SensorStatus.SensorId
+  fullName: EnvironmentManager.Models.SensorStatus.SensorId
+- uid: EnvironmentManager.Models.SensorStatus.Sensor*
+  commentId: Overload:EnvironmentManager.Models.SensorStatus.Sensor
+  href: EnvironmentManager.Models.SensorStatus.html#EnvironmentManager_Models_SensorStatus_Sensor
+  name: Sensor
+  nameWithType: SensorStatus.Sensor
+  fullName: EnvironmentManager.Models.SensorStatus.Sensor
+- uid: EnvironmentManager.Models.Sensor
+  commentId: T:EnvironmentManager.Models.Sensor
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.Sensor.html
+  name: Sensor
+  nameWithType: Sensor
+  fullName: EnvironmentManager.Models.Sensor
+- uid: EnvironmentManager.Models.SensorStatus.ConnectivityStatus*
+  commentId: Overload:EnvironmentManager.Models.SensorStatus.ConnectivityStatus
+  href: EnvironmentManager.Models.SensorStatus.html#EnvironmentManager_Models_SensorStatus_ConnectivityStatus
+  name: ConnectivityStatus
+  nameWithType: SensorStatus.ConnectivityStatus
+  fullName: EnvironmentManager.Models.SensorStatus.ConnectivityStatus
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.Models.SensorStatus.StatusTimestamp*
+  commentId: Overload:EnvironmentManager.Models.SensorStatus.StatusTimestamp
+  href: EnvironmentManager.Models.SensorStatus.html#EnvironmentManager_Models_SensorStatus_StatusTimestamp
+  name: StatusTimestamp
+  nameWithType: SensorStatus.StatusTimestamp
+  fullName: EnvironmentManager.Models.SensorStatus.StatusTimestamp
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: EnvironmentManager.Models.SensorStatus.BatteryLevelPercentage*
+  commentId: Overload:EnvironmentManager.Models.SensorStatus.BatteryLevelPercentage
+  href: EnvironmentManager.Models.SensorStatus.html#EnvironmentManager_Models_SensorStatus_BatteryLevelPercentage
+  name: BatteryLevelPercentage
+  nameWithType: SensorStatus.BatteryLevelPercentage
+  fullName: EnvironmentManager.Models.SensorStatus.BatteryLevelPercentage
+- uid: System.Nullable{System.Single}
+  commentId: T:System.Nullable{System.Single}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float?
+  nameWithType: float?
+  fullName: float?
+  nameWithType.vb: Single?
+  fullName.vb: Single?
+  name.vb: Single?
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EnvironmentManager.Models.SensorStatus.ErrorCount*
+  commentId: Overload:EnvironmentManager.Models.SensorStatus.ErrorCount
+  href: EnvironmentManager.Models.SensorStatus.html#EnvironmentManager_Models_SensorStatus_ErrorCount
+  name: ErrorCount
+  nameWithType: SensorStatus.ErrorCount
+  fullName: EnvironmentManager.Models.SensorStatus.ErrorCount
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: EnvironmentManager.Models.SensorStatus.WarningCount*
+  commentId: Overload:EnvironmentManager.Models.SensorStatus.WarningCount
+  href: EnvironmentManager.Models.SensorStatus.html#EnvironmentManager_Models_SensorStatus_WarningCount
+  name: WarningCount
+  nameWithType: SensorStatus.WarningCount
+  fullName: EnvironmentManager.Models.SensorStatus.WarningCount
+- uid: EnvironmentManager.Models.SensorStatus.#ctor*
+  commentId: Overload:EnvironmentManager.Models.SensorStatus.#ctor
+  href: EnvironmentManager.Models.SensorStatus.html#EnvironmentManager_Models_SensorStatus__ctor
+  name: SensorStatus
+  nameWithType: SensorStatus.SensorStatus
+  fullName: EnvironmentManager.Models.SensorStatus.SensorStatus
+  nameWithType.vb: SensorStatus.New
+  fullName.vb: EnvironmentManager.Models.SensorStatus.New
+  name.vb: New

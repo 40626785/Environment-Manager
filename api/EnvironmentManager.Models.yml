@@ -10,7 +10,10 @@ items:
   - EnvironmentManager.Models.HistoricalDataRow
   - EnvironmentManager.Models.Location
   - EnvironmentManager.Models.Maintenance
+  - EnvironmentManager.Models.MapPinViewModel
   - EnvironmentManager.Models.Sensor
+  - EnvironmentManager.Models.SensorStatus
+  - EnvironmentManager.Models.SensorThresholdBreach
   - EnvironmentManager.Models.User
   langs:
   - csharp
@@ -67,6 +70,19 @@ references:
   name: Sensor
   nameWithType: Sensor
   fullName: EnvironmentManager.Models.Sensor
+- uid: EnvironmentManager.Models.SensorStatus
+  commentId: T:EnvironmentManager.Models.SensorStatus
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.SensorStatus.html
+  name: SensorStatus
+  nameWithType: SensorStatus
+  fullName: EnvironmentManager.Models.SensorStatus
+- uid: EnvironmentManager.Models.SensorThresholdBreach
+  commentId: T:EnvironmentManager.Models.SensorThresholdBreach
+  href: EnvironmentManager.Models.SensorThresholdBreach.html
+  name: SensorThresholdBreach
+  nameWithType: SensorThresholdBreach
+  fullName: EnvironmentManager.Models.SensorThresholdBreach
 - uid: EnvironmentManager.Models.User
   commentId: T:EnvironmentManager.Models.User
   parent: EnvironmentManager.Models
@@ -74,6 +90,12 @@ references:
   name: User
   nameWithType: User
   fullName: EnvironmentManager.Models.User
+- uid: EnvironmentManager.Models.MapPinViewModel
+  commentId: T:EnvironmentManager.Models.MapPinViewModel
+  href: EnvironmentManager.Models.MapPinViewModel.html
+  name: MapPinViewModel
+  nameWithType: MapPinViewModel
+  fullName: EnvironmentManager.Models.MapPinViewModel
 - uid: EnvironmentManager.Models
   commentId: N:EnvironmentManager.Models
   href: EnvironmentManager.html

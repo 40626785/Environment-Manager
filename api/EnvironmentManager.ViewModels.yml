@@ -14,7 +14,9 @@ items:
   - EnvironmentManager.ViewModels.HomeViewModel
   - EnvironmentManager.ViewModels.LoginViewModel
   - EnvironmentManager.ViewModels.MaintenanceViewModel
+  - EnvironmentManager.ViewModels.SensorMonitoringViewModel
   - EnvironmentManager.ViewModels.SensorViewModel
+  - EnvironmentManager.ViewModels.ThresholdMapViewModel
   langs:
   - csharp
   - vb
@@ -94,6 +96,12 @@ references:
   name: MaintenanceViewModel
   nameWithType: MaintenanceViewModel
   fullName: EnvironmentManager.ViewModels.MaintenanceViewModel
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel
+  commentId: T:EnvironmentManager.ViewModels.SensorMonitoringViewModel
+  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html
+  name: SensorMonitoringViewModel
+  nameWithType: SensorMonitoringViewModel
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel
 - uid: EnvironmentManager.ViewModels.SensorViewModel
   commentId: T:EnvironmentManager.ViewModels.SensorViewModel
   parent: EnvironmentManager.ViewModels
@@ -101,6 +109,13 @@ references:
   name: SensorViewModel
   nameWithType: SensorViewModel
   fullName: EnvironmentManager.ViewModels.SensorViewModel
+- uid: EnvironmentManager.ViewModels.ThresholdMapViewModel
+  commentId: T:EnvironmentManager.ViewModels.ThresholdMapViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.ThresholdMapViewModel.html
+  name: ThresholdMapViewModel
+  nameWithType: ThresholdMapViewModel
+  fullName: EnvironmentManager.ViewModels.ThresholdMapViewModel
 - uid: EnvironmentManager.ViewModels
   commentId: N:EnvironmentManager.ViewModels
   href: EnvironmentManager.html

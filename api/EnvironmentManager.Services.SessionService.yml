@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: SessionService
     path: EnvironmentManager/Services/SessionService.cs
-    startLine: 13
+    startLine: 11
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -62,11 +62,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: AuthenticatedUser
     path: EnvironmentManager/Services/SessionService.cs
-    startLine: 23
+    startLine: 21
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -94,11 +94,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: Expiry
     path: EnvironmentManager/Services/SessionService.cs
-    startLine: 24
+    startLine: 22
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -126,11 +126,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Services/SessionService.cs
-    startLine: 26
+    startLine: 24
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -162,11 +162,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: NewSession
     path: EnvironmentManager/Services/SessionService.cs
-    startLine: 37
+    startLine: 35
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services

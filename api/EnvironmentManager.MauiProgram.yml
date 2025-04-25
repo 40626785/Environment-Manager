@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/MauiProgram.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: MauiProgram
     path: EnvironmentManager/MauiProgram.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager
@@ -51,11 +51,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/MauiProgram.cs
-      branch: main
+      branch: feat/5-threshold-map
       repo: https://github.com/40626785/SEGroup.git
     id: CreateMauiApp
     path: EnvironmentManager/MauiProgram.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager

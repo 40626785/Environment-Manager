@@ -10,7 +10,10 @@ items:
   - EnvironmentManager.Interfaces.ILoginNavService
   - EnvironmentManager.Interfaces.IMaintenanceDataStore
   - EnvironmentManager.Interfaces.IRunOnMainThread
+  - EnvironmentManager.Interfaces.ISensorDataStore
+  - EnvironmentManager.Interfaces.ISensorThresholdService
   - EnvironmentManager.Interfaces.ISessionService
+  - EnvironmentManager.Interfaces.IThresholdRules`1
   - EnvironmentManager.Interfaces.IUserDataStore
   langs:
   - csharp
@@ -64,6 +67,20 @@ references:
   name: IRunOnMainThread
   nameWithType: IRunOnMainThread
   fullName: EnvironmentManager.Interfaces.IRunOnMainThread
+- uid: EnvironmentManager.Interfaces.ISensorDataStore
+  commentId: T:EnvironmentManager.Interfaces.ISensorDataStore
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ISensorDataStore.html
+  name: ISensorDataStore
+  nameWithType: ISensorDataStore
+  fullName: EnvironmentManager.Interfaces.ISensorDataStore
+- uid: EnvironmentManager.Interfaces.ISensorThresholdService
+  commentId: T:EnvironmentManager.Interfaces.ISensorThresholdService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ISensorThresholdService.html
+  name: ISensorThresholdService
+  nameWithType: ISensorThresholdService
+  fullName: EnvironmentManager.Interfaces.ISensorThresholdService
 - uid: EnvironmentManager.Interfaces.ISessionService
   commentId: T:EnvironmentManager.Interfaces.ISessionService
   parent: EnvironmentManager.Interfaces
@@ -71,6 +88,31 @@ references:
   name: ISessionService
   nameWithType: ISessionService
   fullName: EnvironmentManager.Interfaces.ISessionService
+- uid: EnvironmentManager.Interfaces.IThresholdRules`1
+  commentId: T:EnvironmentManager.Interfaces.IThresholdRules`1
+  href: EnvironmentManager.Interfaces.IThresholdRules-1.html
+  name: IThresholdRules<T>
+  nameWithType: IThresholdRules<T>
+  fullName: EnvironmentManager.Interfaces.IThresholdRules<T>
+  nameWithType.vb: IThresholdRules(Of T)
+  fullName.vb: EnvironmentManager.Interfaces.IThresholdRules(Of T)
+  name.vb: IThresholdRules(Of T)
+  spec.csharp:
+  - uid: EnvironmentManager.Interfaces.IThresholdRules`1
+    name: IThresholdRules
+    href: EnvironmentManager.Interfaces.IThresholdRules-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: EnvironmentManager.Interfaces.IThresholdRules`1
+    name: IThresholdRules
+    href: EnvironmentManager.Interfaces.IThresholdRules-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: EnvironmentManager.Interfaces.IUserDataStore
   commentId: T:EnvironmentManager.Interfaces.IUserDataStore
   parent: EnvironmentManager.Interfaces
