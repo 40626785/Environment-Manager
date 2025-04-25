@@ -16,20 +16,24 @@
                 <Label Text="Sensor Management" 
                        FontSize="24" 
                        FontAttributes="Bold"
-                       TextColor="#1F2937"/>
+                       TextColor="#1F2937"
+                       LineBreakMode="WordWrap"/>
                 <Label Text="Monitor and manage your environmental sensors"
                        FontSize="14"
-                       TextColor="#6B7280"/>
+                       TextColor="#6B7280"
+                       LineBreakMode="WordWrap"/>
             </VerticalStackLayout>
             
             <Button Grid.Column="1" 
                     Text="Add New Sensor" 
                     Command="{Binding NavigateToAddCommand}"
                     FontAttributes="Bold"
-                    Padding="15,10"
+                    Padding="10,8"
                     BackgroundColor="#0EA5E9"
                     TextColor="White"
-                    CornerRadius="8">
+                    CornerRadius="8"
+                    HorizontalOptions="FillAndExpand"
+                    LineBreakMode="WordWrap">
                 <Button.Shadow>
                     <Shadow Brush="#0EA5E9"
                            Offset="0,2"
@@ -51,11 +55,13 @@
                     <Label Text="Existing Sensors" 
                            FontSize="18" 
                            FontAttributes="Bold"
-                           TextColor="#1F2937"/>
+                           TextColor="#1F2937"
+                           LineBreakMode="WordWrap"/>
                     <Label Grid.Column="1" 
                            Text="{Binding Sensors.Count, StringFormat='{0} sensors'}"
                            TextColor="#6B7280"
-                           VerticalOptions="Center"/>
+                           VerticalOptions="Center"
+                           LineBreakMode="WordWrap"/>
                 </Grid>
                 
                 <CollectionView Grid.Row="1" 
@@ -86,15 +92,18 @@
                                         <Label Text="{Binding SensorName}" 
                                                FontAttributes="Bold" 
                                                FontSize="16"
-                                               TextColor="#1F2937"/>
+                                               TextColor="#1F2937"
+                                               LineBreakMode="WordWrap"/>
                                         <Grid ColumnDefinitions="Auto,Auto" ColumnSpacing="8">
                                             <Label Text="{Binding SensorType}" 
                                                    TextColor="#6B7280"
-                                                   FontSize="14"/>
+                                                   FontSize="14"
+                                                   LineBreakMode="WordWrap"/>
                                             <Label Grid.Column="1"
                                                    Text="{Binding Model}" 
                                                    TextColor="#6B7280"
-                                                   FontSize="14"/>
+                                                   FontSize="14"
+                                                   LineBreakMode="WordWrap"/>
                                         </Grid>
                                         <FlexLayout>
                                             <Border Padding="6,2"
@@ -102,7 +111,8 @@
                                                     StrokeShape="RoundRectangle 12">
                                                 <Label Text="{Binding Manufacturer}"
                                                        TextColor="#6B7280"
-                                                       FontSize="12"/>
+                                                       FontSize="12"
+                                                       LineBreakMode="WordWrap"/>
                                             </Border>
                                             <Border Margin="8,0,0,0"
                                                     Padding="6,2"
@@ -110,7 +120,8 @@
                                                     StrokeShape="RoundRectangle 12">
                                                 <Label Text="{Binding ConnectivityStatus}"
                                                        TextColor="#6B7280"
-                                                       FontSize="12"/>
+                                                       FontSize="12"
+                                                       LineBreakMode="WordWrap"/>
                                             </Border>
                                         </FlexLayout>
                                     </VerticalStackLayout>
@@ -123,9 +134,11 @@
                                             FontAttributes="Bold"
                                             FontSize="14"
                                             CornerRadius="6"
-                                            Padding="15,8"
+                                            Padding="10,6"
                                             BackgroundColor="#F3F4F6"
-                                            TextColor="#1F2937"/>
+                                            TextColor="#1F2937"
+                                            HorizontalOptions="FillAndExpand"
+                                            LineBreakMode="WordWrap"/>
 
                                     <!-- Alerts Button -->
                                     <Button Grid.Column="3" 
@@ -135,9 +148,11 @@
                                             FontAttributes="Bold"
                                             FontSize="14"
                                             CornerRadius="6"
-                                            Padding="10"
+                                            Padding="10,6"
                                             BackgroundColor="#F87171"
-                                            TextColor="#92400E"/>
+                                            TextColor="#92400E"
+                                            HorizontalOptions="FillAndExpand"
+                                            LineBreakMode="WordWrap"/>
 
                                 </Grid>
                             </Frame>
@@ -158,11 +173,13 @@
                                        FontSize="20" 
                                        FontAttributes="Bold"
                                        TextColor="#1F2937"
-                                       HorizontalOptions="Center"/>
+                                       HorizontalOptions="Center"
+                                       LineBreakMode="WordWrap"/>
                                 <Label Text="Add your first sensor to start monitoring" 
                                        FontSize="14" 
                                        TextColor="#6B7280"
-                                       HorizontalOptions="Center"/>
+                                       HorizontalOptions="Center"
+                                       LineBreakMode="WordWrap"/>
                             </VerticalStackLayout>
                         </Grid>
                     </CollectionView.EmptyView>
@@ -176,5 +193,4 @@
             <converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-
 </ContentPage>

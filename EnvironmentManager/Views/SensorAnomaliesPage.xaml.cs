@@ -11,13 +11,13 @@ namespace EnvironmentManager.Views
             BindingContext = viewModel;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
             if (BindingContext is SensorAnomaliesViewModel vm)
             {
-                   vm.GetType().GetMethod("LoadSensorAnomalies", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.Invoke(vm, null);
+                   await vm.LoadSensorAnomaliesAsync();
             }
         }
     }

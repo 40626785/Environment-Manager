@@ -1,18 +1,18 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
+using EnvironmentManager.Interfaces;
+using EnvironmentManager.Data;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace EnvironmentManager.ViewModels
 {
-    /// <summary>
-    /// ViewModel for displaying anomalies detected in sensor data.
-    /// </summary>
     public partial class AnomalyDetectionViewModel : ObservableObject, IErrorHandling
     {
-        private readonly IAnomalyDetectionService _anomalyService;
+        private readonly SensorDbContext _context;
 
         [ObservableProperty]
         private ObservableCollection<SensorAnomaly> anomalies = new();
@@ -20,47 +20,61 @@ namespace EnvironmentManager.ViewModels
         [ObservableProperty]
         private string displayError = string.Empty;
 
-        public IRelayCommand RefreshCommand { get; }
+        public IAsyncRelayCommand RefreshCommand { get; }
 
-        public AnomalyDetectionViewModel(IAnomalyDetectionService anomalyService)
+        public AnomalyDetectionViewModel(SensorDbContext context)
         {
-            _anomalyService = anomalyService;
-            RefreshCommand = new RelayCommand(LoadAnomalies);
-            LoadAnomalies();
+            _context = context;
+            RefreshCommand = new AsyncRelayCommand(LoadAnomaliesAsync);
         }
 
-        private void LoadAnomalies()
+        public async Task LoadAnomaliesAsync()
         {
             try
             {
-                var detected = _anomalyService.DetectAnomalies();
+                var allSensors = await _context.Sensors.AsNoTracking().ToListAsync();
+                var allAnomalies = new ObservableCollection<SensorAnomaly>();
+                var now = DateTime.Now;
 
-                foreach (var anomaly in detected)
+                foreach (var sensor in allSensors)
                 {
-                    anomaly.AnomalyType = GetAnomalyType(anomaly);
-                    anomaly.DetectedAt = DateTime.Now; // Add logic if real timestamp exists
+                    if (sensor.BatteryLevelPercentage < 30)
+                    {
+                        allAnomalies.Add(new SensorAnomaly
+                        {
+                            SensorId = sensor.SensorId,
+                            SensorName = sensor.SensorName,
+                            Details = "Battery level is low",
+                            AnomalyType = "Low Battery",
+                            DetectedAt = now
+                        });
+                    }
+
+                    if (sensor.ConnectivityStatus != "Online")
+                    {
+                        allAnomalies.Add(new SensorAnomaly
+                        {
+                            SensorId = sensor.SensorId,
+                            SensorName = sensor.SensorName,
+                            Details = "Sensor is active but offline",
+                            AnomalyType = "Connectivity Issue",
+                            DetectedAt = now
+                        });
+                    }
                 }
 
-                Anomalies = new ObservableCollection<SensorAnomaly>(detected);
+                Anomalies = allAnomalies;
             }
             catch (Exception ex)
             {
-                HandleError(ex, "Failed to load anomalies.");
+                Debug.WriteLine($"[AnomalyDetection] Error: {ex.Message}");
+                DisplayError = "Failed to load anomalies.";
             }
-        }
-
-        private string GetAnomalyType(SensorAnomaly anomaly)
-        {
-            if (anomaly.Details.Contains("Battery", StringComparison.OrdinalIgnoreCase))
-                return "Low Battery";
-            if (anomaly.Details.Contains("offline", StringComparison.OrdinalIgnoreCase))
-                return "Connectivity Issue";
-            return "Unknown";
         }
 
         public void HandleError(Exception e, string message)
         {
-            Trace.WriteLine(e.Message);
+            Debug.WriteLine(e.Message);
             DisplayError = message;
         }
     }
