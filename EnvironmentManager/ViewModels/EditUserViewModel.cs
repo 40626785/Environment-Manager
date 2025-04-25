@@ -114,7 +114,7 @@ public class EditUserViewModel : BaseViewModel
         _onComplete = onComplete;
         
         IsNewUser = true;
-        _selectedRole = Roles.EnvironmentalScientist; // Default role
+        _selectedRole = Roles.BasicUser; // Most restrictive role as default for security
         
         InitializeRoles();
         
@@ -146,6 +146,7 @@ public class EditUserViewModel : BaseViewModel
         // Create a collection of available roles
         AvailableRoles = new ObservableCollection<Roles>
         {
+            Roles.BasicUser,
             Roles.Administrator,
             Roles.EnvironmentalScientist,
             Roles.OperationsManager

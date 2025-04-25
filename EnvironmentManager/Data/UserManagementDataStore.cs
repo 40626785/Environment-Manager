@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace EnvironmentManager.Data;
 
@@ -111,9 +112,13 @@ public class UserManagementDataStore : IUserManagementDataStore
             
             return entityToUpdate;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            // Log the exception details
+            Debug.WriteLine($"Error updating user {user?.Username}: {ex.Message}");
+            
+            // Create a more descriptive exception with additional context
+            throw new UserManagementException($"Failed to update user {user?.Username}. See inner exception for details.", ex);
         }
     }
     
@@ -156,4 +161,15 @@ public class UserManagementDataStore : IUserManagementDataStore
         var result = await _context.SaveChangesAsync();
         return result > 0;
     }
+} 
+
+/// <summary>
+/// Custom exception for user management operations to provide better context
+/// </summary>
+public class UserManagementException : Exception
+{
+    public UserManagementException(string message) : base(message) { }
+    
+    public UserManagementException(string message, Exception innerException) 
+        : base(message, innerException) { }
 } 

@@ -19,6 +19,29 @@ public class UserManagementDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         
-        // Configure any additional model relationships here
+        // Configure User entity
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Username);
+            entity.Property(e => e.Username).IsRequired();
+            entity.Property(e => e.Password).IsRequired();
+            
+            // Configure relationship with Role
+            entity.HasOne(d => d.RoleNavigation)
+                  .WithMany()
+                  .HasForeignKey(d => d.Role)
+                  .OnDelete(DeleteBehavior.Restrict)
+                  .HasConstraintName("FK_Users_Roles");
+        });
+        
+        // Configure Role entity
+        modelBuilder.Entity<Role>(entity =>
+        {
+            entity.HasKey(e => e.RoleId);
+            entity.Property(e => e.RoleName).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.Description).HasMaxLength(255);
+            entity.Property(e => e.CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP");
+            entity.Property(e => e.LastModifiedDate).HasDefaultValueSql("CURRENT_TIMESTAMP");
+        });
     }
 } 
