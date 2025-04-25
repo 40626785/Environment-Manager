@@ -22,7 +22,7 @@ public class BatteryPercentageThreshold : IThresholdRules<Sensor>
    /// <returns>If battery percentage drops below threshold</returns>
    public bool IsBreachedBy(Sensor sensor)
    {
-        return sensor.BatteryLevelPercentage < 10;
+        return sensor.BatteryLevelPercentage < _threshold;
    }
 
     /// <summary>
