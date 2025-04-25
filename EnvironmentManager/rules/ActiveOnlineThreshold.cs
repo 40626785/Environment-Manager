@@ -4,7 +4,7 @@ using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
 
 /// <summary>
-/// Rule to verify that sensor battery level does not drop below defined threshold
+/// Rule to verify that sensor is not offline when in active status
 /// </summary>
 public class ActiveOnlineThreshold : IThresholdRules<Sensor>
 {   
