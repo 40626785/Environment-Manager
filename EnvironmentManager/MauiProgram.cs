@@ -180,13 +180,61 @@ public static class MauiProgram
 			}
 		});
 
+		// Configure UserManagementDbContext
+		builder.Services.AddDbContext<UserManagementDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Debug.WriteLine($"Configuring user management database");
+				options.UseSqlServer(connectionString);
+				options.EnableSensitiveDataLogging();
+				options.EnableDetailedErrors();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring user management database context: {ex.Message}");
+				throw;
+			}
+		});
+
+		// Configure UserLogDbContext
+		builder.Services.AddDbContext<UserLogDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Debug.WriteLine($"Configuring user log database");
+				options.UseSqlServer(connectionString);
+				options.EnableSensitiveDataLogging();
+				options.EnableDetailedErrors();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring user log database context: {ex.Message}");
+				throw;
+			}
+		});
 	}
 
 	private static void RegisterServices(MauiAppBuilder builder)
 	{
 		// Register DatabaseInitializationService
-		builder.Services.AddScoped<IDatabaseInitializationService, DatabaseInitializationService>();
-    
+		builder.Services.AddScoped<IDatabaseInitializationService>(sp => {
+			var sensorContext = sp.GetRequiredService<SensorDbContext>();
+			var locationContext = sp.GetRequiredService<LocationDbContext>();
+			var maintenanceContext = sp.GetRequiredService<MaintenanceDbContext>();
+			var userManagementContext = sp.GetRequiredService<UserManagementDbContext>();
+			var userLogContext = sp.GetRequiredService<UserLogDbContext>();
+			
+			return new DatabaseInitializationService(
+				sensorContext,
+				locationContext,
+				maintenanceContext,
+				userManagementContext,
+				userLogContext);
+		});
+
 		// Add other services here
         builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
         builder.Services.AddScoped<ILoginNavService, LoginNavService>();
@@ -196,37 +244,45 @@ public static class MauiProgram
         builder.Services.AddSingleton<ISensorThresholdService, SensorThresholdService>();
         builder.Services.AddSingleton<IThresholdRules<Sensor>, ActiveOnlineThreshold>();
         builder.Services.AddSingleton<IThresholdRules<Sensor>>(sp => new BatteryPercentageThreshold(10));
+        builder.Services.AddSingleton<IUserManagementDataStore, UserManagementDataStore>();
+        builder.Services.AddSingleton<IUserLogService, UserLogService>();
 	}
 
 	private static void RegisterViewModels(MauiAppBuilder builder)
 	{
-		builder.Services.AddSingleton<HomeViewModel>();
-		builder.Services.AddSingleton<AllMaintenanceViewModel>();
+		// Register common ViewModels
 		builder.Services.AddTransient<MaintenanceViewModel>();
+		builder.Services.AddTransient<AllMaintenanceViewModel>();
 		builder.Services.AddTransient<SensorViewModel>();
 		builder.Services.AddTransient<AddSensorViewModel>();
 		builder.Services.AddTransient<EditSensorViewModel>();
-        builder.Services.AddTransient<LoginViewModel>();
 		builder.Services.AddTransient<SensorMonitoringViewModel>();
+		builder.Services.AddTransient<AboutViewModel>();
+		builder.Services.AddTransient<HomeViewModel>();
 		builder.Services.AddTransient<HistoricalDataSelectionViewModel>();
 		builder.Services.AddTransient<HistoricalDataViewerViewModel>();
         builder.Services.AddTransient<LoginViewModel>();
         builder.Services.AddTransient<ThresholdMapViewModel>();
+		builder.Services.AddSingleton<UserManagementViewModel>();
+		builder.Services.AddTransient<EditUserViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
 	{
-		builder.Services.AddTransient<HomePage>();
-		builder.Services.AddTransient<MaintenancePage>();
+		// Register pages
 		builder.Services.AddTransient<AllMaintenancePage>();
+		builder.Services.AddTransient<MaintenancePage>();
 		builder.Services.AddTransient<SensorPage>();
-		builder.Services.AddTransient<AddSensorPage>();
 		builder.Services.AddTransient<EditSensorPage>();
-        builder.Services.AddTransient<LoginPage>();
+		builder.Services.AddTransient<AddSensorPage>();
 		builder.Services.AddTransient<SensorMonitoringPage>();
+		builder.Services.AddTransient<AboutPage>();
+		builder.Services.AddTransient<HomePage>();
 		builder.Services.AddTransient<HistoricalData>();
 		builder.Services.AddTransient<HistoricalDataViewerPage>();
         builder.Services.AddTransient<LoginPage>();
         builder.Services.AddTransient<ThresholdMapPage>();
+		builder.Services.AddSingleton<UserManagementPage>();
+		builder.Services.AddTransient<EditUserPage>();
 	}
 }

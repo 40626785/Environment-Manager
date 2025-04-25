@@ -2,6 +2,7 @@ namespace EnvironmentManager.Services;
 
 using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
+using System;
 using System.Timers;
 
 /// <summary>
@@ -72,6 +73,11 @@ public class SessionService : ISessionService
     /// </summary>
     private void StoreRole() 
     {
-        _storageService.SetStringValue("role", _authenticatedUser.Role.ToString());
+        string roleName = Enum.GetName(typeof(Roles), _authenticatedUser.Role);
+        int roleValue = (int)_authenticatedUser.Role;
+        
+        // Store both the role name and its numeric value to ensure compatibility
+        _storageService.SetStringValue("role", roleName);
+        _storageService.SetStringValue("roleValue", roleValue.ToString());
     }
 }

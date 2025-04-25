@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EnvironmentManager.Views"
+             xmlns:viewmodel="clr-namespace:EnvironmentManager.ViewModels"
+             x:Class="EnvironmentManager.Views.UserManagementPage"
+             x:DataType="viewmodel:UserManagementViewModel"
+             Title="User Management">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="15">
+        <VerticalStackLayout Grid.Row="0" Spacing="10">
+            <Label Text="User Management" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,10" />
+            
+            <!-- Search and Filter Bar -->
+            <Grid ColumnDefinitions="*,Auto">
+                <Entry Grid.Column="0" Placeholder="Search users..." Text="{Binding SearchQuery}" 
+                       ReturnCommand="{Binding SearchCommand}" />
+                <Button Grid.Column="1" Text="Search" Command="{Binding SearchCommand}" Margin="5,0,0,0" />
+            </Grid>
+            
+            <!-- Add User Button - Only visible to administrators -->
+            <Button Text="Add New User" 
+                    Command="{Binding AddUserCommand}"
+                    IsVisible="{Binding IsAdministrator}"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    Margin="0,5,0,0"/>
+        </VerticalStackLayout>
+        
+        <!-- Users List -->
+        <CollectionView Grid.Row="1" 
+                        ItemsSource="{Binding Users}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedUser}"
+                        SelectionChangedCommand="{Binding UserSelectedCommand}"
+                        Margin="0,15,0,0">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="No users found" FontSize="18" TextColor="Gray" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" ColumnDefinitions="*,Auto,Auto" Margin="0,5">
+                        <Frame Grid.ColumnSpan="3" BackgroundColor="#f5f5f5" BorderColor="#e0e0e0" HasShadow="True" 
+                               CornerRadius="5" Padding="0" IsClippedToBounds="True" />
+                        
+                        <VerticalStackLayout Grid.Column="0" Padding="15,10">
+                            <Label Text="{Binding Username}" FontSize="18" FontAttributes="Bold" />
+                            <Label Text="{Binding Role, StringFormat='Role: {0}'}" FontSize="14" TextColor="#666" />
+                        </VerticalStackLayout>
+                        
+                        <!-- Edit Button - Only visible to administrators -->
+                        <Button Grid.Column="1" 
+                                Text="Edit" 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:UserManagementViewModel}}, Path=EditUserCommand}" 
+                                CommandParameter="{Binding .}"
+                                IsVisible="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:UserManagementViewModel}}, Path=IsAdministrator}"
+                                Margin="5,0" 
+                                WidthRequest="80"
+                                BackgroundColor="#2196F3"
+                                TextColor="White"/>
+                        
+                        <!-- Delete Button - Only visible to administrators -->
+                        <Button Grid.Column="2" 
+                                Text="Delete" 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:UserManagementViewModel}}, Path=DeleteUserCommand}" 
+                                CommandParameter="{Binding .}"
+                                IsVisible="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:UserManagementViewModel}}, Path=IsAdministrator}"
+                                BackgroundColor="#F44336"
+                                TextColor="White"
+                                WidthRequest="80" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <!-- User Detail Section (when user is selected) -->
+        <Grid Grid.Row="2" IsVisible="{Binding IsUserSelected}" Margin="0,15,0,0" RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*">
+            <Frame Grid.RowSpan="5" Grid.ColumnSpan="2" BackgroundColor="#e3f2fd" BorderColor="#bbdefb" Padding="15" Margin="-10" CornerRadius="5" />
+            
+            <Label Grid.Row="0" Grid.ColumnSpan="2" Text="User Details" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10" />
+            
+            <Label Grid.Row="1" Grid.Column="0" Text="Username:" FontAttributes="Bold" />
+            <Label Grid.Row="1" Grid.Column="1" Text="{Binding SelectedUser.Username}" />
+            
+            <Label Grid.Row="2" Grid.Column="0" Text="Role:" FontAttributes="Bold" />
+            <Label Grid.Row="2" Grid.Column="1" Text="{Binding SelectedUser.Role}" />
+            
+            <Label Grid.Row="3" Grid.Column="0" Text="Permissions:" FontAttributes="Bold" />
+            <Label Grid.Row="3" Grid.Column="1" Text="{Binding SelectedUserPermissions}" />
+            
+            <HorizontalStackLayout Grid.Row="4" Grid.ColumnSpan="2" HorizontalOptions="End" Margin="0,10,0,0" Spacing="10">
+                <Button Text="Edit" 
+                        Command="{Binding EditUserCommand}" 
+                        CommandParameter="{Binding SelectedUser}"
+                        IsVisible="{Binding IsAdministrator}"
+                        BackgroundColor="#2196F3"
+                        TextColor="White"
+                        WidthRequest="100" />
+                
+                <Button Text="Delete" 
+                        Command="{Binding DeleteUserCommand}" 
+                        CommandParameter="{Binding SelectedUser}"
+                        IsVisible="{Binding IsAdministrator}"
+                        BackgroundColor="#F44336"
+                        TextColor="White"
+                        WidthRequest="100" />
+            </HorizontalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage> 

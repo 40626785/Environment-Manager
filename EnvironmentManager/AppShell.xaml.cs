@@ -22,6 +22,7 @@ public partial class AppShell : Shell {
         Routing.RegisterRoute(nameof(HistoricalData), typeof(HistoricalData));
         Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
         Routing.RegisterRoute(nameof(ThresholdMapPage), typeof(ThresholdMapPage));
+        Routing.RegisterRoute(nameof(UserManagementPage), typeof(UserManagementPage));
 	}
 
     /// <summary>
@@ -31,6 +32,25 @@ public partial class AppShell : Shell {
     {
         TabBar tabBar = ShellTabBar;
         string role = Preferences.Get("role","");
+        string roleValue = Preferences.Get("roleValue", "");
+        
+        // If role is empty but roleValue is not, use roleValue to determine the role name
+        if (string.IsNullOrEmpty(role) && !string.IsNullOrEmpty(roleValue))
+        {
+            switch(roleValue)
+            {
+                case "0":
+                    role = "Administrator";
+                    break;
+                case "1":
+                    role = "EnvironmentalScientist";
+                    break;
+                case "2":
+                    role = "OperationsManager";
+                    break;
+            }
+        }
+        
         switch(role){
             case "OperationsManager":
                 // Add Maintenance tab
@@ -57,6 +77,7 @@ public partial class AppShell : Shell {
                 });
                 tabBar.Items.Add(monitor);
                 break;
+                
             case "EnvironmentalScientist":
                 var sensors = new Tab
                 {
@@ -78,6 +99,43 @@ public partial class AppShell : Shell {
                 });
                 tabBar.Items.Add(sensors);
                 tabBar.Items.Add(threshold);
+                break;
+                
+            case "Administrator":
+                // Administrators get access to monitoring and maintenance
+                var adminMaintenance = new Tab
+                {
+                    Title = "MAINTENANCE"
+                };
+                adminMaintenance.Items.Add(new ShellContent
+                {
+                    Title = "MAINTENANCE",
+                    Content = _serviceProvider.GetRequiredService<AllMaintenancePage>()
+                });
+                tabBar.Items.Add(adminMaintenance);
+                
+                var adminMonitor = new Tab
+                {
+                    Title = "MONITOR"
+                };
+                adminMonitor.Items.Add(new ShellContent
+                {
+                    Title = "MONITOR",
+                    Content = _serviceProvider.GetRequiredService<SensorMonitoringPage>()
+                });
+                tabBar.Items.Add(adminMonitor);
+
+                // Add Users tab ONLY for administrators
+                var users = new Tab
+                {
+                    Title = "USERS" 
+                };
+                users.Items.Add(new ShellContent
+                {
+                    Title = "USERS", 
+                    Content = _serviceProvider.GetRequiredService<UserManagementPage>()
+                });
+                tabBar.Items.Add(users);
                 break;
         }
     }

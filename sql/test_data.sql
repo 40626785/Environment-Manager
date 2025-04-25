@@ -16,3 +16,18 @@ VALUES
     ('Airport Weather Monitor', 51.4700, -0.4543, 25.0, 'Airport', 'West', 'Greater London', 'Hounslow', 'United Kingdom', 0, 'Europe/London', 'GMT'),
     ('Park Meteorological Station', 51.5073, -0.1657, 35.0, 'Park', 'West', 'Greater London', 'Westminster', 'United Kingdom', 0, 'Europe/London', 'GMT');
 
+-- Insert roles as specified in the requirements
+INSERT INTO Roles (RoleId, RoleName, Description)
+VALUES 
+    (0, 'Administrator', 'Full system access with user management capabilities'),
+    (1, 'EnvironmentalScientist', 'Access to scientific data and analysis tools'),
+    (2, 'OperationsManager', 'Access to operational data and management functions');
+
+
+-- Insert test users
+INSERT INTO Users (Username, Password, Role)
+VALUES
+    ('admin', 'admin123', 0), -- Administrator
+    ('manager', 'manager123', 2), -- OperationsManager
+    ('scientist', 'scientist123', 1); -- EnvironmentalScientist
+
