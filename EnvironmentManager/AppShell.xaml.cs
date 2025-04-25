@@ -22,7 +22,7 @@ public partial class AppShell : Shell {
         Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
         Routing.RegisterRoute(nameof(Views.AnomalyPage), typeof(Views.AnomalyPage));
         Routing.RegisterRoute(nameof(Views.SensorAnomaliesPage), typeof(Views.SensorAnomaliesPage));
-
+        Routing.RegisterRoute(nameof(Views.FirmwareUpdatePage), typeof(Views.FirmwareUpdatePage));
 	}
 
     /// <summary>

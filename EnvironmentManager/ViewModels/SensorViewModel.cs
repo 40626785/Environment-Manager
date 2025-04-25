@@ -315,8 +315,13 @@ namespace EnvironmentManager.ViewModels
 
             if (sensor == null) return;
 
-             await Shell.Current.GoToAsync(nameof(Views.SensorAnomaliesPage), parameter);
+            await Shell.Current.GoToAsync(nameof(Views.SensorAnomaliesPage), parameter);
+        }
 
+        [RelayCommand]
+        private async Task NavigateToFirmwareUpdateAsync()
+        {
+            await Shell.Current.GoToAsync(nameof(Views.FirmwareUpdatePage));
         }
     }
 }

@@ -204,6 +204,7 @@ public static class MauiProgram
    		builder.Services.AddTransient<LoginViewModel>();
 		builder.Services.AddTransient<AnomalyDetectionViewModel>();
     	builder.Services.AddTransient<SensorAnomaliesViewModel>();
+		builder.Services.AddTransient<FirmwareUpdateViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -219,5 +220,6 @@ public static class MauiProgram
     	builder.Services.AddTransient<LoginPage>();
 		builder.Services.AddTransient<AnomalyPage>();
     	builder.Services.AddTransient<SensorAnomaliesPage>();
+		builder.Services.AddTransient<FirmwareUpdatePage>();
 	}
 }
