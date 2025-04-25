@@ -4,7 +4,7 @@ using EnvironmentManager.Models;
 namespace EnvironmentManager.ViewModels;
 
 /// <summary>
-/// Code-behind the login page
+/// Code-behind the Threshold Map
 /// </summary>
 public class ThresholdMapViewModel
 {

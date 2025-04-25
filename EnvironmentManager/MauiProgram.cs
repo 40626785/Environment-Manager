@@ -195,7 +195,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
         builder.Services.AddSingleton<ISensorThresholdService, SensorThresholdService>();
         builder.Services.AddSingleton<IThresholdRules<Sensor>, ActiveOnlineThreshold>();
-        builder.Services.AddSingleton<IThresholdRules<Sensor>, BatteryPercentageThreshold>();
+        builder.Services.AddSingleton<IThresholdRules<Sensor>>(sp => new BatteryPercentageThreshold(10));
 	}
 
 	private static void RegisterViewModels(MauiAppBuilder builder)
@@ -206,12 +206,12 @@ public static class MauiProgram
 		builder.Services.AddTransient<SensorViewModel>();
 		builder.Services.AddTransient<AddSensorViewModel>();
 		builder.Services.AddTransient<EditSensorViewModel>();
-    builder.Services.AddTransient<LoginViewModel>();
+        builder.Services.AddTransient<LoginViewModel>();
 		builder.Services.AddTransient<SensorMonitoringViewModel>();
 		builder.Services.AddTransient<HistoricalDataSelectionViewModel>();
 		builder.Services.AddTransient<HistoricalDataViewerViewModel>();
-    builder.Services.AddTransient<LoginViewModel>();
-    builder.Services.AddTransient<ThresholdMapViewModel>();
+        builder.Services.AddTransient<LoginViewModel>();
+        builder.Services.AddTransient<ThresholdMapViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -222,11 +222,11 @@ public static class MauiProgram
 		builder.Services.AddTransient<SensorPage>();
 		builder.Services.AddTransient<AddSensorPage>();
 		builder.Services.AddTransient<EditSensorPage>();
-    builder.Services.AddTransient<LoginPage>();
+        builder.Services.AddTransient<LoginPage>();
 		builder.Services.AddTransient<SensorMonitoringPage>();
 		builder.Services.AddTransient<HistoricalData>();
 		builder.Services.AddTransient<HistoricalDataViewerPage>();
-    builder.Services.AddTransient<LoginPage>();
-    builder.Services.AddTransient<ThresholdMapPage>();
+        builder.Services.AddTransient<LoginPage>();
+        builder.Services.AddTransient<ThresholdMapPage>();
 	}
 }

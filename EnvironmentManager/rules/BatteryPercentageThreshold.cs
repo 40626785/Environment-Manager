@@ -8,7 +8,12 @@ using EnvironmentManager.Models;
 /// </summary>
 public class BatteryPercentageThreshold : IThresholdRules<Sensor>
 {   
-   private static readonly int _threshold = 10;
+   private int _threshold;
+
+   public BatteryPercentageThreshold(int threshold)
+   {
+        _threshold = threshold;
+   }
 
    /// <summary>
    /// Checks if provided sensor breaches rule.

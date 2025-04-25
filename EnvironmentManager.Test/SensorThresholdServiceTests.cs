@@ -8,10 +8,9 @@ using Moq;
 public class SensorThresholdServiceTests
 {
     [Fact]
-    public async Task ReturnBreached_PopulateList()
+    public void ReturnBreached_OnBreached_PopulateList()
     {
         //Arrange
-
         var breachedRule = new Mock<IThresholdRules<Sensor>>();
         var controlRule = new Mock<IThresholdRules<Sensor>>();
         Location location = new Location
@@ -40,5 +39,20 @@ public class SensorThresholdServiceTests
         Assert.Single(breaches[0].BreachedRules);
         Assert.Equal(breachingSensor,breaches[0].BreachingSensor);
         Assert.Equal(breachedRule.Object,breaches[0].BreachedRules[0]);
+    }
+    [Fact]
+    public void ReturnBreached_NoBreaches_EmptyList()
+    {
+        //Arrange
+        var rule = new Mock<IThresholdRules<Sensor>>();
+        Sensor sensor = new Sensor();
+        rule.Setup(x => x.IsBreachedBy(sensor)).Returns(false);
+        List<IThresholdRules<Sensor>> ruleList = new List<IThresholdRules<Sensor>>{rule.Object};
+        List<Sensor> sensorList = new List<Sensor>{sensor};
+        SensorThresholdService sensorThresholdService = new SensorThresholdService(ruleList);
+        //Action
+        List<SensorThresholdBreach> breaches = sensorThresholdService.ReturnBreached(sensorList);
+        //Assert
+        Assert.Empty(breaches);
     }
 }
