@@ -5,9 +5,9 @@ using EnvironmentManager.Models;
 using System.Data;
 
 /// <summary>
-/// Allows running operations on Main Thread, required by UI actions
+/// Manages the verification of Sensors against an injected collection of Specification Interfaces
 /// 
-/// Implements IRunOnMainThread to enable Dependency Injection 
+/// Implements the ISensorThresholdService to enable Dependency Injection
 /// </summary>
 public class SensorThresholdService : ISensorThresholdService
 {
