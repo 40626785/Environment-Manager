@@ -5,7 +5,6 @@ using Mapsui;
 using Mapsui.Nts;
 using Mapsui.Projections;
 using EnvironmentManager.ViewModels;
-using EnvironmentManager.Models;
 
 namespace EnvironmentManager.Views;
 
