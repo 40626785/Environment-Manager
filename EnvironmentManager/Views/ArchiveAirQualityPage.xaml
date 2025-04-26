@@ -3,34 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EnvironmentManager.Views.ArchiveAirQualityPage"
              Title="Archive Air Quality">
-    <VerticalStackLayout Padding="20">
+
+    <VerticalStackLayout Padding="20"
+            Spacing="10">
+
+        <!-- Page Title -->
         <Label Text="Archive Air Quality Table Admin Page!"
                FontSize="20"
                HorizontalOptions="Center"/>
 
+        <!-- Loading Indicator -->
         <ActivityIndicator IsRunning="{Binding IsBusy}"
                            IsVisible="{Binding IsBusy}"
                            Color="DarkBlue"
-                           HeightRequest="50"/>
+                           HeightRequest="40"/>
 
-        <Label Text="Start Date:"/>
-        <DatePicker Date="{Binding StartDate}"/>
-
-        <Label Text="End Date:"/>
-        <DatePicker Date="{Binding EndDate}"/>
-        <Label Text="Sort By:"/>
+        <!-- Sorting Controls -->
+        <Label Text="Sort Field:"/>
         <Picker ItemsSource="{Binding SortOptions}"
-                SelectedItem="{Binding SelectedSortOption}"/>
+                SelectedItem="{Binding SelectedSortOption}"
+                Margin="0,0,0,10"/>
+
+        <Label Text="Sort Direction:"/>
+        <Picker ItemsSource="{Binding SortDirections}"
+                SelectedItem="{Binding SelectedSortDirection}"
+                Margin="0,0,0,10"/>
 
         <Button Text="Apply Sort"
-                Margin="5"
-                Command="{Binding ApplySortCommand}"/>
+                Command="{Binding ApplySortCommand}"
+                Margin="0,0,0,20"/>
 
+        <!-- Date Range Filter -->
+        <Label Text="Start Date:"/>
+        <DatePicker Date="{Binding StartDate}"
+                    Margin="0,0,0,10"/>
+
+        <Label Text="End Date:"/>
+        <DatePicker Date="{Binding EndDate}"
+                    Margin="0,0,0,10"/>
 
         <Button Text="Apply Date Filter"
-                Margin="5"
-                Command="{Binding FilterByDateRangeCommand}"/>
+                Command="{Binding FilterByDateRangeCommand}"
+                Margin="0,0,0,20"/>
 
+        <!-- Data Display -->
         <CollectionView ItemsSource="{Binding TableData}"
                         VerticalOptions="FillAndExpand">
             <CollectionView.ItemTemplate>
@@ -39,9 +55,6 @@
                            CornerRadius="10"
                            Padding="10"
                            Margin="5">
-
-
-
                         <StackLayout>
                             <Label Text="{Binding Date, StringFormat='📅 {0:dd MMM yyyy}'}"
                                    FontAttributes="Bold"/>
