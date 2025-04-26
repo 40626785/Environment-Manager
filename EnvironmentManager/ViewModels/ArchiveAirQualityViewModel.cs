@@ -14,12 +14,13 @@ namespace EnvironmentManager.ViewModels
     {
         private readonly ArchiveAirQualityDbContext _dbContext;
 
-        // Observable collection bound to CollectionView in XAML
         public ObservableCollection<ArchiveAirQuality> TableData { get; set; } = new();
 
         #region Sorting Properties
 
-        // Fields available for sorting
+        public ICommand ExportToCsvCommand { get; }
+
+
         public List<string> SortOptions { get; } = new()
         {
             "Date",
@@ -34,7 +35,6 @@ namespace EnvironmentManager.ViewModels
             set => SetProperty(ref selectedSortOption, value);
         }
 
-        // Ascending / Descending options
         public List<string> SortDirections { get; } = new() { "Ascending", "Descending" };
 
         private string selectedSortDirection = "Descending";
@@ -50,7 +50,7 @@ namespace EnvironmentManager.ViewModels
 
         #region Date Filtering Properties
 
-        private DateTime startDate = DateTime.Now.AddDays(-7);  // Default: past week
+        private DateTime startDate = DateTime.Now.AddDays(-7);
         public DateTime StartDate
         {
             get => startDate;
@@ -68,35 +68,45 @@ namespace EnvironmentManager.ViewModels
 
         #endregion
 
-        #region Delete By Date Properties
+        #region Toggle Filter Visibility
 
-        public DateTime SelectedDate { get; set; } = DateTime.Now;
+        private bool isFilterVisible = false;
+        public bool IsFilterVisible
+        {
+            get => isFilterVisible;
+            set
+            {
+                SetProperty(ref isFilterVisible, value);
+                OnPropertyChanged(nameof(ToggleFilterText));
+            }
+        }
 
-        public ICommand DeleteByDateCommand { get; }
+        public string ToggleFilterText => IsFilterVisible ? "Hide Filters ▲" : "Show Filters & Export Options ▼";
+
+        public ICommand ToggleFilterVisibilityCommand { get; }
 
         #endregion
 
-        // Command to load default data
         public ICommand LoadDataCommand { get; }
+        public ICommand DeleteFilteredCommand { get; }
 
-        // Constructor with DbContext injection
         public ArchiveAirQualityViewModel(ArchiveAirQualityDbContext dbContext)
         {
             _dbContext = dbContext;
 
-            // Initialize commands
             LoadDataCommand = new Command(async () => await LoadDataAsync());
             FilterByDateRangeCommand = new Command(async () => await FilterByDateRangeAsync());
             ApplySortCommand = new Command(async () => await ApplySortAsync());
-            DeleteByDateCommand = new Command(async () => await DeleteByDateAsync());
+            DeleteFilteredCommand = new Command(async () => await DeleteFilteredAsync());
+            ToggleFilterVisibilityCommand = new Command(() => IsFilterVisible = !IsFilterVisible);
+            ExportToCsvCommand = new Command(async () => await ExportToCsvAsync());
 
-            // Auto-load data when ViewModel initializes
+
             Task.Run(async () => await LoadDataAsync());
         }
 
         #region Methods
 
-        // Loads latest 100 records ordered by Date DESC
         private async Task LoadDataAsync()
         {
             if (IsBusy) return;
@@ -113,9 +123,6 @@ namespace EnvironmentManager.ViewModels
 
                 foreach (var item in data)
                     TableData.Add(item);
-
-                if (TableData.Count == 0)
-                    await Application.Current.MainPage.DisplayAlert("Info", "No records found.", "OK");
             }
             catch (Exception ex)
             {
@@ -127,7 +134,6 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
-        // Filters records between StartDate and EndDate
         private async Task FilterByDateRangeAsync()
         {
             if (IsBusy) return;
@@ -144,9 +150,6 @@ namespace EnvironmentManager.ViewModels
 
                 foreach (var item in data)
                     TableData.Add(item);
-
-                if (TableData.Count == 0)
-                    await Application.Current.MainPage.DisplayAlert("Info", "No records found in selected date range.", "OK");
             }
             catch (Exception ex)
             {
@@ -158,7 +161,6 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
-        // Applies sorting based on user selection
         private async Task ApplySortAsync()
         {
             if (IsBusy) return;
@@ -193,9 +195,6 @@ namespace EnvironmentManager.ViewModels
 
                 foreach (var item in data)
                     TableData.Add(item);
-
-                if (TableData.Count == 0)
-                    await Application.Current.MainPage.DisplayAlert("Info", "No records found after sorting.", "OK");
             }
             catch (Exception ex)
             {
@@ -207,36 +206,98 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
-
-        // Deletes records matching SelectedDate
-        private async Task DeleteByDateAsync()
+        //export to CSV
+        private async Task ExportToCsvAsync()
         {
+            if (IsBusy) return;
+
             try
             {
-                var recordsToDelete = await _dbContext.ArchiveAirQuality
-                    .Where(a => a.Date == SelectedDate.Date)
-                    .ToListAsync();
+                IsBusy = true;
 
-                if (recordsToDelete.Any())
+                if (!TableData.Any())
                 {
-                    _dbContext.ArchiveAirQuality.RemoveRange(recordsToDelete);
-                    await _dbContext.SaveChangesAsync();
-
-                    await Application.Current.MainPage.DisplayAlert("Success", $"Deleted {recordsToDelete.Count} records for {SelectedDate:yyyy-MM-dd}.", "OK");
-
-                    await LoadDataAsync();
+                    await Application.Current.MainPage.DisplayAlert("Info", "No data to export.", "OK");
+                    return;
                 }
-                else
+
+                var csvLines = new List<string>();
+
+                // Header
+                csvLines.Add("Id,Date,Time,Nitrogen_dioxide,Sulphur_dioxide,PM2_5_particulate_matter,PM10_particulate_matter");
+
+                // Data rows
+                foreach (var item in TableData)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Info", $"No records found for {SelectedDate:yyyy-MM-dd}.", "OK");
+                    var line = $"{item.Id}," +
+                               $"{item.Date:yyyy-MM-dd}," +
+                               $"{item.Time}," +
+                               $"{item.Nitrogen_dioxide}," +
+                               $"{item.Sulphur_dioxide}," +
+                               $"{item.PM2_5_particulate_matter}," +
+                               $"{item.PM10_particulate_matter}";
+
+                    csvLines.Add(line);
                 }
+
+                // File path (adjust for platform if needed)
+                var fileName = $"ArchiveAirQuality_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+                var filePath = Path.Combine(FileSystem.Current.AppDataDirectory, fileName);
+
+                await File.WriteAllLinesAsync(filePath, csvLines);
+
+                await Application.Current.MainPage.DisplayAlert("Export Complete", $"CSV saved to:\n{filePath}", "OK");
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", $"Export failed: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task DeleteFilteredAsync()
+        {
+            if (IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+
+                if (!TableData.Any())
+                {
+                    await Application.Current.MainPage.DisplayAlert("Info", "No records to delete.", "OK");
+                    return;
+                }
+
+                bool confirm = await Application.Current.MainPage.DisplayAlert(
+                    "Confirm Delete",
+                    $"Are you sure you want to delete all {TableData.Count} displayed records?",
+                    "Yes", "No");
+
+                if (!confirm) return;
+
+                _dbContext.ArchiveAirQuality.RemoveRange(TableData);
+                await _dbContext.SaveChangesAsync();
+
+                await Application.Current.MainPage.DisplayAlert("Success", $"{TableData.Count} records deleted.", "OK");
+
+                await LoadDataAsync();
             }
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", $"Delete failed: {ex.Message}", "OK");
             }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         #endregion
     }
+
+
 }

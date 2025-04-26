@@ -4,51 +4,69 @@
              x:Class="EnvironmentManager.Views.ArchiveAirQualityPage"
              Title="Archive Air Quality">
 
-    <VerticalStackLayout Padding="20"
-            Spacing="10">
+    <Grid RowDefinitions="Auto, *"
+          Padding="20">
 
-        <!-- Page Title -->
-        <Label Text="Archive Air Quality Table Admin Page!"
-               FontSize="20"
-               HorizontalOptions="Center"/>
+        <!-- Controls Section -->
+        <VerticalStackLayout Grid.Row="0"
+                             Spacing="10">
 
-        <!-- Loading Indicator -->
-        <ActivityIndicator IsRunning="{Binding IsBusy}"
-                           IsVisible="{Binding IsBusy}"
-                           Color="DarkBlue"
-                           HeightRequest="40"/>
+            <!-- Page Title -->
+            <!-- Loading Indicator -->
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}"
+                               Color="DarkBlue"
+                               HeightRequest="40"/>
 
-        <!-- Sorting Controls -->
-        <Label Text="Sort Field:"/>
-        <Picker ItemsSource="{Binding SortOptions}"
-                SelectedItem="{Binding SelectedSortOption}"
-                Margin="0,0,0,10"/>
+            <!-- Toggle Button for Filter Options -->
+            <Button Text="{Binding ToggleFilterText}"
+                    Command="{Binding ToggleFilterVisibilityCommand}"/>
 
-        <Label Text="Sort Direction:"/>
-        <Picker ItemsSource="{Binding SortDirections}"
-                SelectedItem="{Binding SelectedSortDirection}"
-                Margin="0,0,0,10"/>
+            <!-- Collapsible Filter & Sort Section -->
+            <StackLayout IsVisible="{Binding IsFilterVisible}"
+                         Spacing="10">
 
-        <Button Text="Apply Sort"
-                Command="{Binding ApplySortCommand}"
-                Margin="0,0,0,20"/>
+                <!-- Sorting Controls -->
+                <Label Text="Sort Field:"/>
+                <Picker ItemsSource="{Binding SortOptions}"
+                        SelectedItem="{Binding SelectedSortOption}"/>
 
-        <!-- Date Range Filter -->
-        <Label Text="Start Date:"/>
-        <DatePicker Date="{Binding StartDate}"
-                    Margin="0,0,0,10"/>
+                <Label Text="Sort Direction:"/>
+                <Picker ItemsSource="{Binding SortDirections}"
+                        SelectedItem="{Binding SelectedSortDirection}"/>
 
-        <Label Text="End Date:"/>
-        <DatePicker Date="{Binding EndDate}"
-                    Margin="0,0,0,10"/>
+                <Button Text="Apply Sort"
+                        Command="{Binding ApplySortCommand}"/>
 
-        <Button Text="Apply Date Filter"
-                Command="{Binding FilterByDateRangeCommand}"
-                Margin="0,0,0,20"/>
+                <!-- Date Range Filter -->
+                <Label Text="Start Date:"/>
+                <DatePicker Date="{Binding StartDate}"/>
 
-        <!-- Data Display -->
-        <CollectionView ItemsSource="{Binding TableData}"
-                        VerticalOptions="FillAndExpand">
+                <Label Text="End Date:"/>
+                <DatePicker Date="{Binding EndDate}"/>
+
+                <Button Text="Apply Date Filter"
+                        Command="{Binding FilterByDateRangeCommand}"/>
+
+                <Button Text="Export to CSV"
+                        Command="{Binding ExportToCsvCommand}"
+                        BackgroundColor="Green"
+                        TextColor="White"
+                        Margin="0,0,0,10"/>
+
+            </StackLayout>
+
+            <!-- Single Delete Button -->
+            <Button Text="Delete Filtered Records"
+                    Command="{Binding DeleteFilteredCommand}"
+                    BackgroundColor="Red"
+                    TextColor="White"/>
+
+        </VerticalStackLayout>
+
+        <!-- Data List Section -->
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding TableData}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame BorderColor="LightGray"
@@ -69,5 +87,5 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>
