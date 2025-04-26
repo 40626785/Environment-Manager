@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: BatteryPercentageThreshold
     path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: IsBreachedBy
     path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
@@ -126,7 +126,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/rules/BatteryPercentageThreshold.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: ThresholdDetail
     path: EnvironmentManager/rules/BatteryPercentageThreshold.cs

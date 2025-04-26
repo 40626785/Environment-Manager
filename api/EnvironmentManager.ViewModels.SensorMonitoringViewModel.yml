@@ -35,7 +35,7 @@ items:
   type: Class
   source:
     id: SensorMonitoringViewModel
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync.g.cs
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.StopAutoRefresh.g.cs
     startLine: 6
   assemblies:
   - EnvironmentManager
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/SensorMonitoringViewModel.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/SensorMonitoringViewModel.cs
@@ -118,7 +118,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/SensorMonitoringViewModel.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/SensorMonitoringViewModel.cs
@@ -150,7 +150,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/SensorMonitoringViewModel.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Finalize
     path: EnvironmentManager/ViewModels/SensorMonitoringViewModel.cs
@@ -165,6 +165,141 @@ items:
   nameWithType.vb: ''
   fullName.vb: ''
   name.vb: ''
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
+  id: LoadSensorStatusesCommand
+  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
+  langs:
+  - csharp
+  - vb
+  name: LoadSensorStatusesCommand
+  nameWithType: SensorMonitoringViewModel.LoadSensorStatusesCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
+  type: Property
+  source:
+    id: LoadSensorStatusesCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IAsyncRelayCommand LoadSensorStatusesCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+    content.vb: Public ReadOnly Property LoadSensorStatusesCommand As IAsyncRelayCommand
+  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand*
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand
+  id: RefreshNowCommand
+  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
+  langs:
+  - csharp
+  - vb
+  name: RefreshNowCommand
+  nameWithType: SensorMonitoringViewModel.RefreshNowCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand
+  type: Property
+  source:
+    id: RefreshNowCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IAsyncRelayCommand RefreshNowCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+    content.vb: Public ReadOnly Property RefreshNowCommand As IAsyncRelayCommand
+  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand*
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
+  id: StartAutoRefreshCommand
+  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
+  langs:
+  - csharp
+  - vb
+  name: StartAutoRefreshCommand
+  nameWithType: SensorMonitoringViewModel.StartAutoRefreshCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
+  type: Property
+  source:
+    id: StartAutoRefreshCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IRelayCommand StartAutoRefreshCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IRelayCommand
+    content.vb: Public ReadOnly Property StartAutoRefreshCommand As IRelayCommand
+  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand*
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
+  id: ViewSensorDetailsCommand
+  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
+  langs:
+  - csharp
+  - vb
+  name: ViewSensorDetailsCommand
+  nameWithType: SensorMonitoringViewModel.ViewSensorDetailsCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
+  type: Property
+  source:
+    id: ViewSensorDetailsCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand%601" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IAsyncRelayCommand<SensorStatus> ViewSensorDetailsCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand{EnvironmentManager.Models.SensorStatus}
+    content.vb: Public ReadOnly Property ViewSensorDetailsCommand As IAsyncRelayCommand(Of SensorStatus)
+  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand*
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
+  id: ToggleAutoRefreshCommand
+  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
+  langs:
+  - csharp
+  - vb
+  name: ToggleAutoRefreshCommand
+  nameWithType: SensorMonitoringViewModel.ToggleAutoRefreshCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
+  type: Property
+  source:
+    id: ToggleAutoRefreshCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IRelayCommand ToggleAutoRefreshCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IRelayCommand
+    content.vb: Public ReadOnly Property ToggleAutoRefreshCommand As IRelayCommand
+  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand*
 - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.SensorStatuses
   commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.SensorStatuses
   id: SensorStatuses
@@ -477,114 +612,6 @@ items:
       type: System.Boolean
     content.vb: Public Property AutoRefreshEnabled As Boolean
   overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.AutoRefreshEnabled*
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
-  id: LoadSensorStatusesCommand
-  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
-  langs:
-  - csharp
-  - vb
-  name: LoadSensorStatusesCommand
-  nameWithType: SensorMonitoringViewModel.LoadSensorStatusesCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
-  type: Property
-  source:
-    id: LoadSensorStatusesCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IAsyncRelayCommand LoadSensorStatusesCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-    content.vb: Public ReadOnly Property LoadSensorStatusesCommand As IAsyncRelayCommand
-  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand*
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
-  id: StartAutoRefreshCommand
-  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
-  langs:
-  - csharp
-  - vb
-  name: StartAutoRefreshCommand
-  nameWithType: SensorMonitoringViewModel.StartAutoRefreshCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
-  type: Property
-  source:
-    id: StartAutoRefreshCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IRelayCommand StartAutoRefreshCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IRelayCommand
-    content.vb: Public ReadOnly Property StartAutoRefreshCommand As IRelayCommand
-  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand*
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
-  id: ToggleAutoRefreshCommand
-  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
-  langs:
-  - csharp
-  - vb
-  name: ToggleAutoRefreshCommand
-  nameWithType: SensorMonitoringViewModel.ToggleAutoRefreshCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
-  type: Property
-  source:
-    id: ToggleAutoRefreshCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IRelayCommand ToggleAutoRefreshCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IRelayCommand
-    content.vb: Public ReadOnly Property ToggleAutoRefreshCommand As IRelayCommand
-  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand*
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
-  id: ViewSensorDetailsCommand
-  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
-  langs:
-  - csharp
-  - vb
-  name: ViewSensorDetailsCommand
-  nameWithType: SensorMonitoringViewModel.ViewSensorDetailsCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
-  type: Property
-  source:
-    id: ViewSensorDetailsCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand%601" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IAsyncRelayCommand<SensorStatus> ViewSensorDetailsCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand{EnvironmentManager.Models.SensorStatus}
-    content.vb: Public ReadOnly Property ViewSensorDetailsCommand As IAsyncRelayCommand(Of SensorStatus)
-  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand*
 - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StopAutoRefreshCommand
   commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.StopAutoRefreshCommand
   id: StopAutoRefreshCommand
@@ -612,33 +639,6 @@ items:
       type: CommunityToolkit.Mvvm.Input.IRelayCommand
     content.vb: Public ReadOnly Property StopAutoRefreshCommand As IRelayCommand
   overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StopAutoRefreshCommand*
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand
-  id: RefreshNowCommand
-  parent: EnvironmentManager.ViewModels.SensorMonitoringViewModel
-  langs:
-  - csharp
-  - vb
-  name: RefreshNowCommand
-  nameWithType: SensorMonitoringViewModel.RefreshNowCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand
-  type: Property
-  source:
-    id: RefreshNowCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IAsyncRelayCommand RefreshNowCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-    content.vb: Public ReadOnly Property RefreshNowCommand As IAsyncRelayCommand
-  overload: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand*
 references:
 - uid: EnvironmentManager.ViewModels
   commentId: N:EnvironmentManager.ViewModels
@@ -2710,6 +2710,232 @@ references:
   - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.Finalize*
     name: SensorMonitoringViewModel
     href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_Finalize
+- uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+  commentId: T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+  parent: CommunityToolkit.Mvvm.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand
+  name: IAsyncRelayCommand
+  nameWithType: IAsyncRelayCommand
+  fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync
+  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync
+  name: LoadSensorStatusesAsync()
+  nameWithType: SensorMonitoringViewModel.LoadSensorStatusesAsync()
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync
+    name: LoadSensorStatusesAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync
+    name: LoadSensorStatusesAsync
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
+  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_LoadSensorStatusesCommand
+  name: LoadSensorStatusesCommand
+  nameWithType: SensorMonitoringViewModel.LoadSensorStatusesCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
+- uid: CommunityToolkit.Mvvm.Input
+  commentId: N:CommunityToolkit.Mvvm.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit
+  name: CommunityToolkit.Mvvm.Input
+  nameWithType: CommunityToolkit.Mvvm.Input
+  fullName: CommunityToolkit.Mvvm.Input
+  spec.csharp:
+  - uid: CommunityToolkit
+    name: CommunityToolkit
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
+  - name: .
+  - uid: CommunityToolkit.Mvvm
+    name: Mvvm
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
+  - name: .
+  - uid: CommunityToolkit.Mvvm.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
+  spec.vb:
+  - uid: CommunityToolkit
+    name: CommunityToolkit
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
+  - name: .
+  - uid: CommunityToolkit.Mvvm
+    name: Mvvm
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
+  - name: .
+  - uid: CommunityToolkit.Mvvm.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync
+  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync
+  name: RefreshNowAsync()
+  nameWithType: SensorMonitoringViewModel.RefreshNowAsync()
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync
+    name: RefreshNowAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync
+    name: RefreshNowAsync
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand
+  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_RefreshNowCommand
+  name: RefreshNowCommand
+  nameWithType: SensorMonitoringViewModel.RefreshNowCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand
+- uid: CommunityToolkit.Mvvm.Input.IRelayCommand
+  commentId: T:CommunityToolkit.Mvvm.Input.IRelayCommand
+  parent: CommunityToolkit.Mvvm.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand
+  name: IRelayCommand
+  nameWithType: IRelayCommand
+  fullName: CommunityToolkit.Mvvm.Input.IRelayCommand
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh
+  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh
+  name: StartAutoRefresh()
+  nameWithType: SensorMonitoringViewModel.StartAutoRefresh()
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh
+    name: StartAutoRefresh
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh
+    name: StartAutoRefresh
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
+  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_StartAutoRefreshCommand
+  name: StartAutoRefreshCommand
+  nameWithType: SensorMonitoringViewModel.StartAutoRefreshCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
+- uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
+  commentId: T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
+  name: IAsyncRelayCommand<T>
+  nameWithType: IAsyncRelayCommand<T>
+  fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand<T>
+  nameWithType.vb: IAsyncRelayCommand(Of T)
+  fullName.vb: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand(Of T)
+  name.vb: IAsyncRelayCommand(Of T)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
+    name: IAsyncRelayCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
+    name: IAsyncRelayCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
+  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
+  href: EnvironmentManager.Models.SensorStatus.html
+  name: ViewSensorDetailsAsync(SensorStatus)
+  nameWithType: SensorMonitoringViewModel.ViewSensorDetailsAsync(SensorStatus)
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
+    name: ViewSensorDetailsAsync
+  - name: (
+  - uid: EnvironmentManager.Models.SensorStatus
+    name: SensorStatus
+    href: EnvironmentManager.Models.SensorStatus.html
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
+    name: ViewSensorDetailsAsync
+  - name: (
+  - uid: EnvironmentManager.Models.SensorStatus
+    name: SensorStatus
+    href: EnvironmentManager.Models.SensorStatus.html
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
+  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_ViewSensorDetailsCommand
+  name: ViewSensorDetailsCommand
+  nameWithType: SensorMonitoringViewModel.ViewSensorDetailsCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
+- uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand{EnvironmentManager.Models.SensorStatus}
+  commentId: T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand{EnvironmentManager.Models.SensorStatus}
+  parent: CommunityToolkit.Mvvm.Input
+  definition: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
+  name: IAsyncRelayCommand<SensorStatus>
+  nameWithType: IAsyncRelayCommand<SensorStatus>
+  fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand<EnvironmentManager.Models.SensorStatus>
+  nameWithType.vb: IAsyncRelayCommand(Of SensorStatus)
+  fullName.vb: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand(Of EnvironmentManager.Models.SensorStatus)
+  name.vb: IAsyncRelayCommand(Of SensorStatus)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
+    name: IAsyncRelayCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
+  - name: <
+  - uid: EnvironmentManager.Models.SensorStatus
+    name: SensorStatus
+    href: EnvironmentManager.Models.SensorStatus.html
+  - name: '>'
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
+    name: IAsyncRelayCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.SensorStatus
+    name: SensorStatus
+    href: EnvironmentManager.Models.SensorStatus.html
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh
+  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh
+  name: ToggleAutoRefresh()
+  nameWithType: SensorMonitoringViewModel.ToggleAutoRefresh()
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh
+    name: ToggleAutoRefresh
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh
+    name: ToggleAutoRefresh
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
+  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_ToggleAutoRefreshCommand
+  name: ToggleAutoRefreshCommand
+  nameWithType: SensorMonitoringViewModel.ToggleAutoRefreshCommand
+  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
 - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.SensorStatuses*
   commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.SensorStatuses
   href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_SensorStatuses
@@ -2986,211 +3212,6 @@ references:
   name: AutoRefreshEnabled
   nameWithType: SensorMonitoringViewModel.AutoRefreshEnabled
   fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.AutoRefreshEnabled
-- uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-  commentId: T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-  parent: CommunityToolkit.Mvvm.Input
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand
-  name: IAsyncRelayCommand
-  nameWithType: IAsyncRelayCommand
-  fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync
-  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync
-  name: LoadSensorStatusesAsync()
-  nameWithType: SensorMonitoringViewModel.LoadSensorStatusesAsync()
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync
-    name: LoadSensorStatusesAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesAsync
-    name: LoadSensorStatusesAsync
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
-  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_LoadSensorStatusesCommand
-  name: LoadSensorStatusesCommand
-  nameWithType: SensorMonitoringViewModel.LoadSensorStatusesCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.LoadSensorStatusesCommand
-- uid: CommunityToolkit.Mvvm.Input
-  commentId: N:CommunityToolkit.Mvvm.Input
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit
-  name: CommunityToolkit.Mvvm.Input
-  nameWithType: CommunityToolkit.Mvvm.Input
-  fullName: CommunityToolkit.Mvvm.Input
-  spec.csharp:
-  - uid: CommunityToolkit
-    name: CommunityToolkit
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
-  - name: .
-  - uid: CommunityToolkit.Mvvm
-    name: Mvvm
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
-  - name: .
-  - uid: CommunityToolkit.Mvvm.Input
-    name: Input
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
-  spec.vb:
-  - uid: CommunityToolkit
-    name: CommunityToolkit
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
-  - name: .
-  - uid: CommunityToolkit.Mvvm
-    name: Mvvm
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
-  - name: .
-  - uid: CommunityToolkit.Mvvm.Input
-    name: Input
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
-- uid: CommunityToolkit.Mvvm.Input.IRelayCommand
-  commentId: T:CommunityToolkit.Mvvm.Input.IRelayCommand
-  parent: CommunityToolkit.Mvvm.Input
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand
-  name: IRelayCommand
-  nameWithType: IRelayCommand
-  fullName: CommunityToolkit.Mvvm.Input.IRelayCommand
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh
-  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh
-  name: StartAutoRefresh()
-  nameWithType: SensorMonitoringViewModel.StartAutoRefresh()
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh
-    name: StartAutoRefresh
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefresh
-    name: StartAutoRefresh
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
-  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_StartAutoRefreshCommand
-  name: StartAutoRefreshCommand
-  nameWithType: SensorMonitoringViewModel.StartAutoRefreshCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StartAutoRefreshCommand
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh
-  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh
-  name: ToggleAutoRefresh()
-  nameWithType: SensorMonitoringViewModel.ToggleAutoRefresh()
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh
-    name: ToggleAutoRefresh
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefresh
-    name: ToggleAutoRefresh
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
-  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_ToggleAutoRefreshCommand
-  name: ToggleAutoRefreshCommand
-  nameWithType: SensorMonitoringViewModel.ToggleAutoRefreshCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ToggleAutoRefreshCommand
-- uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
-  commentId: T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
-  name: IAsyncRelayCommand<T>
-  nameWithType: IAsyncRelayCommand<T>
-  fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand<T>
-  nameWithType.vb: IAsyncRelayCommand(Of T)
-  fullName.vb: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand(Of T)
-  name.vb: IAsyncRelayCommand(Of T)
-  spec.csharp:
-  - uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
-    name: IAsyncRelayCommand
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
-    name: IAsyncRelayCommand
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
-  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
-  href: EnvironmentManager.Models.SensorStatus.html
-  name: ViewSensorDetailsAsync(SensorStatus)
-  nameWithType: SensorMonitoringViewModel.ViewSensorDetailsAsync(SensorStatus)
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
-    name: ViewSensorDetailsAsync
-  - name: (
-  - uid: EnvironmentManager.Models.SensorStatus
-    name: SensorStatus
-    href: EnvironmentManager.Models.SensorStatus.html
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsAsync(EnvironmentManager.Models.SensorStatus)
-    name: ViewSensorDetailsAsync
-  - name: (
-  - uid: EnvironmentManager.Models.SensorStatus
-    name: SensorStatus
-    href: EnvironmentManager.Models.SensorStatus.html
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
-  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_ViewSensorDetailsCommand
-  name: ViewSensorDetailsCommand
-  nameWithType: SensorMonitoringViewModel.ViewSensorDetailsCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.ViewSensorDetailsCommand
-- uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand{EnvironmentManager.Models.SensorStatus}
-  commentId: T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand{EnvironmentManager.Models.SensorStatus}
-  parent: CommunityToolkit.Mvvm.Input
-  definition: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
-  name: IAsyncRelayCommand<SensorStatus>
-  nameWithType: IAsyncRelayCommand<SensorStatus>
-  fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand<EnvironmentManager.Models.SensorStatus>
-  nameWithType.vb: IAsyncRelayCommand(Of SensorStatus)
-  fullName.vb: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand(Of EnvironmentManager.Models.SensorStatus)
-  name.vb: IAsyncRelayCommand(Of SensorStatus)
-  spec.csharp:
-  - uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
-    name: IAsyncRelayCommand
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
-  - name: <
-  - uid: EnvironmentManager.Models.SensorStatus
-    name: SensorStatus
-    href: EnvironmentManager.Models.SensorStatus.html
-  - name: '>'
-  spec.vb:
-  - uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
-    name: IAsyncRelayCommand
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: EnvironmentManager.Models.SensorStatus
-    name: SensorStatus
-    href: EnvironmentManager.Models.SensorStatus.html
-  - name: )
 - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StopAutoRefresh
   commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.StopAutoRefresh
   name: StopAutoRefresh()
@@ -3212,24 +3233,3 @@ references:
   name: StopAutoRefreshCommand
   nameWithType: SensorMonitoringViewModel.StopAutoRefreshCommand
   fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.StopAutoRefreshCommand
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync
-  commentId: M:EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync
-  name: RefreshNowAsync()
-  nameWithType: SensorMonitoringViewModel.RefreshNowAsync()
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync
-    name: RefreshNowAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowAsync
-    name: RefreshNowAsync
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand
-  href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html#EnvironmentManager_ViewModels_SensorMonitoringViewModel_RefreshNowCommand
-  name: RefreshNowCommand
-  nameWithType: SensorMonitoringViewModel.RefreshNowCommand
-  fullName: EnvironmentManager.ViewModels.SensorMonitoringViewModel.RefreshNowCommand

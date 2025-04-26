@@ -12,6 +12,10 @@ items:
   - EnvironmentManager.Data.SensorDbContext
   - EnvironmentManager.Data.UserDataStore
   - EnvironmentManager.Data.UserDbContext
+  - EnvironmentManager.Data.UserLogDbContext
+  - EnvironmentManager.Data.UserManagementDataStore
+  - EnvironmentManager.Data.UserManagementDbContext
+  - EnvironmentManager.Data.UserManagementException
   langs:
   - csharp
   - vb
@@ -75,6 +79,32 @@ references:
   name: UserDbContext
   nameWithType: UserDbContext
   fullName: EnvironmentManager.Data.UserDbContext
+- uid: EnvironmentManager.Data.UserLogDbContext
+  commentId: T:EnvironmentManager.Data.UserLogDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.UserLogDbContext.html
+  name: UserLogDbContext
+  nameWithType: UserLogDbContext
+  fullName: EnvironmentManager.Data.UserLogDbContext
+- uid: EnvironmentManager.Data.UserManagementDataStore
+  commentId: T:EnvironmentManager.Data.UserManagementDataStore
+  href: EnvironmentManager.Data.UserManagementDataStore.html
+  name: UserManagementDataStore
+  nameWithType: UserManagementDataStore
+  fullName: EnvironmentManager.Data.UserManagementDataStore
+- uid: EnvironmentManager.Data.UserManagementException
+  commentId: T:EnvironmentManager.Data.UserManagementException
+  href: EnvironmentManager.Data.UserManagementException.html
+  name: UserManagementException
+  nameWithType: UserManagementException
+  fullName: EnvironmentManager.Data.UserManagementException
+- uid: EnvironmentManager.Data.UserManagementDbContext
+  commentId: T:EnvironmentManager.Data.UserManagementDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.UserManagementDbContext.html
+  name: UserManagementDbContext
+  nameWithType: UserManagementDbContext
+  fullName: EnvironmentManager.Data.UserManagementDbContext
 - uid: EnvironmentManager.Data
   commentId: N:EnvironmentManager.Data
   href: EnvironmentManager.html

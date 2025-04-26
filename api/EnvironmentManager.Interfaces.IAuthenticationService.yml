@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IAuthenticationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: IAuthenticationService
     path: EnvironmentManager/Interfaces/IAuthenticationService.cs
@@ -49,7 +49,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IAuthenticationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Authenticated
     path: EnvironmentManager/Interfaces/IAuthenticationService.cs
@@ -78,7 +78,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IAuthenticationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: AuthenticatedUser
     path: EnvironmentManager/Interfaces/IAuthenticationService.cs
@@ -107,7 +107,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IAuthenticationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Authenticate
     path: EnvironmentManager/Interfaces/IAuthenticationService.cs

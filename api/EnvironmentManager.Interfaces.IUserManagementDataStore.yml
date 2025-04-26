@@ -1,0 +1,861 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore
+  commentId: T:EnvironmentManager.Interfaces.IUserManagementDataStore
+  id: IUserManagementDataStore
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.CreateRole(EnvironmentManager.Models.Role)
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.CreateUser(EnvironmentManager.Models.User)
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteRole(System.Int32)
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteUser(EnvironmentManager.Models.User)
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllRoles
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllUsers
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.GetRole(System.Int32)
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.GetUser(System.String)
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.SearchUsers(System.String)
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateRole(EnvironmentManager.Models.Role)
+  - EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateUser(EnvironmentManager.Models.User)
+  langs:
+  - csharp
+  - vb
+  name: IUserManagementDataStore
+  nameWithType: IUserManagementDataStore
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: IUserManagementDataStore
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 7
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Interface for user management operations
+  example: []
+  syntax:
+    content: public interface IUserManagementDataStore
+    content.vb: Public Interface IUserManagementDataStore
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllUsers
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllUsers
+  id: GetAllUsers
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: GetAllUsers()
+  nameWithType: IUserManagementDataStore.GetAllUsers()
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllUsers()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: GetAllUsers
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Gets all users in the system
+  example: []
+  syntax:
+    content: IEnumerable<User> GetAllUsers()
+    return:
+      type: System.Collections.Generic.IEnumerable{EnvironmentManager.Models.User}
+    content.vb: Function GetAllUsers() As IEnumerable(Of User)
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllUsers*
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.GetUser(System.String)
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.GetUser(System.String)
+  id: GetUser(System.String)
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: GetUser(string)
+  nameWithType: IUserManagementDataStore.GetUser(string)
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.GetUser(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: GetUser
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 17
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Gets a specific user by username
+  example: []
+  syntax:
+    content: User GetUser(string username)
+    parameters:
+    - id: username
+      type: System.String
+    return:
+      type: EnvironmentManager.Models.User
+    content.vb: Function GetUser(username As String) As User
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.GetUser*
+  nameWithType.vb: IUserManagementDataStore.GetUser(String)
+  fullName.vb: EnvironmentManager.Interfaces.IUserManagementDataStore.GetUser(String)
+  name.vb: GetUser(String)
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.SearchUsers(System.String)
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.SearchUsers(System.String)
+  id: SearchUsers(System.String)
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: SearchUsers(string)
+  nameWithType: IUserManagementDataStore.SearchUsers(string)
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.SearchUsers(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: SearchUsers
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 22
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Searches for users based on search criteria
+  example: []
+  syntax:
+    content: IEnumerable<User> SearchUsers(string searchQuery)
+    parameters:
+    - id: searchQuery
+      type: System.String
+    return:
+      type: System.Collections.Generic.IEnumerable{EnvironmentManager.Models.User}
+    content.vb: Function SearchUsers(searchQuery As String) As IEnumerable(Of User)
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.SearchUsers*
+  nameWithType.vb: IUserManagementDataStore.SearchUsers(String)
+  fullName.vb: EnvironmentManager.Interfaces.IUserManagementDataStore.SearchUsers(String)
+  name.vb: SearchUsers(String)
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllRoles
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllRoles
+  id: GetAllRoles
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: GetAllRoles()
+  nameWithType: IUserManagementDataStore.GetAllRoles()
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllRoles()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: GetAllRoles
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 27
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Gets all roles in the system
+  example: []
+  syntax:
+    content: IEnumerable<Role> GetAllRoles()
+    return:
+      type: System.Collections.Generic.IEnumerable{EnvironmentManager.Models.Role}
+    content.vb: Function GetAllRoles() As IEnumerable(Of Role)
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllRoles*
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.GetRole(System.Int32)
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.GetRole(System.Int32)
+  id: GetRole(System.Int32)
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: GetRole(int)
+  nameWithType: IUserManagementDataStore.GetRole(int)
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.GetRole(int)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: GetRole
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 32
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Gets a specific role by ID
+  example: []
+  syntax:
+    content: Role GetRole(int roleId)
+    parameters:
+    - id: roleId
+      type: System.Int32
+    return:
+      type: EnvironmentManager.Models.Role
+    content.vb: Function GetRole(roleId As Integer) As Role
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.GetRole*
+  nameWithType.vb: IUserManagementDataStore.GetRole(Integer)
+  fullName.vb: EnvironmentManager.Interfaces.IUserManagementDataStore.GetRole(Integer)
+  name.vb: GetRole(Integer)
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateUser(EnvironmentManager.Models.User)
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.CreateUser(EnvironmentManager.Models.User)
+  id: CreateUser(EnvironmentManager.Models.User)
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: CreateUser(User)
+  nameWithType: IUserManagementDataStore.CreateUser(User)
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateUser(EnvironmentManager.Models.User)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: CreateUser
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 37
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Creates a new user
+  example: []
+  syntax:
+    content: Task<User> CreateUser(User user)
+    parameters:
+    - id: user
+      type: EnvironmentManager.Models.User
+    return:
+      type: System.Threading.Tasks.Task{EnvironmentManager.Models.User}
+    content.vb: Function CreateUser(user As User) As Task(Of User)
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateUser*
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateUser(EnvironmentManager.Models.User)
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateUser(EnvironmentManager.Models.User)
+  id: UpdateUser(EnvironmentManager.Models.User)
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: UpdateUser(User)
+  nameWithType: IUserManagementDataStore.UpdateUser(User)
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateUser(EnvironmentManager.Models.User)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: UpdateUser
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 42
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Updates an existing user
+  example: []
+  syntax:
+    content: Task<User> UpdateUser(User user)
+    parameters:
+    - id: user
+      type: EnvironmentManager.Models.User
+    return:
+      type: System.Threading.Tasks.Task{EnvironmentManager.Models.User}
+    content.vb: Function UpdateUser(user As User) As Task(Of User)
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateUser*
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteUser(EnvironmentManager.Models.User)
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteUser(EnvironmentManager.Models.User)
+  id: DeleteUser(EnvironmentManager.Models.User)
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: DeleteUser(User)
+  nameWithType: IUserManagementDataStore.DeleteUser(User)
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteUser(EnvironmentManager.Models.User)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: DeleteUser
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 47
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Deletes a user
+  example: []
+  syntax:
+    content: Task<bool> DeleteUser(User user)
+    parameters:
+    - id: user
+      type: EnvironmentManager.Models.User
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function DeleteUser(user As User) As Task(Of Boolean)
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteUser*
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateRole(EnvironmentManager.Models.Role)
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.CreateRole(EnvironmentManager.Models.Role)
+  id: CreateRole(EnvironmentManager.Models.Role)
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: CreateRole(Role)
+  nameWithType: IUserManagementDataStore.CreateRole(Role)
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateRole(EnvironmentManager.Models.Role)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: CreateRole
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 52
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Creates a new role
+  example: []
+  syntax:
+    content: Task<Role> CreateRole(Role role)
+    parameters:
+    - id: role
+      type: EnvironmentManager.Models.Role
+    return:
+      type: System.Threading.Tasks.Task{EnvironmentManager.Models.Role}
+    content.vb: Function CreateRole(role As Role) As Task(Of Role)
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateRole*
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateRole(EnvironmentManager.Models.Role)
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateRole(EnvironmentManager.Models.Role)
+  id: UpdateRole(EnvironmentManager.Models.Role)
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: UpdateRole(Role)
+  nameWithType: IUserManagementDataStore.UpdateRole(Role)
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateRole(EnvironmentManager.Models.Role)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: UpdateRole
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 57
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Updates an existing role
+  example: []
+  syntax:
+    content: Task<Role> UpdateRole(Role role)
+    parameters:
+    - id: role
+      type: EnvironmentManager.Models.Role
+    return:
+      type: System.Threading.Tasks.Task{EnvironmentManager.Models.Role}
+    content.vb: Function UpdateRole(role As Role) As Task(Of Role)
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateRole*
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteRole(System.Int32)
+  commentId: M:EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteRole(System.Int32)
+  id: DeleteRole(System.Int32)
+  parent: EnvironmentManager.Interfaces.IUserManagementDataStore
+  langs:
+  - csharp
+  - vb
+  name: DeleteRole(int)
+  nameWithType: IUserManagementDataStore.DeleteRole(int)
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteRole(int)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: DeleteRole
+    path: EnvironmentManager/Interfaces/IUserManagementDataStore.cs
+    startLine: 62
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Deletes a role
+  example: []
+  syntax:
+    content: Task<bool> DeleteRole(int roleId)
+    parameters:
+    - id: roleId
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function DeleteRole(roleId As Integer) As Task(Of Boolean)
+  overload: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteRole*
+  nameWithType.vb: IUserManagementDataStore.DeleteRole(Integer)
+  fullName.vb: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteRole(Integer)
+  name.vb: DeleteRole(Integer)
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllUsers*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllUsers
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_GetAllUsers
+  name: GetAllUsers
+  nameWithType: IUserManagementDataStore.GetAllUsers
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllUsers
+- uid: System.Collections.Generic.IEnumerable{EnvironmentManager.Models.User}
+  commentId: T:System.Collections.Generic.IEnumerable{EnvironmentManager.Models.User}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<User>
+  nameWithType: IEnumerable<User>
+  fullName: System.Collections.Generic.IEnumerable<EnvironmentManager.Models.User>
+  nameWithType.vb: IEnumerable(Of User)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of EnvironmentManager.Models.User)
+  name.vb: IEnumerable(Of User)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: EnvironmentManager.Models.User
+    name: User
+    href: EnvironmentManager.Models.User.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.User
+    name: User
+    href: EnvironmentManager.Models.User.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.GetUser*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.GetUser
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_GetUser_System_String_
+  name: GetUser
+  nameWithType: IUserManagementDataStore.GetUser
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.GetUser
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.Models.User
+  commentId: T:EnvironmentManager.Models.User
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: EnvironmentManager.Models.User
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.SearchUsers*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.SearchUsers
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_SearchUsers_System_String_
+  name: SearchUsers
+  nameWithType: IUserManagementDataStore.SearchUsers
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.SearchUsers
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllRoles*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllRoles
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_GetAllRoles
+  name: GetAllRoles
+  nameWithType: IUserManagementDataStore.GetAllRoles
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.GetAllRoles
+- uid: System.Collections.Generic.IEnumerable{EnvironmentManager.Models.Role}
+  commentId: T:System.Collections.Generic.IEnumerable{EnvironmentManager.Models.Role}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Role>
+  nameWithType: IEnumerable<Role>
+  fullName: System.Collections.Generic.IEnumerable<EnvironmentManager.Models.Role>
+  nameWithType.vb: IEnumerable(Of Role)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of EnvironmentManager.Models.Role)
+  name.vb: IEnumerable(Of Role)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: EnvironmentManager.Models.Role
+    name: Role
+    href: EnvironmentManager.Models.Role.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.Role
+    name: Role
+    href: EnvironmentManager.Models.Role.html
+  - name: )
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.GetRole*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.GetRole
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_GetRole_System_Int32_
+  name: GetRole
+  nameWithType: IUserManagementDataStore.GetRole
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.GetRole
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: EnvironmentManager.Models.Role
+  commentId: T:EnvironmentManager.Models.Role
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.Role.html
+  name: Role
+  nameWithType: Role
+  fullName: EnvironmentManager.Models.Role
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateUser*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.CreateUser
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_CreateUser_EnvironmentManager_Models_User_
+  name: CreateUser
+  nameWithType: IUserManagementDataStore.CreateUser
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateUser
+- uid: System.Threading.Tasks.Task{EnvironmentManager.Models.User}
+  commentId: T:System.Threading.Tasks.Task{EnvironmentManager.Models.User}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<User>
+  nameWithType: Task<User>
+  fullName: System.Threading.Tasks.Task<EnvironmentManager.Models.User>
+  nameWithType.vb: Task(Of User)
+  fullName.vb: System.Threading.Tasks.Task(Of EnvironmentManager.Models.User)
+  name.vb: Task(Of User)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: EnvironmentManager.Models.User
+    name: User
+    href: EnvironmentManager.Models.User.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.User
+    name: User
+    href: EnvironmentManager.Models.User.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateUser*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateUser
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_UpdateUser_EnvironmentManager_Models_User_
+  name: UpdateUser
+  nameWithType: IUserManagementDataStore.UpdateUser
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateUser
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteUser*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteUser
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_DeleteUser_EnvironmentManager_Models_User_
+  name: DeleteUser
+  nameWithType: IUserManagementDataStore.DeleteUser
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteUser
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateRole*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.CreateRole
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_CreateRole_EnvironmentManager_Models_Role_
+  name: CreateRole
+  nameWithType: IUserManagementDataStore.CreateRole
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.CreateRole
+- uid: System.Threading.Tasks.Task{EnvironmentManager.Models.Role}
+  commentId: T:System.Threading.Tasks.Task{EnvironmentManager.Models.Role}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Role>
+  nameWithType: Task<Role>
+  fullName: System.Threading.Tasks.Task<EnvironmentManager.Models.Role>
+  nameWithType.vb: Task(Of Role)
+  fullName.vb: System.Threading.Tasks.Task(Of EnvironmentManager.Models.Role)
+  name.vb: Task(Of Role)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: EnvironmentManager.Models.Role
+    name: Role
+    href: EnvironmentManager.Models.Role.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.Role
+    name: Role
+    href: EnvironmentManager.Models.Role.html
+  - name: )
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateRole*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateRole
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_UpdateRole_EnvironmentManager_Models_Role_
+  name: UpdateRole
+  nameWithType: IUserManagementDataStore.UpdateRole
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.UpdateRole
+- uid: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteRole*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteRole
+  href: EnvironmentManager.Interfaces.IUserManagementDataStore.html#EnvironmentManager_Interfaces_IUserManagementDataStore_DeleteRole_System_Int32_
+  name: DeleteRole
+  nameWithType: IUserManagementDataStore.DeleteRole
+  fullName: EnvironmentManager.Interfaces.IUserManagementDataStore.DeleteRole

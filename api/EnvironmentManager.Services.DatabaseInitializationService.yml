@@ -5,7 +5,7 @@ items:
   id: DatabaseInitializationService
   parent: EnvironmentManager.Services
   children:
-  - EnvironmentManager.Services.DatabaseInitializationService.#ctor(EnvironmentManager.Data.SensorDbContext,EnvironmentManager.Data.LocationDbContext,EnvironmentManager.Data.MaintenanceDbContext)
+  - EnvironmentManager.Services.DatabaseInitializationService.#ctor(EnvironmentManager.Data.SensorDbContext,EnvironmentManager.Data.LocationDbContext,EnvironmentManager.Data.MaintenanceDbContext,EnvironmentManager.Data.UserManagementDbContext,EnvironmentManager.Data.UserLogDbContext)
   - EnvironmentManager.Services.DatabaseInitializationService.LoadTestDataIfNeededAsync
   - EnvironmentManager.Services.DatabaseInitializationService.VerifyDatabaseConnectionsAsync
   langs:
@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/DatabaseInitializationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: DatabaseInitializationService
     path: EnvironmentManager/Services/DatabaseInitializationService.cs
@@ -41,30 +41,30 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: EnvironmentManager.Services.DatabaseInitializationService.#ctor(EnvironmentManager.Data.SensorDbContext,EnvironmentManager.Data.LocationDbContext,EnvironmentManager.Data.MaintenanceDbContext)
-  commentId: M:EnvironmentManager.Services.DatabaseInitializationService.#ctor(EnvironmentManager.Data.SensorDbContext,EnvironmentManager.Data.LocationDbContext,EnvironmentManager.Data.MaintenanceDbContext)
-  id: '#ctor(EnvironmentManager.Data.SensorDbContext,EnvironmentManager.Data.LocationDbContext,EnvironmentManager.Data.MaintenanceDbContext)'
+- uid: EnvironmentManager.Services.DatabaseInitializationService.#ctor(EnvironmentManager.Data.SensorDbContext,EnvironmentManager.Data.LocationDbContext,EnvironmentManager.Data.MaintenanceDbContext,EnvironmentManager.Data.UserManagementDbContext,EnvironmentManager.Data.UserLogDbContext)
+  commentId: M:EnvironmentManager.Services.DatabaseInitializationService.#ctor(EnvironmentManager.Data.SensorDbContext,EnvironmentManager.Data.LocationDbContext,EnvironmentManager.Data.MaintenanceDbContext,EnvironmentManager.Data.UserManagementDbContext,EnvironmentManager.Data.UserLogDbContext)
+  id: '#ctor(EnvironmentManager.Data.SensorDbContext,EnvironmentManager.Data.LocationDbContext,EnvironmentManager.Data.MaintenanceDbContext,EnvironmentManager.Data.UserManagementDbContext,EnvironmentManager.Data.UserLogDbContext)'
   parent: EnvironmentManager.Services.DatabaseInitializationService
   langs:
   - csharp
   - vb
-  name: DatabaseInitializationService(SensorDbContext, LocationDbContext, MaintenanceDbContext)
-  nameWithType: DatabaseInitializationService.DatabaseInitializationService(SensorDbContext, LocationDbContext, MaintenanceDbContext)
-  fullName: EnvironmentManager.Services.DatabaseInitializationService.DatabaseInitializationService(EnvironmentManager.Data.SensorDbContext, EnvironmentManager.Data.LocationDbContext, EnvironmentManager.Data.MaintenanceDbContext)
+  name: DatabaseInitializationService(SensorDbContext, LocationDbContext, MaintenanceDbContext, UserManagementDbContext, UserLogDbContext)
+  nameWithType: DatabaseInitializationService.DatabaseInitializationService(SensorDbContext, LocationDbContext, MaintenanceDbContext, UserManagementDbContext, UserLogDbContext)
+  fullName: EnvironmentManager.Services.DatabaseInitializationService.DatabaseInitializationService(EnvironmentManager.Data.SensorDbContext, EnvironmentManager.Data.LocationDbContext, EnvironmentManager.Data.MaintenanceDbContext, EnvironmentManager.Data.UserManagementDbContext, EnvironmentManager.Data.UserLogDbContext)
   type: Constructor
   source:
     remote:
       path: EnvironmentManager/Services/DatabaseInitializationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Services/DatabaseInitializationService.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
   syntax:
-    content: public DatabaseInitializationService(SensorDbContext sensorContext, LocationDbContext locationContext, MaintenanceDbContext maintenanceContext)
+    content: public DatabaseInitializationService(SensorDbContext sensorContext, LocationDbContext locationContext, MaintenanceDbContext maintenanceContext, UserManagementDbContext userManagementContext, UserLogDbContext userLogContext)
     parameters:
     - id: sensorContext
       type: EnvironmentManager.Data.SensorDbContext
@@ -72,11 +72,15 @@ items:
       type: EnvironmentManager.Data.LocationDbContext
     - id: maintenanceContext
       type: EnvironmentManager.Data.MaintenanceDbContext
-    content.vb: Public Sub New(sensorContext As SensorDbContext, locationContext As LocationDbContext, maintenanceContext As MaintenanceDbContext)
+    - id: userManagementContext
+      type: EnvironmentManager.Data.UserManagementDbContext
+    - id: userLogContext
+      type: EnvironmentManager.Data.UserLogDbContext
+    content.vb: Public Sub New(sensorContext As SensorDbContext, locationContext As LocationDbContext, maintenanceContext As MaintenanceDbContext, userManagementContext As UserManagementDbContext, userLogContext As UserLogDbContext)
   overload: EnvironmentManager.Services.DatabaseInitializationService.#ctor*
-  nameWithType.vb: DatabaseInitializationService.New(SensorDbContext, LocationDbContext, MaintenanceDbContext)
-  fullName.vb: EnvironmentManager.Services.DatabaseInitializationService.New(EnvironmentManager.Data.SensorDbContext, EnvironmentManager.Data.LocationDbContext, EnvironmentManager.Data.MaintenanceDbContext)
-  name.vb: New(SensorDbContext, LocationDbContext, MaintenanceDbContext)
+  nameWithType.vb: DatabaseInitializationService.New(SensorDbContext, LocationDbContext, MaintenanceDbContext, UserManagementDbContext, UserLogDbContext)
+  fullName.vb: EnvironmentManager.Services.DatabaseInitializationService.New(EnvironmentManager.Data.SensorDbContext, EnvironmentManager.Data.LocationDbContext, EnvironmentManager.Data.MaintenanceDbContext, EnvironmentManager.Data.UserManagementDbContext, EnvironmentManager.Data.UserLogDbContext)
+  name.vb: New(SensorDbContext, LocationDbContext, MaintenanceDbContext, UserManagementDbContext, UserLogDbContext)
 - uid: EnvironmentManager.Services.DatabaseInitializationService.VerifyDatabaseConnectionsAsync
   commentId: M:EnvironmentManager.Services.DatabaseInitializationService.VerifyDatabaseConnectionsAsync
   id: VerifyDatabaseConnectionsAsync
@@ -91,11 +95,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/DatabaseInitializationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: VerifyDatabaseConnectionsAsync
     path: EnvironmentManager/Services/DatabaseInitializationService.cs
-    startLine: 25
+    startLine: 31
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -123,11 +127,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/DatabaseInitializationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: LoadTestDataIfNeededAsync
     path: EnvironmentManager/Services/DatabaseInitializationService.cs
-    startLine: 49
+    startLine: 58
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -410,7 +414,7 @@ references:
   fullName: System
 - uid: EnvironmentManager.Services.DatabaseInitializationService.#ctor*
   commentId: Overload:EnvironmentManager.Services.DatabaseInitializationService.#ctor
-  href: EnvironmentManager.Services.DatabaseInitializationService.html#EnvironmentManager_Services_DatabaseInitializationService__ctor_EnvironmentManager_Data_SensorDbContext_EnvironmentManager_Data_LocationDbContext_EnvironmentManager_Data_MaintenanceDbContext_
+  href: EnvironmentManager.Services.DatabaseInitializationService.html#EnvironmentManager_Services_DatabaseInitializationService__ctor_EnvironmentManager_Data_SensorDbContext_EnvironmentManager_Data_LocationDbContext_EnvironmentManager_Data_MaintenanceDbContext_EnvironmentManager_Data_UserManagementDbContext_EnvironmentManager_Data_UserLogDbContext_
   name: DatabaseInitializationService
   nameWithType: DatabaseInitializationService.DatabaseInitializationService
   fullName: EnvironmentManager.Services.DatabaseInitializationService.DatabaseInitializationService
@@ -438,6 +442,20 @@ references:
   name: MaintenanceDbContext
   nameWithType: MaintenanceDbContext
   fullName: EnvironmentManager.Data.MaintenanceDbContext
+- uid: EnvironmentManager.Data.UserManagementDbContext
+  commentId: T:EnvironmentManager.Data.UserManagementDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.UserManagementDbContext.html
+  name: UserManagementDbContext
+  nameWithType: UserManagementDbContext
+  fullName: EnvironmentManager.Data.UserManagementDbContext
+- uid: EnvironmentManager.Data.UserLogDbContext
+  commentId: T:EnvironmentManager.Data.UserLogDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.UserLogDbContext.html
+  name: UserLogDbContext
+  nameWithType: UserLogDbContext
+  fullName: EnvironmentManager.Data.UserLogDbContext
 - uid: EnvironmentManager.Data
   commentId: N:EnvironmentManager.Data
   href: EnvironmentManager.html

@@ -304,7 +304,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Views/SensorMonitoringPage.xaml.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Views/SensorMonitoringPage.xaml.cs
@@ -333,7 +333,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Views/SensorMonitoringPage.xaml.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Views/SensorMonitoringPage.xaml.cs
@@ -365,7 +365,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Views/SensorMonitoringPage.xaml.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: OnAppearing
     path: EnvironmentManager/Views/SensorMonitoringPage.xaml.cs
@@ -394,7 +394,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Views/SensorMonitoringPage.xaml.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: OnDisappearing
     path: EnvironmentManager/Views/SensorMonitoringPage.xaml.cs

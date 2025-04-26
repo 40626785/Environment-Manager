@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/ILocalStorageService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: ILocalStorageService
     path: EnvironmentManager/Interfaces/ILocalStorageService.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/ILocalStorageService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SetStringValue
     path: EnvironmentManager/Interfaces/ILocalStorageService.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/ILocalStorageService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: GetStringValue
     path: EnvironmentManager/Interfaces/ILocalStorageService.cs

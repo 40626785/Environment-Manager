@@ -7,6 +7,7 @@ items:
   children:
   - EnvironmentManager.Models.User.Password
   - EnvironmentManager.Models.User.Role
+  - EnvironmentManager.Models.User.RoleNavigation
   - EnvironmentManager.Models.User.Username
   langs:
   - csharp
@@ -18,11 +19,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/User.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: User
     path: EnvironmentManager/Models/User.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Models
@@ -69,11 +70,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/User.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Username
     path: EnvironmentManager/Models/User.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Models
@@ -108,11 +109,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/User.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Password
     path: EnvironmentManager/Models/User.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Models
@@ -147,31 +148,74 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/User.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Role
     path: EnvironmentManager/Models/User.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Models
   syntax:
     content: >-
-      [Required]
+      [Column("Role")]
 
       public Roles Role { get; set; }
     parameters: []
     return:
       type: Roles
     content.vb: >-
-      <Required>
+      <Column("Role")>
 
       Public Property Role As Roles
   overload: EnvironmentManager.Models.User.Role*
   attributes:
-  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
-    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
-    arguments: []
+  - type: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Role
+- uid: EnvironmentManager.Models.User.RoleNavigation
+  commentId: P:EnvironmentManager.Models.User.RoleNavigation
+  id: RoleNavigation
+  parent: EnvironmentManager.Models.User
+  langs:
+  - csharp
+  - vb
+  name: RoleNavigation
+  nameWithType: User.RoleNavigation
+  fullName: EnvironmentManager.Models.User.RoleNavigation
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/Models/User.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: RoleNavigation
+    path: EnvironmentManager/Models/User.cs
+    startLine: 21
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Models
+  syntax:
+    content: >-
+      [ForeignKey("Role")]
+
+      public virtual Role RoleNavigation { get; set; }
+    parameters: []
+    return:
+      type: EnvironmentManager.Models.Role
+    content.vb: >-
+      <ForeignKey("Role")>
+
+      Public Overridable Property RoleNavigation As Role
+  overload: EnvironmentManager.Models.User.RoleNavigation*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Role
 references:
 - uid: EnvironmentManager.Models
   commentId: N:EnvironmentManager.Models
@@ -467,3 +511,16 @@ references:
   name: Roles
   nameWithType: Roles
   fullName: Roles
+- uid: EnvironmentManager.Models.User.RoleNavigation*
+  commentId: Overload:EnvironmentManager.Models.User.RoleNavigation
+  href: EnvironmentManager.Models.User.html#EnvironmentManager_Models_User_RoleNavigation
+  name: RoleNavigation
+  nameWithType: User.RoleNavigation
+  fullName: EnvironmentManager.Models.User.RoleNavigation
+- uid: EnvironmentManager.Models.Role
+  commentId: T:EnvironmentManager.Models.Role
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.Role.html
+  name: Role
+  nameWithType: Role
+  fullName: EnvironmentManager.Models.Role
