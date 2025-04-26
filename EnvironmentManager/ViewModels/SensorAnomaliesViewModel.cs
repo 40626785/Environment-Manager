@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// ViewModel for loading and displaying anomalies related to a single sensor.
+    /// </summary>
     public partial class SensorAnomaliesViewModel : ObservableObject, IQueryAttributable
     {
         private readonly IAnomalyDetectionService _anomalyService;
@@ -27,13 +30,18 @@ namespace EnvironmentManager.ViewModels
         [ObservableProperty]
         private string displayError = string.Empty;
 
-
+        /// <summary>
+        /// Initializes a new instance of the SensorAnomaliesViewModel class.
+        /// </summary>
         public SensorAnomaliesViewModel(IAnomalyDetectionService anomalyService, SensorDbContext context)
         {
             _anomalyService = anomalyService;
             _context = context;
         }
 
+        /// <summary>
+        /// Receives query parameters to identify which sensor to load anomalies for.
+        /// </summary>
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             if (query.TryGetValue("sensorId", out var id) &&
@@ -48,6 +56,9 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
+        /// <summary>
+        /// Loads anomalies for the specified sensor, based on battery level and connectivity.
+        /// </summary>
         public async Task LoadSensorAnomaliesAsync()
         {
             try

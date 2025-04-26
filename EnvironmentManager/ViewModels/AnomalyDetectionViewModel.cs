@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// ViewModel for detecting and displaying sensor anomalies across all sensors.
+    /// </summary>
     public partial class AnomalyDetectionViewModel : ObservableObject, IErrorHandling
     {
         private readonly SensorDbContext _context;
@@ -20,14 +23,24 @@ namespace EnvironmentManager.ViewModels
         [ObservableProperty]
         private string displayError = string.Empty;
 
+        /// <summary>
+        /// Command to refresh and reload anomaly data.
+        /// </summary>
         public IAsyncRelayCommand RefreshCommand { get; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnomalyDetectionViewModel"/> class.
+        /// </summary>
+        /// <param name="context">The database context for sensors.</param>
         public AnomalyDetectionViewModel(SensorDbContext context)
         {
             _context = context;
             RefreshCommand = new AsyncRelayCommand(LoadAnomaliesAsync);
         }
 
+        /// <summary>
+        /// Loads anomalies detected from all sensors asynchronously.
+        /// </summary>
         public async Task LoadAnomaliesAsync()
         {
             try
@@ -67,8 +80,7 @@ namespace EnvironmentManager.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"[AnomalyDetection] Error: {ex.Message}");
-                DisplayError = "Failed to load anomalies.";
+                HandleError(ex, "Failed to load anomalies.");
             }
         }
 
