@@ -303,7 +303,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Views/SensorPage.xaml.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Views/SensorPage.xaml.cs
@@ -335,7 +335,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Views/SensorPage.xaml.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: OnAppearing
     path: EnvironmentManager/Views/SensorPage.xaml.cs

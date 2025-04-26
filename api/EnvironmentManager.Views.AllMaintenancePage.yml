@@ -303,7 +303,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Views/AllMaintenancePage.xaml.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Views/AllMaintenancePage.xaml.cs

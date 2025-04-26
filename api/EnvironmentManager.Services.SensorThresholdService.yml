@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SensorThresholdService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SensorThresholdService
     path: EnvironmentManager/Services/SensorThresholdService.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SensorThresholdService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Services/SensorThresholdService.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SensorThresholdService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: ReturnBreached
     path: EnvironmentManager/Services/SensorThresholdService.cs

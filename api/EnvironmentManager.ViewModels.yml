@@ -9,14 +9,17 @@ items:
   - EnvironmentManager.ViewModels.AllMaintenanceViewModel
   - EnvironmentManager.ViewModels.BaseViewModel
   - EnvironmentManager.ViewModels.EditSensorViewModel
+  - EnvironmentManager.ViewModels.EditUserViewModel
   - EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
   - EnvironmentManager.ViewModels.HistoricalDataViewerViewModel
   - EnvironmentManager.ViewModels.HomeViewModel
   - EnvironmentManager.ViewModels.LoginViewModel
   - EnvironmentManager.ViewModels.MaintenanceViewModel
+  - EnvironmentManager.ViewModels.MapPinViewModel
   - EnvironmentManager.ViewModels.SensorMonitoringViewModel
   - EnvironmentManager.ViewModels.SensorViewModel
   - EnvironmentManager.ViewModels.ThresholdMapViewModel
+  - EnvironmentManager.ViewModels.UserManagementViewModel
   langs:
   - csharp
   - vb
@@ -62,6 +65,13 @@ references:
   name: EditSensorViewModel
   nameWithType: EditSensorViewModel
   fullName: EnvironmentManager.ViewModels.EditSensorViewModel
+- uid: EnvironmentManager.ViewModels.EditUserViewModel
+  commentId: T:EnvironmentManager.ViewModels.EditUserViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.EditUserViewModel.html
+  name: EditUserViewModel
+  nameWithType: EditUserViewModel
+  fullName: EnvironmentManager.ViewModels.EditUserViewModel
 - uid: EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
   commentId: T:EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
   parent: EnvironmentManager.ViewModels
@@ -96,6 +106,12 @@ references:
   name: MaintenanceViewModel
   nameWithType: MaintenanceViewModel
   fullName: EnvironmentManager.ViewModels.MaintenanceViewModel
+- uid: EnvironmentManager.ViewModels.MapPinViewModel
+  commentId: T:EnvironmentManager.ViewModels.MapPinViewModel
+  href: EnvironmentManager.ViewModels.MapPinViewModel.html
+  name: MapPinViewModel
+  nameWithType: MapPinViewModel
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel
 - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel
   commentId: T:EnvironmentManager.ViewModels.SensorMonitoringViewModel
   href: EnvironmentManager.ViewModels.SensorMonitoringViewModel.html
@@ -116,6 +132,13 @@ references:
   name: ThresholdMapViewModel
   nameWithType: ThresholdMapViewModel
   fullName: EnvironmentManager.ViewModels.ThresholdMapViewModel
+- uid: EnvironmentManager.ViewModels.UserManagementViewModel
+  commentId: T:EnvironmentManager.ViewModels.UserManagementViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.UserManagementViewModel.html
+  name: UserManagementViewModel
+  nameWithType: UserManagementViewModel
+  fullName: EnvironmentManager.ViewModels.UserManagementViewModel
 - uid: EnvironmentManager.ViewModels
   commentId: N:EnvironmentManager.ViewModels
   href: EnvironmentManager.html

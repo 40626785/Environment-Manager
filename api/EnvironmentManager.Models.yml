@@ -10,11 +10,12 @@ items:
   - EnvironmentManager.Models.HistoricalDataRow
   - EnvironmentManager.Models.Location
   - EnvironmentManager.Models.Maintenance
-  - EnvironmentManager.Models.MapPinViewModel
+  - EnvironmentManager.Models.Role
   - EnvironmentManager.Models.Sensor
   - EnvironmentManager.Models.SensorStatus
   - EnvironmentManager.Models.SensorThresholdBreach
   - EnvironmentManager.Models.User
+  - EnvironmentManager.Models.UserLog
   langs:
   - csharp
   - vb
@@ -63,6 +64,13 @@ references:
   name: Maintenance
   nameWithType: Maintenance
   fullName: EnvironmentManager.Models.Maintenance
+- uid: EnvironmentManager.Models.Role
+  commentId: T:EnvironmentManager.Models.Role
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.Role.html
+  name: Role
+  nameWithType: Role
+  fullName: EnvironmentManager.Models.Role
 - uid: EnvironmentManager.Models.Sensor
   commentId: T:EnvironmentManager.Models.Sensor
   parent: EnvironmentManager.Models
@@ -90,12 +98,12 @@ references:
   name: User
   nameWithType: User
   fullName: EnvironmentManager.Models.User
-- uid: EnvironmentManager.Models.MapPinViewModel
-  commentId: T:EnvironmentManager.Models.MapPinViewModel
-  href: EnvironmentManager.Models.MapPinViewModel.html
-  name: MapPinViewModel
-  nameWithType: MapPinViewModel
-  fullName: EnvironmentManager.Models.MapPinViewModel
+- uid: EnvironmentManager.Models.UserLog
+  commentId: T:EnvironmentManager.Models.UserLog
+  href: EnvironmentManager.Models.UserLog.html
+  name: UserLog
+  nameWithType: UserLog
+  fullName: EnvironmentManager.Models.UserLog
 - uid: EnvironmentManager.Models
   commentId: N:EnvironmentManager.Models
   href: EnvironmentManager.html

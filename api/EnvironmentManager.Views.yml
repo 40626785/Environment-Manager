@@ -8,6 +8,7 @@ items:
   - EnvironmentManager.Views.AddSensorPage
   - EnvironmentManager.Views.AllMaintenancePage
   - EnvironmentManager.Views.EditSensorPage
+  - EnvironmentManager.Views.EditUserPage
   - EnvironmentManager.Views.HistoricalData
   - EnvironmentManager.Views.HistoricalDataViewerPage
   - EnvironmentManager.Views.HomePage
@@ -16,6 +17,7 @@ items:
   - EnvironmentManager.Views.SensorMonitoringPage
   - EnvironmentManager.Views.SensorPage
   - EnvironmentManager.Views.ThresholdMapPage
+  - EnvironmentManager.Views.UserManagementPage
   langs:
   - csharp
   - vb
@@ -50,6 +52,12 @@ references:
   name: EditSensorPage
   nameWithType: EditSensorPage
   fullName: EnvironmentManager.Views.EditSensorPage
+- uid: EnvironmentManager.Views.EditUserPage
+  commentId: T:EnvironmentManager.Views.EditUserPage
+  href: EnvironmentManager.Views.EditUserPage.html
+  name: EditUserPage
+  nameWithType: EditUserPage
+  fullName: EnvironmentManager.Views.EditUserPage
 - uid: EnvironmentManager.Views.HistoricalData
   commentId: T:EnvironmentManager.Views.HistoricalData
   href: EnvironmentManager.Views.HistoricalData.html
@@ -98,3 +106,9 @@ references:
   name: ThresholdMapPage
   nameWithType: ThresholdMapPage
   fullName: EnvironmentManager.Views.ThresholdMapPage
+- uid: EnvironmentManager.Views.UserManagementPage
+  commentId: T:EnvironmentManager.Views.UserManagementPage
+  href: EnvironmentManager.Views.UserManagementPage.html
+  name: UserManagementPage
+  nameWithType: UserManagementPage
+  fullName: EnvironmentManager.Views.UserManagementPage

@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SensorStatus
     path: EnvironmentManager/Models/SensorStatus.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: StatusId
     path: EnvironmentManager/Models/SensorStatus.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SensorId
     path: EnvironmentManager/Models/SensorStatus.cs
@@ -137,7 +137,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Sensor
     path: EnvironmentManager/Models/SensorStatus.cs
@@ -178,7 +178,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: ConnectivityStatus
     path: EnvironmentManager/Models/SensorStatus.cs
@@ -226,7 +226,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: StatusTimestamp
     path: EnvironmentManager/Models/SensorStatus.cs
@@ -265,7 +265,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: BatteryLevelPercentage
     path: EnvironmentManager/Models/SensorStatus.cs
@@ -294,7 +294,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: ErrorCount
     path: EnvironmentManager/Models/SensorStatus.cs
@@ -323,7 +323,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: WarningCount
     path: EnvironmentManager/Models/SensorStatus.cs
@@ -352,7 +352,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorStatus.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Models/SensorStatus.cs

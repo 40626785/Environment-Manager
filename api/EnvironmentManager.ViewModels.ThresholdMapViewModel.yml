@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: ThresholdMapViewModel
     path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: GetSensorBreachPins
     path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
@@ -101,7 +101,7 @@ items:
   syntax:
     content: public List<MapPinViewModel> GetSensorBreachPins()
     return:
-      type: System.Collections.Generic.List{EnvironmentManager.Models.MapPinViewModel}
+      type: System.Collections.Generic.List{EnvironmentManager.ViewModels.MapPinViewModel}
       description: List of MapPins representing Threshold Breaches
     content.vb: Public Function GetSensorBreachPins() As List(Of MapPinViewModel)
   overload: EnvironmentManager.ViewModels.ThresholdMapViewModel.GetSensorBreachPins*
@@ -416,16 +416,16 @@ references:
   name: GetSensorBreachPins
   nameWithType: ThresholdMapViewModel.GetSensorBreachPins
   fullName: EnvironmentManager.ViewModels.ThresholdMapViewModel.GetSensorBreachPins
-- uid: System.Collections.Generic.List{EnvironmentManager.Models.MapPinViewModel}
-  commentId: T:System.Collections.Generic.List{EnvironmentManager.Models.MapPinViewModel}
+- uid: System.Collections.Generic.List{EnvironmentManager.ViewModels.MapPinViewModel}
+  commentId: T:System.Collections.Generic.List{EnvironmentManager.ViewModels.MapPinViewModel}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<MapPinViewModel>
   nameWithType: List<MapPinViewModel>
-  fullName: System.Collections.Generic.List<EnvironmentManager.Models.MapPinViewModel>
+  fullName: System.Collections.Generic.List<EnvironmentManager.ViewModels.MapPinViewModel>
   nameWithType.vb: List(Of MapPinViewModel)
-  fullName.vb: System.Collections.Generic.List(Of EnvironmentManager.Models.MapPinViewModel)
+  fullName.vb: System.Collections.Generic.List(Of EnvironmentManager.ViewModels.MapPinViewModel)
   name.vb: List(Of MapPinViewModel)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
@@ -433,9 +433,9 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: EnvironmentManager.Models.MapPinViewModel
+  - uid: EnvironmentManager.ViewModels.MapPinViewModel
     name: MapPinViewModel
-    href: EnvironmentManager.Models.MapPinViewModel.html
+    href: EnvironmentManager.ViewModels.MapPinViewModel.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -445,9 +445,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: EnvironmentManager.Models.MapPinViewModel
+  - uid: EnvironmentManager.ViewModels.MapPinViewModel
     name: MapPinViewModel
-    href: EnvironmentManager.Models.MapPinViewModel.html
+    href: EnvironmentManager.ViewModels.MapPinViewModel.html
   - name: )
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1

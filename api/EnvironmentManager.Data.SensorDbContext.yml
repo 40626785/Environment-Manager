@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SensorDbContext
     path: EnvironmentManager/Data/SensorDbContext.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/SensorDbContext.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/SensorDbContext.cs
@@ -171,7 +171,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Sensors
     path: EnvironmentManager/Data/SensorDbContext.cs
@@ -200,7 +200,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SensorStatuses
     path: EnvironmentManager/Data/SensorDbContext.cs
@@ -229,7 +229,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDbContext.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: OnModelCreating
     path: EnvironmentManager/Data/SensorDbContext.cs

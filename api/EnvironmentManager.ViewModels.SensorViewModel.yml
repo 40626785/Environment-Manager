@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/SensorViewModel.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/SensorViewModel.cs
@@ -112,141 +112,6 @@ items:
   nameWithType.vb: SensorViewModel.New(SensorDbContext)
   fullName.vb: EnvironmentManager.ViewModels.SensorViewModel.New(EnvironmentManager.Data.SensorDbContext)
   name.vb: New(SensorDbContext)
-- uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
-  id: NavigateToAddCommand
-  parent: EnvironmentManager.ViewModels.SensorViewModel
-  langs:
-  - csharp
-  - vb
-  name: NavigateToAddCommand
-  nameWithType: SensorViewModel.NavigateToAddCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
-  type: Property
-  source:
-    id: NavigateToAddCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IAsyncRelayCommand NavigateToAddCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-    content.vb: Public ReadOnly Property NavigateToAddCommand As IAsyncRelayCommand
-  overload: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand*
-- uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
-  id: SelectSensorForEditCommand
-  parent: EnvironmentManager.ViewModels.SensorViewModel
-  langs:
-  - csharp
-  - vb
-  name: SelectSensorForEditCommand
-  nameWithType: SensorViewModel.SelectSensorForEditCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
-  type: Property
-  source:
-    id: SelectSensorForEditCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand%601" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IRelayCommand<Sensor?> SelectSensorForEditCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IRelayCommand{EnvironmentManager.Models.Sensor}
-    content.vb: Public ReadOnly Property SelectSensorForEditCommand As IRelayCommand(Of Sensor)
-  overload: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand*
-- uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
-  id: SaveSensorCommand
-  parent: EnvironmentManager.ViewModels.SensorViewModel
-  langs:
-  - csharp
-  - vb
-  name: SaveSensorCommand
-  nameWithType: SensorViewModel.SaveSensorCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
-  type: Property
-  source:
-    id: SaveSensorCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IAsyncRelayCommand SaveSensorCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-    content.vb: Public ReadOnly Property SaveSensorCommand As IAsyncRelayCommand
-  overload: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand*
-- uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
-  id: PrepareNewSensorCommand
-  parent: EnvironmentManager.ViewModels.SensorViewModel
-  langs:
-  - csharp
-  - vb
-  name: PrepareNewSensorCommand
-  nameWithType: SensorViewModel.PrepareNewSensorCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
-  type: Property
-  source:
-    id: PrepareNewSensorCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IRelayCommand PrepareNewSensorCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IRelayCommand
-    content.vb: Public ReadOnly Property PrepareNewSensorCommand As IRelayCommand
-  overload: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand*
-- uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
-  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
-  id: LoadSensorsCommand
-  parent: EnvironmentManager.ViewModels.SensorViewModel
-  langs:
-  - csharp
-  - vb
-  name: LoadSensorsCommand
-  nameWithType: SensorViewModel.LoadSensorsCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
-  type: Property
-  source:
-    id: LoadSensorsCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IAsyncRelayCommand LoadSensorsCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-    content.vb: Public ReadOnly Property LoadSensorsCommand As IAsyncRelayCommand
-  overload: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand*
 - uid: EnvironmentManager.ViewModels.SensorViewModel.DeleteSensorCommand
   commentId: P:EnvironmentManager.ViewModels.SensorViewModel.DeleteSensorCommand
   id: DeleteSensorCommand
@@ -274,6 +139,60 @@ items:
       type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand{EnvironmentManager.Models.Sensor}
     content.vb: Public ReadOnly Property DeleteSensorCommand As IAsyncRelayCommand(Of Sensor)
   overload: EnvironmentManager.ViewModels.SensorViewModel.DeleteSensorCommand*
+- uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
+  id: NavigateToAddCommand
+  parent: EnvironmentManager.ViewModels.SensorViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateToAddCommand
+  nameWithType: SensorViewModel.NavigateToAddCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
+  type: Property
+  source:
+    id: NavigateToAddCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IAsyncRelayCommand NavigateToAddCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+    content.vb: Public ReadOnly Property NavigateToAddCommand As IAsyncRelayCommand
+  overload: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand*
+- uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
+  id: LoadSensorsCommand
+  parent: EnvironmentManager.ViewModels.SensorViewModel
+  langs:
+  - csharp
+  - vb
+  name: LoadSensorsCommand
+  nameWithType: SensorViewModel.LoadSensorsCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
+  type: Property
+  source:
+    id: LoadSensorsCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IAsyncRelayCommand LoadSensorsCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+    content.vb: Public ReadOnly Property LoadSensorsCommand As IAsyncRelayCommand
+  overload: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand*
 - uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToEditCommand
   commentId: P:EnvironmentManager.ViewModels.SensorViewModel.NavigateToEditCommand
   id: NavigateToEditCommand
@@ -301,6 +220,87 @@ items:
       type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand{EnvironmentManager.Models.Sensor}
     content.vb: Public ReadOnly Property NavigateToEditCommand As IAsyncRelayCommand(Of Sensor)
   overload: EnvironmentManager.ViewModels.SensorViewModel.NavigateToEditCommand*
+- uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
+  id: PrepareNewSensorCommand
+  parent: EnvironmentManager.ViewModels.SensorViewModel
+  langs:
+  - csharp
+  - vb
+  name: PrepareNewSensorCommand
+  nameWithType: SensorViewModel.PrepareNewSensorCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
+  type: Property
+  source:
+    id: PrepareNewSensorCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IRelayCommand PrepareNewSensorCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IRelayCommand
+    content.vb: Public ReadOnly Property PrepareNewSensorCommand As IRelayCommand
+  overload: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand*
+- uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
+  id: SaveSensorCommand
+  parent: EnvironmentManager.ViewModels.SensorViewModel
+  langs:
+  - csharp
+  - vb
+  name: SaveSensorCommand
+  nameWithType: SensorViewModel.SaveSensorCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
+  type: Property
+  source:
+    id: SaveSensorCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IAsyncRelayCommand SaveSensorCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+    content.vb: Public ReadOnly Property SaveSensorCommand As IAsyncRelayCommand
+  overload: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand*
+- uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
+  commentId: P:EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
+  id: SelectSensorForEditCommand
+  parent: EnvironmentManager.ViewModels.SensorViewModel
+  langs:
+  - csharp
+  - vb
+  name: SelectSensorForEditCommand
+  nameWithType: SensorViewModel.SelectSensorForEditCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
+  type: Property
+  source:
+    id: SelectSensorForEditCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand%601" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IRelayCommand<Sensor?> SelectSensorForEditCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IRelayCommand{EnvironmentManager.Models.Sensor}
+    content.vb: Public ReadOnly Property SelectSensorForEditCommand As IRelayCommand(Of Sensor)
+  overload: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand*
 - uid: EnvironmentManager.ViewModels.SensorViewModel.Sensors
   commentId: P:EnvironmentManager.ViewModels.SensorViewModel.Sensors
   id: Sensors
@@ -2829,232 +2829,6 @@ references:
   - uid: EnvironmentManager.Data
     name: Data
     href: EnvironmentManager.Data.html
-- uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-  commentId: T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-  parent: CommunityToolkit.Mvvm.Input
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand
-  name: IAsyncRelayCommand
-  nameWithType: IAsyncRelayCommand
-  fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-- uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync
-  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync
-  name: NavigateToAddAsync()
-  nameWithType: SensorViewModel.NavigateToAddAsync()
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync
-    name: NavigateToAddAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync
-    name: NavigateToAddAsync
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
-  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_NavigateToAddCommand
-  name: NavigateToAddCommand
-  nameWithType: SensorViewModel.NavigateToAddCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
-- uid: CommunityToolkit.Mvvm.Input
-  commentId: N:CommunityToolkit.Mvvm.Input
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit
-  name: CommunityToolkit.Mvvm.Input
-  nameWithType: CommunityToolkit.Mvvm.Input
-  fullName: CommunityToolkit.Mvvm.Input
-  spec.csharp:
-  - uid: CommunityToolkit
-    name: CommunityToolkit
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
-  - name: .
-  - uid: CommunityToolkit.Mvvm
-    name: Mvvm
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
-  - name: .
-  - uid: CommunityToolkit.Mvvm.Input
-    name: Input
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
-  spec.vb:
-  - uid: CommunityToolkit
-    name: CommunityToolkit
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
-  - name: .
-  - uid: CommunityToolkit.Mvvm
-    name: Mvvm
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
-  - name: .
-  - uid: CommunityToolkit.Mvvm.Input
-    name: Input
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
-- uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
-  commentId: T:CommunityToolkit.Mvvm.Input.IRelayCommand`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
-  name: IRelayCommand<T>
-  nameWithType: IRelayCommand<T>
-  fullName: CommunityToolkit.Mvvm.Input.IRelayCommand<T>
-  nameWithType.vb: IRelayCommand(Of T)
-  fullName.vb: CommunityToolkit.Mvvm.Input.IRelayCommand(Of T)
-  name.vb: IRelayCommand(Of T)
-  spec.csharp:
-  - uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
-    name: IRelayCommand
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
-    name: IRelayCommand
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
-  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
-  href: EnvironmentManager.Models.Sensor.html
-  name: SelectSensorForEdit(Sensor)
-  nameWithType: SensorViewModel.SelectSensorForEdit(Sensor)
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
-    name: SelectSensorForEdit
-  - name: (
-  - uid: EnvironmentManager.Models.Sensor
-    name: Sensor
-    href: EnvironmentManager.Models.Sensor.html
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
-    name: SelectSensorForEdit
-  - name: (
-  - uid: EnvironmentManager.Models.Sensor
-    name: Sensor
-    href: EnvironmentManager.Models.Sensor.html
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
-  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_SelectSensorForEditCommand
-  name: SelectSensorForEditCommand
-  nameWithType: SensorViewModel.SelectSensorForEditCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
-- uid: CommunityToolkit.Mvvm.Input.IRelayCommand{EnvironmentManager.Models.Sensor}
-  commentId: T:CommunityToolkit.Mvvm.Input.IRelayCommand{EnvironmentManager.Models.Sensor}
-  parent: CommunityToolkit.Mvvm.Input
-  definition: CommunityToolkit.Mvvm.Input.IRelayCommand`1
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
-  name: IRelayCommand<Sensor>
-  nameWithType: IRelayCommand<Sensor>
-  fullName: CommunityToolkit.Mvvm.Input.IRelayCommand<EnvironmentManager.Models.Sensor>
-  nameWithType.vb: IRelayCommand(Of Sensor)
-  fullName.vb: CommunityToolkit.Mvvm.Input.IRelayCommand(Of EnvironmentManager.Models.Sensor)
-  name.vb: IRelayCommand(Of Sensor)
-  spec.csharp:
-  - uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
-    name: IRelayCommand
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
-  - name: <
-  - uid: EnvironmentManager.Models.Sensor
-    name: Sensor
-    href: EnvironmentManager.Models.Sensor.html
-  - name: '>'
-  spec.vb:
-  - uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
-    name: IRelayCommand
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: EnvironmentManager.Models.Sensor
-    name: Sensor
-    href: EnvironmentManager.Models.Sensor.html
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync
-  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync
-  name: SaveSensorAsync()
-  nameWithType: SensorViewModel.SaveSensorAsync()
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync
-    name: SaveSensorAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync
-    name: SaveSensorAsync
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
-  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_SaveSensorCommand
-  name: SaveSensorCommand
-  nameWithType: SensorViewModel.SaveSensorCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
-- uid: CommunityToolkit.Mvvm.Input.IRelayCommand
-  commentId: T:CommunityToolkit.Mvvm.Input.IRelayCommand
-  parent: CommunityToolkit.Mvvm.Input
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand
-  name: IRelayCommand
-  nameWithType: IRelayCommand
-  fullName: CommunityToolkit.Mvvm.Input.IRelayCommand
-- uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor
-  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor
-  name: PrepareNewSensor()
-  nameWithType: SensorViewModel.PrepareNewSensor()
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor
-    name: PrepareNewSensor
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor
-    name: PrepareNewSensor
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
-  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_PrepareNewSensorCommand
-  name: PrepareNewSensorCommand
-  nameWithType: SensorViewModel.PrepareNewSensorCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
-- uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync
-  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync
-  name: LoadSensorsAsync()
-  nameWithType: SensorViewModel.LoadSensorsAsync()
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync
-    name: LoadSensorsAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync
-    name: LoadSensorsAsync
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
-  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_LoadSensorsCommand
-  name: LoadSensorsCommand
-  nameWithType: SensorViewModel.LoadSensorsCommand
-  fullName: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
 - uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
   commentId: T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1
   isExternal: true
@@ -3144,6 +2918,93 @@ references:
     name: Sensor
     href: EnvironmentManager.Models.Sensor.html
   - name: )
+- uid: CommunityToolkit.Mvvm.Input
+  commentId: N:CommunityToolkit.Mvvm.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit
+  name: CommunityToolkit.Mvvm.Input
+  nameWithType: CommunityToolkit.Mvvm.Input
+  fullName: CommunityToolkit.Mvvm.Input
+  spec.csharp:
+  - uid: CommunityToolkit
+    name: CommunityToolkit
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
+  - name: .
+  - uid: CommunityToolkit.Mvvm
+    name: Mvvm
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
+  - name: .
+  - uid: CommunityToolkit.Mvvm.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
+  spec.vb:
+  - uid: CommunityToolkit
+    name: CommunityToolkit
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit
+  - name: .
+  - uid: CommunityToolkit.Mvvm
+    name: Mvvm
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm
+  - name: .
+  - uid: CommunityToolkit.Mvvm.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
+- uid: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+  commentId: T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+  parent: CommunityToolkit.Mvvm.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.iasyncrelaycommand
+  name: IAsyncRelayCommand
+  nameWithType: IAsyncRelayCommand
+  fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+- uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync
+  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync
+  name: NavigateToAddAsync()
+  nameWithType: SensorViewModel.NavigateToAddAsync()
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync
+    name: NavigateToAddAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddAsync
+    name: NavigateToAddAsync
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
+  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_NavigateToAddCommand
+  name: NavigateToAddCommand
+  nameWithType: SensorViewModel.NavigateToAddCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.NavigateToAddCommand
+- uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync
+  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync
+  name: LoadSensorsAsync()
+  nameWithType: SensorViewModel.LoadSensorsAsync()
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync
+    name: LoadSensorsAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsAsync
+    name: LoadSensorsAsync
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
+  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_LoadSensorsCommand
+  name: LoadSensorsCommand
+  nameWithType: SensorViewModel.LoadSensorsCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.LoadSensorsCommand
 - uid: EnvironmentManager.ViewModels.SensorViewModel.NavigateToEditAsync(EnvironmentManager.Models.Sensor)
   commentId: M:EnvironmentManager.ViewModels.SensorViewModel.NavigateToEditAsync(EnvironmentManager.Models.Sensor)
   href: EnvironmentManager.Models.Sensor.html
@@ -3172,6 +3033,145 @@ references:
   name: NavigateToEditCommand
   nameWithType: SensorViewModel.NavigateToEditCommand
   fullName: EnvironmentManager.ViewModels.SensorViewModel.NavigateToEditCommand
+- uid: CommunityToolkit.Mvvm.Input.IRelayCommand
+  commentId: T:CommunityToolkit.Mvvm.Input.IRelayCommand
+  parent: CommunityToolkit.Mvvm.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand
+  name: IRelayCommand
+  nameWithType: IRelayCommand
+  fullName: CommunityToolkit.Mvvm.Input.IRelayCommand
+- uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor
+  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor
+  name: PrepareNewSensor()
+  nameWithType: SensorViewModel.PrepareNewSensor()
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor
+    name: PrepareNewSensor
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensor
+    name: PrepareNewSensor
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
+  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_PrepareNewSensorCommand
+  name: PrepareNewSensorCommand
+  nameWithType: SensorViewModel.PrepareNewSensorCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.PrepareNewSensorCommand
+- uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync
+  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync
+  name: SaveSensorAsync()
+  nameWithType: SensorViewModel.SaveSensorAsync()
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync
+    name: SaveSensorAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorAsync
+    name: SaveSensorAsync
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
+  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_SaveSensorCommand
+  name: SaveSensorCommand
+  nameWithType: SensorViewModel.SaveSensorCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.SaveSensorCommand
+- uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
+  commentId: T:CommunityToolkit.Mvvm.Input.IRelayCommand`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
+  name: IRelayCommand<T>
+  nameWithType: IRelayCommand<T>
+  fullName: CommunityToolkit.Mvvm.Input.IRelayCommand<T>
+  nameWithType.vb: IRelayCommand(Of T)
+  fullName.vb: CommunityToolkit.Mvvm.Input.IRelayCommand(Of T)
+  name.vb: IRelayCommand(Of T)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
+    name: IRelayCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
+    name: IRelayCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
+  commentId: M:EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
+  href: EnvironmentManager.Models.Sensor.html
+  name: SelectSensorForEdit(Sensor)
+  nameWithType: SensorViewModel.SelectSensorForEdit(Sensor)
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
+    name: SelectSensorForEdit
+  - name: (
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    href: EnvironmentManager.Models.Sensor.html
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEdit(EnvironmentManager.Models.Sensor)
+    name: SelectSensorForEdit
+  - name: (
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    href: EnvironmentManager.Models.Sensor.html
+  - name: )
+- uid: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
+  href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_SelectSensorForEditCommand
+  name: SelectSensorForEditCommand
+  nameWithType: SensorViewModel.SelectSensorForEditCommand
+  fullName: EnvironmentManager.ViewModels.SensorViewModel.SelectSensorForEditCommand
+- uid: CommunityToolkit.Mvvm.Input.IRelayCommand{EnvironmentManager.Models.Sensor}
+  commentId: T:CommunityToolkit.Mvvm.Input.IRelayCommand{EnvironmentManager.Models.Sensor}
+  parent: CommunityToolkit.Mvvm.Input
+  definition: CommunityToolkit.Mvvm.Input.IRelayCommand`1
+  href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
+  name: IRelayCommand<Sensor>
+  nameWithType: IRelayCommand<Sensor>
+  fullName: CommunityToolkit.Mvvm.Input.IRelayCommand<EnvironmentManager.Models.Sensor>
+  nameWithType.vb: IRelayCommand(Of Sensor)
+  fullName.vb: CommunityToolkit.Mvvm.Input.IRelayCommand(Of EnvironmentManager.Models.Sensor)
+  name.vb: IRelayCommand(Of Sensor)
+  spec.csharp:
+  - uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
+    name: IRelayCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
+  - name: <
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    href: EnvironmentManager.Models.Sensor.html
+  - name: '>'
+  spec.vb:
+  - uid: CommunityToolkit.Mvvm.Input.IRelayCommand`1
+    name: IRelayCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.irelaycommand-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    href: EnvironmentManager.Models.Sensor.html
+  - name: )
 - uid: EnvironmentManager.ViewModels.SensorViewModel.Sensors*
   commentId: Overload:EnvironmentManager.ViewModels.SensorViewModel.Sensors
   href: EnvironmentManager.ViewModels.SensorViewModel.html#EnvironmentManager_ViewModels_SensorViewModel_Sensors

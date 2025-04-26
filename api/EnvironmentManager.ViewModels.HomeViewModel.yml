@@ -25,7 +25,7 @@ items:
   type: Class
   source:
     id: HomeViewModel
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboard.g.cs
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator/EnvironmentManager.ViewModels.HomeViewModel.g.cs
     startLine: 6
   assemblies:
   - EnvironmentManager
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/HomeViewModel.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Logout
     path: EnvironmentManager/ViewModels/HomeViewModel.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/HomeViewModel.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/HomeViewModel.cs
@@ -129,6 +129,33 @@ items:
   nameWithType.vb: HomeViewModel.New(ILoginNavService)
   fullName.vb: EnvironmentManager.ViewModels.HomeViewModel.New(EnvironmentManager.Interfaces.ILoginNavService)
   name.vb: New(ILoginNavService)
+- uid: EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboardCommand
+  commentId: P:EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboardCommand
+  id: RefreshDashboardCommand
+  parent: EnvironmentManager.ViewModels.HomeViewModel
+  langs:
+  - csharp
+  - vb
+  name: RefreshDashboardCommand
+  nameWithType: HomeViewModel.RefreshDashboardCommand
+  fullName: EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboardCommand
+  type: Property
+  source:
+    id: RefreshDashboardCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboard.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboard" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IRelayCommand RefreshDashboardCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IRelayCommand
+    content.vb: Public ReadOnly Property RefreshDashboardCommand As IRelayCommand
+  overload: EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboardCommand*
 - uid: EnvironmentManager.ViewModels.HomeViewModel.AirQualityValue
   commentId: P:EnvironmentManager.ViewModels.HomeViewModel.AirQualityValue
   id: AirQualityValue
@@ -337,33 +364,6 @@ items:
       type: System.String
     content.vb: Public Property SensorWarningCount As String
   overload: EnvironmentManager.ViewModels.HomeViewModel.SensorWarningCount*
-- uid: EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboardCommand
-  commentId: P:EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboardCommand
-  id: RefreshDashboardCommand
-  parent: EnvironmentManager.ViewModels.HomeViewModel
-  langs:
-  - csharp
-  - vb
-  name: RefreshDashboardCommand
-  nameWithType: HomeViewModel.RefreshDashboardCommand
-  fullName: EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboardCommand
-  type: Property
-  source:
-    id: RefreshDashboardCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboard.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboard" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IRelayCommand RefreshDashboardCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IRelayCommand
-    content.vb: Public ReadOnly Property RefreshDashboardCommand As IRelayCommand
-  overload: EnvironmentManager.ViewModels.HomeViewModel.RefreshDashboardCommand*
 references:
 - uid: EnvironmentManager.ViewModels
   commentId: N:EnvironmentManager.ViewModels
@@ -2475,65 +2475,6 @@ references:
   - uid: EnvironmentManager.Interfaces
     name: Interfaces
     href: EnvironmentManager.Interfaces.html
-- uid: EnvironmentManager.ViewModels.HomeViewModel.AirQualityValue*
-  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.AirQualityValue
-  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_AirQualityValue
-  name: AirQualityValue
-  nameWithType: HomeViewModel.AirQualityValue
-  fullName: EnvironmentManager.ViewModels.HomeViewModel.AirQualityValue
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: EnvironmentManager.ViewModels.HomeViewModel.AirQualityStatus*
-  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.AirQualityStatus
-  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_AirQualityStatus
-  name: AirQualityStatus
-  nameWithType: HomeViewModel.AirQualityStatus
-  fullName: EnvironmentManager.ViewModels.HomeViewModel.AirQualityStatus
-- uid: EnvironmentManager.ViewModels.HomeViewModel.WaterPhValue*
-  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.WaterPhValue
-  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_WaterPhValue
-  name: WaterPhValue
-  nameWithType: HomeViewModel.WaterPhValue
-  fullName: EnvironmentManager.ViewModels.HomeViewModel.WaterPhValue
-- uid: EnvironmentManager.ViewModels.HomeViewModel.WaterPhStatus*
-  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.WaterPhStatus
-  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_WaterPhStatus
-  name: WaterPhStatus
-  nameWithType: HomeViewModel.WaterPhStatus
-  fullName: EnvironmentManager.ViewModels.HomeViewModel.WaterPhStatus
-- uid: EnvironmentManager.ViewModels.HomeViewModel.TemperatureValue*
-  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.TemperatureValue
-  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_TemperatureValue
-  name: TemperatureValue
-  nameWithType: HomeViewModel.TemperatureValue
-  fullName: EnvironmentManager.ViewModels.HomeViewModel.TemperatureValue
-- uid: EnvironmentManager.ViewModels.HomeViewModel.WeatherStatus*
-  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.WeatherStatus
-  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_WeatherStatus
-  name: WeatherStatus
-  nameWithType: HomeViewModel.WeatherStatus
-  fullName: EnvironmentManager.ViewModels.HomeViewModel.WeatherStatus
-- uid: EnvironmentManager.ViewModels.HomeViewModel.SensorCountValue*
-  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.SensorCountValue
-  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_SensorCountValue
-  name: SensorCountValue
-  nameWithType: HomeViewModel.SensorCountValue
-  fullName: EnvironmentManager.ViewModels.HomeViewModel.SensorCountValue
-- uid: EnvironmentManager.ViewModels.HomeViewModel.SensorWarningCount*
-  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.SensorWarningCount
-  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_SensorWarningCount
-  name: SensorWarningCount
-  nameWithType: HomeViewModel.SensorWarningCount
-  fullName: EnvironmentManager.ViewModels.HomeViewModel.SensorWarningCount
 - uid: CommunityToolkit.Mvvm.Input.IRelayCommand
   commentId: T:CommunityToolkit.Mvvm.Input.IRelayCommand
   parent: CommunityToolkit.Mvvm.Input
@@ -2600,3 +2541,62 @@ references:
     name: Input
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
+- uid: EnvironmentManager.ViewModels.HomeViewModel.AirQualityValue*
+  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.AirQualityValue
+  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_AirQualityValue
+  name: AirQualityValue
+  nameWithType: HomeViewModel.AirQualityValue
+  fullName: EnvironmentManager.ViewModels.HomeViewModel.AirQualityValue
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.ViewModels.HomeViewModel.AirQualityStatus*
+  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.AirQualityStatus
+  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_AirQualityStatus
+  name: AirQualityStatus
+  nameWithType: HomeViewModel.AirQualityStatus
+  fullName: EnvironmentManager.ViewModels.HomeViewModel.AirQualityStatus
+- uid: EnvironmentManager.ViewModels.HomeViewModel.WaterPhValue*
+  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.WaterPhValue
+  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_WaterPhValue
+  name: WaterPhValue
+  nameWithType: HomeViewModel.WaterPhValue
+  fullName: EnvironmentManager.ViewModels.HomeViewModel.WaterPhValue
+- uid: EnvironmentManager.ViewModels.HomeViewModel.WaterPhStatus*
+  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.WaterPhStatus
+  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_WaterPhStatus
+  name: WaterPhStatus
+  nameWithType: HomeViewModel.WaterPhStatus
+  fullName: EnvironmentManager.ViewModels.HomeViewModel.WaterPhStatus
+- uid: EnvironmentManager.ViewModels.HomeViewModel.TemperatureValue*
+  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.TemperatureValue
+  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_TemperatureValue
+  name: TemperatureValue
+  nameWithType: HomeViewModel.TemperatureValue
+  fullName: EnvironmentManager.ViewModels.HomeViewModel.TemperatureValue
+- uid: EnvironmentManager.ViewModels.HomeViewModel.WeatherStatus*
+  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.WeatherStatus
+  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_WeatherStatus
+  name: WeatherStatus
+  nameWithType: HomeViewModel.WeatherStatus
+  fullName: EnvironmentManager.ViewModels.HomeViewModel.WeatherStatus
+- uid: EnvironmentManager.ViewModels.HomeViewModel.SensorCountValue*
+  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.SensorCountValue
+  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_SensorCountValue
+  name: SensorCountValue
+  nameWithType: HomeViewModel.SensorCountValue
+  fullName: EnvironmentManager.ViewModels.HomeViewModel.SensorCountValue
+- uid: EnvironmentManager.ViewModels.HomeViewModel.SensorWarningCount*
+  commentId: Overload:EnvironmentManager.ViewModels.HomeViewModel.SensorWarningCount
+  href: EnvironmentManager.ViewModels.HomeViewModel.html#EnvironmentManager_ViewModels_HomeViewModel_SensorWarningCount
+  name: SensorWarningCount
+  nameWithType: HomeViewModel.SensorWarningCount
+  fullName: EnvironmentManager.ViewModels.HomeViewModel.SensorWarningCount

@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: IMaintenanceDataStore
     path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: RetrieveAll
     path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: QueryById
     path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Update
     path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Delete
     path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
@@ -172,7 +172,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Reload
     path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
@@ -201,7 +201,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Save
     path: EnvironmentManager/Interfaces/IMaintenanceDataStore.cs

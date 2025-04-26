@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: AuthenticationService
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -65,11 +65,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Authenticated
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -97,11 +97,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: AuthenticatedUser
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 21
+    startLine: 22
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -129,11 +129,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
@@ -163,11 +163,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/AuthenticationService.cs
-      branch: fix/correctComment
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Authenticate
     path: EnvironmentManager/Services/AuthenticationService.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
