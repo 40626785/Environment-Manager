@@ -1,4 +1,4 @@
-namespace EnvironmentManager.Models;
+namespace EnvironmentManager.ViewModels;
 
 /// <summary>
 /// Contains data required to add a pin to a mapsui map.
