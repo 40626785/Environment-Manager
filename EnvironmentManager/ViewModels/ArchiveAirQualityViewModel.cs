@@ -272,13 +272,20 @@ namespace EnvironmentManager.ViewModels
                     return;
                 }
 
+                //  Confirmation Dialog
                 bool confirm = await Application.Current.MainPage.DisplayAlert(
-                    "Confirm Delete",
-                    $"Are you sure you want to delete all {TableData.Count} displayed records?",
-                    "Yes", "No");
+                    "Confirm Deletion",
+                    $"You are about to delete {TableData.Count} records.\n\nThis action cannot be undone.\n\nAre you sure?",
+                    "Yes, Delete",
+                    "Cancel");
 
-                if (!confirm) return;
+                if (!confirm)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Cancelled", "No records were deleted.", "OK");
+                    return;
+                }
 
+                // Proceed with deletion
                 _dbContext.ArchiveAirQuality.RemoveRange(TableData);
                 await _dbContext.SaveChangesAsync();
 
