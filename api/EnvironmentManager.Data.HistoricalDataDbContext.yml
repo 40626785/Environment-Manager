@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/HistoricalDataDbContext.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: HistoricalDataDbContext
     path: EnvironmentManager/Data/HistoricalDataDbContext.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/HistoricalDataDbContext.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/HistoricalDataDbContext.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/HistoricalDataDbContext.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/HistoricalDataDbContext.cs
@@ -172,7 +172,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/HistoricalDataDbContext.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ArchiveAirQuality
     path: EnvironmentManager/Data/HistoricalDataDbContext.cs
@@ -201,7 +201,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/HistoricalDataDbContext.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ArchiveWaterQuality
     path: EnvironmentManager/Data/HistoricalDataDbContext.cs
@@ -230,7 +230,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/HistoricalDataDbContext.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ArchiveWeatherData
     path: EnvironmentManager/Data/HistoricalDataDbContext.cs
@@ -259,7 +259,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/HistoricalDataDbContext.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: OnModelCreating
     path: EnvironmentManager/Data/HistoricalDataDbContext.cs

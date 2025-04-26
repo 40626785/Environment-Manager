@@ -49,7 +49,7 @@ items:
   type: Class
   source:
     id: AddSensorViewModel
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator/EnvironmentManager.ViewModels.AddSensorViewModel.g.cs
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync.g.cs
     startLine: 6
   assemblies:
   - EnvironmentManager
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: LocationErrorVisible
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -132,7 +132,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: NameErrorVisible
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -161,7 +161,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ModelErrorVisible
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -190,7 +190,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ManufacturerErrorVisible
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -219,7 +219,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: TypeErrorVisible
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -248,7 +248,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: FirmwareErrorVisible
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -277,7 +277,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: UrlErrorVisible
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -306,7 +306,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: BatteryErrorVisible
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -335,7 +335,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: DataSourceErrorVisible
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -364,7 +364,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: LocationErrorMessage
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -393,7 +393,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: NameErrorMessage
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -422,7 +422,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ModelErrorMessage
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -451,7 +451,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ManufacturerErrorMessage
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -480,7 +480,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: TypeErrorMessage
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -509,7 +509,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: FirmwareErrorMessage
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -538,7 +538,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: UrlErrorMessage
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -567,7 +567,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: BatteryErrorMessage
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -596,7 +596,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: DataSourceErrorMessage
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -625,7 +625,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/AddSensorViewModel.cs
@@ -645,33 +645,6 @@ items:
   nameWithType.vb: AddSensorViewModel.New(SensorDbContext, LocationDbContext)
   fullName.vb: EnvironmentManager.ViewModels.AddSensorViewModel.New(EnvironmentManager.Data.SensorDbContext, EnvironmentManager.Data.LocationDbContext)
   name.vb: New(SensorDbContext, LocationDbContext)
-- uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand
-  commentId: P:EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand
-  id: CancelCommand
-  parent: EnvironmentManager.ViewModels.AddSensorViewModel
-  langs:
-  - csharp
-  - vb
-  name: CancelCommand
-  nameWithType: AddSensorViewModel.CancelCommand
-  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand
-  type: Property
-  source:
-    id: CancelCommand
-    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync.g.cs
-    startLine: 12
-  assemblies:
-  - EnvironmentManager
-  namespace: EnvironmentManager.ViewModels
-  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public IAsyncRelayCommand CancelCommand { get; }
-    parameters: []
-    return:
-      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-    content.vb: Public ReadOnly Property CancelCommand As IAsyncRelayCommand
-  overload: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand*
 - uid: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorCommand
   commentId: P:EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorCommand
   id: SaveSensorCommand
@@ -1063,6 +1036,33 @@ items:
       type: System.String
     content.vb: Public Property DataSource As String
   overload: EnvironmentManager.ViewModels.AddSensorViewModel.DataSource*
+- uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand
+  commentId: P:EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand
+  id: CancelCommand
+  parent: EnvironmentManager.ViewModels.AddSensorViewModel
+  langs:
+  - csharp
+  - vb
+  name: CancelCommand
+  nameWithType: AddSensorViewModel.CancelCommand
+  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand
+  type: Property
+  source:
+    id: CancelCommand
+    path: CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator/EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync.g.cs
+    startLine: 12
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Gets an <xref href="CommunityToolkit.Mvvm.Input.IAsyncRelayCommand" data-throw-if-not-resolved="false"></xref> instance wrapping <xref href="EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IAsyncRelayCommand CancelCommand { get; }
+    parameters: []
+    return:
+      type: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
+    content.vb: Public ReadOnly Property CancelCommand As IAsyncRelayCommand
+  overload: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand*
 references:
 - uid: EnvironmentManager.ViewModels
   commentId: N:EnvironmentManager.ViewModels
@@ -3268,27 +3268,27 @@ references:
   name: IAsyncRelayCommand
   nameWithType: IAsyncRelayCommand
   fullName: CommunityToolkit.Mvvm.Input.IAsyncRelayCommand
-- uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync
-  commentId: M:EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync
-  name: CancelAsync()
-  nameWithType: AddSensorViewModel.CancelAsync()
-  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync()
+- uid: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync
+  commentId: M:EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync
+  name: SaveSensorAsync()
+  nameWithType: AddSensorViewModel.SaveSensorAsync()
+  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync()
   spec.csharp:
-  - uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync
-    name: CancelAsync
+  - uid: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync
+    name: SaveSensorAsync
   - name: (
   - name: )
   spec.vb:
-  - uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync
-    name: CancelAsync
+  - uid: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync
+    name: SaveSensorAsync
   - name: (
   - name: )
-- uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand
-  href: EnvironmentManager.ViewModels.AddSensorViewModel.html#EnvironmentManager_ViewModels_AddSensorViewModel_CancelCommand
-  name: CancelCommand
-  nameWithType: AddSensorViewModel.CancelCommand
-  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand
+- uid: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorCommand
+  href: EnvironmentManager.ViewModels.AddSensorViewModel.html#EnvironmentManager_ViewModels_AddSensorViewModel_SaveSensorCommand
+  name: SaveSensorCommand
+  nameWithType: AddSensorViewModel.SaveSensorCommand
+  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorCommand
 - uid: CommunityToolkit.Mvvm.Input
   commentId: N:CommunityToolkit.Mvvm.Input
   isExternal: true
@@ -3326,27 +3326,6 @@ references:
     name: Input
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input
-- uid: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync
-  commentId: M:EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync
-  name: SaveSensorAsync()
-  nameWithType: AddSensorViewModel.SaveSensorAsync()
-  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync()
-  spec.csharp:
-  - uid: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync
-    name: SaveSensorAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorAsync
-    name: SaveSensorAsync
-  - name: (
-  - name: )
-- uid: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorCommand*
-  commentId: Overload:EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorCommand
-  href: EnvironmentManager.ViewModels.AddSensorViewModel.html#EnvironmentManager_ViewModels_AddSensorViewModel_SaveSensorCommand
-  name: SaveSensorCommand
-  nameWithType: AddSensorViewModel.SaveSensorCommand
-  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.SaveSensorCommand
 - uid: EnvironmentManager.ViewModels.AddSensorViewModel.Locations*
   commentId: Overload:EnvironmentManager.ViewModels.AddSensorViewModel.Locations
   href: EnvironmentManager.ViewModels.AddSensorViewModel.html#EnvironmentManager_ViewModels_AddSensorViewModel_Locations
@@ -3620,3 +3599,24 @@ references:
   name: DataSource
   nameWithType: AddSensorViewModel.DataSource
   fullName: EnvironmentManager.ViewModels.AddSensorViewModel.DataSource
+- uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync
+  commentId: M:EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync
+  name: CancelAsync()
+  nameWithType: AddSensorViewModel.CancelAsync()
+  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync()
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync
+    name: CancelAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelAsync
+    name: CancelAsync
+  - name: (
+  - name: )
+- uid: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand
+  href: EnvironmentManager.ViewModels.AddSensorViewModel.html#EnvironmentManager_ViewModels_AddSensorViewModel_CancelCommand
+  name: CancelCommand
+  nameWithType: AddSensorViewModel.CancelCommand
+  fullName: EnvironmentManager.ViewModels.AddSensorViewModel.CancelCommand

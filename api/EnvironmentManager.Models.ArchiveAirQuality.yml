@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveAirQuality.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ArchiveAirQuality
     path: EnvironmentManager/Models/ArchiveAirQuality.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveAirQuality.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: Id
     path: EnvironmentManager/Models/ArchiveAirQuality.cs
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveAirQuality.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: Date
     path: EnvironmentManager/Models/ArchiveAirQuality.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveAirQuality.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: Time
     path: EnvironmentManager/Models/ArchiveAirQuality.cs
@@ -182,7 +182,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveAirQuality.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: Nitrogen_dioxide
     path: EnvironmentManager/Models/ArchiveAirQuality.cs
@@ -211,7 +211,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveAirQuality.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: Sulphur_dioxide
     path: EnvironmentManager/Models/ArchiveAirQuality.cs
@@ -240,7 +240,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveAirQuality.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: PM2_5_particulate_matter
     path: EnvironmentManager/Models/ArchiveAirQuality.cs
@@ -269,7 +269,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveAirQuality.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: PM10_particulate_matter
     path: EnvironmentManager/Models/ArchiveAirQuality.cs

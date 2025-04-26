@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorThresholdBreach.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: SensorThresholdBreach
     path: EnvironmentManager/Models/SensorThresholdBreach.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorThresholdBreach.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: BreachingSensor
     path: EnvironmentManager/Models/SensorThresholdBreach.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorThresholdBreach.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: SensorCoordinates
     path: EnvironmentManager/Models/SensorThresholdBreach.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorThresholdBreach.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: BreachedRules
     path: EnvironmentManager/Models/SensorThresholdBreach.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/SensorThresholdBreach.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Models/SensorThresholdBreach.cs

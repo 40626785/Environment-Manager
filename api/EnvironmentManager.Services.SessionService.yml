@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: SessionService
     path: EnvironmentManager/Services/SessionService.cs
@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: AuthenticatedUser
     path: EnvironmentManager/Services/SessionService.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: Expiry
     path: EnvironmentManager/Services/SessionService.cs
@@ -126,7 +126,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Services/SessionService.cs
@@ -162,7 +162,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SessionService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: NewSession
     path: EnvironmentManager/Services/SessionService.cs

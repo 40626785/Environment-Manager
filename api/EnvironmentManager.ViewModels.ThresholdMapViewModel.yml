@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ThresholdMapViewModel
     path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: GetSensorBreachPins
     path: EnvironmentManager/ViewModels/ThresholdMapViewModel.cs
