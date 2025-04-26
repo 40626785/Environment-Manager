@@ -14,7 +14,21 @@ namespace EnvironmentManager.ViewModels
         private readonly ArchiveAirQualityDbContext _dbContext;
 
         public ObservableCollection<ArchiveAirQuality> TableData { get; set; } = new ObservableCollection<ArchiveAirQuality>();
+        public List<string> SortOptions { get; } = new()
+        {
+            "Date",
+            "Nitrogen_dioxide",
+            "PM2_5_particulate_matter"
+        };
 
+        private string selectedSortOption = "Date";
+        public string SelectedSortOption
+        {
+            get => selectedSortOption;
+            set => SetProperty(ref selectedSortOption, value);
+        }
+
+        public ICommand ApplySortCommand { get; }
         public DateTime SelectedDate { get; set; } = DateTime.Now;
 
         public ICommand LoadDataCommand { get; }
@@ -22,20 +36,58 @@ namespace EnvironmentManager.ViewModels
 
         public ArchiveAirQualityViewModel(ArchiveAirQualityDbContext dbContext)
         {
-            Debug.WriteLine($"Inside ArchiveAirQualityViewModel with ArchiveAirQualityDbContext");
+
             _dbContext = dbContext;
 
             LoadDataCommand = new Command(async () => await LoadDataAsync());
+            FilterByDateRangeCommand = new Command(async () => await FilterByDateRangeAsync());
+            ApplySortCommand = new Command(async () => await ApplySortAsync());
             DeleteByDateCommand = new Command(async () => await DeleteByDateAsync());
 
             // Auto-load data when ViewModel initializes
             Task.Run(async () => await LoadDataAsync());
         }
-
-        private async Task LoadDataAsync()
+        private async Task FilterByDateRangeAsync()
         {
+            if (IsBusy) return;
+
             try
             {
+                IsBusy = true;
+                TableData.Clear();
+
+                var data = await _dbContext.ArchiveAirQuality
+                    .Where(a => a.Date >= StartDate && a.Date <= EndDate)
+                    .OrderBy(a => a.Date)
+                    .ToListAsync();
+
+                foreach (var item in data)
+                {
+                    TableData.Add(item);
+                }
+
+                if (TableData.Count == 0)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Info", "No records found in selected date range.", "OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", $"Filter failed: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+        private async Task LoadDataAsync()
+        {
+            if (IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+
                 TableData.Clear();
 
                 var data = await _dbContext.ArchiveAirQuality
@@ -46,7 +98,6 @@ namespace EnvironmentManager.ViewModels
                 foreach (var item in data)
                 {
                     TableData.Add(item);
-
                 }
 
                 if (TableData.Count == 0)
@@ -58,13 +109,63 @@ namespace EnvironmentManager.ViewModels
             {
                 await Application.Current.MainPage.DisplayAlert("Error", $"Failed to load data: {ex.Message}", "OK");
             }
-            Debug.WriteLine($"[DEBUG] Loaded {TableData.Count} records into TableData.");
-            foreach (var item in TableData)
+            finally
             {
-                Debug.WriteLine($"Record: ID={item.Id}, Date={item.Date}, Time={item.Time}");
+                IsBusy = false;
             }
-
         }
+
+        private DateTime startDate = DateTime.Now.AddDays(-7);  // Default to past week
+        public DateTime StartDate
+        {
+            get => startDate;
+            set => SetProperty(ref startDate, value);
+        }
+
+        private DateTime endDate = DateTime.Now;
+        public DateTime EndDate
+        {
+            get => endDate;
+            set => SetProperty(ref endDate, value);
+        }
+
+        public ICommand FilterByDateRangeCommand { get; }
+
+        private async Task ApplySortAsync()
+        {
+            if (IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+                TableData.Clear();
+
+                IQueryable<ArchiveAirQuality> query = _dbContext.ArchiveAirQuality;
+
+                query = SelectedSortOption switch
+                {
+                    "Nitrogen_dioxide" => query.OrderByDescending(a => a.Nitrogen_dioxide),
+                    "PM2_5_particulate_matter" => query.OrderByDescending(a => a.PM2_5_particulate_matter),
+                    _ => query.OrderByDescending(a => a.Date)
+                };
+
+                var data = await query.Take(100).ToListAsync();
+
+                foreach (var item in data)
+                {
+                    TableData.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", $"Sort failed: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
 
         private async Task DeleteByDateAsync()
         {

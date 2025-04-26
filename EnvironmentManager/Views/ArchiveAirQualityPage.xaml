@@ -8,28 +8,53 @@
                FontSize="20"
                HorizontalOptions="Center"/>
 
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}"
+                           Color="DarkBlue"
+                           HeightRequest="50"/>
 
-        <Button Text="Load Data"
-                Command="{Binding LoadDataCommand}"/>
+        <Label Text="Start Date:"/>
+        <DatePicker Date="{Binding StartDate}"/>
 
-        <Button Text="Delete Records for Date"
-                Command="{Binding DeleteByDateCommand}"/>
+        <Label Text="End Date:"/>
+        <DatePicker Date="{Binding EndDate}"/>
+        <Label Text="Sort By:"/>
+        <Picker ItemsSource="{Binding SortOptions}"
+                SelectedItem="{Binding SelectedSortOption}"/>
+
+        <Button Text="Apply Sort"
+                Margin="5"
+                Command="{Binding ApplySortCommand}"/>
+
+
+        <Button Text="Apply Date Filter"
+                Margin="5"
+                Command="{Binding FilterByDateRangeCommand}"/>
 
         <CollectionView ItemsSource="{Binding TableData}"
                         VerticalOptions="FillAndExpand">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="5">
-                        <Label Text="{Binding Id}"/>
-                        <Label Text="{Binding Date}"/>
-                        <Label Text="{Binding Time}"/>
-                    </StackLayout>
+                    <Frame BorderColor="LightGray"
+                           CornerRadius="10"
+                           Padding="10"
+                           Margin="5">
+
+
+
+                        <StackLayout>
+                            <Label Text="{Binding Date, StringFormat='📅 {0:dd MMM yyyy}'}"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Time, StringFormat='⏰ {0:hh\\:mm}'}"/>
+                            <Label Text="{Binding Nitrogen_dioxide, StringFormat='NO₂: {0:F1} ppm'}"/>
+                            <Label Text="{Binding Sulphur_dioxide, StringFormat='SO₂: {0:F2} ppm'}"/>
+                            <Label Text="{Binding PM2_5_particulate_matter, StringFormat='PM2.5: {0:F2} µg/m³'}"/>
+                            <Label Text="{Binding PM10_particulate_matter, StringFormat='PM10: {0:F2} µg/m³'}"/>
+                        </StackLayout>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
-
-
 
     </VerticalStackLayout>
 </ContentPage>
