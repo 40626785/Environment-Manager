@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/RunOnMainThread.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: RunOnMainThread
     path: EnvironmentManager/Services/RunOnMainThread.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/RunOnMainThread.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: RunMainThread
     path: EnvironmentManager/Services/RunOnMainThread.cs

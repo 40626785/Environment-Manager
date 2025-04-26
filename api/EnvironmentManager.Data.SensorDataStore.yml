@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDataStore.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: SensorDataStore
     path: EnvironmentManager/Data/SensorDataStore.cs
@@ -115,7 +115,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDataStore.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/SensorDataStore.cs
@@ -147,7 +147,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/SensorDataStore.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: RetrieveAll
     path: EnvironmentManager/Data/SensorDataStore.cs

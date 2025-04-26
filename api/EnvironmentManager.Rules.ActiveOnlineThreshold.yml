@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/rules/ActiveOnlineThreshold.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ActiveOnlineThreshold
     path: EnvironmentManager/rules/ActiveOnlineThreshold.cs
@@ -25,7 +25,7 @@ items:
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Rules
-  summary: Rule to verify that sensor battery level does not drop below defined threshold
+  summary: Rule to verify that sensor is not offline when in active status
   example: []
   syntax:
     content: 'public class ActiveOnlineThreshold : IThresholdRules<Sensor>'
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/rules/ActiveOnlineThreshold.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: IsBreachedBy
     path: EnvironmentManager/rules/ActiveOnlineThreshold.cs
@@ -93,7 +93,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/rules/ActiveOnlineThreshold.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ThresholdDetail
     path: EnvironmentManager/rules/ActiveOnlineThreshold.cs

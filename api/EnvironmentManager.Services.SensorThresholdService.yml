@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SensorThresholdService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: SensorThresholdService
     path: EnvironmentManager/Services/SensorThresholdService.cs
@@ -26,10 +26,10 @@ items:
   - EnvironmentManager
   namespace: EnvironmentManager.Services
   summary: >-
-    Allows running operations on Main Thread, required by UI actions
+    Manages the verification of Sensors against an injected collection of Specification Interfaces
 
 
-    Implements IRunOnMainThread to enable Dependency Injection
+    Implements the ISensorThresholdService to enable Dependency Injection
   example: []
   syntax:
     content: 'public class SensorThresholdService : ISensorThresholdService'
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SensorThresholdService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Services/SensorThresholdService.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Services/SensorThresholdService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ReturnBreached
     path: EnvironmentManager/Services/SensorThresholdService.cs

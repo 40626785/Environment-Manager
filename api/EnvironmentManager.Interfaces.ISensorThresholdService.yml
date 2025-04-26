@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/ISensorThresholdService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ISensorThresholdService
     path: EnvironmentManager/Interfaces/ISensorThresholdService.cs
@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/ISensorThresholdService.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ReturnBreached
     path: EnvironmentManager/Interfaces/ISensorThresholdService.cs

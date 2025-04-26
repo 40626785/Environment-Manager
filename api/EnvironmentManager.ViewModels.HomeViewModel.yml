@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/HomeViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: Logout
     path: EnvironmentManager/ViewModels/HomeViewModel.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/ViewModels/HomeViewModel.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/ViewModels/HomeViewModel.cs

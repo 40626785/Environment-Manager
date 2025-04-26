@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Converters/NotNullConverter.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: NotZeroConverter
     path: EnvironmentManager/Converters/NotNullConverter.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Converters/NotNullConverter.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: Convert
     path: EnvironmentManager/Converters/NotNullConverter.cs
@@ -97,7 +97,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Converters/NotNullConverter.cs
-      branch: feat/5-threshold-map
+      branch: fix/correctComment
       repo: https://github.com/40626785/SEGroup.git
     id: ConvertBack
     path: EnvironmentManager/Converters/NotNullConverter.cs
