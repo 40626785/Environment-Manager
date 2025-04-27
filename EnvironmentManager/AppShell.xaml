@@ -19,7 +19,6 @@
                 Route="about"
                 Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}"/>
         </Tab>
-
     </TabBar>
 
 </Shell>

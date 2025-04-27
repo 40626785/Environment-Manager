@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Converters/CountToBoolConverter.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: CountToBoolConverter
     path: EnvironmentManager/Converters/CountToBoolConverter.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Converters/CountToBoolConverter.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Convert
     path: EnvironmentManager/Converters/CountToBoolConverter.cs
@@ -97,7 +97,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Converters/CountToBoolConverter.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: ConvertBack
     path: EnvironmentManager/Converters/CountToBoolConverter.cs

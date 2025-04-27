@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -10,8 +11,14 @@ public class User
 {
     [Required]
     public string? Username { get; set; }
+    
     [Required]
     public string? Password { get; set; }
-    [Required]
-    public Roles Role { get; set; } //represented as integer in database and returns string value in application
+    
+    [Column("Role")]
+    public Roles Role { get; set; }
+    
+    // Navigation property for the relationship with Role entity
+    [ForeignKey("Role")]
+    public virtual Role RoleNavigation { get; set; }
 }

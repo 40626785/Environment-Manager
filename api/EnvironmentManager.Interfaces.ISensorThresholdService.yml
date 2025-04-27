@@ -1,0 +1,229 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.ISensorThresholdService
+  commentId: T:EnvironmentManager.Interfaces.ISensorThresholdService
+  id: ISensorThresholdService
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.ISensorThresholdService.ReturnBreached(System.Collections.Generic.List{EnvironmentManager.Models.Sensor})
+  langs:
+  - csharp
+  - vb
+  name: ISensorThresholdService
+  nameWithType: ISensorThresholdService
+  fullName: EnvironmentManager.Interfaces.ISensorThresholdService
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ISensorThresholdService.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: ISensorThresholdService
+    path: EnvironmentManager/Interfaces/ISensorThresholdService.cs
+    startLine: 9
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: >-
+    Enables Dependency Inversion Principle, allowing verification of threshold rules without directly depending on concrete implementation
+
+
+    Implementation of Interface decided in MauiProgram.cs
+  example: []
+  syntax:
+    content: public interface ISensorThresholdService
+    content.vb: Public Interface ISensorThresholdService
+- uid: EnvironmentManager.Interfaces.ISensorThresholdService.ReturnBreached(System.Collections.Generic.List{EnvironmentManager.Models.Sensor})
+  commentId: M:EnvironmentManager.Interfaces.ISensorThresholdService.ReturnBreached(System.Collections.Generic.List{EnvironmentManager.Models.Sensor})
+  id: ReturnBreached(System.Collections.Generic.List{EnvironmentManager.Models.Sensor})
+  parent: EnvironmentManager.Interfaces.ISensorThresholdService
+  langs:
+  - csharp
+  - vb
+  name: ReturnBreached(List<Sensor>)
+  nameWithType: ISensorThresholdService.ReturnBreached(List<Sensor>)
+  fullName: EnvironmentManager.Interfaces.ISensorThresholdService.ReturnBreached(System.Collections.Generic.List<EnvironmentManager.Models.Sensor>)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ISensorThresholdService.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: ReturnBreached
+    path: EnvironmentManager/Interfaces/ISensorThresholdService.cs
+    startLine: 11
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: List<SensorThresholdBreach> ReturnBreached(List<Sensor> sensorList)
+    parameters:
+    - id: sensorList
+      type: System.Collections.Generic.List{EnvironmentManager.Models.Sensor}
+    return:
+      type: System.Collections.Generic.List{EnvironmentManager.Models.SensorThresholdBreach}
+    content.vb: Function ReturnBreached(sensorList As List(Of Sensor)) As List(Of SensorThresholdBreach)
+  overload: EnvironmentManager.Interfaces.ISensorThresholdService.ReturnBreached*
+  nameWithType.vb: ISensorThresholdService.ReturnBreached(List(Of Sensor))
+  fullName.vb: EnvironmentManager.Interfaces.ISensorThresholdService.ReturnBreached(System.Collections.Generic.List(Of EnvironmentManager.Models.Sensor))
+  name.vb: ReturnBreached(List(Of Sensor))
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.ISensorThresholdService.ReturnBreached*
+  commentId: Overload:EnvironmentManager.Interfaces.ISensorThresholdService.ReturnBreached
+  href: EnvironmentManager.Interfaces.ISensorThresholdService.html#EnvironmentManager_Interfaces_ISensorThresholdService_ReturnBreached_System_Collections_Generic_List_EnvironmentManager_Models_Sensor__
+  name: ReturnBreached
+  nameWithType: ISensorThresholdService.ReturnBreached
+  fullName: EnvironmentManager.Interfaces.ISensorThresholdService.ReturnBreached
+- uid: System.Collections.Generic.List{EnvironmentManager.Models.Sensor}
+  commentId: T:System.Collections.Generic.List{EnvironmentManager.Models.Sensor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Sensor>
+  nameWithType: List<Sensor>
+  fullName: System.Collections.Generic.List<EnvironmentManager.Models.Sensor>
+  nameWithType.vb: List(Of Sensor)
+  fullName.vb: System.Collections.Generic.List(Of EnvironmentManager.Models.Sensor)
+  name.vb: List(Of Sensor)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    href: EnvironmentManager.Models.Sensor.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    href: EnvironmentManager.Models.Sensor.html
+  - name: )
+- uid: System.Collections.Generic.List{EnvironmentManager.Models.SensorThresholdBreach}
+  commentId: T:System.Collections.Generic.List{EnvironmentManager.Models.SensorThresholdBreach}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SensorThresholdBreach>
+  nameWithType: List<SensorThresholdBreach>
+  fullName: System.Collections.Generic.List<EnvironmentManager.Models.SensorThresholdBreach>
+  nameWithType.vb: List(Of SensorThresholdBreach)
+  fullName.vb: System.Collections.Generic.List(Of EnvironmentManager.Models.SensorThresholdBreach)
+  name.vb: List(Of SensorThresholdBreach)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EnvironmentManager.Models.SensorThresholdBreach
+    name: SensorThresholdBreach
+    href: EnvironmentManager.Models.SensorThresholdBreach.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.SensorThresholdBreach
+    name: SensorThresholdBreach
+    href: EnvironmentManager.Models.SensorThresholdBreach.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

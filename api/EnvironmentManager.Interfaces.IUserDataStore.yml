@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IUserDataStore.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: IUserDataStore
     path: EnvironmentManager/Interfaces/IUserDataStore.cs
@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IUserDataStore.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: GetUser
     path: EnvironmentManager/Interfaces/IUserDataStore.cs

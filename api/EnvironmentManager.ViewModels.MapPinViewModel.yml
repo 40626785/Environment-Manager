@@ -1,0 +1,476 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.ViewModels.MapPinViewModel
+  commentId: T:EnvironmentManager.ViewModels.MapPinViewModel
+  id: MapPinViewModel
+  parent: EnvironmentManager.ViewModels
+  children:
+  - EnvironmentManager.ViewModels.MapPinViewModel.#ctor(System.Double,System.Double,System.String)
+  - EnvironmentManager.ViewModels.MapPinViewModel.Label
+  - EnvironmentManager.ViewModels.MapPinViewModel.Latitude
+  - EnvironmentManager.ViewModels.MapPinViewModel.Longitude
+  langs:
+  - csharp
+  - vb
+  name: MapPinViewModel
+  nameWithType: MapPinViewModel
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: MapPinViewModel
+    path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+    startLine: 5
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Contains data required to add a pin to a mapsui map.
+  example: []
+  syntax:
+    content: public class MapPinViewModel
+    content.vb: Public Class MapPinViewModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.ViewModels.MapPinViewModel.Longitude
+  commentId: P:EnvironmentManager.ViewModels.MapPinViewModel.Longitude
+  id: Longitude
+  parent: EnvironmentManager.ViewModels.MapPinViewModel
+  langs:
+  - csharp
+  - vb
+  name: Longitude
+  nameWithType: MapPinViewModel.Longitude
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel.Longitude
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: Longitude
+    path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+    startLine: 7
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public double Longitude { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Longitude As Double
+  overload: EnvironmentManager.ViewModels.MapPinViewModel.Longitude*
+- uid: EnvironmentManager.ViewModels.MapPinViewModel.Latitude
+  commentId: P:EnvironmentManager.ViewModels.MapPinViewModel.Latitude
+  id: Latitude
+  parent: EnvironmentManager.ViewModels.MapPinViewModel
+  langs:
+  - csharp
+  - vb
+  name: Latitude
+  nameWithType: MapPinViewModel.Latitude
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel.Latitude
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: Latitude
+    path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+    startLine: 8
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public double Latitude { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Latitude As Double
+  overload: EnvironmentManager.ViewModels.MapPinViewModel.Latitude*
+- uid: EnvironmentManager.ViewModels.MapPinViewModel.Label
+  commentId: P:EnvironmentManager.ViewModels.MapPinViewModel.Label
+  id: Label
+  parent: EnvironmentManager.ViewModels.MapPinViewModel
+  langs:
+  - csharp
+  - vb
+  name: Label
+  nameWithType: MapPinViewModel.Label
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel.Label
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: Label
+    path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+    startLine: 9
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string Label { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Label As String
+  overload: EnvironmentManager.ViewModels.MapPinViewModel.Label*
+- uid: EnvironmentManager.ViewModels.MapPinViewModel.#ctor(System.Double,System.Double,System.String)
+  commentId: M:EnvironmentManager.ViewModels.MapPinViewModel.#ctor(System.Double,System.Double,System.String)
+  id: '#ctor(System.Double,System.Double,System.String)'
+  parent: EnvironmentManager.ViewModels.MapPinViewModel
+  langs:
+  - csharp
+  - vb
+  name: MapPinViewModel(double, double, string)
+  nameWithType: MapPinViewModel.MapPinViewModel(double, double, string)
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel.MapPinViewModel(double, double, string)
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: .ctor
+    path: EnvironmentManager/ViewModels/MapPinViewModel.cs
+    startLine: 11
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public MapPinViewModel(double lon, double lat, string label)
+    parameters:
+    - id: lon
+      type: System.Double
+    - id: lat
+      type: System.Double
+    - id: label
+      type: System.String
+    content.vb: Public Sub New(lon As Double, lat As Double, label As String)
+  overload: EnvironmentManager.ViewModels.MapPinViewModel.#ctor*
+  nameWithType.vb: MapPinViewModel.New(Double, Double, String)
+  fullName.vb: EnvironmentManager.ViewModels.MapPinViewModel.New(Double, Double, String)
+  name.vb: New(Double, Double, String)
+references:
+- uid: EnvironmentManager.ViewModels
+  commentId: N:EnvironmentManager.ViewModels
+  href: EnvironmentManager.html
+  name: EnvironmentManager.ViewModels
+  nameWithType: EnvironmentManager.ViewModels
+  fullName: EnvironmentManager.ViewModels
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.ViewModels.MapPinViewModel.Longitude*
+  commentId: Overload:EnvironmentManager.ViewModels.MapPinViewModel.Longitude
+  href: EnvironmentManager.ViewModels.MapPinViewModel.html#EnvironmentManager_ViewModels_MapPinViewModel_Longitude
+  name: Longitude
+  nameWithType: MapPinViewModel.Longitude
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel.Longitude
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: EnvironmentManager.ViewModels.MapPinViewModel.Latitude*
+  commentId: Overload:EnvironmentManager.ViewModels.MapPinViewModel.Latitude
+  href: EnvironmentManager.ViewModels.MapPinViewModel.html#EnvironmentManager_ViewModels_MapPinViewModel_Latitude
+  name: Latitude
+  nameWithType: MapPinViewModel.Latitude
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel.Latitude
+- uid: EnvironmentManager.ViewModels.MapPinViewModel.Label*
+  commentId: Overload:EnvironmentManager.ViewModels.MapPinViewModel.Label
+  href: EnvironmentManager.ViewModels.MapPinViewModel.html#EnvironmentManager_ViewModels_MapPinViewModel_Label
+  name: Label
+  nameWithType: MapPinViewModel.Label
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel.Label
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.ViewModels.MapPinViewModel.#ctor*
+  commentId: Overload:EnvironmentManager.ViewModels.MapPinViewModel.#ctor
+  href: EnvironmentManager.ViewModels.MapPinViewModel.html#EnvironmentManager_ViewModels_MapPinViewModel__ctor_System_Double_System_Double_System_String_
+  name: MapPinViewModel
+  nameWithType: MapPinViewModel.MapPinViewModel
+  fullName: EnvironmentManager.ViewModels.MapPinViewModel.MapPinViewModel
+  nameWithType.vb: MapPinViewModel.New
+  fullName.vb: EnvironmentManager.ViewModels.MapPinViewModel.New
+  name.vb: New

@@ -19,3 +19,18 @@ VALUES
 (DATEADD(DAY, -2, SYSDATETIME()), 1, 2, 'Battery maintenance for ClearWater sensor at Glencorse'),
 (DATEADD(DAY, 10, SYSDATETIME()), 0, 3, 'Firmware upgrade for MetNet weather node at Holyrood');
 
+-- Insert roles as specified in the requirements
+INSERT INTO Roles (RoleId, RoleName, Description)
+VALUES 
+    (0, 'Administrator', 'Full system access with user management capabilities'),
+    (1, 'EnvironmentalScientist', 'Access to scientific data and analysis tools'),
+    (2, 'OperationsManager', 'Access to operational data and management functions');
+
+
+-- Insert test users
+INSERT INTO Users (Username, Password, Role)
+VALUES
+    ('admin', 'admin123', 0), -- Administrator
+    ('manager', 'manager123', 2), -- OperationsManager
+    ('scientist', 'scientist123', 1); -- EnvironmentalScientist
+

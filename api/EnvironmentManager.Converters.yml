@@ -4,8 +4,13 @@ items:
   commentId: N:EnvironmentManager.Converters
   id: EnvironmentManager.Converters
   children:
-  - EnvironmentManager.Converters.BoolToColorConverter
   - EnvironmentManager.Converters.CountToBoolConverter
+  - EnvironmentManager.Converters.InvertedBoolConverter
+  - EnvironmentManager.Converters.NotNullConverter
+  - EnvironmentManager.Converters.NotZeroConverter
+  - EnvironmentManager.Converters.RoleConverter
+  - EnvironmentManager.Converters.RoleToColorConverter
+  - EnvironmentManager.Converters.StatusToColorConverter
   - EnvironmentManager.Converters.StringNotEmptyConverter
   - EnvironmentManager.Converters.StringNotNullOrEmptyConverter
   langs:
@@ -18,18 +23,48 @@ items:
   assemblies:
   - EnvironmentManager
 references:
-- uid: EnvironmentManager.Converters.BoolToColorConverter
-  commentId: T:EnvironmentManager.Converters.BoolToColorConverter
-  href: EnvironmentManager.Converters.BoolToColorConverter.html
-  name: BoolToColorConverter
-  nameWithType: BoolToColorConverter
-  fullName: EnvironmentManager.Converters.BoolToColorConverter
 - uid: EnvironmentManager.Converters.CountToBoolConverter
   commentId: T:EnvironmentManager.Converters.CountToBoolConverter
   href: EnvironmentManager.Converters.CountToBoolConverter.html
   name: CountToBoolConverter
   nameWithType: CountToBoolConverter
   fullName: EnvironmentManager.Converters.CountToBoolConverter
+- uid: EnvironmentManager.Converters.InvertedBoolConverter
+  commentId: T:EnvironmentManager.Converters.InvertedBoolConverter
+  href: EnvironmentManager.Converters.InvertedBoolConverter.html
+  name: InvertedBoolConverter
+  nameWithType: InvertedBoolConverter
+  fullName: EnvironmentManager.Converters.InvertedBoolConverter
+- uid: EnvironmentManager.Converters.NotNullConverter
+  commentId: T:EnvironmentManager.Converters.NotNullConverter
+  href: EnvironmentManager.Converters.NotNullConverter.html
+  name: NotNullConverter
+  nameWithType: NotNullConverter
+  fullName: EnvironmentManager.Converters.NotNullConverter
+- uid: EnvironmentManager.Converters.NotZeroConverter
+  commentId: T:EnvironmentManager.Converters.NotZeroConverter
+  href: EnvironmentManager.Converters.NotZeroConverter.html
+  name: NotZeroConverter
+  nameWithType: NotZeroConverter
+  fullName: EnvironmentManager.Converters.NotZeroConverter
+- uid: EnvironmentManager.Converters.RoleConverter
+  commentId: T:EnvironmentManager.Converters.RoleConverter
+  href: EnvironmentManager.Converters.RoleConverter.html
+  name: RoleConverter
+  nameWithType: RoleConverter
+  fullName: EnvironmentManager.Converters.RoleConverter
+- uid: EnvironmentManager.Converters.RoleToColorConverter
+  commentId: T:EnvironmentManager.Converters.RoleToColorConverter
+  href: EnvironmentManager.Converters.RoleToColorConverter.html
+  name: RoleToColorConverter
+  nameWithType: RoleToColorConverter
+  fullName: EnvironmentManager.Converters.RoleToColorConverter
+- uid: EnvironmentManager.Converters.StatusToColorConverter
+  commentId: T:EnvironmentManager.Converters.StatusToColorConverter
+  href: EnvironmentManager.Converters.StatusToColorConverter.html
+  name: StatusToColorConverter
+  nameWithType: StatusToColorConverter
+  fullName: EnvironmentManager.Converters.StatusToColorConverter
 - uid: EnvironmentManager.Converters.StringNotEmptyConverter
   commentId: T:EnvironmentManager.Converters.StringNotEmptyConverter
   href: EnvironmentManager.Converters.StringNotEmptyConverter.html

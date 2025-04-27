@@ -1,0 +1,247 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.IUserLogService
+  commentId: T:EnvironmentManager.Interfaces.IUserLogService
+  id: IUserLogService
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IUserLogService.LogUserCreatedAsync(EnvironmentManager.Models.User)
+  - EnvironmentManager.Interfaces.IUserLogService.LogUserDeletedAsync(EnvironmentManager.Models.User)
+  - EnvironmentManager.Interfaces.IUserLogService.LogUserUpdatedAsync(EnvironmentManager.Models.User,EnvironmentManager.Models.User)
+  langs:
+  - csharp
+  - vb
+  name: IUserLogService
+  nameWithType: IUserLogService
+  fullName: EnvironmentManager.Interfaces.IUserLogService
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserLogService.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: IUserLogService
+    path: EnvironmentManager/Interfaces/IUserLogService.cs
+    startLine: 5
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: public interface IUserLogService
+    content.vb: Public Interface IUserLogService
+- uid: EnvironmentManager.Interfaces.IUserLogService.LogUserCreatedAsync(EnvironmentManager.Models.User)
+  commentId: M:EnvironmentManager.Interfaces.IUserLogService.LogUserCreatedAsync(EnvironmentManager.Models.User)
+  id: LogUserCreatedAsync(EnvironmentManager.Models.User)
+  parent: EnvironmentManager.Interfaces.IUserLogService
+  langs:
+  - csharp
+  - vb
+  name: LogUserCreatedAsync(User)
+  nameWithType: IUserLogService.LogUserCreatedAsync(User)
+  fullName: EnvironmentManager.Interfaces.IUserLogService.LogUserCreatedAsync(EnvironmentManager.Models.User)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserLogService.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: LogUserCreatedAsync
+    path: EnvironmentManager/Interfaces/IUserLogService.cs
+    startLine: 10
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Logs a user creation event
+  example: []
+  syntax:
+    content: Task LogUserCreatedAsync(User user)
+    parameters:
+    - id: user
+      type: EnvironmentManager.Models.User
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LogUserCreatedAsync(user As User) As Task
+  overload: EnvironmentManager.Interfaces.IUserLogService.LogUserCreatedAsync*
+- uid: EnvironmentManager.Interfaces.IUserLogService.LogUserUpdatedAsync(EnvironmentManager.Models.User,EnvironmentManager.Models.User)
+  commentId: M:EnvironmentManager.Interfaces.IUserLogService.LogUserUpdatedAsync(EnvironmentManager.Models.User,EnvironmentManager.Models.User)
+  id: LogUserUpdatedAsync(EnvironmentManager.Models.User,EnvironmentManager.Models.User)
+  parent: EnvironmentManager.Interfaces.IUserLogService
+  langs:
+  - csharp
+  - vb
+  name: LogUserUpdatedAsync(User, User)
+  nameWithType: IUserLogService.LogUserUpdatedAsync(User, User)
+  fullName: EnvironmentManager.Interfaces.IUserLogService.LogUserUpdatedAsync(EnvironmentManager.Models.User, EnvironmentManager.Models.User)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserLogService.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: LogUserUpdatedAsync
+    path: EnvironmentManager/Interfaces/IUserLogService.cs
+    startLine: 15
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Logs a user update event
+  example: []
+  syntax:
+    content: Task LogUserUpdatedAsync(User oldUser, User newUser)
+    parameters:
+    - id: oldUser
+      type: EnvironmentManager.Models.User
+    - id: newUser
+      type: EnvironmentManager.Models.User
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LogUserUpdatedAsync(oldUser As User, newUser As User) As Task
+  overload: EnvironmentManager.Interfaces.IUserLogService.LogUserUpdatedAsync*
+- uid: EnvironmentManager.Interfaces.IUserLogService.LogUserDeletedAsync(EnvironmentManager.Models.User)
+  commentId: M:EnvironmentManager.Interfaces.IUserLogService.LogUserDeletedAsync(EnvironmentManager.Models.User)
+  id: LogUserDeletedAsync(EnvironmentManager.Models.User)
+  parent: EnvironmentManager.Interfaces.IUserLogService
+  langs:
+  - csharp
+  - vb
+  name: LogUserDeletedAsync(User)
+  nameWithType: IUserLogService.LogUserDeletedAsync(User)
+  fullName: EnvironmentManager.Interfaces.IUserLogService.LogUserDeletedAsync(EnvironmentManager.Models.User)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserLogService.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: LogUserDeletedAsync
+    path: EnvironmentManager/Interfaces/IUserLogService.cs
+    startLine: 20
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Logs a user deletion event
+  example: []
+  syntax:
+    content: Task LogUserDeletedAsync(User user)
+    parameters:
+    - id: user
+      type: EnvironmentManager.Models.User
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LogUserDeletedAsync(user As User) As Task
+  overload: EnvironmentManager.Interfaces.IUserLogService.LogUserDeletedAsync*
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.IUserLogService.LogUserCreatedAsync*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserLogService.LogUserCreatedAsync
+  href: EnvironmentManager.Interfaces.IUserLogService.html#EnvironmentManager_Interfaces_IUserLogService_LogUserCreatedAsync_EnvironmentManager_Models_User_
+  name: LogUserCreatedAsync
+  nameWithType: IUserLogService.LogUserCreatedAsync
+  fullName: EnvironmentManager.Interfaces.IUserLogService.LogUserCreatedAsync
+- uid: EnvironmentManager.Models.User
+  commentId: T:EnvironmentManager.Models.User
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: EnvironmentManager.Models.User
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: EnvironmentManager.Interfaces.IUserLogService.LogUserUpdatedAsync*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserLogService.LogUserUpdatedAsync
+  href: EnvironmentManager.Interfaces.IUserLogService.html#EnvironmentManager_Interfaces_IUserLogService_LogUserUpdatedAsync_EnvironmentManager_Models_User_EnvironmentManager_Models_User_
+  name: LogUserUpdatedAsync
+  nameWithType: IUserLogService.LogUserUpdatedAsync
+  fullName: EnvironmentManager.Interfaces.IUserLogService.LogUserUpdatedAsync
+- uid: EnvironmentManager.Interfaces.IUserLogService.LogUserDeletedAsync*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserLogService.LogUserDeletedAsync
+  href: EnvironmentManager.Interfaces.IUserLogService.html#EnvironmentManager_Interfaces_IUserLogService_LogUserDeletedAsync_EnvironmentManager_Models_User_
+  name: LogUserDeletedAsync
+  nameWithType: IUserLogService.LogUserDeletedAsync
+  fullName: EnvironmentManager.Interfaces.IUserLogService.LogUserDeletedAsync

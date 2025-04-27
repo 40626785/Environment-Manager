@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/UserDataStore.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: UserDataStore
     path: EnvironmentManager/Data/UserDataStore.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Data
@@ -115,11 +115,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/UserDataStore.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Data/UserDataStore.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Data
@@ -147,11 +147,11 @@ items:
   source:
     remote:
       path: EnvironmentManager/Data/UserDataStore.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: GetUser
     path: EnvironmentManager/Data/UserDataStore.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - EnvironmentManager
   namespace: EnvironmentManager.Data
