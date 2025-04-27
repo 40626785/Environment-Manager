@@ -29,7 +29,7 @@ public class UserManagementDbContext : DbContext
             // Configure relationship with Role
             entity.HasOne(d => d.RoleNavigation)
                   .WithMany()
-                  .HasForeignKey(d => d.Role)
+                  .HasForeignKey(d => d.RoleId)
                   .OnDelete(DeleteBehavior.Restrict)
                   .HasConstraintName("FK_Users_Roles");
         });
