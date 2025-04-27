@@ -20,17 +20,20 @@ VALUES
 (DATEADD(DAY, 10, SYSDATETIME()), 0, 3, 'Firmware upgrade for MetNet weather node at Holyrood');
 
 -- Insert roles as specified in the requirements
+-- Ensure RoleIds match the Roles enum definition (BasicUser=0, Administrator=1, etc.)
 INSERT INTO Roles (RoleId, RoleName, Description)
 VALUES 
-    (0, 'Administrator', 'Full system access with user management capabilities'),
-    (1, 'EnvironmentalScientist', 'Access to scientific data and analysis tools'),
-    (2, 'OperationsManager', 'Access to operational data and management functions');
+    (0, 'BasicUser', 'Access to basic features'),
+    (1, 'Administrator', 'Full system access with user management capabilities'),
+    (2, 'EnvironmentalScientist', 'Access to scientific data and analysis tools'),
+    (3, 'OperationsManager', 'Access to operational data and management functions');
 
-
--- Insert test users
+-- Insert test users with correct RoleIds matching the enum/Roles table
 INSERT INTO Users (Username, Password, Role)
 VALUES
-    ('admin', 'admin123', 0), -- Administrator
-    ('manager', 'manager123', 2), -- OperationsManager
-    ('scientist', 'scientist123', 1); -- EnvironmentalScientist
+    ('admin', 'admin123', 1), -- Administrator (RoleId = 1)
+    ('manager', 'manager123', 3), -- OperationsManager (RoleId = 3)
+    ('scientist', 'scientist123', 2); -- EnvironmentalScientist (RoleId = 2)
+    -- Add a BasicUser example if needed
+    -- ('basic', 'basic123', 0), -- BasicUser (RoleId = 0)
 

@@ -15,10 +15,19 @@ public class User
     [Required]
     public string? Password { get; set; }
     
-    [Column("Role")]
-    public Roles Role { get; set; }
+    // Foreign Key property (maps to the database column)
+    [Column("Role")] // Keep mapping to the existing 'Role' column
+    public int RoleId { get; set; } 
+
+    // Enum property for convenience in code (not mapped directly)
+    [NotMapped]
+    public Roles Role 
+    {
+        get => (Roles)RoleId; 
+        set => RoleId = (int)value;
+    }
     
-    // Navigation property for the relationship with Role entity
-    [ForeignKey("Role")]
+    // Navigation property using the correct integer FK
+    [ForeignKey("RoleId")]
     public virtual Role RoleNavigation { get; set; }
 }

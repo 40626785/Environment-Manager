@@ -11,6 +11,7 @@ namespace EnvironmentManager.Converters
             {
                 return role switch
                 {
+                    Roles.BasicUser => "Basic User",
                     Roles.Administrator => "Administrator",
                     Roles.EnvironmentalScientist => "Environmental Scientist",
                     Roles.OperationsManager => "Operations Manager",
@@ -22,9 +23,10 @@ namespace EnvironmentManager.Converters
             {
                 return roleId switch
                 {
-                    0 => "Administrator",
-                    1 => "Environmental Scientist", 
-                    2 => "Operations Manager",
+                    0 => "Basic User",
+                    1 => "Administrator",
+                    2 => "Environmental Scientist",
+                    3 => "Operations Manager",
                     _ => $"Unknown Role ({roleId})"
                 };
             }
@@ -38,14 +40,15 @@ namespace EnvironmentManager.Converters
             {
                 return roleName switch
                 {
+                    "Basic User" => Roles.BasicUser,
                     "Administrator" => Roles.Administrator,
                     "Environmental Scientist" => Roles.EnvironmentalScientist,
                     "Operations Manager" => Roles.OperationsManager,
-                    _ => Roles.EnvironmentalScientist // Default
+                    _ => Roles.BasicUser
                 };
             }
             
-            return Roles.EnvironmentalScientist; // Default
+            return Roles.BasicUser;
         }
     }
 } 
