@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using EnvironmentManager.Data;
 using EnvironmentManager.Models;
+using EnvironmentManager.Services;
+using EnvironmentManager.Views;
 using Microsoft.EntityFrameworkCore;
 
 namespace EnvironmentManager.ViewModels
@@ -15,6 +17,7 @@ namespace EnvironmentManager.ViewModels
         private readonly ArchiveAirQualityDbContext _dbContext;
 
         public ObservableCollection<ArchiveAirQuality> TableData { get; set; } = new();
+        public ICommand RowTappedCommand { get; }
 
         #region Sorting Properties
 
@@ -23,10 +26,14 @@ namespace EnvironmentManager.ViewModels
 
         public List<string> SortOptions { get; } = new()
         {
+            "ID",
             "Date",
             "Nitrogen_dioxide",
             "PM2_5_particulate_matter"
         };
+        public string StartIdText { get; set; }
+        public string EndIdText { get; set; }
+
 
         private string selectedSortOption = "Nitrogen_dioxide";
         public string SelectedSortOption
@@ -64,7 +71,7 @@ namespace EnvironmentManager.ViewModels
             set => SetProperty(ref endDate, value);
         }
 
-        public ICommand FilterByDateRangeCommand { get; }
+        public ICommand ApplyFiltersCommand { get; }
 
         #endregion
 
@@ -95,17 +102,23 @@ namespace EnvironmentManager.ViewModels
             _dbContext = dbContext;
 
             LoadDataCommand = new Command(async () => await LoadDataAsync());
-            FilterByDateRangeCommand = new Command(async () => await FilterByDateRangeAsync());
+            ApplyFiltersCommand = new Command(async () => await ApplyFiltersAsync());
             ApplySortCommand = new Command(async () => await ApplySortAsync());
             DeleteFilteredCommand = new Command(async () => await DeleteFilteredAsync());
             ToggleFilterVisibilityCommand = new Command(() => IsFilterVisible = !IsFilterVisible);
             ExportToCsvCommand = new Command(async () => await ExportToCsvAsync());
-
+            RowTappedCommand = new Command<ArchiveAirQuality>(async (record) => await OnRowTapped(record));
 
             Task.Run(async () => await LoadDataAsync());
         }
 
         #region Methods
+        private bool isDateFilterEnabled = false;   // Default ON
+        public bool IsDateFilterEnabled
+        {
+            get => isDateFilterEnabled;
+            set => SetProperty(ref isDateFilterEnabled, value);
+        }
 
         private async Task LoadDataAsync()
         {
@@ -133,8 +146,21 @@ namespace EnvironmentManager.ViewModels
                 IsBusy = false;
             }
         }
+        private async Task OnRowTapped(ArchiveAirQuality record)
+        {
+            if (record == null) return;
 
-        private async Task FilterByDateRangeAsync()
+            Debug.WriteLine($"Tapped Record ID: {record.Id}");
+
+            // Store the record in the shared service
+            NavigationDataStore.SelectedRecord = record;
+
+            // Navigate without passing parameters
+            await Shell.Current.GoToAsync(nameof(EditArchiveAirQualityPage));
+        }
+
+
+        private async Task ApplyFiltersAsync()
         {
             if (IsBusy) return;
 
@@ -143,16 +169,56 @@ namespace EnvironmentManager.ViewModels
                 IsBusy = true;
                 TableData.Clear();
 
-                var data = await _dbContext.ArchiveAirQuality
-                    .Where(a => a.Date >= StartDate && a.Date <= EndDate)
-                    .OrderBy(a => a.Date)
-                    .ToListAsync();
+                IQueryable<ArchiveAirQuality> query = _dbContext.ArchiveAirQuality;
+
+                Debug.WriteLine($"[DEBUG] Applying Date Filter: {StartDate:yyyy-MM-dd} to {EndDate:yyyy-MM-dd}");
+
+                // Apply Date Range Filter
+                if (IsDateFilterEnabled)
+                {
+                    Debug.WriteLine($"[DEBUG] Applying Date Filter: {StartDate:yyyy-MM-dd} to {EndDate:yyyy-MM-dd}");
+                    query = query.Where(a => a.Date >= StartDate && a.Date <= EndDate);
+                }
+                else
+                {
+                    Debug.WriteLine("[DEBUG] Skipping Date Filter.");
+                }
+
+
+                // Parse ID inputs
+                bool hasStartId = int.TryParse(StartIdText, out var startId);
+                bool hasEndId = int.TryParse(EndIdText, out var endId);
+
+                Debug.WriteLine($"[DEBUG] StartId Parsed: {hasStartId} ({startId}), EndId Parsed: {hasEndId} ({endId})");
+
+                if (hasStartId && hasEndId)
+                {
+                    Debug.WriteLine($"[DEBUG] Applying ID Filter: {startId} to {endId}");
+                    query = query.Where(a => a.Id >= startId && a.Id <= endId);
+                }
+                else
+                {
+                    Debug.WriteLine("[DEBUG] Skipping ID filter due to invalid input.");
+                }
+
+                // Check how many records match before limiting
+                var totalMatches = await query.CountAsync();
+                Debug.WriteLine($"[DEBUG] Total records matching filters: {totalMatches}");
+
+                query = query.OrderByDescending(a => a.Date);
+
+                var data = await query.Take(100).ToListAsync();
+                Debug.WriteLine($"[DEBUG] Records loaded after Take(100): {data.Count}");
 
                 foreach (var item in data)
                     TableData.Add(item);
+
+                if (!TableData.Any())
+                    await Application.Current.MainPage.DisplayAlert("Info", "No records found with current filters.", "OK");
             }
             catch (Exception ex)
             {
+                Debug.WriteLine($"[ERROR] Filter failed: {ex.Message}");
                 await Application.Current.MainPage.DisplayAlert("Error", $"Filter failed: {ex.Message}", "OK");
             }
             finally
@@ -160,6 +226,9 @@ namespace EnvironmentManager.ViewModels
                 IsBusy = false;
             }
         }
+
+
+
 
         private async Task ApplySortAsync()
         {

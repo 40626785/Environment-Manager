@@ -1,0 +1,56 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvironmentManager.Views.EditArchiveAirQualityPage"
+             Title="Edit Record">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="15">
+
+            <Label Text="Edit Air Quality Record"
+                   FontSize="18"
+                   HorizontalOptions="Center"/>
+            <!-- ID -->
+            <Label Text="Record ID:"
+                    FontAttributes="Bold"/>
+            <Label Text="{Binding EditableRecord.Id}"
+                    TextColor="Gray"/>
+
+
+            <!-- Date -->
+            <Label Text="Date:"/>
+            <DatePicker Date="{Binding EditableRecord.Date}"/>
+
+            <!-- Time -->
+            <Label Text="Time:"/>
+            <TimePicker Time="{Binding EditableRecord.Time}"/>
+
+            <!-- Nitrogen Dioxide -->
+            <Label Text="Nitrogen Dioxide (ppm):"/>
+            <Entry Keyboard="Numeric"
+                   Text="{Binding EditableRecord.Nitrogen_dioxide}"/>
+
+            <!-- Sulphur Dioxide -->
+            <Label Text="Sulphur Dioxide (ppm):"/>
+            <Entry Keyboard="Numeric"
+                   Text="{Binding EditableRecord.Sulphur_dioxide}"/>
+
+            <!-- PM2.5 -->
+            <Label Text="PM2.5 (µg/m³):"/>
+            <Entry Keyboard="Numeric"
+                   Text="{Binding EditableRecord.PM2_5_particulate_matter}"/>
+
+            <!-- PM10 -->
+            <Label Text="PM10 (µg/m³):"/>
+            <Entry Keyboard="Numeric"
+                   Text="{Binding EditableRecord.PM10_particulate_matter}"/>
+
+            <!-- Save Button -->
+            <Button Text="Save Changes"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="Green"
+                    TextColor="White"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

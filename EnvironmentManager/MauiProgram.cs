@@ -194,6 +194,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<ErrorTableAdminViewModel>();
 		builder.Services.AddSingleton<AirQualityAdminViewModel>();
 		builder.Services.AddTransient<ArchiveAirQualityViewModel>();
+		builder.Services.AddTransient<EditArchiveAirQualityViewModel>();
 
 	}
 
@@ -209,5 +210,6 @@ public static class MauiProgram
 		builder.Services.AddTransient<DatabaseAdminPage>();
 		builder.Services.AddTransient<AirQualityPage>();
 		builder.Services.AddTransient<ArchiveAirQualityPage>();
+		builder.Services.AddTransient<EditArchiveAirQualityPage>();
 	}
 }
