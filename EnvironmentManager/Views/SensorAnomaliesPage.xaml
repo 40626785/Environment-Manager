@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:EnvironmentManager.ViewModels"
+             xmlns:models="clr-namespace:EnvironmentManager.Models"
+             x:Class="EnvironmentManager.Views.SensorAnomaliesPage"
+             x:DataType="viewModels:SensorAnomaliesViewModel"
+             Title="Sensor Alerts"
+             BackgroundColor="White">
+
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="20" Spacing="12">
+            <Label Text="{Binding SensorName}" FontSize="20" FontAttributes="Bold" />
+
+            <CollectionView ItemsSource="{Binding SensorAnomalies}" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:SensorAnomaly">
+                        <Frame Padding="10" BorderColor="#E5E7EB" CornerRadius="8">
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="{Binding AnomalyType}" FontSize="16" FontAttributes="Bold" TextColor="#DC2626" />
+                                <Label Text="{Binding Details}" FontSize="13" TextColor="#6B7280" />
+                                <Label Text="{Binding DetectedAt, StringFormat='Detected: {0:MMM dd, yyyy HH:mm}'}" FontSize="12" TextColor="#6B7280" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+                <CollectionView.EmptyView>
+                    <Label Text="No anomalies found for this sensor." 
+                           FontSize="16"
+                           TextColor="#6B7280"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

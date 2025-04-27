@@ -1,17 +1,19 @@
-﻿using EnvironmentManager.Views; // Add this using statement
+using EnvironmentManager.Views; // Add this using statement
 using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager;
 
-public partial class AppShell : Shell {
-  private IServiceProvider _serviceProvider;
-	public AppShell(IServiceProvider serviceProvider)
-	{
-		_serviceProvider = serviceProvider;
+public partial class AppShell : Shell
+{
+    private IServiceProvider _serviceProvider;
+
+    public AppShell(IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
         InitializeComponent();
         RoleBasedNavigation();
 
-        // Register routes for navigation
+        // Register routes for navigation (combined from both versions)
         Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
         Routing.RegisterRoute(nameof(AllMaintenancePage), typeof(AllMaintenancePage));
         Routing.RegisterRoute(nameof(SensorPage), typeof(SensorPage));
@@ -23,7 +25,10 @@ public partial class AppShell : Shell {
         Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
         Routing.RegisterRoute(nameof(ThresholdMapPage), typeof(ThresholdMapPage));
         Routing.RegisterRoute(nameof(UserManagementPage), typeof(UserManagementPage));
-	}
+        Routing.RegisterRoute(nameof(AnomalyPage), typeof(AnomalyPage));
+        Routing.RegisterRoute(nameof(SensorAnomaliesPage), typeof(SensorAnomaliesPage));
+        Routing.RegisterRoute(nameof(FirmwareUpdatePage), typeof(FirmwareUpdatePage));
+    }
 
     /// <summary>
     /// Conditionally creates tabs to access protected views based on roles
@@ -31,13 +36,13 @@ public partial class AppShell : Shell {
     private void RoleBasedNavigation()
     {
         TabBar tabBar = ShellTabBar;
-        string role = Preferences.Get("role","");
+        string role = Preferences.Get("role", "");
         string roleValue = Preferences.Get("roleValue", "");
-        
-        // If role is empty but roleValue is not, use roleValue to determine the role name
+
+        // Ensure roleValue fallback logic is preserved
         if (string.IsNullOrEmpty(role) && !string.IsNullOrEmpty(roleValue))
         {
-            switch(roleValue)
+            switch (roleValue)
             {
                 case "0":
                     role = "Administrator";
@@ -50,14 +55,11 @@ public partial class AppShell : Shell {
                     break;
             }
         }
-        
-        switch(role){
+
+        switch (role)
+        {
             case "OperationsManager":
-                // Add Maintenance tab
-                var maintenance = new Tab
-                {
-                    Title = "MAINTENANCE"
-                };
+                var maintenance = new Tab { Title = "MAINTENANCE" };
                 maintenance.Items.Add(new ShellContent
                 {
                     Title = "MAINTENANCE",
@@ -65,11 +67,7 @@ public partial class AppShell : Shell {
                 });
                 tabBar.Items.Add(maintenance);
 
-                // Add Monitor tab
-                var monitor = new Tab
-                {
-                    Title = "MONITOR"
-                };
+                var monitor = new Tab { Title = "MONITOR" };
                 monitor.Items.Add(new ShellContent
                 {
                     Title = "MONITOR",
@@ -77,47 +75,43 @@ public partial class AppShell : Shell {
                 });
                 tabBar.Items.Add(monitor);
                 break;
-                
+
             case "EnvironmentalScientist":
-                var sensors = new Tab
-                {
-                    Title = "SENSORS"
-                };
-                var threshold = new Tab
-                {
-                    Title = "THRESHOLD"
-                };
+                var sensors = new Tab { Title = "SENSORS" };
                 sensors.Items.Add(new ShellContent
                 {
                     Title = "SENSORS",
                     Content = _serviceProvider.GetRequiredService<SensorPage>()
                 });
+                tabBar.Items.Add(sensors);
+
+                var threshold = new Tab { Title = "THRESHOLD" };
                 threshold.Items.Add(new ShellContent
                 {
                     Title = "THRESHOLD",
                     Content = _serviceProvider.GetRequiredService<ThresholdMapPage>()
                 });
-                tabBar.Items.Add(sensors);
                 tabBar.Items.Add(threshold);
-                break;
-                
-            case "Administrator":
-                // Administrators get access to monitoring and maintenance
-                var adminMaintenance = new Tab
+
+                var alerts = new Tab { Title = "ALERTS" };
+                alerts.Items.Add(new ShellContent
                 {
-                    Title = "MAINTENANCE"
-                };
+                    Title = "ALERTS",
+                    Content = _serviceProvider.GetRequiredService<AnomalyPage>()
+                });
+                tabBar.Items.Add(alerts);
+                break;
+
+            case "Administrator":
+                var adminMaintenance = new Tab { Title = "MAINTENANCE" };
                 adminMaintenance.Items.Add(new ShellContent
                 {
                     Title = "MAINTENANCE",
                     Content = _serviceProvider.GetRequiredService<AllMaintenancePage>()
                 });
                 tabBar.Items.Add(adminMaintenance);
-                
-                var adminMonitor = new Tab
-                {
-                    Title = "MONITOR"
-                };
+
+                var adminMonitor = new Tab { Title = "MONITOR" };
                 adminMonitor.Items.Add(new ShellContent
                 {
                     Title = "MONITOR",
@@ -125,14 +119,10 @@ public partial class AppShell : Shell {
                 });
                 tabBar.Items.Add(adminMonitor);
 
-                // Add Users tab ONLY for administrators
-                var users = new Tab
-                {
-                    Title = "USERS" 
-                };
+                var users = new Tab { Title = "USERS" };
                 users.Items.Add(new ShellContent
                 {
-                    Title = "USERS", 
+                    Title = "USERS",
                     Content = _serviceProvider.GetRequiredService<UserManagementPage>()
                 });
                 tabBar.Items.Add(users);

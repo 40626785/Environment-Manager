@@ -2,8 +2,14 @@ using EnvironmentManager.ViewModels;
 
 namespace EnvironmentManager.Views;
 
+/// <summary>
+/// Represents the page for displaying and managing sensors.
+/// </summary>
 public partial class SensorPage : ContentPage
 {
+    /// <summary>
+    /// Represents the page for displaying and managing sensors.
+    /// </summary>
     public SensorPage(SensorViewModel viewModel)
     {
         InitializeComponent();
