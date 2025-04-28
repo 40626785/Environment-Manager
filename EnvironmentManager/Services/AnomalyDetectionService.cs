@@ -28,7 +28,7 @@ namespace EnvironmentManager.Services
 
             foreach (var sensor in sensors)
             {
-                if (sensor.BatteryLevelPercentage.HasValue && sensor.BatteryLevelPercentage < 20)
+                if (sensor.BatteryLevelPercentage.HasValue && sensor.BatteryLevelPercentage < 30)
                 {
                     anomalies.Add(new SensorAnomaly
                     {
