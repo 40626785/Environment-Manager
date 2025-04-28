@@ -55,60 +55,6 @@ public partial class UserManagementViewModel : BaseViewModel, IErrorHandling
     public ICommand UserSelectedCommand { get; }
     
     /// <summary>
-    /// Gets or sets the error message to display on the UI.
-    /// </summary>
-    public string DisplayError
-    {
-        get => _displayError;
-        set => SetProperty(ref _displayError, value);
-    }
-    
-    /// <summary>
-    /// Gets or sets the currently selected user in the list.
-    /// Updates the IsUserSelected flag.
-    /// </summary>
-    public User SelectedUser
-    {
-        get => _selectedUser;
-        set
-        {
-            if (SetProperty(ref _selectedUser, value))
-            {
-                IsUserSelected = _selectedUser != null;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Gets or sets the search query entered by the user.
-    /// </summary>
-    public string SearchQuery
-    {
-        get => _searchQuery;
-        set => SetProperty(ref _searchQuery, value);
-    }
-    
-    /// <summary>
-    /// Gets or sets a value indicating whether a user is currently selected.
-    /// Used to enable/disable edit/delete buttons.
-    /// </summary>
-    public bool IsUserSelected
-    {
-        get => _isUserSelected;
-        private set => SetProperty(ref _isUserSelected, value);
-    }
-    
-    /// <summary>
-    /// Gets or sets a value indicating whether the current logged-in user is an administrator.
-    /// Used to enable/disable add/edit/delete functionality.
-    /// </summary>
-    public bool IsAdministrator
-    {
-        get => _isAdministrator;
-        private set => SetProperty(ref _isAdministrator, value);
-    }
-    
-    /// <summary>
     /// Initializes a new instance of the <see cref="UserManagementViewModel"/> class.
     /// </summary>
     /// <param name="userStore">Data store for user management operations.</param>
