@@ -1,6 +1,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -14,26 +15,23 @@ namespace EnvironmentManager.ViewModels
 {
     public class ArchiveAirQualityViewModel : BaseViewModel
     {
-        private readonly ArchiveAirQualityDbContext _dbContext;
+        private readonly IDbContextFactory<ArchiveAirQualityDbContext> _dbContextFactory;
+        private readonly DatabaseLoggingService _logger;
 
         public ObservableCollection<ArchiveAirQuality> TableData { get; set; } = new();
         public ICommand RowTappedCommand { get; }
-
-        #region Sorting Properties
-
         public ICommand ExportToCsvCommand { get; }
+        public ICommand ApplySortCommand { get; }
+        public ICommand ApplyFiltersCommand { get; }
+        public ICommand ToggleFilterVisibilityCommand { get; }
+        public ICommand LoadDataCommand { get; }
+        public ICommand DeleteFilteredCommand { get; }
 
+        public List<string> SortOptions { get; } = new() { "ID", "Date", "Nitrogen_dioxide", "PM2_5_particulate_matter" };
+        public List<string> SortDirections { get; } = new() { "Ascending", "Descending" };
 
-        public List<string> SortOptions { get; } = new()
-        {
-            "ID",
-            "Date",
-            "Nitrogen_dioxide",
-            "PM2_5_particulate_matter"
-        };
         public string StartIdText { get; set; }
         public string EndIdText { get; set; }
-
 
         private string selectedSortOption = "Nitrogen_dioxide";
         public string SelectedSortOption
@@ -42,20 +40,12 @@ namespace EnvironmentManager.ViewModels
             set => SetProperty(ref selectedSortOption, value);
         }
 
-        public List<string> SortDirections { get; } = new() { "Ascending", "Descending" };
-
         private string selectedSortDirection = "Descending";
         public string SelectedSortDirection
         {
             get => selectedSortDirection;
             set => SetProperty(ref selectedSortDirection, value);
         }
-
-        public ICommand ApplySortCommand { get; }
-
-        #endregion
-
-        #region Date Filtering Properties
 
         private DateTime startDate = DateTime.Now.AddDays(-7);
         public DateTime StartDate
@@ -71,12 +61,6 @@ namespace EnvironmentManager.ViewModels
             set => SetProperty(ref endDate, value);
         }
 
-        public ICommand ApplyFiltersCommand { get; }
-
-        #endregion
-
-        #region Toggle Filter Visibility
-
         private bool isFilterVisible = false;
         public bool IsFilterVisible
         {
@@ -90,16 +74,17 @@ namespace EnvironmentManager.ViewModels
 
         public string ToggleFilterText => IsFilterVisible ? "Hide Filters ▲" : "Show Filters & Export Options ▼";
 
-        public ICommand ToggleFilterVisibilityCommand { get; }
-
-        #endregion
-
-        public ICommand LoadDataCommand { get; }
-        public ICommand DeleteFilteredCommand { get; }
-
-        public ArchiveAirQualityViewModel(ArchiveAirQualityDbContext dbContext)
+        private bool isDateFilterEnabled = false;
+        public bool IsDateFilterEnabled
         {
-            _dbContext = dbContext;
+            get => isDateFilterEnabled;
+            set => SetProperty(ref isDateFilterEnabled, value);
+        }
+
+        public ArchiveAirQualityViewModel(IDbContextFactory<ArchiveAirQualityDbContext> dbContextFactory, DatabaseLoggingService logger)
+        {
+            _dbContextFactory = dbContextFactory;
+            _logger = logger;
 
             LoadDataCommand = new Command(async () => await LoadDataAsync());
             ApplyFiltersCommand = new Command(async () => await ApplyFiltersAsync());
@@ -112,14 +97,6 @@ namespace EnvironmentManager.ViewModels
             Task.Run(async () => await LoadDataAsync());
         }
 
-        #region Methods
-        private bool isDateFilterEnabled = false;   // Default ON
-        public bool IsDateFilterEnabled
-        {
-            get => isDateFilterEnabled;
-            set => SetProperty(ref isDateFilterEnabled, value);
-        }
-
         private async Task LoadDataAsync()
         {
             if (IsBusy) return;
@@ -129,10 +106,8 @@ namespace EnvironmentManager.ViewModels
                 IsBusy = true;
                 TableData.Clear();
 
-                var data = await _dbContext.ArchiveAirQuality
-                                            .OrderByDescending(a => a.Date)
-                                            .Take(100)
-                                            .ToListAsync();
+                using var context = _dbContextFactory.CreateDbContext();
+                var data = await context.ArchiveAirQuality.OrderByDescending(a => a.Date).Take(100).ToListAsync();
 
                 foreach (var item in data)
                     TableData.Add(item);
@@ -140,25 +115,13 @@ namespace EnvironmentManager.ViewModels
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", $"Failed to load data: {ex.Message}", "OK");
+                await _logger.LogErrorAsync($"LoadDataAsync Error: {ex.Message}");
             }
             finally
             {
                 IsBusy = false;
             }
         }
-        private async Task OnRowTapped(ArchiveAirQuality record)
-        {
-            if (record == null) return;
-
-            Debug.WriteLine($"Tapped Record ID: {record.Id}");
-
-            // Store the record in the shared service
-            NavigationDataStore.SelectedRecord = record;
-
-            // Navigate without passing parameters
-            await Shell.Current.GoToAsync(nameof(EditArchiveAirQualityPage));
-        }
-
 
         private async Task ApplyFiltersAsync()
         {
@@ -169,46 +132,34 @@ namespace EnvironmentManager.ViewModels
                 IsBusy = true;
                 TableData.Clear();
 
-                IQueryable<ArchiveAirQuality> query = _dbContext.ArchiveAirQuality;
+                using var context = _dbContextFactory.CreateDbContext();
+                IQueryable<ArchiveAirQuality> query = context.ArchiveAirQuality;
 
-                Debug.WriteLine($"[DEBUG] Applying Date Filter: {StartDate:yyyy-MM-dd} to {EndDate:yyyy-MM-dd}");
-
-                // Apply Date Range Filter
                 if (IsDateFilterEnabled)
                 {
-                    Debug.WriteLine($"[DEBUG] Applying Date Filter: {StartDate:yyyy-MM-dd} to {EndDate:yyyy-MM-dd}");
+                    if (StartDate > EndDate)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Invalid Date Range", "Start Date cannot be after End Date.", "OK");
+                        return;
+                    }
                     query = query.Where(a => a.Date >= StartDate && a.Date <= EndDate);
                 }
-                else
+
+                bool hasStartId = int.TryParse(StartIdText, out int startId);
+                bool hasEndId = int.TryParse(EndIdText, out int endId);
+
+                if (!string.IsNullOrWhiteSpace(StartIdText) || !string.IsNullOrWhiteSpace(EndIdText))
                 {
-                    Debug.WriteLine("[DEBUG] Skipping Date Filter.");
-                }
+                    if (!hasStartId || !hasEndId || startId > endId)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Invalid IDs", "Check Start ID and End ID inputs.", "OK");
+                        return;
+                    }
 
-
-                // Parse ID inputs
-                bool hasStartId = int.TryParse(StartIdText, out var startId);
-                bool hasEndId = int.TryParse(EndIdText, out var endId);
-
-                Debug.WriteLine($"[DEBUG] StartId Parsed: {hasStartId} ({startId}), EndId Parsed: {hasEndId} ({endId})");
-
-                if (hasStartId && hasEndId)
-                {
-                    Debug.WriteLine($"[DEBUG] Applying ID Filter: {startId} to {endId}");
                     query = query.Where(a => a.Id >= startId && a.Id <= endId);
                 }
-                else
-                {
-                    Debug.WriteLine("[DEBUG] Skipping ID filter due to invalid input.");
-                }
 
-                // Check how many records match before limiting
-                var totalMatches = await query.CountAsync();
-                Debug.WriteLine($"[DEBUG] Total records matching filters: {totalMatches}");
-
-                query = query.OrderByDescending(a => a.Date);
-
-                var data = await query.Take(100).ToListAsync();
-                Debug.WriteLine($"[DEBUG] Records loaded after Take(100): {data.Count}");
+                var data = await query.OrderByDescending(a => a.Date).Take(100).ToListAsync();
 
                 foreach (var item in data)
                     TableData.Add(item);
@@ -218,17 +169,14 @@ namespace EnvironmentManager.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"[ERROR] Filter failed: {ex.Message}");
                 await Application.Current.MainPage.DisplayAlert("Error", $"Filter failed: {ex.Message}", "OK");
+                await _logger.LogErrorAsync($"ApplyFiltersAsync Error: {ex.Message}");
             }
             finally
             {
                 IsBusy = false;
             }
         }
-
-
-
 
         private async Task ApplySortAsync()
         {
@@ -239,24 +187,17 @@ namespace EnvironmentManager.ViewModels
                 IsBusy = true;
                 TableData.Clear();
 
-                IQueryable<ArchiveAirQuality> query = _dbContext.ArchiveAirQuality;
+                using var context = _dbContextFactory.CreateDbContext();
+                IQueryable<ArchiveAirQuality> query = context.ArchiveAirQuality;
 
                 bool isAscending = SelectedSortDirection == "Ascending";
 
                 query = SelectedSortOption switch
                 {
-                    "Nitrogen_dioxide" => isAscending
-                        ? query.OrderBy(a => a.Nitrogen_dioxide)
-                        : query.OrderByDescending(a => a.Nitrogen_dioxide),
-
-                    "PM2_5_particulate_matter" => isAscending
-                        ? query.OrderBy(a => a.PM2_5_particulate_matter)
-                        : query.OrderByDescending(a => a.PM2_5_particulate_matter),
-
-                    "Date" => isAscending
-                        ? query.OrderBy(a => a.Date)
-                        : query.OrderByDescending(a => a.Date),
-
+                    "Nitrogen_dioxide" => isAscending ? query.OrderBy(a => a.Nitrogen_dioxide) : query.OrderByDescending(a => a.Nitrogen_dioxide),
+                    "PM2_5_particulate_matter" => isAscending ? query.OrderBy(a => a.PM2_5_particulate_matter) : query.OrderByDescending(a => a.PM2_5_particulate_matter),
+                    "Date" => isAscending ? query.OrderBy(a => a.Date) : query.OrderByDescending(a => a.Date),
+                    "ID" => isAscending ? query.OrderBy(a => a.Id) : query.OrderByDescending(a => a.Id),
                     _ => query
                 };
 
@@ -268,6 +209,7 @@ namespace EnvironmentManager.ViewModels
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", $"Sort failed: {ex.Message}", "OK");
+                await _logger.LogErrorAsync($"ApplySortAsync Error: {ex.Message}");
             }
             finally
             {
@@ -275,7 +217,6 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
-        //export to CSV
         private async Task ExportToCsvAsync()
         {
             if (IsBusy) return;
@@ -290,26 +231,16 @@ namespace EnvironmentManager.ViewModels
                     return;
                 }
 
-                var csvLines = new List<string>();
+                var csvLines = new List<string>
+                {
+                    "Id,Date,Time,Nitrogen_dioxide,Sulphur_dioxide,PM2_5_particulate_matter,PM10_particulate_matter"
+                };
 
-                // Header
-                csvLines.Add("Id,Date,Time,Nitrogen_dioxide,Sulphur_dioxide,PM2_5_particulate_matter,PM10_particulate_matter");
-
-                // Data rows
                 foreach (var item in TableData)
                 {
-                    var line = $"{item.Id}," +
-                               $"{item.Date:yyyy-MM-dd}," +
-                               $"{item.Time}," +
-                               $"{item.Nitrogen_dioxide}," +
-                               $"{item.Sulphur_dioxide}," +
-                               $"{item.PM2_5_particulate_matter}," +
-                               $"{item.PM10_particulate_matter}";
-
-                    csvLines.Add(line);
+                    csvLines.Add($"{item.Id},{item.Date:yyyy-MM-dd},{item.Time},{item.Nitrogen_dioxide},{item.Sulphur_dioxide},{item.PM2_5_particulate_matter},{item.PM10_particulate_matter}");
                 }
 
-                // File path (adjust for platform if needed)
                 var fileName = $"ArchiveAirQuality_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
                 var filePath = Path.Combine(FileSystem.Current.AppDataDirectory, fileName);
 
@@ -320,6 +251,7 @@ namespace EnvironmentManager.ViewModels
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", $"Export failed: {ex.Message}", "OK");
+                await _logger.LogErrorAsync($"ExportToCsvAsync Error: {ex.Message}");
             }
             finally
             {
@@ -341,26 +273,22 @@ namespace EnvironmentManager.ViewModels
                     return;
                 }
 
-                //  Confirmation Dialog
                 bool confirm = await Application.Current.MainPage.DisplayAlert(
                     "Confirm Deletion",
-                    $"You are about to delete {TableData.Count} records.\n\nThis action cannot be undone.\n\nAre you sure?",
-                    "Yes, Delete",
-                    "Cancel");
+                    $"You are about to delete {TableData.Count} records. This action cannot be undone.",
+                    "Yes", "Cancel");
 
-                if (!confirm)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Cancelled", "No records were deleted.", "OK");
-                    return;
-                }
+                if (!confirm) return;
 
-                // Proceed with deletion
-                _dbContext.ArchiveAirQuality.RemoveRange(TableData);
-                await _dbContext.SaveChangesAsync();
+                using var context = _dbContextFactory.CreateDbContext();
+
+                context.ArchiveAirQuality.RemoveRange(TableData);
+                await context.SaveChangesAsync();
 
                 await Application.Current.MainPage.DisplayAlert("Success", $"{TableData.Count} records deleted.", "OK");
 
-                await LoadDataAsync();
+                // Reload with fresh context
+                await ReloadDataWithNewContextAsync();
             }
             catch (Exception ex)
             {
@@ -372,8 +300,35 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
-        #endregion
+        private async Task ReloadDataWithNewContextAsync()
+        {
+            try
+            {
+                TableData.Clear();
+
+                using var context = _dbContextFactory.CreateDbContext();
+
+                var data = await context.ArchiveAirQuality
+                                        .OrderByDescending(a => a.Date)
+                                        .Take(100)
+                                        .ToListAsync();
+
+                foreach (var item in data)
+                    TableData.Add(item);
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", $"Reload failed: {ex.Message}", "OK");
+            }
+        }
+
+
+        private async Task OnRowTapped(ArchiveAirQuality record)
+        {
+            if (record == null) return;
+
+            NavigationDataStore.SelectedRecord = record;
+            await Shell.Current.GoToAsync(nameof(EditArchiveAirQualityPage));
+        }
     }
-
-
 }

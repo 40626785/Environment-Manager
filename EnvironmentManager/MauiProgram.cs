@@ -132,20 +132,14 @@ public static class MauiProgram
 				throw;
 			}
 		});
-		//configure air db
-		builder.Services.AddDbContext<ArchiveAirQualityDbContext>(options =>
+
+		//air DB
+		builder.Services.AddDbContextFactory<ArchiveAirQualityDbContext>(options =>
 		{
-			try
-			{
-				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
-				options.UseSqlServer(connectionString);
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine($"Error configuring Archive Air database context: {ex.Message}");
-				throw;
-			}
+			var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+			options.UseSqlServer(connectionString);
 		});
+
 
 		// Configure SensorDbContext
 		builder.Services.AddDbContext<SensorDbContext>(options =>
@@ -175,6 +169,7 @@ public static class MauiProgram
 		builder.Services.AddScoped<IDatabaseInitializationService, DatabaseInitializationService>();
 
 		// Add other services here
+		builder.Services.AddScoped<DatabaseLoggingService>();
 
 		builder.Services.AddSingleton<TableMetadataService>();
 

@@ -8,45 +8,72 @@ namespace EnvironmentManager.ViewModels
 {
     public class EditArchiveAirQualityViewModel : BaseViewModel
     {
-        private readonly ArchiveAirQualityDbContext _dbContext;
+        private readonly IDbContextFactory<ArchiveAirQualityDbContext> _dbContextFactory;
 
+        // Record bound to the UI
         public ArchiveAirQuality EditableRecord { get; set; }
 
         public ICommand SaveCommand { get; }
 
-        public EditArchiveAirQualityViewModel(ArchiveAirQualityDbContext dbContext)
+        public EditArchiveAirQualityViewModel(IDbContextFactory<ArchiveAirQualityDbContext> dbContextFactory)
         {
-            _dbContext = dbContext;
+            _dbContextFactory = dbContextFactory;
             SaveCommand = new Command(async () => await SaveAsync());
 
-            // Load the record from the shared service
+            // Load record from shared service
             EditableRecord = Services.NavigationDataStore.SelectedRecord;
         }
 
         private async Task SaveAsync()
         {
-            if (IsBusy) return;
+            if (!await ValidateRecordAsync(EditableRecord))
+                return;
 
             try
             {
-                IsBusy = true;
+                using var context = _dbContextFactory.CreateDbContext();
 
-                _dbContext.ArchiveAirQuality.Update(EditableRecord);
-                await _dbContext.SaveChangesAsync();
+                context.ArchiveAirQuality.Update(EditableRecord);
+                await context.SaveChangesAsync();
 
-                await Application.Current.MainPage.DisplayAlert("Success", "Record updated.", "OK");
-
-                await Shell.Current.GoToAsync("..");
+                await Application.Current.MainPage.DisplayAlert("Success", "Record updated successfully.", "OK");
+                await Shell.Current.GoToAsync("..");  // Navigate back
             }
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", $"Failed to save: {ex.Message}", "OK");
-            }
-            finally
-            {
-                IsBusy = false;
+                // Optionally log error here
             }
         }
-    }
 
+        private async Task<bool> ValidateRecordAsync(ArchiveAirQuality record)
+        {
+            if (record == null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Validation Error", "No record loaded.", "OK");
+                return false;
+            }
+
+            if (record.Nitrogen_dioxide < 0 || record.Sulphur_dioxide < 0 ||
+                record.PM2_5_particulate_matter < 0 || record.PM10_particulate_matter < 0)
+            {
+                await Application.Current.MainPage.DisplayAlert("Validation Error", "Pollutant values cannot be negative.", "OK");
+                return false;
+            }
+
+            if (record.Date == null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Validation Error", "Date is required.", "OK");
+                return false;
+            }
+
+            if (record.Time == null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Validation Error", "Time is required.", "OK");
+                return false;
+            }
+
+            return true;
+        }
+    }
 }
