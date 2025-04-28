@@ -1,0 +1,23 @@
+classDiagram
+    class FirmwareUpdateViewModel {
+        +ObservableCollection~SelectableSensor~ SelectedSensors
+        +string FirmwareVersion
+        +AsyncRelayCommand ApplyUpdateCommand
+        +HandleError(Exception ex, string message)
+        +ApplyUpdateAsync()
+    }
+
+    class SelectableSensor {
+        +Sensor Sensor
+        +bool IsSelected
+    }
+
+    class Sensor {
+        +int SensorId
+        +string Name
+        +string Location
+        +string FirmwareVersion
+    }
+
+    FirmwareUpdateViewModel --> SelectableSensor : uses
+    SelectableSensor --> Sensor : wraps

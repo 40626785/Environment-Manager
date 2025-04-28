@@ -1,0 +1,8 @@
+classDiagram
+    class TrendsViewModel {
+        +double AverageTemperature
+        +bool IsLoading
+        +AsyncRelayCommand LoadTrendsCommand
+        +HandleError(Exception ex, string message)
+        +LoadTrendsAsync()
+    }

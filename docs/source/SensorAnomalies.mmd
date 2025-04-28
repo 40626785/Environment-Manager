@@ -1,0 +1,28 @@
+classDiagram
+    class Sensor {
+        int SensorId
+        string SensorName
+        float? BatteryLevelPercentage
+        string ConnectivityStatus
+        bool IsActive
+    }
+
+    class SensorAnomaly {
+        int AnomalyId
+        int SensorId
+        string SensorName
+        string AnomalyType
+        string Details
+        DateTime Timestamp
+    }
+
+    class IAnomalyDetectionService {
+        +List~SensorAnomaly~ DetectAnomalies(List~Sensor~ sensors)
+    }
+
+    class AnomalyDetectionService {
+        +List~SensorAnomaly~ DetectAnomalies(List~Sensor~ sensors)
+    }
+
+    Sensor --o SensorAnomaly : triggers
+    IAnomalyDetectionService <|-- AnomalyDetectionService
