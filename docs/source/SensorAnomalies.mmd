@@ -1,28 +1,41 @@
 classDiagram
     class Sensor {
-        int SensorId
-        string SensorName
-        float? BatteryLevelPercentage
-        string ConnectivityStatus
-        bool IsActive
+      +int SensorId
+      +string SensorName
+      +float? BatteryLevelPercentage
+      +string ConnectivityStatus
+      +bool IsActive
     }
-
     class SensorAnomaly {
-        int AnomalyId
-        int SensorId
-        string SensorName
-        string AnomalyType
-        string Details
-        DateTime Timestamp
+      +int SensorId
+      +string SensorName
+      +string AnomalyType
+      +string Details
+      +DateTime DetectedAt
     }
-
     class IAnomalyDetectionService {
-        +List~SensorAnomaly~ DetectAnomalies(List~Sensor~ sensors)
+      +List~SensorAnomaly~ DetectAnomalies()
     }
-
     class AnomalyDetectionService {
-        +List~SensorAnomaly~ DetectAnomalies(List~Sensor~ sensors)
+      +List~SensorAnomaly~ DetectAnomalies()
     }
-
-    Sensor --o SensorAnomaly : triggers
+    class SensorAnomaliesViewModel {
+      +ObservableCollection~SensorAnomaly~ SensorAnomalies
+      +string SensorName
+      +string ConnectivityStatus
+      +string DisplayError
+      +Task LoadSensorAnomaliesAsync()
+      +HandleError(Exception, string)
+    }
+    class AnomalyDetectionViewModel {
+      +ObservableCollection~SensorAnomaly~ Anomalies
+      +string DisplayError
+      +IAsyncRelayCommand RefreshCommand
+      +Task LoadAnomaliesAsync()
+      +HandleError(Exception, string)
+    }
+    Sensor "1" o-- "*" SensorAnomaly : triggers
     IAnomalyDetectionService <|-- AnomalyDetectionService
+    SensorAnomaliesViewModel "1" o-- "*" SensorAnomaly
+    AnomalyDetectionViewModel "1" o-- "*" SensorAnomaly
+    SensorAnomaliesViewModel ..> IAnomalyDetectionService : uses
