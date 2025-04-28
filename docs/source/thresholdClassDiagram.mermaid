@@ -1,0 +1,115 @@
+---
+config:
+  layout: elk
+---
+classDiagram
+    namespace EnvironmentManager.Data {
+        class SensorDbContext {
+            <<class>>
+            +DbSet~Sensor~ Sensors
+        }
+        class SensorDataStore {
+            <<class>>
+            -SensorDbContext _context
+            +List~Sensor~ RetrieveAll()
+        }
+    }
+    namespace EnvironmentManager.Models {
+        class Sensor {
+            <<class>>
+            +int SensorId
+            +int LocationId
+            +Location Location
+            +string SensorName
+            +string Model
+            +string Manufacturer
+            +string SensorType
+            +DateTime InstallationDate
+            +bool IsActive
+            +string FirmwareVersion
+            +string DataSource
+            +string SensorUrl
+            +string ConnectivityStatus
+            +float BatteryLevelPercentage
+        }
+        class SensorThresholdBreach {
+            <<class>>
+            +Sensor BreachingSensor
+            +Coordinate SensorCoordinates
+            +List~IThresholdRules~Sensor~~ BreachedRules
+        }
+    }
+    SensorDbContext --> Sensor : retrieves from database
+    SensorDataStore ..|> ISensorDataStore : implements
+    SensorDataStore --> SensorDbContext : abstracts
+    SensorThresholdBreach --> IThresholdRule~T~ : stores
+    namespace EnvironmentManager.Interfaces{
+        class ISensorDataStore {
+            <<interface>>
+            +List~Sensor~ RetrieveAll()
+        }
+        class ISensorThresholdService {
+            <<interface>>
+            +List~SensorThresholdBreach~ ReturnBreached(List~Sensor~ sensorList)
+        }
+        class ISensorThresholdService {
+            <<interface>>
+            +List~SensorThresholdBreach~ ReturnBreached(List~Sensor~ sensorList)
+        }
+        class IThresholdRule~T~ {
+            <<interface>>
+            +bool IsBreachedBy(T candidate)
+            +string ThresholdDetail()
+        }
+    }
+    
+    namespace EnvironmentManager.Services {
+        class SensorThresholdService {
+            <<class>>
+            -IEnumerable~IThresholdRules~Sensor~~ _thresholdRules
+            +List~SensorThresholdBreach~ ReturnBreached(List~Sensor~ sensors)
+        }
+    }
+    SensorThresholdService ..|> ISensorThresholdService : implements
+    SensorThresholdService --> Sensor : processes
+    SensorThresholdService --> IThresholdRule~T~ : applies
+    SensorThresholdService --> SensorThresholdBreach : creates
+    namespace EnvironmentManager.Rules{
+        class ActiveOnlineThreshold {
+            <<class>>
+            +bool IsBreachedBy(Sensor sensor)
+            +string ThresholdDetail()
+        }
+
+        class BatteryPercentageThreshold {
+            <<class>>
+            -int _threshold
+            +bool IsBreachedBy(Sensor sensor)
+            +string ThresholdDetail()
+        }
+    }
+    ActiveOnlineThreshold ..|> IThresholdRule~T~ : implements
+    BatteryPercentageThreshold ..|> IThresholdRule~T~ : implements
+    namespace EnvironmentManager.ViewModels {
+        class ThresholdMapViewModel {
+            -ISensorDataStore _context
+            -ISensorThresholdService _sensorThresholdService
+            +List~MapPinViewModel~ GetSensorBreachPins()
+            -string ConstructBreachLabel(SensorThresholdBreach breach)
+        }
+        class MapPinViewModel {
+            +double Longitude
+            +double Latitude
+            +string Label
+        }
+    }
+    ThresholdMapViewModel --> ISensorDataStore : uses
+    ThresholdMapViewModel --> ISensorThresholdService : uses
+    ThresholdMapViewModel --> MapPinViewModel : creates
+    namespace EnvironmentManager.Views {
+        class ThresholdMapPage {
+           -void AddBreaches(double longitude, double latitude, string label, MapControl mapControl)
+           +void OnAppearing()
+        }
+    }
+    ThresholdMapPage --> MapPinViewModel : displays

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:EnvironmentManager.ViewModels"
+             x:Class="EnvironmentManager.Views.EditUserPage"
+             x:DataType="viewmodel:EditUserViewModel"
+             Title="Edit User">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="20">
+        <VerticalStackLayout Grid.Row="0" Spacing="15">
+            <Label Text="Edit User" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,20" />
+            
+            <!-- User Information Form -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Username" FontAttributes="Bold" />
+                <Entry Text="{Binding Username}" Placeholder="Enter username" IsEnabled="{Binding IsNewUser}" />
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Password" FontAttributes="Bold" />
+                <Entry Text="{Binding Password}" Placeholder="Enter password" IsPassword="True" />
+                <Label Text="Leave blank to keep current password" IsVisible="{Binding IsNewUser, Converter={StaticResource InvertedBoolConverter}}" 
+                       TextColor="Gray" FontSize="12" />
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Role" FontAttributes="Bold" />
+                <Picker ItemsSource="{Binding AvailableRoles}" 
+                        SelectedItem="{Binding SelectedRole}" 
+                        ItemDisplayBinding="{Binding}" />
+            </VerticalStackLayout>
+            
+            <!-- Error Message Display -->
+            <Label Text="{Binding ErrorMessage}" TextColor="Red" IsVisible="{Binding HasError}" />
+        </VerticalStackLayout>
+        
+        <!-- Buttons -->
+        <HorizontalStackLayout Grid.Row="2" HorizontalOptions="End" Spacing="15">
+            <Button Text="Cancel" Command="{Binding CancelCommand}" BackgroundColor="#CFCFCF" TextColor="Black" WidthRequest="100" />
+            <Button Text="Save" Command="{Binding SaveCommand}" BackgroundColor="#4CAF50" TextColor="White" WidthRequest="100" />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage> 

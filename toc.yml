@@ -4,6 +4,10 @@ items:
   homepage: index.md
 - name: Sensor Management
   href: articles/sensors.md
+- name: Sensor Monitoring
+  href: articles/sensor-monitoring.md
+- name: User Management
+  href: articles/user-management.md
 - name: GitHub
   href: https://github.com/40626785/Environment-Manager
   target: _blank

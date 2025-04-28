@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IErrorHandling.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: IErrorHandling
     path: EnvironmentManager/Interfaces/IErrorHandling.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IErrorHandling.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: DisplayError
     path: EnvironmentManager/Interfaces/IErrorHandling.cs
@@ -73,7 +73,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Interfaces/IErrorHandling.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: HandleError
     path: EnvironmentManager/Interfaces/IErrorHandling.cs

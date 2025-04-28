@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWaterQuality.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: ArchiveWaterQuality
     path: EnvironmentManager/Models/ArchiveWaterQuality.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWaterQuality.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Id
     path: EnvironmentManager/Models/ArchiveWaterQuality.cs
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWaterQuality.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Date
     path: EnvironmentManager/Models/ArchiveWaterQuality.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWaterQuality.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Time
     path: EnvironmentManager/Models/ArchiveWaterQuality.cs
@@ -182,7 +182,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWaterQuality.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Nitrate_mg_l_1
     path: EnvironmentManager/Models/ArchiveWaterQuality.cs
@@ -211,7 +211,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWaterQuality.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Nitrite_less_thank_mg_l_1
     path: EnvironmentManager/Models/ArchiveWaterQuality.cs
@@ -240,7 +240,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWaterQuality.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Phosphate_mg_l_1
     path: EnvironmentManager/Models/ArchiveWaterQuality.cs
@@ -269,7 +269,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/ArchiveWaterQuality.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: EC_cfu_100ml
     path: EnvironmentManager/Models/ArchiveWaterQuality.cs

@@ -122,10 +122,29 @@
                     <Label Grid.Row="16" Grid.Column="0" 
                            Text="Connectivity Status:" 
                            VerticalOptions="Center"/>
-                    <Switch Grid.Row="16" Grid.Column="1" 
-                           IsToggled="{Binding IsOnline}"
-                           HorizontalOptions="Start"
-                           VerticalOptions="Center"/>
+                    <StackLayout Grid.Row="16" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center">
+                        <Switch IsToggled="{Binding IsOnline}"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"/>
+                        <Label Text="{Binding IsOnline, StringFormat='{0}'}"
+                               Margin="10,0,0,0"
+                               VerticalOptions="Center">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" 
+                                             Binding="{Binding IsOnline}" 
+                                             Value="True">
+                                    <Setter Property="Text" Value="Online"/>
+                                    <Setter Property="TextColor" Value="Green"/>
+                                </DataTrigger>
+                                <DataTrigger TargetType="Label" 
+                                             Binding="{Binding IsOnline}" 
+                                             Value="False">
+                                    <Setter Property="Text" Value="Offline"/>
+                                    <Setter Property="TextColor" Value="Red"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </StackLayout>
 
                     <Label Grid.Row="17" Grid.Column="0" 
                            Text="Battery Level (%):" 
@@ -177,7 +196,7 @@
                         BackgroundColor="Red"/>
                 <Button Grid.Column="2" 
                         Text="Save" 
-                        Command="{Binding SaveCommand}"
+                        Command="{Binding SaveSensorCommand}"
                         IsEnabled="{Binding SensorName, Converter={StaticResource StringNotNullOrEmptyConverter}}"
                         BackgroundColor="#007AFF"/>
             </Grid>

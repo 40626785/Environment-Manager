@@ -8,12 +8,16 @@ items:
   - EnvironmentManager.Views.AddSensorPage
   - EnvironmentManager.Views.AllMaintenancePage
   - EnvironmentManager.Views.EditSensorPage
+  - EnvironmentManager.Views.EditUserPage
   - EnvironmentManager.Views.HistoricalData
   - EnvironmentManager.Views.HistoricalDataViewerPage
   - EnvironmentManager.Views.HomePage
   - EnvironmentManager.Views.LoginPage
   - EnvironmentManager.Views.MaintenancePage
+  - EnvironmentManager.Views.SensorMonitoringPage
   - EnvironmentManager.Views.SensorPage
+  - EnvironmentManager.Views.ThresholdMapPage
+  - EnvironmentManager.Views.UserManagementPage
   langs:
   - csharp
   - vb
@@ -48,6 +52,12 @@ references:
   name: EditSensorPage
   nameWithType: EditSensorPage
   fullName: EnvironmentManager.Views.EditSensorPage
+- uid: EnvironmentManager.Views.EditUserPage
+  commentId: T:EnvironmentManager.Views.EditUserPage
+  href: EnvironmentManager.Views.EditUserPage.html
+  name: EditUserPage
+  nameWithType: EditUserPage
+  fullName: EnvironmentManager.Views.EditUserPage
 - uid: EnvironmentManager.Views.HistoricalData
   commentId: T:EnvironmentManager.Views.HistoricalData
   href: EnvironmentManager.Views.HistoricalData.html
@@ -78,9 +88,27 @@ references:
   name: MaintenancePage
   nameWithType: MaintenancePage
   fullName: EnvironmentManager.Views.MaintenancePage
+- uid: EnvironmentManager.Views.SensorMonitoringPage
+  commentId: T:EnvironmentManager.Views.SensorMonitoringPage
+  href: EnvironmentManager.Views.SensorMonitoringPage.html
+  name: SensorMonitoringPage
+  nameWithType: SensorMonitoringPage
+  fullName: EnvironmentManager.Views.SensorMonitoringPage
 - uid: EnvironmentManager.Views.SensorPage
   commentId: T:EnvironmentManager.Views.SensorPage
   href: EnvironmentManager.Views.SensorPage.html
   name: SensorPage
   nameWithType: SensorPage
   fullName: EnvironmentManager.Views.SensorPage
+- uid: EnvironmentManager.Views.ThresholdMapPage
+  commentId: T:EnvironmentManager.Views.ThresholdMapPage
+  href: EnvironmentManager.Views.ThresholdMapPage.html
+  name: ThresholdMapPage
+  nameWithType: ThresholdMapPage
+  fullName: EnvironmentManager.Views.ThresholdMapPage
+- uid: EnvironmentManager.Views.UserManagementPage
+  commentId: T:EnvironmentManager.Views.UserManagementPage
+  href: EnvironmentManager.Views.UserManagementPage.html
+  name: UserManagementPage
+  nameWithType: UserManagementPage
+  fullName: EnvironmentManager.Views.UserManagementPage

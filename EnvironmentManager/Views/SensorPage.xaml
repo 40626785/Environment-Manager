@@ -9,12 +9,9 @@
              BackgroundColor="#F3F4F6"
              Title="Sensors">
 
-    <Grid RowDefinitions="Auto,*"
-          Padding="20">
+    <Grid RowDefinitions="Auto,*" Padding="20">
         <!-- Header Section -->
-        <Grid Grid.Row="0"
-              ColumnDefinitions="*,Auto"
-              Margin="0,10,0,20">
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="0,10,0,20">
             <VerticalStackLayout Spacing="4">
                 <Label Text="Sensor Management"
                        FontSize="24"
@@ -27,6 +24,7 @@
                        LineBreakMode="WordWrap"/>
             </VerticalStackLayout>
 
+            <!-- Combined Buttons -->
             <VerticalStackLayout Grid.Column="1"
                                  Spacing="10"
                                  HorizontalOptions="End"
@@ -58,10 +56,8 @@
                CornerRadius="12"
                BorderColor="Transparent"
                HasShadow="True">
-            <Grid RowDefinitions="Auto,*"
-                  Padding="20">
-                <Grid ColumnDefinitions="*,Auto"
-                      Margin="0,0,0,15">
+            <Grid RowDefinitions="Auto,*" Padding="20">
+                <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,15">
                     <Label Text="Existing Sensors"
                            FontSize="18"
                            FontAttributes="Bold"
@@ -78,8 +74,7 @@
                                 ItemsSource="{Binding Sensors}"
                                 SelectionMode="None">
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Vertical"
-                                           ItemSpacing="12"/>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="12"/>
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="models:Sensor">
@@ -99,15 +94,13 @@
                                            BackgroundColor="{Binding IsActive, Converter={StaticResource BoolToColorConverter}}"/>
 
                                     <!-- Sensor Details -->
-                                    <VerticalStackLayout Grid.Column="1"
-                                                         Spacing="4">
+                                    <VerticalStackLayout Grid.Column="1" Spacing="4">
                                         <Label Text="{Binding SensorName}"
                                                FontAttributes="Bold"
                                                FontSize="16"
                                                TextColor="#1F2937"
                                                LineBreakMode="WordWrap"/>
-                                        <Grid ColumnDefinitions="Auto,Auto"
-                                              ColumnSpacing="8">
+                                        <Grid ColumnDefinitions="Auto,Auto" ColumnSpacing="8">
                                             <Label Text="{Binding SensorType}"
                                                    TextColor="#6B7280"
                                                    FontSize="14"
@@ -129,10 +122,10 @@
                                             </Border>
                                             <Border Margin="8,0,0,0"
                                                     Padding="6,2"
-                                                    BackgroundColor="#F3F4F6"
+                                                    BackgroundColor="{Binding ConnectivityStatus, Converter={StaticResource StatusToColorConverter}, ConverterParameter=Background}"
                                                     StrokeShape="RoundRectangle 12">
                                                 <Label Text="{Binding ConnectivityStatus}"
-                                                       TextColor="#6B7280"
+                                                       TextColor="White"
                                                        FontSize="12"
                                                        LineBreakMode="WordWrap"/>
                                             </Border>
@@ -170,6 +163,7 @@
                             </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
+
                     <CollectionView.EmptyView>
                         <Grid RowDefinitions="*,Auto,Auto,*"
                               Padding="20"
@@ -202,6 +196,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            <converters:StatusToColorConverter x:Key="StatusToColorConverter"/>
             <converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>

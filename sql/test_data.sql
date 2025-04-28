@@ -19,6 +19,23 @@ VALUES
 (DATEADD(DAY, -2, SYSDATETIME()), 1, 2, 'Battery maintenance for ClearWater sensor at Glencorse'),
 (DATEADD(DAY, 10, SYSDATETIME()), 0, 3, 'Firmware upgrade for MetNet weather node at Holyrood');
 
+-- Insert Roles
+INSERT INTO Roles (RoleId, RoleName, Description)
+VALUES 
+(0, 'BasicUser', 'Access to basic features'),
+(1, 'Administrator', 'Full system access with user management capabilities'),
+(2, 'EnvironmentalScientist', 'Access to scientific data and analysis tools'),
+(3, 'OperationsManager', 'Access to operational data and management functions');
+
+-- Insert Users
+INSERT INTO Users (Username, Password, Role)
+VALUES
+('admin', 'admin123', 1), -- Administrator
+('manager', 'manager123', 3), -- OperationsManager
+('scientist', 'scientist123', 2); -- EnvironmentalScientist
+-- ('basic', 'basic123', 0); -- Optional BasicUser example
+
+-- Insert Readings
 -- Air Quality: Edinburgh Nicolson Street
 INSERT INTO Readings (Timestamp, Category, NitrogenDioxide, SulphurDioxide, PM25, PM10)
 VALUES 

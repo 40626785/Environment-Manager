@@ -42,12 +42,34 @@ CREATE TABLE Maintenance (
     Description NVARCHAR(MAX) NOT NULL
 );
 
+-- Create SensorStatus table for real-time monitoring
+CREATE TABLE SensorStatus (
+    StatusId INT IDENTITY(1,1) PRIMARY KEY,
+    SensorId INT NOT NULL,
+    ConnectivityStatus NVARCHAR(50) NOT NULL DEFAULT 'Offline',
+    StatusTimestamp DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+    BatteryLevelPercentage REAL,
+    ErrorCount INT DEFAULT 0,
+    WarningCount INT DEFAULT 0,
+    CONSTRAINT FK_SensorStatus_Sensors FOREIGN KEY (SensorId) REFERENCES Sensors(SensorId)
+);
+
+-- Create Roles table to define system roles
+CREATE TABLE Roles (
+    RoleId INT PRIMARY KEY,
+    RoleName NVARCHAR(50) NOT NULL UNIQUE,
+    Description NVARCHAR(200),
+    CreatedDate DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+    LastModifiedDate DATETIME2 NOT NULL DEFAULT SYSDATETIME()
+);
+
 -- Create User table
 CREATE TABLE Users (
     Username VARCHAR(20) PRIMARY KEY,
     Password VARCHAR(20) NOT NULL,
-    Role INT NOT NULL 
-)
+    Role INT NOT NULL,
+    CONSTRAINT FK_Users_Roles FOREIGN KEY (Role) REFERENCES Roles(RoleId)
+);
 
 CREATE TABLE Readings (
     Id INT IDENTITY(1,1) PRIMARY KEY,
@@ -72,4 +94,17 @@ CREATE TABLE Readings (
     Humidity FLOAT NULL,
     WindSpeed FLOAT NULL,
     WindDirection FLOAT NULL
+);
+
+
+-- Create UserLogs table for tracking user changes
+CREATE TABLE UserLogs (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(255) NOT NULL,
+    ActionType NVARCHAR(50) NOT NULL,
+    ChangedFields NVARCHAR(MAX) NULL,
+    OldValues NVARCHAR(MAX) NULL,
+    NewValues NVARCHAR(MAX) NULL,
+    PerformedBy NVARCHAR(255) NULL,
+    Timestamp DATETIME NOT NULL DEFAULT GETDATE()
 );

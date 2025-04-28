@@ -310,7 +310,7 @@ namespace EnvironmentManager.ViewModels
         }
 
         [RelayCommand]
-        private async Task SaveAsync()
+        private async Task SaveSensorAsync()
         {
             if (!ValidateForm())
             {
@@ -344,6 +344,10 @@ namespace EnvironmentManager.ViewModels
 
             try
             {
+                // Store the previous connectivity status before updating
+                string previousStatus = sensor.ConnectivityStatus;
+                
+                // Update sensor properties
                 sensor.LocationId = SelectedLocation?.LocationId ?? 0;
                 sensor.SensorName = SensorName;
                 sensor.Model = Model;
@@ -358,6 +362,24 @@ namespace EnvironmentManager.ViewModels
                 sensor.DataSource = DataSource;
 
                 await _sensorContext.SaveChangesAsync();
+                
+                // Create a new SensorStatus record if connectivity status changed
+                string newStatus = IsOnline ? "Online" : "Offline";
+                if (previousStatus != newStatus || true) // Always create a new status for now to ensure updates
+                {
+                    var newStatusRecord = new SensorStatus
+                    {
+                        SensorId = SensorId,
+                        ConnectivityStatus = newStatus,
+                        StatusTimestamp = DateTime.Now,
+                        BatteryLevelPercentage = BatteryLevelPercentage,
+                        ErrorCount = 0,
+                        WarningCount = 0
+                    };
+                    
+                    _sensorContext.SensorStatuses.Add(newStatusRecord);
+                    await _sensorContext.SaveChangesAsync();
+                }
                 
                 if (Shell.Current != null)
                 {

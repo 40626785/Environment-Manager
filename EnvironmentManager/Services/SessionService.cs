@@ -2,8 +2,7 @@ namespace EnvironmentManager.Services;
 
 using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
-using Microsoft.Identity.Client.Extensions.Msal;
-using System.Diagnostics;
+using System;
 using System.Timers;
 
 /// <summary>
@@ -35,7 +34,8 @@ public class SessionService : ISessionService
     /// Sets facts about session, stores assumed role in local storage and starts session ttl timer.
     /// </summary>
     /// <param name="user">User associated with successful login</param>
-    public void NewSession(User user){
+    public void NewSession(User user)
+    {
         _authenticatedUser = user;
         _expiry = DateTime.Now.AddSeconds(_ttl);
         StoreRole();
@@ -73,6 +73,11 @@ public class SessionService : ISessionService
     /// </summary>
     private void StoreRole() 
     {
-        _storageService.SetStringValue("role", _authenticatedUser.Role.ToString());
+        string roleName = Enum.GetName(typeof(Roles), _authenticatedUser.Role);
+        int roleValue = (int)_authenticatedUser.Role;
+        
+        // Store both the role name and its numeric value to ensure compatibility
+        _storageService.SetStringValue("role", roleName);
+        _storageService.SetStringValue("roleValue", roleValue.ToString());
     }
 }

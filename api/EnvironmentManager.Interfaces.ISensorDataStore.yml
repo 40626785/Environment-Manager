@@ -1,0 +1,186 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.ISensorDataStore
+  commentId: T:EnvironmentManager.Interfaces.ISensorDataStore
+  id: ISensorDataStore
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.ISensorDataStore.RetrieveAll
+  langs:
+  - csharp
+  - vb
+  name: ISensorDataStore
+  nameWithType: ISensorDataStore
+  fullName: EnvironmentManager.Interfaces.ISensorDataStore
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ISensorDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: ISensorDataStore
+    path: EnvironmentManager/Interfaces/ISensorDataStore.cs
+    startLine: 7
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Enables Dependency Inversion Principle, allowing ViewModels to retrieve sensors without depending on concrete DbContext implementation
+  example: []
+  syntax:
+    content: public interface ISensorDataStore
+    content.vb: Public Interface ISensorDataStore
+- uid: EnvironmentManager.Interfaces.ISensorDataStore.RetrieveAll
+  commentId: M:EnvironmentManager.Interfaces.ISensorDataStore.RetrieveAll
+  id: RetrieveAll
+  parent: EnvironmentManager.Interfaces.ISensorDataStore
+  langs:
+  - csharp
+  - vb
+  name: RetrieveAll()
+  nameWithType: ISensorDataStore.RetrieveAll()
+  fullName: EnvironmentManager.Interfaces.ISensorDataStore.RetrieveAll()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ISensorDataStore.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: RetrieveAll
+    path: EnvironmentManager/Interfaces/ISensorDataStore.cs
+    startLine: 9
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: List<Sensor> RetrieveAll()
+    return:
+      type: System.Collections.Generic.List{EnvironmentManager.Models.Sensor}
+    content.vb: Function RetrieveAll() As List(Of Sensor)
+  overload: EnvironmentManager.Interfaces.ISensorDataStore.RetrieveAll*
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.ISensorDataStore.RetrieveAll*
+  commentId: Overload:EnvironmentManager.Interfaces.ISensorDataStore.RetrieveAll
+  href: EnvironmentManager.Interfaces.ISensorDataStore.html#EnvironmentManager_Interfaces_ISensorDataStore_RetrieveAll
+  name: RetrieveAll
+  nameWithType: ISensorDataStore.RetrieveAll
+  fullName: EnvironmentManager.Interfaces.ISensorDataStore.RetrieveAll
+- uid: System.Collections.Generic.List{EnvironmentManager.Models.Sensor}
+  commentId: T:System.Collections.Generic.List{EnvironmentManager.Models.Sensor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Sensor>
+  nameWithType: List<Sensor>
+  fullName: System.Collections.Generic.List<EnvironmentManager.Models.Sensor>
+  nameWithType.vb: List(Of Sensor)
+  fullName.vb: System.Collections.Generic.List(Of EnvironmentManager.Models.Sensor)
+  name.vb: List(Of Sensor)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    href: EnvironmentManager.Models.Sensor.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    href: EnvironmentManager.Models.Sensor.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

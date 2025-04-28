@@ -1,0 +1,178 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.IThresholdRules`1
+  commentId: T:EnvironmentManager.Interfaces.IThresholdRules`1
+  id: IThresholdRules`1
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IThresholdRules`1.IsBreachedBy(`0)
+  - EnvironmentManager.Interfaces.IThresholdRules`1.ThresholdDetail
+  langs:
+  - csharp
+  - vb
+  name: IThresholdRules<T>
+  nameWithType: IThresholdRules<T>
+  fullName: EnvironmentManager.Interfaces.IThresholdRules<T>
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IThresholdRules.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: IThresholdRules
+    path: EnvironmentManager/Interfaces/IThresholdRules.cs
+    startLine: 5
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  summary: Enables use of specification pattern, an extensible way of validating objects against business rules.
+  example: []
+  syntax:
+    content: public interface IThresholdRules<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IThresholdRules(Of T)
+  nameWithType.vb: IThresholdRules(Of T)
+  fullName.vb: EnvironmentManager.Interfaces.IThresholdRules(Of T)
+  name.vb: IThresholdRules(Of T)
+- uid: EnvironmentManager.Interfaces.IThresholdRules`1.IsBreachedBy(`0)
+  commentId: M:EnvironmentManager.Interfaces.IThresholdRules`1.IsBreachedBy(`0)
+  id: IsBreachedBy(`0)
+  parent: EnvironmentManager.Interfaces.IThresholdRules`1
+  langs:
+  - csharp
+  - vb
+  name: IsBreachedBy(T)
+  nameWithType: IThresholdRules<T>.IsBreachedBy(T)
+  fullName: EnvironmentManager.Interfaces.IThresholdRules<T>.IsBreachedBy(T)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IThresholdRules.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: IsBreachedBy
+    path: EnvironmentManager/Interfaces/IThresholdRules.cs
+    startLine: 7
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: bool IsBreachedBy(T candidate)
+    parameters:
+    - id: candidate
+      type: '{T}'
+    return:
+      type: System.Boolean
+    content.vb: Function IsBreachedBy(candidate As T) As Boolean
+  overload: EnvironmentManager.Interfaces.IThresholdRules`1.IsBreachedBy*
+  nameWithType.vb: IThresholdRules(Of T).IsBreachedBy(T)
+  fullName.vb: EnvironmentManager.Interfaces.IThresholdRules(Of T).IsBreachedBy(T)
+- uid: EnvironmentManager.Interfaces.IThresholdRules`1.ThresholdDetail
+  commentId: M:EnvironmentManager.Interfaces.IThresholdRules`1.ThresholdDetail
+  id: ThresholdDetail
+  parent: EnvironmentManager.Interfaces.IThresholdRules`1
+  langs:
+  - csharp
+  - vb
+  name: ThresholdDetail()
+  nameWithType: IThresholdRules<T>.ThresholdDetail()
+  fullName: EnvironmentManager.Interfaces.IThresholdRules<T>.ThresholdDetail()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IThresholdRules.cs
+      branch: fix/docUpdate
+      repo: https://github.com/40626785/SEGroup.git
+    id: ThresholdDetail
+    path: EnvironmentManager/Interfaces/IThresholdRules.cs
+    startLine: 9
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: string ThresholdDetail()
+    return:
+      type: System.String
+    content.vb: Function ThresholdDetail() As String
+  overload: EnvironmentManager.Interfaces.IThresholdRules`1.ThresholdDetail*
+  nameWithType.vb: IThresholdRules(Of T).ThresholdDetail()
+  fullName.vb: EnvironmentManager.Interfaces.IThresholdRules(Of T).ThresholdDetail()
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.IThresholdRules`1.IsBreachedBy*
+  commentId: Overload:EnvironmentManager.Interfaces.IThresholdRules`1.IsBreachedBy
+  href: EnvironmentManager.Interfaces.IThresholdRules-1.html#EnvironmentManager_Interfaces_IThresholdRules_1_IsBreachedBy__0_
+  name: IsBreachedBy
+  nameWithType: IThresholdRules<T>.IsBreachedBy
+  fullName: EnvironmentManager.Interfaces.IThresholdRules<T>.IsBreachedBy
+  nameWithType.vb: IThresholdRules(Of T).IsBreachedBy
+  fullName.vb: EnvironmentManager.Interfaces.IThresholdRules(Of T).IsBreachedBy
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EnvironmentManager.Interfaces.IThresholdRules`1.ThresholdDetail*
+  commentId: Overload:EnvironmentManager.Interfaces.IThresholdRules`1.ThresholdDetail
+  href: EnvironmentManager.Interfaces.IThresholdRules-1.html#EnvironmentManager_Interfaces_IThresholdRules_1_ThresholdDetail
+  name: ThresholdDetail
+  nameWithType: IThresholdRules<T>.ThresholdDetail
+  fullName: EnvironmentManager.Interfaces.IThresholdRules<T>.ThresholdDetail
+  nameWithType.vb: IThresholdRules(Of T).ThresholdDetail
+  fullName.vb: EnvironmentManager.Interfaces.IThresholdRules(Of T).ThresholdDetail
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

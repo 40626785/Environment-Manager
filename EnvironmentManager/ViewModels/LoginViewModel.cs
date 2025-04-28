@@ -57,6 +57,7 @@ public class LoginViewModel : ObservableObject, IErrorHandling
 
     public LoginViewModel(IAuthenticationService authentication, ILoginNavService loginNav)
     {
+        Trace.WriteLine("LoginViewModel constructor executing.");
         _authentication = authentication;
         _loginNav = loginNav;
         Login = new Command(Authenticate);
@@ -96,7 +97,22 @@ public class LoginViewModel : ObservableObject, IErrorHandling
     /// <param name="message"></param>
     public void HandleError(Exception e, string message)
     {
-        Trace.WriteLine(e.Message);
+        // Log the full exception details for better debugging
+        string logMessage = $"Error in LoginViewModel: {message}\\n" +
+                            $"Exception Type: {e.GetType().FullName}\\n" +
+                            $"Exception Message: {e.Message}\\n" +
+                            $"Stack Trace: {e.StackTrace}";
+        
+        if (e.InnerException != null)
+        {
+            logMessage += $"\\nInner Exception Type: {e.InnerException.GetType().FullName}\\n" +
+                          $"Inner Exception Message: {e.InnerException.Message}\\n" +
+                          $"Inner Exception Stack Trace: {e.InnerException.StackTrace}";
+        }
+
+        Trace.WriteLine(logMessage);
+        Console.WriteLine(logMessage);
+
         DisplayError = message;
     }
 }

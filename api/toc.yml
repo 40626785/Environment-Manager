@@ -17,11 +17,26 @@ items:
   name: EnvironmentManager.Converters
   type: Namespace
   items:
-  - uid: EnvironmentManager.Converters.BoolToColorConverter
-    name: BoolToColorConverter
-    type: Class
   - uid: EnvironmentManager.Converters.CountToBoolConverter
     name: CountToBoolConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.InvertedBoolConverter
+    name: InvertedBoolConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.NotNullConverter
+    name: NotNullConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.NotZeroConverter
+    name: NotZeroConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.RoleConverter
+    name: RoleConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.RoleToColorConverter
+    name: RoleToColorConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.StatusToColorConverter
+    name: StatusToColorConverter
     type: Class
   - uid: EnvironmentManager.Converters.StringNotEmptyConverter
     name: StringNotEmptyConverter
@@ -45,6 +60,9 @@ items:
   - uid: EnvironmentManager.Data.MaintenanceDbContext
     name: MaintenanceDbContext
     type: Class
+  - uid: EnvironmentManager.Data.SensorDataStore
+    name: SensorDataStore
+    type: Class
   - uid: EnvironmentManager.Data.SensorDbContext
     name: SensorDbContext
     type: Class
@@ -53,6 +71,18 @@ items:
     type: Class
   - uid: EnvironmentManager.Data.UserDbContext
     name: UserDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.UserLogDbContext
+    name: UserLogDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.UserManagementDataStore
+    name: UserManagementDataStore
+    type: Class
+  - uid: EnvironmentManager.Data.UserManagementDbContext
+    name: UserManagementDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.UserManagementException
+    name: UserManagementException
     type: Class
 - uid: EnvironmentManager.Exceptions
   name: EnvironmentManager.Exceptions
@@ -90,11 +120,26 @@ items:
   - uid: EnvironmentManager.Interfaces.IRunOnMainThread
     name: IRunOnMainThread
     type: Interface
+  - uid: EnvironmentManager.Interfaces.ISensorDataStore
+    name: ISensorDataStore
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.ISensorThresholdService
+    name: ISensorThresholdService
+    type: Interface
   - uid: EnvironmentManager.Interfaces.ISessionService
     name: ISessionService
     type: Interface
+  - uid: EnvironmentManager.Interfaces.IThresholdRules`1
+    name: IThresholdRules<T>
+    type: Interface
   - uid: EnvironmentManager.Interfaces.IUserDataStore
     name: IUserDataStore
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IUserLogService
+    name: IUserLogService
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IUserManagementDataStore
+    name: IUserManagementDataStore
     type: Interface
 - uid: EnvironmentManager.Models
   name: EnvironmentManager.Models
@@ -118,11 +163,33 @@ items:
   - uid: EnvironmentManager.Models.Maintenance
     name: Maintenance
     type: Class
+  - uid: EnvironmentManager.Models.Role
+    name: Role
+    type: Class
   - uid: EnvironmentManager.Models.Sensor
     name: Sensor
     type: Class
+  - uid: EnvironmentManager.Models.SensorStatus
+    name: SensorStatus
+    type: Class
+  - uid: EnvironmentManager.Models.SensorThresholdBreach
+    name: SensorThresholdBreach
+    type: Class
   - uid: EnvironmentManager.Models.User
     name: User
+    type: Class
+  - uid: EnvironmentManager.Models.UserLog
+    name: UserLog
+    type: Class
+- uid: EnvironmentManager.Rules
+  name: EnvironmentManager.Rules
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Rules.ActiveOnlineThreshold
+    name: ActiveOnlineThreshold
+    type: Class
+  - uid: EnvironmentManager.Rules.BatteryPercentageThreshold
+    name: BatteryPercentageThreshold
     type: Class
 - uid: EnvironmentManager.Services
   name: EnvironmentManager.Services
@@ -146,8 +213,14 @@ items:
   - uid: EnvironmentManager.Services.RunOnMainThread
     name: RunOnMainThread
     type: Class
+  - uid: EnvironmentManager.Services.SensorThresholdService
+    name: SensorThresholdService
+    type: Class
   - uid: EnvironmentManager.Services.SessionService
     name: SessionService
+    type: Class
+  - uid: EnvironmentManager.Services.UserLogService
+    name: UserLogService
     type: Class
   - uid: EnvironmentManager.Services.ValidationService
     name: ValidationService
@@ -171,6 +244,9 @@ items:
   - uid: EnvironmentManager.ViewModels.EditSensorViewModel
     name: EditSensorViewModel
     type: Class
+  - uid: EnvironmentManager.ViewModels.EditUserViewModel
+    name: EditUserViewModel
+    type: Class
   - uid: EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
     name: HistoricalDataSelectionViewModel
     type: Class
@@ -186,8 +262,20 @@ items:
   - uid: EnvironmentManager.ViewModels.MaintenanceViewModel
     name: MaintenanceViewModel
     type: Class
+  - uid: EnvironmentManager.ViewModels.MapPinViewModel
+    name: MapPinViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.SensorMonitoringViewModel
+    name: SensorMonitoringViewModel
+    type: Class
   - uid: EnvironmentManager.ViewModels.SensorViewModel
     name: SensorViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.ThresholdMapViewModel
+    name: ThresholdMapViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.UserManagementViewModel
+    name: UserManagementViewModel
     type: Class
 - uid: EnvironmentManager.Views
   name: EnvironmentManager.Views
@@ -205,6 +293,9 @@ items:
   - uid: EnvironmentManager.Views.EditSensorPage
     name: EditSensorPage
     type: Class
+  - uid: EnvironmentManager.Views.EditUserPage
+    name: EditUserPage
+    type: Class
   - uid: EnvironmentManager.Views.HistoricalData
     name: HistoricalData
     type: Class
@@ -220,7 +311,16 @@ items:
   - uid: EnvironmentManager.Views.MaintenancePage
     name: MaintenancePage
     type: Class
+  - uid: EnvironmentManager.Views.SensorMonitoringPage
+    name: SensorMonitoringPage
+    type: Class
   - uid: EnvironmentManager.Views.SensorPage
     name: SensorPage
+    type: Class
+  - uid: EnvironmentManager.Views.ThresholdMapPage
+    name: ThresholdMapPage
+    type: Class
+  - uid: EnvironmentManager.Views.UserManagementPage
+    name: UserManagementPage
     type: Class
 memberLayout: SamePage

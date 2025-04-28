@@ -30,7 +30,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Sensor
     path: EnvironmentManager/Models/Sensor.cs
@@ -65,7 +65,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SensorId
     path: EnvironmentManager/Models/Sensor.cs
@@ -104,7 +104,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: LocationId
     path: EnvironmentManager/Models/Sensor.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Location
     path: EnvironmentManager/Models/Sensor.cs
@@ -184,7 +184,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SensorName
     path: EnvironmentManager/Models/Sensor.cs
@@ -232,7 +232,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Model
     path: EnvironmentManager/Models/Sensor.cs
@@ -273,7 +273,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: Manufacturer
     path: EnvironmentManager/Models/Sensor.cs
@@ -314,7 +314,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SensorType
     path: EnvironmentManager/Models/Sensor.cs
@@ -355,7 +355,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: InstallationDate
     path: EnvironmentManager/Models/Sensor.cs
@@ -394,7 +394,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: IsActive
     path: EnvironmentManager/Models/Sensor.cs
@@ -433,7 +433,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: FirmwareVersion
     path: EnvironmentManager/Models/Sensor.cs
@@ -474,7 +474,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: DataSource
     path: EnvironmentManager/Models/Sensor.cs
@@ -515,7 +515,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: SensorUrl
     path: EnvironmentManager/Models/Sensor.cs
@@ -563,7 +563,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: ConnectivityStatus
     path: EnvironmentManager/Models/Sensor.cs
@@ -604,7 +604,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: BatteryLevelPercentage
     path: EnvironmentManager/Models/Sensor.cs
@@ -633,7 +633,7 @@ items:
   source:
     remote:
       path: EnvironmentManager/Models/Sensor.cs
-      branch: main
+      branch: fix/docUpdate
       repo: https://github.com/40626785/SEGroup.git
     id: .ctor
     path: EnvironmentManager/Models/Sensor.cs
