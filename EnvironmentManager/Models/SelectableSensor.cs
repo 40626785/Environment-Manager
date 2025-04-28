@@ -9,6 +9,18 @@ namespace EnvironmentManager.Models
         private bool isSelected;
 
         [ObservableProperty]
-        private Sensor sensor = null;
+        private Sensor sensor = null!; 
+        public bool IsActive
+        {
+            get => Sensor?.IsActive ?? false;
+            set
+            {
+                if (Sensor != null)
+                {
+                    Sensor.IsActive = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
     }
 }

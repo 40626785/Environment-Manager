@@ -48,3 +48,28 @@ CREATE TABLE Users (
     Password VARCHAR(20) NOT NULL,
     Role INT NOT NULL 
 )
+
+CREATE TABLE Readings (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Timestamp DATETIME NOT NULL,
+    Category NVARCHAR(50) NOT NULL,
+
+    -- Air Quality
+    NitrogenDioxide FLOAT NULL,
+    SulphurDioxide FLOAT NULL,
+    PM25 FLOAT NULL,
+    PM10 FLOAT NULL,
+
+    -- Water Quality
+    Nitrite FLOAT NULL,
+    Nitrate FLOAT NULL,
+    Phosphate FLOAT NULL,
+    EColi INT NULL,
+    Enterococci INT NULL,
+
+    -- Weather
+    Temperature FLOAT NULL,
+    Humidity FLOAT NULL,
+    WindSpeed FLOAT NULL,
+    WindDirection FLOAT NULL
+);

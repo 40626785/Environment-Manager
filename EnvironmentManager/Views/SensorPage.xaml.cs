@@ -1,5 +1,4 @@
 using EnvironmentManager.ViewModels;
-
 namespace EnvironmentManager.Views;
 
 /// <summary>

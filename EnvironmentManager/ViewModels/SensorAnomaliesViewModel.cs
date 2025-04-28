@@ -11,7 +11,7 @@ namespace EnvironmentManager.ViewModels
     /// <summary>
     /// ViewModel for loading and displaying anomalies related to a single sensor.
     /// </summary>
-    public partial class SensorAnomaliesViewModel : ObservableObject, IQueryAttributable
+    public partial class SensorAnomaliesViewModel : ObservableObject, IQueryAttributable, IErrorHandling
     {
         private readonly IAnomalyDetectionService _anomalyService;
         private readonly SensorDbContext _context;
@@ -107,9 +107,14 @@ namespace EnvironmentManager.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"[SensorAnomalies] Error: {ex.Message}");
-                DisplayError = "Failed to load sensor anomalies.";
+                HandleError(ex, "Failed to load sensor anomalies.");
             }
+        }
+
+        public void HandleError(Exception ex, string message)
+        {
+            Debug.WriteLine($"[SensorAnomaliesViewModel] {ex.Message}");
+            DisplayError = message;
         }
     }
 }

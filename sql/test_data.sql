@@ -19,3 +19,21 @@ VALUES
 (DATEADD(DAY, -2, SYSDATETIME()), 1, 2, 'Battery maintenance for ClearWater sensor at Glencorse'),
 (DATEADD(DAY, 10, SYSDATETIME()), 0, 3, 'Firmware upgrade for MetNet weather node at Holyrood');
 
+-- Air Quality: Edinburgh Nicolson Street
+INSERT INTO Readings (Timestamp, Category, NitrogenDioxide, SulphurDioxide, PM25, PM10)
+VALUES 
+('2025-02-01T01:00:00', 'Air', 26.3925, 1.59654, 5.094, 8.3),
+('2025-02-01T02:00:00', 'Air', 22.5675, 1.33045, 5.094, 7.9);
+
+-- Water Quality: Glencorse B
+INSERT INTO Readings (Timestamp, Category, Nitrate, Nitrite, Phosphate)
+VALUES 
+('2025-02-01T01:00:00', 'Water', 26.33, 1.33, 0.07),
+('2025-02-01T02:00:00', 'Water', 23.4, 1.52, 0.06);
+
+-- Weather Measurements
+INSERT INTO Readings (Timestamp, Category, Temperature, Humidity, WindSpeed, WindDirection)
+VALUES
+('2025-02-01T00:00:00', 'Weather', 0.6, 98, 1.18, 78),
+('2025-02-01T01:00:00', 'Weather', 2.4, 96, 0.93, 106),
+('2025-02-01T02:00:00', 'Weather', 2.5, 97, 1.08, 103);

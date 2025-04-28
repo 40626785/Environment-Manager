@@ -40,7 +40,7 @@
                         CornerRadius="8"
                         WidthRequest="140"/>
 
-                <Button Text="Update Firmware"
+                <Button Text="Advanced Settings"
                         Command="{Binding NavigateToFirmwareUpdateCommand}"
                         FontAttributes="Bold"
                         Padding="10,6"
@@ -150,7 +150,7 @@
                                             Padding="10,6"
                                             BackgroundColor="#F3F4F6"
                                             TextColor="#1F2937"
-                                            HorizontalOptions="FillAndExpand"
+                                            HorizontalOptions="Fill"
                                             LineBreakMode="WordWrap"/>
 
                                     <!-- Alerts Button -->
@@ -164,7 +164,7 @@
                                             Padding="10,6"
                                             BackgroundColor="#F87171"
                                             TextColor="#92400E"
-                                            HorizontalOptions="FillAndExpand"
+                                            HorizontalOptions="Fill"
                                             LineBreakMode="WordWrap"/>
                                 </Grid>
                             </Frame>

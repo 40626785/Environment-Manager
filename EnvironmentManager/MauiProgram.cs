@@ -175,6 +175,23 @@ public static class MauiProgram
 			}
 		});
 
+		// ReadingsDbContext
+    	builder.Services.AddDbContext<ReadingsDbContext>(options =>
+    	{
+        	try
+        	{
+            	var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+            	Debug.WriteLine("Configuring readings database");
+            	options.UseSqlServer(connectionString);
+            	options.EnableSensitiveDataLogging();
+            	options.EnableDetailedErrors();
+        	}
+        	catch (Exception ex)
+        	{
+            	Debug.WriteLine($"Error configuring readings database context: {ex.Message}");
+            	throw;
+        	}
+    	});
 	}
 
 	private static void RegisterServices(MauiAppBuilder builder)
@@ -205,6 +222,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<AnomalyDetectionViewModel>();
     	builder.Services.AddTransient<SensorAnomaliesViewModel>();
 		builder.Services.AddTransient<FirmwareUpdateViewModel>();
+		builder.Services.AddTransient<TrendsViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -221,5 +239,6 @@ public static class MauiProgram
 		builder.Services.AddTransient<AnomalyPage>();
     	builder.Services.AddTransient<SensorAnomaliesPage>();
 		builder.Services.AddTransient<FirmwareUpdatePage>();
+		builder.Services.AddTransient<TrendsPage>();
 	}
 }
