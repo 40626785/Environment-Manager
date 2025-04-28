@@ -1,8 +1,24 @@
 classDiagram
     class TrendsViewModel {
-        +double AverageTemperature
-        +bool IsLoading
-        +AsyncRelayCommand LoadTrendsCommand
-        +HandleError(Exception ex, string message)
-        +LoadTrendsAsync()
+      +ObservableCollection~Reading~ FilteredReadings
+      +string CurrentCategory
+      +bool IsBusy
+      +string DisplayError
+      +string TemperatureTrendSummary
+      +RelayCommand SwitchCategoryCommand
+      +RelayCommand ExportDataCommand
+      +LoadDataAsync(string)
+      +HandleError(Exception, string)
     }
+    class Reading {
+      +int Id
+      +DateTime Timestamp
+      +double Temperature
+      +string Category
+    }
+    class TemperatureTrendGraph {
+      +TemperatureTrendGraph(TrendsViewModel owner)
+      +void Draw(ICanvas, RectF)
+    }
+    TrendsViewModel "1" o-- "*" Reading : loads data
+    TrendsViewModel *-- TemperatureTrendGraph : draws trend
