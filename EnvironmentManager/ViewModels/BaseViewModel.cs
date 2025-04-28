@@ -1,9 +1,10 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace EnvironmentManager.ViewModels;
 
-public class BaseViewModel : INotifyPropertyChanged
+public partial class BaseViewModel : ObservableObject
 {
     private bool isBusy;
 
