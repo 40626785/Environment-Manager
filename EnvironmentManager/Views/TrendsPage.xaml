@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:EnvironmentManager.ViewModels"
+    xmlns:converters="clr-namespace:EnvironmentManager.Converters"
+    x:Class="EnvironmentManager.Views.TrendsPage"
+    Title="Environmental Trends">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+            <converters:WeatherOnlyConverter x:Key="WeatherOnlyConverter"/>
+            <Style TargetType="Button">
+                <Setter Property="Margin"
+                        Value="5"/>
+                <Setter Property="Padding"
+                        Value="10,5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="10">
+
+        <!-- Category Selector -->
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button Text="Weather"
+                    Command="{Binding SwitchCategoryCommand}"
+                    CommandParameter="Weather"/>
+            <Button Text="Water"
+                    Command="{Binding SwitchCategoryCommand}"
+                    CommandParameter="Water"/>
+            <Button Text="Air"
+                    Command="{Binding SwitchCategoryCommand}"
+                    CommandParameter="Air"/>
+        </HorizontalStackLayout>
+
+        <!-- Export Button -->
+        <Button Text="Export Data"
+                Command="{Binding ExportDataCommand}"
+                HorizontalOptions="End"/>
+
+        <!-- Temperature Trend Label -->
+        <Label Text="{Binding TemperatureTrendSummary}"
+               TextColor="DarkBlue"
+               FontAttributes="Bold"
+               FontSize="Medium"/>
+
+        <!-- Trend Graph -->
+        <GraphicsView
+            Drawable="{Binding TemperatureTrendDrawable}"
+            HeightRequest="200"
+            Margin="10"
+            IsVisible="{Binding Temperature, Converter={StaticResource NullToBoolConverter}}"/>
+
+        <!-- Display error if needed -->
+        <Label Text="{Binding DisplayError}"
+               TextColor="Red"
+               IsVisible="{Binding DisplayError, Converter={StaticResource StringNotEmptyConverter}}"/>
+
+        <!-- List of Readings -->
+        <CollectionView ItemsSource="{Binding FilteredReadings}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray"
+                           CornerRadius="5"
+                           Padding="10"
+                           Margin="5">
+                        <VerticalStackLayout>
+                            <!-- Common Data -->
+                            <Label Text="{Binding Timestamp}"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Category}"
+                                   FontSize="Small"
+                                   TextColor="Gray"/>
+
+                            <!-- Weather Data -->
+                            <Label Text="{Binding Temperature, StringFormat='Temp: {0:F1} °C'}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Weather">
+                                        <Setter Property="IsVisible"
+                                                Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Air">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Water">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label Text="{Binding Humidity, StringFormat='Humidity: {0:F0} %'}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Weather">
+                                        <Setter Property="IsVisible"
+                                                Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Air">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Water">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label Text="{Binding WindSpeed, StringFormat='Wind Speed: {0:F1} m/s'}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Weather">
+                                        <Setter Property="IsVisible"
+                                                Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Air">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Water">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label Text="{Binding WindDirection, StringFormat='Wind Direction: {0:F0}°'}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Weather">
+                                        <Setter Property="IsVisible"
+                                                Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Air">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Water">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+
+                            <!-- Air Quality Data -->
+                            <Label Text="{Binding PM25, StringFormat='PM2.5: {0:F1} µg/m³'}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Air">
+                                        <Setter Property="IsVisible"
+                                                Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Weather">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Water">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label Text="{Binding PM10, StringFormat='PM10: {0:F1} µg/m³'}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Air">
+                                        <Setter Property="IsVisible"
+                                                Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Weather">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Water">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+
+                            <!-- Water Quality Data -->
+                            <Label Text="{Binding Nitrate, StringFormat='Nitrate: {0:F1} mg/L'}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Water">
+                                        <Setter Property="IsVisible"
+                                                Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Weather">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Air">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label Text="{Binding Nitrite, StringFormat='Nitrite: {0:F1} mg/L'}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Water">
+                                        <Setter Property="IsVisible"
+                                                Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Weather">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label"
+                                            Binding="{Binding Category}"
+                                            Value="Air">
+                                        <Setter Property="IsVisible"
+                                                Value="False"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+
+</ContentPage>

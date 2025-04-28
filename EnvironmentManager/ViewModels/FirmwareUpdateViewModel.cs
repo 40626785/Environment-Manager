@@ -27,6 +27,7 @@ namespace EnvironmentManager.ViewModels
         private string statusMessage = string.Empty;
 
         public IAsyncRelayCommand UpdateFirmwareCommand { get; }
+        public IAsyncRelayCommand UpdateActiveStatusCommand { get; }
         public IAsyncRelayCommand LoadSensorsCommand { get; }
         public string DisplayError { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -38,6 +39,7 @@ namespace EnvironmentManager.ViewModels
             _context = context;
             UpdateFirmwareCommand = new AsyncRelayCommand(UpdateFirmwareAsync);
             LoadSensorsCommand = new AsyncRelayCommand(LoadSensorsAsync);
+            UpdateActiveStatusCommand = new AsyncRelayCommand(UpdateActiveStatusAsync);
         }
 
         /// <summary>
@@ -110,5 +112,40 @@ namespace EnvironmentManager.ViewModels
             Trace.WriteLine($"[FirmwareUpdateViewModel] {ex.Message}");
             StatusMessage = message;
         }
+
+        /// <summary>
+        /// Updates the active status of selected sensors.
+        /// </summary>
+        public async Task UpdateActiveStatusAsync()
+        {
+            var selectedSensors = Sensors.Select(s => s.Sensor).ToList();
+
+            if (!selectedSensors.Any())
+            {
+                StatusMessage = "No sensors to update.";
+                return;
+            }
+
+            try
+            {
+                foreach (var selectable in Sensors)
+                {
+                    var tracked = await _context.Sensors.FindAsync(selectable.Sensor.SensorId);
+                    if (tracked != null)
+                    {
+                        tracked.IsActive = selectable.IsActive;
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+
+                StatusMessage = "Sensor active statuses updated successfully.";
+            }
+            catch (Exception ex)
+            {
+                HandleError(ex, "Failed to update active statuses.");
+            }
+        }
+
     }
 }

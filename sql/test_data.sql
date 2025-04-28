@@ -19,21 +19,38 @@ VALUES
 (DATEADD(DAY, -2, SYSDATETIME()), 1, 2, 'Battery maintenance for ClearWater sensor at Glencorse'),
 (DATEADD(DAY, 10, SYSDATETIME()), 0, 3, 'Firmware upgrade for MetNet weather node at Holyrood');
 
--- Insert roles as specified in the requirements
--- Ensure RoleIds match the Roles enum definition (BasicUser=0, Administrator=1, etc.)
+-- Insert Roles
 INSERT INTO Roles (RoleId, RoleName, Description)
 VALUES 
-    (0, 'BasicUser', 'Access to basic features'),
-    (1, 'Administrator', 'Full system access with user management capabilities'),
-    (2, 'EnvironmentalScientist', 'Access to scientific data and analysis tools'),
-    (3, 'OperationsManager', 'Access to operational data and management functions');
+(0, 'BasicUser', 'Access to basic features'),
+(1, 'Administrator', 'Full system access with user management capabilities'),
+(2, 'EnvironmentalScientist', 'Access to scientific data and analysis tools'),
+(3, 'OperationsManager', 'Access to operational data and management functions');
 
--- Insert test users with correct RoleIds matching the enum/Roles table
+-- Insert Users
 INSERT INTO Users (Username, Password, Role)
 VALUES
-    ('admin', 'admin123', 1), -- Administrator (RoleId = 1)
-    ('manager', 'manager123', 3), -- OperationsManager (RoleId = 3)
-    ('scientist', 'scientist123', 2); -- EnvironmentalScientist (RoleId = 2)
-    -- Add a BasicUser example if needed
-    -- ('basic', 'basic123', 0), -- BasicUser (RoleId = 0)
+('admin', 'admin123', 1), -- Administrator
+('manager', 'manager123', 3), -- OperationsManager
+('scientist', 'scientist123', 2); -- EnvironmentalScientist
+-- ('basic', 'basic123', 0); -- Optional BasicUser example
 
+-- Insert Readings
+-- Air Quality: Edinburgh Nicolson Street
+INSERT INTO Readings (Timestamp, Category, NitrogenDioxide, SulphurDioxide, PM25, PM10)
+VALUES 
+('2025-02-01T01:00:00', 'Air', 26.3925, 1.59654, 5.094, 8.3),
+('2025-02-01T02:00:00', 'Air', 22.5675, 1.33045, 5.094, 7.9);
+
+-- Water Quality: Glencorse B
+INSERT INTO Readings (Timestamp, Category, Nitrate, Nitrite, Phosphate)
+VALUES 
+('2025-02-01T01:00:00', 'Water', 26.33, 1.33, 0.07),
+('2025-02-01T02:00:00', 'Water', 23.4, 1.52, 0.06);
+
+-- Weather Measurements
+INSERT INTO Readings (Timestamp, Category, Temperature, Humidity, WindSpeed, WindDirection)
+VALUES
+('2025-02-01T00:00:00', 'Weather', 0.6, 98, 1.18, 78),
+('2025-02-01T01:00:00', 'Weather', 2.4, 96, 0.93, 106),
+('2025-02-01T02:00:00', 'Weather', 2.5, 97, 1.08, 103);

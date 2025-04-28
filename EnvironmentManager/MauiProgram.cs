@@ -43,7 +43,7 @@ public static class MauiProgram
         // Register pages
         RegisterPages(builder);
 
-        // Bind specific implementation to DBContext abstraction
+        // Bind specific implementations
         builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
         builder.Services.AddSingleton<IUserDataStore, UserDataStore>();
         builder.Services.AddSingleton<ISensorDataStore, SensorDataStore>();
@@ -123,6 +123,7 @@ public static class MauiProgram
         ConfigureContext<HistoricalDataDbContext>("historical data");
         ConfigureContext<UserManagementDbContext>("user management");
         ConfigureContext<UserLogDbContext>("user log");
+        ConfigureContext<ReadingsDbContext>("readings"); // Added manually
     }
 
     private static void RegisterServices(MauiAppBuilder builder)
@@ -174,6 +175,7 @@ public static class MauiProgram
         builder.Services.AddTransient<AnomalyDetectionViewModel>();
         builder.Services.AddTransient<SensorAnomaliesViewModel>();
         builder.Services.AddTransient<FirmwareUpdateViewModel>();
+        builder.Services.AddTransient<TrendsViewModel>(); // Manually added
     }
 
     private static void RegisterPages(MauiAppBuilder builder)
@@ -193,7 +195,8 @@ public static class MauiProgram
         builder.Services.AddTransient<AnomalyPage>();
         builder.Services.AddTransient<SensorAnomaliesPage>();
         builder.Services.AddTransient<FirmwareUpdatePage>();
-        builder.Services.AddSingleton<UserManagementPage>();
+        builder.Services.AddTransient<UserManagementPage>();
         builder.Services.AddTransient<EditUserPage>();
+        builder.Services.AddTransient<TrendsPage>(); // Manually added
     }
 }

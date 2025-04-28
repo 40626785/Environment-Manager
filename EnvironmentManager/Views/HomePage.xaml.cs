@@ -36,4 +36,9 @@ public partial class HomePage : ContentPage
         await Shell.Current.GoToAsync(nameof(HistoricalData));
     }
 
+    private async void OnViewTrendsClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(TrendsPage));
+    }
+
 }
