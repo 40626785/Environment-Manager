@@ -31,6 +31,50 @@ jobs:
       run: |
         dotnet tool install --global dotnet-reportgenerator-globaltool
         dotnet tool install --global dotnet-coverage
+    
+    # Try to build, but continue on error    
+    - name: Try to build solution
+      id: build_step
+      continue-on-error: true
+      run: |
+        dotnet build EnvironmentManager.sln --configuration Release
+        echo "build_succeeded=true" >> $GITHUB_OUTPUT
+        
+    # Only attempt to run tests if build succeeded
+    - name: Run tests with coverage
+      id: coverage_step
+      if: steps.build_step.outputs.build_succeeded == 'true'
+      continue-on-error: true
+      run: |
+        dotnet-coverage collect -f xml -o metrics/reports/coverage.xml \
+          "dotnet test EnvironmentManager.Test/EnvironmentManager.Test.csproj --no-build --configuration Release"
+        echo "coverage_generated=true" >> $GITHUB_OUTPUT
+          
+    # Only generate coverage report if tests ran successfully
+    - name: Generate code coverage report
+      if: steps.coverage_step.outputs.coverage_generated == 'true'
+      continue-on-error: true
+      run: |
+        reportgenerator \
+          -reports:metrics/reports/coverage.xml \
+          -targetdir:metrics/reports/coverage \
+          -reporttypes:Html;MarkdownSummary
+          
+    # Extract coverage percentage if report was generated
+    - name: Extract coverage percentage
+      id: coverage
+      if: steps.coverage_step.outputs.coverage_generated == 'true'
+      continue-on-error: true
+      run: |
+        if [ -f "metrics/reports/coverage/Summary.md" ]; then
+          LINE_COVERAGE=$(grep -oP 'Line coverage: \K[0-9.]+' metrics/reports/coverage/Summary.md || echo "0.0")
+          echo "line_coverage=${LINE_COVERAGE}" >> $GITHUB_OUTPUT
+          BRANCH_COVERAGE=$(grep -oP 'Branch coverage: \K[0-9.]+' metrics/reports/coverage/Summary.md || echo "0.0")
+          echo "branch_coverage=${BRANCH_COVERAGE}" >> $GITHUB_OUTPUT
+        else
+          echo "line_coverage=0.0" >> $GITHUB_OUTPUT
+          echo "branch_coverage=0.0" >> $GITHUB_OUTPUT
+        fi
         
     # Skip build and test steps if they're failing
     # We can still analyze metrics without building
@@ -229,9 +273,20 @@ jobs:
             Write-Host "WARNING: No lines of code found for maintainability analysis"
         }
         
-        # Set default values for coverage since we're not running tests
-        $lineCoverage = 0.0
-        $branchCoverage = 0.0
+        # Get coverage values from previous steps or use default values
+        $lineCoverage = "${{ steps.coverage.outputs.line_coverage || '0.0' }}"
+        $branchCoverage = "${{ steps.coverage.outputs.branch_coverage || '0.0' }}"
+        
+        # If the values are empty strings, set them to 0
+        if ([string]::IsNullOrEmpty($lineCoverage) -or $lineCoverage -eq "null") { $lineCoverage = "0.0" }
+        if ([string]::IsNullOrEmpty($branchCoverage) -or $branchCoverage -eq "null") { $branchCoverage = "0.0" }
+        
+        # Convert to double for calculations
+        $lineCoverageDouble = [double]$lineCoverage
+        $branchCoverageDouble = [double]$branchCoverage
+        
+        # Test coverage message
+        $coverageMessage = if ($lineCoverageDouble -gt 0) { "(Test coverage collected)" } else { "(Test coverage not collected)" }
         
         # Summary statistics
         Write-Host "`nSummary Statistics:"
@@ -245,8 +300,8 @@ jobs:
         Write-Host "Comment Lines: $totalCommentLines"
         Write-Host "Comment Percentage: $commentPercentage%"
         Write-Host "Maintainability Index: $maintainability"
-        Write-Host "Line Coverage: $lineCoverage% (Test coverage not collected)"
-        Write-Host "Branch Coverage: $branchCoverage% (Test coverage not collected)"
+        Write-Host "Line Coverage: $lineCoverage% $coverageMessage"
+        Write-Host "Branch Coverage: $branchCoverage% $coverageMessage"
         
         # Create metrics report content
         $summaryContent = "# Environment Manager Code Quality Metrics`n`n"
@@ -303,6 +358,14 @@ jobs:
       with:
         name: code-metrics-reports
         path: metrics/reports/
+        
+    # Only upload coverage report if it was generated
+    - name: Upload coverage report as artifact
+      if: steps.coverage_step.outputs.coverage_generated == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: metrics/reports/coverage/
         
     - name: Create summary
       run: |

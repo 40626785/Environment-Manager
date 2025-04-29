@@ -27,7 +27,19 @@ The workflow generates the following reports:
 1. **Metrics Summary** - Overview of all key metrics with targets
 2. **Documentation Coverage Report** - Details of documentation coverage by file
 3. **Code Complexity Report** - Detailed complexity analysis by file
-4. **Test Coverage Report** - Test coverage details from dotnet-coverage
+4. **Test Coverage Report** - Test coverage details generated using dotnet-coverage
+
+## Test Coverage
+
+The workflow attempts to collect test coverage data if the build succeeds. If the build fails, other code metrics are still collected, but test coverage will be reported as 0%.
+
+When test coverage is collected, the following metrics are reported:
+- **Line Coverage** - Percentage of code lines executed by tests
+- **Branch Coverage** - Percentage of code branches (if/else, switch cases, etc.) executed by tests
+
+The workflow uses:
+- **dotnet-coverage** to collect coverage data during test execution
+- **ReportGenerator** to generate HTML and Markdown reports
 
 ## Contributing to Metrics
 
