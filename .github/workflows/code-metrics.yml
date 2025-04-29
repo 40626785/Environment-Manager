@@ -7,6 +7,8 @@ on:
       - 'EnvironmentManager/**'
       - 'EnvironmentManager.Test/**'
       - '.github/workflows/code-metrics.yml'
+  push:
+    branches: [ feature/code-metrics ]
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
