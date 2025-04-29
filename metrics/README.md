@@ -1,51 +1,77 @@
-# Code Quality Metrics
+# Environment Manager Code Metrics
 
-This directory contains tools for measuring, tracking, and reporting code quality metrics for the Environment Manager project.
+This directory contains code metrics analysis tools and reports for the Environment Manager project.
 
-## Key Metrics Tracked
+## Overview
 
-- **Cyclomatic Complexity**: Measures code complexity by counting the number of linearly independent paths through a program's source code. Our target is an average of less than 15.
-- **Maintainability Index**: A composite metric that indicates how maintainable the source code is. Our target is above 80.
-- **Documentation Coverage**: Percentage of public API members that have XML documentation. Our target is above 90%.
-- **Testing Coverage**: Percentage of code covered by automated tests. Our target is above 85%.
+The code metrics system provides comprehensive quality analysis for the codebase, including:
 
-## Available Tools
+- Code coverage (line and branch)
+- Documentation coverage
+- Cyclomatic complexity
+- Maintainability index
+- Lines of code statistics
 
-- **AnalyzeCodeMetrics.ps1**: Analyzes source code for complexity and maintainability metrics
-- **AnalyzeDocumentationCoverage.ps1**: Calculates documentation coverage percentages
-- **CodeMetricsReport.ps1**: Generates a comprehensive metrics report
+## GitHub Actions Workflow
 
-## Directory Structure
+The metrics are generated automatically through a GitHub Actions workflow (`.github/workflows/code-metrics.yml`). The workflow runs on:
 
-- `/config`: Configuration files for metrics tools
-- `/reports`: Generated reports and raw metrics data
+- Each push to feature/code-metrics, main, or develop branches
+- Pull requests to main/develop branches
+- Manual trigger via GitHub Actions UI
 
-## Usage
+## Reports Generated
 
-To generate a complete metrics report:
+The workflow generates the following reports:
 
+1. **Metrics Summary** - Overview of all key metrics with targets
+2. **Documentation Coverage Report** - Details of documentation coverage by file
+3. **Code Complexity Report** - Detailed complexity analysis by file
+4. **Test Coverage Report** - Test coverage details from dotnet-coverage
+
+## Adding Metrics Badges
+
+You can add the metrics badges to your project's README.md. After running the workflow:
+
+1. Download the badges artifacts
+2. Use the URLs in the badge text files to create Markdown badges:
+
+```markdown
+![Code Coverage](https://img.shields.io/badge/Coverage-XX%25-color)
+![Documentation](https://img.shields.io/badge/Documentation-XX%25-color)
+![Complexity](https://img.shields.io/badge/Complexity-XX-color)
+![Maintainability](https://img.shields.io/badge/Maintainability-XX-color)
 ```
-cd metrics
-./CodeMetricsReport.ps1
-```
 
-To analyze specific metrics:
+## Contributing to Metrics
 
-```
-# For code complexity and maintainability
-./AnalyzeCodeMetrics.ps1
+When contributing to the project, aim to maintain or improve these metrics:
 
-# For documentation coverage
-./AnalyzeDocumentationCoverage.ps1
-```
+- Line Coverage: >80%
+- Documentation Coverage: >90% 
+- Cyclomatic Complexity: <15
+- Maintainability Index: >80
 
-## CI/CD Integration
+## Manual Analysis
 
-These metrics are automatically analyzed during CI/CD pipeline execution. Each pull request is validated against our quality targets before approval.
+To run the metrics analysis locally:
 
-## How Metrics Translate to Business Value
+1. Install required tools:
+   ```
+   dotnet tool install --global dotnet-reportgenerator-globaltool
+   dotnet tool install --global dotnet-coverage
+   ```
 
-- **Low Cyclomatic Complexity**: Reduces bugs and maintenance costs
-- **High Maintainability Index**: Enables faster feature development and modifications
-- **Complete Documentation**: Accelerates developer onboarding
-- **Comprehensive Test Coverage**: Ensures system reliability and reduces regressions 
+2. Run the tests with coverage:
+   ```
+   dotnet-coverage collect -f xml -o metrics/reports/coverage.xml "dotnet test EnvironmentManager.Test/EnvironmentManager.Test.csproj --configuration Release"
+   ```
+
+3. Generate the coverage report:
+   ```
+   reportgenerator -reports:metrics/reports/coverage.xml -targetdir:metrics/reports/coverage -reporttypes:Html;MarkdownSummary
+   ```
+
+4. View the reports in the `metrics/reports` directory
+
+For more detailed analysis, review the GitHub Actions workflow file for the complete set of PowerShell scripts used to analyze code quality. 
