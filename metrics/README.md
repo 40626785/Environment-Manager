@@ -29,20 +29,6 @@ The workflow generates the following reports:
 3. **Code Complexity Report** - Detailed complexity analysis by file
 4. **Test Coverage Report** - Test coverage details from dotnet-coverage
 
-## Adding Metrics Badges
-
-You can add the metrics badges to your project's README.md. After running the workflow:
-
-1. Download the badges artifacts
-2. Use the URLs in the badge text files to create Markdown badges:
-
-```markdown
-![Code Coverage](https://img.shields.io/badge/Coverage-XX%25-color)
-![Documentation](https://img.shields.io/badge/Documentation-XX%25-color)
-![Complexity](https://img.shields.io/badge/Complexity-XX-color)
-![Maintainability](https://img.shields.io/badge/Maintainability-XX-color)
-```
-
 ## Contributing to Metrics
 
 When contributing to the project, aim to maintain or improve these metrics:

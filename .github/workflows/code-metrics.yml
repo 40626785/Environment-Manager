@@ -293,40 +293,16 @@ jobs:
         # Display the summary report in the logs
         Get-Content "metrics/reports/metrics_summary.md"
 
-    - name: Generate badges
-      run: |
-        # Extract metrics from summary
-        DOC_COVERAGE=$(grep -oP 'Documentation Coverage: \K[0-9.]+' metrics/reports/metrics_summary.md || echo "0.0")
-        COMPLEXITY=$(grep -oP 'Cyclomatic Complexity \(Avg\): \K[0-9.]+' metrics/reports/metrics_summary.md || echo "0.0")
-        MAINTAINABILITY=$(grep -oP 'Maintainability Index: \K[0-9.]+' metrics/reports/metrics_summary.md || echo "0.0")
-        
-        # Create badges directory
-        mkdir -p metrics/badges
-        
-        # Create badge endpoint URLs
-        echo "https://img.shields.io/badge/Documentation-${DOC_COVERAGE}%25-$(if (( $(echo "$DOC_COVERAGE < 70" | bc -l) )); then echo "red"; elif (( $(echo "$DOC_COVERAGE < 90" | bc -l) )); then echo "yellow"; else echo "brightgreen"; fi)" > metrics/badges/documentation.txt
-        echo "https://img.shields.io/badge/Complexity-${COMPLEXITY}-$(if (( $(echo "$COMPLEXITY > 15" | bc -l) )); then echo "red"; elif (( $(echo "$COMPLEXITY > 10" | bc -l) )); then echo "yellow"; else echo "brightgreen"; fi)" > metrics/badges/complexity.txt
-        echo "https://img.shields.io/badge/Maintainability-${MAINTAINABILITY}-$(if (( $(echo "$MAINTAINABILITY < 70" | bc -l) )); then echo "red"; elif (( $(echo "$MAINTAINABILITY < 80" | bc -l) )); then echo "yellow"; else echo "brightgreen"; fi)" > metrics/badges/maintainability.txt
-        
-        cat metrics/badges/*.txt
-
     - name: List Generated Reports
       run: |
         echo "Generated reports:"
         ls -la metrics/reports/
-        ls -la metrics/badges/
 
     - name: Upload metrics reports as artifacts
       uses: actions/upload-artifact@v4
       with:
         name: code-metrics-reports
         path: metrics/reports/
-        
-    - name: Upload badges as artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: metric-badges
-        path: metrics/badges/
         
     - name: Create summary
       run: |
