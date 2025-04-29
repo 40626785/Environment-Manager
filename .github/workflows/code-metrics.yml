@@ -26,10 +26,12 @@ jobs:
       with:
         dotnet-version: 8.0.x
     
-    - name: Setup PowerShell
-      uses: microsoft/powershell@v1
-      with:
-        pwsh-version: 7.3
+    - name: Install PowerShell modules
+      shell: pwsh
+      run: |
+        # Check PowerShell version
+        $PSVersionTable
+        # No additional modules needed for now
     
     - name: Install required tools
       run: |
