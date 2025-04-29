@@ -27,9 +27,9 @@ jobs:
         dotnet-version: 8.0.x
     
     - name: Setup PowerShell
-      uses: actions/setup-powershell@v1
+      uses: microsoft/powershell@v1
       with:
-        powershell-version: '7.3'
+        pwsh-version: 7.3
     
     - name: Install required tools
       run: |
