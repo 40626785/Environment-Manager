@@ -26,196 +26,121 @@ jobs:
     - name: Generate code metrics
       shell: pwsh
       run: |
-        # Check PowerShell version
-        $PSVersionTable
-        
-        # Create initial metrics summary
-        $metricsOutput = "metrics/reports/metrics_summary.md"
-        
         # Analyze codebase using PowerShell
         $codeFiles = (Get-ChildItem -Path "EnvironmentManager" -Filter "*.cs" -Recurse | 
                     Where-Object { $_.FullName -notmatch "\\obj\\" -and $_.FullName -notmatch "\\bin\\" }).Count
-        
-        # Set default metrics values that match our requirements
-        $complexity = 14
-        $maintainability = 82
         
         # Calculate documentation coverage
         $totalPublicMembers = 0
         $documentedMembers = 0
         
-        try {
-            $csFiles = Get-ChildItem -Path "EnvironmentManager" -Filter "*.cs" -Recurse | 
-                Where-Object { $_.FullName -notmatch "\\obj\\" -and $_.FullName -notmatch "\\bin\\" }
+        $csFiles = Get-ChildItem -Path "EnvironmentManager" -Filter "*.cs" -Recurse | 
+            Where-Object { $_.FullName -notmatch "\\obj\\" -and $_.FullName -notmatch "\\bin\\" }
+            
+        foreach ($file in $csFiles) {
+            $content = Get-Content -Path $file.FullName -Raw -ErrorAction SilentlyContinue
+            if ($content) {
+                # Count public members
+                $memberMatches = [regex]::Matches($content, "public\s+(static\s+)?(virtual\s+)?(\w+)(\s+\w+)?\s+(\w+)")
+                $totalPublicMembers += $memberMatches.Count
                 
-            foreach ($file in $csFiles) {
-                $content = Get-Content -Path $file.FullName -Raw -ErrorAction SilentlyContinue
-                if ($content) {
-                    # Count public members
-                    $memberMatches = [regex]::Matches($content, "public\s+(static\s+)?(virtual\s+)?(\w+)(\s+\w+)?\s+(\w+)")
-                    $totalPublicMembers += $memberMatches.Count
-                    
-                    # Count documented members
-                    $docMatches = [regex]::Matches($content, "///\s*<summary>[\s\S]*?///\s*</summary>")
-                    $documentedMembers += $docMatches.Count
-                }
+                # Count documented members
+                $docMatches = [regex]::Matches($content, "///\s*<summary>[\s\S]*?///\s*</summary>")
+                $documentedMembers += $docMatches.Count
             }
-            
-            if ($totalPublicMembers -gt 0) {
-                $docCoverage = [math]::Round(($documentedMembers / $totalPublicMembers) * 100, 1)
-            }
-            else {
-                $docCoverage = 93.4 # Fallback value
-            }
-        }
-        catch {
-            Write-Host "Error analyzing documentation: $_"
-            $docCoverage = 93.4 # Fallback value
         }
         
-        # Calculate simple cyclomatic complexity manually
-        try {
-            $totalComplexity = 0
-            $methodCount = 0
-            
-            foreach ($file in $csFiles) {
-                $content = Get-Content -Path $file.FullName -Raw -ErrorAction SilentlyContinue
-                if ($content) {
-                    # Count methods
-                    $methodMatches = [regex]::Matches($content, "(public|private|protected|internal)\s+(static\s+)?(virtual\s+)?(\w+)(\s+\w+)?\s+(\w+)\s*\(")
-                    $methodCount += $methodMatches.Count
-                    
-                    # Estimate complexity based on conditional statements
-                    $ifCount = [regex]::Matches($content, "\sif\s*\(").Count
-                    $forCount = [regex]::Matches($content, "\sfor\s*\(").Count
-                    $foreachCount = [regex]::Matches($content, "\sforeach\s*\(").Count
-                    $whileCount = [regex]::Matches($content, "\swhile\s*\(").Count
-                    $switchCount = [regex]::Matches($content, "\sswitch\s*\(").Count
-                    $caseCount = [regex]::Matches($content, "\scase\s+").Count
-                    
-                    $totalBranches = $ifCount + $forCount + $foreachCount + $whileCount + $switchCount + $caseCount
-                    $totalComplexity += $totalBranches
-                }
-            }
-            
-            if ($methodCount -gt 0) {
-                $calculatedComplexity = [math]::Round($totalComplexity / $methodCount, 1)
-                $complexity = [math]::Min($calculatedComplexity, 14) # Cap at 14 to meet requirements
-            }
+        if ($totalPublicMembers -gt 0) {
+            $docCoverage = [math]::Round(($documentedMembers / $totalPublicMembers) * 100, 1)
         }
-        catch {
-            Write-Host "Error calculating complexity: $_"
-            # Keep default value
+        else {
+            $docCoverage = 0
         }
         
-        # Estimate test coverage
-        $testCoverage = 86.2
+        # Calculate cyclomatic complexity
+        $totalComplexity = 0
+        $methodCount = 0
+        
+        foreach ($file in $csFiles) {
+            $content = Get-Content -Path $file.FullName -Raw -ErrorAction SilentlyContinue
+            if ($content) {
+                # Count methods
+                $methodMatches = [regex]::Matches($content, "(public|private|protected|internal)\s+(static\s+)?(virtual\s+)?(\w+)(\s+\w+)?\s+(\w+)\s*\(")
+                $methodCount += $methodMatches.Count
+                
+                # Calculate complexity based on conditional statements
+                $ifCount = [regex]::Matches($content, "\sif\s*\(").Count
+                $forCount = [regex]::Matches($content, "\sfor\s*\(").Count
+                $foreachCount = [regex]::Matches($content, "\sforeach\s*\(").Count
+                $whileCount = [regex]::Matches($content, "\swhile\s*\(").Count
+                $switchCount = [regex]::Matches($content, "\sswitch\s*\(").Count
+                $caseCount = [regex]::Matches($content, "\scase\s+").Count
+                
+                $totalBranches = $ifCount + $forCount + $foreachCount + $whileCount + $switchCount + $caseCount
+                $totalComplexity += $totalBranches
+            }
+        }
+        
+        if ($methodCount -gt 0) {
+            $complexity = [math]::Round($totalComplexity / $methodCount, 1)
+        }
+        else {
+            $complexity = 0
+        }
+        
+        # Calculate maintainability index (simplified approximation)
+        # Halstead Volume approximation: Lines of code / methods
+        # Maintainability is inversely related to complexity and code size, directly related to comment percentage
+        $totalLinesOfCode = 0
+        $totalCommentLines = 0
+        
+        foreach ($file in $csFiles) {
+            $content = Get-Content -Path $file.FullName -ErrorAction SilentlyContinue
+            if ($content) {
+                $totalLinesOfCode += $content.Count
+                $commentLines = $content | Where-Object { $_ -match "^\s*//|^\s*///|^\s*/\*|^\s*\*" }
+                $totalCommentLines += $commentLines.Count
+            }
+        }
+        
+        if ($totalLinesOfCode -gt 0) {
+            $commentPercentage = ($totalCommentLines / $totalLinesOfCode) * 100
+            
+            # Approximation of maintainability index based on:
+            # - Lower complexity is better (inverse relationship)
+            # - More comments are better (direct relationship)
+            # - Fewer lines per method are better (inverse relationship)
+            
+            $linesPerMethod = if ($methodCount -gt 0) { $totalLinesOfCode / $methodCount } else { 100 }
+            $maintainability = 100 - ($complexity * 0.2) + ($commentPercentage * 0.4) - ($linesPerMethod * 0.1)
+            $maintainability = [math]::Max(0, [math]::Min(100, [math]::Round($maintainability, 1)))
+        }
+        else {
+            $maintainability = 0
+        }
         
         # Create metrics report content
         $summaryContent = "# Environment Manager Code Quality Metrics`n`n"
-        $summaryContent += "## Summary`n`n"
-        $summaryContent += "| Metric | Value | Target | Status |`n"
-        $summaryContent += "|--------|-------|--------|--------|`n"
         
-        $checkmark = [char]0x2705
-        $xmark = [char]0x274C
+        $summaryContent += "| Metric | Value | Target |`n"
+        $summaryContent += "|--------|-------|--------|`n"
+        $summaryContent += "| Cyclomatic Complexity (Avg) | $complexity | <15 |`n"
+        $summaryContent += "| Maintainability Index | $maintainability | >80 |`n"
+        $summaryContent += "| Documentation Coverage | $docCoverage% | >90% |`n"
         
-        $complexityStatus = if ($complexity -lt 15) { $checkmark } else { $xmark }
-        $maintainabilityStatus = if ($maintainability -gt 80) { $checkmark } else { $xmark }
-        $docStatus = if ($docCoverage -ge 90) { $checkmark } else { $xmark }
-        $testStatus = if ($testCoverage -ge 85) { $checkmark } else { $xmark }
+        $summaryContent += "`n## Code Statistics`n"
+        $summaryContent += "- Files: $codeFiles`n"
+        $summaryContent += "- Methods: $methodCount`n"
+        $summaryContent += "- Public Members: $totalPublicMembers`n"
+        $summaryContent += "- Documented Members: $documentedMembers`n"
+        $summaryContent += "- Total Lines of Code: $totalLinesOfCode`n"
+        $summaryContent += "- Comment Lines: $totalCommentLines`n"
         
-        $summaryContent += "| Cyclomatic Complexity (Avg) | $complexity | <15 | $complexityStatus |`n"
-        $summaryContent += "| Maintainability Index | $maintainability | >80 | $maintainabilityStatus |`n"
-        $summaryContent += "| Documentation Coverage (Public APIs) | $docCoverage% | >90% | $docStatus |`n"
-        $summaryContent += "| Unit Test Coverage | $testCoverage% | >85% | $testStatus |`n`n"
-        
-        $summaryContent += "## Detailed Metrics`n`n"
-        $summaryContent += "### Cyclomatic Complexity`n"
-        $summaryContent += "- **Average**: $complexity`n"
-        $summaryContent += "- **Maximum per method**: 25`n"
-        $summaryContent += "- **Methods exceeding threshold**: 0`n`n"
-        
-        $summaryContent += "Low cyclomatic complexity reduces the potential for bugs, makes code easier to test, and simplifies maintenance.`n`n"
-        
-        $summaryContent += "### Maintainability Index`n"
-        $summaryContent += "- **Average**: $maintainability`n"
-        $summaryContent += "- Calculated using a standard formula considering:`n"
-        $summaryContent += "  - Halstead Volume (code size)`n"
-        $summaryContent += "  - Cyclomatic Complexity`n"
-        $summaryContent += "  - Lines of Code`n"
-        $summaryContent += "  - Comment Percentage`n`n"
-        
-        $summaryContent += "Higher maintainability scores indicate code that is easier to modify and extend.`n`n"
-        
-        $summaryContent += "### Documentation Coverage`n"
-        $summaryContent += "- **Public Methods/Properties**: $docCoverage%`n"
-        $summaryContent += "- **Classes**: 100%`n"
-        $summaryContent += "- **Interfaces**: 100%`n"
-        $summaryContent += "- **XML Comments**: Comprehensive for all public members`n`n"
-        
-        $summaryContent += "Documentation standards ensure new developers can quickly understand and extend the codebase.`n`n"
-        
-        $summaryContent += "### Test Coverage`n"
-        $summaryContent += "- **ViewModels**: 90%`n"
-        $summaryContent += "- **Services**: 85%`n"
-        $summaryContent += "- **Edge Cases**: Comprehensive verification`n`n"
-        
-        $summaryContent += "Prioritized testing ensures system reliability, particularly for components dealing with external dependencies.`n`n"
-        
-        $summaryContent += "## Code Statistics`n"
-        $summaryContent += "- Total code files analyzed: $codeFiles`n"
-        $summaryContent += "- Total methods analyzed: $methodCount`n"
-        $summaryContent += "- Total public members analyzed: $totalPublicMembers`n"
-        $summaryContent += "- Documented members: $documentedMembers`n`n"
-        
-        $summaryContent += "## Impact`n"
-        $summaryContent += "These metrics translate directly to:`n"
-        $summaryContent += "- Reduced maintenance costs`n"
-        $summaryContent += "- Faster developer onboarding`n"
-        $summaryContent += "- Higher system reliability`n"
-        $summaryContent += "- More predictable development timelines`n"
-        
+        $metricsOutput = "metrics/reports/metrics_summary.md"
         Set-Content -Path $metricsOutput -Value $summaryContent
         
         # Display the report in the logs
         Get-Content $metricsOutput
-        
-        # Create a simple documentation coverage report
-        $docReportOutput = "metrics/reports/documentation_report.md"
-        $docReportContent = "# Environment Manager Documentation Coverage Report`n`n"
-        $docReportContent += "## Summary`n`n"
-        $docReportContent += "| Type | Documented | Total | Coverage |`n"
-        $docReportContent += "|------|------------|-------|----------|`n"
-        $docReportContent += "| Public Methods/Properties | $documentedMembers | $totalPublicMembers | $docCoverage% |`n"
-        $docReportContent += "| Classes | 72 | 72 | 100% |`n"
-        $docReportContent += "| Interfaces | 23 | 23 | 100% |`n`n"
-        
-        $docReportContent += "## Documentation Standards Status`n`n"
-        $docReportContent += "The code metrics target is >90% documentation coverage for public APIs.`n`n"
-        
-        $docStatus = if ($docCoverage -ge 90) { "✅ Meeting Standard" } else { "❌ Below Standard" }
-        $docReportContent += "Current status: **$docStatus**`n"
-        
-        Set-Content -Path $docReportOutput -Value $docReportContent
-
-        # Create a test coverage report
-        $testReportOutput = "metrics/reports/test_coverage_report.md"
-        $testReportContent = "# Environment Manager Test Coverage Report`n`n"
-        $testReportContent += "## Summary`n`n"
-        $testReportContent += "| Metric | Value | Target | Status |`n"
-        $testReportContent += "|--------|-------|--------|--------|`n"
-        $testReportContent += "| Overall Test Coverage | $testCoverage% | >85% | $testStatus |`n"
-        $testReportContent += "| ViewModels Coverage | 90.5% | >90% | ✅ |`n"
-        $testReportContent += "| Services Coverage | 85.3% | >85% | ✅ |`n`n"
-        
-        $testReportContent += "## Test Prioritization`n`n"
-        $testReportContent += "Testing efforts were prioritized based on risk assessment:`n"
-        $testReportContent += "- High coverage of ViewModels (90%+), which contain the majority of application logic`n"
-        $testReportContent += "- Comprehensive testing of Services (85%+), especially those handling external dependencies`n"
-        $testReportContent += "- Verification of edge cases and error conditions across all components`n`n"
-        
-        Set-Content -Path $testReportOutput -Value $testReportContent
         
     - name: List Generated Reports
       run: |
