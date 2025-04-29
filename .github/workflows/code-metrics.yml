@@ -202,4 +202,10 @@ jobs:
     - name: List Generated Reports
       run: |
         echo "Generated reports:"
-        ls -la metrics/reports/ 
+        ls -la metrics/reports/
+
+    - name: Upload metrics reports as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: code-metrics-reports
+        path: metrics/reports/ 
