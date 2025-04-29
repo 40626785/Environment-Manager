@@ -214,6 +214,10 @@ jobs:
         $global:testLineCoverage = $lineCoverage
         $global:testBranchCoverage = $branchCoverage
         
+        # Explicitly write values to files to ensure they're available to subsequent steps
+        "$lineCoverage" | Out-File -FilePath "metrics/reports/line_coverage.txt"
+        "$branchCoverage" | Out-File -FilePath "metrics/reports/branch_coverage.txt"
+        
         # Print test coverage summary
         Write-Host "`nTest Coverage Summary:"
         Write-Host "Test Files: $totalTestFiles"
@@ -418,8 +422,30 @@ jobs:
         }
         
         # Use the test coverage values from previous step
-        $lineCoverage = $global:testLineCoverage
-        $branchCoverage = $global:testBranchCoverage
+        # First try to read from files to ensure values transfer between steps
+        if (Test-Path "metrics/reports/line_coverage.txt") {
+            $lineCoverage = Get-Content -Path "metrics/reports/line_coverage.txt" -Raw
+            $lineCoverage = $lineCoverage.Trim()
+        } else {
+            # Fallback to global variable
+            $lineCoverage = $global:testLineCoverage
+        }
+        
+        if (Test-Path "metrics/reports/branch_coverage.txt") {
+            $branchCoverage = Get-Content -Path "metrics/reports/branch_coverage.txt" -Raw
+            $branchCoverage = $branchCoverage.Trim()
+        } else {
+            # Fallback to global variable
+            $branchCoverage = $global:testBranchCoverage
+        }
+        
+        # In case all else fails, ensure we have default values
+        if ($null -eq $lineCoverage -or $lineCoverage -eq "") { $lineCoverage = "0.0" }
+        if ($null -eq $branchCoverage -or $branchCoverage -eq "") { $branchCoverage = "0.0" }
+        
+        # Debug: Show the coverage values
+        Write-Host "Using line coverage: $lineCoverage%"
+        Write-Host "Using branch coverage: $branchCoverage%"
         
         # Summary statistics
         Write-Host "`nSummary Statistics:"
@@ -444,8 +470,8 @@ jobs:
         $summaryContent += "| Cyclomatic Complexity (Avg) | $complexity | <15 |`n"
         $summaryContent += "| Maintainability Index | $maintainability | >80 |`n"
         $summaryContent += "| Documentation Coverage | $docCoverage% | >90% |`n"
-        $summaryContent += "| Line Coverage | $lineCoverage% | >80% |`n"
-        $summaryContent += "| Branch Coverage | $branchCoverage% | >70% |`n"
+        $summaryContent += "| Line Coverage | ${lineCoverage}% | >80% |`n"
+        $summaryContent += "| Branch Coverage | ${branchCoverage}% | >70% |`n"
         
         $summaryContent += "`n## Code Statistics`n"
         $summaryContent += "- Files: $codeFiles`n"
