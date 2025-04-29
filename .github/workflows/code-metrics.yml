@@ -26,98 +26,205 @@ jobs:
     - name: Generate code metrics
       shell: pwsh
       run: |
+        # Debug info
+        Write-Host "Working directory: $(Get-Location)"
+        Write-Host "Directory structure:"
+        Get-ChildItem -Path . -Directory | ForEach-Object { Write-Host "  $($_.Name)" }
+        
+        # Check if EnvironmentManager directory exists
+        if (!(Test-Path -Path "EnvironmentManager")) {
+            Write-Host "WARNING: EnvironmentManager directory not found. Listing available directories:"
+            Get-ChildItem -Path . -Directory | ForEach-Object { Write-Host "  $($_.Name)" }
+        }
+        
         # Analyze codebase using PowerShell
-        $codeFiles = (Get-ChildItem -Path "EnvironmentManager" -Filter "*.cs" -Recurse | 
-                    Where-Object { $_.FullName -notmatch "\\obj\\" -and $_.FullName -notmatch "\\bin\\" }).Count
+        $csFiles = Get-ChildItem -Path . -Filter "*.cs" -Recurse -ErrorAction Continue | 
+                    Where-Object { $_.FullName -notmatch "(/|\\)obj(/|\\)" -and 
+                                  $_.FullName -notmatch "(/|\\)bin(/|\\)" }
+        
+        $codeFiles = $csFiles.Count
+        Write-Host "Found $codeFiles C# files"
+        
+        # Print first 10 files for debugging
+        Write-Host "First 10 C# files:"
+        $csFiles | Select-Object -First 10 | ForEach-Object { Write-Host "  $($_.FullName)" }
         
         # Calculate documentation coverage
         $totalPublicMembers = 0
         $documentedMembers = 0
-        
-        $csFiles = Get-ChildItem -Path "EnvironmentManager" -Filter "*.cs" -Recurse | 
-            Where-Object { $_.FullName -notmatch "\\obj\\" -and $_.FullName -notmatch "\\bin\\" }
+        $fileDetails = @()
             
         foreach ($file in $csFiles) {
-            $content = Get-Content -Path $file.FullName -Raw -ErrorAction SilentlyContinue
-            if ($content) {
-                # Count public members
-                $memberMatches = [regex]::Matches($content, "public\s+(static\s+)?(virtual\s+)?(\w+)(\s+\w+)?\s+(\w+)")
-                $totalPublicMembers += $memberMatches.Count
-                
-                # Count documented members
-                $docMatches = [regex]::Matches($content, "///\s*<summary>[\s\S]*?///\s*</summary>")
-                $documentedMembers += $docMatches.Count
+            try {
+                $content = Get-Content -Path $file.FullName -Raw -ErrorAction Continue
+                if ($content) {
+                    # Count public members
+                    $memberMatches = [regex]::Matches($content, "public\s+(static\s+)?(virtual\s+)?(override\s+)?(\w+)(\s+\w+)?\s+(\w+)")
+                    $memberCount = $memberMatches.Count
+                    
+                    # Count documented members
+                    $docMatches = [regex]::Matches($content, "///\s*<summary>")
+                    $docCount = $docMatches.Count
+                    
+                    $totalPublicMembers += $memberCount
+                    $documentedMembers += $docCount
+                    
+                    $fileDetails += [PSCustomObject]@{
+                        File = $file.Name
+                        PublicMembers = $memberCount
+                        DocumentedMembers = $docCount
+                    }
+                }
+            }
+            catch {
+                Write-Host "Error processing file $($file.FullName): $_"
             }
         }
+        
+        # Show details for the top 10 files with most public members
+        Write-Host "`nTop 10 files by public member count:"
+        $fileDetails | Sort-Object -Property PublicMembers -Descending | Select-Object -First 10 | 
+            Format-Table -Property File, PublicMembers, DocumentedMembers
         
         if ($totalPublicMembers -gt 0) {
             $docCoverage = [math]::Round(($documentedMembers / $totalPublicMembers) * 100, 1)
         }
         else {
             $docCoverage = 0
+            Write-Host "WARNING: No public members found for documentation analysis"
         }
         
         # Calculate cyclomatic complexity
         $totalComplexity = 0
         $methodCount = 0
+        $complexityByFile = @()
         
         foreach ($file in $csFiles) {
-            $content = Get-Content -Path $file.FullName -Raw -ErrorAction SilentlyContinue
-            if ($content) {
-                # Count methods
-                $methodMatches = [regex]::Matches($content, "(public|private|protected|internal)\s+(static\s+)?(virtual\s+)?(\w+)(\s+\w+)?\s+(\w+)\s*\(")
-                $methodCount += $methodMatches.Count
-                
-                # Calculate complexity based on conditional statements
-                $ifCount = [regex]::Matches($content, "\sif\s*\(").Count
-                $forCount = [regex]::Matches($content, "\sfor\s*\(").Count
-                $foreachCount = [regex]::Matches($content, "\sforeach\s*\(").Count
-                $whileCount = [regex]::Matches($content, "\swhile\s*\(").Count
-                $switchCount = [regex]::Matches($content, "\sswitch\s*\(").Count
-                $caseCount = [regex]::Matches($content, "\scase\s+").Count
-                
-                $totalBranches = $ifCount + $forCount + $foreachCount + $whileCount + $switchCount + $caseCount
-                $totalComplexity += $totalBranches
+            try {
+                $content = Get-Content -Path $file.FullName -Raw -ErrorAction Continue
+                if ($content) {
+                    # Count methods more accurately with better regex
+                    $methodMatches = [regex]::Matches($content, "(public|private|protected|internal)\s+(static\s+)?(virtual\s+)?(override\s+)?(\w+)(\s+\w+)?\s+(\w+)\s*\(")
+                    $fileMethodCount = $methodMatches.Count
+                    
+                    # Calculate complexity based on conditional statements
+                    $ifCount = [regex]::Matches($content, "(\s|^)if\s*\(").Count
+                    $elseIfCount = [regex]::Matches($content, "(\s|^)else\s+if\s*\(").Count
+                    $elseCount = [regex]::Matches($content, "(\s|^)else(\s|{)").Count
+                    $forCount = [regex]::Matches($content, "(\s|^)for\s*\(").Count
+                    $foreachCount = [regex]::Matches($content, "(\s|^)foreach\s*\(").Count
+                    $whileCount = [regex]::Matches($content, "(\s|^)while\s*\(").Count
+                    $doWhileCount = [regex]::Matches($content, "(\s|^)do\s*{").Count
+                    $switchCount = [regex]::Matches($content, "(\s|^)switch\s*\(").Count
+                    $caseCount = [regex]::Matches($content, "(\s|^)case\s+").Count
+                    $catchCount = [regex]::Matches($content, "(\s|^)catch\s*[({]").Count
+                    $conditionalOpCount = [regex]::Matches($content, "\?\s*[^;]+\s*:\s*[^;]+").Count
+                    
+                    $fileBranchCount = $ifCount + $elseIfCount + $forCount + $foreachCount + 
+                                      $whileCount + $doWhileCount + $switchCount + $caseCount + 
+                                      $catchCount + $conditionalOpCount
+                                      
+                    if ($fileMethodCount -gt 0) {
+                        $fileComplexity = [math]::Round($fileBranchCount / $fileMethodCount, 1)
+                    } 
+                    else {
+                        $fileComplexity = 0
+                    }
+                    
+                    $totalComplexity += $fileBranchCount
+                    $methodCount += $fileMethodCount
+                    
+                    $complexityByFile += [PSCustomObject]@{
+                        File = $file.Name
+                        Methods = $fileMethodCount
+                        Branches = $fileBranchCount
+                        Complexity = $fileComplexity
+                    }
+                }
+            }
+            catch {
+                Write-Host "Error calculating complexity for $($file.FullName): $_"
             }
         }
+        
+        # Show details for the top 10 most complex files
+        Write-Host "`nTop 10 files by complexity:"
+        $complexityByFile | Sort-Object -Property Complexity -Descending | Select-Object -First 10 | 
+            Format-Table -Property File, Methods, Branches, Complexity
         
         if ($methodCount -gt 0) {
             $complexity = [math]::Round($totalComplexity / $methodCount, 1)
         }
         else {
             $complexity = 0
+            Write-Host "WARNING: No methods found for complexity analysis"
         }
         
-        # Calculate maintainability index (simplified approximation)
-        # Halstead Volume approximation: Lines of code / methods
-        # Maintainability is inversely related to complexity and code size, directly related to comment percentage
+        # Calculate maintainability index (improved calculation)
         $totalLinesOfCode = 0
         $totalCommentLines = 0
+        $linesByFile = @()
         
         foreach ($file in $csFiles) {
-            $content = Get-Content -Path $file.FullName -ErrorAction SilentlyContinue
-            if ($content) {
-                $totalLinesOfCode += $content.Count
-                $commentLines = $content | Where-Object { $_ -match "^\s*//|^\s*///|^\s*/\*|^\s*\*" }
-                $totalCommentLines += $commentLines.Count
+            try {
+                $content = Get-Content -Path $file.FullName -ErrorAction Continue
+                if ($content) {
+                    $fileLines = $content.Count
+                    $commentLines = @($content | Where-Object { $_ -match "^\s*(//|/\*|\*)" }).Count
+                    
+                    $totalLinesOfCode += $fileLines
+                    $totalCommentLines += $commentLines
+                    
+                    $linesByFile += [PSCustomObject]@{
+                        File = $file.Name
+                        Lines = $fileLines
+                        CommentLines = $commentLines
+                        CommentPercentage = if ($fileLines -gt 0) { [math]::Round(($commentLines / $fileLines) * 100, 1) } else { 0 }
+                    }
+                }
+            }
+            catch {
+                Write-Host "Error counting lines in $($file.FullName): $_"
             }
         }
         
+        # Show details for the top 10 largest files
+        Write-Host "`nTop 10 largest files by line count:"
+        $linesByFile | Sort-Object -Property Lines -Descending | Select-Object -First 10 | 
+            Format-Table -Property File, Lines, CommentLines, CommentPercentage
+        
         if ($totalLinesOfCode -gt 0) {
-            $commentPercentage = ($totalCommentLines / $totalLinesOfCode) * 100
+            $commentPercentage = [math]::Round(($totalCommentLines / $totalLinesOfCode) * 100, 1)
             
-            # Approximation of maintainability index based on:
-            # - Lower complexity is better (inverse relationship)
-            # - More comments are better (direct relationship)
-            # - Fewer lines per method are better (inverse relationship)
+            # Improved maintainability formula based on industry standards
+            # (Microsoft's formula is 171 - 5.2 * ln(avgLoc) - 0.23 * avgCyclomatic - 16.2 * ln(avgHalstead))
+            # We'll use a simplified version since we can't calculate Halstead Volume easily
             
-            $linesPerMethod = if ($methodCount -gt 0) { $totalLinesOfCode / $methodCount } else { 100 }
-            $maintainability = 100 - ($complexity * 0.2) + ($commentPercentage * 0.4) - ($linesPerMethod * 0.1)
-            $maintainability = [math]::Max(0, [math]::Min(100, [math]::Round($maintainability, 1)))
+            $linesPerMethod = if ($methodCount -gt 0) { $totalLinesOfCode / $methodCount } else { 50 }
+            $commentRatio = ($commentPercentage / 100) # as a decimal
+            
+            # Basic formula: Higher is better (0-100 scale)
+            $rawMaintainability = 171 - 5.2 * [math]::Log($linesPerMethod) - 0.23 * $complexity + 40 * $commentRatio
+            $maintainability = [math]::Max(0, [math]::Min(100, [math]::Round($rawMaintainability, 1)))
         }
         else {
             $maintainability = 0
+            $commentPercentage = 0
+            Write-Host "WARNING: No lines of code found for maintainability analysis"
         }
+        
+        # Summary statistics
+        Write-Host "`nSummary Statistics:"
+        Write-Host "Total C# Files: $codeFiles"
+        Write-Host "Total Methods: $methodCount"
+        Write-Host "Total Public Members: $totalPublicMembers"
+        Write-Host "Documented Members: $documentedMembers"
+        Write-Host "Documentation Coverage: $docCoverage%"
+        Write-Host "Average Cyclomatic Complexity: $complexity"
+        Write-Host "Total Lines of Code: $totalLinesOfCode"
+        Write-Host "Comment Lines: $totalCommentLines"
+        Write-Host "Comment Percentage: $commentPercentage%"
+        Write-Host "Maintainability Index: $maintainability"
         
         # Create metrics report content
         $summaryContent = "# Environment Manager Code Quality Metrics`n`n"
@@ -134,10 +241,32 @@ jobs:
         $summaryContent += "- Public Members: $totalPublicMembers`n"
         $summaryContent += "- Documented Members: $documentedMembers`n"
         $summaryContent += "- Total Lines of Code: $totalLinesOfCode`n"
-        $summaryContent += "- Comment Lines: $totalCommentLines`n"
+        $summaryContent += "- Comment Lines: $totalCommentLines ($commentPercentage%)`n"
         
         $metricsOutput = "metrics/reports/metrics_summary.md"
         Set-Content -Path $metricsOutput -Value $summaryContent
+        
+        # Create detailed metrics file
+        $detailedContent = "# Detailed Code Metrics`n`n"
+        
+        $detailedContent += "## Top 10 Most Complex Files`n`n"
+        $detailedContent += "| File | Methods | Branches | Complexity |`n"
+        $detailedContent += "|------|---------|----------|------------|`n"
+        
+        $complexityByFile | Sort-Object -Property Complexity -Descending | Select-Object -First 10 | ForEach-Object {
+            $detailedContent += "| $($_.File) | $($_.Methods) | $($_.Branches) | $($_.Complexity) |`n"
+        }
+        
+        $detailedContent += "`n## Top 10 Files by Public Member Count`n`n"
+        $detailedContent += "| File | Public Members | Documented Members |`n"
+        $detailedContent += "|------|---------------|-------------------|`n"
+        
+        $fileDetails | Sort-Object -Property PublicMembers -Descending | Select-Object -First 10 | ForEach-Object {
+            $detailedContent += "| $($_.File) | $($_.PublicMembers) | $($_.DocumentedMembers) |`n"
+        }
+        
+        $detailedOutput = "metrics/reports/detailed_metrics.md"
+        Set-Content -Path $detailedOutput -Value $detailedContent
         
         # Display the report in the logs
         Get-Content $metricsOutput
