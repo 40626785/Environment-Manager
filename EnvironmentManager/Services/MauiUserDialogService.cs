@@ -12,8 +12,14 @@ public class MauiUserDialogService : IUserDialogService
         return Application.Current.MainPage.DisplayAlert(title, message, cancel);
     }
 
+    public Task<bool> ShowConfirmation(string title, string message, string accept, string cancel)
+    {
+        return Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
+    }
+
     public Task NavigateBackAsync()
     {
         return Shell.Current.GoToAsync("..");
     }
 }
+

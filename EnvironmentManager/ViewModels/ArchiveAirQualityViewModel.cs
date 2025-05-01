@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using EnvironmentManager.Data;
+using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
 using EnvironmentManager.Services;
 using EnvironmentManager.Views;
@@ -15,8 +16,9 @@ namespace EnvironmentManager.ViewModels
 {
     public class ArchiveAirQualityViewModel : BaseViewModel
     {
+        private readonly IUserDialogService _dialogService;
         private readonly IDbContextFactory<ArchiveAirQualityDbContext> _dbContextFactory;
-        private readonly DatabaseLoggingService _logger;
+        private readonly ILoggingService _logger;
 
         public ObservableCollection<ArchiveAirQuality> TableData { get; set; } = new();
         public ICommand RowTappedCommand { get; }
@@ -81,10 +83,11 @@ namespace EnvironmentManager.ViewModels
             set => SetProperty(ref isDateFilterEnabled, value);
         }
 
-        public ArchiveAirQualityViewModel(IDbContextFactory<ArchiveAirQualityDbContext> dbContextFactory, DatabaseLoggingService logger)
+        public ArchiveAirQualityViewModel(IDbContextFactory<ArchiveAirQualityDbContext> dbContextFactory, ILoggingService logger, IUserDialogService dialogService)
         {
             _dbContextFactory = dbContextFactory;
             _logger = logger;
+            _dialogService = dialogService;
 
             LoadDataCommand = new Command(async () => await LoadDataAsync());
             ApplyFiltersCommand = new Command(async () => await ApplyFiltersAsync());
@@ -97,7 +100,7 @@ namespace EnvironmentManager.ViewModels
             Task.Run(async () => await LoadDataAsync());
         }
 
-        private async Task LoadDataAsync()
+        internal async Task LoadDataAsync()
         {
             if (IsBusy) return;
 
@@ -114,7 +117,7 @@ namespace EnvironmentManager.ViewModels
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", $"Failed to load data: {ex.Message}", "OK");
+                await _dialogService.ShowAlert("Error", $"Failed to load data: {ex.Message}", "OK");
                 await _logger.LogErrorAsync($"LoadDataAsync Error: {ex.Message}");
             }
             finally
@@ -139,7 +142,7 @@ namespace EnvironmentManager.ViewModels
                 {
                     if (StartDate > EndDate)
                     {
-                        await Application.Current.MainPage.DisplayAlert("Invalid Date Range", "Start Date cannot be after End Date.", "OK");
+                        await _dialogService.ShowAlert("Invalid Date Range", "Start Date cannot be after End Date.", "OK");
                         return;
                     }
                     query = query.Where(a => a.Date >= StartDate && a.Date <= EndDate);
@@ -152,7 +155,7 @@ namespace EnvironmentManager.ViewModels
                 {
                     if (!hasStartId || !hasEndId || startId > endId)
                     {
-                        await Application.Current.MainPage.DisplayAlert("Invalid IDs", "Check Start ID and End ID inputs.", "OK");
+                        await _dialogService.ShowAlert("Invalid IDs", "Check Start ID and End ID inputs.", "OK");
                         return;
                     }
 
@@ -165,11 +168,11 @@ namespace EnvironmentManager.ViewModels
                     TableData.Add(item);
 
                 if (!TableData.Any())
-                    await Application.Current.MainPage.DisplayAlert("Info", "No records found with current filters.", "OK");
+                    await _dialogService.ShowAlert("Info", "No records found with current filters.", "OK");
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", $"Filter failed: {ex.Message}", "OK");
+                await _dialogService.ShowAlert("Error", $"Filter failed: {ex.Message}", "OK");
                 await _logger.LogErrorAsync($"ApplyFiltersAsync Error: {ex.Message}");
             }
             finally
@@ -208,7 +211,7 @@ namespace EnvironmentManager.ViewModels
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", $"Sort failed: {ex.Message}", "OK");
+                await _dialogService.ShowAlert("Error", $"Sort failed: {ex.Message}", "OK");
                 await _logger.LogErrorAsync($"ApplySortAsync Error: {ex.Message}");
             }
             finally
@@ -227,7 +230,7 @@ namespace EnvironmentManager.ViewModels
 
                 if (!TableData.Any())
                 {
-                    await Application.Current.MainPage.DisplayAlert("Info", "No data to export.", "OK");
+                    await _dialogService.ShowAlert("Info", "No data to export.", "OK");
                     return;
                 }
 
@@ -246,11 +249,11 @@ namespace EnvironmentManager.ViewModels
 
                 await File.WriteAllLinesAsync(filePath, csvLines);
 
-                await Application.Current.MainPage.DisplayAlert("Export Complete", $"CSV saved to:\n{filePath}", "OK");
+                await _dialogService.ShowAlert("Export Complete", $"CSV saved to:\n{filePath}", "OK");
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", $"Export failed: {ex.Message}", "OK");
+                await _dialogService.ShowAlert("Error", $"Export failed: {ex.Message}", "OK");
                 await _logger.LogErrorAsync($"ExportToCsvAsync Error: {ex.Message}");
             }
             finally
@@ -269,14 +272,12 @@ namespace EnvironmentManager.ViewModels
 
                 if (!TableData.Any())
                 {
-                    await Application.Current.MainPage.DisplayAlert("Info", "No records to delete.", "OK");
+                    await _dialogService.ShowAlert("Info", "No records to delete.", "OK");
                     return;
                 }
 
-                bool confirm = await Application.Current.MainPage.DisplayAlert(
-                    "Confirm Deletion",
-                    $"You are about to delete {TableData.Count} records. This action cannot be undone.",
-                    "Yes", "Cancel");
+                bool confirm = await _dialogService.ShowConfirmation("Confirm Deletion", $"You are about to delete {TableData.Count} records. This action cannot be undone.", "Yes", "Cancel");
+
 
                 if (!confirm) return;
 
@@ -285,14 +286,14 @@ namespace EnvironmentManager.ViewModels
                 context.ArchiveAirQuality.RemoveRange(TableData);
                 await context.SaveChangesAsync();
 
-                await Application.Current.MainPage.DisplayAlert("Success", $"{TableData.Count} records deleted.", "OK");
+                await _dialogService.ShowAlert("Success", $"{TableData.Count} records deleted.", "OK");
 
                 // Reload with fresh context
                 await ReloadDataWithNewContextAsync();
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", $"Delete failed: {ex.Message}", "OK");
+                await _dialogService.ShowAlert("Error", $"Delete failed: {ex.Message}", "OK");
             }
             finally
             {
@@ -318,7 +319,7 @@ namespace EnvironmentManager.ViewModels
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", $"Reload failed: {ex.Message}", "OK");
+                await _dialogService.ShowAlert("Error", $"Reload failed: {ex.Message}", "OK");
             }
         }
 

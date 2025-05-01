@@ -1,29 +1,28 @@
-using Microsoft.EntityFrameworkCore;
 using EnvironmentManager.Data;
+using EnvironmentManager.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-using System.Threading.Tasks;
-using System;
-
-namespace EnvironmentManager.Services;
-
-public class DatabaseLoggingService
+namespace EnvironmentManager.Services
 {
-    private readonly DatabaseAdminDbContext _context;
-
-    public DatabaseLoggingService(DatabaseAdminDbContext context)
+    public class DatabaseLoggingService : ILoggingService
     {
-        _context = context;
-    }
+        private readonly DatabaseAdminDbContext _context;
 
-    public async Task LogErrorAsync(string errorMessage)
-    {
-        var sql = "EXEC LogError @p0";
-        await _context.Database.ExecuteSqlRawAsync(sql, errorMessage);
-    }
+        public DatabaseLoggingService(DatabaseAdminDbContext context)
+        {
+            _context = context;
+        }
 
-    public async Task LogMessageAsync(string message)
-    {
-        var sql = "EXEC LogMessage @p0";
-        await _context.Database.ExecuteSqlRawAsync(sql, message);
+        public async Task LogErrorAsync(string errorMessage)
+        {
+            var sql = "EXEC LogError @p0";
+            await _context.Database.ExecuteSqlRawAsync(sql, errorMessage);
+        }
+
+        public async Task LogMessageAsync(string message)
+        {
+            var sql = "EXEC LogMessage @p0";
+            await _context.Database.ExecuteSqlRawAsync(sql, message);
+        }
     }
 }
