@@ -176,7 +176,23 @@ public static class MauiProgram
 				throw;
 			}
 		});
-
+		// Configure Log DbContext
+		builder.Services.AddDbContextFactory<LogDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Debug.WriteLine($"Configuring Log database");
+				options.UseSqlServer(connectionString);
+				options.EnableSensitiveDataLogging();
+				options.EnableDetailedErrors();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring Log database context: {ex.Message}");
+				throw;
+			}
+		});
 	}
 
 
@@ -212,6 +228,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditArchiveAirQualityViewModel>();
 		builder.Services.AddTransient<EditAirQualityViewModel>();
 		builder.Services.AddTransient<AirQualityAdminViewModel>();
+		builder.Services.AddTransient<LogViewModel>();
 
 	}
 
@@ -230,5 +247,6 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditArchiveAirQualityPage>();
 		builder.Services.AddTransient<AirQualityPage>();
 		builder.Services.AddTransient<EditAirQualityPage>();
+		builder.Services.AddTransient<LogPage>();
 	}
 }
