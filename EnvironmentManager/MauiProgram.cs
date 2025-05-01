@@ -172,6 +172,7 @@ public static class MauiProgram
 		builder.Services.AddScoped<DatabaseLoggingService>();
 
 		builder.Services.AddSingleton<TableMetadataService>();
+		builder.Services.AddSingleton<IUserDialogService, MauiUserDialogService>();
 
 
 	}
