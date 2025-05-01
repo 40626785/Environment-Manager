@@ -84,7 +84,7 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
-        private async Task ApplyFiltersAsync()
+        internal async Task ApplyFiltersAsync()
         {
             if (IsBusy) return;
 
@@ -133,7 +133,7 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
-        private async Task DeleteFilteredAsync()
+        internal async Task DeleteFilteredAsync()
         {
             if (IsBusy || !TableData.Any()) return;
 
@@ -161,7 +161,7 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
-        private async Task ExportToCsvAsync()
+        public async Task ExportToCsvAsync(string outputPath = null)
         {
             if (!TableData.Any())
             {
@@ -176,9 +176,9 @@ namespace EnvironmentManager.ViewModels
                     $"{log.LogID},{log.LogDateTime:yyyy-MM-dd HH:mm:ss},{log.LogMessage?.Replace(",", " ")}"));
 
                 var fileName = $"Logs_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
-                var filePath = Path.Combine(FileSystem.Current.AppDataDirectory, fileName);
-                await File.WriteAllLinesAsync(filePath, lines);
+                var filePath = outputPath ?? Path.Combine(FileSystem.Current.AppDataDirectory, fileName);
 
+                await File.WriteAllLinesAsync(filePath, lines);
                 await _dialogService.ShowAlert("Exported", $"CSV saved to:\n{filePath}", "OK");
             }
             catch (Exception ex)
@@ -186,5 +186,7 @@ namespace EnvironmentManager.ViewModels
                 await _dialogService.ShowAlert("Error", $"Export failed: {ex.Message}", "OK");
             }
         }
+
+
     }
 }
