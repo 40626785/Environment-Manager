@@ -45,7 +45,8 @@ public class EditArchiveAirQualityViewModelTests
         };
 
         // Inject into NavigationDataStore
-        Services.NavigationDataStore.SelectedRecord = record;
+        Services.NavigationDataStore.SelectedArchiveAirQualityRecord = record;
+
 
         var viewModel = new EditArchiveAirQualityViewModel(context, mockDialog.Object);
 

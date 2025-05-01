@@ -8,22 +8,22 @@ using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager.ViewModels
 {
-    public class EditArchiveAirQualityViewModel : BaseViewModel
+    public class EditAirQualityViewModel : BaseViewModel
     {
-        private readonly ArchiveAirQualityDbContext _context;
+        private readonly AirQualityDbContext _context;
         private readonly IUserDialogService _dialogService;
 
-        public ArchiveAirQuality EditableRecord { get; set; }
+        public AirQualityRecord EditableRecord { get; set; }
 
         public ICommand SaveCommand { get; }
 
-        public EditArchiveAirQualityViewModel(
-            ArchiveAirQualityDbContext context,
+        public EditAirQualityViewModel(
+            AirQualityDbContext context,
             IUserDialogService dialogService)
         {
             _context = context;
             _dialogService = dialogService;
-            EditableRecord = Services.NavigationDataStore.SelectedArchiveAirQualityRecord;
+            EditableRecord = NavigationDataStore.SelectedAirQualityRecord;
 
             SaveCommand = new Command(async () => await SaveAsync());
         }
@@ -35,7 +35,7 @@ namespace EnvironmentManager.ViewModels
 
             try
             {
-                _context.ArchiveAirQuality.Update(EditableRecord);
+                _context.AirQuality.Update(EditableRecord);
                 await _context.SaveChangesAsync();
 
                 await _dialogService.ShowAlert("Success", "Record updated successfully.", "OK");
@@ -47,7 +47,7 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
-        private async Task<bool> ValidateRecordAsync(ArchiveAirQuality record)
+        internal async Task<bool> ValidateRecordAsync(AirQualityRecord record)
         {
             if (record == null)
             {

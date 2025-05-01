@@ -328,7 +328,8 @@ namespace EnvironmentManager.ViewModels
         {
             if (record == null) return;
 
-            NavigationDataStore.SelectedRecord = record;
+            NavigationDataStore.SelectedArchiveAirQualityRecord = record;
+
             await Shell.Current.GoToAsync(nameof(EditArchiveAirQualityPage));
         }
     }

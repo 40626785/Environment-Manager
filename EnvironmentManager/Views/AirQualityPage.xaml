@@ -2,11 +2,123 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EnvironmentManager.Views.AirQualityPage"
-             Title="AirQualityPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Air Quality">
+
+    <Grid RowDefinitions="Auto, *"
+          Padding="20">
+
+        <!-- Top Section: Controls (Loading, Filters, Buttons) -->
+        <VerticalStackLayout Grid.Row="0"
+                             Spacing="10">
+
+            <!-- Loading Indicator -->
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}"
+                               Color="DarkBlue"
+                               HeightRequest="40"/>
+
+            <!-- Toggle Button to Show/Hide Filters -->
+            <Button Text="{Binding ToggleFilterText}"
+                    Command="{Binding ToggleFilterVisibilityCommand}"/>
+
+            <!-- Scrollable Filter & Sort Section -->
+            <ScrollView IsVisible="{Binding IsFilterVisible}"
+                        HeightRequest="300">
+                <StackLayout Spacing="10"
+                             Padding="5">
+
+                    <!-- Sorting Controls -->
+                    <Label Text="Sort Field:"/>
+                    <Picker ItemsSource="{Binding SortOptions}"
+                            SelectedItem="{Binding SelectedSortOption}"/>
+
+                    <Label Text="Sort Direction:"/>
+                    <Picker ItemsSource="{Binding SortDirections}"
+                            SelectedItem="{Binding SelectedSortDirection}"/>
+
+                    <Button Text="Apply Sort"
+                            Command="{Binding ApplySortCommand}"/>
+
+                    <!-- ID Range Filter -->
+                    <Label Text="Start ID:"/>
+                    <Entry Keyboard="Numeric"
+                           Text="{Binding StartIdText}"
+                           Placeholder="Enter Start ID"/>
+
+                    <Label Text="End ID:"/>
+                    <Entry Keyboard="Numeric"
+                           Text="{Binding EndIdText}"
+                           Placeholder="Enter End ID"/>
+
+                    <Button Text="Apply Filters"
+                            Command="{Binding ApplyFiltersCommand}"
+                            BackgroundColor="Blue"
+                            TextColor="White"/>
+
+                    <!-- Toggle Date Filter -->
+                    <HorizontalStackLayout>
+                        <Label Text="Enable Date Filter"
+                               VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding IsDateFilterEnabled}"/>
+                    </HorizontalStackLayout>
+
+                    <!-- Date Range Pickers -->
+                    <Label Text="Start Date:"/>
+                    <DatePicker Date="{Binding StartDate}"/>
+
+                    <Label Text="End Date:"/>
+                    <DatePicker Date="{Binding EndDate}"/>
+
+                    <!-- Export Button -->
+                    <Button Text="Export to CSV"
+                            Command="{Binding ExportToCsvCommand}"
+                            BackgroundColor="Green"
+                            TextColor="White"
+                            Margin="0,0,0,10"/>
+                </StackLayout>
+            </ScrollView>
+
+            <!-- Delete Button -->
+            <Button Text="Delete Filtered Records"
+                    Command="{Binding DeleteFilteredCommand}"
+                    BackgroundColor="Red"
+                    TextColor="White"/>
+        </VerticalStackLayout>
+
+        <!-- Bottom Section: Data List -->
+        <CollectionView x:Name="CollectionViewRef"
+                        Grid.Row="1"
+                        ItemsSource="{Binding TableData}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="LightGray"
+                           CornerRadius="10"
+                           Padding="10"
+                           Margin="5">
+
+                        <!-- Tap Gesture to Edit -->
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.RowTappedCommand, Source={x:Reference CollectionViewRef}}"
+                                                  CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+
+                        <!-- Display Record Details -->
+                        <StackLayout>
+                            <Label Text="{Binding Id, StringFormat='ID: {0}'}"
+                                   FontAttributes="Bold"
+                                   TextColor="#FF5F13EC"/>
+                            <Label Text="{Binding Date, StringFormat='📅 {0:dd MMM yyyy}'}"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Time, StringFormat='⏰ {0:hh\\:mm}'}"/>
+                            <Label Text="{Binding Nitrogen_dioxide, StringFormat='NO₂: {0:F1} ppm'}"/>
+                            <Label Text="{Binding Sulphur_dioxide, StringFormat='SO₂: {0:F2} ppm'}"/>
+                            <Label Text="{Binding PM2_5_particulate_matter, StringFormat='PM2.5: {0:F2} µg/m³'}"/>
+                            <Label Text="{Binding PM10_particulate_matter, StringFormat='PM10: {0:F2} µg/m³'}"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
 </ContentPage>

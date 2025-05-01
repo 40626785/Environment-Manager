@@ -60,6 +60,7 @@ namespace EnvironmentManager.ViewModels
                 {
                     "Archive_Air_Quality" => nameof(ArchiveAirQualityPage),
                     "Archive_Water_Quality" => nameof(ArchiveWaterQualityPage),
+                    "Air_Quality" => nameof(AirQualityPage),
                     _ => null
                 };
 

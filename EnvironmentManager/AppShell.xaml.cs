@@ -21,6 +21,10 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(ArchiveAirQualityPage), typeof(ArchiveAirQualityPage));
         Routing.RegisterRoute(nameof(ArchiveWaterQualityPage), typeof(ArchiveWaterQualityPage));
         Routing.RegisterRoute(nameof(EditArchiveAirQualityPage), typeof(EditArchiveAirQualityPage));
+        Routing.RegisterRoute(nameof(EditAirQualityPage), typeof(EditAirQualityPage));
+
+
+
 
     }
 }

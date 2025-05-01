@@ -1,113 +1,341 @@
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using EnvironmentManager.Data;
 using EnvironmentManager.Interfaces;
 using EnvironmentManager.Models;
-using System.Diagnostics;
+using EnvironmentManager.Services;
+using EnvironmentManager.Views;
+using Microsoft.EntityFrameworkCore;
 
-public partial class AirQualityAdminViewModel : ObservableObject
+namespace EnvironmentManager.ViewModels
 {
-    private readonly IDatabaseAdminDataStore _dataStore;
-
-    // Now using strongly-typed model
-    public ObservableCollection<AirQualityRecord> Records { get; } = new();
-
-    [ObservableProperty] private DateTime filterDate = DateTime.Today;
-
-    public string Title => "Air_Quality";
-    public bool HasDateFilter => true;
-
-    public IRelayCommand FilterCommand { get; }
-    public IRelayCommand ClearCommand { get; }
-
-    public AirQualityAdminViewModel(IDatabaseAdminDataStore dataStore)
+    public class AirQualityAdminViewModel : BaseViewModel
     {
-        _dataStore = dataStore;
-        FilterCommand = new AsyncRelayCommand(LoadFilteredDataAsync);
-        ClearCommand = new AsyncRelayCommand(ClearFilteredRowsAsync);
-    }
+        private readonly IUserDialogService _dialogService;
+        private readonly IDbContextFactory<AirQualityDbContext> _dbContextFactory;
+        private readonly ILoggingService _logger;
 
-    // Load all rows (unfiltered) on page load
-    public async void LoadUnfilteredData()
-    {
-        Records.Clear();
-        try
+        public ObservableCollection<AirQualityRecord> TableData { get; set; } = new();
+        public ICommand RowTappedCommand { get; }
+        public ICommand ExportToCsvCommand { get; }
+        public ICommand ApplySortCommand { get; }
+        public ICommand ApplyFiltersCommand { get; }
+        public ICommand ToggleFilterVisibilityCommand { get; }
+        public ICommand LoadDataCommand { get; }
+        public ICommand DeleteFilteredCommand { get; }
+
+        public List<string> SortOptions { get; } = new() { "ID", "Date", "Nitrogen_dioxide", "PM2_5_particulate_matter" };
+        public List<string> SortDirections { get; } = new() { "Ascending", "Descending" };
+
+        public string StartIdText { get; set; } = string.Empty;
+        public string EndIdText { get; set; } = string.Empty;
+
+        private string selectedSortOption = "Nitrogen_dioxide";
+        public string SelectedSortOption
         {
-            var data = await _dataStore.GetFilteredTableDataAsync("Air_Quality");
+            get => selectedSortOption;
+            set => SetProperty(ref selectedSortOption, value);
+        }
 
-            if (data == null || data.Count == 0)
+        private string selectedSortDirection = "Descending";
+        public string SelectedSortDirection
+        {
+            get => selectedSortDirection;
+            set => SetProperty(ref selectedSortDirection, value);
+        }
+
+        private DateTime startDate = DateTime.Now.AddDays(-7);
+        public DateTime StartDate
+        {
+            get => startDate;
+            set => SetProperty(ref startDate, value);
+        }
+
+        private DateTime endDate = DateTime.Now;
+        public DateTime EndDate
+        {
+            get => endDate;
+            set => SetProperty(ref endDate, value);
+        }
+
+        private bool isFilterVisible = false;
+        public bool IsFilterVisible
+        {
+            get => isFilterVisible;
+            set
             {
-                Debug.WriteLine("No data found in Air_Quality.");
-                return;
+                SetProperty(ref isFilterVisible, value);
+                OnPropertyChanged(nameof(ToggleFilterText));
             }
+        }
 
-            foreach (var row in data)
+        public string ToggleFilterText => IsFilterVisible ? "Hide Filters ▲" : "Show Filters & Export Options ▼";
+
+        private bool isDateFilterEnabled = false;
+        public bool IsDateFilterEnabled
+        {
+            get => isDateFilterEnabled;
+            set => SetProperty(ref isDateFilterEnabled, value);
+        }
+
+        public AirQualityAdminViewModel(IDbContextFactory<AirQualityDbContext> dbContextFactory, ILoggingService logger, IUserDialogService dialogService)
+        {
+            _dbContextFactory = dbContextFactory;
+            _logger = logger;
+            _dialogService = dialogService;
+
+            LoadDataCommand = new Command(async () => await LoadDataAsync());
+            ApplyFiltersCommand = new Command(async () => await ApplyFiltersAsync());
+            ApplySortCommand = new Command(async () => await ApplySortAsync());
+            DeleteFilteredCommand = new Command(async () => await DeleteFilteredAsync());
+            ToggleFilterVisibilityCommand = new Command(() => IsFilterVisible = !IsFilterVisible);
+            ExportToCsvCommand = new Command(async () => await ExportToCsvAsync());
+            RowTappedCommand = new Command<AirQualityRecord>(async (record) => await OnRowTapped(record));
+
+
+        }
+
+        internal async Task LoadDataAsync()
+        {
+            if (IsBusy) return;
+
+            try
             {
-                Records.Add(MapRowToAirQualityRecord(row));
+                Debug.WriteLine("LoadDataAsync started...");
+
+                IsBusy = true;
+                TableData.Clear();
+
+                using var context = _dbContextFactory.CreateDbContext();
+                var data = await context.AirQuality.OrderByDescending(a => a.Date).Take(100).ToListAsync();
+                var test = await context.AirQuality.FirstOrDefaultAsync();
+                Debug.WriteLine($"Test row: {test?.Date}");
+                Debug.WriteLine($"Data count: {data.Count}");
+
+                foreach (var item in data)
+                    TableData.Add(item);
+                Debug.WriteLine("LoadDataAsync ended...");
             }
-
-            Debug.WriteLine($"Loaded {data.Count} unfiltered rows from Air_Quality.");
-        }
-        catch (Exception ex)
-        {
-            Debug.WriteLine($"Error loading unfiltered data: {ex.Message}");
-        }
-    }
-
-    // Load filtered data by date
-    public async Task LoadFilteredDataAsync()
-    {
-        Records.Clear();
-        try
-        {
-            var data = await _dataStore.GetFilteredTableDataAsync("Air_Quality", dateFilter: FilterDate);
-
-            if (data == null || data.Count == 0)
+            catch (Exception ex)
             {
-                Debug.WriteLine("No filtered data found.");
-                return;
+                await _dialogService.ShowAlert("Error", $"Failed to load data: {ex.Message}", "OK");
+                await _logger.LogErrorAsync($"LoadDataAsync Error: {ex.Message}");
             }
-
-            foreach (var row in data)
+            finally
             {
-                Records.Add(MapRowToAirQualityRecord(row));
+                IsBusy = false;
             }
-
-            Debug.WriteLine($"Loaded {data.Count} filtered rows from Air_Quality.");
         }
-        catch (Exception ex)
-        {
-            Debug.WriteLine($"Error loading filtered data: {ex.Message}");
-        }
-    }
 
-    // Clear rows based on current filter
-    public async Task ClearFilteredRowsAsync()
-    {
-        try
-        {
-            await _dataStore.ClearTableByDateAsync("Air_Quality", FilterDate);
-            Debug.WriteLine($"Cleared rows for date {FilterDate:yyyy-MM-dd}.");
 
-            await LoadFilteredDataAsync();  // Reload data after clearing
-        }
-        catch (Exception ex)
-        {
-            Debug.WriteLine($"Error clearing data: {ex.Message}");
-        }
-    }
 
-    // Helper to map Dictionary<string, object> to AirQualityRecord
-    private AirQualityRecord MapRowToAirQualityRecord(Dictionary<string, object> row)
-    {
-        return new AirQualityRecord
+        private async Task ApplyFiltersAsync()
         {
-            Date = Convert.ToDateTime(row["Date"]),
-            Time = row["Time"].ToString(),
-            PM25 = Convert.ToDouble(row["PM25"]),
-            PM10 = Convert.ToDouble(row["PM10"]),
-            NO2 = Convert.ToDouble(row["NO2"]),
-            CO = Convert.ToDouble(row["CO"])
-        };
+            if (IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+                TableData.Clear();
+
+                using var context = _dbContextFactory.CreateDbContext();
+                IQueryable<AirQualityRecord> query = context.AirQuality;
+
+                if (IsDateFilterEnabled)
+                {
+                    if (StartDate > EndDate)
+                    {
+                        await _dialogService.ShowAlert("Invalid Date Range", "Start Date cannot be after End Date.", "OK");
+                        return;
+                    }
+                    query = query.Where(a => a.Date >= StartDate && a.Date <= EndDate);
+                }
+
+                bool hasStartId = int.TryParse(StartIdText, out int startId);
+                bool hasEndId = int.TryParse(EndIdText, out int endId);
+
+                if (!string.IsNullOrWhiteSpace(StartIdText) || !string.IsNullOrWhiteSpace(EndIdText))
+                {
+                    if (!hasStartId || !hasEndId || startId > endId)
+                    {
+                        await _dialogService.ShowAlert("Invalid IDs", "Check Start ID and End ID inputs.", "OK");
+                        return;
+                    }
+
+                    query = query.Where(a => a.Id >= startId && a.Id <= endId);
+                }
+
+                var data = await query.OrderByDescending(a => a.Date).Take(100).ToListAsync();
+
+                foreach (var item in data)
+                    TableData.Add(item);
+
+                if (!TableData.Any())
+                    await _dialogService.ShowAlert("Info", "No records found with current filters.", "OK");
+            }
+            catch (Exception ex)
+            {
+                await _dialogService.ShowAlert("Error", $"Filter failed: {ex.Message}", "OK");
+                await _logger.LogErrorAsync($"ApplyFiltersAsync Error: {ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task ApplySortAsync()
+        {
+            if (IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+                TableData.Clear();
+
+                using var context = _dbContextFactory.CreateDbContext();
+                IQueryable<AirQualityRecord> query = context.AirQuality;
+
+                bool isAscending = SelectedSortDirection == "Ascending";
+
+                query = SelectedSortOption switch
+                {
+                    "Nitrogen_dioxide" => isAscending ? query.OrderBy(a => a.Nitrogen_dioxide) : query.OrderByDescending(a => a.Nitrogen_dioxide),
+                    "PM2_5_particulate_matter" => isAscending ? query.OrderBy(a => a.PM2_5_particulate_matter) : query.OrderByDescending(a => a.PM2_5_particulate_matter),
+                    "Date" => isAscending ? query.OrderBy(a => a.Date) : query.OrderByDescending(a => a.Date),
+                    "ID" => isAscending ? query.OrderBy(a => a.Id) : query.OrderByDescending(a => a.Id),
+                    _ => query
+                };
+
+                var data = await query.Take(100).ToListAsync();
+
+                foreach (var item in data)
+                    TableData.Add(item);
+            }
+            catch (Exception ex)
+            {
+                await _dialogService.ShowAlert("Error", $"Sort failed: {ex.Message}", "OK");
+                await _logger.LogErrorAsync($"ApplySortAsync Error: {ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task ExportToCsvAsync()
+        {
+            if (IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+
+                if (!TableData.Any())
+                {
+                    await _dialogService.ShowAlert("Info", "No data to export.", "OK");
+                    return;
+                }
+
+                var csvLines = new List<string>
+                {
+                    "Id,Date,Time,Nitrogen_dioxide,Sulphur_dioxide,PM2_5_particulate_matter,PM10_particulate_matter"
+                };
+
+                foreach (var item in TableData)
+                {
+                    csvLines.Add($"{item.Id},{item.Date:yyyy-MM-dd},{item.Time},{item.Nitrogen_dioxide},{item.Sulphur_dioxide},{item.PM2_5_particulate_matter},{item.PM10_particulate_matter}");
+                }
+
+                var fileName = $"AirQuality_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+                var filePath = Path.Combine(FileSystem.Current.AppDataDirectory, fileName);
+
+                await File.WriteAllLinesAsync(filePath, csvLines);
+
+                await _dialogService.ShowAlert("Export Complete", $"CSV saved to:\n{filePath}", "OK");
+            }
+            catch (Exception ex)
+            {
+                await _dialogService.ShowAlert("Error", $"Export failed: {ex.Message}", "OK");
+                await _logger.LogErrorAsync($"ExportToCsvAsync Error: {ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task DeleteFilteredAsync()
+        {
+            if (IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+
+                if (!TableData.Any())
+                {
+                    await _dialogService.ShowAlert("Info", "No records to delete.", "OK");
+                    return;
+                }
+
+                bool confirm = await _dialogService.ShowConfirmation("Confirm Deletion", $"You are about to delete {TableData.Count} records. This action cannot be undone.", "Yes", "Cancel");
+
+                if (!confirm) return;
+
+                using var context = _dbContextFactory.CreateDbContext();
+
+                context.AirQuality.RemoveRange(TableData);
+                await context.SaveChangesAsync();
+
+                await _dialogService.ShowAlert("Success", $"{TableData.Count} records deleted.", "OK");
+
+                await ReloadDataWithNewContextAsync();
+            }
+            catch (Exception ex)
+            {
+                await _dialogService.ShowAlert("Error", $"Delete failed: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task ReloadDataWithNewContextAsync()
+        {
+            try
+            {
+                TableData.Clear();
+
+                using var context = _dbContextFactory.CreateDbContext();
+
+                var data = await context.AirQuality
+                                        .OrderByDescending(a => a.Date)
+                                        .Take(100)
+                                        .ToListAsync();
+
+                foreach (var item in data)
+                    TableData.Add(item);
+            }
+            catch (Exception ex)
+            {
+                await _dialogService.ShowAlert("Error", $"Reload failed: {ex.Message}", "OK");
+            }
+        }
+
+        private async Task OnRowTapped(AirQualityRecord record)
+        {
+            if (record == null) return;
+
+            NavigationDataStore.SelectedAirQualityRecord = record;
+            await Shell.Current.GoToAsync(nameof(EditAirQualityPage));
+
+        }
     }
 }

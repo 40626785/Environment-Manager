@@ -1,9 +1,25 @@
-namespace EnvironmentManager.Views;
+using EnvironmentManager.ViewModels;
+using Microsoft.Maui.Controls;
 
-public partial class AirQualityPage : ContentPage
+namespace EnvironmentManager.Views
 {
-	public AirQualityPage()
+	public partial class AirQualityPage : ContentPage
 	{
-		InitializeComponent();
+		public AirQualityPage(AirQualityAdminViewModel viewModel)
+		{
+			InitializeComponent();
+			BindingContext = viewModel;
+		}
+
+
+		protected override async void OnAppearing()
+		{
+			base.OnAppearing();
+
+			if (BindingContext is AirQualityAdminViewModel vm)
+			{
+				await vm.LoadDataAsync();
+			}
+		}
 	}
 }

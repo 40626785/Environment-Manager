@@ -4,16 +4,13 @@ namespace EnvironmentManager.Models
 {
     public class AirQualityRecord
     {
-        public DateTime Date { get; set; }     // Original DateTime from DB
-        public string Time { get; set; }
-
-        public double PM25 { get; set; }
-        public double PM10 { get; set; }
-        public double NO2 { get; set; }
-        public double CO { get; set; }
-
-        //  Formatted Date Property for Display
-        public string DateFormatted => Date.ToString("yyyy-MM-dd");
+        public int Id { get; set; }
+        public DateTime? Date { get; set; }
+        public TimeSpan? Time { get; set; }
+        public double? Nitrogen_dioxide { get; set; }
+        public double? Sulphur_dioxide { get; set; }
+        public double? PM2_5_particulate_matter { get; set; }
+        public double? PM10_particulate_matter { get; set; }
     }
 }
 

@@ -5,7 +5,10 @@ namespace EnvironmentManager.Services
 {
     public static class NavigationDataStore
     {
-        public static ArchiveAirQuality SelectedRecord { get; set; }
+        public static AirQualityRecord SelectedAirQualityRecord { get; set; }
+        public static ArchiveAirQuality SelectedArchiveAirQualityRecord { get; set; }
+
+
     }
 }
 

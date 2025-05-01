@@ -97,6 +97,24 @@ public static class MauiProgram
 				throw;
 			}
 		});
+		//AirQuality
+		builder.Services.AddDbContextFactory<AirQualityDbContext>(options =>
+{
+	try
+	{
+		Debug.WriteLine($"inside AirQuality");
+		var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+		Debug.WriteLine("Configuring AirQuality admin context");
+		options.UseSqlServer(connectionString);
+	}
+	catch (Exception ex)
+	{
+		Debug.WriteLine($"Error configuring database AirQuality context: {ex.Message}");
+		throw;
+	}
+});
+
+
 		// Register DatabaseAdminDbContext 
 		builder.Services.AddDbContext<DatabaseAdminDbContext>(options =>
 		{
@@ -192,6 +210,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<AirQualityAdminViewModel>();
 		builder.Services.AddTransient<ArchiveAirQualityViewModel>();
 		builder.Services.AddTransient<EditArchiveAirQualityViewModel>();
+		builder.Services.AddTransient<EditAirQualityViewModel>();
+		builder.Services.AddTransient<AirQualityAdminViewModel>();
 
 	}
 
@@ -208,5 +228,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<AirQualityPage>();
 		builder.Services.AddTransient<ArchiveAirQualityPage>();
 		builder.Services.AddTransient<EditArchiveAirQualityPage>();
+		builder.Services.AddTransient<AirQualityPage>();
+		builder.Services.AddTransient<EditAirQualityPage>();
 	}
 }
