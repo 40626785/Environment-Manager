@@ -132,6 +132,23 @@ public static class MauiProgram
 			}
 		});
 
+		// configure error table context
+		builder.Services.AddDbContextFactory<ErrorDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Debug.WriteLine($"Configuring error table database");
+				options.UseSqlServer(connectionString);
+				options.EnableSensitiveDataLogging();
+				options.EnableDetailedErrors();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring error table database context: {ex.Message}");
+				throw;
+			}
+		});
 
 		// Configure LocationDbContext
 		builder.Services.AddDbContext<LocationDbContext>(options =>
@@ -229,6 +246,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditAirQualityViewModel>();
 		builder.Services.AddTransient<AirQualityAdminViewModel>();
 		builder.Services.AddTransient<LogViewModel>();
+		builder.Services.AddTransient<ErrorViewModel>();
 
 	}
 
@@ -248,5 +266,6 @@ public static class MauiProgram
 		builder.Services.AddTransient<AirQualityPage>();
 		builder.Services.AddTransient<EditAirQualityPage>();
 		builder.Services.AddTransient<LogPage>();
+		builder.Services.AddTransient<ErrorPage>();
 	}
 }
