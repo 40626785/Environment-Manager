@@ -11,6 +11,8 @@ namespace EnvironmentManager.Models
         public double? Sulphur_dioxide { get; set; }
         public double? PM2_5_particulate_matter { get; set; }
         public double? PM10_particulate_matter { get; set; }
+        public int LocationId { get; set; }
+
     }
 }
 

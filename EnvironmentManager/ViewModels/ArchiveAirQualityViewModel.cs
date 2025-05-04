@@ -28,6 +28,8 @@ namespace EnvironmentManager.ViewModels
         public ICommand ToggleFilterVisibilityCommand { get; }
         public ICommand LoadDataCommand { get; }
         public ICommand DeleteFilteredCommand { get; }
+        public string LocationIdText { get; set; }
+
 
         public List<string> SortOptions { get; } = new() { "ID", "Date", "Nitrogen_dioxide", "PM2_5_particulate_matter" };
         public List<string> SortDirections { get; } = new() { "Ascending", "Descending" };
@@ -161,6 +163,19 @@ namespace EnvironmentManager.ViewModels
 
                     query = query.Where(a => a.Id >= startId && a.Id <= endId);
                 }
+                if (!string.IsNullOrWhiteSpace(LocationIdText))
+                {
+                    if (int.TryParse(LocationIdText, out int locationId))
+                    {
+                        query = query.Where(a => a.LocationId == locationId);
+                    }
+                    else
+                    {
+                        await _dialogService.ShowAlert("Invalid Input", "Location ID must be a number.", "OK");
+                        return;
+                    }
+                }
+
 
                 var data = await query.OrderByDescending(a => a.Date).Take(100).ToListAsync();
 
@@ -241,7 +256,7 @@ namespace EnvironmentManager.ViewModels
 
                 foreach (var item in TableData)
                 {
-                    csvLines.Add($"{item.Id},{item.Date:yyyy-MM-dd},{item.Time},{item.Nitrogen_dioxide},{item.Sulphur_dioxide},{item.PM2_5_particulate_matter},{item.PM10_particulate_matter}");
+                    csvLines.Add($"{item.Id},{item.Date:yyyy-MM-dd},{item.Time},{item.Nitrogen_dioxide},{item.Sulphur_dioxide},{item.PM2_5_particulate_matter},{item.PM10_particulate_matter},{item.LocationId}");
                 }
 
                 var fileName = $"ArchiveAirQuality_{DateTime.Now:yyyyMMdd_HHmmss}.csv";

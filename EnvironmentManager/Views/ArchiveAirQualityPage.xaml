@@ -50,6 +50,10 @@
                                         <Entry Keyboard="Numeric"
                                                Text="{Binding EndIdText}"
                                                Placeholder="Enter End ID"/>
+                                        <Label Text="Location ID:"/>
+                                        <Entry Keyboard="Numeric"
+                                               Text="{Binding LocationIdText}"
+                                               Placeholder="Enter Location ID"/>
 
                                         <Button Text="Apply Filters"
                                                 Command="{Binding ApplyFiltersCommand}"
@@ -103,20 +107,34 @@
                                                         <TapGestureRecognizer Command="{Binding BindingContext.RowTappedCommand, Source={x:Reference CollectionViewRef}}"
                                                                               CommandParameter="{Binding .}"/>
                                                 </Frame.GestureRecognizers>
+                                                <Grid>
+                                                        <!-- Display Record Details -->
+                                                        <StackLayout>
+                                                                <Label Text="{Binding Id, StringFormat='ID: {0}'}"
+                                                                       FontAttributes="Bold"
+                                                                       TextColor="#FF5F13EC"/>
+                                                                <Label Text="{Binding LocationId, StringFormat='📍 Location ID: {0}'}"
+                                                                       FontAttributes="Bold"
+                                                                       TextColor="#FF5F13EC"/>
+                                                                <Label Text="{Binding Date, StringFormat='📅 {0:dd MMM yyyy}'}"
+                                                                       FontAttributes="Bold"/>
+                                                                <Label Text="{Binding Time, StringFormat='⏰ {0:hh\\:mm}'}"/>
+                                                                <Label Text="{Binding Nitrogen_dioxide, StringFormat='NO₂: {0:F1} ppm'}"/>
+                                                                <Label Text="{Binding Sulphur_dioxide, StringFormat='SO₂: {0:F2} ppm'}"/>
+                                                                <Label Text="{Binding PM2_5_particulate_matter, StringFormat='PM2.5: {0:F2} µg/m³'}"/>
+                                                                <Label Text="{Binding PM10_particulate_matter, StringFormat='PM10: {0:F2} µg/m³'}"/>
 
-                                                <!-- Display Record Details -->
-                                                <StackLayout>
-                                                        <Label Text="{Binding Id, StringFormat='ID: {0}'}"
-                                                               FontAttributes="Bold"
-                                                               TextColor="#FF5F13EC"/>
-                                                        <Label Text="{Binding Date, StringFormat='📅 {0:dd MMM yyyy}'}"
-                                                               FontAttributes="Bold"/>
-                                                        <Label Text="{Binding Time, StringFormat='⏰ {0:hh\\:mm}'}"/>
-                                                        <Label Text="{Binding Nitrogen_dioxide, StringFormat='NO₂: {0:F1} ppm'}"/>
-                                                        <Label Text="{Binding Sulphur_dioxide, StringFormat='SO₂: {0:F2} ppm'}"/>
-                                                        <Label Text="{Binding PM2_5_particulate_matter, StringFormat='PM2.5: {0:F2} µg/m³'}"/>
-                                                        <Label Text="{Binding PM10_particulate_matter, StringFormat='PM10: {0:F2} µg/m³'}"/>
-                                                </StackLayout>
+                                                        </StackLayout>
+                                                        <!-- ✏️ Corner Icon -->
+                                                        <Image Source="edit_icon.png"
+                                                               WidthRequest="18"
+                                                               HeightRequest="18"
+                                                               HorizontalOptions="End"
+                                                               VerticalOptions="Start"
+                                                               Margin="0"
+                                                               InputTransparent="True"/>
+
+                                                </Grid>
                                         </Frame>
                                 </DataTemplate>
                         </CollectionView.ItemTemplate>

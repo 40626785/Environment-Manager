@@ -28,6 +28,8 @@ namespace EnvironmentManager.ViewModels
         public ICommand ToggleFilterVisibilityCommand { get; }
         public ICommand LoadDataCommand { get; }
         public ICommand DeleteFilteredCommand { get; }
+        public string LocationIdText { get; set; }
+
 
         public List<string> SortOptions { get; } = new() { "ID", "Date", "Nitrogen_dioxide", "PM2_5_particulate_matter" };
         public List<string> SortDirections { get; } = new() { "Ascending", "Descending" };
@@ -171,6 +173,18 @@ namespace EnvironmentManager.ViewModels
                 }
 
                 var data = await query.OrderByDescending(a => a.Date).Take(100).ToListAsync();
+                if (!string.IsNullOrWhiteSpace(LocationIdText))
+                {
+                    if (int.TryParse(LocationIdText, out int locationId))
+                    {
+                        query = query.Where(a => a.LocationId == locationId);
+                    }
+                    else
+                    {
+                        await _dialogService.ShowAlert("Invalid Input", "Location ID must be a number.", "OK");
+                        return;
+                    }
+                }
 
                 foreach (var item in data)
                     TableData.Add(item);
