@@ -1,4 +1,3 @@
-```mermaid
 classDiagram
 
 class ArchiveAirQualityViewModel {
@@ -51,4 +50,3 @@ ArchiveAirQualityViewModel --> NavigationDataStore
 ArchiveAirQualityViewModel --> ArchiveAirQuality
 
 ArchiveAirQualityDbContext --> ArchiveAirQuality
-```
