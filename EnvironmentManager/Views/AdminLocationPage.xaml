@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvironmentManager.Views.AdminLocationPage"
+             Title="Manage Locations">
+
+        <Grid Padding="20"
+              RowDefinitions="Auto,*">
+                <!-- Top: Filter + Actions -->
+                <VerticalStackLayout Grid.Row="0"
+                                     Spacing="10">
+                        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                           IsVisible="{Binding IsBusy}"/>
+
+                        <Button Text="{Binding ToggleFilterText}"
+                                Command="{Binding ToggleFilterVisibilityCommand}"/>
+
+                        <ScrollView IsVisible="{Binding IsFilterVisible}"
+                                    HeightRequest="250">
+                                <VerticalStackLayout Spacing="10">
+
+                                        <Label Text="Filter by Site Name:"/>
+                                        <Entry Text="{Binding SiteNameFilter}"
+                                               Placeholder="e.g. Central Station"/>
+
+                                        <Label Text="Filter by Location ID Range:"/>
+                                        <Entry Text="{Binding StartIdText}"
+                                               Keyboard="Numeric"
+                                               Placeholder="Start ID"/>
+                                        <Entry Text="{Binding EndIdText}"
+                                               Keyboard="Numeric"
+                                               Placeholder="End ID"/>
+
+                                        <Button Text="Apply Filters"
+                                                Command="{Binding ApplyFiltersCommand}"
+                                                BackgroundColor="Blue"
+                                                TextColor="White"/>
+                                        <Button Text="Export to CSV"
+                                                Command="{Binding ExportToCsvCommand}"
+                                                BackgroundColor="Green"
+                                                TextColor="White"/>
+                                </VerticalStackLayout>
+                        </ScrollView>
+
+                        <Button Text="Delete Filtered Records"
+                                Command="{Binding DeleteFilteredCommand}"
+                                BackgroundColor="Red"
+                                TextColor="White"/>
+                </VerticalStackLayout>
+
+                <!-- Bottom: List of Locations -->
+                <CollectionView x:Name="CollectionViewRef"
+                                Grid.Row="1"
+                                ItemsSource="{Binding TableData}">
+                        <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                        <Frame Margin="5"
+                                               Padding="10"
+                                               BorderColor="Gray"
+                                               CornerRadius="10">
+                                                <Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                                                                Command="{Binding BindingContext.RowTappedCommand, Source={x:Reference CollectionViewRef}}"
+                                                                CommandParameter="{Binding .}"/>
+                                                </Frame.GestureRecognizers>
+
+                                                <VerticalStackLayout>
+                                                        <Label Text="{Binding LocationId, StringFormat='ID: {0}'}"
+                                                               FontAttributes="Bold"/>
+                                                        <Label Text="{Binding SiteName}"/>
+                                                        <Label Text="{Binding Country}"/>
+                                                        <Label Text="{Binding Zone}"/>
+                                                </VerticalStackLayout>
+                                        </Frame>
+                                </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                </CollectionView>
+
+        </Grid>
+</ContentPage>

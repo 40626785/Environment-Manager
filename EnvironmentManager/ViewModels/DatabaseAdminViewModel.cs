@@ -63,6 +63,8 @@ namespace EnvironmentManager.ViewModels
                     "Air_Quality" => nameof(AirQualityPage),
                     "LogTable" => nameof(LogPage),
                     "ErrorTable" => nameof(ErrorPage),
+                    "Locations" => nameof(AdminLocationPage),
+                    "Users" => nameof(AdminUserPage),
                     _ => null
                 };
 

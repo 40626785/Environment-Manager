@@ -151,7 +151,7 @@ public static class MauiProgram
 		});
 
 		// Configure LocationDbContext
-		builder.Services.AddDbContext<LocationDbContext>(options =>
+		builder.Services.AddDbContextFactory<LocationDbContext>(options =>
 		{
 			try
 			{
@@ -175,7 +175,23 @@ public static class MauiProgram
 			options.UseSqlServer(connectionString);
 		});
 
-
+		// User DbContext SensorDbContext
+		builder.Services.AddDbContextFactory<UserDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Debug.WriteLine($"Configuring User table database");
+				options.UseSqlServer(connectionString);
+				options.EnableSensitiveDataLogging();
+				options.EnableDetailedErrors();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring User table database context: {ex.Message}");
+				throw;
+			}
+		});
 		// Configure SensorDbContext
 		builder.Services.AddDbContext<SensorDbContext>(options =>
 		{
@@ -247,7 +263,11 @@ public static class MauiProgram
 		builder.Services.AddTransient<AirQualityAdminViewModel>();
 		builder.Services.AddTransient<LogViewModel>();
 		builder.Services.AddTransient<ErrorViewModel>();
-
+		builder.Services.AddTransient<AdminLocationViewModel>();
+		builder.Services.AddTransient<EditLocationViewModel>();
+		builder.Services.AddTransient<EditUserViewModel>();
+		builder.Services.AddTransient<AdminUserViewModel>();
+		builder.Services.AddTransient<AddUserViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -267,5 +287,10 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditAirQualityPage>();
 		builder.Services.AddTransient<LogPage>();
 		builder.Services.AddTransient<ErrorPage>();
+		builder.Services.AddTransient<EditLocationPage>();
+		builder.Services.AddTransient<AdminLocationPage>();
+		builder.Services.AddTransient<AdminUserPage>();
+		builder.Services.AddTransient<EditUserPage>();
+		builder.Services.AddTransient<AddUserPage>();
 	}
 }

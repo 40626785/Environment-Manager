@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvironmentManager.Views.EditLocationPage"
+             Title="Edit Location">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                Spacing="10">
+            <Label Text="Edit Location"
+                    FontSize="20"
+                    HorizontalOptions="Center"/>
+
+            <Label Text="Location ID:"
+                    FontAttributes="Bold"/>
+            <Label Text="{Binding EditableRecord.LocationId}"
+                    TextColor="Gray"/>
+
+            <Label Text="Site Name:"/>
+            <Entry Text="{Binding EditableRecord.SiteName}"/>
+
+            <Label Text="Latitude:"/>
+            <Entry Text="{Binding EditableRecord.Latitude}"
+                    Keyboard="Numeric"/>
+
+            <Label Text="Longitude:"/>
+            <Entry Text="{Binding EditableRecord.Longitude}"
+                    Keyboard="Numeric"/>
+
+            <Label Text="Elevation:"/>
+            <Entry Text="{Binding EditableRecord.Elevation}"
+                    Keyboard="Numeric"/>
+
+            <Label Text="Site Type:"/>
+            <Entry Text="{Binding EditableRecord.SiteType}"/>
+
+            <Label Text="Zone:"/>
+            <Entry Text="{Binding EditableRecord.Zone}"/>
+
+            <Label Text="Agglomeration:"/>
+            <Entry Text="{Binding EditableRecord.Agglomeration}"/>
+
+            <Label Text="Local Authority:"/>
+            <Entry Text="{Binding EditableRecord.LocalAuthority}"/>
+
+            <Label Text="Country:"/>
+            <Entry Text="{Binding EditableRecord.Country}"/>
+
+            <Label Text="UTC Offset (seconds):"/>
+            <Entry Text="{Binding EditableRecord.UtcOffsetSeconds}"
+                    Keyboard="Numeric"/>
+
+            <Label Text="Timezone:"/>
+            <Entry Text="{Binding EditableRecord.Timezone}"/>
+
+            <Label Text="Timezone Abbreviation:"/>
+            <Entry Text="{Binding EditableRecord.TimezoneAbbreviation}"/>
+
+            <Button Text="Save Changes"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="Green"
+                    TextColor="White"
+                    Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

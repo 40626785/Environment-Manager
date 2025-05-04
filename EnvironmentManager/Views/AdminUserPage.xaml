@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvironmentManager.Views.AdminUserPage"
+             Title="Manage Users">
+
+    <Grid Padding="20"
+          RowDefinitions="Auto,*">
+        <!-- Filters + Actions -->
+        <VerticalStackLayout Grid.Row="0"
+                             Spacing="10">
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}"/>
+
+            <Button Text="{Binding ToggleFilterText}"
+                    Command="{Binding ToggleFilterVisibilityCommand}"/>
+
+            <ScrollView IsVisible="{Binding IsFilterVisible}"
+                        HeightRequest="200">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Filter by Username:"/>
+                    <Entry Text="{Binding UsernameFilter}"
+                           Placeholder="e.g. admin"/>
+
+                    <Label Text="Filter by Role (int):"/>
+                    <Entry Text="{Binding RoleFilterText}"
+                           Placeholder="e.g. 1"
+                           Keyboard="Numeric"/>
+
+                    <Button Text="Apply Filters"
+                            Command="{Binding ApplyFiltersCommand}"
+                            BackgroundColor="CornflowerBlue"
+                            TextColor="White"/>
+                    <Button Text="Export to CSV"
+                            Command="{Binding ExportToCsvCommand}"
+                            BackgroundColor="Green"
+                            TextColor="White"/>
+
+
+                </VerticalStackLayout>
+            </ScrollView>
+            <Button Text="➕ Add New User"
+                    Command="{Binding AddUserCommand}"
+                    BackgroundColor="DodgerBlue"
+                    TextColor="White"/>
+
+            <Button Text="Delete Filtered Records"
+                    Command="{Binding DeleteFilteredCommand}"
+                    BackgroundColor="Red"
+                    TextColor="White"/>
+        </VerticalStackLayout>
+
+        <!-- User List -->
+        <CollectionView x:Name="CollectionViewRef"
+                        Grid.Row="1"
+                        ItemsSource="{Binding TableData}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10"
+                           Margin="5"
+                           BorderColor="LightGray"
+                           CornerRadius="8">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding BindingContext.RowTappedCommand, Source={x:Reference CollectionViewRef}}"
+                                CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Username}"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Role, StringFormat='Role: {0}'}"/>
+                            <Label Text="{Binding Password, StringFormat='Password: {0}'}"
+                                   TextColor="Gray"
+                                   FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

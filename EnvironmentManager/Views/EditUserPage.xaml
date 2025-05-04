@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvironmentManager.Views.EditUserPage"
+             Title="Edit User">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                Spacing="15">
+            <Label Text="Edit User Record"
+                    FontSize="18"
+                    HorizontalOptions="Center"/>
+
+            <!-- Username (primary key) -->
+            <Label Text="Username:"
+                    FontAttributes="Bold"/>
+            <Entry Text="{Binding EditableRecord.Username}"
+                    IsEnabled="False"/>
+
+            <!-- Password -->
+            <Label Text="Password:"/>
+            <Entry Text="{Binding EditableRecord.Password}"
+                    Placeholder="Enter password"/>
+
+            <!-- Role -->
+            <Label Text="Role (int):"/>
+            <Entry Text="{Binding EditableRecord.Role}"
+                    Keyboard="Numeric"/>
+
+            <Button Text="Save Changes"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="Green"
+                    TextColor="White"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

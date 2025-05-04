@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvironmentManager.Views.AddUserPage"
+             Title="Add New User">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                Spacing="15">
+            <Label Text="Add New User"
+                    FontSize="18"
+                    HorizontalOptions="Center"/>
+
+            <Label Text="Username:"/>
+            <Entry Text="{Binding NewUser.Username}"
+                    Placeholder="Enter username"/>
+
+            <Label Text="Password:"/>
+            <Entry Text="{Binding NewUser.Password}"
+                    IsPassword="True"
+                    Placeholder="Enter password"/>
+
+            <Label Text="Role:"/>
+            <Picker ItemsSource="{Binding RoleOptions}"
+                    SelectedItem="{Binding NewUser.Role}"
+                    Title="Select Role"/>
+
+            <Button Text="Add User"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="Green"
+                    TextColor="White"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
