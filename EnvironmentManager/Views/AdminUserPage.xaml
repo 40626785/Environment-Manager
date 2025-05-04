@@ -66,15 +66,27 @@
                                 CommandParameter="{Binding .}"/>
                         </Frame.GestureRecognizers>
 
-                        <VerticalStackLayout>
-                            <Label Text="{Binding Username}"
-                                   FontAttributes="Bold"/>
-                            <Label Text="{Binding Role, StringFormat='Role: {0}'}"/>
-                            <Label Text="{Binding Password, StringFormat='Password: {0}'}"
-                                   TextColor="Gray"
-                                   FontSize="12"/>
-                        </VerticalStackLayout>
+                        <Grid>
+                            <StackLayout>
+                                <Label Text="{Binding Username}"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding Role, StringFormat='Role: {0}'}"/>
+                                <Label Text="{Binding Password, StringFormat='Password: {0}'}"
+                                       TextColor="Gray"
+                                       FontSize="12"/>
+                            </StackLayout>
+
+                            <!-- ✏️ Corner Icon -->
+                            <Image Source="edit_icon.png"
+                                   WidthRequest="18"
+                                   HeightRequest="18"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Start"
+                                   Margin="0"
+                                   InputTransparent="True"/>
+                        </Grid>
                     </Frame>
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
