@@ -4,24 +4,32 @@
              Title="Active Alerts">
 
        <VerticalStackLayout Padding="20"
-                     Spacing="10">
+                            Spacing="10">
               <Label Text="Active Alerts"
-                            FontSize="24"
-                            FontAttributes="Bold"/>
+                     FontSize="24"
+                     FontAttributes="Bold"/>
 
               <!-- CollectionView to display active alerts -->
               <CollectionView ItemsSource="{Binding ActiveAlerts}">
                      <CollectionView.ItemTemplate>
                             <DataTemplate>
                                    <Frame BorderColor="Gray"
-                                                 Padding="10"
-                                                 Margin="5">
+                                          Padding="10"
+                                          Margin="5">
                                           <VerticalStackLayout>
                                                  <Label Text="{Binding Message}"
-                                                               FontAttributes="Bold"/>
+                                                        FontAttributes="Bold"/>
                                                  <Label Text="{Binding Parameter, StringFormat='Parameter: {0}'}"/>
                                                  <Label Text="{Binding LocationId, StringFormat='Location ID: {0}'}"/>
                                                  <Label Text="{Binding Date_Time, StringFormat='Date: {0:dd/MM/yyyy HH:mm}'}"/>
+
+                                                 <Button Text="Create Maintenance Ticket"
+                                                         BackgroundColor="#FFDA581C"
+                                                         TextColor="White"
+                                                         CornerRadius="8"
+                                                         Padding="10"
+                                                         Clicked="MaintenanceClicked"
+                                                         Margin="0,10,0,20"/>
                                                  <Button Text="Mark as Resolved"
                                                          Command="{Binding BindingContext.MarkAsResolvedCommand, Source={x:Reference Name=AlertPage}}"
                                                          CommandParameter="{Binding AlertId}"

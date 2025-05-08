@@ -4,24 +4,25 @@
              Title="Resolved Alerts">
 
     <VerticalStackLayout Padding="20"
-            Spacing="10">
+                         Spacing="10">
         <Label Text="Resolved Alerts"
-                FontAttributes="Bold"
-                FontSize="24"/>
+               FontAttributes="Bold"
+               FontSize="24"/>
         <CollectionView ItemsSource="{Binding ResolvedAlerts}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame BorderColor="Gray"
-                            Padding="10"
-                            Margin="5">
+                           Padding="10"
+                           Margin="5">
                         <VerticalStackLayout>
                             <Label Text="{Binding Message}"
-                                    FontAttributes="Bold"/>
+                                   FontAttributes="Bold"/>
                             <Label Text="{Binding Parameter, StringFormat='Parameter: {0}'}"/>
                             <Label Text="{Binding LocationId, StringFormat='Location ID: {0}'}"/>
                             <Label Text="{Binding Date_Time, StringFormat='Date: {0:dd/MM/yyyy HH:mm}'}"/>
                             <Label Text="Resolved"
-                                    TextColor="Green"/>
+                                   TextColor="Green"/>
+
                         </VerticalStackLayout>
                     </Frame>
                 </DataTemplate>

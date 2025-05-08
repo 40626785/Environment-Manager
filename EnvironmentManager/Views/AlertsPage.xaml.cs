@@ -9,6 +9,12 @@ namespace EnvironmentManager.Views
 			InitializeComponent();
 			BindingContext = viewModel;
 		}
+
+
+		private async void MaintenanceClicked(object sender, EventArgs e)
+		{
+			await Shell.Current.GoToAsync(nameof(MaintenancePage));
+		}
 	}
 }
 

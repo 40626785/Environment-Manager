@@ -1,6 +1,10 @@
+using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using EnvironmentManager.Data;
+using EnvironmentManager.Models;
 using EnvironmentManager.Views;
+using Microsoft.EntityFrameworkCore;
 
 namespace EnvironmentManager.ViewModels;
 
@@ -34,7 +38,41 @@ public partial class HomeViewModel : ObservableObject
 
     [ObservableProperty]
     private string _sensorWarningCount = "7";
+    private readonly IDbContextFactory<AlertDbContext> _dbContextFactory;
 
+    [ObservableProperty]
+    private ObservableCollection<Alert> topAlerts = new();
+
+    public HomeViewModel(IDbContextFactory<AlertDbContext> dbContextFactory)
+    {
+        _dbContextFactory = dbContextFactory;
+        Task.Run(async () => await LoadTopAlerts());
+    }
+
+    [RelayCommand]
+    private async Task LoadTopAlerts()
+    {
+        try
+        {
+            using var dbContext = _dbContextFactory.CreateDbContext();
+            var alerts = await dbContext.AlertTable
+                .Where(a => !a.IsResolved)
+                .OrderByDescending(a => a.Date_Time)
+                .Take(2)  // Fetch top 2 alerts
+                .ToListAsync();
+
+            TopAlerts.Clear();
+            foreach (var alert in alerts)
+            {
+                TopAlerts.Add(alert);
+            }
+            System.Diagnostics.Debug.WriteLine($"[DEBUG] Loaded {alerts.Count} top active alerts.");
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"[ERROR] Failed to load top alerts: {ex.Message}");
+        }
+    }
     public HomeViewModel()
     {
         // Simple constructor with no dependencies
