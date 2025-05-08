@@ -1,0 +1,39 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider and VS Code
+.idea/
+.vscode/
+
+# Visual Studio
+.vs/
+
+# NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+# Project files (optional)
+*.csproj
+*.dbmdl
+*.pdb
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+
+# Others
+*.db
+*.bak
+*.cache
+*.tmp
