@@ -1,5 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using EnvironmentManager.Views;
 
 namespace EnvironmentManager.ViewModels;
 
@@ -38,6 +39,11 @@ public partial class HomeViewModel : ObservableObject
     {
         // Simple constructor with no dependencies
         // When the real implementation is needed, this can be expanded
+    }
+    [RelayCommand]
+    private async Task NavigateToAlertsAsync()
+    {
+        await Shell.Current.GoToAsync(nameof(AlertPage));
     }
 
     [RelayCommand]

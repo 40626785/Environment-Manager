@@ -1,0 +1,44 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvironmentManager.Views.AlertPage"
+             Title="Active Alerts">
+
+       <VerticalStackLayout Padding="20"
+                     Spacing="10">
+              <Label Text="Active Alerts"
+                            FontSize="24"
+                            FontAttributes="Bold"/>
+
+              <!-- CollectionView to display active alerts -->
+              <CollectionView ItemsSource="{Binding ActiveAlerts}">
+                     <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                   <Frame BorderColor="Gray"
+                                                 Padding="10"
+                                                 Margin="5">
+                                          <VerticalStackLayout>
+                                                 <Label Text="{Binding Message}"
+                                                               FontAttributes="Bold"/>
+                                                 <Label Text="{Binding Parameter, StringFormat='Parameter: {0}'}"/>
+                                                 <Label Text="{Binding LocationId, StringFormat='Location ID: {0}'}"/>
+                                                 <Label Text="{Binding Date_Time, StringFormat='Date: {0:dd/MM/yyyy HH:mm}'}"/>
+                                                 <Button Text="Mark as Resolved"
+                                                         Command="{Binding BindingContext.MarkAsResolvedCommand, Source={x:Reference Name=AlertPage}}"
+                                                         CommandParameter="{Binding AlertId}"
+                                                         BackgroundColor="Green"
+                                                         TextColor="White"/>
+                                          </VerticalStackLayout>
+                                   </Frame>
+                            </DataTemplate>
+                     </CollectionView.ItemTemplate>
+              </CollectionView>
+
+              <!-- Button to view all resolved alerts -->
+              <Button Text="View All Resolved Alerts"
+                      Command="{Binding ViewAllResolvedAlertsCommand}"
+                      BackgroundColor="Blue"
+                      TextColor="White"
+                      VerticalOptions="EndAndExpand"
+                      HorizontalOptions="Center"/>
+       </VerticalStackLayout>
+</ContentPage>

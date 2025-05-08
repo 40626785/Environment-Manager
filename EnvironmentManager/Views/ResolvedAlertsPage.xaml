@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvironmentManager.Views.ResolvedAlertsPage"
+             Title="Resolved Alerts">
+
+    <VerticalStackLayout Padding="20"
+            Spacing="10">
+        <Label Text="Resolved Alerts"
+                FontAttributes="Bold"
+                FontSize="24"/>
+        <CollectionView ItemsSource="{Binding ResolvedAlerts}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray"
+                            Padding="10"
+                            Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Message}"
+                                    FontAttributes="Bold"/>
+                            <Label Text="{Binding Parameter, StringFormat='Parameter: {0}'}"/>
+                            <Label Text="{Binding LocationId, StringFormat='Location ID: {0}'}"/>
+                            <Label Text="{Binding Date_Time, StringFormat='Date: {0:dd/MM/yyyy HH:mm}'}"/>
+                            <Label Text="Resolved"
+                                    TextColor="Green"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

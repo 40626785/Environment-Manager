@@ -82,6 +82,21 @@ public static class MauiProgram
 
 	private static void RegisterDatabaseContexts(MauiAppBuilder builder)
 	{
+		// alerts context
+		builder.Services.AddDbContextFactory<AlertDbContext>(options =>
+{
+	try
+	{
+		var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+		Debug.WriteLine($"[DEBUG] Configuring AlertDbContext with connection string: {connectionString}");
+		options.UseSqlServer(connectionString);
+	}
+	catch (Exception ex)
+	{
+		Debug.WriteLine($"[ERROR] Failed to configure AlertDbContext: {ex.Message}");
+	}
+});
+
 		// Configure MaintenanceDbContext
 		builder.Services.AddDbContext<MaintenanceDbContext>(options =>
 		{
@@ -268,6 +283,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<EditUserViewModel>();
 		builder.Services.AddTransient<AdminUserViewModel>();
 		builder.Services.AddTransient<AddUserViewModel>();
+		builder.Services.AddTransient<AlertViewModel>();
+		builder.Services.AddTransient<ResolvedAlertsViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -292,5 +309,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<AdminUserPage>();
 		builder.Services.AddTransient<EditUserPage>();
 		builder.Services.AddTransient<AddUserPage>();
+		builder.Services.AddTransient<AlertPage>();
+		builder.Services.AddTransient<ResolvedAlertsPage>();
 	}
 }
