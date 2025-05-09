@@ -43,7 +43,7 @@
 
                                    <!-- Air Quality Card -->
                                    <Frame Grid.Row="0"
-                                                 Grid.Column="0"
+                                          Grid.Column="0"
                                           Padding="15"
                                           BorderColor="Transparent"
                                           HasShadow="True">
@@ -64,7 +64,7 @@
 
                                    <!-- Water pH Card -->
                                    <Frame Grid.Row="0"
-                                                 Grid.Column="1"
+                                          Grid.Column="1"
                                           Padding="15"
                                           BorderColor="Transparent"
                                           HasShadow="True">
@@ -85,7 +85,7 @@
 
                                    <!-- Temperature Card -->
                                    <Frame Grid.Row="1"
-                                                 Grid.Column="0"
+                                          Grid.Column="0"
                                           Padding="15"
                                           BorderColor="Transparent"
                                           HasShadow="True">
@@ -106,7 +106,7 @@
 
                                    <!-- Sensor Status Card -->
                                    <Frame Grid.Row="1"
-                                                 Grid.Column="1"
+                                          Grid.Column="1"
                                           Padding="15"
                                           BorderColor="Transparent"
                                           HasShadow="True">
