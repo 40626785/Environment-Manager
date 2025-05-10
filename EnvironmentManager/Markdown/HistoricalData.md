@@ -1,4 +1,3 @@
-```mermaid
 classDiagram
     class HistoricalDataSelectionViewModel {
         +ICommand SelectTableCommand
