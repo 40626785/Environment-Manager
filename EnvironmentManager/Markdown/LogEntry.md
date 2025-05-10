@@ -1,41 +1,76 @@
 classDiagram
+    class LogEntry {
+        +int LogID
+        +DateTime? LogDateTime
+        +string LogMessage
+    }
 
-%% === Model ===
-class LogEntry {
-  +int LogID
-  +DateTime LogDateTime
-  +string LogMessage
-}
+    class ErrorEntry {
+        +int ErrorID
+        +DateTime? ErrorDateTime
+        +string ErrorMessage
+    }
 
-%% === DbContext ===
-class LogDbContext {
-  +DbSet<LogEntry> LogTable
-}
+    class LogDbContext {
+        +DbSet<LogEntry> Logs
+        +LogDbContext(DbContextOptions)
+        +void OnModelCreating(ModelBuilder)
+    }
 
-%% === ViewModel ===
-class LogViewModel {
-  +ObservableCollection<LogEntry> TableData
-  +Task LoadDataAsync()
-  +Task ApplyFiltersAsync()
-  +Task DeleteFilteredAsync()
-  +Task ExportToCsvAsync()
-}
+    class ErrorDbContext {
+        +DbSet<ErrorEntry> Errors
+        +ErrorDbContext(DbContextOptions)
+        +void OnModelCreating(ModelBuilder)
+    }
 
-%% === Services ===
-class IUserDialogService
-class ILoggingService
+    class IUserDialogService {
+        +Task ShowAlert(string, string, string)
+        +Task<bool> ShowConfirmation(string, string, string, string)
+        +Task NavigateBackAsync()
+    }
 
-%% === Navigation ===
-class NavigationDataStore {
-  +LogEntry? SelectedLogEntryRecord
-}
+    class LogViewModel {
+        +ObservableCollection<LogEntry> TableData
+        +ICommand LoadDataCommand
+        +ICommand ApplyFiltersCommand
+        +ICommand DeleteFilteredCommand
+        +ICommand ExportToCsvCommand
+        +ICommand ToggleFilterVisibilityCommand
+        +LogViewModel(IDbContextFactory, IUserDialogService)
+        +Task LoadDataAsync()
+        +Task ApplyFiltersAsync()
+        +Task DeleteFilteredAsync()
+        +Task ExportToCsvAsync()
+    }
 
-%% === Relationships ===
-LogDbContext --> LogEntry : DbSet
+    class ErrorViewModel {
+        +ObservableCollection<ErrorEntry> TableData
+        +ICommand LoadDataCommand
+        +ICommand ApplyFiltersCommand
+        +ICommand DeleteFilteredCommand
+        +ICommand ExportToCsvCommand
+        +ICommand ToggleFilterVisibilityCommand
+        +ErrorViewModel(IDbContextFactory, IUserDialogService)
+        +Task LoadDataAsync()
+        +Task ApplyFiltersAsync()
+        +Task DeleteFilteredAsync()
+        +Task ExportToCsvAsync()
+    }
 
-LogViewModel --> LogEntry
-LogViewModel --> LogDbContext
-LogViewModel --> IUserDialogService
-LogViewModel --> ILoggingService
+    class LogPage {
+        +LogPage(LogViewModel)
+    }
 
-NavigationDataStore --> LogEntry : SelectedLogEntryRecord
+    class ErrorPage {
+        +ErrorPage(ErrorViewModel)
+    }
+
+    LogViewModel --> LogDbContext : Uses
+    ErrorViewModel --> ErrorDbContext : Uses
+    LogDbContext --> LogEntry : Contains
+    ErrorDbContext --> ErrorEntry : Contains
+    LogPage --> LogViewModel : Binds
+    ErrorPage --> ErrorViewModel : Binds
+    LogViewModel --> IUserDialogService : Uses
+    ErrorViewModel --> IUserDialogService : Uses
+
