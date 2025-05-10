@@ -4,6 +4,7 @@ using EnvironmentManager.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Text;
 using System.Windows.Input;
 
 
@@ -66,6 +67,9 @@ namespace EnvironmentManager.ViewModels
 
 
         public ICommand LoadAirQualityDataCommand => new Command(async () => await LoadAirQualityDataAsync());
+        public ICommand ExportToCsvCommand => new Command(ExportToCsv);
+        public ICommand ExportWaterToCsvCommand => new Command(ExportWaterToCsv);
+        public ICommand ExportWeatherToCsvCommand => new Command(ExportWeatherToCsv);
 
 
 
@@ -79,7 +83,7 @@ namespace EnvironmentManager.ViewModels
             await LoadAirQualityDataAsync(applyFilter: true);
         }
 
-        public HistoricalDataViewerViewModel(HistoricalDataDbContext dbContext)
+        public HistoricalDataViewerViewModel(HistoricalDataDbContext dbContext, Interfaces.ILoggingService @object)
         {
             Debug.WriteLine("[INFO] Constructor: HistoricalDataViewerViewModel initialized.");
             _dbContext = dbContext;
@@ -294,6 +298,66 @@ namespace EnvironmentManager.ViewModels
 
         public ICommand ApplyWeatherFilterCommand => new Command(async () => await ApplyWeatherFilterAsync());
 
+        private void ExportToCsv()
+        {
+            try
+            {
+                var csvBuilder = new StringBuilder();
+                csvBuilder.AppendLine("Date, Nitrogen_dioxide, Sulphur_dioxide");
+                foreach (var data in AirQualityData)
+                {
+                    csvBuilder.AppendLine($"{data.Date}, {data.Nitrogen_dioxide}, {data.Sulphur_dioxide}");
+                }
+                string filePath = Path.Combine(FileSystem.Current.AppDataDirectory, "AirQualityData.csv");
+                File.WriteAllText(filePath, csvBuilder.ToString());
+                Debug.WriteLine($"[INFO] Air quality data exported to CSV at: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("[ERROR] Export to CSV failed: " + ex.Message);
+            }
+        }
+
+        private void ExportWaterToCsv()
+        {
+            try
+            {
+                var csvBuilder = new StringBuilder();
+                csvBuilder.AppendLine("Date, Nitrate_mg_l_1, Nitrite_less_thank_mg_l_1");
+                foreach (var data in WaterQualityData)
+                {
+                    csvBuilder.AppendLine($"{data.Date}, {data.Nitrate_mg_l_1}, {data.Nitrite_less_thank_mg_l_1}");
+                }
+                string filePath = Path.Combine(FileSystem.Current.AppDataDirectory, "WaterQualityData.csv");
+                File.WriteAllText(filePath, csvBuilder.ToString());
+                Debug.WriteLine($"[INFO] Water data exported to CSV at: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("[ERROR] Export water to CSV failed: " + ex.Message);
+            }
+        }
+
+        private void ExportWeatherToCsv()
+        {
+            try
+            {
+                var csvBuilder = new StringBuilder();
+                csvBuilder.AppendLine("Date_Time, Temperature_2m, Relative_humidity_2m");
+                foreach (var data in WeatherData)
+                {
+                    csvBuilder.AppendLine($"{data.Date_Time}, {data.Temperature_2m}, {data.Relative_humidity_2m}");
+                }
+                string filePath = Path.Combine(FileSystem.Current.AppDataDirectory, "WeatherData.csv");
+
+                File.WriteAllText(filePath, csvBuilder.ToString());
+                Debug.WriteLine($"[INFO] Weather data exported to CSV at: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("[ERROR] Export weather to CSV failed: " + ex.Message);
+            }
+        }
     }
 
 }

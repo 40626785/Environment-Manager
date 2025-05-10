@@ -13,128 +13,62 @@ using EnvironmentManager.Interfaces;
 
 namespace EnvironmentManager.Test
 {
-    public class AdminUserViewModelTests
+    public class HistoricalDataViewerViewModelTests
     {
-        private DbContextOptions<UserDbContext> CreateOptions() =>
-    new DbContextOptionsBuilder<UserDbContext>()
-        .UseInMemoryDatabase(databaseName: $"UserDb_{Guid.NewGuid()}")
-        .Options;
+        private DbContextOptions<HistoricalDataDbContext> CreateOptions() =>
+            new DbContextOptionsBuilder<HistoricalDataDbContext>()
+                .UseInMemoryDatabase(databaseName: $"HistoricalDataDb_{Guid.NewGuid()}")
+                .Options;
 
-
-        private async Task<UserDbContext> SeedTestDataAsync(DbContextOptions<UserDbContext> options)
+        [Fact]
+        public async Task LoadAirQualityDataAsync_LoadsAllRecords()
         {
-            var context = new UserDbContext(options);
-            await context.Users.AddRangeAsync(new[]
-            {
-                new User { Username = "admin", Password = "pass1", Role = 1 },
-                new User { Username = "guest", Password = "pass2", Role = 0 },
-                new User { Username = "super", Password = "pass3", Role = 2 }
-            });
+            var options = CreateOptions();
+            var context = new HistoricalDataDbContext(options);
+            context.ArchiveAirQuality.AddRange(
+                new ArchiveAirQuality { Date = DateTime.Today, Nitrogen_dioxide = 10 },
+                new ArchiveAirQuality { Date = DateTime.Today.AddDays(-1), Nitrogen_dioxide = 15 }
+            );
             await context.SaveChangesAsync();
-            return context;
-        }
 
+            var viewModel = new HistoricalDataViewerViewModel(context, new Mock<ILoggingService>().Object);
+            await viewModel.LoadAirQualityDataAsync();
 
-        [Fact]
-        public async Task LoadDataAsync_LoadsAllUsers()
-        {
-            var options = CreateOptions();
-
-            var factory = new Mock<IDbContextFactory<UserDbContext>>();
-            factory.Setup(f => f.CreateDbContext()).Returns(() =>
-            {
-                var ctx = new UserDbContext(options);
-                if (!ctx.Users.Any())
-                {
-                    ctx.Users.AddRange(
-                        new User { Username = "admin", Password = "pass1", Role = 1 },
-                        new User { Username = "guest", Password = "pass2", Role = 0 },
-                        new User { Username = "super", Password = "pass3", Role = 2 }
-                    );
-                    ctx.SaveChanges();
-                }
-                return new UserDbContext(options);
-            });
-
-            var mockDialog = new Mock<IUserDialogService>();
-            var viewModel = new AdminUserViewModel(factory.Object, mockDialog.Object);
-
-            await viewModel.LoadDataAsync();
-
-            Assert.Equal(3, viewModel.TableData.Count);
-        }
-
-
-        [Fact]
-        public async Task ApplyFiltersAsync_ByUsernameAndRole()
-        {
-            var options = CreateOptions();
-            await SeedTestDataAsync(options);
-
-            var factory = new Mock<IDbContextFactory<UserDbContext>>();
-            factory.Setup(f => f.CreateDbContext()).Returns(() => new UserDbContext(options));
-
-            var dialogMock = new Mock<IUserDialogService>();
-            var viewModel = new AdminUserViewModel(factory.Object, dialogMock.Object)
-            {
-                UsernameFilter = "admin",
-                RoleFilterText = "1"
-            };
-
-            await viewModel.ApplyFiltersAsync();
-
-            Assert.Single(viewModel.TableData);
-            Assert.Equal("admin", viewModel.TableData.First().Username);
+            Assert.Equal(2, viewModel.AirQualityData.Count);
         }
 
         [Fact]
-        public async Task DeleteFilteredAsync_RemovesUsers_IfConfirmed()
+        public async Task LoadWaterQualityDataAsync_LoadsAllRecords()
         {
             var options = CreateOptions();
-            await SeedTestDataAsync(options);
+            var context = new HistoricalDataDbContext(options);
+            context.ArchiveWaterQuality.AddRange(
+                new ArchiveWaterQuality { Date = DateTime.Today, Nitrate_mg_l_1 = 5 },
+                new ArchiveWaterQuality { Date = DateTime.Today.AddDays(-1), Nitrate_mg_l_1 = 8 }
+            );
+            await context.SaveChangesAsync();
 
-            var factory = new Mock<IDbContextFactory<UserDbContext>>();
-            factory.Setup(f => f.CreateDbContext()).Returns(() => new UserDbContext(options));
+            var viewModel = new HistoricalDataViewerViewModel(context, new Mock<ILoggingService>().Object);
+            await viewModel.LoadWaterQualityDataAsync();
 
-            var dialogMock = new Mock<IUserDialogService>();
-            dialogMock.Setup(d => d.ShowConfirmation(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
-                      .ReturnsAsync(true);
-            dialogMock.Setup(d => d.ShowAlert(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
-                      .Returns(Task.CompletedTask);
-
-            var viewModel = new AdminUserViewModel(factory.Object, dialogMock.Object);
-            await viewModel.LoadDataAsync();
-
-            Assert.Equal(3, viewModel.TableData.Count);
-
-            await viewModel.DeleteFilteredAsync();
-
-            using var verify = new UserDbContext(options);
-            Assert.Empty(verify.Users);
+            Assert.Equal(2, viewModel.WaterQualityData.Count);
         }
 
         [Fact]
-        public async Task ExportToCsvAsync_CreatesCsvFile()
+        public async Task LoadWeatherDataAsync_LoadsAllRecords()
         {
             var options = CreateOptions();
-            var context = await SeedTestDataAsync(options);
+            var context = new HistoricalDataDbContext(options);
+            context.ArchiveWeatherData.AddRange(
+                new ArchiveWeatherData { Date_Time = DateTime.Today, Temperature_2m = 20 },
+                new ArchiveWeatherData { Date_Time = DateTime.Today.AddDays(-1), Temperature_2m = 22 }
+            );
+            await context.SaveChangesAsync();
 
-            var factory = new Mock<IDbContextFactory<UserDbContext>>();
-            factory.Setup(f => f.CreateDbContext()).Returns(() => new UserDbContext(options));
+            var viewModel = new HistoricalDataViewerViewModel(context, new Mock<ILoggingService>().Object);
+            await viewModel.LoadWeatherDataAsync();
 
-            var dialogMock = new Mock<IUserDialogService>();
-            dialogMock.Setup(d => d.ShowAlert(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
-                      .Returns(Task.CompletedTask);
-
-            var viewModel = new AdminUserViewModel(factory.Object, dialogMock.Object);
-            await viewModel.LoadDataAsync();
-
-            var tempPath = Path.Combine(Path.GetTempPath(), $"TestExport_Users_{Guid.NewGuid()}.csv");
-            await viewModel.ExportToCsvAsync(tempPath);
-
-            Assert.True(File.Exists(tempPath));
-            File.Delete(tempPath);
+            Assert.Equal(2, viewModel.WeatherData.Count);
         }
-
     }
 }
