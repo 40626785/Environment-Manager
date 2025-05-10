@@ -32,9 +32,21 @@ classDiagram
         +Task ExportToCsvAsync()
     }
 
+    class EditAirQualityViewModel {
+        +AirQualityRecord EditableRecord
+        +ICommand SaveCommand
+        +EditAirQualityViewModel(AirQualityDbContext, IUserDialogService)
+        +Task SaveAsync()
+        +Task<bool> ValidateRecordAsync(AirQualityRecord)
+    }
+
     class AirQualityPage {
         +AirQualityPage(AirQualityAdminViewModel)
         +void OnAppearing()
+    }
+
+    class EditAirQualityPage {
+        +EditAirQualityPage(EditAirQualityViewModel)
     }
 
     class DatabaseAdminViewModel {
@@ -58,8 +70,13 @@ classDiagram
     }
 
     AirQualityAdminViewModel --> AirQualityDbContext : Uses
+    EditAirQualityViewModel --> AirQualityDbContext : Uses
     AirQualityDbContext --> AirQualityRecord : Contains
     AirQualityPage --> AirQualityAdminViewModel : Binds
+    EditAirQualityPage --> EditAirQualityViewModel : Binds
     DatabaseAdminViewModel --> IDatabaseAdminDataStore : Uses
     DatabaseAdminPage --> DatabaseAdminViewModel : Binds
     DatabaseAdminPage --> AirQualityPage : Navigates to
+
+    %% Navigation connections
+    AirQualityPage --> EditAirQualityPage : Navigates to

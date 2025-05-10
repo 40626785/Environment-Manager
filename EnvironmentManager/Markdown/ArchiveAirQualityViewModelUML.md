@@ -1,52 +1,106 @@
 classDiagram
+    class DatabaseAdminPage {
+        +DatabaseAdminPage(DatabaseAdminViewModel)
+    }
 
-class ArchiveAirQualityViewModel {
-    +ObservableCollection~ArchiveAirQuality~ TableData
-    +string SelectedSortOption
-    +string SelectedSortDirection
-    +string StartIdText
-    +string EndIdText
-    +DateTime StartDate
-    +DateTime EndDate
-    +bool IsDateFilterEnabled
-    +bool IsFilterVisible
-    +string ToggleFilterText
-    +ICommand LoadDataCommand
-    +ICommand ApplyFiltersCommand
-    +ICommand ApplySortCommand
-    +ICommand DeleteFilteredCommand
-    +ICommand ExportToCsvCommand
-    +ICommand ToggleFilterVisibilityCommand
-    +ICommand RowTappedCommand
-}
+    class IDatabaseAdminDataStore {
+        +List<string> GetAllTableNames()
+        +Task ClearTableByDateAsync(string, DateTime)
+        +Task ClearTableByIdRangeAsync(string, int, int)
+        +Task<List<Dictionary<string, object>>> GetFilteredTableDataAsync(string, DateTime?, int?, int?)
+    }
 
-class ArchiveAirQuality {
-    +int Id
-    +DateTime Date
-    +TimeSpan Time
-    +double? Nitrogen_dioxide
-    +double? Sulphur_dioxide
-    +double? PM2_5_particulate_matter
-    +double? PM10_particulate_matter
-}
+    class LogEntry {
+        +int LogID
+        +DateTime? LogDateTime
+        +string LogMessage
+    }
 
-class ArchiveAirQualityDbContext {
-    +DbSet~ArchiveAirQuality~ ArchiveAirQuality
-}
+    class ErrorEntry {
+        +int ErrorID
+        +DateTime? ErrorDateTime
+        +string ErrorMessage
+    }
 
-class DatabaseLoggingService {
-    +Task LogMessageAsync(string message)
-    +Task LogErrorAsync(string errorMessage)
-}
+    class ArchiveAirQuality {
+        +int Id
+        +DateTime? Date
+        +TimeSpan? Time
+        +double? Nitrogen_dioxide
+        +double? Sulphur_dioxide
+        +double? PM2_5_particulate_matter
+        +double? PM10_particulate_matter
+        +int LocationId
+    }
 
-class NavigationDataStore {
-    <<static>>
-    +ArchiveAirQuality SelectedRecord
-}
+    class LogDbContext {
+        +DbSet<LogEntry> Logs
+        +LogDbContext(DbContextOptions)
+    }
 
-ArchiveAirQualityViewModel --> ArchiveAirQualityDbContext
-ArchiveAirQualityViewModel --> DatabaseLoggingService
-ArchiveAirQualityViewModel --> NavigationDataStore
-ArchiveAirQualityViewModel --> ArchiveAirQuality
+    class ErrorDbContext {
+        +DbSet<ErrorEntry> Errors
+        +ErrorDbContext(DbContextOptions)
+    }
 
-ArchiveAirQualityDbContext --> ArchiveAirQuality
+    class ArchiveAirQualityDbContext {
+        +DbSet<ArchiveAirQuality> ArchiveAirQuality
+        +ArchiveAirQualityDbContext(DbContextOptions)
+    }
+
+    class LogViewModel {
+        +ObservableCollection<LogEntry> TableData
+        +ICommand LoadDataCommand
+        +ICommand ApplyFiltersCommand
+        +ICommand DeleteFilteredCommand
+        +ICommand ExportToCsvCommand
+        +ICommand ToggleFilterVisibilityCommand
+        +LogViewModel(IDbContextFactory, IUserDialogService)
+    }
+
+    class ErrorViewModel {
+        +ObservableCollection<ErrorEntry> TableData
+        +ICommand LoadDataCommand
+        +ICommand ApplyFiltersCommand
+        +ICommand DeleteFilteredCommand
+        +ICommand ExportToCsvCommand
+        +ICommand ToggleFilterVisibilityCommand
+        +ErrorViewModel(IDbContextFactory, IUserDialogService)
+    }
+
+    class ArchiveAirQualityViewModel {
+        +ObservableCollection<ArchiveAirQuality> TableData
+        +ICommand LoadDataCommand
+        +ICommand ApplyFiltersCommand
+        +ICommand DeleteFilteredCommand
+        +ICommand ExportToCsvCommand
+        +ICommand ToggleFilterVisibilityCommand
+        +ArchiveAirQualityViewModel(IDbContextFactory, ILoggingService, IUserDialogService)
+    }
+
+    class LogPage {
+        +LogPage(LogViewModel)
+    }
+
+    class ErrorPage {
+        +ErrorPage(ErrorViewModel)
+    }
+
+    class ArchiveAirQualityPage {
+        +ArchiveAirQualityPage(ArchiveAirQualityViewModel)
+    }
+
+    LogViewModel --> LogDbContext : Uses
+    ErrorViewModel --> ErrorDbContext : Uses
+    ArchiveAirQualityViewModel --> ArchiveAirQualityDbContext : Uses
+    LogDbContext --> LogEntry : Contains
+    ErrorDbContext --> ErrorEntry : Contains
+    ArchiveAirQualityDbContext --> ArchiveAirQuality : Contains
+    LogPage --> LogViewModel : Binds
+    ErrorPage --> ErrorViewModel : Binds
+    ArchiveAirQualityPage --> ArchiveAirQualityViewModel : Binds
+
+    %% Navigation connections
+    DatabaseAdminPage --> LogPage : Navigates to
+    DatabaseAdminPage --> ErrorPage : Navigates to
+    DatabaseAdminPage --> ArchiveAirQualityPage : Navigates to
