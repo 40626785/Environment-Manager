@@ -1,5 +1,6 @@
 using Microsoft.Maui.Controls;
 using System.Diagnostics;
+using Microsoft.Extensions.DependencyInjection;
 using EnvironmentManager.Services;
 
 namespace EnvironmentManager;
@@ -8,13 +9,20 @@ public partial class App : Application
 {
 	private readonly IDatabaseInitializationService _dbInitService;
 
-	public App(IDatabaseInitializationService dbInitService)
+	// Static property to expose the IServiceProvider
+	public static IServiceProvider Services { get; private set; }
+
+	public App(IServiceProvider serviceProvider, IDatabaseInitializationService dbInitService)
 	{
 		InitializeComponent();
+
+		// Assign the provided service provider to the static property
+		Services = serviceProvider;
+
 		_dbInitService = dbInitService;
 
 		// Register routes for navigation
-		Routing.RegisterRoute(nameof(Views.MaintenancePage), typeof(Views.MaintenancePage)); //register route for MaintenancePage as its not contained in AppShell
+		Routing.RegisterRoute(nameof(Views.MaintenancePage), typeof(Views.MaintenancePage));
 		Routing.RegisterRoute(nameof(Views.HomePage), typeof(Views.HomePage));
 		Routing.RegisterRoute(nameof(Views.AllMaintenancePage), typeof(Views.AllMaintenancePage));
 		Routing.RegisterRoute(nameof(Views.SensorPage), typeof(Views.SensorPage));
@@ -23,12 +31,10 @@ public partial class App : Application
 		Routing.RegisterRoute(nameof(Views.AboutPage), typeof(Views.AboutPage));
 		Routing.RegisterRoute(nameof(Views.DatabaseAdminPage), typeof(Views.DatabaseAdminPage));
 		Routing.RegisterRoute(nameof(Views.AirQualityPage), typeof(Views.AirQualityPage));
-
-
-
+		Routing.RegisterRoute(nameof(Views.HistoricalDataPage), typeof(Views.HistoricalDataPage));
+		Routing.RegisterRoute(nameof(Views.HistoricalAirQualityPage), typeof(Views.HistoricalAirQualityPage));
 
 		Trace.Listeners.Add(new DefaultTraceListener());
-
 		MainPage = new AppShell();
 
 		// Initialize database asynchronously without blocking the UI

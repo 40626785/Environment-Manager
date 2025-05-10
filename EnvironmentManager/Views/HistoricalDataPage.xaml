@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:EnvironmentManager.ViewModels"
+             x:Class="EnvironmentManager.Views.HistoricalDataPage"
+             Title="Historacal Data"
+             BackgroundColor="White">
+
+
+
+    <VerticalStackLayout Padding="10"
+            Spacing="20"
+            HorizontalOptions="CenterAndExpand">
+
+        <Button Text="Go to Historical Air Quality Page"
+                Command="{Binding NavigateToAirQualityPageCommand}"
+                BackgroundColor="#0EA5E9"
+                TextColor="White"
+                CornerRadius="8"
+                WidthRequest="250"/>
+
+        <Button Text="Go to Historical Water Quality Page"
+                Command="{Binding NavigateToWaterQualityPageCommand}"
+                BackgroundColor="#0EA5E9"
+                TextColor="White"
+                CornerRadius="8"
+                WidthRequest="250"/>
+
+        <Button Text="Go to Historical Weather Data Page"
+                Command="{Binding NavigateToWeatherDataPageCommand}"
+                BackgroundColor="#0EA5E9"
+                TextColor="White"
+                CornerRadius="8"
+                WidthRequest="250"/>
+
+    </VerticalStackLayout>
+</ContentPage>

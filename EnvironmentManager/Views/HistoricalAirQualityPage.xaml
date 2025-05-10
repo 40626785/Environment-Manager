@@ -1,0 +1,91 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:EnvironmentManager.ViewModels"
+             xmlns:models="clr-namespace:EnvironmentManager.Models"
+             x:Class="EnvironmentManager.Views.HistoricalAirQualityPage"
+             x:DataType="viewmodels:HistoricalAirQualityViewModel"
+             Title="Historical Air Quality Data"
+             BackgroundColor="White">
+
+        <ScrollView>
+                <VerticalStackLayout Padding="10"
+                                Spacing="10">
+
+                        <!-- Filter Section -->
+                        <Label Text="Filter by Year and Month"
+                               FontAttributes="Bold"/>
+
+                        <HorizontalStackLayout Spacing="10">
+                                <VerticalStackLayout>
+                                        <Label Text="Year"
+                                                        FontSize="12"/>
+                                        <Picker ItemsSource="{Binding AvailableYears}"
+                                                SelectedItem="{Binding SelectedYear}"
+                                                SelectedIndexChanged="OnYearSelected"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout>
+                                        <Label Text="Month"
+                                                        FontSize="12"/>
+                                        <Picker ItemsSource="{Binding AvailableMonths}"
+                                                SelectedItem="{Binding SelectedMonth}"
+                                                SelectedIndexChanged="OnMonthSelected"/>
+                                </VerticalStackLayout>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="10"
+                                        Margin="0,10">
+                                <DatePicker Date="{Binding StartDate}"
+                                                Format="yyyy-MM-dd"/>
+                                <DatePicker Date="{Binding EndDate}"
+                                                Format="yyyy-MM-dd"/>
+                        </HorizontalStackLayout>
+
+                        <Button Text="Apply Filter"
+                                Command="{Binding ApplyFiltersCommand}"
+                                BackgroundColor="#0EA5E9"
+                                TextColor="White"
+                                CornerRadius="8"/>
+
+                        <!-- Sorting Section -->
+                        <Label Text="Sort by"
+                               FontAttributes="Bold"
+                               Margin="0, 20, 0, 0"/>
+                        <Picker ItemsSource="{Binding SortOptions}"
+                                SelectedItem="{Binding SelectedSortOption}"
+                                SelectedIndexChanged="OnSortOptionSelected"/>
+
+                        <!-- Export CSV Button -->
+                        <Button Text="Export Air Quality Data"
+                                Command="{Binding ExportToCsvCommand}"
+                                BackgroundColor="#0EA5E9"
+                                TextColor="White"
+                                CornerRadius="8"
+                                Margin="0,10,0,0"/>
+
+                        <!-- Air Quality Data -->
+                        <CollectionView ItemsSource="{Binding AirQualityData}"
+                                        IsVisible="{Binding AirQualityData.Count, Converter={StaticResource CountToBoolConverter}}">
+                                <CollectionView.ItemTemplate>
+                                        <DataTemplate x:DataType="models:ArchiveAirQuality">
+                                                <Frame BorderColor="#E0E0E0"
+                                                       CornerRadius="12"
+                                                       Padding="12"
+                                                       Margin="0,6">
+                                                        <VerticalStackLayout Spacing="6">
+                                                                <Label Text="{Binding Date, StringFormat='Date: {0:yyyy-MM-dd}'}"
+                                                                       FontAttributes="Bold"/>
+                                                                <Label Text="{Binding Nitrogen_dioxide, StringFormat='NO₂: {0}'}"/>
+                                                                <Label Text="{Binding Sulphur_dioxide, StringFormat='SO₂: {0}'}"/>
+                                                                <Label Text="{Binding PM2_5_particulate_matter, StringFormat='PM2.5: {0}'}"/>
+                                                                <Label Text="{Binding PM10_particulate_matter, StringFormat='PM10: {0}'}"/>
+                                                        </VerticalStackLayout>
+                                                </Frame>
+                                        </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                </VerticalStackLayout>
+        </ScrollView>
+
+</ContentPage>

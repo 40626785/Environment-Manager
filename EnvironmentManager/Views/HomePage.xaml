@@ -188,14 +188,22 @@
                                                  </DataTemplate>
                                           </CollectionView.ItemTemplate>
                                    </CollectionView>
-
+                                   <!-- Button for Active Alerts  -->
                                    <Button Text="View All Alerts"
                                            BackgroundColor="Red"
                                            TextColor="White"
                                            FontAttributes="Bold"
                                            Command="{Binding NavigateToAlertsCommand}"
                                            Padding="10"/>
-                                   <!-- Button for Database Admin -->
+
+                                   <!-- Button for Hirstorical Data -->
+                                   <Button Text="Hirstorical Data"
+                                           BackgroundColor="#6750A4"
+                                           TextColor="White"
+                                           CornerRadius="8"
+                                           Padding="10"
+                                           Clicked="OnHirstoricalDataClicked"
+                                           Margin="0,10,0,20"/>
                                    <!-- Button for database admin -->
                                    <Button Text="Database Admin"
                                            BackgroundColor="#6750A4"

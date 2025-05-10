@@ -8,6 +8,7 @@ using EnvironmentManager.Views;
 using System.Diagnostics;
 using EnvironmentManager.Services;
 using EnvironmentManager.Interfaces;
+using CommunityToolkit.Mvvm.DependencyInjection;
 
 namespace EnvironmentManager;
 
@@ -43,7 +44,12 @@ public static class MauiProgram
 		builder.Services.AddSingleton<IMaintenanceDataStore, MaintenanceDataStore>();
 
 		// Register App and AppShell
-		builder.Services.AddSingleton<App>();
+		builder.Services.AddSingleton<App>(sp =>
+{
+	var dbInitService = sp.GetRequiredService<IDatabaseInitializationService>();
+	return new App(sp, dbInitService);
+});
+
 		builder.Services.AddSingleton<AppShell>();
 
 #if DEBUG
@@ -82,6 +88,26 @@ public static class MauiProgram
 
 	private static void RegisterDatabaseContexts(MauiAppBuilder builder)
 	{
+		//Historical Data DB
+		builder.Services.AddDbContext<HistoricalDataDbContext>(options =>
+		{
+			try
+			{
+				var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
+				Debug.WriteLine("Configuring historical data database");
+				options.UseSqlServer(connectionString);
+				options.EnableSensitiveDataLogging();
+				options.EnableDetailedErrors();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error configuring historical data database context: {ex.Message}");
+				throw;
+			}
+		});
+
+
+
 		// alerts context
 		builder.Services.AddDbContextFactory<AlertDbContext>(options =>
 {
@@ -256,6 +282,7 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<TableMetadataService>();
 		builder.Services.AddSingleton<IUserDialogService, MauiUserDialogService>();
+		builder.Services.AddSingleton<Ioc>();
 
 
 	}
@@ -285,6 +312,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<AddUserViewModel>();
 		builder.Services.AddTransient<AlertViewModel>();
 		builder.Services.AddTransient<ResolvedAlertsViewModel>();
+		builder.Services.AddTransient<HistoricalDataSelectionViewModel>();
+		builder.Services.AddTransient<HistoricalAirQualityViewModel>();
 	}
 
 	private static void RegisterPages(MauiAppBuilder builder)
@@ -311,5 +340,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<AddUserPage>();
 		builder.Services.AddTransient<AlertPage>();
 		builder.Services.AddTransient<ResolvedAlertsPage>();
+		builder.Services.AddTransient<HistoricalDataPage>();
+		builder.Services.AddTransient<HistoricalAirQualityPage>();
 	}
 }

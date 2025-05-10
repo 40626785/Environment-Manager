@@ -40,4 +40,9 @@ public partial class HomePage : ContentPage
         await Shell.Current.GoToAsync(nameof(AlertPage));
     }
 
+    private async void OnHirstoricalDataClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(HistoricalDataPage));
+    }
+
 }
