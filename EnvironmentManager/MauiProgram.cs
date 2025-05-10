@@ -313,6 +313,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<AlertViewModel>();
 		builder.Services.AddTransient<ResolvedAlertsViewModel>();
 		builder.Services.AddTransient<HistoricalDataSelectionViewModel>();
+		builder.Services.AddTransient<HistoricalDataViewerViewModel>();
 		builder.Services.AddTransient<HistoricalAirQualityViewModel>();
 	}
 
@@ -342,5 +343,6 @@ public static class MauiProgram
 		builder.Services.AddTransient<ResolvedAlertsPage>();
 		builder.Services.AddTransient<HistoricalDataPage>();
 		builder.Services.AddTransient<HistoricalAirQualityPage>();
+		builder.Services.AddTransient<HistoricalDataViewerPage>();
 	}
 }

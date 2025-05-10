@@ -1,13 +1,12 @@
 using EnvironmentManager.ViewModels;
+
 namespace EnvironmentManager.Views;
 
 public partial class HistoricalDataPage : ContentPage
 {
-	private readonly HistoricalDataSelectionViewModel _viewModel;
-	public HistoricalDataPage()
+	public HistoricalDataPage(HistoricalDataSelectionViewModel viewModel)
 	{
 		InitializeComponent();
-		_viewModel = new HistoricalDataSelectionViewModel();
-		BindingContext = _viewModel;
+		BindingContext = viewModel;
 	}
 }

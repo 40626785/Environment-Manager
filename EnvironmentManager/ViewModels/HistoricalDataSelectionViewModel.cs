@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -5,33 +6,31 @@ using EnvironmentManager.Views;
 
 namespace EnvironmentManager.ViewModels
 {
-    public partial class HistoricalDataSelectionViewModel : BaseViewModel
+    public partial class HistoricalDataSelectionViewModel : ObservableObject
     {
-        public Command NavigateToAirQualityPageCommand { get; }
-        public Command NavigateToWaterQualityPageCommand { get; }
-        public Command NavigateToWeatherDataPageCommand { get; }
+        public ICommand SelectTableCommand { get; }
 
         public HistoricalDataSelectionViewModel()
         {
-            NavigateToAirQualityPageCommand = new Command(NavigateToAirQualityPage);
-            NavigateToWaterQualityPageCommand = new Command(NavigateToWaterQualityPage);
-            NavigateToWeatherDataPageCommand = new Command(NavigateToWeatherDataPage);
+            SelectTableCommand = new RelayCommand<string>(NavigateToViewer);
         }
 
-        private async void NavigateToAirQualityPage()
+        private async void NavigateToViewer(string tableName)
         {
-            await Shell.Current.GoToAsync("HistoricalAirQualityPage");
+            try
+            {
+                Debug.WriteLine($"inside NavigateToViewer {tableName}");
+                var route = $"{nameof(HistoricalDataViewerPage)}?tableName={tableName}";
+                await Shell.Current.GoToAsync(route);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and display an alert for user feedback
+                Debug.WriteLine($"Navigation error: {ex.Message}");
+                await Application.Current.MainPage.DisplayAlert("Error", $"Failed to navigate to the viewer: {ex.Message}", "OK");
+            }
         }
 
-        private async void NavigateToWaterQualityPage()
-        {
-            await Shell.Current.GoToAsync("HistoricalWaterQualityPage");
-        }
-
-        private async void NavigateToWeatherDataPage()
-        {
-            await Shell.Current.GoToAsync("HistoricalWeatherDataPage");
-        }
 
     }
 }

@@ -31,6 +31,8 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(AddUserPage), typeof(AddUserPage));
         Routing.RegisterRoute(nameof(AlertPage), typeof(AlertPage));
         Routing.RegisterRoute(nameof(ResolvedAlertsPage), typeof(ResolvedAlertsPage));
+        Routing.RegisterRoute(nameof(HistoricalDataViewerPage), typeof(HistoricalDataViewerPage));
+        Routing.RegisterRoute(nameof(HistoricalDataPage), typeof(HistoricalDataPage));
 
 
     }
