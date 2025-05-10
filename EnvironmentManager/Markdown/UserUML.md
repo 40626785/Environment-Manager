@@ -1,116 +1,73 @@
 classDiagram
+    class DatabaseAdminPage {
+        +DatabaseAdminPage(DatabaseAdminViewModel)
+    }
 
-%% === Models ===
-class User {
-  +string Username
-  +string Password
-  +int Role
-}
+    class IDatabaseAdminDataStore {
+        +List<string> GetAllTableNames()
+        +Task ClearTableByDateAsync(string, DateTime)
+        +Task ClearTableByIdRangeAsync(string, int, int)
+        +Task<List<Dictionary<string, object>>> GetFilteredTableDataAsync(string, DateTime?, int?, int?)
+    }
 
-class Location {
-  +int LocationId
-  +string SiteName
-  +double Latitude
-  +double Longitude
-  +double Elevation
-  +string SiteType
-  +string Zone
-  +string Agglomeration
-  +string LocalAuthority
-  +string Country
-  +int UtcOffsetSeconds
-  +string Timezone
-  +string TimezoneAbbreviation
-}
+    DatabaseAdminViewModel --> IDatabaseAdminDataStore : Uses
+    DatabaseAdminPage --> DatabaseAdminViewModel : Binds
 
-class LogEntry {
-  +int LogID
-  +DateTime LogDateTime
-  +string LogMessage
-}
+    class User {
+        +string Username
+        +string Password
+        +int Role
+    }
 
-class ErrorEntry {
-  +int ErrorID
-  +DateTime ErrorDateTime
-  +string ErrorMessage
-}
+    class UserDbContext {
+        +DbSet<User> Users
+        +UserDbContext(DbContextOptions)
+        +void OnModelCreating(ModelBuilder)
+    }
 
-class AirQualityRecord {
-  +int Id
-  +DateTime? Date
-  +TimeSpan? Time
-  +double? Nitrogen_dioxide
-  +double? Sulphur_dioxide
-  +double? PM2_5_particulate_matter
-  +double? PM10_particulate_matter
-}
+    class AddUserViewModel {
+        +User NewUser
+        +List<int> RoleOptions
+        +ICommand SaveCommand
+        +AddUserViewModel(UserDbContext, IUserDialogService)
+        +Task SaveAsync()
+    }
 
-class ArchiveAirQuality {
-  +int Id
-  +DateTime Date
-  +TimeSpan Time
-  +double Nitrogen_dioxide
-  +double Sulphur_dioxide
-  +double PM2_5_particulate_matter
-  +double PM10_particulate_matter
-}
+    class AdminUserViewModel {
+        +ObservableCollection<User> TableData
+        +string UsernameFilter
+        +string RoleFilterText
+        +ICommand LoadDataCommand
+        +ICommand ApplyFiltersCommand
+        +ICommand DeleteFilteredCommand
+        +ICommand ExportToCsvCommand
+        +ICommand ToggleFilterVisibilityCommand
+        +ICommand RowTappedCommand
+        +ICommand AddUserCommand
+        +AdminUserViewModel(IDbContextFactory, IUserDialogService)
+        +Task LoadDataAsync()
+        +Task ApplyFiltersAsync()
+        +Task DeleteFilteredAsync()
+        +Task ExportToCsvAsync()
+    }
 
-%% === ViewModels ===
-class AdminUserViewModel
-class AddUserViewModel
-class EditUserViewModel
+    class AddUserPage {
+        +AddUserPage(AddUserViewModel)
+    }
 
-class AdminLocationViewModel
-class EditLocationViewModel
+    class AdminUserPage {
+        +AdminUserPage(AdminUserViewModel)
+        +void OnAppearing()
+    }
 
-class LogViewModel
-class ErrorViewModel
+    AddUserViewModel --> UserDbContext : Uses
+    AdminUserViewModel --> UserDbContext : Uses
+    AddUserPage --> AddUserViewModel : Binds
+    AdminUserPage --> AdminUserViewModel : Binds
+    UserDbContext --> User : Contains
+    AdminUserViewModel --> User : Manages
+    AddUserViewModel --> User : Creates
 
-class AirQualityAdminViewModel
-class ArchiveAirQualityViewModel
-class EditArchiveAirQualityViewModel
-
-%% === Services ===
-class IUserDialogService
-class ILoggingService
-class NavigationDataStore
-
-%% === DbContexts ===
-class UserDbContext
-class LocationDbContext
-class LogDbContext
-class ErrorDbContext
-class AirQualityDbContext
-class ArchiveAirQualityDbContext
-
-%% === Relationships ===
-UserDbContext --> User
-LocationDbContext --> Location
-LogDbContext --> LogEntry
-ErrorDbContext --> ErrorEntry
-AirQualityDbContext --> AirQualityRecord
-ArchiveAirQualityDbContext --> ArchiveAirQuality
-
-NavigationDataStore --> User : SelectedUserRecord
-NavigationDataStore --> Location : SelectedLocationRecord
-NavigationDataStore --> ArchiveAirQuality : SelectedArchiveAirQualityRecord
-
-AdminUserViewModel --> User
-EditUserViewModel --> User
-AddUserViewModel --> User
-
-AdminLocationViewModel --> Location
-EditLocationViewModel --> Location
-
-LogViewModel --> LogEntry
-ErrorViewModel --> ErrorEntry
-
-AirQualityAdminViewModel --> AirQualityRecord
-ArchiveAirQualityViewModel --> ArchiveAirQuality
-EditArchiveAirQualityViewModel --> ArchiveAirQuality
-
-AdminUserViewModel --> IUserDialogService
-AdminUserViewModel --> IDbContextFactory~UserDbContext~
-
-EditUserViewModel --> UserDbContext
-AddUserViewModel --> UserDbContext
+    %% Navigation connections
+    AdminUserPage --> AddUserPage : Navigates to
+    DatabaseAdminPage --> AdminUserPage : Navigates to

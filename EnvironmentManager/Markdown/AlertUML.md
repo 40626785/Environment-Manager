@@ -1,49 +1,110 @@
 classDiagram
+    class Alert {
+        +int AlertId
+        +int LocationId
+        +DateTime Date_Time
+        +string Parameter
+        +double? Value
+        +double? Deviation
+        +string Message
+        +DateTime CreatedAt
+        +bool IsResolved
+    }
 
-class Alert {
-    int AlertId
-    int LocationId
-    DateTime Date_Time
-    string Parameter
-    double? Value
-    double? Deviation
-    string Message
-    DateTime CreatedAt
-    bool IsResolved
-}
+    class LogEntry {
+        +int LogID
+        +DateTime? LogDateTime
+        +string LogMessage
+    }
 
-class AlertDbContext {
-    DbSet<Alert> AlertTable
-    + AlertDbContext(options: DbContextOptions<AlertDbContext>)
-}
+    class ErrorEntry {
+        +int ErrorID
+        +DateTime? ErrorDateTime
+        +string ErrorMessage
+    }
 
-class AlertViewModel {
-    IDbContextFactory<AlertDbContext> _dbContextFactory
-    ObservableCollection<Alert> ActiveAlerts
-    + LoadActiveAlerts(): Task
-    + MarkAsResolved(alertId: int): Task
-    + ViewAllResolvedAlerts(): Task
-}
+    class IUserDialogService {
+        +Task ShowAlert(string, string, string)
+        +Task<bool> ShowConfirmation(string, string, string, string)
+        +Task NavigateBackAsync()
+    }
 
-class ResolvedAlertsViewModel {
-    IDbContextFactory<AlertDbContext> _dbContextFactory
-    ObservableCollection<Alert> ResolvedAlerts
-    + LoadResolvedAlerts(): Task
-    + DeleteResolvedAlert(alertId: int): Task
-}
+    class BaseEntry {
+        <<abstract>>
+        +int ID
+        +DateTime? DateTime
+        +string Message
+    }
 
-class AlertPage {
-    + MaintenanceClicked(sender: object, e: EventArgs): Task
-}
+    class BaseViewModel {
+        <<abstract>>
+        +ObservableCollection<BaseEntry> TableData
+        +ICommand LoadDataCommand
+        +ICommand ApplyFiltersCommand
+        +ICommand DeleteFilteredCommand
+        +ICommand ExportToCsvCommand
+        +ICommand ToggleFilterVisibilityCommand
+        +Task LoadDataAsync()
+        +Task ApplyFiltersAsync()
+        +Task DeleteFilteredAsync()
+        +Task ExportToCsvAsync()
+    }
 
-class ResolvedAlertsPage {
-    + ResolvedAlertsPage(viewModel: ResolvedAlertsViewModel)
-}
+    class LogViewModel {
+        +ObservableCollection<LogEntry> TableData
+        +LogViewModel(IDbContextFactory, IUserDialogService)
+    }
 
-AlertDbContext --> Alert : contains
-AlertViewModel --> AlertDbContext : uses
-ResolvedAlertsViewModel --> AlertDbContext : uses
-AlertViewModel --> Alert : manages
-ResolvedAlertsViewModel --> Alert : manages
-AlertPage --> AlertViewModel : binds
-ResolvedAlertsPage --> ResolvedAlertsViewModel : binds
+    class ErrorViewModel {
+        +ObservableCollection<ErrorEntry> TableData
+        +ErrorViewModel(IDbContextFactory, IUserDialogService)
+    }
+
+    class AlertViewModel {
+        +ObservableCollection<Alert> ActiveAlerts
+        +AlertViewModel(IDbContextFactory<AlertDbContext>)
+        +Task LoadActiveAlerts()
+        +Task MarkAsResolved(int)
+        +Task ViewAllResolvedAlerts()
+    }
+
+    class ResolvedAlertsViewModel {
+        +ObservableCollection<Alert> ResolvedAlerts
+        +ResolvedAlertsViewModel(IDbContextFactory<AlertDbContext>)
+        +Task LoadResolvedAlerts()
+        +Task DeleteResolvedAlert(int)
+    }
+
+    class AlertDbContext {
+        +DbSet<Alert> AlertTable
+        +AlertDbContext(DbContextOptions)
+    }
+
+    class MaintenancePage {
+        <<stub>>
+        +void SliderChanged(object, ValueChangedEventArgs)
+    }
+
+    class AlertPage {
+        +AlertPage(AlertViewModel)
+        +void MaintenanceClicked(object, EventArgs)
+    }
+
+    class ResolvedAlertsPage {
+        +ResolvedAlertsPage(ResolvedAlertsViewModel)
+    }
+
+    BaseEntry <|-- LogEntry
+    BaseEntry <|-- ErrorEntry
+    BaseViewModel <|-- LogViewModel
+    BaseViewModel <|-- ErrorViewModel
+    LogViewModel --> LogEntry : Uses
+    ErrorViewModel --> ErrorEntry : Uses
+    AlertViewModel --> AlertDbContext : Uses
+    ResolvedAlertsViewModel --> AlertDbContext : Uses
+    AlertDbContext --> Alert : Contains
+    AlertPage --> AlertViewModel : Binds
+    ResolvedAlertsPage --> ResolvedAlertsViewModel : Binds
+    MaintenancePage --> AlertViewModel : Navigates to
+    LogViewModel --> IUserDialogService : Uses
+    ErrorViewModel --> IUserDialogService : Uses

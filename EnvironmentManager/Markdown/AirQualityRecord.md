@@ -1,57 +1,65 @@
 classDiagram
+    class AirQualityRecord {
+        +int Id
+        +DateTime? Date
+        +TimeSpan? Time
+        +double? Nitrogen_dioxide
+        +double? Sulphur_dioxide
+        +double? PM2_5_particulate_matter
+        +double? PM10_particulate_matter
+        +int LocationId
+    }
 
-%% === Models ===
-class AirQualityRecord {
-  +int Id
-  +DateTime? Date
-  +TimeSpan? Time
-  +double? Nitrogen_dioxide
-  +double? Sulphur_dioxide
-  +double? PM2_5_particulate_matter
-  +double? PM10_particulate_matter
-}
+    class AirQualityDbContext {
+        +DbSet<AirQualityRecord> AirQuality
+        +AirQualityDbContext(DbContextOptions)
+        +void OnModelCreating(ModelBuilder)
+    }
 
-class ArchiveAirQuality {
-  +int Id
-  +DateTime Date
-  +TimeSpan Time
-  +double Nitrogen_dioxide
-  +double Sulphur_dioxide
-  +double PM2_5_particulate_matter
-  +double PM10_particulate_matter
-}
+    class AirQualityAdminViewModel {
+        +ObservableCollection<AirQualityRecord> TableData
+        +string LocationIdText
+        +ICommand LoadDataCommand
+        +ICommand ApplyFiltersCommand
+        +ICommand ApplySortCommand
+        +ICommand DeleteFilteredCommand
+        +ICommand ExportToCsvCommand
+        +AirQualityAdminViewModel(IDbContextFactory, ILoggingService, IUserDialogService)
+        +Task LoadDataAsync()
+        +Task ApplyFiltersAsync()
+        +Task ApplySortAsync()
+        +Task DeleteFilteredAsync()
+        +Task ExportToCsvAsync()
+    }
 
-%% === DbContexts ===
-class AirQualityDbContext {
-  +DbSet<AirQualityRecord> AirQuality
-}
+    class AirQualityPage {
+        +AirQualityPage(AirQualityAdminViewModel)
+        +void OnAppearing()
+    }
 
-class ArchiveAirQualityDbContext {
-  +DbSet<ArchiveAirQuality> ArchiveAirQuality
-}
+    class DatabaseAdminViewModel {
+        +ObservableCollection<string> TableOptions
+        +string SelectedTable
+        +ICommand NavigateToTableCommand
+        +DatabaseAdminViewModel(DatabaseAdminDbContext)
+        +void LoadTables()
+        +Task NavigateToTableAsync()
+    }
 
-%% === ViewModels ===
-class AirQualityAdminViewModel
-class ArchiveAirQualityViewModel
-class EditArchiveAirQualityViewModel
+    class DatabaseAdminPage {
+        +DatabaseAdminPage(DatabaseAdminViewModel)
+    }
 
-%% === Services ===
-class IUserDialogService
-class NavigationDataStore
+    class IDatabaseAdminDataStore {
+        +List<string> GetAllTableNames()
+        +Task ClearTableByDateAsync(string, DateTime)
+        +Task ClearTableByIdRangeAsync(string, int, int)
+        +Task<List<Dictionary<string, object>>> GetFilteredTableDataAsync(string, DateTime?, int?, int?)
+    }
 
-%% === Relationships ===
-AirQualityDbContext --> AirQualityRecord : DbSet
-ArchiveAirQualityDbContext --> ArchiveAirQuality : DbSet
-
-AirQualityAdminViewModel --> AirQualityRecord : TableData
-AirQualityAdminViewModel --> IUserDialogService
-
-ArchiveAirQualityViewModel --> ArchiveAirQuality : TableData
-ArchiveAirQualityViewModel --> ArchiveAirQualityDbContext
-ArchiveAirQualityViewModel --> IUserDialogService
-
-EditArchiveAirQualityViewModel --> ArchiveAirQuality : EditableRecord
-EditArchiveAirQualityViewModel --> ArchiveAirQualityDbContext
-EditArchiveAirQualityViewModel --> IUserDialogService
-
-NavigationDataStore --> ArchiveAirQuality : SelectedArchiveAirQualityRecord
+    AirQualityAdminViewModel --> AirQualityDbContext : Uses
+    AirQualityDbContext --> AirQualityRecord : Contains
+    AirQualityPage --> AirQualityAdminViewModel : Binds
+    DatabaseAdminViewModel --> IDatabaseAdminDataStore : Uses
+    DatabaseAdminPage --> DatabaseAdminViewModel : Binds
+    DatabaseAdminPage --> AirQualityPage : Navigates to
