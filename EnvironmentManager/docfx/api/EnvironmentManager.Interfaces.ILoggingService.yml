@@ -1,0 +1,196 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.ILoggingService
+  commentId: T:EnvironmentManager.Interfaces.ILoggingService
+  id: ILoggingService
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.ILoggingService.LogErrorAsync(System.String)
+  - EnvironmentManager.Interfaces.ILoggingService.LogMessageAsync(System.String)
+  langs:
+  - csharp
+  - vb
+  name: ILoggingService
+  nameWithType: ILoggingService
+  fullName: EnvironmentManager.Interfaces.ILoggingService
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ILoggingService.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ILoggingService
+    path: ../Interfaces/ILoggingService.cs
+    startLine: 4
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: public interface ILoggingService
+    content.vb: Public Interface ILoggingService
+- uid: EnvironmentManager.Interfaces.ILoggingService.LogErrorAsync(System.String)
+  commentId: M:EnvironmentManager.Interfaces.ILoggingService.LogErrorAsync(System.String)
+  id: LogErrorAsync(System.String)
+  parent: EnvironmentManager.Interfaces.ILoggingService
+  langs:
+  - csharp
+  - vb
+  name: LogErrorAsync(string)
+  nameWithType: ILoggingService.LogErrorAsync(string)
+  fullName: EnvironmentManager.Interfaces.ILoggingService.LogErrorAsync(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ILoggingService.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LogErrorAsync
+    path: ../Interfaces/ILoggingService.cs
+    startLine: 6
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: Task LogErrorAsync(string errorMessage)
+    parameters:
+    - id: errorMessage
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LogErrorAsync(errorMessage As String) As Task
+  overload: EnvironmentManager.Interfaces.ILoggingService.LogErrorAsync*
+  nameWithType.vb: ILoggingService.LogErrorAsync(String)
+  fullName.vb: EnvironmentManager.Interfaces.ILoggingService.LogErrorAsync(String)
+  name.vb: LogErrorAsync(String)
+- uid: EnvironmentManager.Interfaces.ILoggingService.LogMessageAsync(System.String)
+  commentId: M:EnvironmentManager.Interfaces.ILoggingService.LogMessageAsync(System.String)
+  id: LogMessageAsync(System.String)
+  parent: EnvironmentManager.Interfaces.ILoggingService
+  langs:
+  - csharp
+  - vb
+  name: LogMessageAsync(string)
+  nameWithType: ILoggingService.LogMessageAsync(string)
+  fullName: EnvironmentManager.Interfaces.ILoggingService.LogMessageAsync(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/ILoggingService.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LogMessageAsync
+    path: ../Interfaces/ILoggingService.cs
+    startLine: 7
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: Task LogMessageAsync(string message)
+    parameters:
+    - id: message
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LogMessageAsync(message As String) As Task
+  overload: EnvironmentManager.Interfaces.ILoggingService.LogMessageAsync*
+  nameWithType.vb: ILoggingService.LogMessageAsync(String)
+  fullName.vb: EnvironmentManager.Interfaces.ILoggingService.LogMessageAsync(String)
+  name.vb: LogMessageAsync(String)
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.ILoggingService.LogErrorAsync*
+  commentId: Overload:EnvironmentManager.Interfaces.ILoggingService.LogErrorAsync
+  href: EnvironmentManager.Interfaces.ILoggingService.html#EnvironmentManager_Interfaces_ILoggingService_LogErrorAsync_System_String_
+  name: LogErrorAsync
+  nameWithType: ILoggingService.LogErrorAsync
+  fullName: EnvironmentManager.Interfaces.ILoggingService.LogErrorAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: EnvironmentManager.Interfaces.ILoggingService.LogMessageAsync*
+  commentId: Overload:EnvironmentManager.Interfaces.ILoggingService.LogMessageAsync
+  href: EnvironmentManager.Interfaces.ILoggingService.html#EnvironmentManager_Interfaces_ILoggingService_LogMessageAsync_System_String_
+  name: LogMessageAsync
+  nameWithType: ILoggingService.LogMessageAsync
+  fullName: EnvironmentManager.Interfaces.ILoggingService.LogMessageAsync

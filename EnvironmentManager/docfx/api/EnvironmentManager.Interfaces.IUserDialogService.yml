@@ -1,0 +1,304 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces.IUserDialogService
+  commentId: T:EnvironmentManager.Interfaces.IUserDialogService
+  id: IUserDialogService
+  parent: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IUserDialogService.NavigateBackAsync
+  - EnvironmentManager.Interfaces.IUserDialogService.ShowAlert(System.String,System.String,System.String)
+  - EnvironmentManager.Interfaces.IUserDialogService.ShowConfirmation(System.String,System.String,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IUserDialogService
+  nameWithType: IUserDialogService
+  fullName: EnvironmentManager.Interfaces.IUserDialogService
+  type: Interface
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserDialogService.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: IUserDialogService
+    path: ../Interfaces/IUserDialogService.cs
+    startLine: 4
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: public interface IUserDialogService
+    content.vb: Public Interface IUserDialogService
+- uid: EnvironmentManager.Interfaces.IUserDialogService.ShowAlert(System.String,System.String,System.String)
+  commentId: M:EnvironmentManager.Interfaces.IUserDialogService.ShowAlert(System.String,System.String,System.String)
+  id: ShowAlert(System.String,System.String,System.String)
+  parent: EnvironmentManager.Interfaces.IUserDialogService
+  langs:
+  - csharp
+  - vb
+  name: ShowAlert(string, string, string)
+  nameWithType: IUserDialogService.ShowAlert(string, string, string)
+  fullName: EnvironmentManager.Interfaces.IUserDialogService.ShowAlert(string, string, string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserDialogService.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ShowAlert
+    path: ../Interfaces/IUserDialogService.cs
+    startLine: 6
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: Task ShowAlert(string title, string message, string cancel)
+    parameters:
+    - id: title
+      type: System.String
+    - id: message
+      type: System.String
+    - id: cancel
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function ShowAlert(title As String, message As String, cancel As String) As Task
+  overload: EnvironmentManager.Interfaces.IUserDialogService.ShowAlert*
+  nameWithType.vb: IUserDialogService.ShowAlert(String, String, String)
+  fullName.vb: EnvironmentManager.Interfaces.IUserDialogService.ShowAlert(String, String, String)
+  name.vb: ShowAlert(String, String, String)
+- uid: EnvironmentManager.Interfaces.IUserDialogService.ShowConfirmation(System.String,System.String,System.String,System.String)
+  commentId: M:EnvironmentManager.Interfaces.IUserDialogService.ShowConfirmation(System.String,System.String,System.String,System.String)
+  id: ShowConfirmation(System.String,System.String,System.String,System.String)
+  parent: EnvironmentManager.Interfaces.IUserDialogService
+  langs:
+  - csharp
+  - vb
+  name: ShowConfirmation(string, string, string, string)
+  nameWithType: IUserDialogService.ShowConfirmation(string, string, string, string)
+  fullName: EnvironmentManager.Interfaces.IUserDialogService.ShowConfirmation(string, string, string, string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserDialogService.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ShowConfirmation
+    path: ../Interfaces/IUserDialogService.cs
+    startLine: 7
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: Task<bool> ShowConfirmation(string title, string message, string accept, string cancel)
+    parameters:
+    - id: title
+      type: System.String
+    - id: message
+      type: System.String
+    - id: accept
+      type: System.String
+    - id: cancel
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function ShowConfirmation(title As String, message As String, accept As String, cancel As String) As Task(Of Boolean)
+  overload: EnvironmentManager.Interfaces.IUserDialogService.ShowConfirmation*
+  nameWithType.vb: IUserDialogService.ShowConfirmation(String, String, String, String)
+  fullName.vb: EnvironmentManager.Interfaces.IUserDialogService.ShowConfirmation(String, String, String, String)
+  name.vb: ShowConfirmation(String, String, String, String)
+- uid: EnvironmentManager.Interfaces.IUserDialogService.NavigateBackAsync
+  commentId: M:EnvironmentManager.Interfaces.IUserDialogService.NavigateBackAsync
+  id: NavigateBackAsync
+  parent: EnvironmentManager.Interfaces.IUserDialogService
+  langs:
+  - csharp
+  - vb
+  name: NavigateBackAsync()
+  nameWithType: IUserDialogService.NavigateBackAsync()
+  fullName: EnvironmentManager.Interfaces.IUserDialogService.NavigateBackAsync()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/Interfaces/IUserDialogService.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: NavigateBackAsync
+    path: ../Interfaces/IUserDialogService.cs
+    startLine: 8
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.Interfaces
+  syntax:
+    content: Task NavigateBackAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function NavigateBackAsync() As Task
+  overload: EnvironmentManager.Interfaces.IUserDialogService.NavigateBackAsync*
+references:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.Interfaces.IUserDialogService.ShowAlert*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserDialogService.ShowAlert
+  href: EnvironmentManager.Interfaces.IUserDialogService.html#EnvironmentManager_Interfaces_IUserDialogService_ShowAlert_System_String_System_String_System_String_
+  name: ShowAlert
+  nameWithType: IUserDialogService.ShowAlert
+  fullName: EnvironmentManager.Interfaces.IUserDialogService.ShowAlert
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: EnvironmentManager.Interfaces.IUserDialogService.ShowConfirmation*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserDialogService.ShowConfirmation
+  href: EnvironmentManager.Interfaces.IUserDialogService.html#EnvironmentManager_Interfaces_IUserDialogService_ShowConfirmation_System_String_System_String_System_String_System_String_
+  name: ShowConfirmation
+  nameWithType: IUserDialogService.ShowConfirmation
+  fullName: EnvironmentManager.Interfaces.IUserDialogService.ShowConfirmation
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: EnvironmentManager.Interfaces.IUserDialogService.NavigateBackAsync*
+  commentId: Overload:EnvironmentManager.Interfaces.IUserDialogService.NavigateBackAsync
+  href: EnvironmentManager.Interfaces.IUserDialogService.html#EnvironmentManager_Interfaces_IUserDialogService_NavigateBackAsync
+  name: NavigateBackAsync
+  nameWithType: IUserDialogService.NavigateBackAsync
+  fullName: EnvironmentManager.Interfaces.IUserDialogService.NavigateBackAsync

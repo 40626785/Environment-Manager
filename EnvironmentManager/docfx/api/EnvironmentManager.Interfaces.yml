@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  id: EnvironmentManager.Interfaces
+  children:
+  - EnvironmentManager.Interfaces.IDatabaseAdminDataStore
+  - EnvironmentManager.Interfaces.IErrorHandling
+  - EnvironmentManager.Interfaces.ILoggingService
+  - EnvironmentManager.Interfaces.IMaintenanceDataStore
+  - EnvironmentManager.Interfaces.IUserDialogService
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Interfaces.IDatabaseAdminDataStore
+  commentId: T:EnvironmentManager.Interfaces.IDatabaseAdminDataStore
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IDatabaseAdminDataStore.html
+  name: IDatabaseAdminDataStore
+  nameWithType: IDatabaseAdminDataStore
+  fullName: EnvironmentManager.Interfaces.IDatabaseAdminDataStore
+- uid: EnvironmentManager.Interfaces.IErrorHandling
+  commentId: T:EnvironmentManager.Interfaces.IErrorHandling
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IErrorHandling.html
+  name: IErrorHandling
+  nameWithType: IErrorHandling
+  fullName: EnvironmentManager.Interfaces.IErrorHandling
+- uid: EnvironmentManager.Interfaces.ILoggingService
+  commentId: T:EnvironmentManager.Interfaces.ILoggingService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ILoggingService.html
+  name: ILoggingService
+  nameWithType: ILoggingService
+  fullName: EnvironmentManager.Interfaces.ILoggingService
+- uid: EnvironmentManager.Interfaces.IMaintenanceDataStore
+  commentId: T:EnvironmentManager.Interfaces.IMaintenanceDataStore
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IMaintenanceDataStore.html
+  name: IMaintenanceDataStore
+  nameWithType: IMaintenanceDataStore
+  fullName: EnvironmentManager.Interfaces.IMaintenanceDataStore
+- uid: EnvironmentManager.Interfaces.IUserDialogService
+  commentId: T:EnvironmentManager.Interfaces.IUserDialogService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IUserDialogService.html
+  name: IUserDialogService
+  nameWithType: IUserDialogService
+  fullName: EnvironmentManager.Interfaces.IUserDialogService
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html

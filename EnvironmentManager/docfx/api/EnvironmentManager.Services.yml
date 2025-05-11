@@ -1,0 +1,81 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Services
+  commentId: N:EnvironmentManager.Services
+  id: EnvironmentManager.Services
+  children:
+  - EnvironmentManager.Services.DatabaseInitializationService
+  - EnvironmentManager.Services.DatabaseLoggingService
+  - EnvironmentManager.Services.IDatabaseInitializationService
+  - EnvironmentManager.Services.MauiUserDialogService
+  - EnvironmentManager.Services.NavigationDataStore
+  - EnvironmentManager.Services.ValidationService
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Services
+  nameWithType: EnvironmentManager.Services
+  fullName: EnvironmentManager.Services
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Services.DatabaseInitializationService
+  commentId: T:EnvironmentManager.Services.DatabaseInitializationService
+  href: EnvironmentManager.Services.DatabaseInitializationService.html
+  name: DatabaseInitializationService
+  nameWithType: DatabaseInitializationService
+  fullName: EnvironmentManager.Services.DatabaseInitializationService
+- uid: EnvironmentManager.Services.DatabaseLoggingService
+  commentId: T:EnvironmentManager.Services.DatabaseLoggingService
+  href: EnvironmentManager.Services.DatabaseLoggingService.html
+  name: DatabaseLoggingService
+  nameWithType: DatabaseLoggingService
+  fullName: EnvironmentManager.Services.DatabaseLoggingService
+- uid: EnvironmentManager.Services.IDatabaseInitializationService
+  commentId: T:EnvironmentManager.Services.IDatabaseInitializationService
+  parent: EnvironmentManager.Services
+  href: EnvironmentManager.Services.IDatabaseInitializationService.html
+  name: IDatabaseInitializationService
+  nameWithType: IDatabaseInitializationService
+  fullName: EnvironmentManager.Services.IDatabaseInitializationService
+- uid: EnvironmentManager.Services.MauiUserDialogService
+  commentId: T:EnvironmentManager.Services.MauiUserDialogService
+  href: EnvironmentManager.Services.MauiUserDialogService.html
+  name: MauiUserDialogService
+  nameWithType: MauiUserDialogService
+  fullName: EnvironmentManager.Services.MauiUserDialogService
+- uid: EnvironmentManager.Services.NavigationDataStore
+  commentId: T:EnvironmentManager.Services.NavigationDataStore
+  href: EnvironmentManager.Services.NavigationDataStore.html
+  name: NavigationDataStore
+  nameWithType: NavigationDataStore
+  fullName: EnvironmentManager.Services.NavigationDataStore
+- uid: EnvironmentManager.Services.ValidationService
+  commentId: T:EnvironmentManager.Services.ValidationService
+  href: EnvironmentManager.Services.ValidationService.html
+  name: ValidationService
+  nameWithType: ValidationService
+  fullName: EnvironmentManager.Services.ValidationService
+- uid: EnvironmentManager.Services
+  commentId: N:EnvironmentManager.Services
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Services
+  nameWithType: EnvironmentManager.Services
+  fullName: EnvironmentManager.Services
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Services
+    name: Services
+    href: EnvironmentManager.Services.html

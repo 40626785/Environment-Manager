@@ -1,0 +1,1456 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel
+  commentId: T:EnvironmentManager.ViewModels.AdminUserViewModel
+  id: AdminUserViewModel
+  parent: EnvironmentManager.ViewModels
+  children:
+  - EnvironmentManager.ViewModels.AdminUserViewModel.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.UserDbContext},EnvironmentManager.Interfaces.IUserDialogService)
+  - EnvironmentManager.ViewModels.AdminUserViewModel.AddUserCommand
+  - EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersAsync
+  - EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersCommand
+  - EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredAsync
+  - EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredCommand
+  - EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvAsync(System.String)
+  - EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvCommand
+  - EnvironmentManager.ViewModels.AdminUserViewModel.IsFilterVisible
+  - EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataAsync
+  - EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataCommand
+  - EnvironmentManager.ViewModels.AdminUserViewModel.RoleFilterText
+  - EnvironmentManager.ViewModels.AdminUserViewModel.RowTappedCommand
+  - EnvironmentManager.ViewModels.AdminUserViewModel.TableData
+  - EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterText
+  - EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterVisibilityCommand
+  - EnvironmentManager.ViewModels.AdminUserViewModel.UsernameFilter
+  langs:
+  - csharp
+  - vb
+  name: AdminUserViewModel
+  nameWithType: AdminUserViewModel
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: AdminUserViewModel
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 17
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Represents the AdminUserViewModel database context.
+  example: []
+  syntax:
+    content: 'public class AdminUserViewModel : BaseViewModel, INotifyPropertyChanged'
+    content.vb: Public Class AdminUserViewModel Inherits BaseViewModel Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - EnvironmentManager.ViewModels.BaseViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  - EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  - EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  - EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.TableData
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.TableData
+  id: TableData
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: TableData
+  nameWithType: AdminUserViewModel.TableData
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.TableData
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: TableData
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 22
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ObservableCollection<User> TableData { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.Models.User}
+    content.vb: Public Property TableData As ObservableCollection(Of User)
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.TableData*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.UsernameFilter
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.UsernameFilter
+  id: UsernameFilter
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: UsernameFilter
+  nameWithType: AdminUserViewModel.UsernameFilter
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.UsernameFilter
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: UsernameFilter
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 24
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string UsernameFilter { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property UsernameFilter As String
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.UsernameFilter*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.RoleFilterText
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.RoleFilterText
+  id: RoleFilterText
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: RoleFilterText
+  nameWithType: AdminUserViewModel.RoleFilterText
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.RoleFilterText
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: RoleFilterText
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 25
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string RoleFilterText { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RoleFilterText As String
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.RoleFilterText*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataCommand
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataCommand
+  id: LoadDataCommand
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: LoadDataCommand
+  nameWithType: AdminUserViewModel.LoadDataCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LoadDataCommand
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 27
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand LoadDataCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property LoadDataCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataCommand*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersCommand
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersCommand
+  id: ApplyFiltersCommand
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: ApplyFiltersCommand
+  nameWithType: AdminUserViewModel.ApplyFiltersCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ApplyFiltersCommand
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 28
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ApplyFiltersCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ApplyFiltersCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersCommand*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredCommand
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredCommand
+  id: DeleteFilteredCommand
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: DeleteFilteredCommand
+  nameWithType: AdminUserViewModel.DeleteFilteredCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: DeleteFilteredCommand
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 29
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand DeleteFilteredCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property DeleteFilteredCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredCommand*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvCommand
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvCommand
+  id: ExportToCsvCommand
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: ExportToCsvCommand
+  nameWithType: AdminUserViewModel.ExportToCsvCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ExportToCsvCommand
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 30
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ExportToCsvCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ExportToCsvCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvCommand*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterVisibilityCommand
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterVisibilityCommand
+  id: ToggleFilterVisibilityCommand
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: ToggleFilterVisibilityCommand
+  nameWithType: AdminUserViewModel.ToggleFilterVisibilityCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterVisibilityCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ToggleFilterVisibilityCommand
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 31
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ToggleFilterVisibilityCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ToggleFilterVisibilityCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterVisibilityCommand*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.RowTappedCommand
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.RowTappedCommand
+  id: RowTappedCommand
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: RowTappedCommand
+  nameWithType: AdminUserViewModel.RowTappedCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.RowTappedCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: RowTappedCommand
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 32
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand RowTappedCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property RowTappedCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.RowTappedCommand*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.AddUserCommand
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.AddUserCommand
+  id: AddUserCommand
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: AddUserCommand
+  nameWithType: AdminUserViewModel.AddUserCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.AddUserCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: AddUserCommand
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 33
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand AddUserCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property AddUserCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.AddUserCommand*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.IsFilterVisible
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.IsFilterVisible
+  id: IsFilterVisible
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: IsFilterVisible
+  nameWithType: AdminUserViewModel.IsFilterVisible
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.IsFilterVisible
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: IsFilterVisible
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 35
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public bool IsFilterVisible { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsFilterVisible As Boolean
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.IsFilterVisible*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterText
+  commentId: P:EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterText
+  id: ToggleFilterText
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: ToggleFilterText
+  nameWithType: AdminUserViewModel.ToggleFilterText
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterText
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ToggleFilterText
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 36
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string ToggleFilterText { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ToggleFilterText As String
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterText*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.UserDbContext},EnvironmentManager.Interfaces.IUserDialogService)
+  commentId: M:EnvironmentManager.ViewModels.AdminUserViewModel.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.UserDbContext},EnvironmentManager.Interfaces.IUserDialogService)
+  id: '#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.UserDbContext},EnvironmentManager.Interfaces.IUserDialogService)'
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: AdminUserViewModel(IDbContextFactory<UserDbContext>, IUserDialogService)
+  nameWithType: AdminUserViewModel.AdminUserViewModel(IDbContextFactory<UserDbContext>, IUserDialogService)
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.AdminUserViewModel(Microsoft.EntityFrameworkCore.IDbContextFactory<EnvironmentManager.Data.UserDbContext>, EnvironmentManager.Interfaces.IUserDialogService)
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: .ctor
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 38
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public AdminUserViewModel(IDbContextFactory<UserDbContext> dbContextFactory, IUserDialogService dialogService)
+    parameters:
+    - id: dbContextFactory
+      type: Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.UserDbContext}
+    - id: dialogService
+      type: EnvironmentManager.Interfaces.IUserDialogService
+    content.vb: Public Sub New(dbContextFactory As IDbContextFactory(Of UserDbContext), dialogService As IUserDialogService)
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.#ctor*
+  nameWithType.vb: AdminUserViewModel.New(IDbContextFactory(Of UserDbContext), IUserDialogService)
+  fullName.vb: EnvironmentManager.ViewModels.AdminUserViewModel.New(Microsoft.EntityFrameworkCore.IDbContextFactory(Of EnvironmentManager.Data.UserDbContext), EnvironmentManager.Interfaces.IUserDialogService)
+  name.vb: New(IDbContextFactory(Of UserDbContext), IUserDialogService)
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataAsync
+  commentId: M:EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataAsync
+  id: LoadDataAsync
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: LoadDataAsync()
+  nameWithType: AdminUserViewModel.LoadDataAsync()
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataAsync()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LoadDataAsync
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 62
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Asynchronously executes the LoadDataAsync operation.
+  example: []
+  syntax:
+    content: public Task LoadDataAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function LoadDataAsync() As Task
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataAsync*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersAsync
+  commentId: M:EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersAsync
+  id: ApplyFiltersAsync
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: ApplyFiltersAsync()
+  nameWithType: AdminUserViewModel.ApplyFiltersAsync()
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersAsync()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ApplyFiltersAsync
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 88
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Asynchronously executes the ApplyFiltersAsync operation.
+  example: []
+  syntax:
+    content: public Task ApplyFiltersAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ApplyFiltersAsync() As Task
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersAsync*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredAsync
+  commentId: M:EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredAsync
+  id: DeleteFilteredAsync
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: DeleteFilteredAsync()
+  nameWithType: AdminUserViewModel.DeleteFilteredAsync()
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredAsync()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: DeleteFilteredAsync
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 125
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Asynchronously executes the DeleteFilteredAsync operation.
+  example: []
+  syntax:
+    content: public Task DeleteFilteredAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeleteFilteredAsync() As Task
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredAsync*
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvAsync(System.String)
+  commentId: M:EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvAsync(System.String)
+  id: ExportToCsvAsync(System.String)
+  parent: EnvironmentManager.ViewModels.AdminUserViewModel
+  langs:
+  - csharp
+  - vb
+  name: ExportToCsvAsync(string?)
+  nameWithType: AdminUserViewModel.ExportToCsvAsync(string?)
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvAsync(string?)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AdminUserViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ExportToCsvAsync
+    path: ../ViewModels/AdminUserViewModel.cs
+    startLine: 150
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Asynchronously executes the null) operation.
+  example: []
+  syntax:
+    content: public Task ExportToCsvAsync(string? overridePath = null)
+    parameters:
+    - id: overridePath
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ExportToCsvAsync(overridePath As String = Nothing) As Task
+  overload: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvAsync*
+  nameWithType.vb: AdminUserViewModel.ExportToCsvAsync(String)
+  fullName.vb: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvAsync(String)
+  name.vb: ExportToCsvAsync(String)
+references:
+- uid: EnvironmentManager.ViewModels
+  commentId: N:EnvironmentManager.ViewModels
+  href: EnvironmentManager.html
+  name: EnvironmentManager.ViewModels
+  nameWithType: EnvironmentManager.ViewModels
+  fullName: EnvironmentManager.ViewModels
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: EnvironmentManager.ViewModels.BaseViewModel
+  commentId: T:EnvironmentManager.ViewModels.BaseViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: EnvironmentManager.ViewModels.BaseViewModel
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  commentId: P:EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_IsBusy
+  name: IsBusy
+  nameWithType: BaseViewModel.IsBusy
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+- uid: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  commentId: E:EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BaseViewModel.PropertyChanged
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  definition: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BaseViewModel.OnPropertyChanged(string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(string)
+  nameWithType.vb: BaseViewModel.OnPropertyChanged(String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.TableData*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.TableData
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_TableData
+  name: TableData
+  nameWithType: AdminUserViewModel.TableData
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.TableData
+- uid: System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.Models.User}
+  commentId: T:System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.Models.User}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ObservableCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<User>
+  nameWithType: ObservableCollection<User>
+  fullName: System.Collections.ObjectModel.ObservableCollection<EnvironmentManager.Models.User>
+  nameWithType.vb: ObservableCollection(Of User)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of EnvironmentManager.Models.User)
+  name.vb: ObservableCollection(Of User)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - uid: EnvironmentManager.Models.User
+    name: User
+    href: EnvironmentManager.Models.User.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.User
+    name: User
+    href: EnvironmentManager.Models.User.html
+  - name: )
+- uid: System.Collections.ObjectModel.ObservableCollection`1
+  commentId: T:System.Collections.ObjectModel.ObservableCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<T>
+  nameWithType: ObservableCollection<T>
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>
+  nameWithType.vb: ObservableCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of T)
+  name.vb: ObservableCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.UsernameFilter*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.UsernameFilter
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_UsernameFilter
+  name: UsernameFilter
+  nameWithType: AdminUserViewModel.UsernameFilter
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.UsernameFilter
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.RoleFilterText*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.RoleFilterText
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_RoleFilterText
+  name: RoleFilterText
+  nameWithType: AdminUserViewModel.RoleFilterText
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.RoleFilterText
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataCommand
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_LoadDataCommand
+  name: LoadDataCommand
+  nameWithType: AdminUserViewModel.LoadDataCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataCommand
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersCommand
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_ApplyFiltersCommand
+  name: ApplyFiltersCommand
+  nameWithType: AdminUserViewModel.ApplyFiltersCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersCommand
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredCommand
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_DeleteFilteredCommand
+  name: DeleteFilteredCommand
+  nameWithType: AdminUserViewModel.DeleteFilteredCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredCommand
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvCommand
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_ExportToCsvCommand
+  name: ExportToCsvCommand
+  nameWithType: AdminUserViewModel.ExportToCsvCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvCommand
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterVisibilityCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterVisibilityCommand
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_ToggleFilterVisibilityCommand
+  name: ToggleFilterVisibilityCommand
+  nameWithType: AdminUserViewModel.ToggleFilterVisibilityCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterVisibilityCommand
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.RowTappedCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.RowTappedCommand
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_RowTappedCommand
+  name: RowTappedCommand
+  nameWithType: AdminUserViewModel.RowTappedCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.RowTappedCommand
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.AddUserCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.AddUserCommand
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_AddUserCommand
+  name: AddUserCommand
+  nameWithType: AdminUserViewModel.AddUserCommand
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.AddUserCommand
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.IsFilterVisible*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.IsFilterVisible
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_IsFilterVisible
+  name: IsFilterVisible
+  nameWithType: AdminUserViewModel.IsFilterVisible
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.IsFilterVisible
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterText*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterText
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_ToggleFilterText
+  name: ToggleFilterText
+  nameWithType: AdminUserViewModel.ToggleFilterText
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ToggleFilterText
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.#ctor*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.#ctor
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel__ctor_Microsoft_EntityFrameworkCore_IDbContextFactory_EnvironmentManager_Data_UserDbContext__EnvironmentManager_Interfaces_IUserDialogService_
+  name: AdminUserViewModel
+  nameWithType: AdminUserViewModel.AdminUserViewModel
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.AdminUserViewModel
+  nameWithType.vb: AdminUserViewModel.New
+  fullName.vb: EnvironmentManager.ViewModels.AdminUserViewModel.New
+  name.vb: New
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.UserDbContext}
+  commentId: T:Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.UserDbContext}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  name: IDbContextFactory<UserDbContext>
+  nameWithType: IDbContextFactory<UserDbContext>
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<EnvironmentManager.Data.UserDbContext>
+  nameWithType.vb: IDbContextFactory(Of UserDbContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of EnvironmentManager.Data.UserDbContext)
+  name.vb: IDbContextFactory(Of UserDbContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: <
+  - uid: EnvironmentManager.Data.UserDbContext
+    name: UserDbContext
+    href: EnvironmentManager.Data.UserDbContext.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Data.UserDbContext
+    name: UserDbContext
+    href: EnvironmentManager.Data.UserDbContext.html
+  - name: )
+- uid: EnvironmentManager.Interfaces.IUserDialogService
+  commentId: T:EnvironmentManager.Interfaces.IUserDialogService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IUserDialogService.html
+  name: IUserDialogService
+  nameWithType: IUserDialogService
+  fullName: EnvironmentManager.Interfaces.IUserDialogService
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  commentId: T:Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  name: IDbContextFactory<TContext>
+  nameWithType: IDbContextFactory<TContext>
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<TContext>
+  nameWithType.vb: IDbContextFactory(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of TContext)
+  name.vb: IDbContextFactory(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: <
+  - name: TContext
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TContext
+  - name: )
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataAsync*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataAsync
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_LoadDataAsync
+  name: LoadDataAsync
+  nameWithType: AdminUserViewModel.LoadDataAsync
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.LoadDataAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersAsync*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersAsync
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_ApplyFiltersAsync
+  name: ApplyFiltersAsync
+  nameWithType: AdminUserViewModel.ApplyFiltersAsync
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ApplyFiltersAsync
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredAsync*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredAsync
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_DeleteFilteredAsync
+  name: DeleteFilteredAsync
+  nameWithType: AdminUserViewModel.DeleteFilteredAsync
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.DeleteFilteredAsync
+- uid: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvAsync*
+  commentId: Overload:EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvAsync
+  href: EnvironmentManager.ViewModels.AdminUserViewModel.html#EnvironmentManager_ViewModels_AdminUserViewModel_ExportToCsvAsync_System_String_
+  name: ExportToCsvAsync
+  nameWithType: AdminUserViewModel.ExportToCsvAsync
+  fullName: EnvironmentManager.ViewModels.AdminUserViewModel.ExportToCsvAsync

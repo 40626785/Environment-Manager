@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Helpers
+  commentId: N:EnvironmentManager.Helpers
+  id: EnvironmentManager.Helpers
+  children:
+  - EnvironmentManager.Helpers.Ioc
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Helpers
+  nameWithType: EnvironmentManager.Helpers
+  fullName: EnvironmentManager.Helpers
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Helpers.Ioc
+  commentId: T:EnvironmentManager.Helpers.Ioc
+  href: EnvironmentManager.Helpers.Ioc.html
+  name: Ioc
+  nameWithType: Ioc
+  fullName: EnvironmentManager.Helpers.Ioc

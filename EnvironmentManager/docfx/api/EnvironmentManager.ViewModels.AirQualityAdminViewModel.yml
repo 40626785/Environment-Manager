@@ -1,0 +1,1669 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  commentId: T:EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  id: AirQualityAdminViewModel
+  parent: EnvironmentManager.ViewModels
+  children:
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.AirQualityDbContext},EnvironmentManager.Interfaces.ILoggingService,EnvironmentManager.Interfaces.IUserDialogService)
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplyFiltersCommand
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplySortCommand
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.DeleteFilteredCommand
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndDate
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndIdText
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.ExportToCsvCommand
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsDateFilterEnabled
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsFilterVisible
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.LoadDataCommand
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.LocationIdText
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.RowTappedCommand
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortDirection
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortOption
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortDirections
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortOptions
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartDate
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartIdText
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.TableData
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterText
+  - EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterVisibilityCommand
+  langs:
+  - csharp
+  - vb
+  name: AirQualityAdminViewModel
+  nameWithType: AirQualityAdminViewModel
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: AirQualityAdminViewModel
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 19
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Represents the AirQualityAdminViewModel database context.
+  example: []
+  syntax:
+    content: 'public class AirQualityAdminViewModel : BaseViewModel, INotifyPropertyChanged'
+    content.vb: Public Class AirQualityAdminViewModel Inherits BaseViewModel Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - EnvironmentManager.ViewModels.BaseViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  - EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  - EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  - EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.TableData
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.TableData
+  id: TableData
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: TableData
+  nameWithType: AirQualityAdminViewModel.TableData
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.TableData
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: TableData
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 25
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ObservableCollection<AirQualityRecord> TableData { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.Models.AirQualityRecord}
+    content.vb: Public Property TableData As ObservableCollection(Of AirQualityRecord)
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.TableData*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.RowTappedCommand
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.RowTappedCommand
+  id: RowTappedCommand
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: RowTappedCommand
+  nameWithType: AirQualityAdminViewModel.RowTappedCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.RowTappedCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: RowTappedCommand
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 26
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand RowTappedCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property RowTappedCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.RowTappedCommand*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ExportToCsvCommand
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ExportToCsvCommand
+  id: ExportToCsvCommand
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: ExportToCsvCommand
+  nameWithType: AirQualityAdminViewModel.ExportToCsvCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ExportToCsvCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ExportToCsvCommand
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 27
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ExportToCsvCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ExportToCsvCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ExportToCsvCommand*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplySortCommand
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplySortCommand
+  id: ApplySortCommand
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: ApplySortCommand
+  nameWithType: AirQualityAdminViewModel.ApplySortCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplySortCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ApplySortCommand
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 28
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ApplySortCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ApplySortCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplySortCommand*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplyFiltersCommand
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplyFiltersCommand
+  id: ApplyFiltersCommand
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: ApplyFiltersCommand
+  nameWithType: AirQualityAdminViewModel.ApplyFiltersCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplyFiltersCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ApplyFiltersCommand
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 29
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ApplyFiltersCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ApplyFiltersCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplyFiltersCommand*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterVisibilityCommand
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterVisibilityCommand
+  id: ToggleFilterVisibilityCommand
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: ToggleFilterVisibilityCommand
+  nameWithType: AirQualityAdminViewModel.ToggleFilterVisibilityCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterVisibilityCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ToggleFilterVisibilityCommand
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 30
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ToggleFilterVisibilityCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ToggleFilterVisibilityCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterVisibilityCommand*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LoadDataCommand
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.LoadDataCommand
+  id: LoadDataCommand
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: LoadDataCommand
+  nameWithType: AirQualityAdminViewModel.LoadDataCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LoadDataCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LoadDataCommand
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 31
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand LoadDataCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property LoadDataCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LoadDataCommand*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.DeleteFilteredCommand
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.DeleteFilteredCommand
+  id: DeleteFilteredCommand
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: DeleteFilteredCommand
+  nameWithType: AirQualityAdminViewModel.DeleteFilteredCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.DeleteFilteredCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: DeleteFilteredCommand
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 32
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand DeleteFilteredCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property DeleteFilteredCommand As ICommand
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.DeleteFilteredCommand*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LocationIdText
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.LocationIdText
+  id: LocationIdText
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: LocationIdText
+  nameWithType: AirQualityAdminViewModel.LocationIdText
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LocationIdText
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LocationIdText
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 33
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string LocationIdText { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LocationIdText As String
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LocationIdText*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortOptions
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortOptions
+  id: SortOptions
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: SortOptions
+  nameWithType: AirQualityAdminViewModel.SortOptions
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortOptions
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SortOptions
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 39
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Asynchronously executes the }; operation.
+  example: []
+  syntax:
+    content: public List<string> SortOptions { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public ReadOnly Property SortOptions As List(Of String)
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortOptions*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortDirections
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortDirections
+  id: SortDirections
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: SortDirections
+  nameWithType: AirQualityAdminViewModel.SortDirections
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortDirections
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SortDirections
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 43
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Asynchronously executes the }; operation.
+  example: []
+  syntax:
+    content: public List<string> SortDirections { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public ReadOnly Property SortDirections As List(Of String)
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortDirections*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartIdText
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartIdText
+  id: StartIdText
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: StartIdText
+  nameWithType: AirQualityAdminViewModel.StartIdText
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartIdText
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: StartIdText
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 45
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string StartIdText { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property StartIdText As String
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartIdText*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndIdText
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndIdText
+  id: EndIdText
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: EndIdText
+  nameWithType: AirQualityAdminViewModel.EndIdText
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndIdText
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: EndIdText
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 46
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string EndIdText { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property EndIdText As String
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndIdText*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortOption
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortOption
+  id: SelectedSortOption
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: SelectedSortOption
+  nameWithType: AirQualityAdminViewModel.SelectedSortOption
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortOption
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SelectedSortOption
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 49
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string SelectedSortOption { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SelectedSortOption As String
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortOption*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortDirection
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortDirection
+  id: SelectedSortDirection
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: SelectedSortDirection
+  nameWithType: AirQualityAdminViewModel.SelectedSortDirection
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortDirection
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SelectedSortDirection
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 56
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string SelectedSortDirection { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SelectedSortDirection As String
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortDirection*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartDate
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartDate
+  id: StartDate
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: StartDate
+  nameWithType: AirQualityAdminViewModel.StartDate
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartDate
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: StartDate
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 63
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public DateTime StartDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property StartDate As Date
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartDate*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndDate
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndDate
+  id: EndDate
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: EndDate
+  nameWithType: AirQualityAdminViewModel.EndDate
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndDate
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: EndDate
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 70
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public DateTime EndDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property EndDate As Date
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndDate*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsFilterVisible
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsFilterVisible
+  id: IsFilterVisible
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: IsFilterVisible
+  nameWithType: AirQualityAdminViewModel.IsFilterVisible
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsFilterVisible
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: IsFilterVisible
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 77
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public bool IsFilterVisible { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsFilterVisible As Boolean
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsFilterVisible*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterText
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterText
+  id: ToggleFilterText
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: ToggleFilterText
+  nameWithType: AirQualityAdminViewModel.ToggleFilterText
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterText
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ToggleFilterText
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 87
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string ToggleFilterText { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ToggleFilterText As String
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterText*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsDateFilterEnabled
+  commentId: P:EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsDateFilterEnabled
+  id: IsDateFilterEnabled
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: IsDateFilterEnabled
+  nameWithType: AirQualityAdminViewModel.IsDateFilterEnabled
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsDateFilterEnabled
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: IsDateFilterEnabled
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 90
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public bool IsDateFilterEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsDateFilterEnabled As Boolean
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsDateFilterEnabled*
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.AirQualityDbContext},EnvironmentManager.Interfaces.ILoggingService,EnvironmentManager.Interfaces.IUserDialogService)
+  commentId: M:EnvironmentManager.ViewModels.AirQualityAdminViewModel.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.AirQualityDbContext},EnvironmentManager.Interfaces.ILoggingService,EnvironmentManager.Interfaces.IUserDialogService)
+  id: '#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.AirQualityDbContext},EnvironmentManager.Interfaces.ILoggingService,EnvironmentManager.Interfaces.IUserDialogService)'
+  parent: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: AirQualityAdminViewModel(IDbContextFactory<AirQualityDbContext>, ILoggingService, IUserDialogService)
+  nameWithType: AirQualityAdminViewModel.AirQualityAdminViewModel(IDbContextFactory<AirQualityDbContext>, ILoggingService, IUserDialogService)
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.AirQualityAdminViewModel(Microsoft.EntityFrameworkCore.IDbContextFactory<EnvironmentManager.Data.AirQualityDbContext>, EnvironmentManager.Interfaces.ILoggingService, EnvironmentManager.Interfaces.IUserDialogService)
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/AirQualityAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: .ctor
+    path: ../ViewModels/AirQualityAdminViewModel.cs
+    startLine: 96
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public AirQualityAdminViewModel(IDbContextFactory<AirQualityDbContext> dbContextFactory, ILoggingService logger, IUserDialogService dialogService)
+    parameters:
+    - id: dbContextFactory
+      type: Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.AirQualityDbContext}
+    - id: logger
+      type: EnvironmentManager.Interfaces.ILoggingService
+    - id: dialogService
+      type: EnvironmentManager.Interfaces.IUserDialogService
+    content.vb: Public Sub New(dbContextFactory As IDbContextFactory(Of AirQualityDbContext), logger As ILoggingService, dialogService As IUserDialogService)
+  overload: EnvironmentManager.ViewModels.AirQualityAdminViewModel.#ctor*
+  nameWithType.vb: AirQualityAdminViewModel.New(IDbContextFactory(Of AirQualityDbContext), ILoggingService, IUserDialogService)
+  fullName.vb: EnvironmentManager.ViewModels.AirQualityAdminViewModel.New(Microsoft.EntityFrameworkCore.IDbContextFactory(Of EnvironmentManager.Data.AirQualityDbContext), EnvironmentManager.Interfaces.ILoggingService, EnvironmentManager.Interfaces.IUserDialogService)
+  name.vb: New(IDbContextFactory(Of AirQualityDbContext), ILoggingService, IUserDialogService)
+references:
+- uid: EnvironmentManager.ViewModels
+  commentId: N:EnvironmentManager.ViewModels
+  href: EnvironmentManager.html
+  name: EnvironmentManager.ViewModels
+  nameWithType: EnvironmentManager.ViewModels
+  fullName: EnvironmentManager.ViewModels
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: EnvironmentManager.ViewModels.BaseViewModel
+  commentId: T:EnvironmentManager.ViewModels.BaseViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: EnvironmentManager.ViewModels.BaseViewModel
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  commentId: P:EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_IsBusy
+  name: IsBusy
+  nameWithType: BaseViewModel.IsBusy
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+- uid: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  commentId: E:EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BaseViewModel.PropertyChanged
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  definition: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BaseViewModel.OnPropertyChanged(string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(string)
+  nameWithType.vb: BaseViewModel.OnPropertyChanged(String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.TableData*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.TableData
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_TableData
+  name: TableData
+  nameWithType: AirQualityAdminViewModel.TableData
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.TableData
+- uid: System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.Models.AirQualityRecord}
+  commentId: T:System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.Models.AirQualityRecord}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ObservableCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<AirQualityRecord>
+  nameWithType: ObservableCollection<AirQualityRecord>
+  fullName: System.Collections.ObjectModel.ObservableCollection<EnvironmentManager.Models.AirQualityRecord>
+  nameWithType.vb: ObservableCollection(Of AirQualityRecord)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of EnvironmentManager.Models.AirQualityRecord)
+  name.vb: ObservableCollection(Of AirQualityRecord)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - uid: EnvironmentManager.Models.AirQualityRecord
+    name: AirQualityRecord
+    href: EnvironmentManager.Models.AirQualityRecord.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.AirQualityRecord
+    name: AirQualityRecord
+    href: EnvironmentManager.Models.AirQualityRecord.html
+  - name: )
+- uid: System.Collections.ObjectModel.ObservableCollection`1
+  commentId: T:System.Collections.ObjectModel.ObservableCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<T>
+  nameWithType: ObservableCollection<T>
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>
+  nameWithType.vb: ObservableCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of T)
+  name.vb: ObservableCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.RowTappedCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.RowTappedCommand
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_RowTappedCommand
+  name: RowTappedCommand
+  nameWithType: AirQualityAdminViewModel.RowTappedCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.RowTappedCommand
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ExportToCsvCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ExportToCsvCommand
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_ExportToCsvCommand
+  name: ExportToCsvCommand
+  nameWithType: AirQualityAdminViewModel.ExportToCsvCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ExportToCsvCommand
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplySortCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplySortCommand
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_ApplySortCommand
+  name: ApplySortCommand
+  nameWithType: AirQualityAdminViewModel.ApplySortCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplySortCommand
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplyFiltersCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplyFiltersCommand
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_ApplyFiltersCommand
+  name: ApplyFiltersCommand
+  nameWithType: AirQualityAdminViewModel.ApplyFiltersCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ApplyFiltersCommand
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterVisibilityCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterVisibilityCommand
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_ToggleFilterVisibilityCommand
+  name: ToggleFilterVisibilityCommand
+  nameWithType: AirQualityAdminViewModel.ToggleFilterVisibilityCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterVisibilityCommand
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LoadDataCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.LoadDataCommand
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_LoadDataCommand
+  name: LoadDataCommand
+  nameWithType: AirQualityAdminViewModel.LoadDataCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LoadDataCommand
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.DeleteFilteredCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.DeleteFilteredCommand
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_DeleteFilteredCommand
+  name: DeleteFilteredCommand
+  nameWithType: AirQualityAdminViewModel.DeleteFilteredCommand
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.DeleteFilteredCommand
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LocationIdText*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.LocationIdText
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_LocationIdText
+  name: LocationIdText
+  nameWithType: AirQualityAdminViewModel.LocationIdText
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.LocationIdText
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortOptions*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortOptions
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_SortOptions
+  name: SortOptions
+  nameWithType: AirQualityAdminViewModel.SortOptions
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortOptions
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortDirections*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortDirections
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_SortDirections
+  name: SortDirections
+  nameWithType: AirQualityAdminViewModel.SortDirections
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SortDirections
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartIdText*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartIdText
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_StartIdText
+  name: StartIdText
+  nameWithType: AirQualityAdminViewModel.StartIdText
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartIdText
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndIdText*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndIdText
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_EndIdText
+  name: EndIdText
+  nameWithType: AirQualityAdminViewModel.EndIdText
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndIdText
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortOption*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortOption
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_SelectedSortOption
+  name: SelectedSortOption
+  nameWithType: AirQualityAdminViewModel.SelectedSortOption
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortOption
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortDirection*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortDirection
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_SelectedSortDirection
+  name: SelectedSortDirection
+  nameWithType: AirQualityAdminViewModel.SelectedSortDirection
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.SelectedSortDirection
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartDate*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartDate
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_StartDate
+  name: StartDate
+  nameWithType: AirQualityAdminViewModel.StartDate
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.StartDate
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndDate*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndDate
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_EndDate
+  name: EndDate
+  nameWithType: AirQualityAdminViewModel.EndDate
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.EndDate
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsFilterVisible*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsFilterVisible
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_IsFilterVisible
+  name: IsFilterVisible
+  nameWithType: AirQualityAdminViewModel.IsFilterVisible
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsFilterVisible
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterText*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterText
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_ToggleFilterText
+  name: ToggleFilterText
+  nameWithType: AirQualityAdminViewModel.ToggleFilterText
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.ToggleFilterText
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsDateFilterEnabled*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsDateFilterEnabled
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel_IsDateFilterEnabled
+  name: IsDateFilterEnabled
+  nameWithType: AirQualityAdminViewModel.IsDateFilterEnabled
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.IsDateFilterEnabled
+- uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel.#ctor*
+  commentId: Overload:EnvironmentManager.ViewModels.AirQualityAdminViewModel.#ctor
+  href: EnvironmentManager.ViewModels.AirQualityAdminViewModel.html#EnvironmentManager_ViewModels_AirQualityAdminViewModel__ctor_Microsoft_EntityFrameworkCore_IDbContextFactory_EnvironmentManager_Data_AirQualityDbContext__EnvironmentManager_Interfaces_ILoggingService_EnvironmentManager_Interfaces_IUserDialogService_
+  name: AirQualityAdminViewModel
+  nameWithType: AirQualityAdminViewModel.AirQualityAdminViewModel
+  fullName: EnvironmentManager.ViewModels.AirQualityAdminViewModel.AirQualityAdminViewModel
+  nameWithType.vb: AirQualityAdminViewModel.New
+  fullName.vb: EnvironmentManager.ViewModels.AirQualityAdminViewModel.New
+  name.vb: New
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.AirQualityDbContext}
+  commentId: T:Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.AirQualityDbContext}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  name: IDbContextFactory<AirQualityDbContext>
+  nameWithType: IDbContextFactory<AirQualityDbContext>
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<EnvironmentManager.Data.AirQualityDbContext>
+  nameWithType.vb: IDbContextFactory(Of AirQualityDbContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of EnvironmentManager.Data.AirQualityDbContext)
+  name.vb: IDbContextFactory(Of AirQualityDbContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: <
+  - uid: EnvironmentManager.Data.AirQualityDbContext
+    name: AirQualityDbContext
+    href: EnvironmentManager.Data.AirQualityDbContext.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Data.AirQualityDbContext
+    name: AirQualityDbContext
+    href: EnvironmentManager.Data.AirQualityDbContext.html
+  - name: )
+- uid: EnvironmentManager.Interfaces.ILoggingService
+  commentId: T:EnvironmentManager.Interfaces.ILoggingService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.ILoggingService.html
+  name: ILoggingService
+  nameWithType: ILoggingService
+  fullName: EnvironmentManager.Interfaces.ILoggingService
+- uid: EnvironmentManager.Interfaces.IUserDialogService
+  commentId: T:EnvironmentManager.Interfaces.IUserDialogService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IUserDialogService.html
+  name: IUserDialogService
+  nameWithType: IUserDialogService
+  fullName: EnvironmentManager.Interfaces.IUserDialogService
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  commentId: T:Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  name: IDbContextFactory<TContext>
+  nameWithType: IDbContextFactory<TContext>
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<TContext>
+  nameWithType.vb: IDbContextFactory(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of TContext)
+  name.vb: IDbContextFactory(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: <
+  - name: TContext
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TContext
+  - name: )
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html

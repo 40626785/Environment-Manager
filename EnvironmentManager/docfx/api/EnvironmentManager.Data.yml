@@ -1,0 +1,145 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.Data
+  commentId: N:EnvironmentManager.Data
+  id: EnvironmentManager.Data
+  children:
+  - EnvironmentManager.Data.AirQualityDbContext
+  - EnvironmentManager.Data.AlertDbContext
+  - EnvironmentManager.Data.ArchiveAirQualityDbContext
+  - EnvironmentManager.Data.DatabaseAdminDbContext
+  - EnvironmentManager.Data.ErrorDbContext
+  - EnvironmentManager.Data.HistoricalAirQualityDbContext
+  - EnvironmentManager.Data.HistoricalDataDbContext
+  - EnvironmentManager.Data.LocationDbContext
+  - EnvironmentManager.Data.LogDbContext
+  - EnvironmentManager.Data.MaintenanceDataStore
+  - EnvironmentManager.Data.MaintenanceDbContext
+  - EnvironmentManager.Data.SensorDbContext
+  - EnvironmentManager.Data.TableMetadataService
+  - EnvironmentManager.Data.UserDbContext
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentManager.Data
+  nameWithType: EnvironmentManager.Data
+  fullName: EnvironmentManager.Data
+  type: Namespace
+  assemblies:
+  - EnvironmentManager
+references:
+- uid: EnvironmentManager.Data.AirQualityDbContext
+  commentId: T:EnvironmentManager.Data.AirQualityDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.AirQualityDbContext.html
+  name: AirQualityDbContext
+  nameWithType: AirQualityDbContext
+  fullName: EnvironmentManager.Data.AirQualityDbContext
+- uid: EnvironmentManager.Data.AlertDbContext
+  commentId: T:EnvironmentManager.Data.AlertDbContext
+  href: EnvironmentManager.Data.AlertDbContext.html
+  name: AlertDbContext
+  nameWithType: AlertDbContext
+  fullName: EnvironmentManager.Data.AlertDbContext
+- uid: EnvironmentManager.Data.ArchiveAirQualityDbContext
+  commentId: T:EnvironmentManager.Data.ArchiveAirQualityDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.ArchiveAirQualityDbContext.html
+  name: ArchiveAirQualityDbContext
+  nameWithType: ArchiveAirQualityDbContext
+  fullName: EnvironmentManager.Data.ArchiveAirQualityDbContext
+- uid: EnvironmentManager.Data.DatabaseAdminDbContext
+  commentId: T:EnvironmentManager.Data.DatabaseAdminDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.DatabaseAdminDbContext.html
+  name: DatabaseAdminDbContext
+  nameWithType: DatabaseAdminDbContext
+  fullName: EnvironmentManager.Data.DatabaseAdminDbContext
+- uid: EnvironmentManager.Data.ErrorDbContext
+  commentId: T:EnvironmentManager.Data.ErrorDbContext
+  href: EnvironmentManager.Data.ErrorDbContext.html
+  name: ErrorDbContext
+  nameWithType: ErrorDbContext
+  fullName: EnvironmentManager.Data.ErrorDbContext
+- uid: EnvironmentManager.Data.HistoricalAirQualityDbContext
+  commentId: T:EnvironmentManager.Data.HistoricalAirQualityDbContext
+  href: EnvironmentManager.Data.HistoricalAirQualityDbContext.html
+  name: HistoricalAirQualityDbContext
+  nameWithType: HistoricalAirQualityDbContext
+  fullName: EnvironmentManager.Data.HistoricalAirQualityDbContext
+- uid: EnvironmentManager.Data.HistoricalDataDbContext
+  commentId: T:EnvironmentManager.Data.HistoricalDataDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.HistoricalDataDbContext.html
+  name: HistoricalDataDbContext
+  nameWithType: HistoricalDataDbContext
+  fullName: EnvironmentManager.Data.HistoricalDataDbContext
+- uid: EnvironmentManager.Data.LocationDbContext
+  commentId: T:EnvironmentManager.Data.LocationDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.LocationDbContext.html
+  name: LocationDbContext
+  nameWithType: LocationDbContext
+  fullName: EnvironmentManager.Data.LocationDbContext
+- uid: EnvironmentManager.Data.LogDbContext
+  commentId: T:EnvironmentManager.Data.LogDbContext
+  href: EnvironmentManager.Data.LogDbContext.html
+  name: LogDbContext
+  nameWithType: LogDbContext
+  fullName: EnvironmentManager.Data.LogDbContext
+- uid: EnvironmentManager.Data.MaintenanceDataStore
+  commentId: T:EnvironmentManager.Data.MaintenanceDataStore
+  href: EnvironmentManager.Data.MaintenanceDataStore.html
+  name: MaintenanceDataStore
+  nameWithType: MaintenanceDataStore
+  fullName: EnvironmentManager.Data.MaintenanceDataStore
+- uid: EnvironmentManager.Data.MaintenanceDbContext
+  commentId: T:EnvironmentManager.Data.MaintenanceDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.MaintenanceDbContext.html
+  name: MaintenanceDbContext
+  nameWithType: MaintenanceDbContext
+  fullName: EnvironmentManager.Data.MaintenanceDbContext
+- uid: EnvironmentManager.Data.SensorDbContext
+  commentId: T:EnvironmentManager.Data.SensorDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.SensorDbContext.html
+  name: SensorDbContext
+  nameWithType: SensorDbContext
+  fullName: EnvironmentManager.Data.SensorDbContext
+- uid: EnvironmentManager.Data.TableMetadataService
+  commentId: T:EnvironmentManager.Data.TableMetadataService
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.TableMetadataService.html
+  name: TableMetadataService
+  nameWithType: TableMetadataService
+  fullName: EnvironmentManager.Data.TableMetadataService
+- uid: EnvironmentManager.Data.UserDbContext
+  commentId: T:EnvironmentManager.Data.UserDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.UserDbContext.html
+  name: UserDbContext
+  nameWithType: UserDbContext
+  fullName: EnvironmentManager.Data.UserDbContext
+- uid: EnvironmentManager.Data
+  commentId: N:EnvironmentManager.Data
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Data
+  nameWithType: EnvironmentManager.Data
+  fullName: EnvironmentManager.Data
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html

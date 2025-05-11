@@ -1,0 +1,834 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel
+  commentId: T:EnvironmentManager.ViewModels.DatabaseAdminViewModel
+  id: DatabaseAdminViewModel
+  parent: EnvironmentManager.ViewModels
+  children:
+  - EnvironmentManager.ViewModels.DatabaseAdminViewModel.#ctor(EnvironmentManager.Data.DatabaseAdminDbContext)
+  - EnvironmentManager.ViewModels.DatabaseAdminViewModel.NavigateToTableCommand
+  - EnvironmentManager.ViewModels.DatabaseAdminViewModel.SelectedTable
+  - EnvironmentManager.ViewModels.DatabaseAdminViewModel.TableOptions
+  langs:
+  - csharp
+  - vb
+  name: DatabaseAdminViewModel
+  nameWithType: DatabaseAdminViewModel
+  fullName: EnvironmentManager.ViewModels.DatabaseAdminViewModel
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/DatabaseAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: DatabaseAdminViewModel
+    path: ../ViewModels/DatabaseAdminViewModel.cs
+    startLine: 11
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Represents the DatabaseAdminViewModel database context.
+  example: []
+  syntax:
+    content: 'public class DatabaseAdminViewModel : BaseViewModel, INotifyPropertyChanged'
+    content.vb: Public Class DatabaseAdminViewModel Inherits BaseViewModel Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - EnvironmentManager.ViewModels.BaseViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  - EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  - EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  - EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel.TableOptions
+  commentId: P:EnvironmentManager.ViewModels.DatabaseAdminViewModel.TableOptions
+  id: TableOptions
+  parent: EnvironmentManager.ViewModels.DatabaseAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: TableOptions
+  nameWithType: DatabaseAdminViewModel.TableOptions
+  fullName: EnvironmentManager.ViewModels.DatabaseAdminViewModel.TableOptions
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/DatabaseAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: TableOptions
+    path: ../ViewModels/DatabaseAdminViewModel.cs
+    startLine: 15
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ObservableCollection<string> TableOptions { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ObservableCollection{System.String}
+    content.vb: Public ReadOnly Property TableOptions As ObservableCollection(Of String)
+  overload: EnvironmentManager.ViewModels.DatabaseAdminViewModel.TableOptions*
+- uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel.SelectedTable
+  commentId: P:EnvironmentManager.ViewModels.DatabaseAdminViewModel.SelectedTable
+  id: SelectedTable
+  parent: EnvironmentManager.ViewModels.DatabaseAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: SelectedTable
+  nameWithType: DatabaseAdminViewModel.SelectedTable
+  fullName: EnvironmentManager.ViewModels.DatabaseAdminViewModel.SelectedTable
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/DatabaseAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SelectedTable
+    path: ../ViewModels/DatabaseAdminViewModel.cs
+    startLine: 16
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string SelectedTable { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SelectedTable As String
+  overload: EnvironmentManager.ViewModels.DatabaseAdminViewModel.SelectedTable*
+- uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel.NavigateToTableCommand
+  commentId: P:EnvironmentManager.ViewModels.DatabaseAdminViewModel.NavigateToTableCommand
+  id: NavigateToTableCommand
+  parent: EnvironmentManager.ViewModels.DatabaseAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateToTableCommand
+  nameWithType: DatabaseAdminViewModel.NavigateToTableCommand
+  fullName: EnvironmentManager.ViewModels.DatabaseAdminViewModel.NavigateToTableCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/DatabaseAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: NavigateToTableCommand
+    path: ../ViewModels/DatabaseAdminViewModel.cs
+    startLine: 18
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand NavigateToTableCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateToTableCommand As ICommand
+  overload: EnvironmentManager.ViewModels.DatabaseAdminViewModel.NavigateToTableCommand*
+- uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel.#ctor(EnvironmentManager.Data.DatabaseAdminDbContext)
+  commentId: M:EnvironmentManager.ViewModels.DatabaseAdminViewModel.#ctor(EnvironmentManager.Data.DatabaseAdminDbContext)
+  id: '#ctor(EnvironmentManager.Data.DatabaseAdminDbContext)'
+  parent: EnvironmentManager.ViewModels.DatabaseAdminViewModel
+  langs:
+  - csharp
+  - vb
+  name: DatabaseAdminViewModel(DatabaseAdminDbContext)
+  nameWithType: DatabaseAdminViewModel.DatabaseAdminViewModel(DatabaseAdminDbContext)
+  fullName: EnvironmentManager.ViewModels.DatabaseAdminViewModel.DatabaseAdminViewModel(EnvironmentManager.Data.DatabaseAdminDbContext)
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/DatabaseAdminViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: .ctor
+    path: ../ViewModels/DatabaseAdminViewModel.cs
+    startLine: 20
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public DatabaseAdminViewModel(DatabaseAdminDbContext dbContext)
+    parameters:
+    - id: dbContext
+      type: EnvironmentManager.Data.DatabaseAdminDbContext
+    content.vb: Public Sub New(dbContext As DatabaseAdminDbContext)
+  overload: EnvironmentManager.ViewModels.DatabaseAdminViewModel.#ctor*
+  nameWithType.vb: DatabaseAdminViewModel.New(DatabaseAdminDbContext)
+  fullName.vb: EnvironmentManager.ViewModels.DatabaseAdminViewModel.New(EnvironmentManager.Data.DatabaseAdminDbContext)
+  name.vb: New(DatabaseAdminDbContext)
+references:
+- uid: EnvironmentManager.ViewModels
+  commentId: N:EnvironmentManager.ViewModels
+  href: EnvironmentManager.html
+  name: EnvironmentManager.ViewModels
+  nameWithType: EnvironmentManager.ViewModels
+  fullName: EnvironmentManager.ViewModels
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: EnvironmentManager.ViewModels.BaseViewModel
+  commentId: T:EnvironmentManager.ViewModels.BaseViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: EnvironmentManager.ViewModels.BaseViewModel
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  commentId: P:EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_IsBusy
+  name: IsBusy
+  nameWithType: BaseViewModel.IsBusy
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+- uid: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  commentId: E:EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BaseViewModel.PropertyChanged
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  definition: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BaseViewModel.OnPropertyChanged(string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(string)
+  nameWithType.vb: BaseViewModel.OnPropertyChanged(String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel.TableOptions*
+  commentId: Overload:EnvironmentManager.ViewModels.DatabaseAdminViewModel.TableOptions
+  href: EnvironmentManager.ViewModels.DatabaseAdminViewModel.html#EnvironmentManager_ViewModels_DatabaseAdminViewModel_TableOptions
+  name: TableOptions
+  nameWithType: DatabaseAdminViewModel.TableOptions
+  fullName: EnvironmentManager.ViewModels.DatabaseAdminViewModel.TableOptions
+- uid: System.Collections.ObjectModel.ObservableCollection{System.String}
+  commentId: T:System.Collections.ObjectModel.ObservableCollection{System.String}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ObservableCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<string>
+  nameWithType: ObservableCollection<string>
+  fullName: System.Collections.ObjectModel.ObservableCollection<string>
+  nameWithType.vb: ObservableCollection(Of String)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of String)
+  name.vb: ObservableCollection(Of String)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.ObjectModel.ObservableCollection`1
+  commentId: T:System.Collections.ObjectModel.ObservableCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<T>
+  nameWithType: ObservableCollection<T>
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>
+  nameWithType.vb: ObservableCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of T)
+  name.vb: ObservableCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+- uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel.SelectedTable*
+  commentId: Overload:EnvironmentManager.ViewModels.DatabaseAdminViewModel.SelectedTable
+  href: EnvironmentManager.ViewModels.DatabaseAdminViewModel.html#EnvironmentManager_ViewModels_DatabaseAdminViewModel_SelectedTable
+  name: SelectedTable
+  nameWithType: DatabaseAdminViewModel.SelectedTable
+  fullName: EnvironmentManager.ViewModels.DatabaseAdminViewModel.SelectedTable
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel.NavigateToTableCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.DatabaseAdminViewModel.NavigateToTableCommand
+  href: EnvironmentManager.ViewModels.DatabaseAdminViewModel.html#EnvironmentManager_ViewModels_DatabaseAdminViewModel_NavigateToTableCommand
+  name: NavigateToTableCommand
+  nameWithType: DatabaseAdminViewModel.NavigateToTableCommand
+  fullName: EnvironmentManager.ViewModels.DatabaseAdminViewModel.NavigateToTableCommand
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel.#ctor*
+  commentId: Overload:EnvironmentManager.ViewModels.DatabaseAdminViewModel.#ctor
+  href: EnvironmentManager.ViewModels.DatabaseAdminViewModel.html#EnvironmentManager_ViewModels_DatabaseAdminViewModel__ctor_EnvironmentManager_Data_DatabaseAdminDbContext_
+  name: DatabaseAdminViewModel
+  nameWithType: DatabaseAdminViewModel.DatabaseAdminViewModel
+  fullName: EnvironmentManager.ViewModels.DatabaseAdminViewModel.DatabaseAdminViewModel
+  nameWithType.vb: DatabaseAdminViewModel.New
+  fullName.vb: EnvironmentManager.ViewModels.DatabaseAdminViewModel.New
+  name.vb: New
+- uid: EnvironmentManager.Data.DatabaseAdminDbContext
+  commentId: T:EnvironmentManager.Data.DatabaseAdminDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.DatabaseAdminDbContext.html
+  name: DatabaseAdminDbContext
+  nameWithType: DatabaseAdminDbContext
+  fullName: EnvironmentManager.Data.DatabaseAdminDbContext
+- uid: EnvironmentManager.Data
+  commentId: N:EnvironmentManager.Data
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Data
+  nameWithType: EnvironmentManager.Data
+  fullName: EnvironmentManager.Data
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html

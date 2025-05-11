@@ -1,0 +1,3 @@
+INSERT INTO dbo.Water_Quality ( Date, Time, Nitrate_mg_l_1, Nitrite_less_thank_mg_l_1, Phosphate_mg_l_1, EC_cfu_100ml,LocationId) VALUES ('2025-01-01 00:00:00', '12:00:00', 27.38, 600, 0.05, 0.0, 1003);
+INSERT INTO dbo.Air_Quality (Date, Time, Nitrogen_dioxide, Sulphur_dioxide, PM2_5_particulate_matter, PM10_particulate_matter, LocationId) VALUES ('2025-01-01 00:00:00', '00:00:00', 12.6225, 1.26393, 600, 6.6,1002);
+INSERT INTO weather_data (Date_Time, temperature_2m, relative_humidity_2m, wind_speed_10m, wind_direction_10m ,LocationId) VALUES ('2025-01-01 23:00:00', 600, 84, 4.86, 60,1004);

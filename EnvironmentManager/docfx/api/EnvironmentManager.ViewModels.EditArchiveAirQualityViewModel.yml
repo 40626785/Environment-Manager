@@ -1,0 +1,747 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel
+  commentId: T:EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel
+  id: EditArchiveAirQualityViewModel
+  parent: EnvironmentManager.ViewModels
+  children:
+  - EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.#ctor(EnvironmentManager.Data.ArchiveAirQualityDbContext,EnvironmentManager.Interfaces.IUserDialogService)
+  - EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditableRecord
+  - EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.SaveCommand
+  langs:
+  - csharp
+  - vb
+  name: EditArchiveAirQualityViewModel
+  nameWithType: EditArchiveAirQualityViewModel
+  fullName: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/EditArchiveAirQualityViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: EditArchiveAirQualityViewModel
+    path: ../ViewModels/EditArchiveAirQualityViewModel.cs
+    startLine: 13
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Represents the EditArchiveAirQualityViewModel database context.
+  example: []
+  syntax:
+    content: 'public class EditArchiveAirQualityViewModel : BaseViewModel, INotifyPropertyChanged'
+    content.vb: Public Class EditArchiveAirQualityViewModel Inherits BaseViewModel Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - EnvironmentManager.ViewModels.BaseViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  - EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  - EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  - EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditableRecord
+  commentId: P:EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditableRecord
+  id: EditableRecord
+  parent: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel
+  langs:
+  - csharp
+  - vb
+  name: EditableRecord
+  nameWithType: EditArchiveAirQualityViewModel.EditableRecord
+  fullName: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditableRecord
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/EditArchiveAirQualityViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: EditableRecord
+    path: ../ViewModels/EditArchiveAirQualityViewModel.cs
+    startLine: 18
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ArchiveAirQuality EditableRecord { get; set; }
+    parameters: []
+    return:
+      type: EnvironmentManager.Models.ArchiveAirQuality
+    content.vb: Public Property EditableRecord As ArchiveAirQuality
+  overload: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditableRecord*
+- uid: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.SaveCommand
+  commentId: P:EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.SaveCommand
+  id: SaveCommand
+  parent: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel
+  langs:
+  - csharp
+  - vb
+  name: SaveCommand
+  nameWithType: EditArchiveAirQualityViewModel.SaveCommand
+  fullName: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.SaveCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/EditArchiveAirQualityViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: SaveCommand
+    path: ../ViewModels/EditArchiveAirQualityViewModel.cs
+    startLine: 20
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand SaveCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property SaveCommand As ICommand
+  overload: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.SaveCommand*
+- uid: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.#ctor(EnvironmentManager.Data.ArchiveAirQualityDbContext,EnvironmentManager.Interfaces.IUserDialogService)
+  commentId: M:EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.#ctor(EnvironmentManager.Data.ArchiveAirQualityDbContext,EnvironmentManager.Interfaces.IUserDialogService)
+  id: '#ctor(EnvironmentManager.Data.ArchiveAirQualityDbContext,EnvironmentManager.Interfaces.IUserDialogService)'
+  parent: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel
+  langs:
+  - csharp
+  - vb
+  name: EditArchiveAirQualityViewModel(ArchiveAirQualityDbContext, IUserDialogService)
+  nameWithType: EditArchiveAirQualityViewModel.EditArchiveAirQualityViewModel(ArchiveAirQualityDbContext, IUserDialogService)
+  fullName: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditArchiveAirQualityViewModel(EnvironmentManager.Data.ArchiveAirQualityDbContext, EnvironmentManager.Interfaces.IUserDialogService)
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/EditArchiveAirQualityViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: .ctor
+    path: ../ViewModels/EditArchiveAirQualityViewModel.cs
+    startLine: 22
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public EditArchiveAirQualityViewModel(ArchiveAirQualityDbContext context, IUserDialogService dialogService)
+    parameters:
+    - id: context
+      type: EnvironmentManager.Data.ArchiveAirQualityDbContext
+    - id: dialogService
+      type: EnvironmentManager.Interfaces.IUserDialogService
+    content.vb: Public Sub New(context As ArchiveAirQualityDbContext, dialogService As IUserDialogService)
+  overload: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.#ctor*
+  nameWithType.vb: EditArchiveAirQualityViewModel.New(ArchiveAirQualityDbContext, IUserDialogService)
+  fullName.vb: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.New(EnvironmentManager.Data.ArchiveAirQualityDbContext, EnvironmentManager.Interfaces.IUserDialogService)
+  name.vb: New(ArchiveAirQualityDbContext, IUserDialogService)
+references:
+- uid: EnvironmentManager.ViewModels
+  commentId: N:EnvironmentManager.ViewModels
+  href: EnvironmentManager.html
+  name: EnvironmentManager.ViewModels
+  nameWithType: EnvironmentManager.ViewModels
+  fullName: EnvironmentManager.ViewModels
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: EnvironmentManager.ViewModels.BaseViewModel
+  commentId: T:EnvironmentManager.ViewModels.BaseViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: EnvironmentManager.ViewModels.BaseViewModel
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  commentId: P:EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_IsBusy
+  name: IsBusy
+  nameWithType: BaseViewModel.IsBusy
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+- uid: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  commentId: E:EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BaseViewModel.PropertyChanged
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  definition: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BaseViewModel.OnPropertyChanged(string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(string)
+  nameWithType.vb: BaseViewModel.OnPropertyChanged(String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditableRecord*
+  commentId: Overload:EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditableRecord
+  href: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.html#EnvironmentManager_ViewModels_EditArchiveAirQualityViewModel_EditableRecord
+  name: EditableRecord
+  nameWithType: EditArchiveAirQualityViewModel.EditableRecord
+  fullName: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditableRecord
+- uid: EnvironmentManager.Models.ArchiveAirQuality
+  commentId: T:EnvironmentManager.Models.ArchiveAirQuality
+  parent: EnvironmentManager.Models
+  href: EnvironmentManager.Models.ArchiveAirQuality.html
+  name: ArchiveAirQuality
+  nameWithType: ArchiveAirQuality
+  fullName: EnvironmentManager.Models.ArchiveAirQuality
+- uid: EnvironmentManager.Models
+  commentId: N:EnvironmentManager.Models
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Models
+  nameWithType: EnvironmentManager.Models
+  fullName: EnvironmentManager.Models
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Models
+    name: Models
+    href: EnvironmentManager.Models.html
+- uid: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.SaveCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.SaveCommand
+  href: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.html#EnvironmentManager_ViewModels_EditArchiveAirQualityViewModel_SaveCommand
+  name: SaveCommand
+  nameWithType: EditArchiveAirQualityViewModel.SaveCommand
+  fullName: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.SaveCommand
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.#ctor*
+  commentId: Overload:EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.#ctor
+  href: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.html#EnvironmentManager_ViewModels_EditArchiveAirQualityViewModel__ctor_EnvironmentManager_Data_ArchiveAirQualityDbContext_EnvironmentManager_Interfaces_IUserDialogService_
+  name: EditArchiveAirQualityViewModel
+  nameWithType: EditArchiveAirQualityViewModel.EditArchiveAirQualityViewModel
+  fullName: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.EditArchiveAirQualityViewModel
+  nameWithType.vb: EditArchiveAirQualityViewModel.New
+  fullName.vb: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel.New
+  name.vb: New
+- uid: EnvironmentManager.Data.ArchiveAirQualityDbContext
+  commentId: T:EnvironmentManager.Data.ArchiveAirQualityDbContext
+  parent: EnvironmentManager.Data
+  href: EnvironmentManager.Data.ArchiveAirQualityDbContext.html
+  name: ArchiveAirQualityDbContext
+  nameWithType: ArchiveAirQualityDbContext
+  fullName: EnvironmentManager.Data.ArchiveAirQualityDbContext
+- uid: EnvironmentManager.Interfaces.IUserDialogService
+  commentId: T:EnvironmentManager.Interfaces.IUserDialogService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IUserDialogService.html
+  name: IUserDialogService
+  nameWithType: IUserDialogService
+  fullName: EnvironmentManager.Interfaces.IUserDialogService
+- uid: EnvironmentManager.Data
+  commentId: N:EnvironmentManager.Data
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Data
+  nameWithType: EnvironmentManager.Data
+  fullName: EnvironmentManager.Data
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Data
+    name: Data
+    href: EnvironmentManager.Data.html
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html

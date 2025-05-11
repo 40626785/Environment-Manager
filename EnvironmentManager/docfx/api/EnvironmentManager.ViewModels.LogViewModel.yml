@@ -1,0 +1,1429 @@
+### YamlMime:ManagedReference
+items:
+- uid: EnvironmentManager.ViewModels.LogViewModel
+  commentId: T:EnvironmentManager.ViewModels.LogViewModel
+  id: LogViewModel
+  parent: EnvironmentManager.ViewModels
+  children:
+  - EnvironmentManager.ViewModels.LogViewModel.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.LogDbContext},EnvironmentManager.Interfaces.IUserDialogService)
+  - EnvironmentManager.ViewModels.LogViewModel.ApplyFiltersCommand
+  - EnvironmentManager.ViewModels.LogViewModel.DeleteFilteredCommand
+  - EnvironmentManager.ViewModels.LogViewModel.EndDate
+  - EnvironmentManager.ViewModels.LogViewModel.EndIdText
+  - EnvironmentManager.ViewModels.LogViewModel.ExportToCsvAsync(System.String)
+  - EnvironmentManager.ViewModels.LogViewModel.ExportToCsvCommand
+  - EnvironmentManager.ViewModels.LogViewModel.IsDateFilterEnabled
+  - EnvironmentManager.ViewModels.LogViewModel.IsFilterVisible
+  - EnvironmentManager.ViewModels.LogViewModel.LoadDataAsync
+  - EnvironmentManager.ViewModels.LogViewModel.LoadDataCommand
+  - EnvironmentManager.ViewModels.LogViewModel.StartDate
+  - EnvironmentManager.ViewModels.LogViewModel.StartIdText
+  - EnvironmentManager.ViewModels.LogViewModel.TableData
+  - EnvironmentManager.ViewModels.LogViewModel.ToggleFilterText
+  - EnvironmentManager.ViewModels.LogViewModel.ToggleFilterVisibilityCommand
+  langs:
+  - csharp
+  - vb
+  name: LogViewModel
+  nameWithType: LogViewModel
+  fullName: EnvironmentManager.ViewModels.LogViewModel
+  type: Class
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LogViewModel
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 16
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Represents the LogViewModel database context.
+  example: []
+  syntax:
+    content: 'public class LogViewModel : BaseViewModel, INotifyPropertyChanged'
+    content.vb: Public Class LogViewModel Inherits BaseViewModel Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - EnvironmentManager.ViewModels.BaseViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  - EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  - EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  - EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EnvironmentManager.ViewModels.LogViewModel.TableData
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.TableData
+  id: TableData
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: TableData
+  nameWithType: LogViewModel.TableData
+  fullName: EnvironmentManager.ViewModels.LogViewModel.TableData
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: TableData
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 21
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ObservableCollection<LogEntry> TableData { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.Models.LogEntry}
+    content.vb: Public ReadOnly Property TableData As ObservableCollection(Of LogEntry)
+  overload: EnvironmentManager.ViewModels.LogViewModel.TableData*
+- uid: EnvironmentManager.ViewModels.LogViewModel.LoadDataCommand
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.LoadDataCommand
+  id: LoadDataCommand
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: LoadDataCommand
+  nameWithType: LogViewModel.LoadDataCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.LoadDataCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LoadDataCommand
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 23
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand LoadDataCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property LoadDataCommand As ICommand
+  overload: EnvironmentManager.ViewModels.LogViewModel.LoadDataCommand*
+- uid: EnvironmentManager.ViewModels.LogViewModel.DeleteFilteredCommand
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.DeleteFilteredCommand
+  id: DeleteFilteredCommand
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: DeleteFilteredCommand
+  nameWithType: LogViewModel.DeleteFilteredCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.DeleteFilteredCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: DeleteFilteredCommand
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 24
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand DeleteFilteredCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property DeleteFilteredCommand As ICommand
+  overload: EnvironmentManager.ViewModels.LogViewModel.DeleteFilteredCommand*
+- uid: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvCommand
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.ExportToCsvCommand
+  id: ExportToCsvCommand
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: ExportToCsvCommand
+  nameWithType: LogViewModel.ExportToCsvCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ExportToCsvCommand
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 25
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ExportToCsvCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ExportToCsvCommand As ICommand
+  overload: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvCommand*
+- uid: EnvironmentManager.ViewModels.LogViewModel.ApplyFiltersCommand
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.ApplyFiltersCommand
+  id: ApplyFiltersCommand
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: ApplyFiltersCommand
+  nameWithType: LogViewModel.ApplyFiltersCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ApplyFiltersCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ApplyFiltersCommand
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 26
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ApplyFiltersCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ApplyFiltersCommand As ICommand
+  overload: EnvironmentManager.ViewModels.LogViewModel.ApplyFiltersCommand*
+- uid: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterVisibilityCommand
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.ToggleFilterVisibilityCommand
+  id: ToggleFilterVisibilityCommand
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: ToggleFilterVisibilityCommand
+  nameWithType: LogViewModel.ToggleFilterVisibilityCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterVisibilityCommand
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ToggleFilterVisibilityCommand
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 27
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public ICommand ToggleFilterVisibilityCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ToggleFilterVisibilityCommand As ICommand
+  overload: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterVisibilityCommand*
+- uid: EnvironmentManager.ViewModels.LogViewModel.StartIdText
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.StartIdText
+  id: StartIdText
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: StartIdText
+  nameWithType: LogViewModel.StartIdText
+  fullName: EnvironmentManager.ViewModels.LogViewModel.StartIdText
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: StartIdText
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 29
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string StartIdText { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property StartIdText As String
+  overload: EnvironmentManager.ViewModels.LogViewModel.StartIdText*
+- uid: EnvironmentManager.ViewModels.LogViewModel.EndIdText
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.EndIdText
+  id: EndIdText
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: EndIdText
+  nameWithType: LogViewModel.EndIdText
+  fullName: EnvironmentManager.ViewModels.LogViewModel.EndIdText
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: EndIdText
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 30
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string EndIdText { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property EndIdText As String
+  overload: EnvironmentManager.ViewModels.LogViewModel.EndIdText*
+- uid: EnvironmentManager.ViewModels.LogViewModel.StartDate
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.StartDate
+  id: StartDate
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: StartDate
+  nameWithType: LogViewModel.StartDate
+  fullName: EnvironmentManager.ViewModels.LogViewModel.StartDate
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: StartDate
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 32
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public DateTime StartDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property StartDate As Date
+  overload: EnvironmentManager.ViewModels.LogViewModel.StartDate*
+- uid: EnvironmentManager.ViewModels.LogViewModel.EndDate
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.EndDate
+  id: EndDate
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: EndDate
+  nameWithType: LogViewModel.EndDate
+  fullName: EnvironmentManager.ViewModels.LogViewModel.EndDate
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: EndDate
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 33
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public DateTime EndDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property EndDate As Date
+  overload: EnvironmentManager.ViewModels.LogViewModel.EndDate*
+- uid: EnvironmentManager.ViewModels.LogViewModel.IsDateFilterEnabled
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.IsDateFilterEnabled
+  id: IsDateFilterEnabled
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: IsDateFilterEnabled
+  nameWithType: LogViewModel.IsDateFilterEnabled
+  fullName: EnvironmentManager.ViewModels.LogViewModel.IsDateFilterEnabled
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: IsDateFilterEnabled
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 34
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public bool IsDateFilterEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsDateFilterEnabled As Boolean
+  overload: EnvironmentManager.ViewModels.LogViewModel.IsDateFilterEnabled*
+- uid: EnvironmentManager.ViewModels.LogViewModel.IsFilterVisible
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.IsFilterVisible
+  id: IsFilterVisible
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: IsFilterVisible
+  nameWithType: LogViewModel.IsFilterVisible
+  fullName: EnvironmentManager.ViewModels.LogViewModel.IsFilterVisible
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: IsFilterVisible
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 37
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public bool IsFilterVisible { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsFilterVisible As Boolean
+  overload: EnvironmentManager.ViewModels.LogViewModel.IsFilterVisible*
+- uid: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterText
+  commentId: P:EnvironmentManager.ViewModels.LogViewModel.ToggleFilterText
+  id: ToggleFilterText
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: ToggleFilterText
+  nameWithType: LogViewModel.ToggleFilterText
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterText
+  type: Property
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ToggleFilterText
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 47
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public string ToggleFilterText { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ToggleFilterText As String
+  overload: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterText*
+- uid: EnvironmentManager.ViewModels.LogViewModel.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.LogDbContext},EnvironmentManager.Interfaces.IUserDialogService)
+  commentId: M:EnvironmentManager.ViewModels.LogViewModel.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.LogDbContext},EnvironmentManager.Interfaces.IUserDialogService)
+  id: '#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.LogDbContext},EnvironmentManager.Interfaces.IUserDialogService)'
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: LogViewModel(IDbContextFactory<LogDbContext>, IUserDialogService)
+  nameWithType: LogViewModel.LogViewModel(IDbContextFactory<LogDbContext>, IUserDialogService)
+  fullName: EnvironmentManager.ViewModels.LogViewModel.LogViewModel(Microsoft.EntityFrameworkCore.IDbContextFactory<EnvironmentManager.Data.LogDbContext>, EnvironmentManager.Interfaces.IUserDialogService)
+  type: Constructor
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: .ctor
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 49
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  syntax:
+    content: public LogViewModel(IDbContextFactory<LogDbContext> dbContextFactory, IUserDialogService dialogService)
+    parameters:
+    - id: dbContextFactory
+      type: Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.LogDbContext}
+    - id: dialogService
+      type: EnvironmentManager.Interfaces.IUserDialogService
+    content.vb: Public Sub New(dbContextFactory As IDbContextFactory(Of LogDbContext), dialogService As IUserDialogService)
+  overload: EnvironmentManager.ViewModels.LogViewModel.#ctor*
+  nameWithType.vb: LogViewModel.New(IDbContextFactory(Of LogDbContext), IUserDialogService)
+  fullName.vb: EnvironmentManager.ViewModels.LogViewModel.New(Microsoft.EntityFrameworkCore.IDbContextFactory(Of EnvironmentManager.Data.LogDbContext), EnvironmentManager.Interfaces.IUserDialogService)
+  name.vb: New(IDbContextFactory(Of LogDbContext), IUserDialogService)
+- uid: EnvironmentManager.ViewModels.LogViewModel.LoadDataAsync
+  commentId: M:EnvironmentManager.ViewModels.LogViewModel.LoadDataAsync
+  id: LoadDataAsync
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: LoadDataAsync()
+  nameWithType: LogViewModel.LoadDataAsync()
+  fullName: EnvironmentManager.ViewModels.LogViewModel.LoadDataAsync()
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: LoadDataAsync
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 64
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Asynchronously executes the LoadDataAsync operation.
+  example: []
+  syntax:
+    content: public Task LoadDataAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function LoadDataAsync() As Task
+  overload: EnvironmentManager.ViewModels.LogViewModel.LoadDataAsync*
+- uid: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvAsync(System.String)
+  commentId: M:EnvironmentManager.ViewModels.LogViewModel.ExportToCsvAsync(System.String)
+  id: ExportToCsvAsync(System.String)
+  parent: EnvironmentManager.ViewModels.LogViewModel
+  langs:
+  - csharp
+  - vb
+  name: ExportToCsvAsync(string)
+  nameWithType: LogViewModel.ExportToCsvAsync(string)
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvAsync(string)
+  type: Method
+  source:
+    remote:
+      path: EnvironmentManager/ViewModels/LogViewModel.cs
+      branch: Feature-10
+      repo: https://github.com/40626785/Environment-Manager.git
+    id: ExportToCsvAsync
+    path: ../ViewModels/LogViewModel.cs
+    startLine: 172
+  assemblies:
+  - EnvironmentManager
+  namespace: EnvironmentManager.ViewModels
+  summary: Asynchronously executes the null) operation.
+  example: []
+  syntax:
+    content: public Task ExportToCsvAsync(string outputPath = null)
+    parameters:
+    - id: outputPath
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ExportToCsvAsync(outputPath As String = Nothing) As Task
+  overload: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvAsync*
+  nameWithType.vb: LogViewModel.ExportToCsvAsync(String)
+  fullName.vb: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvAsync(String)
+  name.vb: ExportToCsvAsync(String)
+references:
+- uid: EnvironmentManager.ViewModels
+  commentId: N:EnvironmentManager.ViewModels
+  href: EnvironmentManager.html
+  name: EnvironmentManager.ViewModels
+  nameWithType: EnvironmentManager.ViewModels
+  fullName: EnvironmentManager.ViewModels
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.ViewModels
+    name: ViewModels
+    href: EnvironmentManager.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: EnvironmentManager.ViewModels.BaseViewModel
+  commentId: T:EnvironmentManager.ViewModels.BaseViewModel
+  parent: EnvironmentManager.ViewModels
+  href: EnvironmentManager.ViewModels.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: EnvironmentManager.ViewModels.BaseViewModel
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  commentId: P:EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_IsBusy
+  name: IsBusy
+  nameWithType: BaseViewModel.IsBusy
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.IsBusy
+- uid: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  commentId: E:EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BaseViewModel.PropertyChanged
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.PropertyChanged
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1({T}@,{T},System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  definition: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+  parent: EnvironmentManager.ViewModels.BaseViewModel
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BaseViewModel.OnPropertyChanged(string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(string)
+  nameWithType.vb: BaseViewModel.OnPropertyChanged(String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  commentId: M:EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+  isExternal: true
+  href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: BaseViewModel.SetProperty<T>(ref T, T, string)
+  fullName: EnvironmentManager.ViewModels.BaseViewModel.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: BaseViewModel.SetProperty(Of T)(T, T, String)
+  fullName.vb: EnvironmentManager.ViewModels.BaseViewModel.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: EnvironmentManager.ViewModels.BaseViewModel.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: EnvironmentManager.ViewModels.BaseViewModel.html#EnvironmentManager_ViewModels_BaseViewModel_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: EnvironmentManager.ViewModels.LogViewModel.TableData*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.TableData
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_TableData
+  name: TableData
+  nameWithType: LogViewModel.TableData
+  fullName: EnvironmentManager.ViewModels.LogViewModel.TableData
+- uid: System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.Models.LogEntry}
+  commentId: T:System.Collections.ObjectModel.ObservableCollection{EnvironmentManager.Models.LogEntry}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ObservableCollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<LogEntry>
+  nameWithType: ObservableCollection<LogEntry>
+  fullName: System.Collections.ObjectModel.ObservableCollection<EnvironmentManager.Models.LogEntry>
+  nameWithType.vb: ObservableCollection(Of LogEntry)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of EnvironmentManager.Models.LogEntry)
+  name.vb: ObservableCollection(Of LogEntry)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - uid: EnvironmentManager.Models.LogEntry
+    name: LogEntry
+    href: EnvironmentManager.Models.LogEntry.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Models.LogEntry
+    name: LogEntry
+    href: EnvironmentManager.Models.LogEntry.html
+  - name: )
+- uid: System.Collections.ObjectModel.ObservableCollection`1
+  commentId: T:System.Collections.ObjectModel.ObservableCollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  name: ObservableCollection<T>
+  nameWithType: ObservableCollection<T>
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>
+  nameWithType.vb: ObservableCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of T)
+  name.vb: ObservableCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.ObjectModel
+    name: ObjectModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+- uid: EnvironmentManager.ViewModels.LogViewModel.LoadDataCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.LoadDataCommand
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_LoadDataCommand
+  name: LoadDataCommand
+  nameWithType: LogViewModel.LoadDataCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.LoadDataCommand
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: EnvironmentManager.ViewModels.LogViewModel.DeleteFilteredCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.DeleteFilteredCommand
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_DeleteFilteredCommand
+  name: DeleteFilteredCommand
+  nameWithType: LogViewModel.DeleteFilteredCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.DeleteFilteredCommand
+- uid: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.ExportToCsvCommand
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_ExportToCsvCommand
+  name: ExportToCsvCommand
+  nameWithType: LogViewModel.ExportToCsvCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvCommand
+- uid: EnvironmentManager.ViewModels.LogViewModel.ApplyFiltersCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.ApplyFiltersCommand
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_ApplyFiltersCommand
+  name: ApplyFiltersCommand
+  nameWithType: LogViewModel.ApplyFiltersCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ApplyFiltersCommand
+- uid: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterVisibilityCommand*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.ToggleFilterVisibilityCommand
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_ToggleFilterVisibilityCommand
+  name: ToggleFilterVisibilityCommand
+  nameWithType: LogViewModel.ToggleFilterVisibilityCommand
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterVisibilityCommand
+- uid: EnvironmentManager.ViewModels.LogViewModel.StartIdText*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.StartIdText
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_StartIdText
+  name: StartIdText
+  nameWithType: LogViewModel.StartIdText
+  fullName: EnvironmentManager.ViewModels.LogViewModel.StartIdText
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EnvironmentManager.ViewModels.LogViewModel.EndIdText*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.EndIdText
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_EndIdText
+  name: EndIdText
+  nameWithType: LogViewModel.EndIdText
+  fullName: EnvironmentManager.ViewModels.LogViewModel.EndIdText
+- uid: EnvironmentManager.ViewModels.LogViewModel.StartDate*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.StartDate
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_StartDate
+  name: StartDate
+  nameWithType: LogViewModel.StartDate
+  fullName: EnvironmentManager.ViewModels.LogViewModel.StartDate
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: EnvironmentManager.ViewModels.LogViewModel.EndDate*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.EndDate
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_EndDate
+  name: EndDate
+  nameWithType: LogViewModel.EndDate
+  fullName: EnvironmentManager.ViewModels.LogViewModel.EndDate
+- uid: EnvironmentManager.ViewModels.LogViewModel.IsDateFilterEnabled*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.IsDateFilterEnabled
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_IsDateFilterEnabled
+  name: IsDateFilterEnabled
+  nameWithType: LogViewModel.IsDateFilterEnabled
+  fullName: EnvironmentManager.ViewModels.LogViewModel.IsDateFilterEnabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: EnvironmentManager.ViewModels.LogViewModel.IsFilterVisible*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.IsFilterVisible
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_IsFilterVisible
+  name: IsFilterVisible
+  nameWithType: LogViewModel.IsFilterVisible
+  fullName: EnvironmentManager.ViewModels.LogViewModel.IsFilterVisible
+- uid: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterText*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.ToggleFilterText
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_ToggleFilterText
+  name: ToggleFilterText
+  nameWithType: LogViewModel.ToggleFilterText
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ToggleFilterText
+- uid: EnvironmentManager.ViewModels.LogViewModel.#ctor*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.#ctor
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel__ctor_Microsoft_EntityFrameworkCore_IDbContextFactory_EnvironmentManager_Data_LogDbContext__EnvironmentManager_Interfaces_IUserDialogService_
+  name: LogViewModel
+  nameWithType: LogViewModel.LogViewModel
+  fullName: EnvironmentManager.ViewModels.LogViewModel.LogViewModel
+  nameWithType.vb: LogViewModel.New
+  fullName.vb: EnvironmentManager.ViewModels.LogViewModel.New
+  name.vb: New
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.LogDbContext}
+  commentId: T:Microsoft.EntityFrameworkCore.IDbContextFactory{EnvironmentManager.Data.LogDbContext}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  name: IDbContextFactory<LogDbContext>
+  nameWithType: IDbContextFactory<LogDbContext>
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<EnvironmentManager.Data.LogDbContext>
+  nameWithType.vb: IDbContextFactory(Of LogDbContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of EnvironmentManager.Data.LogDbContext)
+  name.vb: IDbContextFactory(Of LogDbContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: <
+  - uid: EnvironmentManager.Data.LogDbContext
+    name: LogDbContext
+    href: EnvironmentManager.Data.LogDbContext.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EnvironmentManager.Data.LogDbContext
+    name: LogDbContext
+    href: EnvironmentManager.Data.LogDbContext.html
+  - name: )
+- uid: EnvironmentManager.Interfaces.IUserDialogService
+  commentId: T:EnvironmentManager.Interfaces.IUserDialogService
+  parent: EnvironmentManager.Interfaces
+  href: EnvironmentManager.Interfaces.IUserDialogService.html
+  name: IUserDialogService
+  nameWithType: IUserDialogService
+  fullName: EnvironmentManager.Interfaces.IUserDialogService
+- uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  commentId: T:Microsoft.EntityFrameworkCore.IDbContextFactory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  name: IDbContextFactory<TContext>
+  nameWithType: IDbContextFactory<TContext>
+  fullName: Microsoft.EntityFrameworkCore.IDbContextFactory<TContext>
+  nameWithType.vb: IDbContextFactory(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.IDbContextFactory(Of TContext)
+  name.vb: IDbContextFactory(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: <
+  - name: TContext
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.IDbContextFactory`1
+    name: IDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TContext
+  - name: )
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: EnvironmentManager.Interfaces
+  commentId: N:EnvironmentManager.Interfaces
+  href: EnvironmentManager.html
+  name: EnvironmentManager.Interfaces
+  nameWithType: EnvironmentManager.Interfaces
+  fullName: EnvironmentManager.Interfaces
+  spec.csharp:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+  spec.vb:
+  - uid: EnvironmentManager
+    name: EnvironmentManager
+    href: EnvironmentManager.html
+  - name: .
+  - uid: EnvironmentManager.Interfaces
+    name: Interfaces
+    href: EnvironmentManager.Interfaces.html
+- uid: EnvironmentManager.ViewModels.LogViewModel.LoadDataAsync*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.LoadDataAsync
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_LoadDataAsync
+  name: LoadDataAsync
+  nameWithType: LogViewModel.LoadDataAsync
+  fullName: EnvironmentManager.ViewModels.LogViewModel.LoadDataAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvAsync*
+  commentId: Overload:EnvironmentManager.ViewModels.LogViewModel.ExportToCsvAsync
+  href: EnvironmentManager.ViewModels.LogViewModel.html#EnvironmentManager_ViewModels_LogViewModel_ExportToCsvAsync_System_String_
+  name: ExportToCsvAsync
+  nameWithType: LogViewModel.ExportToCsvAsync
+  fullName: EnvironmentManager.ViewModels.LogViewModel.ExportToCsvAsync

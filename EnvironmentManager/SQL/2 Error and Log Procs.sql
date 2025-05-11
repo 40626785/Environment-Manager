@@ -1,0 +1,22 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[LogError]
+    @ErrorMessage NVARCHAR(4000)
+AS
+BEGIN
+    INSERT INTO ErrorTable (ErrorMessage)
+    VALUES (@ErrorMessage);
+END;
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[LogMessage]
+    @Message NVARCHAR(4000)
+AS
+BEGIN
+    INSERT INTO LogTable (LogMessage)
+    VALUES (@Message);
+END;

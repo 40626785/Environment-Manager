@@ -1,0 +1,17 @@
+DROP PROCEDURE CheckAirQualityAnomalies;
+DROP PROCEDURE CheckWeatherDataAnomalies;
+DROP PROCEDURE LogError;
+DROP PROCEDURE CheckWaterQualityAnomalies;
+DROP PROCEDURE LogMessage;
+DROP PROCEDURE pkg_archive_air_quality;
+DROP PROCEDURE pkg_archive_water_quality;
+DROP PROCEDURE pkg_archive_weather_data;
+drop table Archive_Air_Quality ;
+drop table Air_Quality ;
+drop table archive_weather_data ;
+drop table weather_data ;
+drop table Archive_Water_Quality;
+drop table Water_Quality;
+drop table LogTable;
+drop table ErrorTable;
+drop table AlertTable;

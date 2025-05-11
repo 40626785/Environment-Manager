@@ -1,0 +1,330 @@
+### YamlMime:TableOfContent
+items:
+- uid: EnvironmentManager
+  name: EnvironmentManager
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.App
+    name: App
+    type: Class
+  - uid: EnvironmentManager.AppShell
+    name: AppShell
+    type: Class
+  - uid: EnvironmentManager.MauiProgram
+    name: MauiProgram
+    type: Class
+- uid: EnvironmentManager.Converters
+  name: EnvironmentManager.Converters
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Converters.BoolToColorConverter
+    name: BoolToColorConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.CountToBoolConverter
+    name: CountToBoolConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.StringNotEmptyConverter
+    name: StringNotEmptyConverter
+    type: Class
+  - uid: EnvironmentManager.Converters.StringNotNullOrEmptyConverter
+    name: StringNotNullOrEmptyConverter
+    type: Class
+- uid: EnvironmentManager.Data
+  name: EnvironmentManager.Data
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Data.AirQualityDbContext
+    name: AirQualityDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.AlertDbContext
+    name: AlertDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.ArchiveAirQualityDbContext
+    name: ArchiveAirQualityDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.DatabaseAdminDbContext
+    name: DatabaseAdminDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.ErrorDbContext
+    name: ErrorDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.HistoricalAirQualityDbContext
+    name: HistoricalAirQualityDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.HistoricalDataDbContext
+    name: HistoricalDataDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.LocationDbContext
+    name: LocationDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.LogDbContext
+    name: LogDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.MaintenanceDataStore
+    name: MaintenanceDataStore
+    type: Class
+  - uid: EnvironmentManager.Data.MaintenanceDbContext
+    name: MaintenanceDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.SensorDbContext
+    name: SensorDbContext
+    type: Class
+  - uid: EnvironmentManager.Data.TableMetadataService
+    name: TableMetadataService
+    type: Class
+  - uid: EnvironmentManager.Data.UserDbContext
+    name: UserDbContext
+    type: Class
+- uid: EnvironmentManager.Helpers
+  name: EnvironmentManager.Helpers
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Helpers.Ioc
+    name: Ioc
+    type: Class
+- uid: EnvironmentManager.Interfaces
+  name: EnvironmentManager.Interfaces
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Interfaces.IDatabaseAdminDataStore
+    name: IDatabaseAdminDataStore
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IErrorHandling
+    name: IErrorHandling
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.ILoggingService
+    name: ILoggingService
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IMaintenanceDataStore
+    name: IMaintenanceDataStore
+    type: Interface
+  - uid: EnvironmentManager.Interfaces.IUserDialogService
+    name: IUserDialogService
+    type: Interface
+- uid: EnvironmentManager.Models
+  name: EnvironmentManager.Models
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Models.AdminTableRow
+    name: AdminTableRow
+    type: Class
+  - uid: EnvironmentManager.Models.AirQualityRecord
+    name: AirQualityRecord
+    type: Class
+  - uid: EnvironmentManager.Models.Alert
+    name: Alert
+    type: Class
+  - uid: EnvironmentManager.Models.ArchiveAirQuality
+    name: ArchiveAirQuality
+    type: Class
+  - uid: EnvironmentManager.Models.ArchiveWaterQuality
+    name: ArchiveWaterQuality
+    type: Class
+  - uid: EnvironmentManager.Models.ArchiveWeatherData
+    name: ArchiveWeatherData
+    type: Class
+  - uid: EnvironmentManager.Models.ErrorEntry
+    name: ErrorEntry
+    type: Class
+  - uid: EnvironmentManager.Models.HistoricalDataRow
+    name: HistoricalDataRow
+    type: Class
+  - uid: EnvironmentManager.Models.Location
+    name: Location
+    type: Class
+  - uid: EnvironmentManager.Models.LogEntry
+    name: LogEntry
+    type: Class
+  - uid: EnvironmentManager.Models.Maintenance
+    name: Maintenance
+    type: Class
+  - uid: EnvironmentManager.Models.Sensor
+    name: Sensor
+    type: Class
+  - uid: EnvironmentManager.Models.User
+    name: User
+    type: Class
+- uid: EnvironmentManager.Services
+  name: EnvironmentManager.Services
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Services.DatabaseInitializationService
+    name: DatabaseInitializationService
+    type: Class
+  - uid: EnvironmentManager.Services.DatabaseLoggingService
+    name: DatabaseLoggingService
+    type: Class
+  - uid: EnvironmentManager.Services.IDatabaseInitializationService
+    name: IDatabaseInitializationService
+    type: Interface
+  - uid: EnvironmentManager.Services.MauiUserDialogService
+    name: MauiUserDialogService
+    type: Class
+  - uid: EnvironmentManager.Services.NavigationDataStore
+    name: NavigationDataStore
+    type: Class
+  - uid: EnvironmentManager.Services.ValidationService
+    name: ValidationService
+    type: Class
+- uid: EnvironmentManager.ViewModels
+  name: EnvironmentManager.ViewModels
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.ViewModels.AboutViewModel
+    name: AboutViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.AddSensorViewModel
+    name: AddSensorViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.AddUserViewModel
+    name: AddUserViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.AdminLocationViewModel
+    name: AdminLocationViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.AdminUserViewModel
+    name: AdminUserViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.AirQualityAdminViewModel
+    name: AirQualityAdminViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.AlertViewModel
+    name: AlertViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.AllMaintenanceViewModel
+    name: AllMaintenanceViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.ArchiveAirQualityViewModel
+    name: ArchiveAirQualityViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.BaseViewModel
+    name: BaseViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.DatabaseAdminViewModel
+    name: DatabaseAdminViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.EditAirQualityViewModel
+    name: EditAirQualityViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.EditArchiveAirQualityViewModel
+    name: EditArchiveAirQualityViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.EditLocationViewModel
+    name: EditLocationViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.EditSensorViewModel
+    name: EditSensorViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.EditUserViewModel
+    name: EditUserViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.ErrorTableAdminViewModel
+    name: ErrorTableAdminViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.ErrorViewModel
+    name: ErrorViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.HistoricalAirQualityViewModel
+    name: HistoricalAirQualityViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.HistoricalDataSelectionViewModel
+    name: HistoricalDataSelectionViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.HistoricalDataViewerViewModel
+    name: HistoricalDataViewerViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.HomeViewModel
+    name: HomeViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.LogViewModel
+    name: LogViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.MaintenanceViewModel
+    name: MaintenanceViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.ResolvedAlertsViewModel
+    name: ResolvedAlertsViewModel
+    type: Class
+  - uid: EnvironmentManager.ViewModels.SensorViewModel
+    name: SensorViewModel
+    type: Class
+- uid: EnvironmentManager.Views
+  name: EnvironmentManager.Views
+  type: Namespace
+  items:
+  - uid: EnvironmentManager.Views.AboutPage
+    name: AboutPage
+    type: Class
+  - uid: EnvironmentManager.Views.AddSensorPage
+    name: AddSensorPage
+    type: Class
+  - uid: EnvironmentManager.Views.AddUserPage
+    name: AddUserPage
+    type: Class
+  - uid: EnvironmentManager.Views.AdminLocationPage
+    name: AdminLocationPage
+    type: Class
+  - uid: EnvironmentManager.Views.AdminUserPage
+    name: AdminUserPage
+    type: Class
+  - uid: EnvironmentManager.Views.AirQualityPage
+    name: AirQualityPage
+    type: Class
+  - uid: EnvironmentManager.Views.AlertPage
+    name: AlertPage
+    type: Class
+  - uid: EnvironmentManager.Views.AllMaintenancePage
+    name: AllMaintenancePage
+    type: Class
+  - uid: EnvironmentManager.Views.ArchiveAirQualityPage
+    name: ArchiveAirQualityPage
+    type: Class
+  - uid: EnvironmentManager.Views.ArchiveWaterQualityPage
+    name: ArchiveWaterQualityPage
+    type: Class
+  - uid: EnvironmentManager.Views.DatabaseAdminPage
+    name: DatabaseAdminPage
+    type: Class
+  - uid: EnvironmentManager.Views.EditAirQualityPage
+    name: EditAirQualityPage
+    type: Class
+  - uid: EnvironmentManager.Views.EditArchiveAirQualityPage
+    name: EditArchiveAirQualityPage
+    type: Class
+  - uid: EnvironmentManager.Views.EditLocationPage
+    name: EditLocationPage
+    type: Class
+  - uid: EnvironmentManager.Views.EditSensorPage
+    name: EditSensorPage
+    type: Class
+  - uid: EnvironmentManager.Views.EditUserPage
+    name: EditUserPage
+    type: Class
+  - uid: EnvironmentManager.Views.ErrorPage
+    name: ErrorPage
+    type: Class
+  - uid: EnvironmentManager.Views.HistoricalAirQualityPage
+    name: HistoricalAirQualityPage
+    type: Class
+  - uid: EnvironmentManager.Views.HistoricalDataPage
+    name: HistoricalDataPage
+    type: Class
+  - uid: EnvironmentManager.Views.HistoricalDataViewerPage
+    name: HistoricalDataViewerPage
+    type: Class
+  - uid: EnvironmentManager.Views.HomePage
+    name: HomePage
+    type: Class
+  - uid: EnvironmentManager.Views.LogPage
+    name: LogPage
+    type: Class
+  - uid: EnvironmentManager.Views.MaintenancePage
+    name: MaintenancePage
+    type: Class
+  - uid: EnvironmentManager.Views.ResolvedAlertsPage
+    name: ResolvedAlertsPage
+    type: Class
+  - uid: EnvironmentManager.Views.SensorPage
+    name: SensorPage
+    type: Class
+memberLayout: SamePage
