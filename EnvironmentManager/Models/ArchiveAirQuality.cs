@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EnvironmentManager.Models
 {
+    /// <summary>
+    /// Represents the ArchiveAirQuality database context.
+    /// </summary>
     public class ArchiveAirQuality
     {
         [Key]
@@ -21,6 +24,5 @@ namespace EnvironmentManager.Models
 
     }
 }
-
 
 

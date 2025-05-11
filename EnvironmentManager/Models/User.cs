@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EnvironmentManager.Models
 {
+    /// <summary>
+    /// Represents the User database context.
+    /// </summary>
     public class User
     {
         [Key]

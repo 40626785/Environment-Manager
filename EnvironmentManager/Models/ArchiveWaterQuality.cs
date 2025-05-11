@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EnvironmentManager.Models
 {
+    /// <summary>
+    /// Represents the ArchiveWaterQuality database context.
+    /// </summary>
     public class ArchiveWaterQuality
     {
         [Key]

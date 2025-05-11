@@ -2,6 +2,9 @@ using System;
 
 namespace EnvironmentManager.Models
 {
+    /// <summary>
+    /// Represents the Alert database context.
+    /// </summary>
     public class Alert
     {
         public int AlertId { get; set; }
@@ -15,4 +18,3 @@ namespace EnvironmentManager.Models
         public bool IsResolved { get; set; }
     }
 }
-

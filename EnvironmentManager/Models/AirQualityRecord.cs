@@ -2,6 +2,9 @@ using System;
 
 namespace EnvironmentManager.Models
 {
+    /// <summary>
+    /// Represents the AirQualityRecord database context.
+    /// </summary>
     public class AirQualityRecord
     {
         public int Id { get; set; }
@@ -15,4 +18,3 @@ namespace EnvironmentManager.Models
 
     }
 }
-

@@ -1,5 +1,8 @@
 namespace EnvironmentManager.Models;
 
+/// <summary>
+/// Represents the HistoricalDataRow database context.
+/// </summary>
 public class HistoricalDataRow
 {
     public Dictionary<string, object> Data { get; set; } = new();
