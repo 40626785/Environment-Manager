@@ -3,6 +3,9 @@ using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager.Views
 {
+	/// <summary>
+	/// Represents the HistoricalAirQualityPage database context.
+	/// </summary>
 	public partial class HistoricalAirQualityPage : ContentPage
 	{
 		private readonly HistoricalAirQualityViewModel _viewModel;

@@ -2,6 +2,9 @@ using EnvironmentManager.ViewModels;
 
 namespace EnvironmentManager.Views
 {
+	/// <summary>
+	/// Represents the LogPage database context.
+	/// </summary>
 	public partial class LogPage : ContentPage
 	{
 		public LogPage(LogViewModel viewModel)

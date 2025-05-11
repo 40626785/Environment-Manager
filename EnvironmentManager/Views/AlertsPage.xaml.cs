@@ -1,7 +1,9 @@
 using EnvironmentManager.ViewModels;
 
 namespace EnvironmentManager.Views
-{
+{  /// <summary>
+   /// Represents the alert database context.
+   /// </summary>
 	public partial class AlertPage : ContentPage
 	{
 		public AlertPage(AlertViewModel viewModel)

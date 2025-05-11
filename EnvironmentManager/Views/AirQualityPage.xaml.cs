@@ -2,7 +2,9 @@ using EnvironmentManager.ViewModels;
 using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager.Views
-{
+{    /// <summary>
+	 /// Represents the AirQualityPage database context.
+	 /// </summary>
 	public partial class AirQualityPage : ContentPage
 	{
 		public AirQualityPage(AirQualityAdminViewModel viewModel)

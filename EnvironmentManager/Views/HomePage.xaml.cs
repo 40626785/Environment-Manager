@@ -2,7 +2,9 @@ using EnvironmentManager.ViewModels;
 using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager.Views;
-
+/// <summary>
+/// Represents the HomePage database context.
+/// </summary>
 public partial class HomePage : ContentPage
 {
     public HomePage(HomeViewModel viewModel)

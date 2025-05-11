@@ -3,6 +3,9 @@ using EnvironmentManager.Helpers;
 using System.Diagnostics;
 
 namespace EnvironmentManager.Views;
+/// <summary>
+/// Represents the HistoricalDataViewerPage database context.
+/// </summary>
 
 [QueryProperty(nameof(TableName), "tableName")]
 public partial class HistoricalDataViewerPage : ContentPage

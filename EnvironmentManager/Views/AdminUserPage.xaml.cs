@@ -1,7 +1,9 @@
 using EnvironmentManager.ViewModels;
 
 namespace EnvironmentManager.Views
-{
+{    /// <summary>
+	 /// Represents the AdminUserPage database context.
+	 /// </summary>
 	public partial class AdminUserPage : ContentPage
 	{
 		public AdminUserPage(AdminUserViewModel viewModel)

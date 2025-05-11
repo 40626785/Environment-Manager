@@ -2,6 +2,9 @@ using EnvironmentManager.ViewModels;
 
 namespace EnvironmentManager.Views
 {
+	/// <summary>
+	/// Represents the ErrorPage database context.
+	/// </summary>
 	public partial class ErrorPage : ContentPage
 	{
 		public ErrorPage(ErrorViewModel viewModel)

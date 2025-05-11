@@ -4,7 +4,9 @@ using EnvironmentManager.ViewModels;
 
 namespace EnvironmentManager.Views;
 
-
+/// <summary>
+/// Represents the ArchiveAirQualityPage database context.
+/// </summary>
 public partial class ArchiveAirQualityPage : ContentPage
 {
 	public ArchiveAirQualityPage(ArchiveAirQualityViewModel viewModel)
