@@ -4,6 +4,9 @@ using System.Diagnostics;
 
 namespace EnvironmentManager.Data
 {
+    /// <summary>
+    /// Represents the DatabaseAdminDbContext database context.
+    /// </summary>
     public class DatabaseAdminDbContext : DbContext, IDatabaseAdminDataStore
     {
         private readonly TableMetadataService _metadata;
@@ -26,6 +29,9 @@ namespace EnvironmentManager.Data
             }
         }
 
+        /// <summary>
+        /// Asynchronously executes the GetAllTableNames operation.
+        /// </summary>
         public List<string> GetAllTableNames()
         {
             try
@@ -52,6 +58,9 @@ namespace EnvironmentManager.Data
             }
         }
 
+        /// <summary>
+        /// Asynchronously executes the date) operation.
+        /// </summary>
         public async Task ClearTableByDateAsync(string tableName, DateTime date)
         {
             try
@@ -67,6 +76,9 @@ namespace EnvironmentManager.Data
             }
         }
 
+        /// <summary>
+        /// Asynchronously executes the endId) operation.
+        /// </summary>
         public async Task ClearTableByIdRangeAsync(string tableName, int startId, int endId)
         {
             try
@@ -81,6 +93,9 @@ namespace EnvironmentManager.Data
             }
         }
 
+        /// <summary>
+        /// Asynchronously executes the GetFilteredTableDataAsync operation.
+        /// </summary>
         public async Task<List<Dictionary<string, object>>> GetFilteredTableDataAsync(
             string tableName, DateTime? dateFilter = null, int? startId = null, int? endId = null)
         {
