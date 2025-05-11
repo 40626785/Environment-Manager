@@ -7,6 +7,9 @@ using EnvironmentManager.Interfaces;
 
 namespace EnvironmentManager.ViewModels;
 
+/// <summary>
+/// Represents the ErrorTableAdminViewModel database context.
+/// </summary>
 public partial class ErrorTableAdminViewModel : ObservableObject
 
 {

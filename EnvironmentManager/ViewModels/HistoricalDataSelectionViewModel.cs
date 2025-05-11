@@ -6,6 +6,9 @@ using EnvironmentManager.Views;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the HistoricalDataSelectionViewModel database context.
+    /// </summary>
     public partial class HistoricalDataSelectionViewModel : ObservableObject
     {
         public ICommand SelectTableCommand { get; }

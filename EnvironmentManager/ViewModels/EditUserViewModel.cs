@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the EditUserViewModel database context.
+    /// </summary>
     public class EditUserViewModel : BaseViewModel
     {
         private readonly UserDbContext _context;
@@ -26,6 +29,9 @@ namespace EnvironmentManager.ViewModels
             SaveCommand = new Command(async () => await SaveAsync());
         }
 
+        /// <summary>
+        /// Asynchronously executes the SaveAsync operation.
+        /// </summary>
         public async Task SaveAsync()
         {
             try

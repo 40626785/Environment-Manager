@@ -8,6 +8,9 @@ using EnvironmentManager.Models;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the AddUserViewModel database context.
+    /// </summary>
     public class AddUserViewModel : BaseViewModel
     {
         private readonly UserDbContext _context;
@@ -15,6 +18,9 @@ namespace EnvironmentManager.ViewModels
 
         public User NewUser { get; set; } = new User();
 
+        /// <summary>
+        /// Asynchronously executes the }; operation.
+        /// </summary>
         public List<int> RoleOptions { get; } = new() { 0, 1, 2 };
         public ICommand SaveCommand { get; }
 
@@ -25,6 +31,9 @@ namespace EnvironmentManager.ViewModels
             SaveCommand = new Command(async () => await SaveAsync());
         }
 
+        /// <summary>
+        /// Asynchronously executes the SaveAsync operation.
+        /// </summary>
         public async Task SaveAsync()
         {
             try

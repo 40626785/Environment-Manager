@@ -12,6 +12,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the AdminUserViewModel database context.
+    /// </summary>
     public class AdminUserViewModel : BaseViewModel
     {
         private readonly IDbContextFactory<UserDbContext> _dbContextFactory;
@@ -54,6 +57,9 @@ namespace EnvironmentManager.ViewModels
             Task.Run(LoadDataAsync);
         }
 
+        /// <summary>
+        /// Asynchronously executes the LoadDataAsync operation.
+        /// </summary>
         public async Task LoadDataAsync()
         {
             if (IsBusy) return;
@@ -77,6 +83,9 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
+        /// <summary>
+        /// Asynchronously executes the ApplyFiltersAsync operation.
+        /// </summary>
         public async Task ApplyFiltersAsync()
         {
             if (IsBusy) return;
@@ -111,6 +120,9 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
+        /// <summary>
+        /// Asynchronously executes the DeleteFilteredAsync operation.
+        /// </summary>
         public async Task DeleteFilteredAsync()
         {
             if (IsBusy || !TableData.Any()) return;
@@ -133,6 +145,9 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
+        /// <summary>
+        /// Asynchronously executes the null) operation.
+        /// </summary>
         public async Task ExportToCsvAsync(string? overridePath = null)
         {
             if (!TableData.Any())

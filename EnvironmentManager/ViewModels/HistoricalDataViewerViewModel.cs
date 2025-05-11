@@ -10,6 +10,9 @@ using System.Windows.Input;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the HistoricalDataViewerViewModel database context.
+    /// </summary>
     public class HistoricalDataViewerViewModel : BaseViewModel
     {
         private readonly HistoricalDataDbContext _dbContext;
@@ -17,8 +20,14 @@ namespace EnvironmentManager.ViewModels
         public ObservableCollection<ArchiveAirQuality> AirQualityData { get; } = new();
         // Dropdown values for year and month filters
 
+        /// <summary>
+        /// Asynchronously executes the 10).ToList operation.
+        /// </summary>
         public List<int> AvailableYears { get; } = Enumerable.Range(2020, 10).ToList();
 
+        /// <summary>
+        /// Asynchronously executes the = operation.
+        /// </summary>
         public List<string> AvailableMonths { get; } =
             new List<string> { "All", "January", "February", "March", "April", "May", "June", "July",
                        "August", "September", "October", "November", "December" };
@@ -76,6 +85,9 @@ namespace EnvironmentManager.ViewModels
 
 
         public ICommand ApplyAirQualityFilterCommand => new Command(async () => await ApplyAirQualityFilterAsync());
+        /// <summary>
+        /// Asynchronously executes the ApplyAirQualityFilterAsync operation.
+        /// </summary>
         public async Task ApplyAirQualityFilterAsync()
         {
             AppliedYear = SelectedYear;
@@ -91,6 +103,9 @@ namespace EnvironmentManager.ViewModels
             SelectedMonth = "All";
         }
 
+        /// <summary>
+        /// Asynchronously executes the false) operation.
+        /// </summary>
         public async Task LoadAirQualityDataAsync(bool applyFilter = false)
         {
             if (IsBusy) return;
@@ -137,6 +152,9 @@ namespace EnvironmentManager.ViewModels
 
         public ObservableCollection<ArchiveWaterQuality> WaterQualityData { get; } = new();
 
+        /// <summary>
+        /// Asynchronously executes the false) operation.
+        /// </summary>
         public async Task LoadWaterQualityDataAsync(bool applyFilter = false)
         {
             if (IsBusy) return;
@@ -178,6 +196,9 @@ namespace EnvironmentManager.ViewModels
                 IsBusy = false;
             }
         }
+        /// <summary>
+        /// Asynchronously executes the ApplyWaterFilterAsync operation.
+        /// </summary>
         public async Task ApplyWaterFilterAsync()
         {
             WaterAppliedYear = WaterSelectedYear;
@@ -218,6 +239,9 @@ namespace EnvironmentManager.ViewModels
 
         public ObservableCollection<ArchiveWeatherData> WeatherData { get; } = new();
 
+        /// <summary>
+        /// Asynchronously executes the false) operation.
+        /// </summary>
         public async Task LoadWeatherDataAsync(bool applyFilter = false)
         {
             if (IsBusy) return;
@@ -289,6 +313,9 @@ namespace EnvironmentManager.ViewModels
             set => SetProperty(ref weatherAppliedMonth, value);
         }
 
+        /// <summary>
+        /// Asynchronously executes the ApplyWeatherFilterAsync operation.
+        /// </summary>
         public async Task ApplyWeatherFilterAsync()
         {
             WeatherAppliedYear = WeatherSelectedYear;

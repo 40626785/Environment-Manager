@@ -6,6 +6,9 @@ using EnvironmentManager.Views;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the DatabaseAdminViewModel database context.
+    /// </summary>
     public class DatabaseAdminViewModel : BaseViewModel
     {
         private readonly DatabaseAdminDbContext _dbContext;

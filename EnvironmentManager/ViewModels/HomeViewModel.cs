@@ -12,6 +12,9 @@ namespace EnvironmentManager.ViewModels;
 /// ViewModel for the home page dashboard.
 /// Currently displays static demo data until full implementation.
 /// </summary>
+/// <summary>
+/// Represents the HomeViewModel database context.
+/// </summary>
 public partial class HomeViewModel : ObservableObject
 {
     // Basic properties for demo data display

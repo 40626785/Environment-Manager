@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnvironmentManager.ViewModels;
 
+/// <summary>
+/// Represents the ResolvedAlertsViewModel database context.
+/// </summary>
 public partial class ResolvedAlertsViewModel : ObservableObject
 {
     private readonly IDbContextFactory<AlertDbContext> _dbContextFactory;

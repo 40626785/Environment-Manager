@@ -11,6 +11,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the ErrorViewModel database context.
+    /// </summary>
     public class ErrorViewModel : BaseViewModel
     {
         private readonly IDbContextFactory<ErrorDbContext> _dbContextFactory;
@@ -56,6 +59,9 @@ namespace EnvironmentManager.ViewModels
             ToggleFilterVisibilityCommand = new Command(() => IsFilterVisible = !IsFilterVisible);
         }
 
+        /// <summary>
+        /// Asynchronously executes the LoadDataAsync operation.
+        /// </summary>
         public async Task LoadDataAsync()
         {
             if (IsBusy) return;
@@ -159,6 +165,9 @@ namespace EnvironmentManager.ViewModels
             }
         }
 
+        /// <summary>
+        /// Asynchronously executes the null) operation.
+        /// </summary>
         public async Task ExportToCsvAsync(string outputPath = null)
         {
             if (!TableData.Any())

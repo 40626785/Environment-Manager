@@ -3,6 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace EnvironmentManager.ViewModels;
 
+/// <summary>
+/// Represents the BaseViewModel database context.
+/// </summary>
 public class BaseViewModel : INotifyPropertyChanged
 {
     private bool isBusy;

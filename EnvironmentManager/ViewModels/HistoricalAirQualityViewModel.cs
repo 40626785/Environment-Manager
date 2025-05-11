@@ -11,16 +11,28 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the HistoricalAirQualityViewModel database context.
+    /// </summary>
     public class HistoricalAirQualityViewModel : BaseViewModel
     {
         private readonly IDbContextFactory<ArchiveAirQualityDbContext> _dbContextFactory;
         private readonly ILoggingService _logger;  // Injected logging service
 
+        /// <summary>
+        /// Asynchronously executes the } operation.
+        /// </summary>
         public List<string> SortOptions { get; private set; }
         // List of available years for filtering
+        /// <summary>
+        /// Asynchronously executes the } operation.
+        /// </summary>
         public List<int> AvailableYears { get; private set; }
 
         // List of available months for filtering
+        /// <summary>
+        /// Asynchronously executes the } operation.
+        /// </summary>
         public List<string> AvailableMonths { get; private set; }
 
         // Selected year and month for filtering
@@ -171,6 +183,9 @@ namespace EnvironmentManager.ViewModels
         }
 
         // Apply filters (date range and ID filters)
+        /// <summary>
+        /// Asynchronously executes the ApplyFilterAsync operation.
+        /// </summary>
         public async Task ApplyFilterAsync()
         {
             if (IsBusy) return;
@@ -219,6 +234,9 @@ namespace EnvironmentManager.ViewModels
         }
 
         // Apply sorting based on the selected options
+        /// <summary>
+        /// Asynchronously executes the ApplySortAsync operation.
+        /// </summary>
         public async Task ApplySortAsync()
         {
             if (IsBusy) return;
@@ -262,6 +280,9 @@ namespace EnvironmentManager.ViewModels
         }
 
         // Export the filtered and sorted data to CSV
+        /// <summary>
+        /// Asynchronously executes the ExportToCsvAsync operation.
+        /// </summary>
         public async Task ExportToCsvAsync()
         {
             if (IsBusy) return;

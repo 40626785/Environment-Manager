@@ -14,6 +14,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the AirQualityAdminViewModel database context.
+    /// </summary>
     public class AirQualityAdminViewModel : BaseViewModel
     {
         private readonly IUserDialogService _dialogService;
@@ -31,7 +34,13 @@ namespace EnvironmentManager.ViewModels
         public string LocationIdText { get; set; }
 
 
+        /// <summary>
+        /// Asynchronously executes the }; operation.
+        /// </summary>
         public List<string> SortOptions { get; } = new() { "ID", "Date", "Nitrogen_dioxide", "PM2_5_particulate_matter" };
+        /// <summary>
+        /// Asynchronously executes the }; operation.
+        /// </summary>
         public List<string> SortDirections { get; } = new() { "Ascending", "Descending" };
 
         public string StartIdText { get; set; } = string.Empty;

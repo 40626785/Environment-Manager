@@ -8,6 +8,9 @@ using Microsoft.Maui.Controls;
 
 namespace EnvironmentManager.ViewModels
 {
+    /// <summary>
+    /// Represents the EditAirQualityViewModel database context.
+    /// </summary>
     public class EditAirQualityViewModel : BaseViewModel
     {
         private readonly AirQualityDbContext _context;
